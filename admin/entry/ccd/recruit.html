@@ -1,0 +1,55 @@
+<!-- 固定ページ以外は以下のカスタムフィールドを表示する -->
+<!-- BEGIN_IF [%{EID}/nem/_and_/%{ECD}/em] -->
+<!-- ELSE -->
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>サムネイル画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一覧で使用するサムネイル画像を登録します。推奨サイズ：580px x 345px"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{thumbnail_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="thumbnail_image" value="{thumbnail_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="thumbnail_image" />
+      <input type="hidden" name="thumbnail_image:extension" value="media" />
+    </td>
+  </tr>
+</table>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページ上部で使用する背景画像を登録します。推奨サイズ：1320px x 565px"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{bg_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="bg_image" value="{bg_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="bg_image" />
+      <input type="hidden" name="bg_image:extension" value="media" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-page_description">説明文</label><i data-acms-tooltip="ページ上部で使用する説明文を設定します。推奨文字数：120文字前後" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <textarea name="page_description" rows="5" id="input-text-page_description" style="width:80%;">{page_description}</textarea>
+      <input type="hidden" name="field[]" value="page_description" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-btn_text">応募ボタンの文言</label></th>
+    <td>
+      <input type="text" name="btn_text" value="{btn_text}" id="input-text-btn_text" class="acms-admin-form-width-3quarters">
+      <input type="hidden" name="field[]" value="btn_text">
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-btn_url">応募ページへのURL</label></th>
+    <td>
+      <input type="text" name="btn_url" value="{btn_url}" id="input-text-btn_url" class="acms-admin-form-width-3quarters">
+      <input type="hidden" name="field[]" value="btn_url">
+    </td>
+  </tr>
+</table>
+<!-- END_IF -->

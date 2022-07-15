@@ -1,0 +1,12 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+
+	<!-- タグフィルター -->
+	@include("/include/tag/filter.html")
+
+	<!-- サマリー：記事一覧 -->
+	@include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+</div>
+@endsection

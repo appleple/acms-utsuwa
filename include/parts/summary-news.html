@@ -1,0 +1,41 @@
+<!-- BEGIN_MODULE Entry_Summary id="summary_news" -->
+<section class="section is-bg js-animation">
+  <div class="acms-container">
+    <div class="section-horizontal">
+      @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+      <header class="section-horizontal-header">
+        <div class="section-horizontal-header-inner">
+          <h2 class="section-horizontal-heading">{module_heading}</h2>
+          <p class="section-horizontal-heading-side">{module_heading_small}</p>
+        </div>
+      </header><!-- END moduleField -->
+      <div class="section-horizontal-main">
+        <ul class="headline js-animation-row"><!-- BEGIN unit:loop -->
+          <!-- BEGIN entry:loop -->
+          <li class="headline-item">
+            <a href="{url}" class="headline-link">
+            <div class="headline-info">
+              <time class="headline-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )</time><!-- BEGIN categoryField -->
+              <span class="headline-category">{fieldCategoryName}</span><!-- END categoryField --><!-- BEGIN new -->
+              <span class="badge headline-badge-news">NEW</span><!-- END new -->
+            </div><span class="headline-text">{title}</span>
+            </a>
+          </li>
+          <!-- END entry:loop -->
+          <!-- END unit:loop -->
+        </ul>
+        <p class="section-button"><a href="{indexUrl}" class="button is-width-lg is-bordered is-rounded"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧へ</a></p>
+      </div>
+    </div>
+    <div class="section-horizontal-footer">
+      <!-- BEGIN_MODULE Media_Banner id="banner_news" -->
+      <div class="carousel">
+        @include("/include/edit/module-custom.html", {"hash":"#acms_box2"})
+        <div class="js-carousel-news"><!-- BEGIN banner:loop -->
+          <div><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img --><a href="{url}" target="{target}"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive"></a><!-- END banner#img -->
+          </div><!-- END banner:loop -->
+        </div>
+      </div><!-- END_MODULE Media_Banner -->
+    </div>
+  </div>
+</section><!-- END_MODULE Entry_Summary -->

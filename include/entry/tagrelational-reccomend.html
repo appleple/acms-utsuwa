@@ -1,0 +1,35 @@
+<!-- BEGIN_MODULE Entry_TagRelational id="{{module_id}}" -->
+<section class="tag-relational clearfix">
+  <h3 class="heading-sm heading-line">おすすめ記事</h3>
+  @include("/admin/module/setting.html")
+  <!-- BEGIN notFound -->
+  <div class="paragraph">この記事のハッシュタグに関連する記事が見つかりませんでした。</div><!-- END notFound -->
+  <!-- BEGIN_IF [<!-- BEGIN notFound -->notFound<!-- END notFound -->/em] -->
+  <div class="paragraph acms-margin-bottom-medium">この記事のハッシュタグ
+    <ul class="list-inline"><!-- GET_Rendered id="tag" --></ul>
+    から関連する記事を表示しています。
+  </div>
+  <ul class="card-list">
+    <!-- BEGIN entry:loop -->
+    <li class="card-item <!-- BEGIN_IF [{entry:loop.class}/nem/] -->{entry:loop.class}<!-- ELSE -->acms-col-6 acms-col-sm-4<!-- END_IF -->">
+      <div class="card-item-inner">
+        <a href="{url}" class="card-link">
+          <div class="card-img-wrap"><!-- BEGIN image:veil -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(313,207)]" width="313" height="207" alt="" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/default/noimage.gif" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
+          </div>
+          <time class="card-time" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )
+          </time>
+          <h2 class="card-title">{title}</h2><!-- BEGIN summary:veil -->
+          <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
+          <!-- BEGIN userField -->
+          <div class="card-footer">
+            <p class="card-author"><img src="%{ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" alt="" class="card-author-img">{fieldUserName}</p>
+          </div><!-- END userField -->
+        </a>
+      </div>
+    </li>
+    <!-- END entry:loop -->
+  </ul>
+  <!-- END_IF -->
+</section>
+<!-- END_MODULE Entry_TagRelational -->

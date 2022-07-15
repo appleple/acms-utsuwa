@@ -1,0 +1,102 @@
+@extends("/_layouts/unit.html")
+
+@section(text-unit)
+<!-- テキスト -->
+<div class="entry-text-unit <!-- BEGIN p -->is-p<!-- END p --><!-- BEGIN h2 -->is-h2<!-- END h2 --><!-- BEGIN h3 -->is-h3<!-- END h3 --><!-- BEGIN h4 -->is-h4<!-- END h4 --><!-- BEGIN h5 -->is-h5<!-- END h5 --><!-- BEGIN ul -->is-ul<!-- END ul --><!-- BEGIN ol -->is-ol<!-- END ol --><!-- BEGIN dl -->is-dl<!-- END dl --><!-- BEGIN blockquote -->is-blockquote<!-- END blockquote --><!-- BEGIN table -->is-table<!-- END table --><!-- BEGIN pre -->is-pre<!-- END pre --><!-- BEGIN none -->is-none<!-- END none --><!-- BEGIN markdown -->is-markdown<!-- END markdown --><!-- BEGIN wysiwyg -->is-wysiwyg<!-- END wysiwyg -->">
+  <!-- テキスト --><!-- BEGIN p -->
+  <p{class}>{text}[raw|nl2br]</p><!-- END p --><!-- BEGIN h2 -->
+  <h2{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h2><!-- END h2 --><!-- BEGIN h3 -->
+  <h3{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h3><!-- END h3 --><!-- BEGIN h4 -->
+  <h4{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h4><!-- END h4 --><!-- BEGIN h5 -->
+  <h5{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h5><!-- END h5 --><!-- BEGIN ul -->
+  <ul{class}>{text}[raw|list]</ul><!-- END ul --><!-- BEGIN ol -->
+  <ol{class}>{text}[raw|list]</ol><!-- END ol --><!-- BEGIN dl -->
+  <dl{class}>{text}[raw|definition_list]</dl><!-- END dl --><!-- BEGIN blockquote -->
+  <div class="entry-container"><blockquote{class}>{text}[raw|nl2br]</blockquote></div><!-- END blockquote --><!-- BEGIN table -->
+  <div class="entry-container"><table{class}>{text}[raw|table]</table></div><!-- END table --><!-- BEGIN pre -->
+  <div class="entry-container"><pre{class}>{text}</pre></div><!-- END pre --><!-- BEGIN none -->
+  {text}[raw]<!-- END none --><!-- BEGIN markdown -->
+  {text}[raw|markdown]<!-- END markdown --><!-- BEGIN wysiwyg -->
+  {text}[raw]<!-- END wysiwyg -->
+
+  @include("/include/unit/tag-select.html")
+</div>
+@endsection
+
+
+@section(file-unit)
+<!-- ファイル -->
+<div class="column-file-{align} js_notStyle">
+  <a href="%{HTTP_ROOT}{path}"><img class="columnIcon" src="%{HTTP_ROOT}{icon}" alt="ファイルを開く" width="{x}" height="{y}">
+  <!-- BEGIN_IF [{caption}[delnl]/nem] --><p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
+  </a>
+</div>
+@endsection
+
+
+@section(quote-unit)
+<!-- 引用 -->
+<div class="column-quote-{align}"{display_size}[raw]><!-- BEGIN html:veil -->
+  {quote_html}[raw]<!-- END html:veil --><!-- BEGIN_IF [{quote_title}/nem/] -->
+  <blockquote class="quote">
+    <a href="{quote_url}" class="quote-link"><!-- BEGIN image:veil -->
+      <div class="quote-img-wrap">
+        <img src="{quote_image}" class="quote-img acms-img-responsive" width="{x}" height="{y}"  alt="">
+      </div><!-- END image:veil -->
+      <div class="quote-info">
+        <p class="quote-title">{quote_title}</p><!-- BEGIN description:veil -->
+        <p class="quote-description">{quote_description}[raw|trim(180, '...')]</p><!-- END description:veil --><!-- BEGIN site_name:veil -->
+        <p class="quote-site-name">{quote_site_name}</p><!-- END site_name:veil -->
+      </div>
+    </a>
+  </blockquote><!-- END_IF -->
+</div>
+@endsection
+
+@section(media-unit)
+<!-- media -->
+<div class="column-media-{align}{display_size_class}"{display_size}[raw]><!-- BEGIN type#image -->
+  <!-- BEGIN link#front -->
+  <a href="{url}"{viewer}[raw]><!-- END link#front -->
+    <img class="js-lazy-load columnImage"
+      src="/images/placeholder/image.svg"
+      data-src="%{HTTP_ROOT}{path}[resizeImg({x})]"
+      width="{x}"
+      height="{y}"
+      alt="{alt}"><!-- BEGIN link#rear -->
+  </a><!-- END link#rear --><!-- BEGIN_IF [{caption}[delnl]/nem] -->
+  <p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
+
+  <!-- END type#image --><!-- BEGIN type#svg -->
+
+  <!-- BEGIN link#front -->
+  <a href="{url}"{viewer}[raw]><!-- END link#front -->
+    <img class="js-lazy-load columnImage"
+      src="/images/placeholder/image.svg"
+      data-src="%{HTTP_ROOT}{path}"
+      alt="{alt}"
+      width="{x}" height="{y}"><!-- BEGIN link#rear -->
+  </a><!-- END link#rear --><!-- BEGIN_IF [{caption}[delnl]/nem] -->
+  <p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
+
+  <!-- END type#svg --><!-- BEGIN type#file -->
+
+  <!-- BEGIN_IF [{thumbnail}/nem/_and_/{use_icon}/neq/yes] -->
+    <a href="{url}" target="_blank">
+      <img class="column-pdf-image" src="%{MEDIA_ARCHIVES_DIR}{thumbnail}" alt="{alt}">
+    </a>
+    <!-- BEGIN_IF [{caption}[delnl]/nem] -->
+    <p class="caption">{caption}[raw|nl2br]</p>
+    <!-- END_IF -->
+  <!-- ELSE -->
+  <div class="media-file">
+    <a href="{url}" target="_blank">
+      <img class="columnIcon" src="%{HTTP_ROOT}{icon}" alt="{alt}" width="{x}" height="{y}"><!-- BEGIN_IF [{caption}[delnl]/nem] -->
+      <p class="caption">{caption}[raw|nl2br]</p>
+      <!-- END_IF -->
+    </a>
+  </div>
+  <!-- END_IF -->
+  <!-- END type#file -->
+</div>
+@endsection

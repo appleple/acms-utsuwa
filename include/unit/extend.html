@@ -1,0 +1,60 @@
+<!-- BEGIN unit#custom_unit_space -->
+<hr class="clearHidden" style="padding-bottom: {unit_space}">
+<!-- END unit#custom_unit_space -->
+
+<!-- BEGIN unit#custom_separator -->
+<hr class="unit-separator" style="margin-bottom: {unit_space};">
+<!-- END unit#custom_separator -->
+
+<!-- BEGIN unit#custom_outline -->
+<nav class="entry-outline">
+  <h2 class="entry-outline-title js-except">目次</h2>
+  <div class="js-outline-yield entry-outline-list-wrap"></div>
+</nav>
+<!-- END unit#custom_outline -->
+
+<!-- BEGIN unit#custom_message -->
+<div class="message">
+  <div class="message-bg" style="background-image: url(%{MEDIA_ARCHIVES_DIR}{message_image@path});"></div>
+  <div class="acms-container">
+    <div class="message-wrap"><!-- BEGIN message_lead:veil -->
+      <h3 class="message-lead">{message_lead}[nl2br]</h3><!-- END message_lead:veil -->
+      <!-- BEGIN message_content:veil -->
+      <p class="message-content">{message_content}[nl2br]</p><!-- ENd message_content:veil -->
+      <!-- BEGIN message_source:veil -->
+      <p class="message-source">{message_source}</p><!-- END message_source:veil -->
+    </div>
+  </div>
+</div>
+<!-- END unit#custom_message -->
+
+<!-- BEGIN unit#custom_pricing -->
+<ul class="pricing-group"><!-- BEGIN group_pricing:loop -->
+  <li class="pricing-item<!-- BEGIN_IF [{pricing_reccommend}/eq/true] --> is-reccomend<!-- END_IF -->">
+    <div class="pricing-inner">
+      <div class="pricing-header"><!-- BEGIN_IF [{pricing_reccommend}/eq/true] -->
+        <div class="pricing-label-wrap">
+          <p class="pricing-label">おすすめ</p>
+        </div><!-- END_IF --><!-- BEGIN pricing_title:veil -->
+        <h3 class="pricing-title">{pricing_title}</h3><!-- END pricing_title:veil --><!-- BEGIN pricing_desc:veil -->
+        <p class="pricing-desc">{pricing_desc}[nl2br]</p><!-- END pricing_desc:veil -->
+      </div>
+      <div class="pricing-body"><!-- BEGIN_IF [{pricing_price}/nem] -->
+        <p class="pricing-price">{pricing_price}<span class="pricing-unit">{pricing_price_unit}</span></p>
+        <!-- END_IF --><!-- BEGIN pricing_check_list:veil -->
+        <ul class="pricing-check-group">
+          {pricing_check_list}[list]
+        </ul><!-- WND pricing_check_list:veil -->
+      </div>
+      <div class="pricing-footer"><!-- BEGIN pricing_btn_url:veil -->
+        <a href="{pricing_btn_url}" class="button pricing-button">詳細を見る</a><!-- END pricing_btn_url:veil -->
+        <!-- BEGIN pricing_micro_copy:veil -->
+        <p class="text-info pricing-text-info">{pricing_micro_copy}</p><!-- END pricing_micro_copy:veil -->
+      </div>
+    </div>
+  </li><!-- END group_pricing:loop -->
+</ul>
+<!-- END unit#custom_pricing -->
+
+<!-- BEGIN unit#custom_sample -->
+<!-- END unit#custom_sample -->

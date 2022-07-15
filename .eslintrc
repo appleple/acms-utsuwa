@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "env": {
+    "browser": true
+  },
+  "parser": "@babel/eslint-parser",
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": ["@babel"],
+  "globals": {
+    "document": true,
+    "window": true,
+    "event": true,
+    "$": true,
+    "ACMS": true,
+    "jQuery": true
+  },
+  "rules": {
+
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.prod.js"
+      }
+    }
+  }
+}

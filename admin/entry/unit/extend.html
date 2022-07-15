@@ -1,0 +1,262 @@
+<!-- BEGIN custom_unit_space -->
+<table class="acms-admin-table-admin-edit">
+  <tr>
+    <th>余白</th>
+    <td>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="60px" {unit_space:checked#60px} id="input-radio-unit_space-60px-{id}" />
+        <label for="input-radio-unit_space-60px-{id}">
+          <i class="acms-admin-ico-radio"></i>大</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="40px" {unit_space:checked#40px}<!-- BEGIN_IF [{unit_space}/em] -->checked="checked"<!-- END_IF --> id="input-radio-unit_space-40px-{id}" />
+        <label for="input-radio-unit_space-40px-{id}">
+          <i class="acms-admin-ico-radio"></i>中</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="20px" {unit_space:checked#20px} id="input-radio-unit_space-20px-{id}" />
+        <label for="input-radio-unit_space-20px-{id}">
+          <i class="acms-admin-ico-radio"></i>小</label>
+      </div>
+      <input type="hidden" name="unit{id}[]" value="unit_space{id}" />
+    </td>
+  </tr>
+</table>
+<!-- END custom_unit_space -->
+
+<!-- BEGIN custom_separator -->
+<table class="acms-admin-table-admin-edit">
+  <tr>
+    <th>罫線の上下の余白</th>
+    <td>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="60px" {unit_space:checked#60px} id="input-radio-unit_space-60px-{id}" />
+        <label for="input-radio-unit_space-60px-{id}">
+          <i class="acms-admin-ico-radio"></i>大</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="40px" {unit_space:checked#40px}<!-- BEGIN_IF [{unit_space}/em] -->checked="checked"<!-- END_IF --> id="input-radio-unit_space-40px-{id}" />
+        <label for="input-radio-unit_space-40px-{id}">
+          <i class="acms-admin-ico-radio"></i>中</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="unit_space{id}" value="20px" {unit_space:checked#20px} id="input-radio-unit_space-20px-{id}" />
+        <label for="input-radio-unit_space-20px-{id}">
+          <i class="acms-admin-ico-radio"></i>小</label>
+      </div>
+      <input type="hidden" name="unit{id}[]" value="unit_space{id}" />
+    </td>
+  </tr>
+</table>
+<!-- END custom_separator -->
+
+<!-- BEGIN custom_outline -->
+<p>ここに目次（アウトライン）が表示されます</p>
+<!-- END custom_outline -->
+
+
+<!-- BEGIN custom_message -->
+<table class="acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像</th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{message_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="message_image{id}" value="{message_image}" class="js-value" />
+      <input type="hidden" name="unit{id}[]" value="message_image{id}" />
+      <input type="hidden" name="message_image{id}:extension" value="media" />
+    </td>
+  </tr>
+
+  <tr>
+    <th>リード文</th>
+    <td>
+      <textarea name="message_lead{id}" class="acms-admin-form-width-large">{message_lead}</textarea>
+      <input type="hidden" name="unit{id}[]" value="message_lead{id}">
+    </td>
+  </tr>
+  <tr>
+    <th>メッセージ内容</th>
+    <td>
+      <textarea name="message_content{id}" class="acms-admin-form-width-large" rows="5">{message_content}</textarea>
+      <input type="hidden" name="unit{id}[]" value="message_content{id}">
+    </td>
+  </tr>
+  <tr>
+    <th>発言元</th>
+    <td>
+      <input type="text" name="message_source{id}" value="{message_source}" class="acms-admin-form-width-large">
+      <input type="hidden" name="unit{id}[]" value="message_source{id}">
+    </td>
+  </tr>
+</table>
+<!-- END custom_message -->
+
+<!-- BEGIN custom_pricing -->
+<h2 class="acms-admin-admin-title2">価格表</h2>
+<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+  <thead class="acms-admin-hide-sp">
+  <tr>
+    <th class="acms-admin-table-left acms-admin-admin-config-table-item-handle"> </th>
+    <th></th>
+    <th class="acms-admin-table-left acms-admin-admin-config-table-action">削除</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- BEGIN group_pricing:loop -->
+  <tr class="sortable-item">
+    <td class="item-handle acms-admin-table-nowrap">
+      <i class="acms-admin-icon-sort"></i>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <th>タイトル</th>
+          <td>
+            <input type="text" name="pricing_title{id}[]" value="{pricing_title}" class="acms-admin-form-width-full" placeholder="例）スタータープラン"  />
+          </td>
+        </tr>
+        <tr>
+          <th>概要（※改行可能）</th>
+          <td>
+            <textarea name="pricing_desc{id}[]" class="acms-admin-form-width-full">{pricing_desc}</textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>値段</th>
+          <td>
+            <input type="text" name="pricing_price{id}[]" value="{pricing_price}" class="acms-admin-form-width-small" placeholder="例）2,200" />
+            単位：
+            <input type="text" name="pricing_price_unit{id}[]" value="{pricing_price_unit}" class="acms-admin-form-width-mini" placeholder="例）円/月" />
+          </td>
+        </tr>
+        <tr>
+          <th>ボタンURL</th>
+          <td>
+            <input type="text" name="pricing_btn_url{id}[]" value="{pricing_btn_url}" class="acms-admin-form-width-full" placeholder="例）https://" />
+          </td>
+        </tr>
+        <tr>
+          <th>ボタンマイクロコピー</th>
+          <td>
+            <input type="text" name="pricing_micro_copy{id}[]" value="{pricing_micro_copy}" class="acms-admin-form-width-full" placeholder="例）30日間フリートライアルあり" />
+          </td>
+        </tr>
+        <tr>
+          <th>チェックリスト（改行ごとにリスト形式になります）</th>
+          <td>
+            <textarea name="pricing_check_list{id}[]" class="acms-admin-form-width-full" rows="5" placeholder="例）二段階認証あり">{pricing_check_list}</textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>おすすめプラン</th>
+          <td>
+            <div class="acms-admin-form-checkbox">
+              <input type="checkbox" name="pricing_reccommend{id}[]" value="true" {pricing_reccommend:checked#true} id="input-checkbox-pricing_reccommend-{id}-true" />
+              <label for="input-checkbox-pricing_reccommend-{id}-true">
+                <i class="acms-admin-ico-checkbox"></i>おすすめプランにする</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="acms-admin-table-nowrap">
+      <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+    </td>
+  </tr>
+  <!-- END group_pricing:loop -->
+  <tr class="sortable-item item-template">
+    <td class="item-handle acms-admin-table-nowrap">
+      <i class="acms-admin-icon-sort"></i>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <th>タイトル</th>
+          <td>
+            <input type="text" name="pricing_title{id}[]" value="" class="acms-admin-form-width-full" placeholder="例）スタータープラン" />
+          </td>
+        </tr>
+        <tr>
+          <th>概要（※改行可能）</th>
+          <td>
+            <textarea name="pricing_desc{id}[]" class="acms-admin-form-width-full"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>値段</th>
+          <td>
+            <input type="text" name="pricing_price{id}[]" value="" class="acms-admin-form-width-small" placeholder="例）2,200"  />
+            単位：
+            <input type="text" name="pricing_price_unit{id}[]" value="" class="acms-admin-form-width-mini" placeholder="例）円/月"  />
+          </td>
+        </tr>
+        <tr>
+          <th>ボタンURL</th>
+          <td>
+            <input type="text" name="pricing_btn_url{id}[]" value="" class="acms-admin-form-width-full" placeholder="例）https://"  />
+          </td>
+        </tr>
+        <tr>
+          <th>ボタンマイクロコピー</th>
+          <td>
+            <input type="text" name="pricing_micro_copy{id}[]" value="" class="acms-admin-form-width-full" placeholder="例）30日間フリートライアルあり" />
+          </td>
+        </tr>
+        <tr>
+          <th>チェックリスト（改行ごとにリスト形式になります）</th>
+          <td>
+            <textarea name="pricing_check_list{id}[]" class="acms-admin-form-width-full" rows="5" placeholder="例）二段階認証あり"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th>おすすめプラン</th>
+          <td>
+            <div class="acms-admin-form-checkbox">
+              <input type="checkbox" name="pricing_reccommend{id}[]" value="true" id="input-checkbox-pricing_reccommend-true" />
+              <label for="input-checkbox-pricing_reccommend-true">
+                <i class="acms-admin-ico-checkbox"></i>おすすめプランにする</label>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td class="acms-admin-table-nowrap">
+      <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+    </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colSpan="11">
+      <input type="button" class="item-insert acms-admin-btn-admin" value="追加" />
+    </td>
+  </tr>
+  </tfoot>
+</table>
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_title{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_title{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_desc{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_desc{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_price{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_price{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_price_unit{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_price_unit{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_btn_label{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_btn_label{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_btn_url{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_btn_url{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_micro_copy{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_micro_copy{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_check_list{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_check_list{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_reccommend{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_reccommend{id}" />
+<input type="hidden" name="unit{id}[]" value="@group_pricing{id}" />
+<!-- END custom_pricing -->
+
+<!-- BEGIN custom_sample -->
+<!-- END custom_sample -->

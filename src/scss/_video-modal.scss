@@ -1,0 +1,131 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+$_video-thumbnail-size: 500px;
+$_video-play-btn-size: 60px;
+$_video-play-btn-arrow-height: 24px;
+$_video-play-btn-arrow-width: 18px;
+$_video-play-btn-arrow-color: #FFF;
+
+$_video-thumbnail-size-lg: 675px;
+$_video-play-btn-size-lg: 80px;
+$_video-play-btn-arrow-height-lg: 36px;
+$_video-play-btn-arrow-width-lg: 32px;
+
+/* ------------------------------
+　　ビデオ
+------------------------------ */
+.video-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal-thumbnail {
+  position: relative;
+  display: block;
+  max-width: $_video-thumbnail-size;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: global.$border-radius-xl;
+  box-shadow: rgba(0, 0, 0, 5%) 0 6px 15px 4px;
+
+  &:hover {
+    .video-modal-play-icon {
+      transform: scale(.8);
+    }
+  }
+}
+
+
+.video-modal-play-icon-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: (math.div($-video-play-btn-size, -2));
+  margin-left: (math.div($-video-play-btn-size, -2));
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform,opacity;
+  }
+  .js .js-animation.is-show & {
+    animation: fade-in .2s .8s 1 both;
+  }
+}
+
+.video-modal-play-icon {
+  position: relative;
+  display: block;
+  width: $_video-play-btn-size;
+  height: $_video-play-btn-size;
+  background: global.$color-primary;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+  transition: transform .2s ease;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin-top: math.div($_video-play-btn-arrow-height, -2);
+    margin-left: math.div($_video-play-btn-arrow-height, -4);
+    border: math.div($_video-play-btn-arrow-height, 2) solid transparent;
+    border-left: $_video-play-btn-arrow-width solid $_video-play-btn-arrow-color;
+    content: "";
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-sm-min){
+  .video-modal-thumbnail {
+    margin: 0 0 30px;
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min){
+  .video-modal {
+    justify-content: flex-end;
+    padding: 0 10% 0 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min){
+  .video-modal {
+    margin: 0 0 0 auto;
+  }
+  .video-modal-thumbnail {
+    max-width: $_video-thumbnail-size-lg;
+    margin: 50px auto;
+  }
+
+  .video-modal-play-icon-wrap {
+    margin-top: math.div($_video-play-btn-size-lg, -2);
+    margin-left: math.div($_video-play-btn-size-lg, -2);
+  }
+  .video-modal-play-icon {
+    width: $_video-play-btn-size-lg;
+    height: $_video-play-btn-size-lg;
+
+    &:before {
+      margin-top: math.div($_video-play-btn-arrow-height-lg, -2);
+      margin-left: -13px;
+      border: math.div($_video-play-btn-arrow-height-lg, 2) solid transparent;
+      border-left: $_video-play-btn-arrow-width-lg solid $_video-play-btn-arrow-color;
+    }
+  }
+}
+
+
+@media screen and (max-width: acms.$breakpoint-md-max) {
+  .modal-video-inner {
+    padding: 0 20px;
+  }
+  .modal-video-close-btn {
+    top: -45px;
+    right: -5px;
+  }
+}

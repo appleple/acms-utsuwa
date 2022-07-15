@@ -1,0 +1,23 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<div>
+  @include("/include/edit/module-custom-box2.html")
+  <ul class="card-bordered-list entry-reset"><!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="acms-col-md-6 card-bordered-item">
+      <div class="card-bordered">
+        <a href="{url}" class="card-bordered-link">
+          <div class="card-bordered-img-wrap"><!-- BEGIN_IF [{thumbnail_image@path}/nem] -->
+            <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail_image@path}[resizeImg(580,220)]" width="580" height="220" alt="" class="acms-img-responsive card-bordered-img"><!--  ELSE_IF [{path}/nem] -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(580,220)]" width="580" height="220" alt="" class="acms-img-responsive card-bordered-img"><!-- END_IF -->
+          </div>
+          <div class="card-bordered-text-inline">
+            <h3 class="card-bordered-title">{title}</h3>
+            <p class="card-bordered-read-more"><span class="acms-hide-visually-md">詳しく知る</span></p>
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+</div>
+<!-- END_MODULE Entry_Summary -->

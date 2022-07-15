@@ -1,0 +1,149 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　グローバルナビゲーション
+------------------------------ */
+.global-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.global-nav-list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  list-style: none;
+}
+
+.global-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.global-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: global.$color-text;
+
+  &:visited {
+    color: global.$color-text;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: global.$color-text;
+  }
+
+  &::after {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    left: 15px;
+    height: 2px;
+    background: global.$color-primary;
+    transform: scaleX(0);
+    transition: transform .2s;
+    content: "";
+  }
+
+  &:hover {
+    text-decoration: none;
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  // 現在位置
+  .global-nav-item.stay > &::after {
+    transform: scaleX(1);
+  }
+
+  // CTA用のスタイル
+  &.is-cta {
+    height: global.$header-height;
+    margin: 0 15px;
+    padding: 0 35px;
+    color: global.$color-text-inverse;
+    background: global.$color-primary;
+    transition: background-color .2s;
+
+    &:after {
+      content: none;
+    }
+
+    &:hover {
+      background: global.$color-primary-hover;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.global-nav-item > .global-nav-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  min-width: 10rem;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+
+  .global-nav-item {
+    width: 100%;
+    margin: 0;
+    border-top: global.$border-width-sm solid global.$color-gray30;
+  }
+
+  .global-nav-link {
+    position: relative;
+    justify-content: flex-start;
+    width: 100%;
+    background: #FFF;
+
+    &:focus-visible::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 2px solid global.$color-focus-visible;
+      content: "";
+    }
+
+    &:hover,
+    &:focus {
+      background-color: global.$color-gray10;
+    }
+
+    &:hover::after {
+      content: none;
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+}
+
+.global-nav-item:hover > .global-nav-list,
+.global-nav-item:focus-within > .global-nav-list{
+  display: flex;
+}

@@ -1,0 +1,136 @@
+<!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry entry">
+  <h2 class="not-found-title">Not Found</h2>
+  <p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+</section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+
+<!-- BEGIN_SetRendered id="tag" -->
+<!-- BEGIN tag:loop -->
+<li class="list-inline-item"><a href="{url}" class="entry-tag-label">#{name}</a></li>
+<!-- END tag:loop -->
+<!-- END_SetRendered -->
+
+<!-- BEGIN_MODULE Touch_Login -->
+<div class="acms-form-group">
+  @include("/admin/entry/revision-info.html")
+</div><!-- END_MODULE Touch_Login -->
+
+<article class="entry clearfix {entry:loop.class}">
+  @include("/admin/entry/title.html")
+
+  <div class="js-sticky-area">
+    <!-- BEGIN_IF [%{ECD}/nem]-->
+    <!-- エントリーのタイトル　開始▼▼ --><!-- BEGIN title:veil -->
+    <header class="entry-header">
+      <p class="entry-header-info">
+        <!-- BEGIN date:veil -->
+        <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-time">
+          {date#Y}年{date#m}月{date#d}日（{date#l}[weekEN2JP]）
+        </time><!-- END date:veil -->
+        <!-- BEGIN category:veil --><!-- BEGIN category:loop -->
+        <a href="{url}" class="entry-header-category js-viewing-indelible">{name}</a><!-- BEGIN glue --> &lt;
+        <!-- END glue --><!-- END category:loop --><!-- END category:veil --></p>
+      <!-- BEGIN_MODULE Touch_Entry --><h1 class="entry-header-title entryTitle"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
+      <!-- BEGIN_MODULE Touch_NotEntry -->
+      <h2 class="entry-header-title entryTitle"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h2>
+      <!-- END_MODULE Touch_NotEntry -->
+    </header>
+    <!-- END title:veil --><!-- END_IF -->
+
+    <!-- BEGIN entry:veil -->
+    <div class="acms-entry entry-style js-outline"
+            data-target=".js-outline-yield"
+            data-link="true"
+            data-listType="ol"
+            data-listClassName="outline-list"
+            data-itemClassName="outline-item"
+            data-linkClassName="scrollTo"
+            data-anchorName="heading-$1"
+            data-levelLimit="3"
+            data-exceptClass="js-except">
+      <div class="acms-grid entry-style-grid">
+        <!-- カスタムフィールドの読み込み -->
+        @include("/include/entry/field.html")
+
+        <!-- BEGIN unit:veil -->
+        @include("/include/unit.html")
+        <hr class="clearHidden"/>
+        <!-- END unit:veil -->
+        <!-- 続きを読む -->
+        @include("/include/parts/continue.html")
+
+        <!-- BEGIN_MODULE Touch_Entry -->
+        <!-- カスタムフィールドの読み込み -->
+        @include("/include/entry/field_foot.html")
+        <!-- END_MODULE Touch_Entry -->
+
+      </div>
+    </div>
+    <!-- END entry:veil -->
+
+    <!-- BEGIN formBody -->
+    @include("/include/form/unit.html")
+    <hr class="clearHidden"/>
+    <!-- END formBody -->
+
+    @include("/admin/entry/edit-%{IS_ADMIN}.html")
+
+
+    <div class="acms-box-medium">
+      @include("/admin/entry/action.html")
+    </div>
+
+  </div>
+
+  <!-- BEGIN_MODULE Touch_Entry --><!-- BEGIN entry_footer:veil -->
+  <footer class="entry-footer"><!-- BEGIN_IF [{{tag}}/eq/on] -->
+    <!-- BEGIN tag:veil -->
+    <div class="tag-wrapper">
+      <ul class="tag-list" aria-label="関連タグ">
+        <!-- BEGIN tag:loop -->
+        <li class="tag-item"><a href="{url}" class="tag-link">#{name}</a></li>
+        <!-- END tag:loop -->
+      </ul>
+    </div><!-- END tag:veil --><!-- END_IF --><!-- BEGIN_IF [{{sns}}/eq/on] -->
+    <div>
+      <!-- SNSシェアボタン -->
+      @include("/include/parts/sns-share-title.html")
+    </div><!-- END_IF -->
+    <div><!-- BEGIN userField -->
+      <!-- BEGIN_IF [{position}{user_title}{profile}{image@thumbnail}/nem] -->
+      <h4 class="heading-sm acms-margin-bottom-medium">この記事を書いたスタッフ</h4>
+      <div class="profile">
+        <div class="profile-body">
+          <!-- BEGIN image_thumbnail:veil -->
+          <div class="profile-item-img">
+            <img src="%{MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(90, 90)]" width="90" height="90" class="profile-img" alt="">
+          </div><!-- END image_thumbnail:veil -->
+          <div class="profile-item-info"><!-- BEGIN position_title:veil -->
+            <p class="profile-position">{user_title}</p><!-- END position_title:veil -->
+            <p class="profile-name">{fieldUserName}</p><!-- BEGIN profile:veil -->
+            <p class="profile-text acms-hide acms-block-lg acms-block-xl">{profile}[raw|nl2br]</p>
+            <!-- END profile:veil -->
+          </div>
+        </div>
+        <div class="profile-footer acms-hide-lg acms-hide-xl">
+          <!-- BEGIN profile:veil -->
+          <p class="profile-text">{profile}[raw|nl2br]</p><!-- END profile:veil -->
+        </div>
+      </div><!-- END_IF --><!-- END userField -->
+    </div>
+  </footer><!-- END entry_footer:veil -->
+  <!-- END_MODULE Touch_Entry -->
+
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- ページャー -->
+@include("/include/parts/pager.html")
+
+<!-- END_MODULE Entry_Body -->

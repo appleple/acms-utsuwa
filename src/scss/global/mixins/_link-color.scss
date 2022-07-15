@@ -1,0 +1,13 @@
+@use "../variables" as var;
+
+@mixin link-color($color) {
+  color: $color;
+  &:visited {
+    color: $color;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: .7;
+  }
+}

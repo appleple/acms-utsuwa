@@ -1,0 +1,49 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+
+<!-- トップ用メインビジュアル -->
+@include("/include/parts/top-main-visual.html", {"module_id": "MF_main_visual"})
+
+<!-- トップ用メッセージ -->
+@include("/include/parts/top-message.html", {"module_id": "MF_message"})
+
+<hr class="section-separator">
+
+<!-- エントリーサマリー：事業内容 -->
+@include("/include/entry/summary-top-thumbnail.html", {"module_id": "summary_service"})
+
+<!-- 採用情報 -->
+@include("/include/parts/cta-visual.html", {"module_id": "MF_cta_visual_top"})
+
+
+<!-- エントリーサマリー：採用情報 -->
+@include("/include/entry/summary-top-bordered.html", {"module_id": "summary_recruit"})
+
+<!-- エントリーサマリー&バナー：最新情報 -->
+@include("/include/parts/summary-news.html")
+
+<!-- エントリーサマリー：スタッフブログ -->
+@include("/include/entry/summary-top-blog.html", {"module_id": "summary_blog"})
+
+<!-- 動画 -->
+@include("/include/parts/video.html", {"module_id": "MF_video"})
+
+<!-- バナーモジュール（枠付き） -->
+@include("/include/siteparts/banner-bordered.html", {"module_id": "banner_related_site"})
+
+@include("/include/parts/cta-top.html", {"module_id":"MF_cta_top"})
+@endsection
+
+
+@section("footer-cta")
+
+@endsection
+
+
+@section("footer")
+<footer class="footer">
+  <!-- フッター -->
+  @include("/include/global/footer.html")
+</footer>
+@endsection

@@ -1,0 +1,29 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<section class="section js-animation">
+  <div class="acms-container">
+    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+    <header class="section-vertical-header">
+      <h2 class="section-vertical-heading">{module_heading}</h2>
+      <p class="section-vertical-text">{module_heading_small}</p>
+    </header><!-- END moduleField -->
+    <div class="section-vertical-main">
+      <ul class="card-bordered-list"><!-- BEGIN unit:loop -->
+        <!-- BEGIN entry:loop -->
+        <li class="acms-col-md-6 card-bordered-item js-animation-row">
+          <div class="card-bordered">
+            <a href="{url}" class="card-bordered-link">
+              <div class="card-bordered-img-wrap">
+                <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail_image@path}[resizeImg(580,220)]" alt="" width="580" height="220" class="acms-img-responsive card-bordered-img">
+              </div>
+              <div class="card-bordered-text-inline">
+                <h3 class="card-bordered-title">{title}</h3>
+                <p class="card-bordered-read-more"><span class="acms-hide-visually-xs acms-hide-visually-sm acms-hide-visually-md">詳しく知る</span></p>
+              </div>
+            </a>
+          </div>
+        </li><!-- END entry:loop -->
+        <!-- END unit:loop -->
+      </ul>
+    </div>
+  </div>
+</section><!-- END_MODULE Entry_Summary -->

@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section class="section-animation-bg js-animation">
+  <div class="acms-container">
+    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
+    <div class="section-horizontal">
+      <header class="section-horizontal-header">
+        <div class="section-horizontal-header-inner">
+          <h2 class="section-horizontal-heading -large">{module_heading}</h2>
+          <p class="section-horizontal-heading-side">{module_heading_small}</p>
+        </div>
+      </header>
+      <div class="video-modal">
+        <div class="video-modal-thumbnail">
+          <a href="#" class="js-modal-video" data-video-id="{video_id}">
+            <img src="https://img.youtube.com/vi/{video_id}/maxresdefault.jpg" alt="" width="772" height="429" class="acms-img-responsive">
+            <div class="video-modal-play-icon-wrap">
+              <span class="video-modal-play-icon"><span class="acms-hide-visually">動画を再生する</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- END_MODULE Module_Field -->

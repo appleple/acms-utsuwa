@@ -1,0 +1,34 @@
+@extends("/_layouts/base.html")
+
+
+@section("page-title")
+<!-- ページタイトル -->
+@include("/include/global/page-title.html")
+
+<!-- BEGIN_IF [%{ECD}/nem] -->
+@include("/include/entry/local-nav.html", {"module_id": "entry_list"})<!-- END_IF -->
+
+@endsection
+
+@section("main")
+
+  <div class="acms-container">
+  <!-- エントリー本文：採用情報用 -->
+  @include("/include/entry/body-recruit.html", {"module_id": "body_no_date"})
+  </div>
+
+  <!-- BEGIN_MODULE Touch_NotEdit -->
+  <div class="js-sticky sticky-contents is-centered">
+    <div class="acms-container">
+      <!-- 応募ボタン -->
+      <!-- BEGIN_MODULE Entry_Field --><!-- BEGIN btn_url:veil -->
+      <a href="{btn_url}" class="button is-lg is-width-lg is-rounded is-shadow">{btn_text}</a>
+      <!-- END btn_url:veil --><!-- END_MODULE Entry_Field -->
+    </div>
+  </div><!-- END_MODULE Touch_NotEdit -->
+@endsection
+
+
+@section("footer-cta")
+@include("/include/parts/cta.html", {"module_id": "cta_category","enable_margin_top": "true"})
+@endsection

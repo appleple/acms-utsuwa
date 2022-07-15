@@ -1,0 +1,64 @@
+<div class="acms-container">
+  <div class="acms-grid">
+    <div class="footer-group">
+      <div class="acms-col-md-4 footer-item">
+        <div class="footer-item-title">
+          <!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
+          <div>
+            @include("/include/edit/blog-custom.html")<!-- BEGIN site_description:veil -->
+            <p class="footer-company-catch">{site_description}</p><!-- END site_description:veil -->
+            <h2 class="footer-company-title"><img src="%{MEDIA_ARCHIVES_DIR}{site_footer_logo@path}" alt="{site_name}"
+                    class="footer-company-logo" role="img"></h2>
+
+            <address class="footer-address"><!-- BEGIN company_name:veil -->
+              <h3 class="footer-address-name">{company_name}</h3><!-- END company_name:veil --><!-- BEGIN zip:veil -->
+              <p class="footer-address-item">〒{zip}</p><!-- END zip:veil --><!-- BEGIN address:veil -->
+              <p class="footer-address-item">{address}</p><!-- END address:veil --><!-- BEGIN tel:veil -->
+              <p class="footer-address-item">TEL : <a href="tel:{tel}">{tel}</a>{tel_time}</p><!-- END tel:veil -->
+              <div class="acms-hide-md acms-hide-lg  acms-hide-xl">
+                <!-- SNSアカウント一覧 -->
+                <div class="footer-sns">
+                  @include("/include/parts/sns-accounts.html")
+                </div>
+              </div>
+            </address>
+          </div><!-- END_MODULE Blog_Field -->
+        </div>
+      </div>
+
+      <div class="acms-col-md-8 footer-item">
+        <div class="footer-item-nav">
+          <div class="acms-grid acms-hide acms-block-md acms-block-lg acms-block-xl">
+            <div class="acms-col-md-3">
+
+              @include("/include/parts/footer-nav.html",{"module_id": "nav_footer01"})
+
+            </div>
+            <div class="acms-col-md-3">
+              @include("/include/parts/footer-nav.html",{"module_id":"nav_footer02"})
+            </div>
+            <div class="acms-col-md-3">
+              @include("/include/parts/footer-nav.html",{"module_id":"nav_footer03"})
+            </div>
+            <div class="acms-col-md-3">
+              @include("/include/parts/footer-nav.html",{"module_id":"nav_footer04"})
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
+<div class="footer-bottom">
+  <div class="acms-container">
+    <div class="footer-bottom-inner">
+      <p class="footer-copyright-text">{site_footer}</p>
+      <div class="footer-bottom-sns">
+        <!-- SNSアカウント一覧 -->
+        @include("/include/parts/sns-accounts.html")
+      </div>
+    </div>
+  </div>
+</div><!-- END_MODULE Blog_Field -->

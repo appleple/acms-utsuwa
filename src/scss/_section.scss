@@ -1,0 +1,296 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　セクション
+------------------------------ */
+.section {
+  padding: 50px 0;
+
+  &.is-bg {
+    background: global.$color-gray10;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .section {
+    padding: 100px 0;
+  }
+}
+
+
+/* 水平方向の見出し */
+.section-horizontal-header {
+  margin: 0 0 25px 0;
+}
+
+.section-horizontal-header-inner {
+  position: relative;
+  padding: 5px 0;
+}
+
+.section-horizontal-heading {
+  margin: 0 0 5px 0;
+  color: global.$color-primary;
+  @include acms.font-size(36);
+  line-height: 1.5;
+
+  &.-large {
+    @include acms.font-size(36);
+  }
+}
+.section-horizontal-heading-side {
+  margin: 0;
+  color: global.$color-text-side;
+  font-weight: bold;
+  line-height: 1.5;
+  @include acms.font-size(14);
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform,opacity;
+  }
+  .js .js-animation.is-show & {
+    animation: fade-in .2s .5s 1 both;
+  }
+}
+.section-horizontal-lead {
+  margin: 0 0 1em 0;
+  color: global.$color-text-side;
+  font-weight: bold;
+  line-height: 1.5;
+  @include acms.font-size(20);
+}
+.section-horizontal-text p {
+  @include acms.font-size(14);
+  color: global.$color-text-side;
+  line-height: 1.7;
+}
+
+.section-horizontal-footer {
+  margin: 40px 0 0 0;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min){
+  .section-horizontal-header-inner {
+    padding: 15px 20px 15px  0;
+  }
+  .section-horizontal-heading {
+    @include acms.font-size(36);
+
+    &.-large {
+      margin: 0 0 5px 0;
+      @include acms.font-size(46);
+    }
+  }
+
+  .section-horizontal-heading-side {
+    @include acms.font-size(18);
+  }
+
+  .section-horizontal-lead {
+    color: global.$color-text-side;
+    @include acms.font-size(26);
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-lg-min){
+
+  .section-horizontal {
+    display: flex;
+  }
+
+  .section-horizontal-header {
+    width: 30%;
+  }
+
+  .section-horizontal-header-inner {
+    padding: 25px 20px 25px 0;
+  }
+
+  .section-horizontal-heading {
+    @include acms.font-size(46);
+
+    &.-large {
+      margin: 0 0 5px 0;
+      @include acms.font-size(56);
+    }
+  }
+
+  .section-horizontal-heading-side {
+    @include acms.font-size(18);
+  }
+
+  .section-horizontal-lead {
+    color: global.$color-text-side;
+    @include acms.font-size(34);
+  }
+
+  .section-horizontal-text p {
+    @include acms.font-size(16);
+    color: global.$color-text-side;
+    line-height: 1.7;
+  }
+
+
+  .section-horizontal-main {
+    width: 70%;
+  }
+
+  .section-horizontal-footer {
+    margin: 80px 0 0 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-xl-min){
+  .section-horizontal-heading {
+    &.-large {
+      @include acms.font-size(76);
+    }
+  }
+
+}
+
+
+/* 垂直方向の見出し */
+.section-vertical-header {
+  position: relative;
+  margin: 0 0 65px 0;
+  text-align: center;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -35px;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    margin: 0 auto;
+    background: global.$color-gray40;
+    content: "";
+  }
+
+  .js .js-animation & {
+    &::after {
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: .2s ease-out .5s;
+      will-change: transform,opacity;
+    }
+  }
+  .js .js-animation.is-show & {
+    &::after {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.section-vertical-heading {
+  margin: 0;
+  color: global.$color-primary;
+  @include acms.font-size(30);
+  line-height: 1.5;
+}
+
+.section-vertical-text {
+  margin: 0 0 10px 0;
+  @include acms.font-size(14);
+  color: global.$color-text-side;
+  font-weight: bold;
+
+  .js-animation & {
+    opacity: 0;
+    will-change: transform,opacity;
+  }
+  .js-animation.is-show & {
+    animation: fade-in .2s .5s 1 both;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min){
+  .section-vertical-heading {
+    @include acms.font-size(36);
+  }
+  .section-vertical-text {
+    @include acms.font-size(16);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min){
+  .section-vertical-header {
+    margin: 0 0 105px 0;
+    &::after {
+      bottom: -65px;
+      height: 40px;
+    }
+
+  }
+  .section-vertical-heading {
+    @include acms.font-size(46);
+  }
+  .section-vertical-text {
+    @include acms.font-size(18);
+  }
+}
+
+
+
+/* 背景あり */
+.section-animation-bg {
+  position: relative;
+  margin: 30px 0;
+  padding: 20px 10px;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 50%;
+    background: global.$color-gray20;
+    content: "";
+  }
+
+  .js &.js-animation:before {
+    transform: translateX(100%);
+    transition: .8s .2s cubic-bezier(.1,.7,.51,.88);
+    will-change: transform;
+  }
+  .js &.js-animation.is-show:before {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min){
+  .section-animation-bg {
+    margin: 60px 0;
+    padding: 50px 0;
+    .section-horizontal-header {
+      position: absolute;
+    }
+  }
+}
+
+
+/* セクション内で使用するボタンのレイアウト */
+.section-button {
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+
+
+/* 視覚的なセパレーター */
+.section-separator {
+  max-width: global.$container;
+  margin: 0 auto;
+  border: 0;
+  border-top: global.$border-width-sm solid global.$color-gray30;
+}

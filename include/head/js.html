@@ -1,0 +1,15 @@
+<script src="%{JS_LIB_JQUERY_DIR}jquery-%{JS_LIB_JQUERY_DIR_VERSION}.min.js" charset="UTF-8"></script>
+<!-- 投稿者以上以上の場合だけ組み込みJSを読み込むようにする -->
+<!-- BEGIN_MODULE Touch_SessionWithContribution --><!-- BEGIN_MODULE Js -->
+<script src="/acms.js{arguments}" charset="UTF-8" id="acms-js"></script><!-- END_MODULE Js -->
+<!-- END_MODULE Touch_SessionWithContribution -->
+
+<script src="/dest/vendor.js" async></script>
+<script src="/dest/bundle.js" async></script>
+<!--BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->{google_analytics}[raw]<!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_Unlogin -->
+
+<!-- IE11対応*CSS変数 -->
+<script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+<script>
+  cssVars({});
+</script>

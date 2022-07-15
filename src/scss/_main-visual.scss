@@ -1,0 +1,122 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　メインビジュアル
+------------------------------ */
+
+.main-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-visual-bg {
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 320px;
+  background: no-repeat center;
+  background-size: cover;
+  animation: zoom 3s .3s 1 both;
+  animation-duration: ease-out;
+}
+
+.main-visual-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: global.$color-text-inverse;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    content: "";
+  }
+
+}
+
+.main-visual-catch {
+  margin: 0 0 10px 0;
+  @include acms.font-size(43);
+  line-height: 1.2;
+  animation: fade-in .3s .8s 1 both;
+  will-change: transform, opacity;
+}
+
+.main-visual-catch-sub {
+  margin: 0;
+  @include acms.font-size(14);
+  line-height: 1.7;
+  animation: fade-in .3s 1.3s 1 both;
+  will-change: transform, opacity;
+}
+
+.main-visual-scroll {
+  position: absolute;
+  bottom: 35px;
+  margin: 0;
+  animation: fade-in .3s 2.8s 1 both;
+  will-change: transform, opacity;
+}
+
+.main-visual-scroll-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:focus {
+    color: currentColor;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: .6;
+  }
+
+  &::after {
+    display: inline-block;
+    width: 9px;
+    height: 18px;
+    margin: 5px 0 0 0;
+    background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: rotate(90deg);
+    content: "";
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .main-visual-bg {
+    height: 70vh;
+  }
+
+  .main-visual-box {
+    padding: 50px 70px;
+  }
+
+  .main-visual-catch {
+    @include acms.font-size(64);
+  }
+
+  .main-visual-catch-sub {
+    @include acms.font-size(20);
+  }
+}

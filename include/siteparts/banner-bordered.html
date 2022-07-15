@@ -1,0 +1,17 @@
+<!-- BEGIN_MODULE Media_Banner id="{{module_id}}" -->
+<section class="section js-animation">
+  <div class="acms-container">
+    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+    <header class="section-vertical-header">
+      <h2 class="section-vertical-heading">{module_heading}</h2>
+      <p class="section-vertical-text">{module_heading_small}</p>
+    </header><!-- END moduleField -->
+    <div>
+      <ul class="acms-grid banner-list"><!-- BEGIN banner:loop -->
+        <li class="acms-col-sm-4 banner-item"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img -->
+          <a href="{url}" target="{target}" class="banner-link"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive banner-img"></a><!-- END banner#img -->
+        </li><!-- END banner:loop -->
+      </ul>
+    </div>
+  </div>
+</section><!-- END_MODULE Media_Banner -->

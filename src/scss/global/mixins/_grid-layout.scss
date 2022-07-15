@@ -1,0 +1,18 @@
+@use "../variables" as var;
+
+// ------------------------------
+// CSS Grid Layout
+// ------------------------------
+/** CSS Grid Layoutで複数の行を指定する */
+@mixin create-grid-column-span($start, $end) {
+  grid-column-start: $start;
+  grid-column-end: $end;
+  -ms-grid-column-span: $end - $start;
+}
+
+/** CSS Grid Layoutで複数の列を指定する */
+@mixin create-grid-row-span($start, $end) {
+  grid-row-start: $start;
+  grid-row-end: $end;
+  -ms-grid-row-span: $end - $start;
+}

@@ -1,0 +1,109 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ヘッドライン
+------------------------------ */
+.headline {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border-radius: global.$border-radius-lg;
+
+  .js &.js-animation-row {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js &.js-animation-row.is-show {
+    animation: fade-in .2s .3s 1 both;
+  }
+}
+
+.headline-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: 1.5;
+  border-bottom: global.$border-width-sm solid global.$color-gray30;
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.headline-link {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  color: global.$color-text;
+  background: global.$color-white;
+
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: global.$color-text;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: global.$color-gray20;
+  }
+
+}
+
+.headline-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 10px 0;
+  color: global.$color-text-side;
+  line-height: 1.2;
+  @include acms.font-size(14);
+}
+
+
+.headline-date {
+  margin-right: 10px;
+  color: global.$color-text-side;
+}
+
+.headline-date + .headline-category {
+  margin-right: 10px;
+  padding-left: 15px;
+  border-left: global.$border-width-sm solid global.$color-gray70;
+}
+
+.headline-text {
+  position: relative;
+  @include acms.font-size(15);
+  font-weight: bold;
+}
+
+.headline-badge-news {
+  display: inline-block;
+  margin: 2px 10px 0 0;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: text-top;
+  @include acms.font-size(12);
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .headline-link {
+    padding: 30px;
+  }
+
+  .headline-text {
+    @include acms.font-size(18);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .headline-text {
+    @include acms.font-size(20);
+  }
+}

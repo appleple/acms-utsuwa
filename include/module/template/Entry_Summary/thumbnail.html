@@ -1,0 +1,24 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<div>
+  @include("/admin/module/setting.html)
+  <ul class="card-list entry-reset"><!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="card-item acms-col-sm-6">
+      <div class="card is-lg">
+        <a href="{url}" class="card-link">
+          <div class="card-img-wrap"><!-- BEGIN_IF [{thumbnail_image@path}/nem] -->
+            <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail_image@path}[resizeImg(580,345)]" width="580" height="345" alt="" class="acms-img-responsive card-img"><!--  ELSE_IF [{path}/nem] -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(580,345)]" width="580" height="345" alt="" class="acms-img-responsive card-img"><!-- END_IF -->
+          </div>
+          <h3 class="card-title">{title}</h3>
+          <p class="card-text">{page_description}</p>
+          <div>
+            <p class="card-read-more">詳しく知る</p>
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+</div>
+<!-- END_MODULE Entry_Summary -->

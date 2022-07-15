@@ -1,0 +1,21 @@
+<!-- BEGIN_MODULE Tag_Filter id="{{module_id}}" -->
+<section>
+  @include("/admin/module/setting.html")
+  <!-- BEGIN tagBox -->
+  <header>
+    <h2 class="heading-md heading-line acms-margin-bottom-large">選択されているタグ : <!-- BEGIN selected:loop --><a href="{url}" class="tag-link">#{name}</a><!-- BEGIN glue --> , <!-- END glue --><!-- END selected:loop --></h2>
+  </header>
+  <div>
+    <div>
+      <!-- BEGIN choice:veil -->
+      <h3 class="heading-sm acms-margin-top-medium acms-margin-bottom-medium">さらにタグを絞り込む</h3>
+      <ul class="tag-list acms-margin-bottom-large">
+        <!-- BEGIN choice:loop -->
+        <li class="tag-item"><a href="{url}" class="tag-link">#{name}</a></li><!-- END choice:loop -->
+      </ul>
+      <!-- END choice:veil -->
+    </div>
+  </div>
+  <!-- END tagBox -->
+</section>
+<!-- END_MODULE Tag_Filter -->

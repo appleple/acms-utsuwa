@@ -1,0 +1,24 @@
+<h3 class="acms-admin-admin-title2">アクセス解析</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th><label for="input-text-google_analytics">Google Analytics</label><i data-acms-tooltip="Google Analytics の解析用のタグを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <textarea name="google_analytics" cols="60" rows="5" id="input-text-google_analytics">{google_analytics}</textarea>
+      <input type="hidden" name="field[]" value="google_analytics" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-ga_api_view_id">Google Analytics View ID</label><i data-acms-tooltip="ダッシュボードにGAのグラフを出すための設定です。ビューのIDを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <input type="text" name="ga_api_view_id" value="{ga_api_view_id}" placeholder="00000000" id="input-text-ga_api_view_id" />
+      <input type="hidden" name="field[]" value="ga_api_view_id" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-ga_api_client_id">Google Analytics API ClientID</label><i data-acms-tooltip="<a href='https://console.developers.google.com' target='_blank'>Google Analytics API</a> のClient IDを設定します" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <input type="text" name="ga_api_client_id" value="{ga_api_client_id}" placeholder="xxxxxxxxx.apps.googleusercontent.com" id="input-text-ga_api_client_id" class="acms-admin-form-width-large" />
+      <input type="hidden" name="field[]" value="ga_api_client_id" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,13 @@
+@use "../variables" as var;
+
+// 強調
+@mixin entry-em($color, $color-dot) {
+  padding: 0 0 5px 0;
+  color: $color;
+  font-weight: bold;
+  font-style: normal;
+  background-image: radial-gradient($color-dot 30%, transparent 30%);
+  background-repeat: repeat-x;
+  background-position: bottom -2px left;
+  background-size: 8px 8px;
+}

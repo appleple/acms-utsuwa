@@ -1,0 +1,17 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　組み込みJSの上書き
+------------------------------ */
+
+/* モーダルビデオ
+------------------------------ */
+.modal-video-body {
+  padding: 0 10px;
+}
+
+.modal-video-close-btn {
+  top: -45px!important;
+  right: 0!important;
+}

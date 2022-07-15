@@ -1,0 +1,23 @@
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section id="message" class="section js-animation">
+  <div class="acms-container">
+    <div class="section-horizontal">
+      @include("/include/edit/module-custom.html")
+      <header class="section-horizontal-header">
+        <div class="section-horizontal-header-inner"><!-- BEGIN module_heading:veil -->
+          <h2 class="section-horizontal-heading">{module_heading}</h2><!-- END module_heading:veil -->
+          <!-- BEGIN module_heading_small:veil -->
+          <p class="section-horizontal-heading-side">{module_heading_small}[raw]</p>
+          <!-- END module_heading_small:veil -->
+        </div>
+      </header>
+      <div class="section-horizontal-main"><!-- BEGIN content_lead:veil -->
+        <p class="section-horizontal-lead">{content_lead}[nl2br]</p><!-- END content_lead:veil -->
+        <!-- BEGIN content_text:veil -->
+        <div class="section-horizontal-text">
+          {content_text}[markdown]
+        </div><!-- END content_text:veil -->
+      </div>
+    </div>
+  </div>
+</section><!-- END_MODULE Module_Field -->

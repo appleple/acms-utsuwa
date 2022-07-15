@@ -1,0 +1,68 @@
+<!-- BEGIN_MODULE Blog_Field -->
+<!-- BEGIN_IF [{ga_api_client_id}/nem/_and_/{ga_api_view_id}/nem] -->
+<script>
+  (function(w,d,s,g,js,fs){
+    g=w.gapi||(w.gapi=\\{\\});g.analytics=\\{q:[],ready:function(f)\\{this.q.push(f);\\}\\};
+    js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+    js.src='https://apis.google.com/js/platform.js';
+    fs.parentNode.insertBefore(js,fs);js.onload=function()\\{g.load('analytics');\\};
+  }(window,document,'script'));
+
+  gapi.analytics.ready(function() {
+    /**
+     * Authorize the user immediately if the user has already granted access.
+     * If no access has been created, render an authorize button inside the
+     * element with the ID "embed-api-auth-container".
+     */
+    gapi.analytics.auth.authorize({
+      container: 'embed-api-auth-container',
+      clientid: '{ga_api_client_id}'
+    });
+
+    /**
+     * Create a new DataChart instance with the given query parameters
+     * and Google chart options. It will be rendered inside an element
+     * with the id "chart-container".
+     */
+    new gapi.analytics.googleCharts.DataChart({
+      query: {
+        metrics: 'ga:sessions',
+        dimensions: 'ga:date',
+        ids: 'ga:{ga_api_view_id}',
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday'
+      },
+      chart: {
+        container: 'chart-container',
+        type: 'LINE',
+        options: {
+          width: '100%'
+        }
+      }
+    }).execute();
+  });
+</script>
+
+<h2 class="acms-admin-admin-title2"><!--T-->Google Analytics<!--/T--></h2>
+<div id="embed-api-auth-container" style="margin-top: 10px;"></div>
+<div id="chart-container"></div>
+<!-- END_IF -->
+<!-- END_MODULE Blog_Field -->
+
+<!-- BEGIN_MODULE Links id="admin_link" -->
+<h2 class="acms-admin-admin-title2">リンク集</h2>
+<div>
+<table class="acms-admin-admin-mini-table acms-admin-admin-icon-table">
+  <thead></thead>
+  <tbody>
+  <!-- BEGIN loop -->
+  <tr>
+    <td class="acms-admin-config-name">
+    <a href="{url}"><i class="acms-admin-icon acms-admin-icon-config_links"></i>{name}</a>
+    </td>
+  </tr>
+  <!-- END loop -->
+  </tbody>
+</table>
+</div>
+<!-- END_MODULE Links -->

@@ -1,0 +1,12 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+  <div class="acms-container">
+  <!-- エントリー本文 -->
+  @include("/include/entry/body.html", {"module_id": "body_no_date"})
+  </div>
+@endsection
+
+@section("footer-cta")
+@include("/include/parts/cta.html", {"module_id": "cta_category","enable_margin_top": "true"})
+@endsection

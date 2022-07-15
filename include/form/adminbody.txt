@@ -1,0 +1,25 @@
+お問い合わせがありました。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+
+■お問い合わせ<!-- BEGIN_MODULE Form2_Unit -->
+メールアドレス  : \{email\}
+<!-- BEGIN column:loop --><!-- BEGIN text -->
+{label}  : \{form-unit-{utid}\}<!-- END text --><!-- BEGIN textarea -->
+{label}  : \{form-unit-{utid}\}<!-- END textarea --><!-- BEGIN radio -->
+{label}  : \{form-unit-{utid}\}<!-- END radio --><!-- BEGIN select -->
+{label}  : \{form-unit-{utid}\}<!-- END select --><!-- BEGIN checkbox -->
+{label}  : <!-- BEGIN\ form-unit-{utid}:loop -->\{form-unit-{utid}\} <!-- END\ form-unit-{utid}:loop --><!-- END checkbox -->
+<!-- END column:loop --><!-- END_MODULE Form2_Unit -->
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+--------------------------------------------------------------------------------------------------
+%{BLOG_NAME}
+
+〒000-0000
+○○県○○○市○○区 ××の××の××
+電話番号： 123-456-7890
+E-mail： ■■■@■■■■.■■

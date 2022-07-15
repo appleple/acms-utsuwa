@@ -1,0 +1,63 @@
+<h3 class="acms-admin-admin-title2">SEO</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th><label for="input-text-blog_meta_title">タイトル - <small>title</small></label><i data-acms-tooltip="ブログの METAタグ（Title）を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <input type="text" name="blog_meta_title" value="{blog_meta_title}" id="input-text-blog_meta_title" class="js-countup acms-admin-form-width-medium" data-max="99999" data-label-target=".keyword_countup" /> | %{ROOT_BLOG_NAME}
+      <input type="hidden" name="field[]" value="blog_meta_title" />
+      <input type="hidden" name="blog_meta_title:search" value="0" />
+      <span class="keyword_countup"></span> 文字
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-blog_meta_keywords">キーワード - <small>keywords</small></label><i data-acms-tooltip="ブログの METAタグ（Keywords）を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <input type="text" name="blog_meta_keywords" value="{blog_meta_keywords}" id="input-text-blog_meta_keywords" class="acms-admin-form-width-large" />
+      <input type="hidden" name="field[]" value="blog_meta_keywords" />
+      <input type="hidden" name="blog_meta_keywords:search" value="0" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-blog_meta_description">概要文 - <small>description</small></label><i data-acms-tooltip="ブログの METAタグ（Description）を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <textarea name="blog_meta_description" rows="5" id="input-text-blog_meta_description" class="js-countup acms-admin-form-width-full" data-max="99999" data-label-target=".description_countup">{blog_meta_description}</textarea>
+      <input type="hidden" name="field[]" value="blog_meta_description" />
+      <input type="hidden" name="blog_meta_description:search" value="0" />
+      <p class="acms-admin-float-right"><span class="description_countup"></span> 文字</p>
+    </td>
+  </tr>
+  <tr>
+    <th>検索エンジン - <small>noindex</small><i data-acms-tooltip="チェックするとこのブログをインデックスされないようにします。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="blog_meta_robots[]" value="noindex"{blog_meta_robots:checked#noindex} id="input-checkbox-blog-meta-robots" />
+        <label for="input-checkbox-blog-meta-robots"><i class="acms-admin-ico-checkbox"></i>このコンテンツを検索エンジンに登録しない</label>
+      </div>
+      <input type="hidden" name="field[]" value="blog_meta_robots" />
+    </td>
+  </tr>
+  <tr>
+    <th>サイトマップ - <small>sitemap</small><i data-acms-tooltip="チェックするとこのブログをサイトマップに出力しないようにします。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="blog_meta_sitemap[]" value="disabled"{blog_meta_sitemap:checked#disabled} id="input-checkbox-blog-meta-sitemap" />
+        <label for="input-checkbox-blog-meta-sitemap">
+          <i class="acms-admin-ico-checkbox"></i>このコンテンツをサイトマップ( sitemap.xml )に表示しない
+        </label>
+      </div>
+      <input type="hidden" name="field[]" value="blog_meta_sitemap" />
+    </td>
+  </tr>
+  <tr>
+    <th>RSS - <small>rss</small><i data-acms-tooltip="チェックするとこのブログのエントリーをRSSに出力しないようにします。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <div class="acms-admin-form-checkbox">
+        <input type="checkbox" name="blog_meta_rss[]" value="disabled"{blog_meta_rss:checked#disabled} id="input-checkbox-blog-meta-rss" />
+        <label for="input-checkbox-blog-meta-rss">
+          <i class="acms-admin-ico-checkbox"></i>このコンテンツをRSS(rss2.xml)に表示しない
+        </label>
+      </div>
+      <input type="hidden" name="field[]" value="blog_meta_rss" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,37 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　トピックパス
+------------------------------ */
+.topicpath {
+  padding: 12px 0;
+  background: global.$color-gray20;
+}
+
+.topicpath-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topicpath-item {
+  display: inline-block;
+}
+
+.topicpath-item:not(:last-child) {
+  &:after {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px;
+    border-top: 1px solid global.$color-gray40;
+    border-right: 1px solid global.$color-gray40;
+    transform: rotate(45deg);
+    content: "";
+  }
+}
+
+.topicpath-link {
+  @include global.link-color(global.$color-text)
+}

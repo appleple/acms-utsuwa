@@ -1,0 +1,17 @@
+<!-- BEGIN_MODULE Media_Banner id="banner_sns" -->
+<nav>
+  @include("/admin/module/setting.html")
+  <ul class="footer-sns-group">
+    <!-- BEGIN banner:loop -->
+    <li class="footer-sns-item">
+      <!-- BEGIN banner#src -->
+      {src}[raw]
+      <!-- END banner#src -->
+      <!-- BEGIN banner#img -->
+      <a href="{url}" target="{target}" class="footer-sns-link"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="26" height="26" class="acms-img-responsive" alt="{alt}"/></a>
+      <!-- END banner#img -->
+    </li>
+    <!-- END banner:loop -->
+  </ul>
+</nav>
+<!-- END_MODULE Media_Banner -->

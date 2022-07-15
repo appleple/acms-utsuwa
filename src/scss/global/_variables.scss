@@ -1,0 +1,173 @@
+// ------------------------------
+//　設定
+// ------------------------------
+$enable-iphonex: true;
+
+// ------------------------------
+//　ベース
+// ------------------------------
+// コンテイナー幅
+$container    : 1240px;
+$container-md : 1040px;
+$container-sm : 840px;
+
+
+// グリッドの間隔
+$col-gutter   : 20px;
+
+
+
+// ------------------------------
+//　ファイルのパス
+// ------------------------------
+$icon-font-path : '/themes/system/fonts/'; // フォントのパスを上書き
+$root-theme-img : '../../images/';
+
+
+
+// ------------------------------
+//　フォント
+// ------------------------------
+$font-hiragino       : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial, Hiragino Kaku Gothic Pro,Meiryo,sans-serif;
+$font-yu-gothic      : Segoe UI,Roboto,Helvetica Neue,Arial, YuGothic,Yu Gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
+$font-meiryo         : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial, Verdana, Meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
+$font-base           : 'Roboto Condensed',$font-yu-gothic;
+
+
+// ------------------------------
+//　カラー
+// ------------------------------
+
+// プライマリーカラー
+$color-primary         : var(--color-primary);
+$color-primary-light   : var(--color-primary-light);
+$color-primary-bg      : $color-primary-light;
+$color-primary-hover   : var(--color-primary-hover);
+
+$color-secondary       : var(--color-secondary);
+
+$color-tertiary       : var(--color-tertiary);
+$color-tertiary-light : var(--color-tertiary-light);
+
+$color-white           : var(--color-white);
+$color-black           : var(--color-black);
+
+$color-gray10          : var(--color-gray10);
+$color-gray20          : var(--color-gray20);
+$color-gray30          : var(--color-gray30);
+$color-gray40          : var(--color-gray40);
+$color-gray50          : var(--color-gray50);
+$color-gray60          : var(--color-gray60);
+$color-gray70          : var(--color-gray70);
+$color-gray80          : var(--color-gray80);
+$color-gray90          : var(--color-gray90);
+$color-gray100         : var(--color-gray100);
+
+$color-form-bg         : $color-gray10;
+$color-form-border     : $color-gray40;
+
+$color-link            : var(--color-link);
+
+$color-required        : var(--color-required);
+$color-error           : var(--color-error);
+
+$color-focus-visible   : #0061d1;
+
+$color-text            : $color-gray100;
+$color-text-side       : $color-gray90;
+$color-text-inverse    : $color-white;
+
+$color-text-primary    : $color-primary;
+$color-text-secondary  : $color-secondary;
+
+$color-text-point      : var(--color-text-point);
+
+$box-shadow-error      : var(--box-shadow-error);
+
+
+
+
+// ------------------------------
+//　ボーダー
+// ------------------------------
+$border-width-sm      : 1px;
+$border-width-md      : 2px;
+$border-width-lg      : 4px;
+$border-link          : $border-width-sm dashed $color-link;
+$border-footer        : $border-width-sm solid $color-gray30;
+
+$border-radius-sm     : 3px;
+$border-radius-md     : 4px;
+$border-radius-lg     : 6px;
+$border-radius-xl     : 10px;
+$border-radius-xxl    : 30px;
+$border-radius-round  : 10em;
+$border-radius-circle : 100%;
+
+
+
+// ------------------------------
+//　z-index
+// ------------------------------
+$zindex-fixed-contents : 9000;
+$zindex-header         : 10000;
+$zindex-mobile-nav     : 10001;
+$zindex-mobile-nav-btn : 10002;
+
+
+
+
+// ------------------------------
+//　ヘッダー
+// ------------------------------
+$header-height       : 60px;
+$header-height-fixed : 50px;
+
+
+
+
+// ------------------------------
+//　ページタイトル
+// ------------------------------
+$page-title-height           : 120px;
+$page-title-height-image     : 160px;
+$page-title-margin-bottom    : 40px;
+
+$page-title-height-md        : 215px;
+$page-title-height-image-md  : 310px;
+$page-title-margin-bottom-md : 80px;
+
+
+
+
+
+// ------------------------------
+//　エントリー
+// ------------------------------
+$entry-element-margin-bottom-sm : 20px !default;
+$entry-element-margin-bottom-md : 30px !default;
+$entry-element-margin-bottom-lg : 40px !default;
+$entry-element-margin-bottom-xl : 60px !default;
+
+//$entry-class                    : entry-style;
+
+//$unit-margin-bottom             : 40px;
+$unit-margin-bottom-lg          : 60px;
+
+
+
+
+// ------------------------------
+//　CTAパーツ
+// ------------------------------
+$cta-space-md: 60px;
+$cta-space-lg: 100px;
+
+
+
+
+// ------------------------------
+//　フッター
+// ------------------------------
+$footer-margin-top-md: 60px;
+$footer-margin-top-lg: 100px;

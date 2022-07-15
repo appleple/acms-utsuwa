@@ -1,0 +1,21 @@
+<!-- BEGIN_MODULE Touch_NotEdit -->
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section class="cta js-animation">
+  <div class="acms-container">
+    <!-- BEGIN moduleField -->
+    <header class="section-vertical-header">
+      <h2 id="summary_blog" class="section-vertical-heading">{module_heading}</h2>
+      <p class="section-vertical-text">{module_heading_small}</p>
+    </header><!-- END moduleField -->
+    @include("/include/edit/module-custom.html")
+    <div class="cta-round"><!-- BEGIN cta_lead:veil -->
+      <h2 class="cta-round-title">{cta_lead}[raw|nl2br]</h2><!-- END cta_lead:veil -->
+      <!-- BEGIN_IF [{btn_text}/nem/_and_/{btn_url}/nem] -->
+      <p class="cta-round-button-wrap"><a href="{btn_url}[buildGlobalVars]"
+              class="button is-shadow is-xl js-viewing-indelible">{btn_text}</a></p><!-- END_IF -->
+      <!-- BEGIN cta_micro_copy:veil -->
+      <p class="cta-round-micro-copy">{cta_micro_copy}[raw]</p><!-- END cta_micro_copy:veil -->
+    </div>
+  </div>
+</section>
+<!-- END_MODULE Module_Field --><!-- END_MODULE Touch_NotEdit -->

@@ -1,0 +1,56 @@
+<!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <h1 class="page-title">お探しのページがみつかりませんでした</h1>
+      <p class="page-title-en">404 Not Found</p>
+    </div>
+  </div>
+</div><!-- ELSE_IF [%{CCD}/em] --><!-- BEGIN_MODULE Touch_Keyword -->
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <h1 class="page-title">検索結果</h1>
+      <p class="page-title-en">Search Result</p>
+    </div>
+  </div>
+</div><!-- END_MODULE Touch_Keyword -->
+<!-- BEGIN_MODULE Touch_Tag -->
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <h1 class="page-title">タグ一覧</h1>
+      <p class="page-title-en">Tags</p>
+    </div>
+  </div>
+</div><!-- END_MODULE Touch_Tag --><!-- BEGIN_MODULE Touch_Entry -->
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <h1 class="page-title">%{ENTRY_TITLE}</h1><!-- BEGIN_MODULE Entry_Field --><!-- BEGIN page_title_en:veil -->
+      <p class="page-title-en">{page_title_en}</p><!-- END page_title_en:veil --><!-- END_MODULE Entry_Field -->
+    </div>
+  </div>
+</div><!-- END_MODULE Touch_Entry -->
+<!-- ELSE -->
+<!-- BEGIN_MODULE Touch_Category --><!-- BEGIN_MODULE Category_Field -->
+<div class="page-title-wrapper" <!-- BEGIN page_image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page_image@path});"<!-- END page_image:veil -->>
+<!-- BEGIN_MODULE Touch_SessionWithAdministration --><p class="acms-admin-module-edit"><a
+        href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom"
+        class="js-dialog-btn js-link_no_rewrite">編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+<div class="page-title-filter"></div>
+<div class="page-title-inner">
+  <div class="acms-container">
+    <!-- BEGIN_MODULE Touch_Entry -->
+    <p class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</p>
+    <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_NotEntry -->
+    <h1 class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</h1>
+    <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_NotEntry -->
+  </div>
+</div>
+</div><!-- END_MODULE Category_Field --><!-- END_MODULE Touch_Category -->
+<!-- END_IF -->
