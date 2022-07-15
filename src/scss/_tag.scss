@@ -1,0 +1,87 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　タグ
+------------------------------ */
+
+.tag-wrapper {
+  margin: 10px 0;
+}
+
+.tag-box {
+  padding: 15px 10px 5px;
+  background: global.$color-gray20;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-item {
+  margin: 0 5px 10px;
+  @include acms.font-size(18);
+  color: global.$color-text-side;
+  font-weight: bold;
+
+  .tag-list.is-sm & {
+    @include acms.font-size(14);
+  }
+}
+
+.tag-link {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px 15px;
+  color: global.$color-text;
+  font-weight: bold;
+  background: global.$color-white;
+  border: global.$border-width-sm solid global.$color-gray40;
+  border-radius: 10em;
+
+  &:link:hover {
+    color: global.$color-text;
+    text-decoration: none;
+    background: global.$color-gray20;
+  }
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: global.$color-text;
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .tag-wrapper {
+    margin: 40px 0;
+  }
+  .tag-box {
+    padding: 30px 30px 20px 30px;
+  }
+  .tag-list {
+    flex-direction: row;
+    margin: 0 -10px;
+
+    &.is-sm {
+      margin: 0 -5px;
+    }
+  }
+  .tag-item {
+    @include acms.font-size(18);
+
+    .tag-list.is-sm & {
+      margin: 0 5px 5px;
+      @include acms.font-size(14);
+    }
+  }
+
+  .tag-link {
+    padding: 8px 15px;
+  }
+}

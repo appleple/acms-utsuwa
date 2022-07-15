@@ -1,0 +1,39 @@
+<!-- 構造化データ -->
+<!-- BEGIN_MODULE Topicpath id="topicpath" -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":
+    [
+      <!-- BEGIN blog:loop --><!-- BEGIN glue -->,<!-- END glue -->{
+      "@type": "ListItem",
+      "position": {sNum},
+      "item":
+      {
+        "@id": "{url}",
+        "name": "{name}"
+      }
+    }<!-- END blog:loop --><!-- BEGIN category:loop --><!-- BEGIN glue -->,<!-- END glue -->
+      {
+        "@type": "ListItem",
+        "position": {sNum},
+        "item":
+        {
+          "@id": "{url}",
+          "name": "{name}"
+        }
+      }<!-- END category:loop --><!-- BEGIN entry --><!-- BEGIN glue -->,<!-- END glue -->
+      {
+        "@type": "ListItem",
+        "position": {sNum},
+        "item":
+        {
+          "@id": "{url}",
+          "name": "{title}"
+        }
+      }<!-- END entry -->
+    ]
+  }
+</script>
+<!-- END_MODULE Topicpath -->

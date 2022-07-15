@@ -1,0 +1,119 @@
+<!-- BEGIN_MODULE Form2_Unit -->
+<ul class="form-group-list">
+  <li class="form-group">
+    <div class="form-label"><span class="label-required">必須</span><label for="email">メールアドレス</label></div>
+    <div class="form-control">
+			<input id="email" name="email" type="email" value="\{email\}" class="acms-form-width-full">
+			<input type="hidden" name="field[]" value="email">
+			<input type="hidden" name="email:v#required">
+			<input type="hidden" name="email:c" value="a">
+			<input type="hidden" name="email:v#email">
+			<!-- BEGIN\ email:validator -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>正しいメールアドレスを入力してください。</p>
+			<!-- END\ email:validator -->
+    </div>
+  </li>
+
+	<!-- BEGIN column:loop -->
+	<!-- BEGIN text -->
+  <li class="form-group">
+    <div class="form-label"><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --><label for="form-unit-{utid}">{label}</label></div>
+		<div class="form-control">
+			<input type="text" id="form-unit-{utid}" name="form-unit-{utid}" value="\{form-unit-{utid}\}" size="20" class="acms-form-width-full">
+			<input type="hidden" name="field[]" value="form-unit-{utid}">
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}"><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+    </div>
+  </li><!-- END text -->
+
+	<!-- BEGIN textarea -->
+  <li class="form-group">
+    <div class="form-label"><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --><label for="form-unit-{utid}">{label}</label></div>
+		<div class="form-control">
+			<textarea name="form-unit-{utid}" id="form-unit-{utid}" rows="5" class="acms-form-width-full">\{form-unit-{utid}\}</textarea>
+			<input type="hidden" name="field[]" value="form-unit-{utid}">
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}"><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+    </div>
+  </li><!-- END textarea -->
+
+	<!-- BEGIN radio -->
+  <li class="form-group">
+    <div class="form-label"><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF -->{label}</div>
+    <div class="form-control">
+			<!-- BEGIN radio#val:loop -->
+			<div class="acms-form-radio">
+				<input type="radio" id="form-unit-{utid}-{value}[base64]"  name="form-unit-{utid}" value="{value}"\{form-unit-{utid}:checked#{value}\}>
+				<label for="form-unit-{utid}-{value}[base64]">
+				<i class="acms-ico-radio"></i>
+				{value}
+				</label>
+			</div><!-- END radio#val:loop -->
+			<input type="hidden" name="field[]" value="form-unit-{utid}">
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}"><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+    </div>
+  </li><!-- END radio -->
+
+	<!-- BEGIN select -->
+  <li class="form-group">
+    <div class="form-label"><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --><label for="form-unit-{utid}">{label}</label></div>
+		<div class="form-control">
+			<select id="form-unit-{utid}" name="form-unit-{utid}">
+				<!-- BEGIN select#val:loop -->
+				<option value="{value}"\{form-unit-{utid}:selected#{value}\}<!-- BEGIN_IF [\{form-unit-{utid}\}/em/_and_/{i}/eq/1] --> selected=""selected<!-- END_IF -->>{value}</option><!-- END select#val:loop -->
+			</select>
+			<input type="hidden" name="field[]" value="form-unit-{utid}">
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}"><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+    </div>
+  </li><!-- END select -->
+
+	<!-- BEGIN checkbox -->
+  <li class="form-group">
+    <div class="form-label"><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF -->{label}</div>
+    <div class="form-control">
+			<!-- BEGIN checkbox#val:loop -->
+			<div class="acms-form-checkbox">
+				<input type="checkbox" id="form-unit-{utid}-{value}[base64]" name="form-unit-{utid}[]" value="{value}"\{form-unit-{utid}:checked#{value}\}>
+				<label for="form-unit-{utid}-{value}[base64]">
+				<i class="acms-ico-checkbox"></i>
+				{value}
+				</label>
+			</div><!-- END checkbox#val:loop -->
+			<input type="hidden" name="field[]" value="form-unit-{utid}">
+			<!-- BEGIN validator:loop -->
+			<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
+			<input type="hidden" name="form-unit-{vutid}:c" value="{val}"><!-- END converter:loop -->
+			<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} -->
+			<p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>{message}</p><!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validatorMessage:loop -->
+    </div>
+  </li><!-- END checkbox -->
+
+	<!-- END column:loop -->
+</ul>
+<!-- END_MODULE Form2_Unit -->
+
+
+<div class="form-control">
+  <label class="acms-form-checkbox form-checkbox-only" for="input-privacy-on">
+    <input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on}/><i class="acms-ico-checkbox"></i><span class="form-checkbox-only-label"><a href="%{BASE_URL}privacy.html" target="_blank">プライバシーボリシー</a>に同意する</span><span class="label-required">必須</span>
+  </label>
+  <input type="hidden" name="field[]" value="privacy"/>
+  <input type="hidden" name="privacy:v#required">
+  <!-- BEGIN\ privacy:validator -->
+  <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>プライバシーポリシーを確認し、同意いただけないとお問い合わせに応じることができません。</p>
+  <!-- END\ privacy:validator -->
+</div>

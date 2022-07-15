@@ -1,0 +1,49 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ヘッダー
+------------------------------ */
+.header-wrap {
+  height: global.$header-height;
+}
+.header {
+  position: relative;
+  z-index: global.$zindex-header;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: global.$header-height;
+  background: global.$color-white;
+  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+}
+
+.header-item-title {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.header-title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+
+.header-item-nav {
+  position: relative;
+  height: 100%;
+  margin-left: auto;
+  @include acms.font-size(18);
+}
+
+@media (max-width : acms.$breakpoint-lg-max) {
+  .header {
+    position: fixed;
+    height: global.$header-height-fixed;
+  }
+
+  .header-wrap {
+    height: global.$header-height-fixed;
+  }
+}

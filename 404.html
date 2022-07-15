@@ -1,0 +1,40 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+
+  <div class="not-found-content">
+    <h1 class="not-found-title">404</h1>
+    <p class="not-found-paragraph"><span class="text-word-break">申し訳ございませんが、</span><span class="text-word-break">お探しのページは</span><span
+            class="text-word-break">存在していないようです。</span></p>
+
+    <p><a href="%{BASE_URL}" class="button">トップページに戻る</a></p>
+  </div>
+
+
+  <section class="search">
+    <div>
+      <h2 class="heading-sm"><label for="searchForm">キーワードから検索する</label></h2>
+    </div>
+    @include("/include/parts/form-search.html")
+  </section>
+
+
+  <section>
+    <h2 class="heading-sm">よく検索されているキーワード</h2>
+    <div class="tag-box">
+      <!-- BEGIN_MODULE Links id="links_keyword" -->
+      <div>
+        @include("/admin/module/setting.html")
+        <ul class="tag-list">
+          <!-- BEGIN loop -->
+          <li class="tag-item"><a href="%{BASE_URL}search.html/?keyword={name}" class="tag-link">{name}</a></li>
+          <!-- END loop -->
+        </ul>
+      </div>
+      <!-- END_MODULE Links -->
+
+    </div>
+  </section>
+</div>
+@endsection

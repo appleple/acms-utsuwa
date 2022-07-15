@@ -1,0 +1,25 @@
+<!-- BEGIN_MODULE Touch_NotEdit -->
+<!-- BEGIN_IF [<!-- BEGIN_MODULE Entry_Field -->{btn_url}<!-- END_MODULE Entry_Field -->/nem] -->
+<!-- BEGIN_MODULE Entry_Field id="{{module_id}}" -->
+<section class="cta js-animation <!-- BEGIN_IF [{{enable_margin_top}}/eq/true] --> is-cta-margin-top<!-- END_IF -->">
+  @include(/include/edit/category-custom.html)
+  <div class="acms-container"><!-- BEGIN_MODULE Category_Field id="{{module_id}}" -->
+    <h2 class="cta-title">{cta_lead}[nl2br]</h2><!-- END_MODULE Category_Field -->
+    <p class="cta-button-wrap"><a href="{btn_url}[buildGlobalVars]" class="button is-shadow is-xl js-viewing-indelible">{btn_text}</a></p>
+    <p class="cta-link-wrap"><a href="%{CATEGORY_URL}" class="cta-link js-viewing-indelible">一覧へ戻る</a></p>
+  </div>
+</section>
+<!-- END_MODULE Entry_Field -->
+<!-- ELSE -->
+<!-- BEGIN_MODULE Category_Field id="{{module_id}}" -->
+<section class="cta js-animation <!-- BEGIN_IF [{{enable_margin_top}}/eq/true] --> is-cta-margin-top<!-- END_IF -->">
+  @include(/include/edit/category-custom.html)
+  <div class="acms-container">
+    <h2 class="cta-title">{cta_lead}[nl2br]</h2>
+    <p class="cta-button-wrap"><a href="{btn_url}[buildGlobalVars]" class="button is-shadow is-xl js-viewing-indelible">{btn_text}</a></p>
+    <p class="cta-link-wrap"><a href="%{CATEGORY_URL}" class="cta-link js-viewing-indelible">一覧へ戻る</a></p>
+  </div>
+</section>
+<!-- END_MODULE Category_Field -->
+<!-- END_IF  -->
+<!-- END_MODULE Touch_NotEdit -->

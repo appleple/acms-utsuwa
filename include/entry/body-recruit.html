@@ -1,0 +1,78 @@
+<!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry entry">
+  <h2 class="not-found-title">Not Found</h2>
+  <p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+</section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+
+<!-- BEGIN_MODULE Touch_Login -->
+<div class="acms-form-group">
+  @include("/admin/entry/revision-info.html")
+</div><!-- END_MODULE Touch_Login -->
+
+<article class="entry clearfix {entry:loop.class}">
+  @include("/admin/entry/title.html")
+
+  <!-- BEGIN_IF [%{ECD}/nem] -->
+  <!-- エントリーのタイトル　開始▼▼ -->
+  <!-- BEGIN title:veil -->
+  <header class="entry-header-visual"><!-- BEGIN bg_image:veil -->
+    <img src="%{MEDIA_ARCHIVES_DIR}{bg_image@path}" alt="" class="entry-header-visual-img"
+            width="{bg_image@path}[imageRatioSizeW(380)]" height="380"><!-- END bg_image:veil -->
+    <div class="entry-header-visual-box">
+      <h1 class="entry-header-visual-title entryTitle">{title}</h1>
+      <p class="entry-header-visual-desc">{page_description}</p>
+      <p class="entry-header-visual-btn-wrap"><a href="{btn_url}" class="button is-inverse">{btn_text}</a></p>
+    </div>
+  </header>
+  <!-- END title:veil --><!-- END_IF -->
+
+
+    <!-- BEGIN entry:veil -->
+    <div class="js-sticky-area">
+      <div class="acms-entry entry-style">
+        <div class="acms-grid entry-style-grid">
+          <!-- カスタムフィールドの読み込み -->
+          @include("/include/entry/field.html")
+
+          <!-- BEGIN unit:veil -->
+          @include("/include/unit.html")
+          <hr class="clearHidden"/>
+          <!-- END unit:veil -->
+          <!-- 続きを読む -->
+          @include("/include/parts/continue.html")
+
+          <!-- BEGIN_MODULE Touch_Entry -->
+          <!-- カスタムフィールドの読み込み -->
+          @include("/include/entry/field_foot.html")
+          <!-- END_MODULE Touch_Entry -->
+        </div>
+      </div>
+    </div>
+    <!-- END entry:veil -->
+
+    <!-- BEGIN formBody -->
+    @include("/include/form/unit.html", {"form_heading":"応募フォーム","form_message_step":"弊社にご興味を持ってくださり、ありがとうございます！<br>以下のフォームにあなたの情報をご記入ください。","form_message_result":"お問い合わせありがとうございました。以下の内容で送信しました。"})
+    <hr class="clearHidden"/>
+    <!-- END formBody -->
+
+    @include("/admin/entry/edit-%{IS_ADMIN}.html")
+
+    <div class="acms-box-medium">
+      @include("/admin/entry/action.html")
+    </div>
+
+
+
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- ページャー -->
+@include("/include/parts/pager.html")
+
+<!-- END_MODULE Entry_Body -->

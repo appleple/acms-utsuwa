@@ -1,0 +1,14 @@
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section class="main-visual">
+  @include("/include/edit/module-custom.html", {"hash":"#acms_box3"})
+  <div class="main-visual-bg" style="background-image: url(%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image@path});"></div>
+  <div class="acms-container">
+    <div class="main-visual-box<!-- BEGIN main_visual_position:veil --> is-{main_visual_position}<!-- END main_visual_position:veil -->">
+      <!-- BEGIN main_visual_copy_main:veil -->
+      <h1 class="main-visual-catch">{main_visual_copy_main}[raw|nl2br]</h1><!-- END main_visual_copy_main:veil -->
+      <!-- BEGIN main_visual_copy_sub:veil -->
+      <p class="main-visual-catch-sub">{main_visual_copy_sub}[raw|nl2br]</p><!-- END main_visual_copy_sub:veil -->
+      <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
+    </div>
+  </div>
+</section><!-- END_MODULE Module_Field -->

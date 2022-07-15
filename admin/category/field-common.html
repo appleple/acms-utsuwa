@@ -1,0 +1,42 @@
+<h3 class="acms-admin-admin-title2">ページタイトル設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{page_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="page_image" value="{page_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="page_image" />
+      <input type="hidden" name="page_image:extension" value="media" />
+    </td>
+  </tr>
+</table>
+
+
+<h3 class="acms-admin-admin-title2">CTAの設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th><label for="input-textarea_cta_lead">リード文</label><i data-acms-tooltip="リード文を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <textarea name="cta_lead" rows="5" id="input-textarea_cta_lead" style="width:80%;">{cta_lead}</textarea>
+      <input type="hidden" name="field[]" value="cta_lead" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-btn_text">ボタンの文言</label></th>
+    <td>
+      <input type="text" name="btn_text" value="{btn_text}" id="input-text-btn_text" class="acms-admin-form-width-3quarters">
+      <input type="hidden" name="field[]" value="btn_text">
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-btn_url">ボタンのURL</label></th>
+    <td>
+      <input type="text" name="btn_url" value="{btn_url}" id="input-text-btn_url" class="acms-admin-form-width-3quarters">
+      <input type="hidden" name="field[]" value="btn_url">
+    </td>
+  </tr>
+</table>

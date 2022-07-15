@@ -1,0 +1,50 @@
+<!-- BEGIN_MODULE Form2_Unit -->
+<div class="acms-grid">
+  <h3 class="heading-sm heading-line heading-margin-top-none">送信内容</h3>
+  <table class="form-group-list is-confirm">
+    <tbody class="form-group-inner">
+      <tr class="form-group">
+        <th class="form-label">メールアドレス</th>
+        <td class="form-control">\{email\}</td>
+      </tr>
+
+      <!-- BEGIN column:loop -->
+      <!-- BEGIN text -->
+      <tr class="form-group">
+        <th class="form-label">{label}</th>
+        <td class="form-control">\{form-unit-{utid}\}</td>
+      </tr><!-- END text -->
+
+      <!-- BEGIN textarea -->
+      <tr class="form-group">
+        <th class="form-label">{label}</th>
+        <td class="form-control">\{form-unit-{utid}\}[escape|nl2br]</td>
+      </tr><!-- END textarea -->
+
+      <!-- BEGIN radio -->
+      <tr class="form-group">
+        <th class="form-label">{label}</th>
+        <td class="form-control">\{form-unit-{utid}\}</td>
+      </tr><!-- END radio -->
+
+      <!-- BEGIN select -->
+      <tr class="form-group">
+        <th class="form-label">{label}</th>
+        <td class="form-control">\{form-unit-{utid}\}</td>
+      </tr><!-- END select -->
+
+      <!-- BEGIN checkbox -->
+      <tr class="form-group">
+        <th class="form-label">{label}</th>
+        <td class="form-control"><!-- BEGIN\ form-unit-{utid}:veil -->
+          <ul class="unordered-list"><!-- BEGIN\ form-unit-{utid}:loop -->
+            <li>\{form-unit-{utid}\}</li><!-- END\ form-unit-{utid}:loop -->
+          </ul><!-- END\ form-unit-{utid}:veil -->
+        </td>
+      </tr><!-- END checkbox -->
+
+      <!-- END column:loop -->
+    </tbody>
+  </table>
+</div>
+<!-- END_MODULE Form2_Unit -->

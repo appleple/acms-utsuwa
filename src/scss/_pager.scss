@@ -1,0 +1,256 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ページャー
+------------------------------ */
+.pager {
+  margin: 0 -5px 40px -5px;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  @include acms.font-size(20);
+
+  li {
+    display: inline-block;
+    margin: 0 5px 10px;
+
+    &.cur { /* 現在いる位置 */
+      box-sizing: border-box;
+      width: 48px;
+      height: 48px;
+      padding: 5px;
+      color: global.$color-text-primary;
+      background: global.$color-white;
+      border: global.$border-width-md solid global.$color-primary;
+      border-radius: global.$border-radius-lg;
+    }
+
+    span:not([class]) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.pager-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  color: global.$color-text-inverse;
+  background: global.$color-primary;
+  border: 2px solid transparent;
+  border-radius: global.$border-radius-lg;
+
+  &:visited,
+  &:focus,
+  &:active {
+    color: global.$color-text-inverse;
+  }
+
+  &:hover {
+    color: global.$color-text-inverse;
+    text-decoration: none;
+    background: global.$color-primary-hover;
+  }
+
+  .svg-arrow-line {
+    fill: global.$color-text-inverse;
+  }
+}
+
+.pager-link-forward {
+  float: right;
+}
+
+.pager-link-prev {
+  float: left;
+}
+
+
+/* 前後リンク */
+.serial-nav {
+  margin: 0 0 60px 0;
+  border-top: global.$border-width-sm solid global.$color-gray40;
+}
+
+.serial-nav-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.serial-nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  line-height: 1.5;
+  border-bottom: global.$border-width-sm solid global.$color-gray40;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    color: global.$color-text;
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: global.$color-gray10;
+    }
+  }
+}
+
+.serial-nav-item-prev {
+  text-align: left;
+
+  a {
+    align-items: flex-start;
+  }
+
+  svg {
+    margin: 0 5px 0 0;
+  }
+}
+
+.serial-nav-item-next {
+  text-align: right;
+
+  a {
+    align-items: flex-end;
+  }
+
+  svg {
+    margin: 0 0 0 5px;
+  }
+}
+
+.serial-nav-item-index {
+  display: none;
+  width: auto;
+  font-weight: bold;
+  white-space: nowrap;
+  @include acms.font-size(16);
+
+  a {
+    align-items: center;
+  }
+}
+
+
+.serial-nav-arrow {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  @include acms.font-size(14);
+
+  svg {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+    background: global.$color-secondary;
+    border-radius: global.$border-radius-circle;
+  }
+}
+
+.serial-nav-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-weight: bold;
+  @include acms.font-size(16);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px;
+    color: global.$color-text;
+
+    &:hover,
+    &:visited,
+    &:focus,
+    &:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:hover {
+      text-decoration: none;
+      background: global.$color-gray10;
+    }
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .serial-nav {
+    margin: 0 0 60px 0;
+  }
+  .serial-nav-list {
+    flex-direction: row;
+  }
+
+  .serial-nav-item {
+    width: 50%;
+
+    a {
+      padding: 35px 20px;
+      border: 0;
+    }
+  }
+
+  .serial-nav-arrow {
+    @include acms.font-size(20);
+  }
+
+  .serial-nav-item-prev {
+    svg {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  .serial-nav-item-next {
+    svg {
+      margin: 0 0 0 15px;
+    }
+  }
+
+  .serial-nav-item-index {
+    display: flex;
+    width: auto;
+
+    a {
+      padding: 35px 40px;
+    }
+  }
+
+  .serial-nav-index {
+    display: none;
+  }
+}

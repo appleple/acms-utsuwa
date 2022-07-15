@@ -1,0 +1,46 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　テキストユニットのエディターの設定
+------------------------------ */
+/* エントリー内ボタン */
+.entryFormLiteEditor {
+  .text-point {
+    display: block;
+    color: global.$color-primary;
+  }
+
+  .text-word-break {
+    display: inline-block;
+
+
+    &::after {
+      margin: 0 2px;
+      color: global.$color-gray40;
+      content: "|";
+    }
+  }
+
+  em {
+    @include global.entry-em(global.$color-primary,global.$color-tertiary);
+  }
+
+  strong {
+    @include global.entry-strong(global.$color-tertiary-light);
+  }
+
+  a {
+    @include global.entry-link(global.$color-link,global.$border-link);
+  }
+}
+
+.acms-admin-table-admin-edit {
+  border-collapse: collapse;
+  .sortable-item {
+    border-top: 1px solid #CCC;
+    &:first-child {
+      border: 0;
+    }
+  }
+}

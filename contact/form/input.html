@@ -1,0 +1,220 @@
+
+<h3 class="heading-sm heading-line">お問い合わせ情報</h3>
+<ul class="form-group-list">
+<li class="form-group">
+  <div class="form-label">
+    <span class="label-required">必須</span><label for="description">ご用件</label>
+  </div>
+  <div class="form-control">
+    <select id="description" class="form-select" name="description" data-validator="description">
+      <option value=""<!-- BEGIN_IF [{description}/em] --> selected="selected"<!-- END_IF -->>選択してください</option>
+      <option value="ご質問"{description:selected#ご質問}>ご質問</option>
+      <option value="ご要望"{description:selected#ご要望}>ご要望</option>
+      <option value="資料請求"{description:selected#資料請求}>資料請求</option>
+      <option value="その他"{description:selected#その他}>その他</option>
+    </select>
+    <input type="hidden" name="field[]" value="description">
+    <input type="hidden" name="description:v#required" id="description-v-required">
+
+    <div role="alert" aria-live="assertive">
+      <div data-validator-label="description-v-required" class="validator-result-{description:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>お問い合わせ種類を選択してください。</p>
+      </div>
+    </div>
+  </div>
+</li>
+<li class="form-group">
+  <div class="form-label">
+    <span class="label-required">必須</span><label for="inquiry">お問い合わせ内容</label>
+  </div>
+  <div class="form-control">
+    <textarea id="inquiry" name="inquiry" rows="5" class="acms-form-width-full" placeholder="お問い合わせ内容を入力してください。" data-validator="inquiry">{inquiry}</textarea>
+    <input type="hidden" name="field[]" value="inquiry">
+    <input type="hidden" name="inquiry:v#required" id="inquiry-v-required">
+    <input type="hidden" name="inquiry:c" value="KV">
+
+    <div role="alert" aria-live="assertive">
+      <div data-validator-label="inquiry-v-required" class="validator-result-{inquiry:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>お問い合わせ内容を入力してください。</p>
+      </div>
+    </div>
+  </div>
+</li>
+</ul>
+
+
+<h3 class="heading-sm heading-line">お客様情報</h3>
+<ul class="form-group-list">
+<li class="form-group">
+  <div class="form-label"><span class="label-optional">任意</span><label for="organization">所属</label></div>
+  <div class="form-control">
+    <input id="organization" type="text" name="organization" autocomplete="organization" value="{organization}" class="acms-form-width-full" placeholder="例）株式会社〇〇〇">
+    <input type="hidden" name="field[]" value="organization">
+    <input type="hidden" name="organization:c" value="KV">
+    <p class="form-helper-text">個人の方は「なし」、学生の方は学校名を記入してください</p>
+  </div>
+</li>
+<li class="form-group">
+  <div class="form-label"><span class="label-required">必須</span><label for="name">お名前</label></div>
+  <div class="form-control">
+    <input id="name" type="text" name="name" autocomplete="name" class="acms-form-width-full" value="{name}" placeholder="例）山田 太郎" data-validator="name">
+    <input type="hidden" name="field[]" value="name">
+    <input type="hidden" name="name:v#required" id="name-v-required">
+    <input type="hidden" name="name:c" value="KV">
+
+    <div role="alert" aria-live="assertive">
+      <div data-validator-label="name-v-required" class="validator-result-{name:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>お名前を入力してください。</p>
+      </div>
+    </div>
+  </div>
+</li>
+<li class="form-group">
+  <div class="form-label">
+    <span class="label-required">必須</span><label for="email">メールアドレス</label>
+  </div>
+  <div class="form-control">
+    <input id="email" type="email" name="email" autocomplete="email" value="{email}" class="acms-form-width-full" placeholder="例）info@example.com" data-validator="email">
+    <input type="hidden" name="field[]" value="email">
+    <input type="hidden" name="email:v#required" id="email-v-required">
+    <input type="hidden" name="email:v#email" id="email-v-email">
+    <input type="hidden" name="email:c" value="a">
+
+    <p class="form-helper-text">ご記入いただいたメールアドレスに返信します</p>
+
+    <div data-validator-label="email-v-required" class="validator-result-{email:v#required}">
+      <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>メールアドレスを入力してください。</p>
+    </div>
+    <div role="alert" aria-live="assertive">
+      <div data-validator-label="email-v-email" class="validator-result-{email:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>正しいメールアドレスを入力してください。</p>
+      </div>
+    </div>
+  </div>
+</li>
+<li class="form-group">
+  <div class="form-label"><span class="label-optional">任意</span><label for="tel">お電話番号</label></div>
+  <div class="form-control">
+    <input id="tel" type="tel" name="tel" autocomplete="tel" value="{tel}" size="12" class="acms-form-width-medium" placeholder="例）0123456789">
+    <input type="hidden" name="field[]" value="tel">
+    <input type="hidden" name="tel:c" value="n">
+    <p class="form-helper-text">「-（ハイフン）」なしで記入してください</p>
+  </div>
+</li>
+<li class="form-group">
+  <div class="form-label"><span class="label-required">必須</span>ご住所</div>
+  <div class="form-control">
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
+    <input type="hidden" class="p-country-name" value="Japan">
+    <div class="acms-form-group">
+      <span class="acms-margin-right-mini">
+        <label for="postal-code" class="acms-hide-visually">郵便番号</label>
+        <input type="text" inputmode="numeric" name="postal-code" autocomplete="postal-code" value="{postal-code}" id="postal-code" class="js-insert-hyphen p-postal-code acms-form-width-mini" size="9" maxlength="8" placeholder="例）0123456" data-validator="postal-code">
+        <input type="hidden" name="field[]" value="postal-code">
+        <input type="hidden" name="postal-code:c" value="a">
+      </span>
+
+      <label for="address-level1" class="acms-hide-visually">都道府県</label>
+      <select class="p-region form-select" name="address-level1" autocomplete="address-level1" id="address-level1" data-validator="address-level1">
+        <option value=""<!-- BEGIN_IF [{address-level1}/em] --> selected="selected"<!-- END_IF -->>都道府県</option>
+        <option value="北海道"{address-level1:selected#北海道}>北海道</option>
+
+        <option value="青森県"{address-level1:selected#青森県}>青森県</option>
+        <option value="岩手県"{address-level1:selected#岩手県}>岩手県</option>
+        <option value="宮城県"{address-level1:selected#宮城県}>宮城県</option>
+        <option value="秋田県"{address-level1:selected#秋田県}>秋田県</option>
+        <option value="山形県"{address-level1:selected#山形県}>山形県</option>
+        <option value="福島県"{address-level1:selected#福島県}>福島県</option>
+        <option value="茨城県"{address-level1:selected#茨城県}>茨城県</option>
+        <option value="栃木県"{address-level1:selected#栃木県}>栃木県</option>
+        <option value="群馬県"{address-level1:selected#群馬県}>群馬県</option>
+
+        <option value="埼玉県"{address-level1:selected#埼玉県}>埼玉県</option>
+        <option value="千葉県"{address-level1:selected#千葉県}>千葉県</option>
+        <option value="東京都"{address-level1:selected#東京都}>東京都</option>
+        <option value="神奈川県"{address-level1:selected#神奈川県}>神奈川県</option>
+        <option value="新潟県"{address-level1:selected#新潟県}>新潟県</option>
+        <option value="富山県"{address-level1:selected#富山県}>富山県</option>
+        <option value="石川県"{address-level1:selected#石川県}>石川県</option>
+        <option value="福井県"{address-level1:selected#福井県}>福井県</option>
+        <option value="山梨県"{address-level1:selected#山梨県}>山梨県</option>
+
+        <option value="長野県"{address-level1:selected#長野県}>長野県</option>
+        <option value="岐阜県"{address-level1:selected#岐阜県}>岐阜県</option>
+        <option value="静岡県"{address-level1:selected#静岡県}>静岡県</option>
+        <option value="愛知県"{address-level1:selected#愛知県}>愛知県</option>
+        <option value="三重県"{address-level1:selected#三重県}>三重県</option>
+        <option value="滋賀県"{address-level1:selected#滋賀県}>滋賀県</option>
+        <option value="京都府"{address-level1:selected#京都府}>京都府</option>
+        <option value="大阪府"{address-level1:selected#大阪府}>大阪府</option>
+        <option value="兵庫県"{address-level1:selected#兵庫県}>兵庫県</option>
+
+        <option value="奈良県"{address-level1:selected#奈良県}>奈良県</option>
+        <option value="和歌山県"{address-level1:selected#和歌山県}>和歌山県</option>
+        <option value="鳥取県"{address-level1:selected#鳥取県}>鳥取県</option>
+        <option value="島根県"{address-level1:selected#島根県}>島根県</option>
+        <option value="岡山県"{address-level1:selected#岡山県}>岡山県</option>
+        <option value="広島県"{address-level1:selected#広島県}>広島県</option>
+        <option value="山口県"{address-level1:selected#山口県}>山口県</option>
+        <option value="徳島県"{address-level1:selected#徳島県}>徳島県</option>
+        <option value="香川県"{address-level1:selected#香川県}>香川県</option>
+
+        <option value="愛媛県"{address-level1:selected#愛媛県}>愛媛県</option>
+        <option value="高知県"{address-level1:selected#高知県}>高知県</option>
+        <option value="福岡県"{address-level1:selected#福岡県}>福岡県</option>
+        <option value="佐賀県"{address-level1:selected#佐賀県}>佐賀県</option>
+        <option value="長崎県"{address-level1:selected#長崎県}>長崎県</option>
+        <option value="熊本県"{address-level1:selected#熊本県}>熊本県</option>
+        <option value="大分県"{address-level1:selected#大分県}>大分県</option>
+        <option value="宮崎県"{address-level1:selected#宮崎県}>宮崎県</option>
+        <option value="鹿児島県"{address-level1:selected#鹿児島県}>鹿児島県</option>
+
+        <option value="沖縄県"{address-level1:selected#沖縄県}>沖縄県</option>
+      </select>
+      <input type="hidden" name="field[]" value="address-level1">
+    </div>
+    <div class="acms-grid">
+      <div class="acms-col-12">
+        <label for="address1" class="acms-hide-visually">市区町村、番地</label>
+        <input id="address1" type="text" name="address1" autocomplete="address-level2 address-line1" value="{address1}" size="12" class="p-locality p-street-address p-extended-address acms-form-width-full acms-margin-bottom-small" placeholder="例）〇〇〇市〇〇区〇丁目〇〇-〇" data-validator="address1">
+        <input type="hidden" name="field[]" value="address1">
+      </div>
+      <div class="acms-col-12">
+        <label for="address2" class="acms-hide-visually">建物名</label>
+        <input id="address2" type="text" name="address2" autocomplete="address-line2" value="{address2}" size="12" class="acms-form-width-full" placeholder="例）〇〇〇〇ビル〇F">
+        <input type="hidden" name="field[]" value="address2">
+      </div>
+    </div>
+    <input type="hidden" name="postal-code:v#required" id="postal-code-v-required">
+    <input type="hidden" name="address-level1:v#required" id="address-level1-v-required">
+    <input type="hidden" name="address1:v#required" id="address1-v-required">
+    <input type="hidden" name="address1:c" value="KV">
+    <input type="hidden" name="address2:c" value="KV">
+
+    <div role="alert" aria-live="assertive">
+      <div data-validator-label="postal-code-v-required" class="validator-result-{postal-code:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>郵便番号を入力してください。</p>
+      </div>
+      <div data-validator-label="address-level1-v-required" class="validator-result-{address-level1:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>都道府県を選択してください。</p>
+      </div>
+      <div data-validator-label="address1-v-required" class="validator-result-{address1:v#required}">
+        <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>市区町村、番地を入力してください。</p>
+      </div>
+    </div>
+  </div>
+</li>
+</ul>
+
+
+<label class="acms-form-checkbox form-checkbox-only" for="input-privacy-on"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on}/><i class="acms-ico-checkbox"></i><span class="form-checkbox-only-label"><a href="%{BASE_URL}privacy.html" target="_blank">プライバシーボリシー</a>に同意する</span><span class="label-required">必須</span></label>
+<input type="hidden" name="field[]" value="privacy"/>
+<input type="hidden" name="privacy:v#required" id="privacy-v-required"/>
+
+<p class="form-helper-text" style="margin-bottom:20px;">※お客様の個人情報はお問い合わせへの対応のみに利用させていただきます。</p>
+
+<div role="alert" aria-live="assertive">
+  <div data-validator-label="privacy-v-required" class="validator-result-{privacy:v#required}">
+    <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>プライバシーポリシーを確認し、同意いただけないとお問い合わせに応じることができません。</p>
+  </div>
+</div>

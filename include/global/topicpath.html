@@ -1,0 +1,34 @@
+<!-- BEGIN_MODULE Topicpath id="topicpath" -->
+<nav class="topicpath" aria-label="現在位置">
+  <div class="acms-container sp-container">
+    <ol class="topicpath-list">
+      <!-- BEGIN blog:loop -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{name}</a>
+      </li>
+      <!-- END blog:loop -->
+
+      <!-- BEGIN category:loop -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{name}</a>
+      </li>
+      <!-- END category:loop -->
+
+      <!-- BEGIN entry -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{title}</a>
+      </li>
+      <!-- END entry --><!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
+      <li class="topicpath-item">
+        <a href="%{HTTP_ROOT}404.html" class="topicpath-link">お探しのページは見つかりませんでした</a>
+      </li><!-- END_IF -->
+    </ol>
+  </div>
+</nav>
+<!-- END_MODULE Topicpath -->

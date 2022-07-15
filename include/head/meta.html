@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+
+<!-- BEGIN_MODULE Ogp -->
+<!-- BEGIN_MODULE Touch_Entry -->
+<link rel="canonical" href="%{PERMALINK}">
+<!-- END_MODULE Touch_Entry -->
+
+<title>{title}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+@include("/include/head/robots.html")
+<meta property="og:url" content="%{PERMALINK}">
+<meta property="og:site_name" content="%{ROOT_BLOG_NAME}">
+<meta property="og:title" content="{title}">
+<meta property="og:type" content="{type}">
+
+<!-- BEGIN_IF [{description}[delnl]/nem/] -->
+<meta property="og:description" content="{description}[trim(200, '...')|delnl|escape]"><!-- END_IF --><!-- BEGIN_IF [{image}/nem/] -->
+<!-- BEGIN_IF [{image@type}/eq/media] -->
+<meta property="og:image" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}">
+<meta property="og:image:secure_url" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}" />
+<!-- ELSE -->
+<meta property="og:image" content="%{HTTP_ARCHIVES_DIR}{image}">
+<meta property="og:image:secure_url" content="%{HTTP_ARCHIVES_DIR}{image}" />
+<!-- END_IF -->
+<meta property="og:image:width" content="{image@x}" />
+<meta property="og:image:height" content="{image@y}" /><!-- END_IF --><!-- BEGIN_IF [{description}[delnl]/nem/] -->
+<meta name="description" content="{description}[trim(200, '...')|delnl|escape]"><!-- END_IF --><!-- BEGIN_IF [keywords/nem/] -->
+<meta name="keywords" content="{keywords}"><!-- END_IF -->
+
+<meta name="twitter:title" content="{title}">
+<!-- BEGIN_MODULE Touch_Entry -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- END_MODULE Touch_Entry -->
+<!-- BEGIN_MODULE Touch_NotEntry -->
+<meta name="twitter:card" content="summary">
+<!-- END_MODULE Touch_NotEntry -->
+
+<meta name="twitter:domain" content="%{DOMAIN}">
+<!-- BEGIN_IF [{image@type}/eq/media] -->
+<meta name="twitter:image" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}">
+<!-- ELSE -->
+<meta name="twitter:image" content="%{HTTP_ARCHIVES_DIR}{image}">
+<!-- END_IF -->
+<!-- END_MODULE Ogp -->
+
+<!-- BEGIN_MODULE Blog_Field id="BF_root" -->
+<!-- BEGIN_IF [{twitter_account}/nem/] -->
+<meta name="twitter:creator" content="@{twitter_account}">
+<!-- END_IF -->
+<!-- BEGIN_IF [{twitter_creator}/nem/] -->
+<meta name="twitter:site" content="@{twitter_creator}">
+<!-- END_IF -->
+<!-- BEGIN_IF [{twitter_creator}/nem/] -->
+<meta name="twitter:creator" content="@{twitter_creator}">
+<!-- END_IF -->
+
+<!-- BEGIN fb_admins:veil -->
+<meta property="fb:admins" content="{fb_admins}">
+<!-- END fb_admins:veil -->
+<!-- BEGIN google_site_verification:veil -->
+<meta name="google-site-verification" content="{google_site_verification}">
+<!-- END google_site_verification:veil -->
+<!-- END_MODULE Blog_Field -->

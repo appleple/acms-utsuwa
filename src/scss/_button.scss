@@ -1,0 +1,92 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ボタン
+------------------------------ */
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  color: global.$color-text-inverse;
+  font-weight: bold;
+  text-align: center;
+  background: global.$color-primary;
+  border: 0;
+  border-radius: global.$border-radius-md;
+  transition: background-color .2s;
+  @include acms.font-size(18);
+
+
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: global.$color-text-inverse;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: global.$color-primary-hover;
+  }
+
+  &.is-lg {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px 20px;
+  }
+
+  &.is-block {
+    width: 100%;
+  }
+
+  &.is-xl {
+    width: 280px;
+    max-width: 100%;
+  }
+
+  &.is-width-lg {
+    width: 280px;
+    max-width: 100%;
+  }
+
+  &.is-shadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+  }
+
+  &.is-shadow-light {
+    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  }
+
+  &.is-inverse {
+    color: global.$color-text;
+    background: global.$color-white;
+
+    &:hover {
+      background: global.$color-gray10;
+    }
+  }
+
+  &.is-bordered {
+    color: global.$color-text;
+    background: transparent;
+    border: global.$border-width-sm solid global.$color-gray40;
+
+    &:hover {
+      background: global.$color-gray20;
+    }
+  }
+
+  &.is-rounded {
+    border-radius: global.$border-radius-round;
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min){
+    &.is-xl {
+      min-width: 340px;
+      padding: 15px;
+      @include acms.font-size(24);
+    }
+  }
+}
+

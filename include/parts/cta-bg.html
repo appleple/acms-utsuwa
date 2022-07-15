@@ -1,0 +1,12 @@
+<!-- BEGIN_MODULE Touch_NotEdit -->
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section class="cta js-animation is-bg">
+  <div class="acms-container">
+    @include("/include/edit/module-custom.html")<!-- BEGIN cta_lead:veil -->
+    <h2 class="cta-title">{cta_lead}[nl2br]</h2><!-- END cta_lead:veil --><!-- BEGIN_IF [{btn_text}/nem/_and_/{btn_url}/nem] -->
+    <p class="cta-button-wrap"><a href="{btn_url}[buildGlobalVars]" class="button is-shadow is-xl js-viewing-indelible">{btn_text}</a>
+    </p><!-- END_IF --><!-- BEGIN cta_micro_copy:veil -->
+    <p>{cta_micro_copy}</p><!-- END cta_micro_copy:veil -->
+  </div>
+</section>
+<!-- END_MODULE Module_Field --><!-- END_MODULE Touch_NotEdit -->

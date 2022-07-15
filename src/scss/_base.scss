@@ -1,0 +1,134 @@
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ベース
+------------------------------ */
+html {
+  color: global.$color-text;
+  font-family: global.$font-base;
+  line-height: 1.7;
+  background: global.$color-white;
+}
+
+body {
+  @include acms.font-size(16);
+
+  /* calc(50% - 50vw)使用時に
+   EdgeとIE11で発生する横スクロール防止
+   （メッセージユニット・全幅ユニット）*/
+  overflow-x: hidden;
+}
+
+/* 游ゴシック体使用時にIE11で文字がうわずってしまう問題に対応 */
+_:lang(x)::-ms-backdrop, body {
+  font-family: "Segoe UI", Meiryo, sans-serif;
+}
+
+
+/* リンクの設定 */
+a {
+  color: global.$color-link;
+  text-decoration: none;
+  border: none;
+
+  &[href*="tel"] {
+    color: currentColor;
+    border-bottom: global.$border-width-sm dashed;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+a:visited {
+  color: global.$color-link;
+  text-decoration: none;
+}
+
+a:active {
+  color: global.$color-link;
+  text-decoration: none;
+}
+
+a:hover {
+  color: global.$color-link;
+  text-decoration: underline;
+}
+
+/* コンテナー */
+.acms-container {
+  max-width: global.$container;
+  padding-right: math.div(global.$col-gutter, 2);
+  padding-left: math.div(global.$col-gutter, 2);
+  @if (global.$enable-iphonex == true) {
+    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
+    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+  }
+
+  .acms-container {
+    padding: 0;
+  }
+}
+
+.container-md {
+  box-sizing: border-box;
+  max-width: global.$container-md;
+  margin: 0 auto;
+  padding-right: math.div(global.$col-gutter, 2);
+  padding-left: math.div(global.$col-gutter, 2);
+  @if (global.$enable-iphonex == true) {
+    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
+    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+  }
+}
+
+
+.container-sm {
+  box-sizing: border-box;
+  max-width: global.$container-sm;
+  margin: 0 auto;
+  padding-right: math.div(global.$col-gutter, 2);
+  padding-left: math.div(global.$col-gutter, 2);
+  @if (global.$enable-iphonex == true) {
+    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
+    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .acms-container,
+  .container-md,
+  .container-sm {
+    padding-right: (math.div(global.$col-gutter, 2)) + 20px;
+    padding-left: (math.div(global.$col-gutter, 2)) + 20px;
+  }
+}
+
+.sticky-contents {
+  position: fixed;
+  bottom: 0;
+  z-index: global.$zindex-fixed-contents;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 0;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: opacity .3s, transform 0.2s;
+
+  &.is-centered {
+    text-align: center;
+  }
+
+  &.is-show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}

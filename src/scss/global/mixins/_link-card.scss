@@ -1,0 +1,14 @@
+@use "../variables" as var;
+
+@mixin link-card($color) {
+  color: $color;
+  &:visited {
+    color: $color;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+    text-decoration: none;
+  }
+}

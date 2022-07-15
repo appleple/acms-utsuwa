@@ -1,0 +1,158 @@
+<html>
+@section("head")
+<head>
+  <style class="zccustomstyles" type="text/css">
+    .ze_body{
+      font-family: Verdana,arial, Helvetica, sans-serif;
+    }
+    .container {
+      background: #FAFAFA;
+    }
+    table.mail-body {
+      border-top: 4px solid #222222;
+    }
+    img {
+      display: block;
+      text-align: center;
+    }
+    table{
+      font-size: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 0;
+      width: 600px;
+      background: #FFF;
+    }
+    table.contents {
+      min-width: 100%;
+      margin: 0 0 30px;
+      color: #333;
+      font-size: 16px;
+    }
+    table.contents th,
+    table.contents td {
+      padding: 15px 20px;
+      border-bottom: #d6d6d6 1px solid;
+    }
+    table.contents th {
+      white-space: nowrap;
+    }
+    .no-scroll {
+      max-width: 600px;
+      padding: 0 20px;
+    }
+    .scroll {
+      max-width: 600px;
+      overflow: scroll;
+      padding: 0 20px;
+    }
+    .scroll table.contents {
+      white-space: nowrap;
+    }
+    th {
+      background-color: #efefef;
+      font-weight: bold;
+      text-align: left;
+    }
+    td {
+      border-bottom: #e3e3e3 1px dotted;
+      text-align: left;
+    }
+    h1.center,
+    h2.center,
+    h3.center,
+    p.center{
+      text-align: center;
+    }
+    h2 {
+      margin: 0 20px 30px;
+      padding: 0 0 15px;
+      color: #333;
+      font-size: 26px;
+      border-bottom: 1px solid #222222;
+    }
+    h3 {
+      margin: 0 0 30px;
+      color: #333;
+      font-size: 23px;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    p {
+      margin: 0 0 30px;
+      color: #333;
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 16px;
+    }
+    p.supplement {
+      font-size: 12px;
+      color: #606060;
+    }
+    ul,
+    ol {
+      margin: 0 20px 30px 20px;
+      color: #333;
+      font-size: 16px;
+    }
+    hr {
+      border-top: 1px dashed #8c8b8b;
+      margin: 40px 20px 40px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 0 30px;
+    }
+    .center {
+      text-align: center;
+    }
+    .color-primary {
+      color: #222222;
+      border-color: #222222;
+    }
+    .btn {
+      color: #FFF;
+      background: #4D4D4D;
+      display: block;
+      padding: 15px 30px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      text-decoration: none;
+      border-bottom: solid 2px #000;
+      margin: 0 auto 30px;
+      max-width: 250px;
+      text-align: center;
+      font-size: 22px;
+    }
+    .btn.color-primary {
+      background: #222222;
+      border-bottom: solid 2px #111111;
+    }
+    address {
+      padding: 0 20px 20px;
+    }
+  </style>
+</head>
+@endsection
+<body class="ze_body">
+<div class="container">
+  <center>
+    <table class="mail-body" cellpadding="0" cellspacing="0" border="0" width="600">
+      <tbody>
+      <tr>
+        <td>
+          @section("body")
+          @endsection
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </center>
+</div>
+</body>
+</html>
+
+
+
+

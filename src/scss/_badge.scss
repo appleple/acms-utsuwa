@@ -1,0 +1,14 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　バッジ
+------------------------------ */
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  color: global.$color-text-side;
+  background: global.$color-gray30;
+  border-radius: global.$border-radius-sm;
+}

@@ -1,0 +1,35 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<section class="section js-animation">
+  <div class="acms-container">
+    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+    <header class="section-vertical-header">
+      <h2 class="section-vertical-heading">{module_heading}</h2>
+      <p class="section-vertical-text">{module_heading_small}</p>
+    </header><!-- END moduleField -->
+    <div class="section-vertical-main">
+      <ul class="card-list"><!-- BEGIN unit:loop -->
+        <!-- BEGIN entry:loop -->
+        <li class="js-animation-row card-item acms-col-sm-6">
+          <div class="card is-lg">
+            <a href="{url}" class="card-link">
+              <div class="card-img-wrap">
+                <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail_image@path}[resizeImg(580,345)]" width="580" height="345"
+                        alt="" class="acms-img-responsive card-img">
+              </div>
+              <div>
+                <h3 class="card-title">{title}</h3>
+                <p class="card-text">{page_description}</p>
+                <div>
+                  <p class="card-read-more">詳しく知る</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </li><!-- END entry:loop -->
+        <!-- END unit:loop -->
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- END_MODULE Entry_Summary -->

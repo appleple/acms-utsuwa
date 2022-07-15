@@ -1,0 +1,32 @@
+<h3 class="acms-admin-admin-title2">プロフィール</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th><label for="input-text-user_title">肩書き</label><i data-acms-tooltip="ユーザーの肩書きです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <input type="text" name="user_title" value="{user_title}" size="30" id="input-text-user_title" />
+      <input type="hidden" name="field[]" value="user_title" />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="input-text-profile">自己紹介文</label><i data-acms-tooltip="ユーザーの詳細プロフィールです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <td>
+      <textarea name="profile" rows="5" cols="50" id="input-text-profile">{profile}</textarea>
+      <input type="hidden" name="field[]" value="profile" />
+    </td>
+  </tr>
+  <tr>
+    <th>画像
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの画像です。"></i>
+    </th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="image" value="{image}" class="js-value" />
+      <input type="hidden" name="field[]" value="image" />
+      <input type="hidden" name="image:extension" value="media" />
+    </td>
+  </tr>
+</table>

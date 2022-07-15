@@ -1,0 +1,9 @@
+<!-- モジュール種類別 -->
+@include("/admin/module/name-%{MODULE_NAME}.html")
+
+<!-- モジュールID別 -->
+@include("/admin/module/id-%{MODULE_ID}.html")
+
+<!-- BEGIN_IF [%{MODULE_ID}/lk/MF_cta_visual] -->
+@include("/admin/module/id-MF_cta_visual.html")
+<!-- END_IF -->
