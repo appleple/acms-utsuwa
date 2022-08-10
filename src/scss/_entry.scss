@@ -243,7 +243,7 @@
   & > .is-h2:first-child h2,
   & > .is-h3:first-child h3 ,
   & > .is-h4:first-child h4 {
-    margin-top: -(global.$page-title-margin-bottom +  20px);
+    margin-top: -(global.$page-title-margin-bottom +  1.25rem);
   }
 }
 
@@ -267,10 +267,10 @@
 
       &::before {
         position: absolute;
-        bottom: -20px;
+        bottom: -1.5rem;
         left: 0;
         display: block;
-        width: 60px;
+        width: 4rem;
         height: global.$border-width-lg;
         background: global.$color-primary;
         content: "";
@@ -289,14 +289,14 @@
       font-size: map.get(global.$font-scales, Heading-M);
 
       &.heading-line {
-        padding-bottom: 15px;
+        padding-bottom: 1rem;
       }
 
       &.heading-primary {
         margin-bottom: global.$entry-el-margin-lg;
 
         &::before {
-          bottom: -25px;
+          bottom: -1.5rem;
         }
       }
     }
@@ -345,7 +345,7 @@
     line-height: 1.4;
 
     &.heading-line {
-      padding-bottom: 12px;
+      padding-bottom: 1rem;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
@@ -495,10 +495,10 @@
 
       &::before {
         position: absolute;
-        top: 8px;
-        left: -20px;
-        width: 6px;
-        height: 6px;
+        top: .5rem;
+        left: -1.5rem;
+        width: .5rem;
+        height: .5rem;
         background: global.$color-secondary;
         border-radius: 50%;
         content: "";
@@ -532,12 +532,12 @@
       &::before {
         position: absolute;
         top: 2px;
-        left: -30px;
+        left: -2rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 20px;
-        height: 20px;
+        width: 1.5rem;
+        height: 1.5rem;
         margin: 0 1rem 0 0;
         color: global.$color-white;
         font-size: map.get(global.$font-scales, Body-S);
@@ -829,7 +829,7 @@
   }
 
   .columnIcon {
-    width: 29px;
+    width: 1.75rem;
     height: auto;
     margin: 0 1rem 0 0;
   }
@@ -1023,7 +1023,7 @@
   .message-bg {
     position: absolute;
     width: 100%;
-    height: 240px;
+    height: 15rem;
     background: no-repeat center;
     background-size: cover;
 
@@ -1042,7 +1042,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 240px;
+    height: 15rem;
     margin: 0 0 2.5rem 0;
     padding: 0 calc(global.$unit-gutter-var / 2);
     color: global.$color-text-inverse;
@@ -1059,7 +1059,7 @@
 
     &::before {
       display: inline-block;
-      width: 40px;
+      width: 2.5rem;
       height: 1px;
       margin: 0 1rem 0 0;
       vertical-align: middle;
@@ -1215,8 +1215,8 @@
 
       &:before {
         display: inline-block;
-        width: 18px;
-        height: 18px;
+        width: 1rem;
+        height: 1rem;
         margin: 0 .5rem 0 0;
         vertical-align: middle;
         background: url(#{global.$root-theme-img}icon-check.svg);
