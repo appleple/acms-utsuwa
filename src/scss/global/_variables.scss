@@ -197,13 +197,13 @@ $header-height-fixed : 3.5rem;
 // ------------------------------
 //　ページタイトル
 // ------------------------------
-$page-title-height           : 120px;
-$page-title-height-image     : 160px;
-$page-title-margin-bottom    : 40px;
+$page-title-height           : 7.5rem;
+$page-title-height-image     : 10rem;
+$page-title-margin-bottom    : 2.5rem;
 
-$page-title-height-md        : 215px;
-$page-title-height-image-md  : 310px;
-$page-title-margin-bottom-md : 80px;
+$page-title-height-md        : 13rem;
+$page-title-height-image-md  : 19rem;
+$page-title-margin-bottom-md : 5rem;
 
 
 
@@ -221,8 +221,8 @@ $btn-padding-x: 2rem;
 // ------------------------------
 //　CTAパーツ
 // ------------------------------
-$cta-space-md: map.get($spacers, 4);
-$cta-space-lg: map.get($spacers, 13);
+$cta-space-md: 1.5rem;
+$cta-space-lg: 6.5rem;
 
 
 
@@ -230,5 +230,5 @@ $cta-space-lg: map.get($spacers, 13);
 // ------------------------------
 //　フッター
 // ------------------------------
-$footer-margin-top-md: map.get($spacers, 4);
-$footer-margin-top-lg: map.get($spacers, 13);
+$footer-margin-top-md: 1.5rem;
+$footer-margin-top-lg: 6.5rem;
