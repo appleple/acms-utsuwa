@@ -66,8 +66,8 @@ a:hover {
   padding-right: calc(global.$unit-gutter-var / 2);
   padding-left: calc(global.$unit-gutter-var / 2);
   @if (global.$enable-iphonex == true) {
-    padding-right: calc((global.$unit-gutter-var / 2) + constant(safe-area-inset-right));
-    padding-left: calc((global.$unit-gutter-var / 2) + constant(safe-area-inset-left));
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
 
   .acms-container {
@@ -84,8 +84,8 @@ a:hover {
   padding-right: calc(global.$unit-gutter-var / 2);
   padding-left: calc(global.$unit-gutter-var / 2);
   @if (global.$enable-iphonex == true) {
-    padding-right: calc((global.$unit-gutter-var / 2) + env(safe-area-inset-right));
-    padding-left: calc((global.$unit-gutter-var / 2) + env(safe-area-inset-left));
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
 }
 
