@@ -1,6 +1,6 @@
 @forward "../../../../system/src/scss/global/variables" with (
-    $unit-gutter : 20px,
+    $unit-gutter : 2rem,
     $entry-class : entry-style,
-    $unit-margin-bottom : 30px
+    $unit-margin-bottom : 2rem
 );
 @forward "../../../../system/src/scss/global/mixins";

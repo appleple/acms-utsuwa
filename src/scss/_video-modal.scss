@@ -44,8 +44,8 @@ $_video-play-btn-arrow-width-lg: 32px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: (math.div($-video-play-btn-size, -2));
-  margin-left: (math.div($-video-play-btn-size, -2));
+  margin-top: calc( $_video-play-btn-size / -2 );
+  margin-left: calc( $_video-play-btn-size / -2 );
 
   .js .js-animation & {
     opacity: 0;
@@ -103,17 +103,17 @@ $_video-play-btn-arrow-width-lg: 32px;
   }
 
   .video-modal-play-icon-wrap {
-    margin-top: math.div($_video-play-btn-size-lg, -2);
-    margin-left: math.div($_video-play-btn-size-lg, -2);
+    margin-top: calc($_video-play-btn-size-lg / -2);
+    margin-left: calc($_video-play-btn-size-lg / -2);
   }
   .video-modal-play-icon {
     width: $_video-play-btn-size-lg;
     height: $_video-play-btn-size-lg;
 
     &:before {
-      margin-top: math.div($_video-play-btn-arrow-height-lg, -2);
+      margin-top: calc($_video-play-btn-arrow-height-lg / -2);
       margin-left: -13px;
-      border: math.div($_video-play-btn-arrow-height-lg, 2) solid transparent;
+      border: calc($_video-play-btn-arrow-height-lg / 2) solid transparent;
       border-left: $_video-play-btn-arrow-width-lg solid $_video-play-btn-arrow-color;
     }
   }

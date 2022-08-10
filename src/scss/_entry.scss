@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -9,13 +10,13 @@
 　ヘッダー
 ------------------------------ */
 .entry-header {
-  margin: 0 0 30px 0;
+  margin: 0 0 2rem 0;
 }
 
 .entry-header-info {
   margin: 0 0 5px 0;
   color: global.$color-gray80;
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, Body-M);
 }
 
 .entry-header-time + .entry-header-category {
@@ -40,9 +41,9 @@
 
 .entry-header-title {
   position: relative;
-  margin: 0 0 20px 0;
-  padding: 0 0 15px 0;
-  @include acms.font-size(22);
+  margin: 0 0 1.5rem 0;
+  padding: 0 0 1rem 0;
+  font-size: map.get(global.$font-scales, Heading-SS);
   border-bottom: global.$border-width-lg solid global.$color-gray30;
 
   &::before {
@@ -61,18 +62,18 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header {
-    margin: 0 0 45px 0;
+    margin: 0 0 3rem 0;
   }
 
   .entry-header-info {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, Body-M);
   }
 
 
   .entry-header-title {
-    margin: 0 0 20px 0;
-    padding: 0 0 30px 0;
-    @include acms.font-size(34);
+    margin: 0 0 1.5rem 0;
+    padding: 0 0 1.5rem 0;
+    font-size: map.get(global.$font-scales, Heading-M);
 
     &::before {
       bottom: -(global.$border-width-lg);
@@ -99,20 +100,20 @@
 
 .entry-header-visual-box {
   box-sizing: border-box;
-  margin: 0 (math.div(global.$col-gutter, -2));
-  padding: 30px 20px 30px 20px;
+  margin: 0 (math.div(global.$unit-gutter-var, -2));
+  padding: 2rem 1.5rem;
   color: global.$color-text-inverse;
   background: rgba(0,0,0,.7);
 }
 
 .entry-header-visual-title {
-  margin: 0 0 20px 0;
-  @include acms.font-size(24);
+  margin: 0 0 1.5rem 0;
+  font-size: map.get(global.$font-scales, Heading-S);
 }
 
 .entry-header-visual-desc {
-  margin: 0 0 20px 0;
-  @include acms.font-size(14);
+  margin: 0 0 1.5rem 0;
+  font-size: map.get(global.$font-scales, Body-S);
   line-height: 1.7;
 }
 
@@ -122,17 +123,17 @@
 
 @media screen and (min-width:acms.$breakpoint-md-min) {
   .entry-header-visual {
-    margin-bottom: 45px;
+    margin-bottom: 2.5rem;
   }
   .entry-header-visual-img {
     height: 380px;
   }
   .entry-header-visual-title {
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, Heading-S);
   }
   .entry-header-visual-desc {
-    margin: 0 0 25px 0;
-    @include acms.font-size(16);
+    margin: 0 0 global.$entry-el-margin-sm 0;
+    font-size: map.get(global.$font-scales, Body-M);
   }
 }
 
@@ -142,15 +143,15 @@
     position: absolute;
     top: 50%;
     width: 50%;
-    margin: 0 (math.div(acms.$unit-gutter, 2));
-    padding: 40px 40px 30px 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
     transform: translateY(-50%);
   }
   .entry-header-visual-title {
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, Heading-M);
   }
   .entry-header-visual-desc {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, Body-M);
   }
 }
 
@@ -198,7 +199,7 @@
 
   code {
     margin: 0 5px;
-    padding: 2px 5px;
+    padding: 2px .25rem;
     color: global.$color-primary;
     background: global.$color-white;
     border: global.$border-width-sm solid currentColor;
@@ -213,22 +214,27 @@
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-element-margin-bottom-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
+    margin-top: -(global.$entry-el-margin-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
     border-top: global.$header-height + 5px solid transparent;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
-      margin-top: -(global.$entry-element-margin-bottom-lg);
-      border-top: 50px solid transparent;
+      margin-top: -(global.$entry-el-margin-lg);
+      border-top: ((global.$entry-el-margin-lg) + 2rem) solid transparent;
     }
   }
 }
 
 .#{acms.$entry-class} .ug-bg-gray .entry-text-unit,
-.#{acms.$entry-class} .ug-bg-primary .entry-text-unit {
+.#{acms.$entry-class} .ug-bg-primary .entry-text-unit,
+.#{acms.$entry-class} .ug-border .entry-text-unit{
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-element-margin-bottom-xl);
+    margin-top: -(global.$entry-el-margin-xl);
+
+    @media screen and (min-width: acms.$breakpoint-md-min) {
+      margin-top: (-(global.$entry-el-margin-xl) - 1rem);
+    }
   }
 }
 
@@ -245,19 +251,19 @@
 
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
+    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, Heading-S);
     line-height: 1.4;
-    @include acms.font-size(26);
 
 
     &.heading-line {
-      padding-bottom: 15px;
+      padding-bottom: global.$entry-el-padding-xs;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
     &.heading-primary {
       position: relative;
-      margin-bottom: global.$entry-element-margin-bottom-lg;
+      margin-bottom: global.$entry-el-margin-lg;
 
       &::before {
         position: absolute;
@@ -279,15 +285,15 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h2 {
-      margin-bottom: global.$entry-element-margin-bottom-sm;
-      @include acms.font-size(32);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, Heading-M);
 
       &.heading-line {
         padding-bottom: 15px;
       }
 
       &.heading-primary {
-        margin-bottom: global.$entry-element-margin-bottom-lg;
+        margin-bottom: global.$entry-el-margin-lg;
 
         &::before {
           bottom: -25px;
@@ -299,19 +305,19 @@
   @media screen and (min-width: acms.$breakpoint-lg-min) {
     h2 {
       &.heading-primary {
-        margin-bottom: global.$entry-element-margin-bottom-xl;
+        margin-bottom: global.$entry-el-margin-xl;
       }
     }
   }
 
 
   h3 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
-    @include acms.font-size(22);
+    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, Heading-SS);
     line-height: 1.4;
 
     &.heading-line {
-      padding-bottom: 15px;
+      padding-bottom: global.$entry-el-padding-xs;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
@@ -323,19 +329,19 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h3 {
-      margin-bottom: global.$entry-element-margin-bottom-md;
-      @include acms.font-size(28);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, Heading-S);
 
       .text-point {
-        margin: 0 0 10px 0;
+        margin: 0 0 global.$entry-el-margin-xxs 0;
       }
     }
   }
 
 
   h4 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
-    @include acms.font-size(18);
+    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, Body-M);
     line-height: 1.4;
 
     &.heading-line {
@@ -351,8 +357,8 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h4 {
-      margin-bottom: global.$entry-element-margin-bottom-sm;
-      @include acms.font-size(22);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, Heading-SS);
     }
   }
 }
@@ -361,17 +367,17 @@
 /* 本文 */
 .#{acms.$entry-class} {
   p {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
     line-height: 1.7;
 
     &.text-info {
-      @include acms.font-size(12);
       color: global.$color-text-side;
+      font-size: map.get(global.$font-scales, Body-S);
     }
 
     &.text-danger {
-      @include acms.font-size(12);
       color: global.$color-error;
+      font-size: map.get(global.$font-scales, Body-S);
     }
   }
 
@@ -381,20 +387,12 @@
   .is-table + .is-p .text-danger,
   [class*="column-table-"] + .is-p .text-info,
   [class*="column-table-"] + .is-p .text-danger {
-    margin-top: (-(global.$entry-element-margin-bottom-md)+ 10px);
+    margin-top: -(global.$entry-el-margin-md);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     p {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
-
-      &.text-info {
-        @include acms.font-size(14);
-      }
-
-      &.text-danger {
-        @include acms.font-size(14);
-      }
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
     }
 
     .is-p + .is-p .text-info,
@@ -403,7 +401,7 @@
     .is-table + .is-p .text-danger,
     [class*="column-table-"] + .is-p .text-info,
     [class*="column-table-"] + .is-p .text-danger {
-      margin-top: (-(global.$entry-element-margin-bottom-lg)+ 10px);
+      margin-top: -(global.$entry-el-margin-md);
     }
   }
 }
@@ -414,36 +412,36 @@
   p {
 
     &.text-lead-primary {
-      @include acms.font-size(26);
       color: global.$color-primary;
       font-weight: bold;
+      font-size: map.get(global.$font-scales, Heading-S);
       line-height: 1.5;
 
       .text-point {
         color: global.$color-text-side;
-        @include acms.font-size(18);
+        font-size: map.get(global.$font-scales, Body-M);
       }
     }
 
     &.text-lead-info {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
       color: global.$color-text-side;
       font-weight: bold;
+      font-size: map.get(global.$font-scales, Heading-S);
       line-height: 1.5;
-      @include acms.font-size(26);
     }
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       &.text-lead-primary {
-        @include acms.font-size(34);
+        font-size: map.get(global.$font-scales, Heading-L);
 
         .text-point {
-          @include acms.font-size(30);
+          font-size: map.get(global.$font-scales, Heading-M);
         }
       }
 
       &.text-lead-info {
-        @include acms.font-size(34);
+        font-size: map.get(global.$font-scales, Heading-M);
       }
     }
 
@@ -456,14 +454,14 @@
   p {
     &.text-btn a {
       display: inline-block;
-      padding: 10px 25px;
+      padding: global.$btn-padding-y global.$btn-padding-x;
       color: global.$color-text-inverse;
+      font-weight: bold;
+      font-size: map.get(global.$font-scales, Body-M);
       text-align: center;
       background: global.$color-primary;
       border-radius: global.$border-radius-md;
       transition: background-color .2s;
-      @include acms.font-size(18);
-
 
       &:hover,
       &:visited,
@@ -485,14 +483,14 @@
 /* リスト */
 .#{acms.$entry-class} .entry-text-unit  {
   ul {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
-    padding: 0 0 0 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    padding: 0 0 0 global.$entry-el-padding-md;
 
     li {
       position: relative;
       clear: both;
-      margin: 0 0 10px 0;
-      line-height: 1.5;
+      margin: 0 0 .5rem 0;
+      line-height: 1.7;
       list-style: none;
 
       &::before {
@@ -511,7 +509,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     ul {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg calc(global.$unit-gutter-var / 2);
     }
   }
 }
@@ -520,15 +518,15 @@
 /* 番号付きリスト */
 .#{acms.$entry-class} .entry-text-unit:not(.is-pre) {
   ol {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
-    padding: 0 0 0 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    padding: 0 0 0 global.$entry-el-padding-md;
     counter-reset: order-list;
 
     li {
       position: relative;
       clear: both;
-      margin: 0 0 10px 0;
-      line-height: 1.5;
+      margin: 0 0 1rem 0;
+      line-height: 1.7;
       list-style: none;
 
       &::before {
@@ -540,13 +538,13 @@
         justify-content: center;
         width: 20px;
         height: 20px;
-        margin: 0 10px 0 0;
+        margin: 0 1rem 0 0;
         color: global.$color-white;
+        font-size: map.get(global.$font-scales, Body-S);
         background: global.$color-secondary;
         border-radius: 50%;
         content: counter(order-list);
         counter-increment: order-list;
-        @include acms.font-size(14);
       }
 
     }
@@ -554,7 +552,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     ol {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
     }
   }
 }
@@ -563,18 +561,18 @@
 /* 記述リスト */
 .#{acms.$entry-class} .entry-text-unit {
   dl {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
 
     dt {
-      margin: 0 0 20px 0;
+      margin: 0 0 1rem 0;
       font-weight: bold;
-      @include acms.font-size(18);
+      font-size: map.get(global.$font-scales, Body-M);
       line-height: 1.3;
     }
 
     dd {
-      @include acms.font-size(16);
-      margin: 0 0 30px 0;
+      margin: 0 0 2rem 0;
+      font-size: map.get(global.$font-scales, Body-M);
       line-height: 1.7;
     }
 
@@ -582,7 +580,7 @@
       border: global.$border-width-sm solid global.$color-gray40;
 
       dt {
-        padding: 30px 25px 0 25px;
+        padding: global.$entry-el-padding-sm global.$entry-el-padding-sm 0 global.$entry-el-padding-sm;
         border-top: global.$border-width-sm solid global.$color-gray40;
 
         &:first-child {
@@ -592,7 +590,7 @@
 
       dd {
         margin: 0;
-        padding: 0 25px 30px 25px;
+        padding: 0 global.$entry-el-padding-sm global.$entry-el-padding-sm global.$entry-el-padding-sm;
       }
     }
   }
@@ -600,17 +598,17 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
       dt {
-        @include acms.font-size(22);
+        margin: 0 0 1rem 0;
       }
 
       &.box-bordered {
 
         dt {
-          padding: 40px 40px 0 40px;
+          padding: global.$entry-el-padding-md global.$entry-el-padding-md 0 global.$entry-el-padding-md;
         }
 
         dd {
-          padding: 0 40px 40px 40px;
+          padding: 0 global.$entry-el-padding-md global.$entry-el-padding-md global.$entry-el-padding-md;
         }
       }
     }
@@ -623,19 +621,20 @@
 .#{acms.$entry-class} [class^=column-table] {
   table {
     width: 100%;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
+    margin: 0 0 global.$entry-el-margin-md 0;
     border-bottom: global.$border-width-sm solid global.$color-gray30;
     border-collapse: collapse;
 
     th,
     td {
-      padding: 15px;
+      padding: global.$entry-el-padding-xs;
+      font-size: map.get(global.$font-scales, Body-M);
       line-height: 1.5;
-      @include acms.font-size(16);
     }
 
     th {
       text-align: left;
+      vertical-align: top;
       background: global.$color-gray10;
     }
 
@@ -646,12 +645,12 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     table {
-      margin: 0 0 global.$entry-element-margin-bottom-lg 0;
+      margin: 0 0 global.$entry-el-margin-lg 0;
 
       th,
       td {
-        padding: 25px 35px;
-        @include acms.font-size(18);
+        padding: global.$entry-el-padding-sm;
+        font-size: map.get(global.$font-scales, Body-M);
       }
     }
   }
@@ -664,13 +663,13 @@
 }
 
 [class^=column-table] .entry-container {
-  margin-bottom: global.$entry-element-margin-bottom-md;
+  margin-bottom: global.$entry-el-margin-md;
   overflow-x: auto;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   [class^=column-table] .entry-container {
-    margin-bottom: global.$entry-element-margin-bottom-lg;
+    margin-bottom: global.$entry-el-margin-lg;
   }
 }
 
@@ -678,15 +677,15 @@
 /* 引用 */
 .#{acms.$entry-class} .entry-text-unit {
   blockquote {
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 25px;
-    @include acms.font-size(16);
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-sm;
+    font-size: map.get(global.$font-scales, Body-M);
     line-height: 1.7;
     border: global.$border-width-md solid global.$color-gray40;
 
     cite {
       color: global.$color-text-side;
-      @include acms.font-size(14);
+      font-size: map.get(global.$font-scales, Body-S);
       font-style: normal;
 
       &::before {
@@ -697,8 +696,8 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     blockquote {
-      margin: 0 0 global.$entry-element-margin-bottom-lg 0;
-      padding: 30px 40px;
+      margin: 0 0 global.$entry-el-margin-lg 0;
+      padding: global.$entry-el-padding-md;
     }
   }
 }
@@ -722,10 +721,10 @@
 
   .ug-bg-gray,
   .ug-bg-primary {
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 35px 20px;
-    border-right: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
-    border-left: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
+    border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
     & > *:not(.entry-reset):last-child > * {
       margin-bottom: 0;
@@ -733,8 +732,8 @@
   }
 
   .ug-cover {
-    margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
-    padding: 35px calc(50vw - 50%);
+    margin: global.$entry-el-margin-md calc(50% - 50vw);
+    padding: global.$entry-el-padding-md calc(50vw - 50%);
     border: 0;
   }
 
@@ -744,10 +743,10 @@
 
   .ug-border {
     position: relative;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 45px 30px;
-    border-right: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
-    border-left: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
+    border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
     &::before {
       position: absolute;
@@ -773,9 +772,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .ug-bg-gray,
-    .ug-bg-primary {
-      margin: 0 0 global.$entry-element-margin-bottom-md 0;
-      padding: 45px 35px;
+    .ug-bg-primary,
+    .ug-border {
+      margin: 0 0 global.$entry-el-margin-lg 0;
+      padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
 
       & > *:not(.entry-reset):last-child > * {
         margin-bottom: 0;
@@ -783,12 +783,8 @@
     }
 
     .ug-cover {
-      margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
-      padding: 45px calc(50vw - 50%);
-    }
-
-    .ug-border {
-      padding: 50px;
+      margin: global.$entry-el-margin-lg calc(50% - 50vw);
+      padding: 3rem calc(50vw - 50%);
     }
   }
 }
@@ -800,7 +796,7 @@
 [class*="column-eximage"] {
   .caption {
     color: global.$color-text-side;
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, Body-S);
   }
 }
 
@@ -814,7 +810,7 @@
   a[href*=media-download] {
     display: inline-flex;
     align-items: center;
-    padding: 15px;
+    padding: 1rem;
     color: global.$color-text;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
@@ -829,20 +825,19 @@
   .caption {
     margin: 0;
     color: global.$color-text;
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, Body-M);
   }
 
   .columnIcon {
     width: 29px;
     height: auto;
-    margin: 0 15px 0 0;
+    margin: 0 1rem 0 0;
   }
 }
 
 
 /* 引用ユニットの設定 */
 [class*="column-quote-"] {
-
   .quote {
     padding: 0;
     border: 0;
@@ -863,24 +858,26 @@
   }
 
   .quote-info {
-    padding: 12px;
+    padding: 1rem;
   }
 
   .quote-title {
-    margin: 0 0 10px 0;
-    @include acms.font-size(18);
+    margin: 0 0 .5rem 0;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, Body-M);
     line-height: 1.4;
   }
 
   .quote-site-name {
     margin: 0;
     color: global.$color-text-side;
-    @include acms.font-size(12);
+    font-size: map.get(global.$font-scales, Body-M);
   }
 
   .quote-description {
     display: none;
-    margin: 0 0 10px 0;
+    margin: 0 0 .5rem 0;
+    font-size: map.get(global.$font-scales, Body-S);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -888,9 +885,10 @@
       flex-direction: row;
     }
     .quote-img-wrap {
+      flex: 1 0 auto;
       box-sizing: border-box;
       width: math.div(100%, 3);
-      padding: 30px 15px 30px 30px;
+      padding: 2rem 1rem 2rem 2rem;
     }
     .quote-img {
       width: 100%;
@@ -898,19 +896,16 @@
     .quote-info {
       box-sizing: border-box;
       width: math.div(2, 3);
-      padding: 30px 30px 30px 15px;
+      padding: 2rem 2rem 2rem 1rem;
     }
     .quote-title {
-      margin: 0 0 20px 0;
+      margin: 0 0 1.5rem 0;
       font-weight: bold;
-      @include acms.font-size(24);
+      font-size: map.get(global.$font-scales, Heading-SS);
     }
-    .quote-site-name {
-      @include acms.font-size(14);
-    }
+
     .quote-description {
       display: block;
-      @include acms.font-size(14);
     }
   }
 }
@@ -922,21 +917,14 @@
 .#{acms.$entry-class} {
   .card-title,
   .card-bordered-title {
-    @include acms.font-size(18);
-  }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    .card-title,
-    .card-bordered-title {
-      @include acms.font-size(22);
-    }
+    font-size: map.get(global.$font-scales, Heading-SS);
   }
 }
 
 .#{acms.$entry-class} {
   .card-item,
   .card-bordered-item {
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    padding: 0 calc(global.$unit-gutter-var / 2);
   }
 }
 
@@ -945,7 +933,7 @@
 　罫線ユニット
 ------------------------------ */
 .unit-separator {
-  margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md;
+  margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
   border: 0;
   border-top: global.$border-width-sm solid global.$color-gray40;
 }
@@ -957,23 +945,23 @@
 
 .#{acms.$entry-class} {
   .entry-outline {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg;
-    padding: 15px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
+    padding: 1rem;
     border: global.$border-width-lg solid global.$color-gray30;
   }
 
   .entry-outline-title {
-    margin: 0 0 15px 0;
-    padding: 0 0 10px 0;
-    @include acms.font-size(16);
+    margin: 0 0 1rem 0;
+    padding: 0 0 .5rem 0;
     font-weight: bold;
+    font-size: map.get(global.$font-scales, Body-M);
     border-bottom: 2px solid global.$color-gray30;
   }
 
   .entry-outline-list-wrap {
     .outline-list {
       margin: 0;
-      padding: 0 0 0 25px;
+      padding: 0 0 0 1.5rem;
       counter-reset: a;
 
       &.level-1 {
@@ -991,12 +979,12 @@
 
     .outline-item a {
       display: block;
-      margin: 0 0 10px 5px;
+      margin: 0 0 1rem .25rem;
       color: global.$color-text;
 
       &::before {
         display: inline-block;
-        padding-right: 10px;
+        padding-right: .5rem;
         color: global.$color-text-secondary;
         font-weight: 700;
         white-space: nowrap;
@@ -1011,13 +999,13 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .#{acms.$entry-class} {
     .entry-outline {
-      padding: 30px;
+      padding: 2rem;
     }
 
     .entry-outline-title {
-      margin: 0 0 20px 0;
-      padding: 0 0 15px 0;
-      @include acms.font-size(20);
+      margin: 0 0 1.5rem 0;
+      padding: 0 0 1rem 0;
+      font-size: map.get(global.$font-scales, Heading-SS);
     }
   }
 }
@@ -1029,7 +1017,7 @@
 .#{acms.$entry-class} {
   .message {
     position: relative;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
+    margin: 0 -.5rem global.$entry-el-margin-md;
   }
 
   .message-bg {
@@ -1055,25 +1043,25 @@
     display: flex;
     align-items: center;
     height: 240px;
-    margin: 0 0 40px 0;
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    margin: 0 0 2.5rem 0;
+    padding: 0 calc(global.$unit-gutter-var / 2);
     color: global.$color-text-inverse;
-    @include acms.font-size(24);
     font-weight: bold;
+    font-size: map.get(global.$font-scales, Heading-S);
   }
 
   .message-content {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) 50px (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2) 3rem;
   }
 
   .message-source {
-    margin: 0 (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2);
 
     &::before {
       display: inline-block;
       width: 40px;
       height: 1px;
-      margin: 0 15px 0 0;
+      margin: 0 1rem 0 0;
       vertical-align: middle;
       background: global.$color-text;
       content: "";
@@ -1082,7 +1070,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .message {
-      margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
+      margin: 0 calc(50% - 50vw) global.$entry-el-margin-md;
       background-size: cover;
     }
     .message-bg {
@@ -1098,18 +1086,19 @@
     }
     .message-wrap {
       position: relative;
-      width: 50%;
-      padding: 100px 60px;
+      width: calc(50% - (global.$unit-gutter-var / 2));
+      margin: 0 calc(global.$unit-gutter-var / 2);
+      padding: 6.5rem 4rem;
       color: global.$color-text-inverse;
       background: rgba(0, 0, 0, .4);
     }
     .message-lead {
       height: auto;
-      margin: 0 0 40px 0;
-      @include acms.font-size(24);
+      margin: 0 0 2.5rem 0;
+      font-size: map.get(global.$font-scales, Heading-S);
     }
     .message-content {
-      margin: 0 0 50px 0;
+      margin: 0 0 3rem 0;
     }
     .message-source {
       &::before {
@@ -1126,22 +1115,26 @@
 .#{acms.$entry-class} {
   .pricing-group {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
-    margin: 20px 0;
-    padding: 0;
+    margin: 1.5rem 0;
+    padding: 0 (global.$unit-gutter-var / 2);
   }
 
   .pricing-item {
     position: relative;
     display: flex;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    flex: 0 1 234px;
+    margin: 0 0 global.$entry-el-margin-md 0;
     list-style: none;
 
     &.is-reccomend {
       .pricing-inner {
-        margin-top: 20px;
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
         border: global.$border-width-sm solid global.$color-primary;
       }
     }
@@ -1150,75 +1143,81 @@
   .pricing-inner {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    padding: 35px 30px 30px 30px;
+    padding: 2rem 1rem 1.5rem ;
     background: #FFF;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
     transition: transform .25s ease;
   }
 
+  .pricing-header {
+    position: relative;
+    margin: 0 0 1rem 0;
+    padding: 0 0 1rem 0;
+    text-align: center;
+    border-bottom: global.$border-width-sm solid global.$color-gray30;
+  }
+
   .pricing-label-wrap {
-    margin-top: -55px;
-    margin-bottom: 15px;
+    position: absolute;
+    top: -4rem;
+    right: 0;
+    left: 0;
   }
 
   .pricing-label {
     display: inline-block;
     margin: 0;
-    padding: 5px 30px;
+    padding: .25rem 2rem;
     color: global.$color-text-inverse;
     font-weight: bold;
+    font-size: map.get(global.$font-scales, Heading-SS);
     line-height: 1.3;
     background: global.$color-primary;
-    border-radius: 10em;
+    border-radius: global.$border-radius-round;
     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-    @include acms.font-size(20);
-  }
-
-  .pricing-header {
-    margin: 0 0 35px 0;
-    padding: 0 0 20px 0;
-    text-align: center;
-    border-bottom: global.$border-width-sm solid global.$color-gray30;
   }
 
   .pricing-title {
-    margin: 0 0 10px 0;
+    margin: 0 0 .25rem 0;
     color: global.$color-primary;
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, Heading-SS);
   }
 
   .pricing-desc {
     margin: 0;
     color: global.$color-text-side;
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, Body-S);
     line-height: 1.5;
   }
 
   .pricing-price {
-    margin: 0 0 25px 0;
-    @include acms.font-size(50);
+    margin: 0 0 .5rem 0;
+    font-size: map.get(global.$font-scales, Heading-M);
     line-height: 1;
+    text-align: center;
   }
 
   .pricing-unit {
-    @include acms.font-size(24);
+    font-size: map.get(global.$font-scales, Body-M);
   }
 
   .pricing-check-group {
-    margin: 0 0 30px 0;
+    margin: 0 0 1rem 0;
     padding: 0;
+    font-size: map.get(global.$font-scales, Body-S);
     list-style: none;
 
     li {
-      margin: 0 0 10px 0;
+      margin: 0 0 .25rem 0;
 
       &:before {
         display: inline-block;
         width: 18px;
         height: 18px;
-        margin: 0 10px 0 0;
+        margin: 0 .5rem 0 0;
         vertical-align: middle;
         background: url(#{global.$root-theme-img}icon-check.svg);
         content: "";
@@ -1226,13 +1225,9 @@
     }
   }
 
-  .pricing-footer {
-    margin-top: auto;
-  }
-
   .pricing-button {
     display: block;
-    margin: 0 0 15px 0;
+    margin: 0 0 1rem 0;
   }
 
   .pricing-text-info {
@@ -1246,36 +1241,22 @@
     .pricing-group {
       flex-direction: row;
       flex-wrap: wrap;
-      margin: 60px 0;
+      gap: 1rem;
+      margin: 4rem 0;
     }
 
     .pricing-item {
       box-sizing: border-box;
-      width: math.div(100%, 3);
-      margin: 0 0 global.$entry-element-margin-bottom-md 0;
-
-      &.is-reccomend {
-        .pricing-inner {
-          margin-top: -20px;
-          margin-bottom: -20px;
-          padding-top: 55px;
-          padding-bottom: 50px;
-        }
-      }
+      margin: 0 0 global.$entry-el-margin-md 0;
 
       &:hover .pricing-inner {
         box-shadow: 0 6px 15px rgba(0, 0, 0, .2);
-        transform: translateY(-10px);
+        transform: translateY(-.5rem);
       }
     }
 
-    .pricing-label-wrap {
-      margin-top: -75px;
-      margin-bottom: 35px;
-    }
-
     .pricing-title {
-      @include acms.font-size(28);
+      font-size: map.get(global.$font-scales, Heading-SS);
     }
   }
 }
@@ -1288,7 +1269,7 @@
 @each $unit in acms.$unit-type {
   [class*="column-#{$unit}"] {
     @if $unit == 'module' {
-      margin-bottom: math.div(acms.$unit-margin-bottom, 2);
+      margin-bottom: calc(acms.$unit-margin-bottom / 2);
     } @else {
       margin-bottom: acms.$unit-margin-bottom;
     }
@@ -1301,7 +1282,7 @@
       @if $unit == 'module' {
         margin-bottom: acms.$unit-margin-bottom;
       } @else {
-      margin-bottom: global.$unit-margin-bottom-lg;
+      margin-bottom: global.$unit-margin-md;
       }
     }
   }
@@ -1320,7 +1301,7 @@
 }
 
 .unit-gallery {
-  margin-bottom: acms.$unit-gutter;
+  margin-bottom: global.$unit-gutter-var;
 }
 
 
@@ -1331,15 +1312,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 math.div(global.$col-gutter, -2) 40px math.div(global.$col-gutter, -2);
-  padding: 25px;
+  margin: 0 calc(global.$unit-gutter-var / -2) 2.5rem calc(global.$unit-gutter-var / -2);
+  padding: 1.5rem;
   text-align: center;
   background: global.$color-gray10;
 }
 
 .sns-share-title {
-  margin: 0 0 10px 0;
-  @include acms.font-size(16);
+  margin: 0 0 .5rem 0;
+  font-size: map.get(global.$font-scales, Body-M);
 }
 
 .share-list {
@@ -1355,7 +1336,7 @@
 }
 
 .share-item {
-  margin: 0 5px;
+  margin: 0 1rem;
 
   a {
     display: flex;
@@ -1363,7 +1344,7 @@
     justify-content: center;
     width: 28px;
     height: auto;
-    padding: 10px;
+    padding: .25rem;
     transition: transform .2s ease;
 
     &:hover {
@@ -1372,7 +1353,7 @@
   }
 
   .share-list.is-sm & a {
-    width: 30px;
+    width: 32px;
   }
 }
 
@@ -1380,21 +1361,22 @@
   .sns-share-wrapper {
     flex-direction: row;
     align-items: center;
-    margin: 0 0 60px 0;
-    padding: 50px 25px;
+    margin: 0 0 3rem 0;
+    padding: 50px 25px 3rem;
     border-radius: global.$border-radius-xl;
   }
   .sns-share-title {
-    margin: 0 35px 0 0;
-    @include acms.font-size(20);
+    margin: 0 2.5rem 0 0;
+    font-size: map.get(global.$font-scales, Heading-SS);
   }
   .share-item {
+    margin: 0 1rem;
     a {
-      width: 50px;
+      width: 48px;
     }
 
     .share-list.is-sm & a {
-      width: 30px;
+      width: 32px;
     }
   }
 
