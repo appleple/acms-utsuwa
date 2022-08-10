@@ -60,12 +60,14 @@ a:hover {
 
 /* コンテナー */
 .acms-container {
+  --gutter: var(--gutter-md);
+
   max-width: global.$container;
-  padding-right: math.div(global.$col-gutter, 2);
-  padding-left: math.div(global.$col-gutter, 2);
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
   @if (global.$enable-iphonex == true) {
-    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
-    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+    padding-right: calc((global.$unit-gutter-var / 2) + constant(safe-area-inset-right));
+    padding-left: calc((global.$unit-gutter-var / 2) + constant(safe-area-inset-left));
   }
 
   .acms-container {
@@ -74,39 +76,42 @@ a:hover {
 }
 
 .container-md {
+  --gutter: var(--gutter-md);
+
   box-sizing: border-box;
   max-width: global.$container-md;
   margin: 0 auto;
-  padding-right: math.div(global.$col-gutter, 2);
-  padding-left: math.div(global.$col-gutter, 2);
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
   @if (global.$enable-iphonex == true) {
-    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
-    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+    padding-right: calc((global.$unit-gutter-var / 2) + env(safe-area-inset-right));
+    padding-left: calc((global.$unit-gutter-var / 2) + env(safe-area-inset-left));
   }
 }
 
 
 .container-sm {
+  --gutter: var(--gutter-sm);
+
   box-sizing: border-box;
   max-width: global.$container-sm;
   margin: 0 auto;
-  padding-right: math.div(global.$col-gutter, 2);
-  padding-left: math.div(global.$col-gutter, 2);
+  padding-right: calc((global.$unit-gutter-var / 2));
+  padding-left: calc((global.$unit-gutter-var / 2));
   @if (global.$enable-iphonex == true) {
-    padding-right: calc((global.$col-gutter / 2) + constant(safe-area-inset-right));
-    padding-left: calc((global.$col-gutter / 2) + constant(safe-area-inset-left));
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2) );
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  .acms-container,
-  .container-md,
-  .container-sm {
-    padding-right: (math.div(global.$col-gutter, 2)) + 20px;
-    padding-left: (math.div(global.$col-gutter, 2)) + 20px;
-  }
+
+/* グリッド */
+.acms-grid {
+  margin: 0 calc(global.$unit-gutter-var / -2);
 }
 
+
+/* 固定コンテンツ */
 .sticky-contents {
   position: fixed;
   bottom: 0;

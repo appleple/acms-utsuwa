@@ -25,8 +25,8 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
 .#{acms.$entry-class} {
   @each $text-unit in $_text-unit-tags {
     #{$text-unit} {
-      margin-right: math.div(acms.$unit-gutter, 2);
-      margin-left: math.div(acms.$unit-gutter, 2);
+      margin-right: calc( global.$unit-gutter-var / 2 );
+      margin-left: calc( global.$unit-gutter-var / 2 );
     }
   }
   blockquote {
@@ -45,20 +45,20 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
 @each $unit in $_unit-type {
   .#{acms.$entry-class} [class*="column-#{$unit}"] {
     @if $unit == 'map' {
-      border-right: math.div(acms.$unit-gutter, 2) solid transparent;
-      border-left: math.div(acms.$unit-gutter, 2) solid transparent;
+      border-right: calc( global.$unit-gutter-var / 2 ) solid transparent;
+      border-left: calc( global.$unit-gutter-var / 2 ) solid transparent;
       box-sizing: border-box;
     } @else if $unit == 'quote' {
-      margin-right: math.div(acms.$unit-gutter, 2);
-      margin-left: math.div(acms.$unit-gutter, 2);
+      margin-right: calc( global.$unit-gutter-var / 2 );
+      margin-left: calc( global.$unit-gutter-var / 2 );
     } @else if $unit == 'street-view' {
       &:not(.column-street-view-inner) {
-        padding-right: math.div(acms.$unit-gutter, 2);
-        padding-left: math.div(acms.$unit-gutter, 2);
+        padding-right: calc( global.$unit-gutter-var / 2 );
+        padding-left: calc( global.$unit-gutter-var / 2 );
       }
     } @else {
-      padding-left: math.div(acms.$unit-gutter, 2);
-      padding-right: math.div(acms.$unit-gutter, 2);
+      padding-left: calc( global.$unit-gutter-var / 2 );
+      padding-right: calc( global.$unit-gutter-var / 2 );
       box-sizing: border-box;
     }
   }
@@ -69,8 +69,8 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
  共通の要素
 ------------------------------ */
 .entry-container {
-  margin-right: math.div(acms.$unit-gutter, 2);
-  margin-left: math.div(acms.$unit-gutter, 2);
+  margin-right: calc( global.$unit-gutter-var / 2 );
+  margin-left: calc( global.$unit-gutter-var / 2 );
 }
 
 

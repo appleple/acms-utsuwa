@@ -1,20 +1,74 @@
+@use "sass:map";
+
 // ------------------------------
 //　設定
 // ------------------------------
 $enable-iphonex: true;
 
+
 // ------------------------------
-//　ベース
+//　スペーシング
+// 例）map.get(global.$spacers, 4)
 // ------------------------------
-// コンテイナー幅
-$container    : 1240px;
-$container-md : 1040px;
-$container-sm : 840px;
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5, //24
+  5: $spacer * 2, //32
+  6: $spacer * 2.5,
+  7: $spacer * 3, //48
+  8: $spacer * 3.5,
+  9: $spacer * 4, // 64
+  10: $spacer * 4.5,
+  11: $spacer * 5,
+  12: $spacer * 5.5,
+  13: $spacer * 6.5, //104
+) !default;
 
 
 // グリッドの間隔
-$col-gutter   : 20px;
+$col-gutter   : 2rem;
+$unit-gutter-var   : var(--gutter);
 
+// ------------------------------
+//　エントリー
+// ------------------------------
+$entry-el-margin-xxs: .5rem !default; // 8
+$entry-el-margin-sm : 1.5rem !default; // 24
+$entry-el-margin-md : 2rem !default; // 32
+$entry-el-margin-lg : 3rem !default; // 48
+$entry-el-margin-xl : 3.5rem !default; // 56
+
+$entry-el-padding-xxs: .5rem !default; // 8
+$entry-el-padding-xs: 1rem !default; // 16
+$entry-el-padding-sm: 1.5rem !default; // 24
+$entry-el-padding-md: 2rem !default; // 32
+
+//$entry-class                    : entry-style;
+
+$unit-margin-md          : 2rem;
+$unit-margin-lg          : 3rem; // 48
+
+
+
+
+
+// ------------------------------
+//　コンテイナー
+// ------------------------------
+$container    : calc(70rem + $col-gutter); //1120px
+$container-md : calc(58rem + $col-gutter); // 928px
+$container-sm : calc(45rem + $col-gutter); // 736px
+
+
+$container-max-widths: (
+  md: 720px,
+  lg: 928px,
+  xl: 1120px
+) !default;
 
 
 // ------------------------------
@@ -32,6 +86,20 @@ $font-hiragino       : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetic
 $font-yu-gothic      : Segoe UI,Roboto,Helvetica Neue,Arial, YuGothic,Yu Gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
 $font-meiryo         : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial, Verdana, Meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
 $font-base           : 'Roboto Condensed',$font-yu-gothic;
+
+$font-size: 1rem;
+$font-scale: 1.25;
+
+$font-scales: (
+  Display-S: $font-size * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale,
+  Heading-L: $font-size * $font-scale * $font-scale * $font-scale * $font-scale,
+  Heading-M: $font-size * $font-scale * $font-scale * $font-scale,
+  Heading-S: $font-size * $font-scale * $font-scale,
+  Heading-SS: $font-size * $font-scale,
+  Body-M: $font-size,
+  Body-S: $font-size / $font-scale
+) !default;
+
 
 
 // ------------------------------
@@ -120,8 +188,8 @@ $zindex-mobile-nav-btn : 10002;
 // ------------------------------
 //　ヘッダー
 // ------------------------------
-$header-height       : 60px;
-$header-height-fixed : 50px;
+$header-height       : 56px;
+$header-height-fixed : 56px;
 
 
 
@@ -142,17 +210,10 @@ $page-title-margin-bottom-md : 80px;
 
 
 // ------------------------------
-//　エントリー
+//　ボタン
 // ------------------------------
-$entry-element-margin-bottom-sm : 20px !default;
-$entry-element-margin-bottom-md : 30px !default;
-$entry-element-margin-bottom-lg : 40px !default;
-$entry-element-margin-bottom-xl : 60px !default;
-
-//$entry-class                    : entry-style;
-
-//$unit-margin-bottom             : 40px;
-$unit-margin-bottom-lg          : 60px;
+$btn-padding-y: .75rem;
+$btn-padding-x: 2rem;
 
 
 
@@ -160,8 +221,8 @@ $unit-margin-bottom-lg          : 60px;
 // ------------------------------
 //　CTAパーツ
 // ------------------------------
-$cta-space-md: 60px;
-$cta-space-lg: 100px;
+$cta-space-md: map.get($spacers, 4);
+$cta-space-lg: map.get($spacers, 13);
 
 
 
@@ -169,5 +230,5 @@ $cta-space-lg: 100px;
 // ------------------------------
 //　フッター
 // ------------------------------
-$footer-margin-top-md: 60px;
-$footer-margin-top-lg: 100px;
+$footer-margin-top-md: map.get($spacers, 4);
+$footer-margin-top-lg: map.get($spacers, 13);

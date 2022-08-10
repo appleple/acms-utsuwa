@@ -8,7 +8,7 @@
 
 /* シンプルなCTA */
 .cta {
-  margin-top: math.div(global.$cta-space-md, -2);
+  margin-top: calc(global.$cta-space-md / -2);
   padding: global.$cta-space-md 0;
   text-align: center;
 
@@ -82,7 +82,7 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta {
-    margin-top: math.div(global.$cta-space-lg, -2);
+    margin-top: calc(global.$cta-space-lg / -2);
     padding: global.$cta-space-lg 0;
 
     &.is-bg {
@@ -119,7 +119,7 @@
   margin-top: -40px;
   padding: 40px 20px 30px;
   background: global.$color-gray20;
-  border-radius: math.div(global.$border-radius-xxl, 2);
+  border-radius: calc(global.$border-radius-xxl / 2);
 }
 
 .cta-round-title {

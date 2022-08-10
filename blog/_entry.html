@@ -1,21 +1,23 @@
   @extends("/_layouts/base.html")
 
   @section("main")
-    <div class="container-md">
+    <div class="container-sm">
       <div>
         <!-- エントリー本文 -->
         @include("/include/entry/body.html", {"module_id": "body_blog", "tag":"on", "sns":"on"})
-
-        <!-- BEGIN_MODULE Touch_Entry -->
-        <!-- 関連エントリー -->
-        @include("/include/entry/tagrelational-reccomend.html", {"module_id": "tag_relational_blog"})
-        <!-- END_MODULE Touch_Entry -->
       </div>
     </div>
 
+  <!-- BEGIN_MODULE Touch_Entry -->
+  <div class="container-md">
+    <!-- 関連エントリー -->
+    @include("/include/entry/tagrelational-reccomend.html", {"module_id": "tag_relational_blog"})
+  </div>
+  <!-- END_MODULE Touch_Entry -->
+
     <!-- BEGIN_MODULE Touch_NotEdit -->
     <div class="js-sticky sticky-contents">
-      <div class="container-md">
+      <div class="container-sm">
         <!-- SNSシェアボタン -->
         @include("/include/parts/sns-share.html")
       </div>

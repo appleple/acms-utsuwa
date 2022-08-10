@@ -1,14 +1,14 @@
 @extends("/_layouts/base.html")
 
 @section("main")
-  <div class="container-md">
+  <div class="container-sm">
   <!-- エントリー本文 -->
   @include("/include/entry/body.html", {"module_id": "body_date", "tag":"on", "sns":"on"})
   </div>
 
   <!-- BEGIN_MODULE Touch_NotEdit -->
   <div class="js-sticky sticky-contents">
-    <div class="container-md">
+    <div class="container-sm">
       <!-- SNSシェアボタン -->
       @include("/include/parts/sns-share.html")
     </div>
