@@ -215,7 +215,7 @@
   h3,
   h4 {
     margin-top: -(global.$entry-el-margin-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
-    border-top: global.$header-height + 5px solid transparent;
+    border-top: global.$header-height + .25rem solid transparent;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       margin-top: -(global.$entry-el-margin-lg);
@@ -1342,7 +1342,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
+    width: 1.75rem;
     height: auto;
     padding: .25rem;
     transition: transform .2s ease;
@@ -1353,7 +1353,7 @@
   }
 
   .share-list.is-sm & a {
-    width: 32px;
+    width: 2rem;
   }
 }
 
@@ -1362,7 +1362,7 @@
     flex-direction: row;
     align-items: center;
     margin: 0 0 3rem 0;
-    padding: 50px 25px 3rem;
+    padding: 3rem 1.5rem 3rem;
     border-radius: global.$border-radius-xl;
   }
   .sns-share-title {
@@ -1372,11 +1372,11 @@
   .share-item {
     margin: 0 1rem;
     a {
-      width: 48px;
+      width: 3rem;
     }
 
     .share-list.is-sm & a {
-      width: 32px;
+      width: 2rem;
     }
   }
 

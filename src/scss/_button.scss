@@ -7,7 +7,7 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 1rem 2.25rem;
   color: global.$color-text-inverse;
   font-weight: bold;
   text-align: center;
@@ -18,10 +18,7 @@
   @include acms.font-size(18);
 
 
-  &:hover,
-  &:visited,
-  &:active,
-  &:focus {
+  &:any-link {
     color: global.$color-text-inverse;
     text-decoration: none;
   }
@@ -33,7 +30,7 @@
   &.is-lg {
     display: inline-block;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 1rem 2.25rem;
   }
 
   &.is-block {
@@ -41,12 +38,12 @@
   }
 
   &.is-xl {
-    width: 280px;
+    width: 18rem;
     max-width: 100%;
   }
 
   &.is-width-lg {
-    width: 280px;
+    width: 18rem;
     max-width: 100%;
   }
 
@@ -62,6 +59,10 @@
     color: global.$color-text;
     background: global.$color-white;
 
+    &:any-link {
+      color: global.$color-text;
+    }
+
     &:hover {
       background: global.$color-gray10;
     }
@@ -71,6 +72,10 @@
     color: global.$color-text;
     background: transparent;
     border: global.$border-width-sm solid global.$color-gray40;
+
+    &:any-link {
+      color: global.$color-text;
+    }
 
     &:hover {
       background: global.$color-gray20;
@@ -83,7 +88,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min){
     &.is-xl {
-      min-width: 340px;
+      min-width: 22rem;
       padding: 15px;
       @include acms.font-size(24);
     }

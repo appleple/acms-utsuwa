@@ -31,7 +31,7 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
   }
   blockquote {
     margin: 0 0 acms.$unit-gutter 0;
-    padding: 10px 20px;
+    padding: .5rem 1.25rem;
     border-left: solid 5px #ccc;
   }
 }

@@ -11,7 +11,6 @@
 }
 .global-nav-list {
   display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -21,9 +20,7 @@
 .global-nav-item {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
+  margin: 0 .75rem;
 
   &:last-child {
     margin-right: 0;
@@ -35,7 +32,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
   color: global.$color-text;
 
   &:visited {
@@ -49,9 +45,9 @@
 
   &::after {
     position: absolute;
-    right: 15px;
+    right: 0;
     bottom: 0;
-    left: 15px;
+    left: 0;
     height: 2px;
     background: global.$color-primary;
     transform: scaleX(0);
@@ -74,8 +70,8 @@
   // CTA用のスタイル
   &.is-cta {
     height: global.$header-height;
-    margin: 0 15px;
-    padding: 0 35px;
+    margin: 0 1rem;
+    padding: 0 2rem;
     color: global.$color-text-inverse;
     background: global.$color-primary;
     transition: background-color .2s;
@@ -103,7 +99,7 @@
   flex-direction: column;
   min-width: 10rem;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: global.$border-radius-sm;
   box-shadow: 0 2px 3px rgba(0,0,0,.1);
 
   .global-nav-item {
@@ -116,6 +112,7 @@
     position: relative;
     justify-content: flex-start;
     width: 100%;
+    padding: .75rem 1rem;
     background: #FFF;
 
     &:focus-visible::before {

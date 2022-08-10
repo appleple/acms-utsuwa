@@ -14,13 +14,13 @@
 
   &.is-bg {
     margin: 0;
-    padding: 25px 0;
+    padding: 1.5rem 0;
     background: global.$color-primary-light;
   }
 }
 
 .cta-title {
-  margin: 0 0 30px 0;
+  margin: 0 0 2rem 0;
   color: global.$color-text;
   @include acms.font-size(20);
   line-height: 1.3;
@@ -40,7 +40,7 @@
 }
 
 .cta-link-wrap {
-  margin: 25px 0;
+  margin: 1.5rem 0;
   @include acms.font-size(18);
   font-weight: bold;
 }
@@ -52,7 +52,7 @@
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin: 0 15px 0 0;
+    margin: 0 1rem 0 0;
     vertical-align: middle;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
@@ -76,7 +76,7 @@
 }
 
 .cta-micro-copy {
-  margin: 15px 0 20px 0;
+  margin: 1rem 0 1.25rem 0;
 }
 
 
@@ -86,7 +86,7 @@
     padding: global.$cta-space-lg 0;
 
     &.is-bg {
-      padding: 50px 0;
+      padding: 3rem 0;
     }
   }
   .cta-title {
@@ -96,34 +96,34 @@
     @include acms.font-size(24);
   }
   .cta-link-wrap {
-    margin: 40px 0;
+    margin: 2.5rem 0;
     @include acms.font-size(24);
   }
 
   .cta-link {
     &:before {
-      width: 24px;
-      height: 24px;
-      margin: 0 25px 0 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 1.5rem 0 0;
     }
   }
 
   .cta-micro-copy {
-    margin: 25px 0 20px 0;
+    margin: 1.5rem 0 1.25rem 0;
   }
 }
 
 
 /* 背景が角丸 */
 .cta-round {
-  margin-top: -40px;
-  padding: 40px 20px 30px;
+  margin-top: -2.5rem;
+  padding: 2.5rem 1.25rem 1rem;
   background: global.$color-gray20;
   border-radius: calc(global.$border-radius-xxl / 2);
 }
 
 .cta-round-title {
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
   color: global.$color-text;
   @include acms.font-size(20);
   line-height: 1.3;
@@ -143,19 +143,19 @@
 }
 
 .cta-round-micro-copy {
-  margin: 15px 0 20px 0;
+  margin: 1.5rem 0 0 0;
 }
 
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta-round {
-    margin-top: -60px;
-    padding: 80px 0 60px;
+    margin-top: -4rem;
+    padding: 5rem 0 4rem;
     border-radius: global.$border-radius-xxl;
   }
 
   .cta-round-title {
-    margin: 0 0 30px 0;
+    margin: 0 0 2rem 0;
     @include acms.font-size(34);
   }
   .cta-round-button {
@@ -168,7 +168,7 @@
 .cta-visual {
   position: relative;
   z-index: 1;
-  padding: 60px 0 50px;
+  padding: 4rem 0 3rem;
   color: global.$color-text-inverse;
   text-align: center;
   background: no-repeat center;
@@ -179,7 +179,7 @@
   }
 
   &.is-lg {
-    padding: 80px 0 50px;
+    padding: 5rem 0 3rem;
   }
 
   &:before {
@@ -199,20 +199,21 @@
 .cta-visual-comment {
   position: relative;
   display: inline-block;
-  margin: 0 0 30px 0;
-  padding: 8px 30px;
+  margin: 0 0 1rem 0;
+  padding: .5rem 1rem;
   color: global.$color-text-primary;
   font-weight: bold;
+  line-height: 1.5;
   background: global.$color-white;
-  border-radius: 10em;
+  border-radius: global.$border-radius-round;
   @include acms.font-size(22);
 
   &:before {
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -15px;
-    border: 15px solid transparent;
+    margin-left: -1rem;
+    border: 1rem solid transparent;
     border-top-color: global.$color-white;
     content: "";
   }
@@ -220,14 +221,14 @@
 
 .cta-visual-title {
   position: relative;
-  margin: 0 0 30px 0;
+  margin: 0 0 1rem 0;
   @include acms.font-size(22);
   line-height: 1.5;
 }
 
 .cta-visual-text {
   position: relative;
-  margin: 0 0 25px 0;
+  margin: 0 0 1.5rem 0;
   @include acms.font-size(14);
   line-height: 1.5;
 }
@@ -248,27 +249,29 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta-visual {
-    padding: global.$cta-space-md 0;
+    padding: 5rem 0;
 
     &.is-cta-margin-top {
       margin-top: global.$footer-margin-top-lg;
     }
 
     &.is-lg {
-      padding: 100px 0 80px;
+      padding: 6.5rem 0 5rem;
     }
   }
+
   .cta-visual-title {
-    margin: 0 0 40px 0;
+    margin: 0 0 2.5rem 0;
     @include acms.font-size(34);
   }
   .cta-visual-text {
-    margin: 0 0 40px 0;
+    margin: 0 0 2.5rem 0;
     @include acms.font-size(16);
   }
 
   .cta-visual-comment {
-    padding: 15px 45px;
+    margin: 0 0 2rem;
+    padding: .5rem 3rem;
     @include acms.font-size(32);
   }
 }

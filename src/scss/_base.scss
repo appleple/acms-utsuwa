@@ -12,26 +12,21 @@ html {
   background: global.$color-white;
 }
 
-body {
-  @include acms.font-size(16);
-
-  /* calc(50% - 50vw)使用時に
-   EdgeとIE11で発生する横スクロール防止
-   （メッセージユニット・全幅ユニット）*/
-  overflow-x: hidden;
-}
-
-/* 游ゴシック体使用時にIE11で文字がうわずってしまう問題に対応 */
-_:lang(x)::-ms-backdrop, body {
-  font-family: "Segoe UI", Meiryo, sans-serif;
-}
-
 
 /* リンクの設定 */
 a {
-  color: global.$color-link;
+  color: currentColor;
   text-decoration: none;
   border: none;
+
+  &:any-link {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 
   &[href*="tel"] {
     color: currentColor;
@@ -39,24 +34,11 @@ a {
 
     &:hover {
       text-decoration: none;
+      border: 0;
     }
   }
 }
 
-a:visited {
-  color: global.$color-link;
-  text-decoration: none;
-}
-
-a:active {
-  color: global.$color-link;
-  text-decoration: none;
-}
-
-a:hover {
-  color: global.$color-link;
-  text-decoration: underline;
-}
 
 /* コンテナー */
 .acms-container {
@@ -108,6 +90,11 @@ a:hover {
 /* グリッド */
 .acms-grid {
   margin: 0 calc(global.$unit-gutter-var / -2);
+}
+
+[class*=acms-col] {
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
 }
 
 
