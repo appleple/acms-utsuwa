@@ -89,7 +89,7 @@
   @media screen and (min-width: acms.$breakpoint-md-min){
     &.is-xl {
       min-width: 22rem;
-      padding: 15px;
+      padding: 1rem;
       @include acms.font-size(24);
     }
   }
