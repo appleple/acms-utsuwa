@@ -5,7 +5,7 @@
 　　セクション
 ------------------------------ */
 .section {
-  padding: 50px 0;
+  padding: 3rem 0;
 
   &.is-bg {
     background: global.$color-gray10;
@@ -14,29 +14,29 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .section {
-    padding: 80px 0;
+    padding: 5rem 0;
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .section {
-    padding: 100px 0;
+    padding: 6.5rem 0;
   }
 }
 
 
 /* 水平方向の見出し */
 .section-horizontal-header {
-  margin: 0 0 25px 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .section-horizontal-header-inner {
   position: relative;
-  padding: 5px 0;
+  padding: .25rem 0;
 }
 
 .section-horizontal-heading {
-  margin: 0 0 5px 0;
+  margin: 0 0 .25rem 0;
   color: global.$color-primary;
   @include acms.font-size(36);
   line-height: 1.5;
@@ -74,18 +74,18 @@
 }
 
 .section-horizontal-footer {
-  margin: 40px 0 0 0;
+  margin: 2.5rem 0 0 0;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min){
   .section-horizontal-header-inner {
-    padding: 15px 20px 15px  0;
+    padding: 1rem 1.25rem 1rem  0;
   }
   .section-horizontal-heading {
     @include acms.font-size(36);
 
     &.-large {
-      margin: 0 0 5px 0;
+      margin: 0 0 .5rem 0;
       @include acms.font-size(46);
     }
   }
@@ -112,14 +112,14 @@
   }
 
   .section-horizontal-header-inner {
-    padding: 25px 20px 25px 0;
+    padding: 1.5rem 1.25rem 1.5rem 0;
   }
 
   .section-horizontal-heading {
     @include acms.font-size(46);
 
     &.-large {
-      margin: 0 0 5px 0;
+      margin: 0 0 .25rem 0;
       @include acms.font-size(56);
     }
   }
@@ -145,7 +145,7 @@
   }
 
   .section-horizontal-footer {
-    margin: 80px 0 0 0;
+    margin: 5rem 0 0 0;
   }
 }
 
@@ -162,16 +162,16 @@
 /* 垂直方向の見出し */
 .section-vertical-header {
   position: relative;
-  margin: 0 0 65px 0;
+  margin: 0 0 4rem 0;
   text-align: center;
 
   &::after {
     position: absolute;
     right: 0;
-    bottom: -35px;
+    bottom: -3.25rem;
     left: 0;
     width: 1px;
-    height: 20px;
+    height: 1.25rem;
     margin: 0 auto;
     background: global.$color-gray40;
     content: "";
@@ -200,7 +200,7 @@
 }
 
 .section-vertical-text {
-  margin: 0 0 10px 0;
+  margin: 0 0 .5rem 0;
   @include acms.font-size(14);
   color: global.$color-text-side;
   font-weight: bold;
@@ -225,10 +225,10 @@
 
 @media screen and (min-width: acms.$breakpoint-lg-min){
   .section-vertical-header {
-    margin: 0 0 105px 0;
+    margin: 0 0 6.5rem 0;
     &::after {
-      bottom: -65px;
-      height: 40px;
+      bottom: -4rem;
+      height: 2.5rem;
     }
 
   }
@@ -245,8 +245,8 @@
 /* 背景あり */
 .section-animation-bg {
   position: relative;
-  margin: 30px 0;
-  padding: 20px 10px;
+  margin: 2rem 0;
+  padding: 1.25rem .5rem;
   overflow: hidden;
   &:before {
     position: absolute;
@@ -271,8 +271,8 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min){
   .section-animation-bg {
-    margin: 60px 0;
-    padding: 50px 0;
+    margin: 4rem 0;
+    padding: 3rem 0;
     .section-horizontal-header {
       position: absolute;
     }
@@ -282,7 +282,7 @@
 
 /* セクション内で使用するボタンのレイアウト */
 .section-button {
-  margin: 30px 0 0 0;
+  margin: 2rem 0 0 0;
   text-align: center;
 }
 

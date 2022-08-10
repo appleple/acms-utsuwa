@@ -5,31 +5,31 @@
 　　404ページ
 ------------------------------ */
 .not-found-content {
-  margin: 0 0 60px 0;
+  margin: 0 0 4rem 0;
   text-align: center;
 }
 .not-found-title {
-  margin: 0 0 10px 0;
+  margin: 0 0 .5rem 0;
   color: global.$color-primary;
   font-weight: bold;
   @include acms.font-size(100);
   line-height: 1.2;
 }
 .not-found-paragraph {
-  margin: 0 0 40px 0;
+  margin: 0 0 2.5rem 0;
   font-weight: bold;
   @include acms.font-size(20);
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min){
   .not-found-content {
-    margin: 0 0 120px 0;
+    margin: 0 0 7.5rem 0;
   }
   .not-found-title {
     @include acms.font-size(240);
   }
   .not-found-paragraph {
-    margin: 0 0 40px 0;
+    margin: 0 0 2.5rem 0;
     @include acms.font-size(22);
   }
 }

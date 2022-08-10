@@ -6,7 +6,7 @@
 　　カルーセル
 ------------------------------ */
 .carousel {
-  padding: 0 0 30px 0;
+  padding: 0 0 2rem 0;
 }
 
 
@@ -118,7 +118,7 @@
 /* カスタマイズ */
 .slick-slider {
   margin: 0 (math.div(global.$col-gutter, -2));
-  padding: 0 0 12px 0;
+  padding: 0 0 1rem 0;
   img {
     margin: 0 auto;
     border-radius: global.$border-radius-lg;
@@ -135,7 +135,7 @@
 }
 
 .slick-slide {
-  margin: 0 10px;
+  margin: 0 .5rem;
 }
 
 .slick-slide:hover {
@@ -186,8 +186,8 @@
   position: absolute;
   top: 50%;
   z-index: 1;
-  margin-top: -10px;
-  padding: 9px;
+  margin-top: -.5rem;
+  padding: .5rem;
   color: transparent;
   font-size: 0;
   line-height: 0;
@@ -203,30 +203,30 @@
 
   &:before {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     background: global.$color-secondary no-repeat center;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg'});
-    background-size: 8px 16px;
+    background-size: .5rem 1rem;
     border-radius: global.$border-radius-circle;
     content: "";
   }
 }
 .slick-prev {
-  left: 5px;
+  left: .25rem;
 
   &:before {
     transform: rotate(180deg);
   }
 }
 .slick-next {
-  right: 5px;
+  right: .25rem;
 }
 
 /* ドットのナビゲーション */
 .slick-dots {
   position: absolute;
-  bottom: -25px;
+  bottom: -1.5rem;
   display: block;
   width: 100%;
   margin: 0;
@@ -240,13 +240,13 @@
 .slick-dots li button {
   position: relative;
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin: 0 8px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 .5rem;
   font-size: 0;
   background: global.$color-gray40;
   border: 1px solid transparent;
-  border-radius: 7px;
+  border-radius: 1rem;
   content: "";
 }
 .slick-dots li button:focus {
@@ -277,17 +277,17 @@
   .slick-prev,
   .slick-next {
     padding: 0;
-    background-size: 12px 24px;
+    background-size: 1rem 1.5rem;
 
     &:before {
-      width: 48px;
-      height: 48px;
+      width: 3rem;
+      height: 3rem;
     }
   }
   .slick-prev {
-    left: -12px;
+    left: -.5rem;
   }
   .slick-next {
-    right: -12px;
+    right: -.5rem;
   }
 }

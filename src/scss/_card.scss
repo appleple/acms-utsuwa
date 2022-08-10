@@ -15,7 +15,7 @@
 
 .card-item {
   display: flex;
-  margin: 0 0 30px;
+  margin: 0 0 2rem;
 }
 
 .card {
@@ -78,7 +78,7 @@
 
 .card-title,
 .#{acms.$entry-class} .card-title {
-  margin: 0 0 15px 0;
+  margin: 0 0 1rem 0;
   color: global.$color-black;
   line-height: 1.3;
   @include acms.font-size(18);
@@ -95,21 +95,21 @@
 
 .card-time {
   display: inline-block;
-  margin: 0 0 5px 0;
+  margin: 0 0 .25rem 0;
   @include acms.font-size(16);
   color: global.$color-gray90;
 }
 
 .card-badge-news {
   @include acms.font-size(12);
-  margin: 0 0 0 10px;
+  margin: 0 0 0 .5rem;
   font-weight: bold;
   line-height: 1;
 }
 
 .card-text,
 .#{acms.$entry-class} .card-text {
-  margin: 0 0 25px 0;
+  margin: 0 0 1.5rem 0;
   line-height: 1.7;
   @include acms.font-size(14);
 
@@ -134,7 +134,7 @@
   &::before {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: -.25rem;
     left: 0;
     width: 100%;
     height: 2px;
@@ -149,7 +149,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 .5rem;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-position: center;
@@ -170,7 +170,7 @@
 
 .card-footer {
   margin-top: auto;
-  padding: 10px 0;
+  padding: .5rem 0;
   border-top: global.$border-width-sm solid global.$color-gray30;
 }
 
@@ -182,21 +182,21 @@
 }
 
 .card-author-img {
-  margin: 0 10px 0 0;
+  margin: 0 .5rem 0 0;
   border-radius: global.$border-radius-circle;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .card-img-wrap {
-    margin: 0 0 20px 0;
+    margin: 0 0 1rem 0;
 
     .card.is-lg & {
-      margin: 0 0 30px 0;
+      margin: 0 0 2rem 0;
     }
   }
 
   .card-title {
-    margin: 0 0 15px 0;
+    margin: 0 0 1rem 0;
     @include acms.font-size(20);
 
     .card.is-lg & {
@@ -205,11 +205,11 @@
   }
 
   .card-text {
-    margin: 0 0 25px 0;
+    margin: 0 0 1.5rem 0;
     @include acms.font-size(16);
 
     .card.is-lg & {
-      margin: 0 0 35px 0;
+      margin: 0 0 2rem 0;
     }
   }
 
@@ -218,14 +218,14 @@
     @include acms.font-size(18);
 
     &::before {
-      bottom: -10px;
+      bottom: -.5rem;
     }
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .card-list {
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -241,7 +241,7 @@
 
 .card-bordered-item {
   display: flex;
-  margin: 0 0 30px;
+  margin: 0 0 2rem;
 }
 
 .card-bordered {
@@ -294,7 +294,7 @@
 
 .card-bordered-title,
 .#{ acms.$entry-class } .card-bordered-title {
-  margin: 0 0 15px 0;
+  margin: 0 0 1rem 0;
   color: global.$color-black;
   line-height: 1.3;
   @include acms.font-size(18);
@@ -313,7 +313,7 @@
   &::before {
     position: absolute;
     right: 0;
-    bottom: -5px;
+    bottom: -.25rem;
     left: 0;
     width: 100%;
     height: 2px;
@@ -328,7 +328,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 .5rem;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-position: center;
@@ -350,7 +350,7 @@
 .card-bordered-text-inline {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 1rem;
 
   .card-bordered-title,
   .#{acms.$entry-class} .card-bordered-title,
@@ -368,16 +368,16 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .card-bordered-text-inline {
     display: flex;
-    padding: 25px;
+    padding: 1.5rem;
   }
 
   .card-bordered-title {
-    margin: 0 0 20px 0;
+    margin: 0 0 1rem 0;
     @include acms.font-size(22);
   }
 
   .card-bordered-text {
-    margin: 0 0 35px 0;
+    margin: 0 0 2rem 0;
     @include acms.font-size(16);
   }
   .card-bordered-read-more,
@@ -385,13 +385,13 @@
     @include acms.font-size(18);
 
     &::before {
-      bottom: -10px;
+      bottom: -.5rem;
     }
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .card-bordered-text-inline {
-    padding: 30px;
+    padding: 2rem;
   }
 }

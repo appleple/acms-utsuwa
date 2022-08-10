@@ -2,16 +2,16 @@
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
-$_video-thumbnail-size: 500px;
-$_video-play-btn-size: 60px;
-$_video-play-btn-arrow-height: 24px;
-$_video-play-btn-arrow-width: 18px;
+$_video-thumbnail-size: 31rem;
+$_video-play-btn-size: 4rem;
+$_video-play-btn-arrow-height: 1.5rem;
+$_video-play-btn-arrow-width: 1rem;
 $_video-play-btn-arrow-color: #FFF;
 
-$_video-thumbnail-size-lg: 675px;
-$_video-play-btn-size-lg: 80px;
-$_video-play-btn-arrow-height-lg: 36px;
-$_video-play-btn-arrow-width-lg: 32px;
+$_video-thumbnail-size-lg: 42rem;
+$_video-play-btn-size-lg: 5rem;
+$_video-play-btn-arrow-height-lg: 2rem;
+$_video-play-btn-arrow-width-lg: 2rem;
 
 /* ------------------------------
 　　ビデオ
@@ -27,7 +27,7 @@ $_video-play-btn-arrow-width-lg: 32px;
   position: relative;
   display: block;
   max-width: $_video-thumbnail-size;
-  margin: 0 auto 30px;
+  margin: 0 auto 2rem;
   overflow: hidden;
   border-radius: global.$border-radius-xl;
   box-shadow: rgba(0, 0, 0, 5%) 0 6px 15px 4px;
@@ -81,7 +81,7 @@ $_video-play-btn-arrow-width-lg: 32px;
 
 @media screen and (min-width: acms.$breakpoint-sm-min){
   .video-modal-thumbnail {
-    margin: 0 0 30px;
+    margin: 0 0 2rem;
   }
 }
 
@@ -99,7 +99,7 @@ $_video-play-btn-arrow-width-lg: 32px;
   }
   .video-modal-thumbnail {
     max-width: $_video-thumbnail-size-lg;
-    margin: 50px auto;
+    margin: 3rem auto;
   }
 
   .video-modal-play-icon-wrap {
@@ -112,7 +112,7 @@ $_video-play-btn-arrow-width-lg: 32px;
 
     &:before {
       margin-top: calc($_video-play-btn-arrow-height-lg / -2);
-      margin-left: -13px;
+      margin-left: -.75rem;
       border: calc($_video-play-btn-arrow-height-lg / 2) solid transparent;
       border-left: $_video-play-btn-arrow-width-lg solid $_video-play-btn-arrow-color;
     }
@@ -122,10 +122,10 @@ $_video-play-btn-arrow-width-lg: 32px;
 
 @media screen and (max-width: acms.$breakpoint-md-max) {
   .modal-video-inner {
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
   .modal-video-close-btn {
-    top: -45px;
+    top: -3rem;
     right: -5px;
   }
 }

@@ -6,7 +6,7 @@
 ------------------------------ */
 .heading-lg {
   margin: -40px 0 global.$entry-el-margin-sm 0;// アンカーリンクのための余白を打ち消す用
-  padding-top: (global.$header-height + 20px);
+  padding-top: (global.$header-height + .5rem);
   line-height: 1.4;
   @include acms.font-size(26);
 
