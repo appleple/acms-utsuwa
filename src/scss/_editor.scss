@@ -4,6 +4,7 @@
 /* ------------------------------
 　　テキストユニットのエディターの設定
 ------------------------------ */
+
 /* エントリー内ボタン */
 .entryFormLiteEditor {
   .text-point {
@@ -13,7 +14,6 @@
 
   .text-word-break {
     display: inline-block;
-
 
     &::after {
       margin: 0 2px;
@@ -37,8 +37,10 @@
 
 .acms-admin-table-admin-edit {
   border-collapse: collapse;
+
   .sortable-item {
-    border-top: 1px solid #CCC;
+    border-top: 1px solid #ccc;
+
     &:first-child {
       border: 0;
     }

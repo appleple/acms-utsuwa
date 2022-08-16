@@ -86,64 +86,64 @@ const request = (form, method, effect, effectSpeed) => {
       form.isLastAjaxSuccess = true;
       if (method == 'replace') {
         switch (effect) {
-          case 'fade':
-            var $wrapper = $($.parseHTML(`<div>${html}</div>`));
-            $(target).fadeOut(effectSpeed, () => {
-              $wrapper.hide();
-              $(target).replaceWith($wrapper);
-              window.dispatch($wrapper.get(0));
-              $wrapper.fadeIn(effectSpeed, () => {
-                const $contents = $wrapper.children().first().unwrap();
-                fin($contents.parent().get(0));
-              });
-            });
-            break;
-          case 'slide':
-            var $wrapper = $($.parseHTML(`<div>${html}</div>`));
-            $(target).slideUp(effectSpeed, () => {
-              $wrapper.hide();
-              $(target).replaceWith($wrapper);
-              window.dispatch($wrapper.get(0));
-              $wrapper.slideDown(effectSpeed, () => {
-                const $contents = $wrapper.children().first().unwrap();
-                fin($contents.parent().get(0));
-              });
-            });
-            break;
-          default:
-            var $wrapper = $($.parseHTML(`<div>${html}</div>`));
+        case 'fade':
+          var $wrapper = $($.parseHTML(`<div>${html}</div>`));
+          $(target).fadeOut(effectSpeed, () => {
+            $wrapper.hide();
             $(target).replaceWith($wrapper);
             window.dispatch($wrapper.get(0));
-            var $contents = $wrapper.children().first().unwrap();
-            fin($contents.parent().get(0));
+            $wrapper.fadeIn(effectSpeed, () => {
+              const $contents = $wrapper.children().first().unwrap();
+              fin($contents.parent().get(0));
+            });
+          });
+          break;
+        case 'slide':
+          var $wrapper = $($.parseHTML(`<div>${html}</div>`));
+          $(target).slideUp(effectSpeed, () => {
+            $wrapper.hide();
+            $(target).replaceWith($wrapper);
+            window.dispatch($wrapper.get(0));
+            $wrapper.slideDown(effectSpeed, () => {
+              const $contents = $wrapper.children().first().unwrap();
+              fin($contents.parent().get(0));
+            });
+          });
+          break;
+        default:
+          var $wrapper = $($.parseHTML(`<div>${html}</div>`));
+          $(target).replaceWith($wrapper);
+          window.dispatch($wrapper.get(0));
+          var $contents = $wrapper.children().first().unwrap();
+          fin($contents.parent().get(0));
         }
       } else {
         switch (effect) {
-          case 'fade':
-            $(target).fadeOut(effectSpeed, function () {
-              $(this).empty();
-              $(this).append(html);
-              window.dispatch(this);
-              $(this).fadeIn(effectSpeed, () => {
-                fin($(target).get(0));
-              });
+        case 'fade':
+          $(target).fadeOut(effectSpeed, function () {
+            $(this).empty();
+            $(this).append(html);
+            window.dispatch(this);
+            $(this).fadeIn(effectSpeed, () => {
+              fin($(target).get(0));
             });
-            break;
-          case 'slide':
-            $(target).slideUp(effectSpeed, function () {
-              $(this).empty();
-              $(this).append(html);
-              window.dispatch(this);
-              $(this).slideDown(effectSpeed, () => {
-                fin($(target).get(0));
-              });
+          });
+          break;
+        case 'slide':
+          $(target).slideUp(effectSpeed, function () {
+            $(this).empty();
+            $(this).append(html);
+            window.dispatch(this);
+            $(this).slideDown(effectSpeed, () => {
+              fin($(target).get(0));
             });
-            break;
-          default:
-            $(target).empty();
-            $(target).append(html);
-            window.dispatch(target);
-            fin($(target).get(0));
+          });
+          break;
+        default:
+          $(target).empty();
+          $(target).append(html);
+          window.dispatch(target);
+          fin($(target).get(0));
         }
       }
     },

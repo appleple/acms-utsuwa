@@ -12,15 +12,14 @@ html {
   background: global.$color-white;
 }
 
-
 /* リンクの設定 */
 a {
-  color: currentColor;
+  color: currentcolor;
   text-decoration: none;
   border: none;
 
   &:any-link {
-    color: currentColor;
+    color: currentcolor;
     text-decoration: none;
   }
 
@@ -29,7 +28,7 @@ a {
   }
 
   &[href*="tel"] {
-    color: currentColor;
+    color: currentcolor;
     border-bottom: global.$border-width-sm dashed;
 
     &:hover {
@@ -39,7 +38,6 @@ a {
   }
 }
 
-
 /* コンテナー */
 .acms-container {
   --gutter: var(--gutter-md);
@@ -47,7 +45,8 @@ a {
   max-width: global.$container;
   padding-right: calc(global.$unit-gutter-var / 2);
   padding-left: calc(global.$unit-gutter-var / 2);
-  @if (global.$enable-iphonex == true) {
+
+  @if global.$enable-iphonex == true {
     padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
     padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
@@ -65,12 +64,12 @@ a {
   margin: 0 auto;
   padding-right: calc(global.$unit-gutter-var / 2);
   padding-left: calc(global.$unit-gutter-var / 2);
-  @if (global.$enable-iphonex == true) {
+
+  @if global.$enable-iphonex == true {
     padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
     padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
 }
-
 
 .container-sm {
   --gutter: var(--gutter-sm);
@@ -80,23 +79,22 @@ a {
   margin: 0 auto;
   padding-right: calc((global.$unit-gutter-var / 2));
   padding-left: calc((global.$unit-gutter-var / 2));
-  @if (global.$enable-iphonex == true) {
-    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2) );
+
+  @if global.$enable-iphonex == true {
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
     padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
   }
 }
-
 
 /* グリッド */
 .acms-grid {
   margin: 0 calc(global.$unit-gutter-var / -2);
 }
 
-[class*=acms-col] {
+[class*="acms-col"] {
   padding-right: calc(global.$unit-gutter-var / 2);
   padding-left: calc(global.$unit-gutter-var / 2);
 }
-
 
 /* 固定コンテンツ */
 .sticky-contents {
@@ -109,7 +107,7 @@ a {
   padding: 1rem 0;
   transform: translateY(40px);
   opacity: 0;
-  transition: opacity .3s, transform 0.2s;
+  transition: opacity 0.3s, transform 0.2s;
 
   &.is-centered {
     text-align: center;

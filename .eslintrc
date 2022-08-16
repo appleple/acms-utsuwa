@@ -17,7 +17,10 @@
     "jQuery": true
   },
   "rules": {
-
+    "template-curly-spacing": ["off", "never"],
+    "indent": ["error", 2, {
+      "ignoredNodes": ["TemplateLiteral"]
+    }]
   },
   "settings": {
     "import/resolver": {

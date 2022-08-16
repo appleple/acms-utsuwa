@@ -35,6 +35,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
   @include global.link-card(global.$color-text);
 
   &:hover {
@@ -56,13 +57,13 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.25rem;
   overflow: hidden;
   border-radius: global.$border-radius-lg;
 }
 
 .card-img {
-  transition: .4s .2s ease-out;
+  transition: 0.4s 0.2s ease-out;
   will-change: transform;
 
   .js .js-animation-row & {
@@ -75,12 +76,12 @@
   }
 }
 
-
 .card-title,
 .#{acms.$entry-class} .card-title {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   color: global.$color-black;
   line-height: 1.3;
+
   @include acms.font-size(18);
 
   .js .js-animation-row & {
@@ -89,28 +90,32 @@
   }
 
   .js .js-animation-row.is-show & {
-    animation: fade-in .2s .7s 1 both;
+    animation: fade-in 0.2s 0.7s 1 both;
   }
 }
 
 .card-time {
   display: inline-block;
-  margin: 0 0 .25rem 0;
+  margin: 0 0 0.25rem;
+
   @include acms.font-size(16);
+
   color: global.$color-gray90;
 }
 
 .card-badge-news {
   @include acms.font-size(12);
-  margin: 0 0 0 .5rem;
+
+  margin: 0 0 0 0.5rem;
   font-weight: bold;
   line-height: 1;
 }
 
 .card-text,
 .#{acms.$entry-class} .card-text {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
   line-height: 1.7;
+
   @include acms.font-size(14);
 
   .js .js-animation-row & {
@@ -118,7 +123,7 @@
   }
 
   .js .js-animation-row.is-show & {
-    animation: fade-in .2s 1s 1 both;
+    animation: fade-in 0.2s 1s 1 both;
   }
 }
 
@@ -128,20 +133,22 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
+
   @include acms.font-size(16);
+
   font-weight: bold;
 
   &::before {
     position: absolute;
     right: 0;
-    bottom: -.25rem;
+    bottom: -0.25rem;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: global.$color-secondary;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     content: "";
   }
 
@@ -149,7 +156,7 @@
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    margin: 0 0 0 .5rem;
+    margin: 0 0 0 0.5rem;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-position: center;
@@ -164,13 +171,13 @@
   }
 
   .js .js-animation-row.is-show & {
-    animation: fade-in .2s 1.2s 1 both;
+    animation: fade-in 0.2s 1.2s 1 both;
   }
 }
 
 .card-footer {
   margin-top: auto;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   border-top: global.$border-width-sm solid global.$color-gray30;
 }
 
@@ -178,25 +185,27 @@
   display: flex;
   align-items: center;
   margin: 0;
+
   @include acms.font-size(16);
 }
 
 .card-author-img {
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
   border-radius: global.$border-radius-circle;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .card-img-wrap {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
 
     .card.is-lg & {
-      margin: 0 0 2rem 0;
+      margin: 0 0 2rem;
     }
   }
 
   .card-title {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
+
     @include acms.font-size(20);
 
     .card.is-lg & {
@@ -205,11 +214,12 @@
   }
 
   .card-text {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.5rem;
+
     @include acms.font-size(16);
 
     .card.is-lg & {
-      margin: 0 0 2rem 0;
+      margin: 0 0 2rem;
     }
   }
 
@@ -218,7 +228,7 @@
     @include acms.font-size(18);
 
     &::before {
-      bottom: -.5rem;
+      bottom: -0.5rem;
     }
   }
 }
@@ -228,7 +238,6 @@
     margin-bottom: 2rem;
   }
 }
-
 
 /* ボーダー付きカード */
 .card-bordered-list {
@@ -255,6 +264,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
   @include global.link-card(global.$color-text);
 
   &:hover {
@@ -277,9 +287,8 @@
   overflow: hidden;
 }
 
-
 .card-bordered-img {
-  transition: .4s .2s ease-out;
+  transition: 0.4s 0.2s ease-out;
   will-change: transform;
 
   .js .js-animation-row & {
@@ -291,15 +300,14 @@
   }
 }
 
-
 .card-bordered-title,
 .#{ acms.$entry-class } .card-bordered-title {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   color: global.$color-black;
   line-height: 1.3;
+
   @include acms.font-size(18);
 }
-
 
 .card-bordered-read-more,
 .#{acms.$entry-class} .card-bordered-read-more {
@@ -307,20 +315,22 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
+
   @include acms.font-size(16);
+
   font-weight: bold;
 
   &::before {
     position: absolute;
     right: 0;
-    bottom: -.25rem;
+    bottom: -0.25rem;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: global.$color-secondary;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     content: "";
   }
 
@@ -328,7 +338,7 @@
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    margin: 0 0 0 .5rem;
+    margin: 0 0 0 0.5rem;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-position: center;
@@ -343,7 +353,7 @@
   }
 
   .js .js-animation-row.is-show & {
-    animation: fade-in .2s 1.2s 1 both;
+    animation: fade-in 0.2s 1.2s 1 both;
   }
 }
 
@@ -364,7 +374,6 @@
   }
 }
 
-
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .card-bordered-text-inline {
     display: flex;
@@ -372,12 +381,14 @@
   }
 
   .card-bordered-title {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
+
     @include acms.font-size(22);
   }
 
   .card-bordered-text {
-    margin: 0 0 2rem 0;
+    margin: 0 0 2rem;
+
     @include acms.font-size(16);
   }
   .card-bordered-read-more,
@@ -385,7 +396,7 @@
     @include acms.font-size(18);
 
     &::before {
-      bottom: -.5rem;
+      bottom: -0.5rem;
     }
   }
 }

@@ -20,9 +20,11 @@
 }
 
 .cta-title {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
   color: global.$color-text;
+
   @include acms.font-size(20);
+
   line-height: 1.3;
 }
 
@@ -35,20 +37,22 @@
   }
 
   .js .js-animation.is-show & {
-    animation: fade-in .4s .5s 1 both;
+    animation: fade-in 0.4s 0.5s 1 both;
   }
 }
 
 .cta-link-wrap {
   margin: 1.5rem 0;
+
   @include acms.font-size(18);
+
   font-weight: bold;
 }
 
 .cta-link {
   color: global.$color-text;
 
-  &:before {
+  &::before {
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -71,14 +75,13 @@
   }
 
   .js .js-animation.is-show & {
-    animation: fade-in .4s .5s 1 both;
+    animation: fade-in 0.4s 0.5s 1 both;
   }
 }
 
 .cta-micro-copy {
-  margin: 1rem 0 1.25rem 0;
+  margin: 1rem 0 1.25rem;
 }
-
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta {
@@ -89,19 +92,23 @@
       padding: 3rem 0;
     }
   }
+
   .cta-title {
     @include acms.font-size(34);
   }
+
   .cta-button {
     @include acms.font-size(24);
   }
+
   .cta-link-wrap {
     margin: 2.5rem 0;
+
     @include acms.font-size(24);
   }
 
   .cta-link {
-    &:before {
+    &::before {
       width: 1.5rem;
       height: 1.5rem;
       margin: 0 1.5rem 0 0;
@@ -109,10 +116,9 @@
   }
 
   .cta-micro-copy {
-    margin: 1.5rem 0 1.25rem 0;
+    margin: 1.5rem 0 1.25rem;
   }
 }
-
 
 /* 背景が角丸 */
 .cta-round {
@@ -123,9 +129,11 @@
 }
 
 .cta-round-title {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.25rem;
   color: global.$color-text;
+
   @include acms.font-size(20);
+
   line-height: 1.3;
 }
 
@@ -138,14 +146,13 @@
   }
 
   .js .js-animation.is-show & {
-    animation: fade-in .4s .5s 1 both;
+    animation: fade-in 0.4s 0.5s 1 both;
   }
 }
 
 .cta-round-micro-copy {
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0 0;
 }
-
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta-round {
@@ -155,14 +162,15 @@
   }
 
   .cta-round-title {
-    margin: 0 0 2rem 0;
+    margin: 0 0 2rem;
+
     @include acms.font-size(34);
   }
+
   .cta-round-button {
     @include acms.font-size(24);
   }
 }
-
 
 /* 背景画像付きのCTA */
 .cta-visual {
@@ -182,7 +190,7 @@
     padding: 5rem 0 3rem;
   }
 
-  &:before {
+  &::before {
     position: absolute;
     top: 0;
     right: 0;
@@ -191,7 +199,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgb(0 0 0 / 50%);
     content: "";
   }
 }
@@ -199,16 +207,17 @@
 .cta-visual-comment {
   position: relative;
   display: inline-block;
-  margin: 0 0 1rem 0;
-  padding: .5rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 1rem;
   color: global.$color-text-primary;
   font-weight: bold;
   line-height: 1.5;
   background: global.$color-white;
   border-radius: global.$border-radius-round;
+
   @include acms.font-size(22);
 
-  &:before {
+  &::before {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -221,15 +230,19 @@
 
 .cta-visual-title {
   position: relative;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
+
   @include acms.font-size(22);
+
   line-height: 1.5;
 }
 
 .cta-visual-text {
   position: relative;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
+
   @include acms.font-size(14);
+
   line-height: 1.5;
 }
 
@@ -242,10 +255,9 @@
   }
 
   .js .js-animation.is-show & {
-    animation: fade-in .4s .5s 1 both;
+    animation: fade-in 0.4s 0.5s 1 both;
   }
 }
-
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .cta-visual {
@@ -261,17 +273,21 @@
   }
 
   .cta-visual-title {
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2.5rem;
+
     @include acms.font-size(34);
   }
+
   .cta-visual-text {
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2.5rem;
+
     @include acms.font-size(16);
   }
 
   .cta-visual-comment {
     margin: 0 0 2rem;
-    padding: .5rem 3rem;
+    padding: 0.5rem 3rem;
+
     @include acms.font-size(32);
   }
 }

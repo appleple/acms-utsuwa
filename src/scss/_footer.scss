@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 3rem 0 .5rem 0;
+  padding: 3rem 0 0.5rem;
 }
 
 .footer-item {
@@ -38,11 +38,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
   @include acms.font-size(14);
 }
 
 .footer-company-catch {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
 }
 
 .footer-company-title {
@@ -50,7 +51,7 @@
 }
 
 .footer-company-logo {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -62,6 +63,7 @@
       margin-top: 0;
     }
   }
+
   .footer-group {
     flex-direction: row;
   }
@@ -75,14 +77,14 @@
 }
 
 .footer-address-name {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
 }
 
 .footer-address-item {
   margin: 0;
+
   @include acms.font-size(14);
 }
-
 
 /* ナビゲーション */
 .footer-item-nav {
@@ -91,9 +93,9 @@
   width: 100%;
 }
 
-
 .footer-nav {
-  margin: 0 0 4rem 0;
+  margin: 0 0 4rem;
+
   @include acms.font-size(14);
 }
 
@@ -105,21 +107,23 @@
 
 .footer-nav-item {
   font-weight: bold;
+
   @include acms.font-size(15);
 
   .footer-nav-item {
     position: relative;
     margin: 0 0 0 1rem;
     font-weight: normal;
+
     @include acms.font-size(14);
 
     &::before {
       position: absolute;
-      top: .5em;
+      top: 0.5em;
       left: -1rem;
       display: inline-block;
-      border: .2rem solid transparent;
-      border-left: .4rem solid rgba(0, 0, 0, .3);
+      border: 0.2rem solid transparent;
+      border-left: 0.4rem solid rgb(0 0 0 / 30%);
       content: "";
     }
   }
@@ -127,13 +131,13 @@
 
 .footer-nav-link {
   display: inline-block;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   color: global.$color-text-inverse;
 
   @include global.link-color(global.$color-text-inverse);
 
   .footer-nav-item .footer-nav-item & {
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem;
   }
 
   & + .footer-nav-group {
@@ -141,14 +145,12 @@
   }
 }
 
-
 /* サブ項目 */
 .footer-nav-side {
   display: flex;
   margin-top: auto;
   border-top: global.$border-width-sm solid global.$color-primary-light;
 }
-
 
 /* インラインナビゲーション */
 .footer-nav-inline {
@@ -178,8 +180,6 @@
   @include global.link-color(global.$color-text-inverse);
 }
 
-
-
 .footer-bottom {
   padding: 1rem 0;
   border-top: global.$border-footer;
@@ -187,19 +187,19 @@
 
 /* コピーライト */
 .footer-copyright-text {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
 }
-
 
 /* SNS */
 .footer-bottom-sns {
   display: none;
 }
+
 .footer-sns {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: .5rem 0 0 auto;
+  margin: 0.5rem 0 0 auto;
 }
 
 .footer-sns-group {
@@ -210,7 +210,7 @@
 }
 
 .footer-sns-item {
-  margin: 0 .25rem;
+  margin: 0 0.25rem;
 
   &:first-child {
     margin-left: 0;
@@ -223,15 +223,16 @@
 
 .footer-sns-link {
   display: inline-block;
-  padding: .5rem;
+  padding: 0.5rem;
   vertical-align: top;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  .footer-bottom-inner  {
+  .footer-bottom-inner {
     display: flex;
     align-items: center;
   }
+
   .footer-copyright-text {
     margin: 0;
   }

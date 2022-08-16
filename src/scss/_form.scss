@@ -9,35 +9,37 @@
 ------------------------------ */
 .form-step {
   display: flex;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
   padding: 0;
 
   /* カウンターの設定 */
   counter-reset: mailStep;
 }
+
 .form-step-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0 .5rem;
+  padding: 1rem 0 0.5rem;
   color: global.$color-text;
   font-weight: bold;
   list-style: none;
+
   @include acms.font-size(16);
 
   &::before {
-
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem;
     color: global.$color-primary;
     line-height: 1.7;
     background: global.$color-gray10;
     border-radius: 50%;
     content: counter(mailStep);
+
     /* カウンターの設定 */
     counter-increment: mailStep;
   }
@@ -54,17 +56,19 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-step-item {
     flex-direction: row;
     justify-content: center;
-    padding: 1rem 0 1rem;
+    padding: 1rem 0;
+
     @include acms.font-size(22);
 
     &::before {
       width: 2.5rem;
       height: 2.5rem;
-      margin: 0 .5rem 0 0;
+      margin: 0 0.5rem 0 0;
+
       @include acms.font-size(24);
     }
 
@@ -74,12 +78,11 @@
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max){
+@media screen and (max-width: acms.$breakpoint-md-max) {
   .form-step {
     justify-content: center;
   }
 }
-
 
 /* フォームレイアウト
 ------------------------------ */
@@ -92,7 +95,7 @@
   list-style: none;
 
   &.is-confirm {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -108,7 +111,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
   padding: 0;
 }
 
@@ -116,10 +119,11 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
   font-weight: bold;
   text-align: left;
 }
+
 .form-control {
   display: block;
   box-sizing: border-box;
@@ -133,7 +137,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-label {
     vertical-align: top;
   }
@@ -144,15 +148,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 0;
 }
 
-
-
-@media screen and (min-width: acms.$breakpoint-sm-min){
+@media screen and (min-width: acms.$breakpoint-sm-min) {
   .form-button-group {
     flex-direction: row;
-    margin: 2.5rem 0 0 0;
+    margin: 2.5rem 0 0;
   }
 
   .form-button:not(:last-child) {
@@ -160,69 +162,72 @@
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-sm-max){
+@media screen and (max-width: acms.$breakpoint-sm-max) {
   .form-button {
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
 
     .button {
       width: 100%;
     }
   }
+
   .form-button-return {
     order: 1;
   }
 }
 
-
 /* ラベル
 ------------------------------ */
 .label-required {
-  margin: 0 0 0 .25rem;
-  padding: .25rem .5rem;
-  color: #FFF;
+  margin: 0 0 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
   vertical-align: middle;
   background: global.$color-error;
   border-radius: global.$border-radius-sm;
+
   @include acms.font-size(12);
 
   &:first-child {
-    margin: 0 .25rem 0 0;
+    margin: 0 0.25rem 0 0;
   }
 }
-@media screen and (min-width: acms.$breakpoint-md-min){
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .label-required {
-    margin: 0 0 0 .5rem;
+    margin: 0 0 0 0.5rem;
 
     &:first-child {
-      margin: 0 .5rem 0 0;
+      margin: 0 0.5rem 0 0;
     }
   }
 }
 
 .label-optional {
-  margin: 0 0 0 .25rem;
-  padding: .25rem .5rem;
+  margin: 0 0 0 0.25rem;
+  padding: 0.25rem 0.5rem;
   color: global.$color-text;
   vertical-align: middle;
   background: global.$color-gray40;
   border-radius: global.$border-radius-sm;
+
   @include acms.font-size(12);
 
   &:first-child {
-    margin: 0 .25rem 0 0;
+    margin: 0 0.25rem 0 0;
   }
 }
-@media screen and (min-width: acms.$breakpoint-md-min){
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .label-optional {
-    margin: 0 0 0 .5rem;
+    margin: 0 0 0 0.5rem;
 
     &:first-child {
-      margin: 0 .5rem 0 0;
+      margin: 0 0.5rem 0 0;
     }
   }
 }
-
 
 /* フォーム要素
 ------------------------------ */
@@ -231,24 +236,29 @@
     &[required]:required {
       border: global.$border-width-sm solid global.$color-error;
     }
+
     &.focused:invalid {
       border: global.$border-width-sm solid global.$color-error;
     }
+
     &[required]:valid {
       border: global.$border-width-sm solid global.$color-gray40;
     }
   }
+
   input,
   textarea {
     &[required]:required {
       background: global.$color-gray10;
     }
+
     &.focused:invalid,
-    &.invalid{
+    &.invalid {
       background: global.$color-gray10;
       border-color: global.$color-error;
       box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
     }
+
     &[required]:valid {
       background: global.$color-gray10;
     }
@@ -267,34 +277,38 @@
   input[type="email"],
   input[type="url"],
   input[type="search"],
-  input[type="tel"]{
+  input[type="tel"] {
     @include acms.font-size(16);
+
     box-sizing: border-box;
-    padding: .75rem;
+    padding: 0.75rem;
     line-height: 1.5;
     border-radius: global.$border-radius-sm;
   }
 
   textarea {
     @include acms.font-size(16);
+
     box-sizing: border-box;
-    padding: .75rem;
+    padding: 0.75rem;
     border-radius: global.$border-radius-sm;
   }
 
   select {
     box-sizing: border-box;
     min-height: 3rem;
-    padding: .75rem  3rem .75rem 1rem;
+    padding: 0.75rem  3rem 0.75rem 1rem;
     line-height: 1.5;
     vertical-align: top;
     background-color: global.$color-gray10;
+
     @include acms.font-size(16);
+
     border-radius: global.$border-radius-sm;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-group {
     input[type="text"],
     input[type="password"],
@@ -309,20 +323,19 @@
     input[type="url"],
     input[type="search"],
     input[type="tel"] {
-      padding: .75rem;
+      padding: 0.75rem;
     }
 
     textarea {
-      padding: .75rem;
+      padding: 0.75rem;
     }
-
   }
 }
 
 .form-checkbox-only {
   display: block;
   margin: 0;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   background: global.$color-gray20;
   border-radius: global.$border-radius-sm;
 
@@ -344,7 +357,6 @@
   }
 }
 
-
 /* 検索フォーム
 ------------------------------ */
 
@@ -364,14 +376,15 @@
     flex: 1 1 auto;
     box-sizing: border-box;
     height: 3rem;
-    padding: .5rem;
+    padding: 0.5rem;
     background: global.$color-gray10;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    transition: background-color .25s ease;
-    -webkit-appearance: none;
+    transition: background-color 0.25s ease;
+    appearance: none;
+
     @include acms.font-size(16);
 
     &:hover {
@@ -393,32 +406,32 @@
   }
 
   .form-search-button {
-    padding: .75rem 1rem;
+    padding: 0.75rem 1rem;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min){
+  @media screen and (min-width: acms.$breakpoint-md-min) {
     input.form-search-input {
       height: 4rem;
       padding: 1rem 1.25rem;
+
       @include acms.font-size(22);
     }
 
     .form-search-button {
       width: 16.5rem;
     }
-
   }
 }
-
 
 /* ヘルパーテキスト
 ------------------------------ */
 .form-helper-text {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
+
   @include acms.font-size(14);
+
   color: global.$color-text-side;
 }
-
 
 /* バリデーター
 ------------------------------ */
@@ -439,8 +452,9 @@
 }
 
 .form-error-text {
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   color: global.$color-error;
+
   @include acms.font-size(14);
 
   .form-helper-text + .validator-result-0 & {
@@ -448,24 +462,26 @@
   }
 }
 
-.transaction-notice-, .v-result-, .v-result-1, .validator-result-, .validator-result-1 {
+.transaction-notice-,
+.v-result-,
+.v-result-1,
+.validator-result-,
+.validator-result-1 {
   display: none;
 }
-
 
 /* メッセージ
 ------------------------------ */
 .form-message {
-  margin: 0 0 3rem 0;
+  margin: 0 0 3rem;
 }
 
 .form-message-back {
   text-align: center;
 }
 
-
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-message {
-    margin: 0 0 4rem 0;
+    margin: 0 0 4rem;
   }
 }
