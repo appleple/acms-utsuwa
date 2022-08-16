@@ -7,16 +7,16 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  padding: .75rem 2.25rem;
+  padding: 0.75rem 2.25rem;
   color: global.$color-text-inverse;
   font-weight: bold;
   text-align: center;
   background: global.$color-primary;
   border: 0;
   border-radius: global.$border-radius-md;
-  transition: background-color .2s;
-  @include acms.font-size(18);
+  transition: background-color 0.2s;
 
+  @include acms.font-size(18);
 
   &:any-link {
     color: global.$color-text-inverse;
@@ -48,11 +48,11 @@
   }
 
   &.is-shadow {
-    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    box-shadow: 0 3px 6px rgb(0 0 0 / 30%);
   }
 
   &.is-shadow-light {
-    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
   }
 
   &.is-inverse {
@@ -86,12 +86,12 @@
     border-radius: global.$border-radius-round;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min){
+  @media screen and (min-width: acms.$breakpoint-md-min) {
     &.is-xl {
       min-width: 22rem;
       padding: 1rem;
+
       @include acms.font-size(24);
     }
   }
 }
-

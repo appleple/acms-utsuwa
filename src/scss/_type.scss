@@ -6,8 +6,9 @@
 ------------------------------ */
 .heading-lg {
   margin: -40px 0 global.$entry-el-margin-sm 0;// アンカーリンクのための余白を打ち消す用
-  padding-top: (global.$header-height + .5rem);
+  padding-top: (global.$header-height + 0.5rem);
   line-height: 1.4;
+
   @include acms.font-size(26);
 
   &.heading-line {
@@ -19,7 +20,7 @@
     position: relative;
     margin-bottom: global.$entry-el-margin-lg;
 
-    &:before {
+    &::before {
       position: absolute;
       bottom: -20px;
       left: 0;
@@ -35,12 +36,13 @@
     margin-top: -20px; // アンカーリンクのための余白を打ち消す用
     margin-bottom: global.$entry-el-margin-sm;
     padding-top: 60px;
+
     @include acms.font-size(32);
 
     &.heading-primary {
       margin-bottom: global.$entry-el-margin-xl;
 
-      &:before {
+      &::before {
         bottom: -25px;
       }
     }
@@ -49,7 +51,9 @@
 
 .heading-md {
   margin: 40px 0 global.$entry-el-margin-sm 0;
+
   @include acms.font-size(22);
+
   line-height: 1.4;
 
   &.heading-line {
@@ -59,6 +63,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 60px 0 global.$entry-el-margin-md 0;
+
     @include acms.font-size(28);
 
     &.heading-line {
@@ -69,6 +74,7 @@
 
 .heading-sm {
   margin: 50px 0 global.$entry-el-margin-sm 0;
+
   @include acms.font-size(18);
 
   &.heading-line {
@@ -78,10 +84,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 60px 0 global.$entry-el-margin-sm 0;
+
     @include acms.font-size(22);
   }
 }
-
 
 .heading-lg,
 .heading-md,
@@ -90,7 +96,6 @@
     margin-top: 0;
   }
 }
-
 
 .paragraph {
   margin: 0 0 global.$entry-el-margin-md 0;
@@ -105,11 +110,9 @@
   }
 }
 
-
 .text-word-break {
   display: inline-block;
 }
-
 
 .unordered-list {
   margin: 0 0 global.$entry-el-margin-md 0;
@@ -118,7 +121,7 @@
   li {
     position: relative;
     clear: both;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
     line-height: 1.5;
     list-style: none;
 

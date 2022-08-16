@@ -1,13 +1,12 @@
 @use "sass:math";
+@use "sass:list";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
-$_text-unit-tags: 'h2','h3','h4','h5','h6','dl','p'!default;
-$_unit-type: 'image','file','map','yolp','street-view','youtube','video','eximage','media','quote','module';
-$_align: 'left','right','center','auto'!default;
-
-$_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
-
+$_text-unit-tags: "h2","h3","h4","h5","h6","dl","p" !default;
+$_unit-type: "image","file","map","yolp","street-view","youtube","video","eximage","media","quote","module";
+$_align: "left","right","center","auto" !default;
+$_hightlight-colors: #ff6,#a0ffff,#9f9,#f99,#f6f,#800 !default;
 
 /* ------------------------------
  エントリー内 主な要素
@@ -18,25 +17,23 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
   }
 }
 
-
 /* ------------------------------
  テキストユニットの設定
 ------------------------------ */
 .#{acms.$entry-class} {
   @each $text-unit in $_text-unit-tags {
     #{$text-unit} {
-      margin-right: calc( global.$unit-gutter-var / 2 );
-      margin-left: calc( global.$unit-gutter-var / 2 );
+      margin-right: calc(global.$unit-gutter-var / 2);
+      margin-left: calc(global.$unit-gutter-var / 2);
     }
   }
+
   blockquote {
     margin: 0 0 acms.$unit-gutter 0;
-    padding: .5rem 1.25rem;
+    padding: 0.5rem 1.25rem;
     border-left: solid 5px #ccc;
   }
 }
-
-
 
 /* ------------------------------
 各種ユニットの設定
@@ -44,35 +41,33 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
 
 @each $unit in $_unit-type {
   .#{acms.$entry-class} [class*="column-#{$unit}"] {
-    @if $unit == 'map' {
-      border-right: calc( global.$unit-gutter-var / 2 ) solid transparent;
-      border-left: calc( global.$unit-gutter-var / 2 ) solid transparent;
+    @if $unit == "map" {
+      border-right: calc(global.$unit-gutter-var / 2) solid transparent;
+      border-left: calc(global.$unit-gutter-var / 2) solid transparent;
       box-sizing: border-box;
-    } @else if $unit == 'quote' {
-      margin-right: calc( global.$unit-gutter-var / 2 );
-      margin-left: calc( global.$unit-gutter-var / 2 );
-    } @else if $unit == 'street-view' {
+    } @else if $unit == "quote" {
+      margin-right: calc(global.$unit-gutter-var / 2);
+      margin-left: calc(global.$unit-gutter-var / 2);
+    } @else if $unit == "street-view" {
       &:not(.column-street-view-inner) {
-        padding-right: calc( global.$unit-gutter-var / 2 );
-        padding-left: calc( global.$unit-gutter-var / 2 );
+        padding-right: calc(global.$unit-gutter-var / 2);
+        padding-left: calc(global.$unit-gutter-var / 2);
       }
     } @else {
-      padding-left: calc( global.$unit-gutter-var / 2 );
-      padding-right: calc( global.$unit-gutter-var / 2 );
+      padding-left: calc(global.$unit-gutter-var / 2);
+      padding-right: calc(global.$unit-gutter-var / 2);
       box-sizing: border-box;
     }
   }
 }
 
-
 /* ------------------------------
  共通の要素
 ------------------------------ */
 .entry-container {
-  margin-right: calc( global.$unit-gutter-var / 2 );
-  margin-left: calc( global.$unit-gutter-var / 2 );
+  margin-right: calc(global.$unit-gutter-var / 2);
+  margin-left: calc(global.$unit-gutter-var / 2);
 }
-
 
 /* ------------------------------
  検索
@@ -81,7 +76,7 @@ $_hightlight-colors: #FFFF66,#a0FFFF,#99FF99,#FF9999,#FF66FF,#880000!default;
 /* 検索結果のハイライト
 ------------------------------ */
 @each $hightlight-color in $_hightlight-colors {
-  $index: index($_hightlight-colors, $hightlight-color);
+  $index: list.index($_hightlight-colors, $hightlight-color);
 
   .highlight#{$index} {
     background-color: $hightlight-color;

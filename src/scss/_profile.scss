@@ -7,7 +7,7 @@
 .profile {
   box-sizing: border-box;
   width: 100%;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 2.5rem;
   padding: 1.5rem;
   border: global.$border-width-md solid global.$color-gray20;
 }
@@ -33,31 +33,37 @@
 }
 
 .profile-position {
-  margin: 0 0 .5rem 0;
+  margin: 0 0 0.5rem;
+
   @include acms.font-size(14);
+
   line-height: 1.3;
 }
 
 .profile-name {
   margin: 0;
   font-weight: bold;
+
   @include acms.font-size(16);
+
   line-height: 1.3;
 }
 
 .profile-text {
   margin: 0;
+
   @include acms.font-size(14);
+
   line-height: 1.7;
 }
 
 .profile-footer {
-  margin: 1.5rem 0 0 0;
+  margin: 1.5rem 0 0;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .profile {
-    margin: 0 0 4rem 0;
+    margin: 0 0 4rem;
     padding: 2.5rem 50px;
   }
 
@@ -71,7 +77,8 @@
   }
 
   .profile-name {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
+
     @include acms.font-size(18);
   }
 }

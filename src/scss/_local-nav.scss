@@ -6,6 +6,7 @@
 ------------------------------ */
 .local-nav-wrap {
   position: relative;
+
   &::after {
     position: absolute;
     top: 0;
@@ -13,11 +14,11 @@
     bottom: 0;
     display: block;
     width: 1rem;
-    background: linear-gradient(90deg, rgba(255,255,255,0), global.$color-white);
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%), global.$color-white);
     content: "";
   }
 
-  .page-title-wrapper + &  {
+  .page-title-wrapper + & {
     margin-top: -(global.$page-title-margin-bottom);
   }
 }
@@ -32,7 +33,9 @@
 
 .local-nav {
   padding: 1rem 0;
+
   @include acms.font-size(14);
+
   font-weight: bold;
 }
 
@@ -73,24 +76,25 @@
 
   &:hover,
   &:visited,
-  &:active{
+  &:active {
     color: global.$color-text;
     text-decoration: none;
   }
-
 }
 
-
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .local-nav-wrap {
-    .page-title-wrapper + &  {
+    .page-title-wrapper + & {
       margin-top: -(global.$page-title-margin-bottom-md);
     }
   }
+
   .local-nav {
     padding: 1.25rem 0;
+
     @include acms.font-size(18);
   }
+
   .local-nav-link {
     svg {
       width: 1.25rem;

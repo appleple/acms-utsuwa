@@ -9,6 +9,7 @@
   align-items: center;
   height: 100%;
 }
+
 .global-nav-list {
   display: flex;
   margin: 0;
@@ -20,7 +21,7 @@
 .global-nav-item {
   position: relative;
   display: flex;
-  margin: 0 .75rem;
+  margin: 0 0.75rem;
 
   &:last-child {
     margin-right: 0;
@@ -37,6 +38,7 @@
   &:visited {
     color: global.$color-text;
   }
+
   &:hover,
   &:active,
   &:focus {
@@ -51,12 +53,13 @@
     height: 2px;
     background: global.$color-primary;
     transform: scaleX(0);
-    transition: transform .2s;
+    transition: transform 0.2s;
     content: "";
   }
 
   &:hover {
     text-decoration: none;
+
     &::after {
       transform: scaleX(1);
     }
@@ -74,9 +77,9 @@
     padding: 0 2rem;
     color: global.$color-text-inverse;
     background: global.$color-primary;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
-    &:after {
+    &::after {
       content: none;
     }
 
@@ -90,7 +93,6 @@
   }
 }
 
-
 .global-nav-item > .global-nav-list {
   position: absolute;
   top: 100%;
@@ -100,7 +102,7 @@
   min-width: 10rem;
   overflow: hidden;
   border-radius: global.$border-radius-sm;
-  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
 
   .global-nav-item {
     width: 100%;
@@ -112,8 +114,8 @@
     position: relative;
     justify-content: flex-start;
     width: 100%;
-    padding: .75rem 1rem;
-    background: #FFF;
+    padding: 0.75rem 1rem;
+    background: #fff;
 
     &:focus-visible::before {
       position: absolute;
@@ -141,6 +143,6 @@
 }
 
 .global-nav-item:hover > .global-nav-list,
-.global-nav-item:focus-within > .global-nav-list{
+.global-nav-item:focus-within > .global-nav-list {
   display: flex;
 }

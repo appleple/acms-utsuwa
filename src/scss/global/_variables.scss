@@ -5,7 +5,6 @@
 // ------------------------------
 $enable-iphonex: true;
 
-
 // ------------------------------
 //　スペーシング
 // 例）map.get(global.$spacers, 4)
@@ -13,56 +12,48 @@ $enable-iphonex: true;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
-  4: $spacer * 1.5, //24
-  5: $spacer * 2, //32
+  4: $spacer * 1.5,
+  5: $spacer * 2,
   6: $spacer * 2.5,
-  7: $spacer * 3, //48
+  7: $spacer * 3,
   8: $spacer * 3.5,
-  9: $spacer * 4, // 64
+  9: $spacer * 4,
   10: $spacer * 4.5,
   11: $spacer * 5,
   12: $spacer * 5.5,
-  13: $spacer * 6.5, //104
+  13: $spacer * 6.5,
 ) !default;
 
-
 // グリッドの間隔
-$col-gutter   : 2rem;
-$unit-gutter-var   : var(--gutter);
+$col-gutter: 2rem;
+$unit-gutter-var: var(--gutter);
 
 // ------------------------------
 //　エントリー
 // ------------------------------
-$entry-el-margin-xxs: .5rem !default; // 8
-$entry-el-margin-sm : 1.5rem !default; // 24
-$entry-el-margin-md : 2rem !default; // 32
-$entry-el-margin-lg : 3rem !default; // 48
-$entry-el-margin-xl : 3.5rem !default; // 56
+$entry-el-margin-xxs: 0.5rem !default; // 8
+$entry-el-margin-sm: 1.5rem !default; // 24
+$entry-el-margin-md: 2rem !default; // 32
+$entry-el-margin-lg: 3rem !default; // 48
+$entry-el-margin-xl: 3.5rem !default; // 56
 
-$entry-el-padding-xxs: .5rem !default; // 8
+$entry-el-padding-xxs: 0.5rem !default; // 8
 $entry-el-padding-xs: 1rem !default; // 16
 $entry-el-padding-sm: 1.5rem !default; // 24
 $entry-el-padding-md: 2rem !default; // 32
 
-//$entry-class                    : entry-style;
-
-$unit-margin-md          : 2rem;
-$unit-margin-lg          : 3rem; // 48
-
-
-
-
+$unit-margin-md: 2rem;
+$unit-margin-lg: 3rem; // 48
 
 // ------------------------------
 //　コンテイナー
 // ------------------------------
-$container    : calc(70rem + $col-gutter); //1120px
-$container-md : calc(58rem + $col-gutter); // 928px
-$container-sm : calc(45rem + $col-gutter); // 736px
-
+$container: calc(70rem + $col-gutter); //1120px
+$container-md: calc(58rem + $col-gutter); // 928px
+$container-sm: calc(45rem + $col-gutter); // 736px
 
 $container-max-widths: (
   md: 720px,
@@ -70,162 +61,122 @@ $container-max-widths: (
   xl: 1120px
 ) !default;
 
-
 // ------------------------------
 //　ファイルのパス
 // ------------------------------
-$icon-font-path : '/themes/system/fonts/'; // フォントのパスを上書き
-$root-theme-img : '../../images/';
-
-
+$icon-font-path: "/themes/system/fonts/"; // フォントのパスを上書き
+$root-theme-img: "../../images/";
 
 // ------------------------------
 //　フォント
 // ------------------------------
-$font-hiragino       : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial, Hiragino Kaku Gothic Pro,Meiryo,sans-serif;
-$font-yu-gothic      : Segoe UI,Roboto,Helvetica Neue,Arial, YuGothic,Yu Gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
-$font-meiryo         : -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial, Verdana, Meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
-$font-base           : 'Roboto Condensed',$font-yu-gothic;
-
+/* stylelint-disable max-line-length */
+$font-hiragino: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, hiragino kaku gothic pro,meiryo,sans-serif;
+$font-yu-gothic: segoe ui,roboto,helvetica neue,arial, yugothic,yu gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
+$font-meiryo: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, verdana, meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
+/* stylelint-enable max-line-length */
+$font-base: "Roboto Condensed",$font-yu-gothic;
 $font-size: 1rem;
 $font-scale: 1.25;
-
 $font-scales: (
-  Display-S: $font-size * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale,
-  Heading-L: $font-size * $font-scale * $font-scale * $font-scale * $font-scale,
-  Heading-M: $font-size * $font-scale * $font-scale * $font-scale,
-  Heading-S: $font-size * $font-scale * $font-scale,
-  Heading-SS: $font-size * $font-scale,
-  Body-M: $font-size,
-  Body-S: $font-size / $font-scale
+  display-s: $font-size * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale,
+  heading-l: $font-size * $font-scale * $font-scale * $font-scale * $font-scale,
+  heading-m: $font-size * $font-scale * $font-scale * $font-scale,
+  heading-s: $font-size * $font-scale * $font-scale,
+  heading-ss: $font-size * $font-scale,
+  body-m: $font-size,
+  body-s: calc($font-size / $font-scale)
 ) !default;
-
-
 
 // ------------------------------
 //　カラー
 // ------------------------------
 
 // プライマリーカラー
-$color-primary         : var(--color-primary);
-$color-primary-light   : var(--color-primary-light);
-$color-primary-bg      : $color-primary-light;
-$color-primary-hover   : var(--color-primary-hover);
-
-$color-secondary       : var(--color-secondary);
-
-$color-tertiary       : var(--color-tertiary);
-$color-tertiary-light : var(--color-tertiary-light);
-
-$color-white           : var(--color-white);
-$color-black           : var(--color-black);
-
-$color-gray10          : var(--color-gray10);
-$color-gray20          : var(--color-gray20);
-$color-gray30          : var(--color-gray30);
-$color-gray40          : var(--color-gray40);
-$color-gray50          : var(--color-gray50);
-$color-gray60          : var(--color-gray60);
-$color-gray70          : var(--color-gray70);
-$color-gray80          : var(--color-gray80);
-$color-gray90          : var(--color-gray90);
-$color-gray100         : var(--color-gray100);
-
-$color-form-bg         : $color-gray10;
-$color-form-border     : $color-gray40;
-
-$color-link            : var(--color-link);
-
-$color-required        : var(--color-required);
-$color-error           : var(--color-error);
-
-$color-focus-visible   : #0061d1;
-
-$color-text            : $color-gray100;
-$color-text-side       : $color-gray90;
-$color-text-inverse    : $color-white;
-
-$color-text-primary    : $color-primary;
-$color-text-secondary  : $color-secondary;
-
-$color-text-point      : var(--color-text-point);
-
-$box-shadow-error      : var(--box-shadow-error);
-
-
-
+$color-primary: var(--color-primary);
+$color-primary-light: var(--color-primary-light);
+$color-primary-bg: $color-primary-light;
+$color-primary-hover: var(--color-primary-hover);
+$color-secondary: var(--color-secondary);
+$color-tertiary: var(--color-tertiary);
+$color-tertiary-light: var(--color-tertiary-light);
+$color-white: var(--color-white);
+$color-black: var(--color-black);
+$color-gray10: var(--color-gray10);
+$color-gray20: var(--color-gray20);
+$color-gray30: var(--color-gray30);
+$color-gray40: var(--color-gray40);
+$color-gray50: var(--color-gray50);
+$color-gray60: var(--color-gray60);
+$color-gray70: var(--color-gray70);
+$color-gray80: var(--color-gray80);
+$color-gray90: var(--color-gray90);
+$color-gray100: var(--color-gray100);
+$color-form-bg: $color-gray10;
+$color-form-border: $color-gray40;
+$color-link: var(--color-link);
+$color-required: var(--color-required);
+$color-error: var(--color-error);
+$color-focus-visible: #0061d1;
+$color-text: $color-gray100;
+$color-text-side: $color-gray90;
+$color-text-inverse: $color-white;
+$color-text-primary: $color-primary;
+$color-text-secondary: $color-secondary;
+$color-text-point: var(--color-text-point);
+$box-shadow-error: var(--box-shadow-error);
 
 // ------------------------------
 //　ボーダー
 // ------------------------------
-$border-width-sm      : 1px;
-$border-width-md      : 2px;
-$border-width-lg      : 4px;
-$border-link          : $border-width-sm dashed $color-link;
-$border-footer        : $border-width-sm solid $color-gray30;
-
-$border-radius-sm     : 3px;
-$border-radius-md     : 4px;
-$border-radius-lg     : 6px;
-$border-radius-xl     : 10px;
-$border-radius-xxl    : 30px;
-$border-radius-round  : 10em;
-$border-radius-circle : 100%;
-
-
+$border-width-sm: 1px;
+$border-width-md: 2px;
+$border-width-lg: 4px;
+$border-link: $border-width-sm dashed $color-link;
+$border-footer: $border-width-sm solid $color-gray30;
+$border-radius-sm: 3px;
+$border-radius-md: 4px;
+$border-radius-lg: 6px;
+$border-radius-xl: 10px;
+$border-radius-xxl: 30px;
+$border-radius-round: 10em;
+$border-radius-circle: 100%;
 
 // ------------------------------
 //　z-index
 // ------------------------------
-$zindex-fixed-contents : 9000;
-$zindex-header         : 10000;
-$zindex-mobile-nav     : 10001;
-$zindex-mobile-nav-btn : 10002;
-
-
-
+$zindex-fixed-contents: 9000;
+$zindex-header: 10000;
+$zindex-mobile-nav: 10001;
+$zindex-mobile-nav-btn: 10002;
 
 // ------------------------------
 //　ヘッダー
 // ------------------------------
-$header-height       : 3.5rem;
-$header-height-fixed : 3.5rem;
-
-
-
+$header-height: 3.5rem;
+$header-height-fixed: 3.5rem;
 
 // ------------------------------
 //　ページタイトル
 // ------------------------------
-$page-title-height           : 7.5rem;
-$page-title-height-image     : 10rem;
-$page-title-margin-bottom    : 2.5rem;
-
-$page-title-height-md        : 13rem;
-$page-title-height-image-md  : 19rem;
-$page-title-margin-bottom-md : 5rem;
-
-
-
-
+$page-title-height: 7.5rem;
+$page-title-height-image: 10rem;
+$page-title-margin-bottom: 2.5rem;
+$page-title-height-md: 13rem;
+$page-title-height-image-md: 19rem;
+$page-title-margin-bottom-md: 5rem;
 
 // ------------------------------
 //　ボタン
 // ------------------------------
-$btn-padding-y: .75rem;
+$btn-padding-y: 0.75rem;
 $btn-padding-x: 2rem;
-
-
-
 
 // ------------------------------
 //　CTAパーツ
 // ------------------------------
 $cta-space-md: 1.5rem;
 $cta-space-lg: 6.5rem;
-
-
-
 
 // ------------------------------
 //　フッター

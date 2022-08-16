@@ -5,21 +5,22 @@
 　　ページャー
 ------------------------------ */
 .pager {
-  margin: 0 -.25rem 2.5rem -.25rem;
+  margin: 0 -0.25rem 2.5rem;
   padding: 0;
   text-align: center;
   list-style: none;
+
   @include acms.font-size(20);
 
   li {
     display: inline-block;
-    margin: 0 .25rem .5rem;
+    margin: 0 0.25rem 0.5rem;
 
     &.cur { /* 現在いる位置 */
       box-sizing: border-box;
       width: 3rem;
       height: 3rem;
-      padding: .25rem;
+      padding: 0.25rem;
       color: global.$color-text-primary;
       background: global.$color-white;
       border: global.$border-width-md solid global.$color-primary;
@@ -43,7 +44,7 @@
   box-sizing: border-box;
   width: 3rem;
   height: 3rem;
-  padding: .25rem;
+  padding: 0.25rem;
   color: global.$color-text-inverse;
   background: global.$color-primary;
   border: 2px solid transparent;
@@ -72,10 +73,9 @@
   float: left;
 }
 
-
 /* 前後リンク */
 .serial-nav {
-  margin: 0 0 4rem 0;
+  margin: 0 0 4rem;
   border-top: global.$border-width-sm solid global.$color-gray40;
 }
 
@@ -127,7 +127,7 @@
   }
 
   svg {
-    margin: 0 .25rem 0 0;
+    margin: 0 0.25rem 0 0;
   }
 }
 
@@ -139,7 +139,7 @@
   }
 
   svg {
-    margin: 0 0 0 .25rem;
+    margin: 0 0 0 0.25rem;
   }
 }
 
@@ -148,6 +148,7 @@
   width: auto;
   font-weight: bold;
   white-space: nowrap;
+
   @include acms.font-size(16);
 
   a {
@@ -155,12 +156,12 @@
   }
 }
 
-
 .serial-nav-arrow {
   display: inline-flex;
   align-items: center;
-  margin: 0 0 .25rem 0;
+  margin: 0 0 0.25rem;
   font-weight: bold;
+
   @include acms.font-size(14);
 
   svg {
@@ -179,6 +180,7 @@
   justify-content: center;
   margin: 0;
   font-weight: bold;
+
   @include acms.font-size(16);
 
   a {
@@ -208,8 +210,9 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .serial-nav {
-    margin: 0 0 4rem 0;
+    margin: 0 0 4rem;
   }
+
   .serial-nav-list {
     flex-direction: row;
   }

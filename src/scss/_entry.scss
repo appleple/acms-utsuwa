@@ -6,26 +6,27 @@
 /* ------------------------------
 　　エントリー
 ------------------------------ */
+
 /*
 　ヘッダー
 ------------------------------ */
 .entry-header {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
 }
 
 .entry-header-info {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
   color: global.$color-gray80;
-  font-size: map.get(global.$font-scales, Body-M);
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .entry-header-time + .entry-header-category {
-  &:before {
+  &::before {
     display: inline-block;
     width: 1px;
     height: 1em;
-    margin: 0 1em 0 .5em;
-    background: currentColor;
+    margin: 0 1em 0 0.5em;
+    background: currentcolor;
     content: "";
   }
 }
@@ -41,9 +42,9 @@
 
 .entry-header-title {
   position: relative;
-  margin: 0 0 1.5rem 0;
-  padding: 0 0 1rem 0;
-  font-size: map.get(global.$font-scales, Heading-SS);
+  margin: 0 0 1.5rem;
+  padding: 0 0 1rem;
+  font-size: map.get(global.$font-scales, heading-ss);
   border-bottom: global.$border-width-lg solid global.$color-gray30;
 
   &::before {
@@ -62,18 +63,17 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header {
-    margin: 0 0 3rem 0;
+    margin: 0 0 3rem;
   }
 
   .entry-header-info {
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
-
   .entry-header-title {
-    margin: 0 0 1.5rem 0;
-    padding: 0 0 1.5rem 0;
-    font-size: map.get(global.$font-scales, Heading-M);
+    margin: 0 0 1.5rem;
+    padding: 0 0 1.5rem;
+    font-size: map.get(global.$font-scales, heading-m);
 
     &::before {
       bottom: -(global.$border-width-lg);
@@ -82,11 +82,10 @@
   }
 }
 
-
 /*
 　エントリーヘッダービジュアルあり
 ------------------------------ */
-.entry-header-visual  {
+.entry-header-visual {
   position: relative;
 }
 
@@ -95,25 +94,26 @@
   width: 100vw;
   height: 180px;
   margin: 0 calc(50% - 50vw);
+
   @include global.object-fit(cover);
 }
 
 .entry-header-visual-box {
   box-sizing: border-box;
-  margin: 0 (math.div(global.$unit-gutter-var, -2));
+  margin: 0 calc(global.$unit-gutter-var / -2);
   padding: 2rem 1.5rem;
   color: global.$color-text-inverse;
-  background: rgba(0,0,0,.7);
+  background: rgb(0 0 0.7);
 }
 
 .entry-header-visual-title {
-  margin: 0 0 1.5rem 0;
-  font-size: map.get(global.$font-scales, Heading-S);
+  margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, heading-s);
 }
 
 .entry-header-visual-desc {
-  margin: 0 0 1.5rem 0;
-  font-size: map.get(global.$font-scales, Body-S);
+  margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.7;
 }
 
@@ -121,47 +121,49 @@
   margin: 0;
 }
 
-@media screen and (min-width:acms.$breakpoint-md-min) {
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header-visual {
     margin-bottom: 2.5rem;
   }
+
   .entry-header-visual-img {
     height: 380px;
   }
+
   .entry-header-visual-title {
-    font-size: map.get(global.$font-scales, Heading-S);
+    font-size: map.get(global.$font-scales, heading-s);
   }
+
   .entry-header-visual-desc {
     margin: 0 0 global.$entry-el-margin-sm 0;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
-
   .entry-header-visual-box {
     position: absolute;
     top: 50%;
     width: 50%;
     margin: 0 calc(global.$unit-gutter-var / 2);
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    padding: 2.5rem 2.5rem 2rem;
     transform: translateY(-50%);
   }
+
   .entry-header-visual-title {
-    font-size: map.get(global.$font-scales, Heading-M);
+    font-size: map.get(global.$font-scales, heading-m);
   }
+
   .entry-header-visual-desc {
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
-
 
 /*
 　エントリーのコンテンツ
 ------------------------------ */
 
 .#{acms.$entry-class} {
-
   .entry-text-unit {
     .text-point {
       display: block;
@@ -199,15 +201,13 @@
 
   code {
     margin: 0 5px;
-    padding: 2px .25rem;
+    padding: 2px 0.25rem;
     color: global.$color-primary;
     background: global.$color-white;
-    border: global.$border-width-sm solid currentColor;
+    border: global.$border-width-sm solid currentcolor;
     border-radius: global.$border-radius-sm;
   }
-
 }
-
 
 /* アンカーリンクの際の上部の余白の確保 */
 .#{acms.$entry-class} .entry-text-unit {
@@ -215,7 +215,7 @@
   h3,
   h4 {
     margin-top: -(global.$entry-el-margin-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
-    border-top: global.$header-height + .25rem solid transparent;
+    border-top: global.$header-height + 0.25rem solid transparent;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       margin-top: -(global.$entry-el-margin-lg);
@@ -226,7 +226,7 @@
 
 .#{acms.$entry-class} .ug-bg-gray .entry-text-unit,
 .#{acms.$entry-class} .ug-bg-primary .entry-text-unit,
-.#{acms.$entry-class} .ug-border .entry-text-unit{
+.#{acms.$entry-class} .ug-border .entry-text-unit {
   h2,
   h3,
   h4 {
@@ -239,22 +239,19 @@
 }
 
 /* 見出しが最初の要素の時はページタイトルの余白を相殺する */
-.#{acms.$entry-class}  {
+.#{acms.$entry-class} {
   & > .is-h2:first-child h2,
-  & > .is-h3:first-child h3 ,
+  & > .is-h3:first-child h3,
   & > .is-h4:first-child h4 {
-    margin-top: -(global.$page-title-margin-bottom +  1.25rem);
+    margin-top: -(global.$page-title-margin-bottom + 1.25rem);
   }
 }
-
-
 
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
-    font-size: map.get(global.$font-scales, Heading-S);
+    font-size: map.get(global.$font-scales, heading-s);
     line-height: 1.4;
-
 
     &.heading-line {
       padding-bottom: global.$entry-el-padding-xs;
@@ -286,7 +283,7 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h2 {
       margin-bottom: global.$entry-el-margin-sm;
-      font-size: map.get(global.$font-scales, Heading-M);
+      font-size: map.get(global.$font-scales, heading-m);
 
       &.heading-line {
         padding-bottom: 1rem;
@@ -310,10 +307,9 @@
     }
   }
 
-
   h3 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
-    font-size: map.get(global.$font-scales, Heading-SS);
+    font-size: map.get(global.$font-scales, heading-ss);
     line-height: 1.4;
 
     &.heading-line {
@@ -330,7 +326,7 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h3 {
       margin-bottom: global.$entry-el-margin-sm;
-      font-size: map.get(global.$font-scales, Heading-S);
+      font-size: map.get(global.$font-scales, heading-s);
 
       .text-point {
         margin: 0 0 global.$entry-el-margin-xxs 0;
@@ -338,10 +334,9 @@
     }
   }
 
-
   h4 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.4;
 
     &.heading-line {
@@ -358,11 +353,10 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h4 {
       margin-bottom: global.$entry-el-margin-sm;
-      font-size: map.get(global.$font-scales, Heading-SS);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
-
 
 /* 本文 */
 .#{acms.$entry-class} {
@@ -372,12 +366,12 @@
 
     &.text-info {
       color: global.$color-text-side;
-      font-size: map.get(global.$font-scales, Body-S);
+      font-size: map.get(global.$font-scales, body-s);
     }
 
     &.text-danger {
       color: global.$color-error;
-      font-size: map.get(global.$font-scales, Body-S);
+      font-size: map.get(global.$font-scales, body-s);
     }
   }
 
@@ -387,7 +381,7 @@
   .is-table + .is-p .text-danger,
   [class*="column-table-"] + .is-p .text-info,
   [class*="column-table-"] + .is-p .text-danger {
-    margin-top: -(global.$entry-el-margin-md);
+    margin-top: -(global.$entry-el-margin-sm);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -406,20 +400,18 @@
   }
 }
 
-
-/* リード文*/
+/* リード文 */
 .#{acms.$entry-class} {
   p {
-
     &.text-lead-primary {
       color: global.$color-primary;
       font-weight: bold;
-      font-size: map.get(global.$font-scales, Heading-S);
+      font-size: map.get(global.$font-scales, heading-s);
       line-height: 1.5;
 
       .text-point {
         color: global.$color-text-side;
-        font-size: map.get(global.$font-scales, Body-M);
+        font-size: map.get(global.$font-scales, body-m);
       }
     }
 
@@ -427,27 +419,25 @@
       margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
       color: global.$color-text-side;
       font-weight: bold;
-      font-size: map.get(global.$font-scales, Heading-S);
+      font-size: map.get(global.$font-scales, heading-s);
       line-height: 1.5;
     }
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       &.text-lead-primary {
-        font-size: map.get(global.$font-scales, Heading-L);
+        font-size: map.get(global.$font-scales, heading-l);
 
         .text-point {
-          font-size: map.get(global.$font-scales, Heading-M);
+          font-size: map.get(global.$font-scales, heading-m);
         }
       }
 
       &.text-lead-info {
-        font-size: map.get(global.$font-scales, Heading-M);
+        font-size: map.get(global.$font-scales, heading-m);
       }
     }
-
   }
 }
-
 
 /* ボタン */
 .#{acms.$entry-class} {
@@ -457,11 +447,11 @@
       padding: global.$btn-padding-y global.$btn-padding-x;
       color: global.$color-text-inverse;
       font-weight: bold;
-      font-size: map.get(global.$font-scales, Body-M);
+      font-size: map.get(global.$font-scales, body-m);
       text-align: center;
       background: global.$color-primary;
       border-radius: global.$border-radius-md;
-      transition: background-color .2s;
+      transition: background-color 0.2s;
 
       &:hover,
       &:visited,
@@ -479,9 +469,8 @@
   }
 }
 
-
 /* リスト */
-.#{acms.$entry-class} .entry-text-unit  {
+.#{acms.$entry-class} .entry-text-unit {
   ul {
     margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
     padding: 0 0 0 global.$entry-el-padding-md;
@@ -489,21 +478,20 @@
     li {
       position: relative;
       clear: both;
-      margin: 0 0 .5rem 0;
+      margin: 0 0 0.5rem;
       line-height: 1.7;
       list-style: none;
 
       &::before {
         position: absolute;
-        top: .5rem;
+        top: 0.5rem;
         left: -1.5rem;
-        width: .5rem;
-        height: .5rem;
+        width: 0.5rem;
+        height: 0.5rem;
         background: global.$color-secondary;
         border-radius: 50%;
         content: "";
       }
-
     }
   }
 
@@ -513,7 +501,6 @@
     }
   }
 }
-
 
 /* 番号付きリスト */
 .#{acms.$entry-class} .entry-text-unit:not(.is-pre) {
@@ -525,7 +512,7 @@
     li {
       position: relative;
       clear: both;
-      margin: 0 0 1rem 0;
+      margin: 0 0 1rem;
       line-height: 1.7;
       list-style: none;
 
@@ -540,13 +527,12 @@
         height: 1.5rem;
         margin: 0 1rem 0 0;
         color: global.$color-white;
-        font-size: map.get(global.$font-scales, Body-S);
+        font-size: map.get(global.$font-scales, body-s);
         background: global.$color-secondary;
         border-radius: 50%;
         content: counter(order-list);
         counter-increment: order-list;
       }
-
     }
   }
 
@@ -557,22 +543,21 @@
   }
 }
 
-
 /* 記述リスト */
 .#{acms.$entry-class} .entry-text-unit {
   dl {
     margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
 
     dt {
-      margin: 0 0 1rem 0;
+      margin: 0 0 1rem;
       font-weight: bold;
-      font-size: map.get(global.$font-scales, Body-M);
+      font-size: map.get(global.$font-scales, body-m);
       line-height: 1.3;
     }
 
     dd {
-      margin: 0 0 2rem 0;
-      font-size: map.get(global.$font-scales, Body-M);
+      margin: 0 0 2rem;
+      font-size: map.get(global.$font-scales, body-m);
       line-height: 1.7;
     }
 
@@ -598,11 +583,10 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
       dt {
-        margin: 0 0 1rem 0;
+        margin: 0 0 1rem;
       }
 
       &.box-bordered {
-
         dt {
           padding: global.$entry-el-padding-md global.$entry-el-padding-md 0 global.$entry-el-padding-md;
         }
@@ -614,7 +598,6 @@
     }
   }
 }
-
 
 /* テーブル */
 .#{acms.$entry-class} .entry-text-unit,
@@ -628,7 +611,7 @@
     th,
     td {
       padding: global.$entry-el-padding-xs;
-      font-size: map.get(global.$font-scales, Body-M);
+      font-size: map.get(global.$font-scales, body-m);
       line-height: 1.5;
     }
 
@@ -650,7 +633,7 @@
       th,
       td {
         padding: global.$entry-el-padding-sm;
-        font-size: map.get(global.$font-scales, Body-M);
+        font-size: map.get(global.$font-scales, body-m);
       }
     }
   }
@@ -662,30 +645,29 @@
   }
 }
 
-[class^=column-table] .entry-container {
+[class^="column-table"] .entry-container {
   margin-bottom: global.$entry-el-margin-md;
   overflow-x: auto;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  [class^=column-table] .entry-container {
+  [class^="column-table"] .entry-container {
     margin-bottom: global.$entry-el-margin-lg;
   }
 }
-
 
 /* 引用 */
 .#{acms.$entry-class} .entry-text-unit {
   blockquote {
     margin: 0 0 global.$entry-el-margin-md 0;
     padding: global.$entry-el-padding-sm;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.7;
     border: global.$border-width-md solid global.$color-gray40;
 
     cite {
       color: global.$color-text-side;
-      font-size: map.get(global.$font-scales, Body-S);
+      font-size: map.get(global.$font-scales, body-s);
       font-style: normal;
 
       &::before {
@@ -702,10 +684,8 @@
   }
 }
 
-
 /* ユニットグループ */
 .#{acms.$entry-class} {
-
   /* 全てのユニットグループ */
   [class*="ug-"] {
     overflow: hidden;
@@ -789,17 +769,15 @@
   }
 }
 
-
 /* 画像・メディア・画像URLの共通設定 */
 [class*="column-image"],
 [class*="column-media"],
 [class*="column-eximage"] {
   .caption {
     color: global.$color-text-side;
-    font-size: map.get(global.$font-scales, Body-S);
+    font-size: map.get(global.$font-scales, body-s);
   }
 }
-
 
 /* ファイルユニット・メディア（ファイル）の設定 */
 [class*="column-file-"],
@@ -807,14 +785,14 @@
   display: inline-block;
 
   a,
-  a[href*=media-download] {
+  a[href*="media-download"] {
     display: inline-flex;
     align-items: center;
     padding: 1rem;
     color: global.$color-text;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
     &:hover {
       text-decoration: none;
@@ -825,7 +803,7 @@
   .caption {
     margin: 0;
     color: global.$color-text;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .columnIcon {
@@ -834,7 +812,6 @@
     margin: 0 1rem 0 0;
   }
 }
-
 
 /* 引用ユニットの設定 */
 [class*="column-quote-"] {
@@ -862,46 +839,50 @@
   }
 
   .quote-title {
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem;
     font-weight: bold;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.4;
   }
 
   .quote-site-name {
     margin: 0;
     color: global.$color-text-side;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .quote-description {
     display: none;
-    margin: 0 0 .5rem 0;
-    font-size: map.get(global.$font-scales, Body-S);
+    margin: 0 0 0.5rem;
+    font-size: map.get(global.$font-scales, body-s);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .quote-link {
       flex-direction: row;
     }
+
     .quote-img-wrap {
       flex: 1 0 auto;
       box-sizing: border-box;
       width: math.div(100%, 3);
       padding: 2rem 1rem 2rem 2rem;
     }
+
     .quote-img {
       width: 100%;
     }
+
     .quote-info {
       box-sizing: border-box;
       width: math.div(2, 3);
       padding: 2rem 2rem 2rem 1rem;
     }
+
     .quote-title {
-      margin: 0 0 1.5rem 0;
+      margin: 0 0 1.5rem;
       font-weight: bold;
-      font-size: map.get(global.$font-scales, Heading-SS);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
 
     .quote-description {
@@ -910,14 +891,13 @@
   }
 }
 
-
 /*
 　カード
 ------------------------------ */
 .#{acms.$entry-class} {
   .card-title,
   .card-bordered-title {
-    font-size: map.get(global.$font-scales, Heading-SS);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
@@ -928,7 +908,6 @@
   }
 }
 
-
 /*
 　罫線ユニット
 ------------------------------ */
@@ -937,7 +916,6 @@
   border: 0;
   border-top: global.$border-width-sm solid global.$color-gray40;
 }
-
 
 /*
 　目次ユニット
@@ -951,10 +929,10 @@
   }
 
   .entry-outline-title {
-    margin: 0 0 1rem 0;
-    padding: 0 0 .5rem 0;
+    margin: 0 0 1rem;
+    padding: 0 0 0.5rem;
     font-weight: bold;
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
     border-bottom: 2px solid global.$color-gray30;
   }
 
@@ -979,12 +957,12 @@
 
     .outline-item a {
       display: block;
-      margin: 0 0 1rem .25rem;
+      margin: 0 0 1rem 0.25rem;
       color: global.$color-text;
 
       &::before {
         display: inline-block;
-        padding-right: .5rem;
+        padding-right: 0.5rem;
         color: global.$color-text-secondary;
         font-weight: 700;
         white-space: nowrap;
@@ -993,7 +971,6 @@
       }
     }
   }
-
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -1003,13 +980,12 @@
     }
 
     .entry-outline-title {
-      margin: 0 0 1.5rem 0;
-      padding: 0 0 1rem 0;
-      font-size: map.get(global.$font-scales, Heading-SS);
+      margin: 0 0 1.5rem;
+      padding: 0 0 1rem;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
-
 
 /*
 　メッセージユニット
@@ -1033,7 +1009,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(0, 0, 0, .4);
+      background: rgb(0 0 0 / 40%);
       content: "";
     }
   }
@@ -1043,11 +1019,11 @@
     display: flex;
     align-items: center;
     height: 15rem;
-    margin: 0 0 2.5rem 0;
+    margin: 0 0 2.5rem;
     padding: 0 calc(global.$unit-gutter-var / 2);
     color: global.$color-text-inverse;
     font-weight: bold;
-    font-size: map.get(global.$font-scales, Heading-S);
+    font-size: map.get(global.$font-scales, heading-s);
   }
 
   .message-content {
@@ -1073,6 +1049,7 @@
       margin: 0 calc(50% - 50vw) global.$entry-el-margin-md;
       background-size: cover;
     }
+
     .message-bg {
       top: 0;
       right: 0;
@@ -1084,22 +1061,26 @@
         content: none;
       }
     }
+
     .message-wrap {
       position: relative;
       width: calc(50% - (global.$unit-gutter-var / 2));
       margin: 0 calc(global.$unit-gutter-var / 2);
       padding: 6.5rem 4rem;
       color: global.$color-text-inverse;
-      background: rgba(0, 0, 0, .4);
+      background: rgb(0 0 0 / 40%);
     }
+
     .message-lead {
       height: auto;
-      margin: 0 0 2.5rem 0;
-      font-size: map.get(global.$font-scales, Heading-S);
+      margin: 0 0 2.5rem;
+      font-size: map.get(global.$font-scales, heading-s);
     }
+
     .message-content {
-      margin: 0 0 3rem 0;
+      margin: 0 0 3rem;
     }
+
     .message-source {
       &::before {
         background: global.$color-white;
@@ -1107,7 +1088,6 @@
     }
   }
 }
-
 
 /*
 　料金テーブル
@@ -1133,7 +1113,7 @@
       .pricing-inner {
         margin-top: -1rem;
         margin-bottom: -1rem;
-        padding-top: 3rem;
+        padding-top: 2.5rem;
         padding-bottom: 2rem;
         border: global.$border-width-sm solid global.$color-primary;
       }
@@ -1146,16 +1126,16 @@
     justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    padding: 2rem 1rem 1.5rem ;
-    background: #FFF;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
-    transition: transform .25s ease;
+    padding: 2rem 1rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+    transition: transform 0.25s ease;
   }
 
   .pricing-header {
     position: relative;
-    margin: 0 0 1rem 0;
-    padding: 0 0 1rem 0;
+    margin: 0 0 1rem;
+    padding: 0 0 1rem;
     text-align: center;
     border-bottom: global.$border-width-sm solid global.$color-gray30;
   }
@@ -1170,56 +1150,57 @@
   .pricing-label {
     display: inline-block;
     margin: 0;
-    padding: .25rem 2rem;
+    padding: 0.25rem 2rem;
     color: global.$color-text-inverse;
     font-weight: bold;
-    font-size: map.get(global.$font-scales, Heading-SS);
+    font-size: map.get(global.$font-scales, heading-ss);
     line-height: 1.3;
     background: global.$color-primary;
     border-radius: global.$border-radius-round;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
   }
 
   .pricing-title {
-    margin: 0 0 .25rem 0;
+    margin: 0 0 0.25rem;
     color: global.$color-primary;
-    font-size: map.get(global.$font-scales, Heading-SS);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .pricing-desc {
     margin: 0;
     color: global.$color-text-side;
-    font-size: map.get(global.$font-scales, Body-S);
+    font-size: map.get(global.$font-scales, body-s);
     line-height: 1.5;
   }
 
   .pricing-price {
-    margin: 0 0 .5rem 0;
-    font-size: map.get(global.$font-scales, Heading-M);
+    margin: 0 0 0.5rem;
+    font-size: map.get(global.$font-scales, heading-m);
     line-height: 1;
     text-align: center;
   }
 
   .pricing-unit {
-    font-size: map.get(global.$font-scales, Body-M);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .pricing-check-group {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     padding: 0;
-    font-size: map.get(global.$font-scales, Body-S);
+    font-size: map.get(global.$font-scales, body-s);
     list-style: none;
 
     li {
-      margin: 0 0 .25rem 0;
+      margin: 0 0 0.25rem;
 
-      &:before {
+      &::before {
         display: inline-block;
         width: 1rem;
         height: 1rem;
-        margin: 0 .5rem 0 0;
+        margin: 0 0.5rem 0 0;
         vertical-align: middle;
         background: url(#{global.$root-theme-img}icon-check.svg);
+        background-size: contain;
         content: "";
       }
     }
@@ -1227,7 +1208,7 @@
 
   .pricing-button {
     display: block;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
   }
 
   .pricing-text-info {
@@ -1239,8 +1220,7 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .#{acms.$entry-class} {
     .pricing-group {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
       gap: 1rem;
       margin: 4rem 0;
     }
@@ -1250,25 +1230,25 @@
       margin: 0 0 global.$entry-el-margin-md 0;
 
       &:hover .pricing-inner {
-        box-shadow: 0 6px 15px rgba(0, 0, 0, .2);
-        transform: translateY(-.5rem);
+        box-shadow: 0 6px 15px rgb(0 0 0 / 20%);
+        transform: translateY(-0.5rem);
       }
     }
 
     .pricing-title {
-      font-size: map.get(global.$font-scales, Heading-SS);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
 
-
 /*
 　ユニット
 ------------------------------ */
+
 /* 各ユニットのマージンの調整 */
 @each $unit in acms.$unit-type {
   [class*="column-#{$unit}"] {
-    @if $unit == 'module' {
+    @if $unit == "module" {
       margin-bottom: calc(acms.$unit-margin-bottom / 2);
     } @else {
       margin-bottom: acms.$unit-margin-bottom;
@@ -1279,10 +1259,10 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   @each $unit in acms.$unit-type {
     [class*="column-#{$unit}"] {
-      @if $unit == 'module' {
+      @if $unit == "module" {
         margin-bottom: acms.$unit-margin-bottom;
       } @else {
-      margin-bottom: global.$unit-margin-md;
+        margin-bottom: global.$unit-margin-md;
       }
     }
   }
@@ -1292,10 +1272,10 @@
 [class*="column-image-"],
 [class*="column-eximage-"] {
   a {
-    transition: opacity .2s;
+    transition: opacity 0.2s;
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
@@ -1303,7 +1283,6 @@
 .unit-gallery {
   margin-bottom: global.$unit-gutter-var;
 }
-
 
 /*
 　SNSシェアボタン
@@ -1319,8 +1298,8 @@
 }
 
 .sns-share-title {
-  margin: 0 0 .5rem 0;
-  font-size: map.get(global.$font-scales, Body-M);
+  margin: 0 0 0.5rem;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .share-list {
@@ -1336,24 +1315,29 @@
 }
 
 .share-item {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.75rem;
+    box-sizing: border-box;
+    width: 3rem;
     height: auto;
-    padding: .25rem;
-    transition: transform .2s ease;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
 
     &:hover {
-      transform: scale(.8);
+      transform: scale(0.8);
     }
   }
 
+  .share-list.is-sm & {
+    margin: 0 0.5rem;
+  }
+
   .share-list.is-sm & a {
-    width: 2rem;
+    width: auto;
   }
 }
 
@@ -1361,23 +1345,23 @@
   .sns-share-wrapper {
     flex-direction: row;
     align-items: center;
-    margin: 0 0 3rem 0;
-    padding: 3rem 1.5rem 3rem;
+    margin: 0 0 3rem;
+    padding: 3rem 1.5rem;
     border-radius: global.$border-radius-xl;
   }
+
   .sns-share-title {
     margin: 0 2.5rem 0 0;
-    font-size: map.get(global.$font-scales, Heading-SS);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
+
   .share-item {
-    margin: 0 1rem;
     a {
       width: 3rem;
     }
 
     .share-list.is-sm & a {
-      width: 2rem;
+      width: auto;
     }
   }
-
 }

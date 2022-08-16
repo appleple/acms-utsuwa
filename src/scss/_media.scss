@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:list";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -6,8 +7,9 @@
 　　メディア
 ------------------------------ */
 .media-list-wrap {
-  padding: 0 calc((global.$unit-gutter-var / 2));
+  padding: 0 calc(global.$unit-gutter-var / 2);
 }
+
 .media-list {
   display: flex;
   flex-wrap: wrap;
@@ -17,12 +19,12 @@
 }
 
 .media-item {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
 }
 
 .media-link {
   display: block;
-  padding: 0 0 1.5rem 0;
+  padding: 0 0 1.5rem;
   color: global.$color-text;
   border-bottom: global.$border-width-sm solid global.$color-gray30;
 
@@ -53,20 +55,24 @@
 
 .media-time {
   display: inline-block;
-  margin: 0 0 .25rem 0;
+  margin: 0 0 0.25rem;
+
   @include acms.font-size(13);
+
   color: global.$color-gray90;
   line-height: 1.5;
 }
 
 .media-title {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.25rem;
+
   @include acms.font-size(20);
+
   line-height: 1.5;
 }
 
 .media-item-img {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.25rem;
 }
 
 .media-img-wrap {
@@ -77,14 +83,16 @@
 }
 
 .media-img {
-  transition: transform .4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   will-change: transform;
 }
 
 .media-text {
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1.25rem;
   color: global.$color-text-side;
+
   @include acms.font-size(14);
+
   line-height: 1.5;
 }
 
@@ -92,21 +100,23 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  margin: .5rem 0 0 0;
+  margin: 0.5rem 0 0;
+
   @include acms.font-size(16);
+
   font-weight: bold;
 
   &::before {
     position: absolute;
     right: 0;
-    bottom: -.5rem;
+    bottom: -0.5rem;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: global.$color-secondary;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
     content: "";
   }
 
@@ -114,11 +124,11 @@
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    margin: 0 0 0 .5rem;
+    margin: 0 0 0 0.5rem;
     background: global.$color-secondary no-repeat;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-position: center;
-    background-size: .25rem .5rem;
+    background-size: 0.25rem 0.5rem;
     border-radius: global.$border-radius-circle;
     content: "";
   }
@@ -128,53 +138,58 @@
   margin: 1.25rem 0 0;
 }
 
-
 @media screen and (min-width: acms.$breakpoint-sm-min) {
   .media-list {
     display: block;
   }
+
   .media-link {
     position: relative;
     display: grid;
-    display: -ms-grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 180px;
-    margin: 0 (math.div(global.$col-gutter, -2));
+    margin: 0 calc(global.$col-gutter / -2);
     padding: 1.25rem 0;
 
     &.is-noimage {
       grid-template-columns: auto;
     }
   }
+
   .media-item {
     margin: 0;
   }
+
   .media-item-header {
     grid-row: 1;
     grid-column: 1;
     padding: 0 global.$col-gutter 0 0;
   }
+
   .media-item-body {
     grid-row: 2;
     grid-column: 1;
     padding: 0 global.$col-gutter 0 0;
   }
+
   .media-item-img {
+    grid-row: list.slash(1, 3);
+    grid-column: list.slash(2, 3);
     margin: 0;
-    @include global.create-grid-row-span(1, 3);
-    @include global.create-grid-column-span(2, 3);
   }
 
   .media-time {
-    margin: 0 0 .5rem 0;
+    margin: 0 0 0.5rem;
+
     @include acms.font-size(16);
   }
 
   .media-title {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 1.25rem;
+
     @include acms.font-size(20);
 
-    &:before {
+    &::before {
       content: none;
     }
   }
@@ -183,7 +198,6 @@
     margin: 2rem 0 0;
   }
 }
-
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .media-link {
