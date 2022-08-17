@@ -140,11 +140,12 @@ $color-text-point: var(--color-text-point);
 // ------------------------------
 //　ボーダー
 // ------------------------------
+// 太さ
 $border-width-sm: 1px;
 $border-width-md: 2px;
 $border-width-lg: 4px;
-$border-link: $border-width-sm dashed $color-link;
-$border-footer: $border-width-sm solid $color-gray30;
+
+// 角丸
 $border-radius-sm: 3px;
 $border-radius-md: 4px;
 $border-radius-lg: 6px;
@@ -152,6 +153,10 @@ $border-radius-xl: 10px;
 $border-radius-xxl: 30px;
 $border-radius-round: 10em;
 $border-radius-circle: 100%;
+
+// 装飾
+$border-link: $border-width-sm dashed $color-link;
+$border-footer: $border-width-sm solid $color-gray30;
 
 // ------------------------------
 //　z-index
