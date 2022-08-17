@@ -1,7 +1,7 @@
 <div class="acms-container">
   <div class="acms-grid">
     <div class="footer-group">
-      <div class="acms-col-md-4 footer-item">
+      <div class="footer-item -address">
         <div class="footer-item-title">
           <!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
           <div>
@@ -15,24 +15,20 @@
               <p class="footer-address-item">〒{zip}</p><!-- END zip:veil --><!-- BEGIN address:veil -->
               <p class="footer-address-item">{address}</p><!-- END address:veil --><!-- BEGIN tel:veil -->
               <p class="footer-address-item">TEL : <a href="tel:{tel}">{tel}</a>{tel_time}</p><!-- END tel:veil -->
-              <div class="acms-hide-md acms-hide-lg  acms-hide-xl">
-                <!-- SNSアカウント一覧 -->
-                <div class="footer-sns">
-                  @include("/include/parts/sns-accounts.html")
-                </div>
+              <!-- SNSアカウント一覧 -->
+              <div class="footer-sns">
+                @include("/include/parts/sns-accounts.html")
               </div>
             </address>
           </div><!-- END_MODULE Blog_Field -->
         </div>
       </div>
 
-      <div class="acms-col-md-8 footer-item">
+      <div class="footer-item -navigation">
         <div class="footer-item-nav">
-          <div class="acms-grid acms-hide acms-block-md acms-block-lg acms-block-xl">
+          <div class="acms-grid">
             <div class="acms-col-md-3">
-
               @include("/include/parts/footer-nav.html",{"module_id": "nav_footer01"})
-
             </div>
             <div class="acms-col-md-3">
               @include("/include/parts/footer-nav.html",{"module_id":"nav_footer02"})

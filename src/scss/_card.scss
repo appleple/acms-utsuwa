@@ -64,6 +64,7 @@
 }
 
 .card-img {
+  width: 100%;
   transition: 0.4s 0.2s ease-out;
   will-change: transform;
 
@@ -279,6 +280,7 @@
 }
 
 .card-bordered-img {
+  width: 100%;
   transition: 0.4s 0.2s ease-out;
   will-change: transform;
 
