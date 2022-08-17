@@ -205,7 +205,7 @@
   color: global.$color-text-primary;
   font-weight: bold;
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
   background: global.$color-white;
   border-radius: global.$border-radius-round;
 
@@ -224,14 +224,14 @@
   position: relative;
   margin: 0 0 1rem;
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
 }
 
 .cta-visual-text {
   position: relative;
   margin: 0 0 1.5rem;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
 }
 
 .cta-visual-read-more {

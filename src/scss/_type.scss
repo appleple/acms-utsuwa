@@ -9,7 +9,7 @@
   margin: -1rem 0 global.$entry-el-margin-sm 0;
   padding-top: (global.$header-height + 0.5rem);
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: 1.4;
+  line-height: global.$line-height-sm;
 
   &.heading-line {
     padding-bottom: 1rem;
@@ -51,7 +51,7 @@
 .heading-md {
   margin: 3.5rem 0 global.$entry-el-margin-sm 0;
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: 1.4;
+  line-height: global.$line-height-sm;
 
   &.heading-line {
     padding-bottom: 1rem;
@@ -93,7 +93,7 @@
 
 .paragraph {
   margin: 0 0 global.$entry-el-margin-md 0;
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 0 0 global.$entry-el-margin-lg 0;
@@ -116,7 +116,7 @@
     position: relative;
     clear: both;
     margin: 0 0 0.5rem;
-    line-height: 1.5;
+    line-height: global.$line-height-base;
     list-style: none;
 
     &::before {

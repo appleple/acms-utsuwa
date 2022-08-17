@@ -93,7 +93,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  line-height: 1.5;
+  line-height: global.$line-height-base;
   border-bottom: global.$border-width-sm solid global.$color-gray40;
 
   a {
