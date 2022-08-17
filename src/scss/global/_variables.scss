@@ -55,12 +55,6 @@ $container: calc(70rem + $col-gutter); //1120px
 $container-md: calc(58rem + $col-gutter); // 928px
 $container-sm: calc(45rem + $col-gutter); // 736px
 
-$container-max-widths: (
-  md: 720px,
-  lg: 928px,
-  xl: 1120px
-) !default;
-
 // ------------------------------
 //　ファイルのパス
 // ------------------------------
@@ -98,9 +92,15 @@ $color-primary: var(--color-primary);
 $color-primary-light: var(--color-primary-light);
 $color-primary-bg: $color-primary-light;
 $color-primary-hover: var(--color-primary-hover);
+
+// セカンダリーカラー
 $color-secondary: var(--color-secondary);
+
+// ターシャリーカラー
 $color-tertiary: var(--color-tertiary);
 $color-tertiary-light: var(--color-tertiary-light);
+
+// ニュートラルカラー
 $color-white: var(--color-white);
 $color-black: var(--color-black);
 $color-gray10: var(--color-gray10);
@@ -113,19 +113,24 @@ $color-gray70: var(--color-gray70);
 $color-gray80: var(--color-gray80);
 $color-gray90: var(--color-gray90);
 $color-gray100: var(--color-gray100);
+
+// 機能的なカラー
 $color-form-bg: $color-gray10;
 $color-form-border: $color-gray40;
 $color-link: var(--color-link);
 $color-required: var(--color-required);
 $color-error: var(--color-error);
 $color-focus-visible: #0061d1;
+$box-shadow-focus: var(--box-shadow-focus);
+$box-shadow-error: var(--box-shadow-error);
+
+// テキストカラー
 $color-text: $color-gray100;
 $color-text-side: $color-gray90;
 $color-text-inverse: $color-white;
 $color-text-primary: $color-primary;
 $color-text-secondary: $color-secondary;
 $color-text-point: var(--color-text-point);
-$box-shadow-error: var(--box-shadow-error);
 
 // ------------------------------
 //　ボーダー
