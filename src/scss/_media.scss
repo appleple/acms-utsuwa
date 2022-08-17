@@ -1,5 +1,6 @@
-@use "sass:math";
 @use "sass:list";
+@use "sass:map";
+@use "sass:math";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -56,18 +57,14 @@
 .media-time {
   display: inline-block;
   margin: 0 0 0.25rem;
-
-  @include acms.font-size(13);
-
   color: global.$color-gray90;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.5;
 }
 
 .media-title {
   margin: 0 0 1.25rem;
-
-  @include acms.font-size(20);
-
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.5;
 }
 
@@ -90,9 +87,7 @@
 .media-text {
   margin: 0 0 1.25rem;
   color: global.$color-text-side;
-
-  @include acms.font-size(14);
-
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.5;
 }
 
@@ -101,10 +96,8 @@
   display: inline-flex;
   align-items: center;
   margin: 0.5rem 0 0;
-
-  @include acms.font-size(16);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   &::before {
     position: absolute;
@@ -180,14 +173,12 @@
 
   .media-time {
     margin: 0 0 0.5rem;
-
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .media-title {
     margin: 0 0 1.25rem;
-
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
 
     &::before {
       content: none;
@@ -206,10 +197,10 @@
   }
 
   .media-title {
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, heading-s);
   }
 
   .media-text {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }

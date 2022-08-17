@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -24,14 +25,12 @@
 
 .tag-item {
   margin: 0 0.25rem 0.5rem;
-
-  @include acms.font-size(18);
-
   color: global.$color-text-side;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   .tag-list.is-sm & {
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
   }
 }
 
@@ -77,12 +76,11 @@
   }
 
   .tag-item {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
 
     .tag-list.is-sm & {
       margin: 0 0.25rem 0.25rem;
-
-      @include acms.font-size(14);
+      font-size: map.get(global.$font-scales, body-s);
     }
   }
 

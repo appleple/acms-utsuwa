@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -33,10 +34,8 @@
 
 .local-nav {
   padding: 1rem 0;
-
-  @include acms.font-size(14);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .local-nav-list {
@@ -91,8 +90,7 @@
 
   .local-nav {
     padding: 1.25rem 0;
-
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .local-nav-link {

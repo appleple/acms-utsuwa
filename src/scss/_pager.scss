@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -7,10 +8,9 @@
 .pager {
   margin: 0 -0.25rem 2.5rem;
   padding: 0;
+  font-size: map.get(global.$font-scales, heading-ss);
   text-align: center;
   list-style: none;
-
-  @include acms.font-size(20);
 
   li {
     display: inline-block;
@@ -147,9 +147,8 @@
   display: none;
   width: auto;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   white-space: nowrap;
-
-  @include acms.font-size(16);
 
   a {
     align-items: center;
@@ -161,8 +160,7 @@
   align-items: center;
   margin: 0 0 0.25rem;
   font-weight: bold;
-
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 
   svg {
     box-sizing: border-box;
@@ -180,8 +178,7 @@
   justify-content: center;
   margin: 0;
   font-weight: bold;
-
-  @include acms.font-size(16);
+  font-size: map.get(global.$font-scales, body-m);
 
   a {
     display: flex;
@@ -227,7 +224,7 @@
   }
 
   .serial-nav-arrow {
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .serial-nav-item-prev {

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -26,9 +27,7 @@
 .global-nav-mobile-menu-text {
   margin: 0.5rem 0 0;
   color: global.$color-text-inverse;
-
-  @include acms.font-size(12);
-
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1;
 }
 
@@ -147,9 +146,8 @@
 }
 
 .global-nav-mobile-item {
-  @include acms.font-size(18);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   &.is-expand {
     .global-nav-mobile-link {
@@ -195,7 +193,7 @@
   }
 
   .global-nav-mobile-item {
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
 
     .icon-expand {
       &::before,
@@ -275,7 +273,7 @@
 }
 
 .global-nav-mobile-side-item {
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .global-nav-mobile-side-link {
