@@ -92,7 +92,7 @@
 .entry-header-visual-img {
   display: block;
   width: 100vw;
-  height: 11rem;
+  height: 180px;
   margin: 0 calc(50% - 50vw);
 
   @include global.object-fit(cover);
@@ -114,7 +114,7 @@
 .entry-header-visual-desc {
   margin: 0 0 1.5rem;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
 }
 
 .entry-header-visual-btn-wrap {
@@ -127,7 +127,7 @@
   }
 
   .entry-header-visual-img {
-    height: 24rem;
+    height: 380px;
   }
 
   .entry-header-visual-title {
@@ -251,7 +251,7 @@
   h2 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, heading-s);
-    line-height: 1.4;
+    line-height: global.$line-height-sm;
 
     &.heading-line {
       padding-bottom: global.$entry-el-padding-xs;
@@ -310,7 +310,7 @@
   h3 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, heading-ss);
-    line-height: 1.4;
+    line-height: global.$line-height-sm;
 
     &.heading-line {
       padding-bottom: global.$entry-el-padding-xs;
@@ -337,7 +337,7 @@
   h4 {
     margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.4;
+    line-height: global.$line-height-sm;
 
     &.heading-line {
       padding-bottom: 1rem;
@@ -362,7 +362,7 @@
 .#{acms.$entry-class} {
   p {
     margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
-    line-height: 1.7;
+    line-height: global.$line-height-lg;
 
     &.text-info {
       color: global.$color-text-side;
@@ -407,7 +407,7 @@
       color: global.$color-primary;
       font-weight: bold;
       font-size: map.get(global.$font-scales, heading-s);
-      line-height: 1.5;
+      line-height: global.$line-height-base;
 
       .text-point {
         color: global.$color-text-side;
@@ -420,7 +420,7 @@
       color: global.$color-text-side;
       font-weight: bold;
       font-size: map.get(global.$font-scales, heading-s);
-      line-height: 1.5;
+      line-height: global.$line-height-base;
     }
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -479,7 +479,7 @@
       position: relative;
       clear: both;
       margin: 0 0 0.5rem;
-      line-height: 1.7;
+      line-height: global.$line-height-lg;
       list-style: none;
 
       &::before {
@@ -513,7 +513,7 @@
       position: relative;
       clear: both;
       margin: 0 0 1rem;
-      line-height: 1.7;
+      line-height: global.$line-height-lg;
       list-style: none;
 
       &::before {
@@ -552,13 +552,13 @@
       margin: 0 0 1rem;
       font-weight: bold;
       font-size: map.get(global.$font-scales, body-m);
-      line-height: 1.3;
+      line-height: global.$line-height-sm;
     }
 
     dd {
       margin: 0 0 2rem;
       font-size: map.get(global.$font-scales, body-m);
-      line-height: 1.7;
+      line-height: global.$line-height-lg;
     }
 
     &.box-bordered {
@@ -612,7 +612,7 @@
     td {
       padding: global.$entry-el-padding-xs;
       font-size: map.get(global.$font-scales, body-m);
-      line-height: 1.5;
+      line-height: global.$line-height-base;
     }
 
     th {
@@ -662,7 +662,7 @@
     margin: 0 0 global.$entry-el-margin-md 0;
     padding: global.$entry-el-padding-sm;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.7;
+    line-height: global.$line-height-lg;
     border: global.$border-width-md solid global.$color-gray40;
 
     cite {
@@ -842,7 +842,7 @@
     margin: 0 0 0.5rem;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.4;
+    line-height: global.$line-height-sm;
   }
 
   .quote-site-name {
@@ -1154,7 +1154,7 @@
     color: global.$color-text-inverse;
     font-weight: bold;
     font-size: map.get(global.$font-scales, heading-ss);
-    line-height: 1.3;
+    line-height: global.$line-height-sm;
     background: global.$color-primary;
     border-radius: global.$border-radius-round;
     box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
@@ -1170,13 +1170,13 @@
     margin: 0;
     color: global.$color-text-side;
     font-size: map.get(global.$font-scales, body-s);
-    line-height: 1.5;
+    line-height: global.$line-height-base;
   }
 
   .pricing-price {
     margin: 0 0 0.5rem;
     font-size: map.get(global.$font-scales, heading-m);
-    line-height: 1;
+    line-height: global.$line-height-ss;
     text-align: center;
   }
 

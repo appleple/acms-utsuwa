@@ -35,7 +35,7 @@
     height: 2rem;
     margin: 0 0 0.5rem;
     color: global.$color-primary;
-    line-height: 1.7;
+    line-height: global.$line-height-lg;
     background: global.$color-gray10;
     border-radius: 50%;
     content: counter(mailStep);
@@ -126,7 +126,7 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
 }
 
 .form-button-group {
@@ -277,7 +277,7 @@
     box-sizing: border-box;
     padding: 0.75rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.5;
+    line-height: global.$line-height-base;
     border-radius: global.$border-radius-sm;
   }
 
@@ -293,7 +293,7 @@
     min-height: 3rem;
     padding: 0.75rem  3rem 0.75rem 1rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.5;
+    line-height: global.$line-height-base;
     vertical-align: top;
     background-color: global.$color-gray10;
     border-radius: global.$border-radius-sm;

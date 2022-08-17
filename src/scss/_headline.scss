@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  line-height: 1.5;
+  line-height: global.$line-height-base;
   border-bottom: global.$border-width-sm solid global.$color-gray30;
 
   &:last-child {
@@ -61,7 +61,7 @@
   margin: 0 0 0.75rem;
   color: global.$color-text-side;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.2;
+  line-height: global.$line-height-sm;
 }
 
 .headline-date {
@@ -86,7 +86,7 @@
   margin: 0.25rem 0.5rem 0 0;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1;
+  line-height: global.$line-height-ss;
   vertical-align: text-top;
 }
 

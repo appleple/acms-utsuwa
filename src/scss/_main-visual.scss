@@ -50,7 +50,7 @@
 .main-visual-catch {
   margin: 0 0 0.5rem;
   font-size: map.get(global.$font-scales, display-s);
-  line-height: 1.2;
+  line-height: global.$line-height-sm;
   animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
 }
@@ -58,7 +58,7 @@
 .main-visual-catch-sub {
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
   animation: fade-in 0.3s 1.3s 1 both;
   will-change: transform, opacity;
 }

@@ -9,7 +9,7 @@
 html {
   color: global.$color-text;
   font-family: global.$font-base;
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
   background: global.$color-white;
 }
 

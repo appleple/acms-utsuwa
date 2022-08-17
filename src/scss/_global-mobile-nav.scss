@@ -28,7 +28,7 @@
   margin: 0.5rem 0 0;
   color: global.$color-text-inverse;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1;
+  line-height: global.$line-height-ss;
 }
 
 /* トグルメニューアイコン */

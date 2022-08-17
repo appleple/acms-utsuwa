@@ -59,13 +59,13 @@
   margin: 0 0 0.25rem;
   color: global.$color-gray90;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
 }
 
 .media-title {
   margin: 0 0 1.25rem;
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
 }
 
 .media-item-img {
@@ -88,7 +88,7 @@
   margin: 0 0 1.25rem;
   color: global.$color-text-side;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.5;
+  line-height: global.$line-height-base;
 }
 
 .media-read-more {
