@@ -23,15 +23,23 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 3rem 0 0.5rem;
+  padding: 3rem 0 4rem;
 }
 
 .footer-item {
   display: flex;
-}
+  box-sizing: border-box;
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
 
-.footer-item {
-  display: flex;
+  @if global.$enable-iphonex == true {
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+  }
+
+  &.-navigation {
+    display: none;
+  }
 }
 
 /* 企業情報 */
@@ -67,6 +75,17 @@
   .footer-group {
     flex-direction: row;
   }
+
+  .footer-item {
+    &.-address {
+      width: calc(4 / 12 * 100%);
+    }
+
+    &.-navigation {
+      display: block;
+      width: calc(8 / 12 * 100%);
+    }
+  }
 }
 
 /* 所在地 */
@@ -93,7 +112,7 @@
 }
 
 .footer-nav {
-  margin: 0 0 4rem;
+  margin: 0;
   font-size: map.get(global.$font-scales, body-s);
 }
 
@@ -236,5 +255,9 @@
   .footer-bottom-sns {
     display: block;
     margin-left: auto;
+  }
+
+  .footer-sns {
+    display: none;
   }
 }

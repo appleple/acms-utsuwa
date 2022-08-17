@@ -149,7 +149,7 @@
   margin: 2rem 0 0;
 }
 
-@media screen and (min-width: acms.$breakpoint-sm-min) {
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-button-group {
     flex-direction: row;
     margin: 2.5rem 0 0;
@@ -160,7 +160,7 @@
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-sm-max) {
+@media screen and (max-width: acms.$breakpoint-md-max) {
   .form-button {
     width: 100%;
     margin: 0 0 1rem;
@@ -387,7 +387,7 @@
       background: global.$color-white;
       border-color: acms.$acms-form-focus-border-color;
       outline: none;
-      box-shadow: acms.$acms-form-focus-box-shadow, acms.$acms-form-box-shadow;
+      box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
     }
   }
 
@@ -408,7 +408,7 @@
     }
 
     .form-search-button {
-      width: 16.5rem;
+      padding: 0.75rem 2rem;
     }
   }
 }
