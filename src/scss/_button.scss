@@ -93,4 +93,9 @@
       font-size: map.get(global.$font-scales, heading-ss);
     }
   }
+
+  &:focus {
+    border-color: acms.$acms-form-focus-border-color;
+    box-shadow: global.$box-shadow-focus;
+  }
 }

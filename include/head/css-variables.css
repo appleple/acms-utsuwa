@@ -45,7 +45,8 @@
 
 --color-text-point      : #676767;
 
---box-shadow-error      : 0 0 0 2px rgba(201, 45, 45, .4);
+--box-shadow-focus      : 0 0 0 .15rem rgba(19, 122, 243, .4);
+--box-shadow-error      : 0 0 0 .15rem rgba(201, 45, 45, .4);
 
   /* 余白 */
   --gutter-sm : 1rem;
