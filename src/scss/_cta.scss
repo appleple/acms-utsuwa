@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "sass:math";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
@@ -22,9 +23,7 @@
 .cta-title {
   margin: 0 0 2rem;
   color: global.$color-text;
-
-  @include acms.font-size(20);
-
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.3;
 }
 
@@ -43,10 +42,8 @@
 
 .cta-link-wrap {
   margin: 1.5rem 0;
-
-  @include acms.font-size(18);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .cta-link {
@@ -94,17 +91,16 @@
   }
 
   .cta-title {
-    @include acms.font-size(34);
+    font-size: map.get(global.$font-scales, heading-l);
   }
 
   .cta-button {
-    @include acms.font-size(24);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .cta-link-wrap {
     margin: 2.5rem 0;
-
-    @include acms.font-size(24);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .cta-link {
@@ -131,9 +127,7 @@
 .cta-round-title {
   margin: 0 0 1.25rem;
   color: global.$color-text;
-
-  @include acms.font-size(20);
-
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.3;
 }
 
@@ -163,12 +157,11 @@
 
   .cta-round-title {
     margin: 0 0 2rem;
-
-    @include acms.font-size(34);
+    font-size: map.get(global.$font-scales, heading-m);
   }
 
   .cta-round-button {
-    @include acms.font-size(24);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
@@ -211,11 +204,10 @@
   padding: 0.5rem 1rem;
   color: global.$color-text-primary;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.5;
   background: global.$color-white;
   border-radius: global.$border-radius-round;
-
-  @include acms.font-size(22);
 
   &::before {
     position: absolute;
@@ -231,18 +223,14 @@
 .cta-visual-title {
   position: relative;
   margin: 0 0 1rem;
-
-  @include acms.font-size(22);
-
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.5;
 }
 
 .cta-visual-text {
   position: relative;
   margin: 0 0 1.5rem;
-
-  @include acms.font-size(14);
-
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.5;
 }
 
@@ -274,20 +262,17 @@
 
   .cta-visual-title {
     margin: 0 0 2.5rem;
-
-    @include acms.font-size(34);
+    font-size: map.get(global.$font-scales, heading-l);
   }
 
   .cta-visual-text {
     margin: 0 0 2.5rem;
-
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .cta-visual-comment {
     margin: 0 0 2rem;
     padding: 0.5rem 3rem;
-
-    @include acms.font-size(32);
+    font-size: map.get(global.$font-scales, heading-m);
   }
 }

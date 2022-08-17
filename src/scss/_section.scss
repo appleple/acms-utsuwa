@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -37,23 +38,16 @@
 .section-horizontal-heading {
   margin: 0 0 0.25rem;
   color: global.$color-primary;
-
-  @include acms.font-size(36);
-
+  font-size: map.get(global.$font-scales, heading-l);
   line-height: 1.5;
-
-  &.-large {
-    @include acms.font-size(36);
-  }
 }
 
 .section-horizontal-heading-side {
   margin: 0;
   color: global.$color-text-side;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.5;
-
-  @include acms.font-size(14);
 
   .js .js-animation & {
     opacity: 0;
@@ -69,15 +63,13 @@
   margin: 0 0 1em;
   color: global.$color-text-side;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.5;
-
-  @include acms.font-size(20);
 }
 
 .section-horizontal-text p {
-  @include acms.font-size(14);
-
   color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.7;
 }
 
@@ -91,23 +83,16 @@
   }
 
   .section-horizontal-heading {
-    @include acms.font-size(36);
-
-    &.-large {
-      margin: 0 0 0.5rem;
-
-      @include acms.font-size(46);
-    }
+    font-size: map.get(global.$font-scales, display-s);
   }
 
   .section-horizontal-heading-side {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .section-horizontal-lead {
     color: global.$color-text-side;
-
-    @include acms.font-size(26);
+    font-size: map.get(global.$font-scales, heading-s);
   }
 }
 
@@ -125,29 +110,21 @@
   }
 
   .section-horizontal-heading {
-    @include acms.font-size(46);
-
-    &.-large {
-      margin: 0 0 0.25rem;
-
-      @include acms.font-size(56);
-    }
+    font-size: map.get(global.$font-scales, display-m);
   }
 
   .section-horizontal-heading-side {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .section-horizontal-lead {
     color: global.$color-text-side;
-
-    @include acms.font-size(34);
+    font-size: map.get(global.$font-scales, heading-m);
   }
 
   .section-horizontal-text p {
-    @include acms.font-size(16);
-
     color: global.$color-text-side;
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.7;
   }
 
@@ -160,14 +137,6 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-xl-min) {
-  .section-horizontal-heading {
-    &.-large {
-      @include acms.font-size(76);
-    }
-  }
-}
-
 /* 垂直方向の見出し */
 .section-vertical-header {
   position: relative;
@@ -177,7 +146,7 @@
   &::after {
     position: absolute;
     right: 0;
-    bottom: -3.25rem;
+    bottom: -2rem;
     left: 0;
     width: 1px;
     height: 1.25rem;
@@ -205,19 +174,15 @@
 .section-vertical-heading {
   margin: 0;
   color: global.$color-primary;
-
-  @include acms.font-size(30);
-
+  font-size: map.get(global.$font-scales, heading-l);
   line-height: 1.5;
 }
 
 .section-vertical-text {
   margin: 0 0 0.5rem;
-
-  @include acms.font-size(14);
-
   color: global.$color-text-side;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
 
   .js-animation & {
     opacity: 0;
@@ -231,11 +196,11 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .section-vertical-heading {
-    @include acms.font-size(36);
+    font-size: map.get(global.$font-scales, display-s);
   }
 
   .section-vertical-text {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
@@ -250,11 +215,11 @@
   }
 
   .section-vertical-heading {
-    @include acms.font-size(46);
+    font-size: map.get(global.$font-scales, display-m);
   }
 
   .section-vertical-text {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 

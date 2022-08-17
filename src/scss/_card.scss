@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "sass:math";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
@@ -80,9 +81,8 @@
 .#{acms.$entry-class} .card-title {
   margin: 0 0 1rem;
   color: global.$color-black;
+  font-size: map.get(global.$font-scales, body-m);
   line-height: 1.3;
-
-  @include acms.font-size(18);
 
   .js .js-animation-row & {
     opacity: 0;
@@ -97,26 +97,22 @@
 .card-time {
   display: inline-block;
   margin: 0 0 0.25rem;
-
-  @include acms.font-size(16);
-
   color: global.$color-gray90;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .card-badge-news {
-  @include acms.font-size(12);
-
   margin: 0 0 0 0.5rem;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1;
 }
 
 .card-text,
 .#{acms.$entry-class} .card-text {
   margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.7;
-
-  @include acms.font-size(14);
 
   .js .js-animation-row & {
     opacity: 0;
@@ -133,10 +129,8 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
-
-  @include acms.font-size(16);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   &::before {
     position: absolute;
@@ -185,8 +179,7 @@
   display: flex;
   align-items: center;
   margin: 0;
-
-  @include acms.font-size(16);
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .card-author-img {
@@ -205,18 +198,16 @@
 
   .card-title {
     margin: 0 0 1rem;
-
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
 
     .card.is-lg & {
-      @include acms.font-size(24);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 
   .card-text {
     margin: 0 0 1.5rem;
-
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
 
     .card.is-lg & {
       margin: 0 0 2rem;
@@ -225,7 +216,7 @@
 
   .card-read-more,
   .#{acms.$entry-class} .card-read-more {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
 
     &::before {
       bottom: -0.5rem;
@@ -304,9 +295,8 @@
 .#{ acms.$entry-class } .card-bordered-title {
   margin: 0 0 1rem;
   color: global.$color-black;
+  font-size: map.get(global.$font-scales, body-m);
   line-height: 1.3;
-
-  @include acms.font-size(18);
 }
 
 .card-bordered-read-more,
@@ -315,10 +305,8 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
-
-  @include acms.font-size(16);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   &::before {
     position: absolute;
@@ -382,18 +370,16 @@
 
   .card-bordered-title {
     margin: 0 0 1rem;
-
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .card-bordered-text {
     margin: 0 0 2rem;
-
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
   .card-bordered-read-more,
   .#{acms.$entry-class} .card-bordered-read-more {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
 
     &::before {
       bottom: -0.5rem;

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -13,17 +14,14 @@
   margin: 0 0 0.5rem;
   color: global.$color-primary;
   font-weight: bold;
-
-  @include acms.font-size(100);
-
+  font-size: 6rem;
   line-height: 1.2;
 }
 
 .not-found-paragraph {
   margin: 0 0 2.5rem;
   font-weight: bold;
-
-  @include acms.font-size(20);
+  font-size: map.get(global.$font-scales, heading-ss);
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -32,12 +30,11 @@
   }
 
   .not-found-title {
-    @include acms.font-size(240);
+    font-size: 15rem;
   }
 
   .not-found-paragraph {
     margin: 0 0 2.5rem;
-
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }

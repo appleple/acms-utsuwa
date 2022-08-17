@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -10,13 +11,12 @@
   padding: 0.75rem 2.25rem;
   color: global.$color-text-inverse;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   text-align: center;
   background: global.$color-primary;
   border: 0;
   border-radius: global.$border-radius-md;
   transition: background-color 0.2s;
-
-  @include acms.font-size(18);
 
   &:any-link {
     color: global.$color-text-inverse;
@@ -90,8 +90,7 @@
     &.is-xl {
       min-width: 22rem;
       padding: 1rem;
-
-      @include acms.font-size(24);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -35,8 +36,7 @@
   position: relative;
   height: 100%;
   margin-left: auto;
-
-  @include acms.font-size(18);
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 @media (max-width: acms.$breakpoint-lg-max) {

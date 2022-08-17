@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -5,11 +6,10 @@
 　　タイポグラフィ
 ------------------------------ */
 .heading-lg {
-  margin: -40px 0 global.$entry-el-margin-sm 0;// アンカーリンクのための余白を打ち消す用
+  margin: -40px 0 global.$entry-el-margin-sm 0;
   padding-top: (global.$header-height + 0.5rem);
-  line-height: 1.4;
-
-  @include acms.font-size(26);
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: 1.4;// アンカーリンクのための余白を打ち消す用
 
   &.heading-line {
     padding-bottom: 15px;
@@ -36,8 +36,7 @@
     margin-top: -20px; // アンカーリンクのための余白を打ち消す用
     margin-bottom: global.$entry-el-margin-sm;
     padding-top: 60px;
-
-    @include acms.font-size(32);
+    font-size: map.get(global.$font-scales, heading-m);
 
     &.heading-primary {
       margin-bottom: global.$entry-el-margin-xl;
@@ -51,9 +50,7 @@
 
 .heading-md {
   margin: 40px 0 global.$entry-el-margin-sm 0;
-
-  @include acms.font-size(22);
-
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: 1.4;
 
   &.heading-line {
@@ -63,8 +60,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 60px 0 global.$entry-el-margin-md 0;
-
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, heading-ss);
 
     &.heading-line {
       margin: 60px 0 global.$entry-el-margin-sm 0;
@@ -74,8 +70,7 @@
 
 .heading-sm {
   margin: 50px 0 global.$entry-el-margin-sm 0;
-
-  @include acms.font-size(18);
+  font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
     padding-bottom: 12px;
@@ -84,8 +79,7 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 60px 0 global.$entry-el-margin-sm 0;
-
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 

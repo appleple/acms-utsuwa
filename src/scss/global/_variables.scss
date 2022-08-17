@@ -74,11 +74,11 @@ $root-theme-img: "../../images/";
 $font-hiragino: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, hiragino kaku gothic pro,meiryo,sans-serif;
 $font-yu-gothic: segoe ui,roboto,helvetica neue,arial, yugothic,yu gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
 $font-meiryo: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, verdana, meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
-/* stylelint-enable max-line-length */
 $font-base: "Roboto Condensed",$font-yu-gothic;
 $font-size: 1rem;
 $font-scale: 1.25;
 $font-scales: (
+  display-m: $font-size * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale,
   display-s: $font-size * $font-scale * $font-scale * $font-scale * $font-scale * $font-scale,
   heading-l: $font-size * $font-scale * $font-scale * $font-scale * $font-scale,
   heading-m: $font-size * $font-scale * $font-scale * $font-scale,
@@ -87,6 +87,7 @@ $font-scales: (
   body-m: $font-size,
   body-s: calc($font-size / $font-scale)
 ) !default;
+/* stylelint-enable max-line-length */
 
 // ------------------------------
 //　カラー

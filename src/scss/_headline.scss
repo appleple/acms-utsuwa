@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -59,9 +60,8 @@
   align-items: center;
   margin: 0 0 0.75rem;
   color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1.2;
-
-  @include acms.font-size(14);
 }
 
 .headline-date {
@@ -77,20 +77,17 @@
 
 .headline-text {
   position: relative;
-
-  @include acms.font-size(15);
-
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .headline-badge-news {
   display: inline-block;
   margin: 0.25rem 0.5rem 0 0;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
   line-height: 1;
   vertical-align: text-top;
-
-  @include acms.font-size(12);
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -99,12 +96,12 @@
   }
 
   .headline-text {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .headline-text {
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }

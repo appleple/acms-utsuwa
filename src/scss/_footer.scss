@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -38,8 +39,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .footer-company-catch {
@@ -82,8 +82,7 @@
 
 .footer-address-item {
   margin: 0;
-
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 /* ナビゲーション */
@@ -95,8 +94,7 @@
 
 .footer-nav {
   margin: 0 0 4rem;
-
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .footer-nav-group {
@@ -107,15 +105,13 @@
 
 .footer-nav-item {
   font-weight: bold;
-
-  @include acms.font-size(15);
+  font-size: map.get(global.$font-scales, body-m);
 
   .footer-nav-item {
     position: relative;
     margin: 0 0 0 1rem;
     font-weight: normal;
-
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
 
     &::before {
       position: absolute;

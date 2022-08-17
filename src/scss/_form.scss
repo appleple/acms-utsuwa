@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -23,9 +24,8 @@
   padding: 1rem 0 0.5rem;
   color: global.$color-text;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   list-style: none;
-
-  @include acms.font-size(16);
 
   &::before {
     display: flex;
@@ -61,15 +61,13 @@
     flex-direction: row;
     justify-content: center;
     padding: 1rem 0;
-
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, heading-ss);
 
     &::before {
       width: 2.5rem;
       height: 2.5rem;
       margin: 0 0.5rem 0 0;
-
-      @include acms.font-size(24);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
 
     &:not(:last-child) {
@@ -183,11 +181,10 @@
   margin: 0 0 0 0.25rem;
   padding: 0.25rem 0.5rem;
   color: #fff;
+  font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
   background: global.$color-error;
   border-radius: global.$border-radius-sm;
-
-  @include acms.font-size(12);
 
   &:first-child {
     margin: 0 0.25rem 0 0;
@@ -208,11 +205,10 @@
   margin: 0 0 0 0.25rem;
   padding: 0.25rem 0.5rem;
   color: global.$color-text;
+  font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
   background: global.$color-gray40;
   border-radius: global.$border-radius-sm;
-
-  @include acms.font-size(12);
 
   &:first-child {
     margin: 0 0.25rem 0 0;
@@ -278,19 +274,17 @@
   input[type="url"],
   input[type="search"],
   input[type="tel"] {
-    @include acms.font-size(16);
-
     box-sizing: border-box;
     padding: 0.75rem;
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.5;
     border-radius: global.$border-radius-sm;
   }
 
   textarea {
-    @include acms.font-size(16);
-
     box-sizing: border-box;
     padding: 0.75rem;
+    font-size: map.get(global.$font-scales, body-m);
     border-radius: global.$border-radius-sm;
   }
 
@@ -298,12 +292,10 @@
     box-sizing: border-box;
     min-height: 3rem;
     padding: 0.75rem  3rem 0.75rem 1rem;
+    font-size: map.get(global.$font-scales, body-m);
     line-height: 1.5;
     vertical-align: top;
     background-color: global.$color-gray10;
-
-    @include acms.font-size(16);
-
     border-radius: global.$border-radius-sm;
   }
 }
@@ -377,6 +369,7 @@
     box-sizing: border-box;
     height: 3rem;
     padding: 0.5rem;
+    font-size: map.get(global.$font-scales, body-m);
     background: global.$color-gray10;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
@@ -384,8 +377,6 @@
     border-bottom-right-radius: 0;
     transition: background-color 0.25s ease;
     appearance: none;
-
-    @include acms.font-size(16);
 
     &:hover {
       background: global.$color-white;
@@ -413,8 +404,7 @@
     input.form-search-input {
       height: 4rem;
       padding: 1rem 1.25rem;
-
-      @include acms.font-size(22);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
 
     .form-search-button {
@@ -427,10 +417,8 @@
 ------------------------------ */
 .form-helper-text {
   margin: 0.5rem 0;
-
-  @include acms.font-size(14);
-
   color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 /* バリデーター
@@ -454,8 +442,7 @@
 .form-error-text {
   margin: 0.5rem 0;
   color: global.$color-error;
-
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 
   .form-helper-text + .validator-result-0 & {
     margin-top: 0;
