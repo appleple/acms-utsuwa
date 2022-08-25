@@ -44,12 +44,12 @@ a {
   --gutter: var(--gutter-md);
 
   max-width: global.$container;
-  padding-right: calc(global.$unit-gutter-var / 2);
-  padding-left: calc(global.$unit-gutter-var / 2);
+  padding-right: calc(global.$col-gutter / 2);
+  padding-left: calc(global.$col-gutter / 2);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
-    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 2));
   }
 
   .acms-container {
@@ -63,12 +63,12 @@ a {
   box-sizing: border-box;
   max-width: global.$container-md;
   margin: 0 auto;
-  padding-right: calc(global.$unit-gutter-var / 2);
-  padding-left: calc(global.$unit-gutter-var / 2);
+  padding-right: calc(global.$col-gutter / 2);
+  padding-left: calc(global.$col-gutter / 2);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
-    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 2));
   }
 }
 
@@ -78,23 +78,33 @@ a {
   box-sizing: border-box;
   max-width: global.$container-sm;
   margin: 0 auto;
-  padding-right: calc(global.$unit-gutter-var / 2);
-  padding-left: calc(global.$unit-gutter-var / 2);
+  padding-right: calc(global.$col-gutter / 2);
+  padding-left: calc(global.$col-gutter / 2);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
-    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 2));
   }
 }
 
 /* グリッド */
 .acms-grid {
-  margin: 0 calc(global.$unit-gutter-var / -2);
+  margin: 0 calc(global.$col-gutter / -2);
 }
 
 [class*="acms-col"] {
-  padding-right: calc(global.$unit-gutter-var / 2);
-  padding-left: calc(global.$unit-gutter-var / 2);
+  padding-right: calc(global.$col-gutter / 2);
+  padding-left: calc(global.$col-gutter / 2);
+}
+
+.main {
+  margin: 0 0 5rem;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .main {
+    margin: 0 0 6.5rem;
+  }
 }
 
 /* 固定コンテンツ */

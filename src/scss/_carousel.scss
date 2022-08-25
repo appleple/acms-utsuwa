@@ -207,13 +207,9 @@
   }
 
   &::before {
+    @include global.arrow-circle($size: m,$color-bg:global.$color-secondary,$color-line:white);
+
     display: block;
-    width: 2rem;
-    height: 2rem;
-    background: global.$color-secondary no-repeat center;
-    background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg'});
-    background-size: 0.5rem 1rem;
-    border-radius: global.$border-radius-circle;
     content: "";
   }
 }
@@ -291,11 +287,11 @@
   .slick-prev,
   .slick-next {
     padding: 0;
-    background-size: 1rem 1.5rem;
 
     &::before {
       width: 3rem;
       height: 3rem;
+      background-size: 0.625rem 1.1875rem;
     }
   }
 

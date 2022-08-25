@@ -7,7 +7,12 @@
 ------------------------------ */
 
 .tag-wrapper {
-  margin: 0.5rem 0;
+  margin: 2rem 0;
+}
+
+.tag-title-inline {
+  margin: 0 0 1rem;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .tag-box {
@@ -39,27 +44,31 @@
   box-sizing: border-box;
   padding: 0.5rem 1rem;
   color: global.$color-text;
-  font-weight: bold;
   background: global.$color-white;
   border: global.$border-width-sm solid global.$color-gray40;
   border-radius: 10em;
-
-  &:link:hover {
-    color: global.$color-text;
-    text-decoration: none;
-    background: global.$color-gray20;
-  }
 
   &:visited,
   &:active,
   &:focus {
     color: global.$color-text;
   }
+
+  &:any-link:hover {
+    color: global.$color-text;
+    text-decoration: none;
+    background: global.$color-gray20;
+  }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .tag-wrapper {
+    display: flex;
     margin: 2.5rem 0;
+  }
+
+  .tag-title-inline {
+    margin: 0.5rem 2rem 0.5rem 0;
   }
 
   .tag-box {
@@ -67,6 +76,7 @@
   }
 
   .tag-list {
+    flex: 1;
     flex-direction: row;
     margin: 0 -0.5rem;
 
@@ -76,6 +86,7 @@
   }
 
   .tag-item {
+    margin: 0 0.5rem 1rem;
     font-size: map.get(global.$font-scales, body-m);
 
     .tag-list.is-sm & {

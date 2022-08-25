@@ -2,11 +2,35 @@
 
 @section("main")
 <div class="acms-container">
+  <main class="main">
+    <div class="acms-grid">
+      <div class="container-md">
+        <!-- タグフィルター -->
+        @include("/include/tag/filter.html")
 
-	<!-- タグフィルター -->
-	@include("/include/tag/filter.html")
+        <!-- サマリー：記事一覧 -->
+        @include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+      </div>
+    </div>
 
-	<!-- サマリー：記事一覧 -->
-	@include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+  </main>
 </div>
+@endsection
+
+
+@section("side")
+<section class="acms-container">
+
+  <h3 class="heading-md heading-line">他の方法で記事を探す</h3>
+  <div class="section-side-grid">
+    <!-- カレンダー：月表示 -->
+    @include("/include/calendar/month_side.html", {"module_id": "calendar_side"})
+
+    <!-- カテゴリー：リスト表示 -->
+    @include("/include/category/list_side.html", {"module_id": "category_list"})
+
+    <!-- タグ：リスト表示 -->
+    @include("/include/tag/list_side.html", {"module_id": "tag_cloud"})
+  </div>
+</section>
 @endsection

@@ -11,4 +11,9 @@
   color: global.$color-text-side;
   background: global.$color-gray30;
   border-radius: global.$border-radius-sm;
+
+  &.-pill {
+    padding: 0.25rem 1rem;
+    border-radius: global.$border-radius-round;
+  }
 }

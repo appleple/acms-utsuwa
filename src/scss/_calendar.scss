@@ -1,0 +1,202 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　カレンダー
+------------------------------ */
+.calendar {
+  width: 100%;
+}
+
+.calendar-label {
+  padding: 0.5rem 0;
+  color: global.$color-text-side;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+
+  &.is-week-0 {
+    color: global.$color-text-sunday;
+  }
+
+  &.is-week-6 {
+    color: global.$color-text-saturday;
+  }
+}
+
+.calendar-day {
+  padding: 0.5rem 0;
+  color: global.$color-text-side;
+}
+
+.calendar-day-has {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -0.5rem auto;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  background: global.$color-primary-bg;
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: global.$color-text;
+    background: global.$color-primary-bg-hover;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-label {
+    width: 3.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .calendar-day {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+  }
+
+  .calendar-day-has {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+  }
+}
+
+/* 　年間カレンダーレイアウト
+------------------------------ */
+.calendar-group {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-group-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.calendar-group-item-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 0 0.5rem;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-group {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: global.$border-width-sm solid global.$color-gray30;
+    border-left: global.$border-width-sm solid global.$color-gray30;
+  }
+
+  .calendar-group-item {
+    margin: 0;
+    border-right: global.$border-width-sm solid global.$color-gray30;
+    border-bottom: global.$border-width-sm solid global.$color-gray30;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .calendar-group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* 　年間カレンダー ヘッダー
+------------------------------ */
+.calendar-header {
+  margin: 0 0 0.5rem;
+}
+
+.calendar-header-title {
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  border-bottom: global.$border-width-sm solid global.$color-gray30;
+}
+
+/* 　年間カレンダー ページネーション
+------------------------------ */
+.calendar-pagination-wrap {
+  text-align: center;
+}
+
+.calendar-pagination {
+  position: relative;
+  display: inline-flex;
+  margin: 0 0 1rem;
+  padding: 0 4.5rem;
+}
+
+.calendar-pagination-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: map.get(global.$font-scales, heading-m);
+}
+
+.calendar-pagination-group {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-pagination-item-next {
+  position: absolute;
+  right: 0;
+}
+
+.calendar-pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: global.$border-width-sm solid global.$color-gray70;
+  border-radius: global.$border-radius-circle;
+
+  svg {
+    box-sizing: border-box;
+    width: 1.25rem;
+  }
+
+  polygon {
+    fill: global.$color-gray70;
+  }
+}
+
+@media (hover: hover) {
+  .calendar-pagination-link:hover {
+    background: global.$color-gray70;
+
+    polygon {
+      fill: global.$color-white;
+    }
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-pagination {
+    margin: 0 0 2.5rem;
+  }
+
+  .calendar-pagination-title {
+    font-size: map.get(global.$font-scales, heading-l);
+  }
+}
