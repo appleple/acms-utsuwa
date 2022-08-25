@@ -7,10 +7,6 @@
 /* ------------------------------
 　　メディア
 ------------------------------ */
-.media-list-wrap {
-  padding: 0 calc(global.$unit-gutter-var / 2);
-}
-
 .media-list {
   display: flex;
   flex-wrap: wrap;
@@ -114,15 +110,10 @@
   }
 
   &::after {
-    display: inline-block;
-    width: 1.25rem;
-    height: 1.25rem;
     margin: 0 0 0 0.5rem;
-    background: global.$color-secondary no-repeat;
-    background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
-    background-position: center;
-    background-size: 0.25rem 0.5rem;
-    border-radius: global.$border-radius-circle;
+
+    @include global.arrow-circle($size: ss,$color-bg:global.$color-secondary,$color-line:white);
+
     content: "";
   }
 }
@@ -141,7 +132,6 @@
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 180px;
-    margin: 0 calc(global.$col-gutter / -2);
     padding: 1.25rem 0;
 
     &.is-noimage {

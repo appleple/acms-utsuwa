@@ -1,0 +1,33 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　リストグループ
+------------------------------ */
+.list-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: global.$border-width-sm solid global.$color-gray40;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-weight: normal;
+  border-bottom: global.$border-width-sm solid global.$color-gray40;
+  transition: background-color 0.2s ease;
+
+  + .list-group {
+    border: 0;
+  }
+
+  &:hover {
+    background: global.$color-gray10;
+  }
+
+  .badge {
+    margin-left: auto;
+  }
+}

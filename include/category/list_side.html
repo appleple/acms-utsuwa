@@ -1,0 +1,19 @@
+<!-- BEGIN_MODULE Category_List id="{{module_id}}" -->
+<!-- BEGIN category_list:veil -->
+<div class="section-side-col is-full">
+  <section class="section-side">
+    <header class="section-side-header">
+      <h2 class="section-side-title">カテゴリーリスト</h2>
+    </header>
+    @include("/admin/module/setting.html")
+    <!-- BEGIN category:loop --><!-- BEGIN ul#front -->
+    <ul class="list-group">
+      <!-- END ul#front --><!-- BEGIN li#front -->
+      <li><!-- END li#front --><!-- BEGIN category:veil -->
+        <a href="{url}" class="list-group-item">{name}<!-- BEGIN amount:veil --><span class="badge -pill">{amount}</span><!-- END amount:veil --></a><!-- END category:veil --><!-- BEGIN li#rear -->
+      </li><!-- END li#rear --><!-- BEGIN ul#rear -->
+    </ul>
+    <!-- END ul#rear --><!-- END category:loop -->
+  </section>
+</div><!-- END category_list:veil -->
+<!-- END_MODULE Category_List -->

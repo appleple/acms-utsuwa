@@ -2,9 +2,13 @@
 
 @section("main")
 <div class="acms-container">
-  @include("/include/entry/summary-blog.html", {"module_id": "summary_index_date"})
+  <main class="main">
+    <!-- カレンダー：年間表示 -->
+    @include("/include/calendar/year.html", {"module_id": "calendar_year"})
+  </main>
 </div>
 @endsection
+
 
 @section("side")
 <section class="acms-container">

@@ -2,14 +2,19 @@
 
 @section("main")
 <div class="acms-container">
-  @include("/include/entry/summary-blog.html", {"module_id": "summary_index_date"})
+  <main class="main">
+    <!-- カレンダー：年間表示 -->
+    @include("/include/calendar/year.html", {"module_id": "calendar_year"})
+  </main>
 </div>
 @endsection
+
 
 @section("side")
 <section class="acms-container">
   <h3 class="heading-md heading-line">他の方法で記事を探す</h3>
   <div class="section-side-grid">
+
     <!-- カレンダー：月表示 -->
     @include("/include/calendar/month_side.html", {"module_id": "calendar_side"})
 

@@ -39,18 +39,18 @@
 <!-- ELSE -->
 <!-- BEGIN_MODULE Touch_Category --><!-- BEGIN_MODULE Category_Field -->
 <div class="page-title-wrapper" <!-- BEGIN page_image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page_image@path});"<!-- END page_image:veil -->>
-<!-- BEGIN_MODULE Touch_SessionWithAdministration --><p class="acms-admin-module-edit"><a
-        href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom"
-        class="js-dialog-btn js-link_no_rewrite">編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
-<div class="page-title-filter"></div>
-<div class="page-title-inner">
-  <div class="acms-container">
-    <!-- BEGIN_MODULE Touch_Entry -->
-    <p class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</p>
-    <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_NotEntry -->
-    <h1 class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</h1>
-    <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_NotEntry -->
+  <!-- BEGIN_MODULE Touch_SessionWithAdministration --><p class="acms-admin-module-edit"><a
+          href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom"
+          class="js-dialog-btn js-link_no_rewrite">編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <!-- BEGIN_MODULE Touch_Entry -->
+      <p class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</p>
+      <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_Entry --><!-- BEGIN_MODULE Touch_NotEntry -->
+      <h1 class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</h1>
+      <p class="page-title-en">%{CCD}</p><!-- END_MODULE Touch_NotEntry -->
+    </div>
   </div>
-</div>
 </div><!-- END_MODULE Category_Field --><!-- END_MODULE Touch_Category -->
 <!-- END_IF -->

@@ -94,9 +94,10 @@ $line-height-lg: 1.7 !default;
 
 // プライマリーカラー
 $color-primary: var(--color-primary);
+$color-primary-hover: var(--color-primary-hover);
 $color-primary-light: var(--color-primary-light);
 $color-primary-bg: $color-primary-light;
-$color-primary-hover: var(--color-primary-hover);
+$color-primary-bg-hover: var(--color-primary-bg-hover);
 
 // セカンダリーカラー
 $color-secondary: var(--color-secondary);
@@ -136,6 +137,8 @@ $color-text-inverse: $color-white;
 $color-text-primary: $color-primary;
 $color-text-secondary: $color-secondary;
 $color-text-point: var(--color-text-point);
+$color-text-sunday: #b42121;
+$color-text-saturday: #2351a8;
 
 // ------------------------------
 //　ボーダー

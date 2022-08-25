@@ -1,0 +1,109 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　サイドセクション
+------------------------------ */
+.section-side-grid {
+  display: flex;
+  flex-flow: column;
+  margin-right: calc(global.$unit-gutter-var / -2);
+  margin-left: calc(global.$unit-gutter-var / -2);
+}
+
+.section-side-col {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
+
+  @if global.$enable-iphonex == true {
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section-side-grid {
+    flex-flow: row wrap;
+  }
+
+  .section-side-col {
+    width: auto;
+
+    &.is-fix {
+      flex: 0 1 auto;
+    }
+
+    &.is-full {
+      flex: 1 1 auto;
+    }
+
+    &.is-fix + .section-side-col.is-full {
+      flex-basis: min-content;
+      min-width: 30%;
+    }
+  }
+}
+
+.section-side {
+  margin: 0 0 4rem;
+}
+
+.section-side-header {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1rem;
+
+  &.-calendar {
+    margin: 0 0 0.5rem;
+    padding: 0 0 1rem;
+    border-bottom: global.$border-width-sm solid global.$color-gray30;
+  }
+}
+
+.section-side-title {
+  margin: 0;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section-side-title {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+.section-side-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+
+  svg {
+    box-sizing: border-box;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0 0 0.5rem;
+    padding: 0.25rem;
+    background-color: global.$color-secondary;
+    border-radius: global.$border-radius-circle;
+  }
+
+  &:hover svg {
+    background-color: transparent;
+    border: global.$border-width-sm solid global.$color-secondary;
+
+    path {
+      stroke: global.$color-secondary;
+    }
+  }
+
+  &:hover,
+  &:visited,
+  &:active {
+    color: global.$color-text;
+    text-decoration: none;
+  }
+}

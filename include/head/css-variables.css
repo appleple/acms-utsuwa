@@ -5,9 +5,11 @@
 
 /* カラー */
 --color-primary         : #222222;
---color-primary-light   : #e5f5ff;
---color-primary-bg      : var(--color-primary-light);
 --color-primary-hover   : #525252;
+--color-primary-light   : #e5f5ff;
+--color-primary-light30   : #CEE9FB;
+--color-primary-bg      : var(--color-primary-light);
+--color-primary-bg-hover      : var(--color-primary-light30);
 
 --color-secondary       : #6A6A6A;
 

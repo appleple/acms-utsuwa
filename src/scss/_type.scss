@@ -60,10 +60,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     margin: 3.5rem 0 global.$entry-el-margin-md 0;
-    font-size: map.get(global.$font-scales, heading-ss);
+    font-size: map.get(global.$font-scales, heading-s);
 
     &.heading-line {
-      margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+      margin: 3.5rem 0 (global.$entry-el-margin-sm + 0.5rem) 0;
     }
   }
 }
