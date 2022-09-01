@@ -163,6 +163,10 @@
 　エントリーのコンテンツ
 ------------------------------ */
 
+.#{acms.$entry-class}-grid {
+  margin: 0 calc(global.$unit-gutter-var / -2);
+}
+
 .#{acms.$entry-class} {
   .entry-text-unit {
     .text-point {
