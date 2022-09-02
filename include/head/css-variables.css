@@ -53,4 +53,14 @@
   /* 余白 */
   --gutter-sm : 1rem;
   --gutter-md : 2rem;
+
+  /* 余白ユニット */
+  --unit-space-large: 4rem;
+  --unit-space-medium: 2.5rem;
+  --unit-space-small: 1.5rem;
+
+  /* 罫線ユニット余白 */
+  --separator-large: 4rem;
+  --separator-medium: 2.5rem;
+  --separator-small: 1.5rem;
 }
