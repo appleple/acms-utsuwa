@@ -48,11 +48,11 @@
   }
 
   &.is-shadow {
-    box-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+    box-shadow: global.$elevation08;
   }
 
   &.is-shadow-light {
-    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+    box-shadow: global.$elevation10;
   }
 
   &.is-inverse {
