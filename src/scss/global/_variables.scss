@@ -65,10 +65,10 @@ $root-theme-img: "../../images/";
 //　フォント
 // ------------------------------
 /* stylelint-disable max-line-length */
-$font-hiragino: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, hiragino kaku gothic pro,meiryo,sans-serif;
-$font-yu-gothic: segoe ui,roboto,helvetica neue,arial, yugothic,yu gothic, "Hiragino Kaku Gothic Pro","Meiryo", sans-serif;
-$font-meiryo: -apple-system,blinkmacsystemfont,segoe ui,roboto,helvetica neue,arial, verdana, meiryo, "Hiragino Kaku Gothic Pro",sans-serif;
-$font-base: $font-yu-gothic;
+$font-hiragino: "Helvetica Neue", arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo, sans-serif;
+$font-yu-gothic: "Helvetica Neue", arial, yugothic,yu gothic, "Hiragino Kaku Gothic ProN", "Hiragino Sans",meiryo, sans-serif;
+$font-meiryo: "Helvetica Neue", arial, meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans",sans-serif;
+$font-base: $font-hiragino;
 $font-size: 1rem;
 $font-scale: 1.25;
 $font-scales: (
