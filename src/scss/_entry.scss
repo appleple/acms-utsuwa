@@ -1132,7 +1132,7 @@
     width: 100%;
     padding: 2rem 1rem 1.5rem;
     background: #fff;
-    box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+    box-shadow: global.$elevation02;
     transition: transform 0.25s ease;
   }
 
@@ -1234,7 +1234,7 @@
       margin: 0 0 global.$entry-el-margin-md 0;
 
       &:hover .pricing-inner {
-        box-shadow: 0 6px 15px rgb(0 0 0 / 20%);
+        box-shadow: global.$elevation10;
         transform: translateY(-0.5rem);
       }
     }

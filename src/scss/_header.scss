@@ -17,7 +17,7 @@
   width: 100%;
   height: global.$header-height;
   background: global.$color-white;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+  box-shadow: global.$elevation04;
 }
 
 .header-item-title {

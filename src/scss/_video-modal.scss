@@ -29,11 +29,18 @@ $_video-play-btn-arrow-width-lg: 2rem;
   margin: 0 auto 2rem;
   overflow: hidden;
   border-radius: global.$border-radius-xl;
-  box-shadow: rgb(0 0 0 / 5%) 0 6px 15px 4px;
+  box-shadow: global.$elevation02;
+  transition: box-shadow 0.2s;
+
+  .video-modal-play-icon {
+    transform: scale(0.9);
+  }
 
   &:hover {
+    box-shadow: global.$elevation10;
+
     .video-modal-play-icon {
-      transform: scale(0.8);
+      transform: scale(1);
     }
   }
 }
