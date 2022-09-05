@@ -69,7 +69,7 @@
 
 .section-horizontal-text p {
   color: global.$color-text-side;
-  font-size: map.get(global.$font-scales, body-s);
+  font-size: map.get(global.$font-scales, body-m);
   line-height: 1.7;
 }
 
@@ -83,7 +83,7 @@
   }
 
   .section-horizontal-heading {
-    font-size: map.get(global.$font-scales, display-s);
+    font-size: map.get(global.$font-scales, headling-l);
   }
 
   .section-horizontal-heading-side {
@@ -110,7 +110,7 @@
   }
 
   .section-horizontal-heading {
-    font-size: map.get(global.$font-scales, display-m);
+    font-size: map.get(global.$font-scales, display-s);
   }
 
   .section-horizontal-heading-side {
@@ -196,7 +196,7 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .section-vertical-heading {
-    font-size: map.get(global.$font-scales, display-s);
+    font-size: map.get(global.$font-scales, heading-l);
   }
 
   .section-vertical-text {
@@ -215,7 +215,7 @@
   }
 
   .section-vertical-heading {
-    font-size: map.get(global.$font-scales, display-m);
+    font-size: map.get(global.$font-scales, display-s);
   }
 
   .section-vertical-text {
