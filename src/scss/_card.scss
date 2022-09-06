@@ -87,7 +87,7 @@
   margin: 0 0 1rem;
   color: global.$color-black;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: global.$line-height-sm;
+  line-height: global.$line-height-base;
 
   .js .js-animation-row & {
     opacity: 0;

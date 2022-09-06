@@ -20,6 +20,12 @@
   background: global.$color-gray20;
 }
 
+.tag-filter-heading {
+  margin: 0 0 1rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
