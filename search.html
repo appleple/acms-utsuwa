@@ -2,16 +2,21 @@
 
 @section("main")
 <div class="acms-container">
+  <main class="main">
+    <div class="acms-grid">
+      <div class="container-md">
+        <section aria-labelledby="search-form-heading" class="search">
+          <div class="module-header clearfix">
+            <h2 id="search-form-heading" class="module-heading" ><label for="searchForm">キーワードから検索する</label></h2>
+          </div>
+          @include("/include/parts/form-search.html")
+        </section>
 
-	<section aria-labelledby="search-form-heading" class="search">
-		<div class="module-header clearfix">
-			<h2 id="search-form-heading" class="module-heading" ><label for="searchForm">キーワードから検索する</label></h2>
-		</div>
-		@include("/include/parts/form-search.html")
-	</section>
-
-	<h2 class="heading-md heading-line">「%{KEYWORD}」の検索結果</h2>
-	<!-- サマリー：記事一覧 -->
-	@include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+        <h2 class="heading-md heading-line">「%{KEYWORD}」の検索結果</h2>
+        <!-- サマリー：記事一覧 -->
+        @include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+      </div>
+    </div>
+  </main>
 </div>
 @endsection
