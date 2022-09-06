@@ -5,6 +5,12 @@
 /* ------------------------------
   モバイルメニュー
 ------------------------------ */
+@media (min-width: acms.$breakpoint-lg-min) {
+  .global-nav-mobile-menu {
+    display: none;
+  }
+}
+
 .global-nav-mobile-menu-btn {
   display: flex;
   flex-direction: column;
@@ -82,31 +88,31 @@
   .is-locked {
     overflow: hidden;
   }
+}
 
-  .global-nav-mobile {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: global.$zindex-mobile-nav;
-    display: none;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding-top: global.$header-height + 0.5rem;
-    overflow-y: scroll;
-    background-color: global.$color-white;
-    opacity: 0;
-    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition-duration: 0.3s;
-    transition-property: all;
+.global-nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: global.$zindex-mobile-nav;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-top: global.$header-height + 0.5rem;
+  overflow-y: scroll;
+  background-color: global.$color-white;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 0.3s;
+  transition-property: all;
 
-    &.is-active {
-      display: block;
-    }
+  &.is-active {
+    display: block;
+  }
 
-    &.is-opened {
-      opacity: 1;
-    }
+  &.is-opened {
+    opacity: 1;
   }
 }
 
