@@ -550,7 +550,7 @@
 /* 記述リスト */
 .#{acms.$entry-class} .entry-text-unit {
   dl {
-    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
 
     dt {
       margin: 0 0 1rem;
@@ -586,6 +586,8 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
+      margin-bottom: global.$entry-el-margin-lg;
+
       dt {
         margin: 0 0 1rem;
       }

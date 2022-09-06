@@ -39,11 +39,17 @@
     font-size: map.get(global.$font-scales, heading-m);
 
     &.heading-primary {
-      margin-bottom: global.$entry-el-margin-xl;
+      margin-bottom: global.$entry-el-margin-lg;
 
       &::before {
         bottom: -1.5rem;
       }
+    }
+  }
+
+  @media screen and (min-width: acms.$breakpoint-lg-min) {
+    &.heading-primary {
+      margin-bottom: global.$entry-el-margin-xl;
     }
   }
 }
@@ -83,9 +89,25 @@
   }
 }
 
+.heading-ss {
+  margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+  font-size: map.get(global.$font-scales, body-m);
+
+  &.heading-line {
+    padding-bottom: 1rem;
+    border-bottom: global.$border-width-md solid global.$color-gray100;
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+    margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
+
 .heading-lg,
 .heading-md,
-.heading-sm {
+.heading-sm,
+.heading-ss {
   &.heading-margin-top-none {
     margin-top: 0;
   }
