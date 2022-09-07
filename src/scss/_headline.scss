@@ -8,9 +8,7 @@
 .headline {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   list-style: none;
-  border-radius: global.$border-radius-lg;
 
   .js &.js-animation-row {
     opacity: 0;
@@ -27,10 +25,19 @@
   flex-direction: column;
   margin: 0;
   line-height: global.$line-height-base;
-  border-bottom: global.$border-width-sm solid global.$color-gray30;
+
+  &:first-child {
+    .headline-link {
+      border-radius: global.$border-radius-lg global.$border-radius-lg 0 0;
+    }
+  }
 
   &:last-child {
     border: 0;
+
+    .headline-link {
+      border-radius: 0 0  global.$border-radius-lg global.$border-radius-lg;
+    }
   }
 }
 
@@ -40,6 +47,12 @@
   padding: 1rem;
   color: global.$color-text;
   background: global.$color-white;
+  border-bottom: global.$border-width-sm solid global.$color-gray30;
+  box-shadow: global.$elevation02;
+
+  .headline-item:last-child & {
+    border: 0;
+  }
 
   &:hover,
   &:visited,
@@ -51,6 +64,7 @@
 
   &:hover {
     background: global.$color-gray20;
+    box-shadow: global.$elevation10;
   }
 }
 
