@@ -267,6 +267,10 @@
 .section-button {
   margin: 2rem 0 0;
   text-align: center;
+
+  &.is-right {
+    text-align: right;
+  }
 }
 
 /* 視覚的なセパレーター */

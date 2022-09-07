@@ -207,10 +207,17 @@
   }
 
   &::before {
-    @include global.arrow-circle($size: m,$color-bg:global.$color-secondary,$color-line:white);
-
     display: block;
+    box-shadow: global.$elevation02;
     content: "";
+
+    @include global.arrow-circle($size: m,$color-bg:global.$color-white,$color-line:gray);
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      box-shadow: global.$elevation10;
+    }
   }
 }
 
@@ -218,7 +225,7 @@
   left: 0.25rem;
 
   &::before {
-    transform: rotate(180deg);
+    transform: scale(-1, 1);
   }
 }
 
@@ -287,6 +294,7 @@
   .slick-prev,
   .slick-next {
     padding: 0;
+    transition: left 0.2s, right 0.2s;
 
     &::before {
       width: 3rem;
@@ -297,9 +305,21 @@
 
   .slick-prev {
     left: -0.5rem;
+
+    @media (hover: hover) {
+      &:hover {
+        left: -1rem;
+      }
+    }
   }
 
   .slick-next {
     right: -0.5rem;
+
+    @media (hover: hover) {
+      &:hover {
+        right: -1rem;
+      }
+    }
   }
 }

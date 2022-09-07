@@ -43,16 +43,18 @@
 
   @include global.link-card(global.$color-text);
 
-  &:hover {
-    .card-img {
-      transform: scale(1.2);
+  @media (hover: hover) {
+    &:hover {
+      .card-img {
+        transform: scale(1.2);
+      }
     }
-  }
 
-  &:hover {
-    .card-read-more {
-      &::before {
-        transform: scaleX(1);
+    &:hover {
+      .card-read-more {
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -128,6 +130,10 @@
   }
 }
 
+.card-action {
+  margin-top: auto;
+}
+
 .card-read-more,
 .#{acms.$entry-class} .card-read-more {
   position: relative;
@@ -194,6 +200,15 @@
     .card.is-lg & {
       margin: 0 0 2rem;
     }
+
+    .card-read-more,
+    .#{acms.$entry-class} .card-read-more {
+      font-size: map.get(global.$font-scales, body-m);
+
+      &::before {
+        bottom: -0.5rem;
+      }
+    }
   }
 
   .card-title {
@@ -211,15 +226,6 @@
 
     .card.is-lg & {
       margin: 0 0 2rem;
-    }
-  }
-
-  .card-read-more,
-  .#{acms.$entry-class} .card-read-more {
-    font-size: map.get(global.$font-scales, body-m);
-
-    &::before {
-      bottom: -0.5rem;
     }
   }
 }
@@ -246,28 +252,29 @@
 
 .card-bordered {
   width: 100%;
-  overflow: hidden;
-  border: global.$border-width-sm solid global.$color-gray40;
-  border-radius: global.$border-radius-lg;
 }
 
 .card-bordered-link {
   display: flex;
   flex-direction: column;
   width: 100%;
+  border-radius: global.$border-radius-lg;
+  box-shadow: global.$elevation02;
 
   @include global.link-card(global.$color-text);
 
-  &:hover {
-    .card-bordered-img {
-      transform: scale(1.2);
-    }
-  }
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: global.$elevation10;
 
-  &:hover {
-    .card-bordered-read-more {
-      &::before {
-        transform: scaleX(1);
+      .card-bordered-img {
+        transform: scale(1.2);
+      }
+
+      .card-bordered-read-more {
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -276,6 +283,7 @@
 .card-bordered-img-wrap {
   margin: 0;
   overflow: hidden;
+  border-radius: global.$border-radius-lg global.$border-radius-lg 0 0;
 }
 
 .card-bordered-img {
