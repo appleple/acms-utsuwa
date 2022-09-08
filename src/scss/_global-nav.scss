@@ -102,7 +102,7 @@
   min-width: 10rem;
   overflow: hidden;
   border-radius: global.$border-radius-sm;
-  box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+  box-shadow: global.$elevation04;
 
   .global-nav-item {
     width: 100%;
