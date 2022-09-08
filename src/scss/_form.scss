@@ -228,6 +228,9 @@
 /* フォーム要素
 ------------------------------ */
 .form-group {
+  display: block;
+  border: 0;
+
   select {
     &[required]:required {
       border: global.$border-width-sm solid global.$color-error;
@@ -242,21 +245,42 @@
     }
   }
 
-  input,
-  textarea {
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  textarea,
+  select {
+    border: 1px solid rgb(0 0 0 / 20%);
+
     &[required]:required {
-      background: global.$color-gray10;
+      background-color: global.$color-gray10;
     }
 
     &.focused:invalid,
     &.invalid {
-      background: global.$color-gray10;
+      background-color: global.$color-gray10;
       border-color: global.$color-error;
       box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
     }
 
     &[required]:valid {
-      background: global.$color-gray10;
+      background-color: global.$color-gray10;
+    }
+
+    &:focus {
+      background-color: global.$color-gray10;
+      border-color: global.$color-focus;
+      box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
     }
   }
 
@@ -278,6 +302,7 @@
     padding: 0.75rem;
     font-size: map.get(global.$font-scales, body-m);
     line-height: global.$line-height-base;
+    border: global.$border-width-sm solid rgb(0 0 0 / 20%);
     border-radius: global.$border-radius-sm;
   }
 
@@ -329,10 +354,17 @@
   margin: 0;
   padding: 0.75rem 1rem;
   background: global.$color-gray20;
+  border: global.$border-width-sm solid rgb(0 0 0 / 10%);
   border-radius: global.$border-radius-sm;
 
   &:hover {
     background: global.$color-gray30;
+  }
+
+  &:focus-within {
+    background-color: global.$color-gray10;
+    border-color: global.$color-focus;
+    box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
   }
 }
 
@@ -436,6 +468,7 @@
 
   .invalid {
     border-color: global.$color-error;
+    box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
   }
 }
 
