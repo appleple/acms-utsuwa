@@ -49,7 +49,7 @@
 }
 
 .heading-md {
-  margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: global.$line-height-sm;
 
@@ -59,17 +59,17 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 3.5rem 0 global.$entry-el-margin-md 0;
+    margin: 4rem 0 global.$entry-el-margin-md 0;
     font-size: map.get(global.$font-scales, heading-s);
 
     &.heading-line {
-      margin: 3.5rem 0 (global.$entry-el-margin-sm + 0.5rem) 0;
+      margin: 4rem 0 (global.$entry-el-margin-sm + 0.5rem) 0;
     }
   }
 }
 
 .heading-sm {
-  margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
   font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
@@ -78,13 +78,13 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+    margin: 4rem 0 global.$entry-el-margin-sm 0;
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
 .heading-ss {
-  margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
   font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
@@ -93,7 +93,7 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 3.5rem 0 global.$entry-el-margin-sm 0;
+    margin: 4rem 0 global.$entry-el-margin-sm 0;
     font-size: map.get(global.$font-scales, body-m);
   }
 }
