@@ -54,7 +54,11 @@
   border: global.$border-width-sm solid global.$color-gray40;
   border-radius: 10em;
 
-  &:visited,
+  &:link,
+  &:visited {
+    color: currentcolor;
+  }
+
   &:active,
   &:focus {
     color: global.$color-text;
