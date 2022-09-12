@@ -18,7 +18,7 @@
 
   &.heading-primary {
     position: relative;
-    margin-bottom: global.$entry-el-margin-lg;
+    margin-bottom: calc(global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm);
 
     &::before {
       position: absolute;
@@ -39,17 +39,11 @@
     font-size: map.get(global.$font-scales, heading-m);
 
     &.heading-primary {
-      margin-bottom: global.$entry-el-margin-lg;
+      margin-bottom: calc(global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm);
 
       &::before {
         bottom: -1.5rem;
       }
-    }
-  }
-
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
-    &.heading-primary {
-      margin-bottom: global.$entry-el-margin-xl;
     }
   }
 }
