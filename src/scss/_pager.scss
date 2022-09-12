@@ -101,7 +101,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: 1.25rem;
+    padding: 1rem;
     color: global.$color-text;
 
     &:hover,
@@ -127,7 +127,7 @@
   }
 
   svg {
-    margin: 0 0.25rem 0 0;
+    margin: 0 0.5rem 0 0;
   }
 }
 
@@ -139,7 +139,7 @@
   }
 
   svg {
-    margin: 0 0 0 0.25rem;
+    margin: 0 0 0 0.5rem;
   }
 }
 
@@ -160,7 +160,7 @@
   align-items: center;
   margin: 0 0 0.25rem;
   font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
+  font-size: map.get(global.$font-scales, body-m);
 
   svg {
     box-sizing: border-box;
@@ -218,25 +218,13 @@
     width: 50%;
 
     a {
-      padding: 2rem 1.25rem;
+      padding: 2rem;
       border: 0;
     }
   }
 
   .serial-nav-arrow {
     font-size: map.get(global.$font-scales, heading-ss);
-  }
-
-  .serial-nav-item-prev {
-    svg {
-      margin: 0 1rem 0 0;
-    }
-  }
-
-  .serial-nav-item-next {
-    svg {
-      margin: 0 0 0 1rem;
-    }
   }
 
   .serial-nav-item-index {
