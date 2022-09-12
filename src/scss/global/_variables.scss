@@ -35,10 +35,10 @@ $unit-gutter-var: var(--gutter);
 //　エントリー
 // ------------------------------
 $entry-el-margin-xxs: 0.5rem !default; // 8
+$entry-el-margin-xs: 1rem !default; // 16
 $entry-el-margin-sm: 1.5rem !default; // 24
 $entry-el-margin-md: 2rem !default; // 32
 $entry-el-margin-lg: 3rem !default; // 48
-$entry-el-margin-xl: 3.5rem !default; // 56
 
 $entry-el-padding-xxs: 0.5rem !default; // 8
 $entry-el-padding-xs: 1rem !default; // 16
@@ -46,7 +46,6 @@ $entry-el-padding-sm: 1.5rem !default; // 24
 $entry-el-padding-md: 2rem !default; // 32
 
 $unit-margin-md: 2rem;
-$unit-margin-lg: 3rem; // 48
 
 // ------------------------------
 //　コンテイナー
@@ -208,5 +207,5 @@ $cta-space-lg: 6.5rem;
 // ------------------------------
 //　フッター
 // ------------------------------
-$footer-margin-top-md: 1.5rem;
+$footer-margin-top-md: 5rem;
 $footer-margin-top-lg: 6.5rem;
