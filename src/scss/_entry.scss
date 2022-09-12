@@ -167,6 +167,7 @@
   margin: 0 calc(global.$unit-gutter-var / -2);
 }
 
+/* インライン要素 */
 .#{acms.$entry-class} {
   .entry-text-unit {
     .text-point {
@@ -214,46 +215,57 @@
 }
 
 /* アンカーリンクの際の上部の余白の確保 */
+// グローバルヘッダーを固定した状態でアンカーリンクで飛んだ際にも
+// 視覚的にヘッダーと見出しの間に余白が確保できるように実装しています。
+// borderの高さ（例：3.75rem）+1つ前の要素のmargin-bottom（2rem）+ネガティブマージン（例：-2rem）=視覚的な余白（3.75rem）、画面トップから見出しの余白（5.75rem）
+// ※1 ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、目安：最大32pxまで（上のオブジェクトの下方向のマージンの分）。
+// ※2 背景色・枠付きユニットグループの時は上部に余白が空き過ぎてしまうので、border-top-widthを調整
 .#{acms.$entry-class} .entry-text-unit {
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-el-margin-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
-    border-top: global.$header-height + 0.25rem solid transparent;
+    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
+    border-top: global.$header-height + 0.5rem solid transparent;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       margin-top: -(global.$entry-el-margin-lg);
-      border-top: ((global.$entry-el-margin-lg) + 2rem) solid transparent;
+      border-top-width: (global.$header-height + 0.5rem);
+    }
+  }
+
+  h2.heading-primary {
+    border-top: global.$header-height + 1.5rem solid transparent;
+
+    @media screen and (min-width: acms.$breakpoint-md-min) {
+      border-top-width: (global.$header-height + 2rem);
     }
   }
 }
 
+// ユニットグループ
 .#{acms.$entry-class} .ug-bg-gray .entry-text-unit,
 .#{acms.$entry-class} .ug-bg-primary .entry-text-unit,
 .#{acms.$entry-class} .ug-border .entry-text-unit {
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-el-margin-xl);
-
-    @media screen and (min-width: acms.$breakpoint-md-min) {
-      margin-top: (-(global.$entry-el-margin-xl) - 1rem);
-    }
+    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
+    border-top-width: global.$header-height + 0.5rem; // ※2
   }
 }
 
 /* 見出しが最初の要素の時はページタイトルの余白を相殺する */
-.#{acms.$entry-class} {
+.#{acms.$entry-class}-grid {
   & > .is-h2:first-child h2,
   & > .is-h3:first-child h3,
   & > .is-h4:first-child h4 {
-    margin-top: -(global.$page-title-margin-bottom + 1.25rem);
+    margin-top: -(global.$page-title-margin-bottom + 2.25rem);
   }
 }
 
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
-    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    margin: - (global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, heading-s);
     line-height: global.$line-height-sm;
 
@@ -264,11 +276,11 @@
 
     &.heading-primary {
       position: relative;
-      margin-bottom: global.$entry-el-margin-lg;
+      margin-bottom: calc(global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm);
 
       &::before {
         position: absolute;
-        bottom: -1.5rem;
+        bottom: -1.25rem;
         left: 0;
         display: block;
         width: 4rem;
@@ -294,19 +306,11 @@
       }
 
       &.heading-primary {
-        margin-bottom: global.$entry-el-margin-lg;
+        margin-bottom: calc(global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm);
 
         &::before {
           bottom: -1.5rem;
         }
-      }
-    }
-  }
-
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
-    h2 {
-      &.heading-primary {
-        margin-bottom: global.$entry-el-margin-xl;
       }
     }
   }
@@ -385,21 +389,12 @@
   .is-table + .is-p .text-danger,
   [class*="column-table-"] + .is-p .text-info,
   [class*="column-table-"] + .is-p .text-danger {
-    margin-top: -(global.$entry-el-margin-sm);
+    margin-top: -1rem;
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     p {
       margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
-    }
-
-    .is-p + .is-p .text-info,
-    .is-p + .is-p .text-danger,
-    .is-table + .is-p .text-info,
-    .is-table + .is-p .text-danger,
-    [class*="column-table-"] + .is-p .text-info,
-    [class*="column-table-"] + .is-p .text-danger {
-      margin-top: -(global.$entry-el-margin-md);
     }
   }
 }
@@ -429,6 +424,7 @@
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       &.text-lead-primary {
+        margin: 0 calc(var(--gutter) / 2) 3rem;
         font-size: map.get(global.$font-scales, heading-l);
 
         .text-point {
@@ -437,6 +433,7 @@
       }
 
       &.text-lead-info {
+        margin: 0 calc(var(--gutter) / 2) 3rem;
         font-size: map.get(global.$font-scales, heading-m);
       }
     }
@@ -498,12 +495,6 @@
       }
     }
   }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    ul {
-      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg calc(global.$unit-gutter-var / 2);
-    }
-  }
 }
 
 /* 番号付きリスト */
@@ -537,12 +528,6 @@
         content: counter(order-list);
         counter-increment: order-list;
       }
-    }
-  }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    ol {
-      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
     }
   }
 }
@@ -586,8 +571,6 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
-      margin-bottom: global.$entry-el-margin-lg;
-
       dt {
         margin: 0 0 1rem;
       }
@@ -634,8 +617,6 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     table {
-      margin: 0 0 global.$entry-el-margin-lg 0;
-
       th,
       td {
         padding: global.$entry-el-padding-sm;
@@ -654,12 +635,6 @@
 [class^="column-table"] .entry-container {
   margin-bottom: global.$entry-el-margin-md;
   overflow-x: auto;
-}
-
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  [class^="column-table"] .entry-container {
-    margin-bottom: global.$entry-el-margin-lg;
-  }
 }
 
 /* 引用 */
