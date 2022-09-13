@@ -6,7 +6,6 @@
 /* ------------------------------
 　　エントリー
 ------------------------------ */
-
 /*
 　ヘッダー
 ------------------------------ */
@@ -263,6 +262,8 @@
   }
 }
 
+/* 見出し
+----------------------------- */
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
     margin: - (global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
@@ -366,7 +367,8 @@
   }
 }
 
-/* 本文 */
+/* 本文
+----------------------------- */
 .#{acms.$entry-class} {
   p {
     margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
@@ -507,7 +509,7 @@
     li {
       position: relative;
       clear: both;
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       line-height: global.$line-height-lg;
       list-style: none;
 
@@ -538,14 +540,14 @@
     margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
 
     dt {
-      margin: 0 0 1rem;
+      margin: 0 0 0.5rem;
       font-weight: bold;
       font-size: map.get(global.$font-scales, body-m);
       line-height: global.$line-height-sm;
     }
 
     dd {
-      margin: 0 0 2rem;
+      margin: 0 0 1rem;
       font-size: map.get(global.$font-scales, body-m);
       line-height: global.$line-height-lg;
     }
@@ -572,7 +574,7 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
       dt {
-        margin: 0 0 1rem;
+        margin: 0 0 0.5rem;
       }
 
       &.box-bordered {
@@ -638,7 +640,9 @@
   overflow-x: auto;
 }
 
-/* 引用 */
+/*
+　引用
+------------------------------ */
 .#{acms.$entry-class} .entry-text-unit {
   blockquote {
     margin: 0 0 global.$entry-el-margin-md 0;
@@ -666,7 +670,9 @@
   }
 }
 
-/* ユニットグループ */
+/*
+　ユニットグループ
+------------------------------ */
 .#{acms.$entry-class} {
   /* 全てのユニットグループ */
   [class*="ug-"] {
@@ -751,7 +757,9 @@
   }
 }
 
-/* 画像・メディア・画像URLの共通設定 */
+/*
+　画像・メディア・画像URLの共通設定
+------------------------------ */
 [class*="column-image"],
 [class*="column-media"],
 [class*="column-eximage"] {
@@ -761,7 +769,9 @@
   }
 }
 
-/* ファイルユニット・メディア（ファイル）の設定 */
+/*
+　ファイルユニット・メディア（ファイル）の設定
+------------------------------ */
 [class*="column-file-"],
 .media-file {
   display: inline-block;
