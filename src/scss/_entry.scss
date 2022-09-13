@@ -633,6 +633,7 @@
 }
 
 [class^="column-table"] .entry-container {
+  clear: both;
   margin-bottom: global.$entry-el-margin-md;
   overflow-x: auto;
 }
