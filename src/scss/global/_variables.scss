@@ -6,27 +6,8 @@
 $enable-iphonex: true;
 
 // ------------------------------
-//　スペーシング
-// 例）map.get(global.$spacers, 4)
+//　余白
 // ------------------------------
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 2,
-  6: $spacer * 2.5,
-  7: $spacer * 3,
-  8: $spacer * 3.5,
-  9: $spacer * 4,
-  10: $spacer * 4.5,
-  11: $spacer * 5,
-  12: $spacer * 5.5,
-  13: $spacer * 6.5,
-) !default;
-
 // グリッドの間隔
 $col-gutter: 2rem;
 $unit-gutter-var: var(--gutter);
