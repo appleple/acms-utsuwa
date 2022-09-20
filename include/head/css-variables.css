@@ -4,17 +4,16 @@
 :root {
 
 /* カラー */
---color-primary         : #222222;
---color-primary-hover   : #525252;
---color-primary-light   : #e5f5ff;
---color-primary-light30   : #CEE9FB;
+--color-primary         : #334EB0;
+--color-primary-hover   : #2B4193;
+--color-primary-light   : #F1F3FA;
 --color-primary-bg      : var(--color-primary-light);
---color-primary-bg-hover      : var(--color-primary-light30);
+--color-primary-bg-hover  : #D1D7ED;
 
 --color-secondary       : #6A6A6A;
 
---color-tertiary       : #FFE13B;
---color-tertiary-light : #fffb8b;
+--color-highlight       : #FFE13B;
+--color-highlight-light : #fffb8b;
 
 --color-white           : #FFF;
 --color-black           : #333333;

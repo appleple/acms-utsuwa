@@ -177,11 +177,11 @@
     }
 
     em {
-      @include global.entry-em(global.$color-primary, global.$color-tertiary);
+      @include global.entry-em(global.$color-primary, global.$color-highlight);
     }
 
     strong {
-      @include global.entry-strong(global.$color-tertiary-light);
+      @include global.entry-strong(global.$color-highlight-light);
     }
 
     a {
@@ -956,7 +956,7 @@
       &::before {
         display: inline-block;
         padding-right: 0.5rem;
-        color: global.$color-text-secondary;
+        color: global.$color-gray90;
         font-weight: 700;
         white-space: nowrap;
         content: counters(a, "-") ". ";
