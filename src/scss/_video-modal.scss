@@ -10,7 +10,7 @@ $_video-play-btn-arrow-color: #fff;
 $_video-thumbnail-size-lg: 42rem;
 $_video-play-btn-size-lg: 5rem;
 $_video-play-btn-arrow-height-lg: 2rem;
-$_video-play-btn-arrow-width-lg: 2rem;
+$_video-play-btn-arrow-width-lg: 1.5rem;
 
 /* ------------------------------
 　　ビデオ
@@ -119,7 +119,7 @@ $_video-play-btn-arrow-width-lg: 2rem;
 
     &::before {
       margin-top: calc($_video-play-btn-arrow-height-lg / -2);
-      margin-left: -0.75rem;
+      margin-left: -0.5rem;
       border: calc($_video-play-btn-arrow-height-lg / 2) solid transparent;
       border-left: $_video-play-btn-arrow-width-lg solid $_video-play-btn-arrow-color;
     }

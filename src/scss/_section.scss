@@ -37,7 +37,7 @@
 
 .section-horizontal-heading {
   margin: 0 0 0.25rem;
-  color: global.$color-primary;
+  color: global.$color-gray100;
   font-size: map.get(global.$font-scales, heading-l);
   line-height: global.$line-height-base;
 }
@@ -173,7 +173,7 @@
 
 .section-vertical-heading {
   margin: 0;
-  color: global.$color-primary;
+  color: global.$color-gray100;
   font-size: map.get(global.$font-scales, heading-l);
   line-height: global.$line-height-base;
 }
