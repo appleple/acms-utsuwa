@@ -702,7 +702,7 @@
 
   .ug-cover {
     margin: global.$entry-el-margin-md calc(50% - 50vw);
-    padding: global.$entry-el-padding-md calc(50vw - 50%);
+    padding: global.$entry-el-padding-md calc(50vw - 50% + (global.$unit-gutter-var / 2));
     border: 0;
   }
 
@@ -753,7 +753,7 @@
 
     .ug-cover {
       margin: global.$entry-el-margin-lg calc(50% - 50vw);
-      padding: 3rem calc(50vw - 50%);
+      padding: 3rem calc(50vw - 50% + (global.$unit-gutter-var / 2));
     }
   }
 }
