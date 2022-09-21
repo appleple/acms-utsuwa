@@ -47,6 +47,7 @@
 }
 
 .cta-link {
+  margin: 0 0 0 -2.5rem;
   color: global.$color-text;
 
   &::before {
@@ -104,6 +105,8 @@
   }
 
   .cta-link {
+    margin: 0 0 0 -3rem;
+
     &::before {
       width: 1.5rem;
       height: 1.5rem;
