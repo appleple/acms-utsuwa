@@ -13,10 +13,6 @@
   .cta + & {
     margin-top: 0;
   }
-
-  a {
-    @include global.link-color(global.$color-text);
-  }
 }
 
 .footer-group {
@@ -52,6 +48,7 @@
 
 .footer-company-catch {
   margin: 0 0 0.5rem;
+  color: global.$color-text-side;
 }
 
 .footer-company-title {
@@ -97,10 +94,12 @@
 
 .footer-address-name {
   margin: 0 0 5px;
+  color: global.$color-text-side;
 }
 
 .footer-address-item {
   margin: 0;
+  color: global.$color-text-side;
   font-size: map.get(global.$font-scales, body-s);
 }
 
@@ -149,10 +148,17 @@
   margin: 0 0 1rem;
   color: global.$color-text-inverse;
 
-  @include global.link-color(global.$color-text-inverse);
+  &:hover {
+    text-decoration: underline;
+  }
 
   .footer-nav-item .footer-nav-item & {
     margin: 0 0 0.5rem;
+    color: global.$color-text-side;
+
+    &:hover {
+      color: global.$color-text;
+    }
   }
 
   & + .footer-nav-group {
@@ -203,6 +209,8 @@
 /* コピーライト */
 .footer-copyright-text {
   margin: 0 0 0.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 /* SNS */

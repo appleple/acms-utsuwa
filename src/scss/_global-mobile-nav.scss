@@ -236,6 +236,23 @@
     text-decoration: none;
   }
 
+  &.is-cta {
+    margin: 1rem 0 0;
+    padding: 1rem 2rem;
+    color: var(--color-text-inverse);
+    text-align: center;
+    background: var(--color-primary);
+    border-radius: global.$border-radius-lg;
+
+    .icon-expand {
+      right: 2rem;
+
+      &::before {
+        border-color: var(--color-text-inverse);
+      }
+    }
+  }
+
   .global-nav-mobile-item.is-expand .global-nav-mobile-item &::before {
     display: inline-block;
     margin-right: 0.5rem;
