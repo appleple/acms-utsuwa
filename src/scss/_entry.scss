@@ -423,6 +423,10 @@
       font-weight: bold;
       font-size: map.get(global.$font-scales, heading-s);
       line-height: global.$line-height-base;
+
+      &.is-margin-small {
+        margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-xxs;
+      }
     }
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -438,6 +442,10 @@
       &.text-lead-info {
         margin: 0 calc(var(--gutter) / 2) 3rem;
         font-size: map.get(global.$font-scales, heading-m);
+
+        &.is-margin-small {
+          margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-xxs;
+        }
       }
     }
   }
