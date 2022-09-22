@@ -1,0 +1,52 @@
+<!-- BEGIN_MODULE Calendar_Year id="{{module_id}}" -->
+<div>
+  @include("/admin/module/setting.html")
+
+  <div class="calendar-pagination-wrap">
+    <div class="calendar-pagination">
+      <h2 class="calendar-pagination-title">{year}</h2>
+      <!-- BEGIN calendar-pagination-group:veil -->
+      <ul class="calendar-pagination-group">
+        <!-- BEGIN prevLink --><li class="calendar-pagination-item calendar-pagination-item-previous"><a href="{url}" class="calendar-pagination-link" aria-label="前年へ">@include("/themes/utsuwa/images/arrow-pagination-left.svg")<span class="acms-hide-visually">前年へ</span></a></li><!-- END prevLink -->
+        <!-- BEGIN nextLink --><li class="calendar-pagination-item calendar-pagination-item-next"><a href="{url}" class="calendar-pagination-link" aria-label="翌年へ">@include("/themes/utsuwa/images/arrow-pagination-right.svg")<span class="acms-hide-visually">翌年へ</span></a></li><!-- END nextLink -->
+      </ul><!-- END header-pagination-group:veil -->
+    </div>
+  </div>
+
+  <div>
+    <div class="calendar-group">
+      <!-- BEGIN unit:loop --><!-- BEGIN month:loop -->
+      <section class="calendar-group-item">
+        <div class="calendar-group-item-inner">
+          <header class="calendar-header">
+            <h2 class="calendar-header-title"><a href="{monthUrl}">{monthDate}[date('n月')]</a></h2>
+          </header>
+          <table class="calendar">
+            <thead>
+            <tr><!-- BEGIN weekLabel:loop -->
+              <th class="calendar-label is-week-{w}">{label}</th><!-- END weekLabel:loop -->
+            </tr>
+            </thead>
+            <tbody><!-- BEGIN week:loop -->
+            <tr>
+              <!-- BEGIN day:loop -->
+              <!-- BEGIN spacer -->
+              <td class="calendar-day">&nbsp;</td>
+              <!-- END spacer -->
+              <!-- BEGIN none -->
+              <td class="calendar-day">{day}</td>
+              <!-- END none -->
+              <!-- BEGIN link -->
+              <td class="calendar-day"><a href="{url}" class="calendar-day-has">{day}</a></td>
+              <!-- END link -->
+              <!-- END day:loop -->
+            </tr><!-- END week:loop -->
+            </tbody>
+          </table>
+        </div>
+      </section><!-- END month:loop -->
+      <!-- END unit:loop -->
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Calendar_Year -->

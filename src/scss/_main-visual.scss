@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -13,10 +14,10 @@
 .main-visual-bg {
   width: 100%;
   height: calc(100vh - 200px);
-  min-height: 320px;
+  min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
-  animation: zoom 3s .3s 1 both;
+  animation: zoom 3s 0.3s 1 both;
   animation-duration: ease-out;
 }
 
@@ -30,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 1.25rem;
   color: global.$color-text-inverse;
   text-align: center;
 
@@ -41,33 +42,32 @@
     bottom: 0;
     left: 0;
     display: block;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgb(0 0 0 / 30%);
     content: "";
   }
-
 }
 
 .main-visual-catch {
-  margin: 0 0 10px 0;
-  @include acms.font-size(43);
-  line-height: 1.2;
-  animation: fade-in .3s .8s 1 both;
+  margin: 0 0 0.5rem;
+  font-size: map.get(global.$font-scales, display-s);
+  line-height: global.$line-height-sm;
+  animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
 }
 
 .main-visual-catch-sub {
   margin: 0;
-  @include acms.font-size(14);
-  line-height: 1.7;
-  animation: fade-in .3s 1.3s 1 both;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-lg;
+  animation: fade-in 0.3s 1.3s 1 both;
   will-change: transform, opacity;
 }
 
 .main-visual-scroll {
   position: absolute;
-  bottom: 35px;
+  bottom: 2rem;
   margin: 0;
-  animation: fade-in .3s 2.8s 1 both;
+  animation: fade-in 0.3s 2.8s 1 both;
   will-change: transform, opacity;
 }
 
@@ -80,19 +80,19 @@
   &:visited,
   &:active,
   &:focus {
-    color: currentColor;
+    color: currentcolor;
   }
 
   &:hover {
     text-decoration: none;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   &::after {
     display: inline-block;
-    width: 9px;
-    height: 18px;
-    margin: 5px 0 0 0;
+    width: 0.5rem;
+    height: 1rem;
+    margin: 0.25rem 0 0;
     background-image: url(#{global.$root-theme-img + 'arrow-border-white.svg' });
     background-repeat: no-repeat;
     background-position: center;
@@ -102,21 +102,20 @@
   }
 }
 
-
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .main-visual-bg {
     height: 70vh;
   }
 
   .main-visual-box {
-    padding: 50px 70px;
+    padding: 3rem 4.5rem;
   }
 
   .main-visual-catch {
-    @include acms.font-size(64);
+    font-size: map.get(global.$font-scales, display-m);
   }
 
   .main-visual-catch-sub {
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }

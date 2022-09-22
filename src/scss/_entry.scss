@@ -1,30 +1,32 @@
 @use "sass:math";
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
 /* ------------------------------
 　　エントリー
 ------------------------------ */
+
 /*
 　ヘッダー
 ------------------------------ */
 .entry-header {
-  margin: 0 0 30px 0;
+  margin: 0 0 2rem;
 }
 
 .entry-header-info {
-  margin: 0 0 5px 0;
+  margin: 0 0 0.25rem;
   color: global.$color-gray80;
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .entry-header-time + .entry-header-category {
-  &:before {
+  &::before {
     display: inline-block;
     width: 1px;
     height: 1em;
-    margin: 0 1em 0 .5em;
-    background: currentColor;
+    margin: 0 1em 0 0.5em;
+    background: currentcolor;
     content: "";
   }
 }
@@ -40,15 +42,15 @@
 
 .entry-header-title {
   position: relative;
-  margin: 0 0 20px 0;
-  padding: 0 0 15px 0;
-  @include acms.font-size(22);
+  margin: 0 0 1.5rem;
+  padding: 0 0 1rem;
+  font-size: map.get(global.$font-scales, heading-ss);
   border-bottom: global.$border-width-lg solid global.$color-gray30;
 
   &::before {
     position: absolute;
     bottom: -(global.$border-width-lg);
-    width: 50px;
+    width: 3.5rem;
     height: global.$border-width-lg;
     background: global.$color-primary;
     content: "";
@@ -61,31 +63,29 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header {
-    margin: 0 0 45px 0;
+    margin: 0 0 3rem;
   }
 
   .entry-header-info {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
-
   .entry-header-title {
-    margin: 0 0 20px 0;
-    padding: 0 0 30px 0;
-    @include acms.font-size(34);
+    margin: 0 0 1.5rem;
+    padding: 0 0 1.5rem;
+    font-size: map.get(global.$font-scales, heading-m);
 
     &::before {
       bottom: -(global.$border-width-lg);
-      width: 100px;
+      width: 6.5rem;
     }
   }
 }
 
-
 /*
 　エントリーヘッダービジュアルあり
 ------------------------------ */
-.entry-header-visual  {
+.entry-header-visual {
   position: relative;
 }
 
@@ -94,73 +94,81 @@
   width: 100vw;
   height: 180px;
   margin: 0 calc(50% - 50vw);
+
   @include global.object-fit(cover);
 }
 
 .entry-header-visual-box {
   box-sizing: border-box;
-  margin: 0 (math.div(global.$col-gutter, -2));
-  padding: 30px 20px 30px 20px;
+  margin: 0 calc(global.$unit-gutter-var / -2);
+  padding: 2rem 1.5rem;
   color: global.$color-text-inverse;
-  background: rgba(0,0,0,.7);
+  background: rgb(0 0 0 / 70%);
 }
 
 .entry-header-visual-title {
-  margin: 0 0 20px 0;
-  @include acms.font-size(24);
+  margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, heading-s);
 }
 
 .entry-header-visual-desc {
-  margin: 0 0 20px 0;
-  @include acms.font-size(14);
-  line-height: 1.7;
+  margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-lg;
 }
 
 .entry-header-visual-btn-wrap {
   margin: 0;
 }
 
-@media screen and (min-width:acms.$breakpoint-md-min) {
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header-visual {
-    margin-bottom: 45px;
+    margin-bottom: 2.5rem;
   }
+
   .entry-header-visual-img {
     height: 380px;
   }
+
   .entry-header-visual-title {
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, heading-s);
   }
+
   .entry-header-visual-desc {
-    margin: 0 0 25px 0;
-    @include acms.font-size(16);
+    margin: 0 0 global.$entry-el-margin-sm 0;
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
-
   .entry-header-visual-box {
     position: absolute;
     top: 50%;
     width: 50%;
-    margin: 0 (math.div(acms.$unit-gutter, 2));
-    padding: 40px 40px 30px 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2);
+    padding: 2.5rem 2.5rem 2rem;
     transform: translateY(-50%);
   }
+
   .entry-header-visual-title {
-    @include acms.font-size(28);
+    font-size: map.get(global.$font-scales, heading-m);
   }
+
   .entry-header-visual-desc {
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
-
 
 /*
 　エントリーのコンテンツ
 ------------------------------ */
 
-.#{acms.$entry-class} {
+.#{acms.$entry-class}-grid {
+  margin: 0 calc(global.$unit-gutter-var / -2);
+}
 
+/* インライン要素 */
+.#{acms.$entry-class} {
   .entry-text-unit {
     .text-point {
       display: block;
@@ -169,11 +177,11 @@
     }
 
     em {
-      @include global.entry-em(global.$color-primary, global.$color-tertiary);
+      @include global.entry-em(global.$color-primary, global.$color-highlight);
     }
 
     strong {
-      @include global.entry-strong(global.$color-tertiary-light);
+      @include global.entry-strong(global.$color-highlight-light);
     }
 
     a {
@@ -197,74 +205,87 @@
   }
 
   code {
-    margin: 0 5px;
-    padding: 2px 5px;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
     color: global.$color-primary;
     background: global.$color-white;
-    border: global.$border-width-sm solid currentColor;
+    border: global.$border-width-sm solid currentcolor;
     border-radius: global.$border-radius-sm;
   }
-
 }
 
-
 /* アンカーリンクの際の上部の余白の確保 */
+// グローバルヘッダーを固定した状態でアンカーリンクで飛んだ際にも
+// 視覚的にヘッダーと見出しの間に余白が確保できるように実装しています。
+// borderの高さ（例：3.75rem）+1つ前の要素のmargin-bottom（2rem）+ネガティブマージン（例：-2rem）=視覚的な余白（3.75rem）、画面トップから見出しの余白（5.75rem）
+// ※1 ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、目安：最大32pxまで（上のオブジェクトの下方向のマージンの分）。
+// ※2 背景色・枠付きユニットグループの時は上部に余白が空き過ぎてしまうので、border-top-widthを調整
 .#{acms.$entry-class} .entry-text-unit {
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-element-margin-bottom-md); // ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、30pxまで。
-    border-top: global.$header-height + 5px solid transparent;
+    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
+    border-top: global.$header-height + 0.5rem solid transparent;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
-      margin-top: -(global.$entry-element-margin-bottom-lg);
-      border-top: 50px solid transparent;
+      margin-top: -(global.$entry-el-margin-lg);
+      border-top-width: (global.$header-height + 0.5rem);
+    }
+  }
+
+  h2.heading-primary {
+    border-top: global.$header-height + 1.5rem solid transparent;
+
+    @media screen and (min-width: acms.$breakpoint-md-min) {
+      border-top-width: (global.$header-height + 2rem);
     }
   }
 }
 
+// ユニットグループ
 .#{acms.$entry-class} .ug-bg-gray .entry-text-unit,
-.#{acms.$entry-class} .ug-bg-primary .entry-text-unit {
+.#{acms.$entry-class} .ug-bg-primary .entry-text-unit,
+.#{acms.$entry-class} .ug-border .entry-text-unit {
   h2,
   h3,
   h4 {
-    margin-top: -(global.$entry-element-margin-bottom-xl);
+    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
+    border-top-width: global.$header-height + 0.5rem; // ※2
   }
 }
 
 /* 見出しが最初の要素の時はページタイトルの余白を相殺する */
-.#{acms.$entry-class}  {
+.#{acms.$entry-class}-grid {
   & > .is-h2:first-child h2,
-  & > .is-h3:first-child h3 ,
+  & > .is-h3:first-child h3,
   & > .is-h4:first-child h4 {
-    margin-top: -(global.$page-title-margin-bottom +  20px);
+    margin-top: -(global.$page-title-margin-bottom + 2.25rem);
   }
 }
 
-
-
+/* 見出し
+----------------------------- */
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
-    line-height: 1.4;
-    @include acms.font-size(26);
-
+    margin: - (global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, heading-s);
+    line-height: global.$line-height-sm;
 
     &.heading-line {
-      padding-bottom: 15px;
+      padding-bottom: global.$entry-el-padding-xs;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
     &.heading-primary {
       position: relative;
-      margin-bottom: global.$entry-element-margin-bottom-lg;
+      margin-bottom: calc(global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm);
 
       &::before {
         position: absolute;
-        bottom: -20px;
+        bottom: -1.25rem;
         left: 0;
         display: block;
-        width: 60px;
+        width: 4rem;
         height: global.$border-width-lg;
         background: global.$color-primary;
         content: "";
@@ -279,39 +300,30 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h2 {
-      margin-bottom: global.$entry-element-margin-bottom-sm;
-      @include acms.font-size(32);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, heading-m);
 
       &.heading-line {
-        padding-bottom: 15px;
+        padding-bottom: 1rem;
       }
 
       &.heading-primary {
-        margin-bottom: global.$entry-element-margin-bottom-lg;
+        margin-bottom: calc(global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm);
 
         &::before {
-          bottom: -25px;
+          bottom: -1.5rem;
         }
       }
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
-    h2 {
-      &.heading-primary {
-        margin-bottom: global.$entry-element-margin-bottom-xl;
-      }
-    }
-  }
-
-
   h3 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
-    @include acms.font-size(22);
-    line-height: 1.4;
+    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, heading-ss);
+    line-height: global.$line-height-sm;
 
     &.heading-line {
-      padding-bottom: 15px;
+      padding-bottom: global.$entry-el-padding-xs;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
@@ -323,23 +335,22 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h3 {
-      margin-bottom: global.$entry-element-margin-bottom-md;
-      @include acms.font-size(28);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, heading-s);
 
       .text-point {
-        margin: 0 0 10px 0;
+        margin: 0 0 global.$entry-el-margin-xxs 0;
       }
     }
   }
 
-
   h4 {
-    margin: -(global.$entry-element-margin-bottom-md) (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-sm (math.div(acms.$unit-gutter, 2));
-    @include acms.font-size(18);
-    line-height: 1.4;
+    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: global.$line-height-sm;
 
     &.heading-line {
-      padding-bottom: 12px;
+      padding-bottom: 1rem;
       border-bottom: global.$border-width-md solid global.$color-gray100;
     }
 
@@ -351,27 +362,27 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     h4 {
-      margin-bottom: global.$entry-element-margin-bottom-sm;
-      @include acms.font-size(22);
+      margin-bottom: global.$entry-el-margin-sm;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
 
-
-/* 本文 */
+/* 本文
+----------------------------- */
 .#{acms.$entry-class} {
   p {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
-    line-height: 1.7;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
+    line-height: global.$line-height-lg;
 
     &.text-info {
-      @include acms.font-size(12);
       color: global.$color-text-side;
+      font-size: map.get(global.$font-scales, body-s);
     }
 
     &.text-danger {
-      @include acms.font-size(12);
       color: global.$color-error;
+      font-size: map.get(global.$font-scales, body-s);
     }
   }
 
@@ -381,89 +392,78 @@
   .is-table + .is-p .text-danger,
   [class*="column-table-"] + .is-p .text-info,
   [class*="column-table-"] + .is-p .text-danger {
-    margin-top: (-(global.$entry-element-margin-bottom-md)+ 10px);
+    margin-top: -1rem;
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     p {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
-
-      &.text-info {
-        @include acms.font-size(14);
-      }
-
-      &.text-danger {
-        @include acms.font-size(14);
-      }
-    }
-
-    .is-p + .is-p .text-info,
-    .is-p + .is-p .text-danger,
-    .is-table + .is-p .text-info,
-    .is-table + .is-p .text-danger,
-    [class*="column-table-"] + .is-p .text-info,
-    [class*="column-table-"] + .is-p .text-danger {
-      margin-top: (-(global.$entry-element-margin-bottom-lg)+ 10px);
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
     }
   }
 }
 
-
-/* リード文*/
+/* リード文 */
 .#{acms.$entry-class} {
   p {
-
     &.text-lead-primary {
-      @include acms.font-size(26);
       color: global.$color-primary;
       font-weight: bold;
-      line-height: 1.5;
+      font-size: map.get(global.$font-scales, heading-s);
+      line-height: global.$line-height-base;
 
       .text-point {
         color: global.$color-text-side;
-        @include acms.font-size(18);
+        font-size: map.get(global.$font-scales, body-m);
       }
     }
 
     &.text-lead-info {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
+      margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
       color: global.$color-text-side;
       font-weight: bold;
-      line-height: 1.5;
-      @include acms.font-size(26);
+      font-size: map.get(global.$font-scales, heading-s);
+      line-height: global.$line-height-base;
+
+      &.is-margin-small {
+        margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-xxs;
+      }
     }
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
       &.text-lead-primary {
-        @include acms.font-size(34);
+        margin: 0 calc(var(--gutter) / 2) 3rem;
+        font-size: map.get(global.$font-scales, heading-l);
 
         .text-point {
-          @include acms.font-size(30);
+          font-size: map.get(global.$font-scales, heading-m);
         }
       }
 
       &.text-lead-info {
-        @include acms.font-size(34);
+        margin: 0 calc(var(--gutter) / 2) 3rem;
+        font-size: map.get(global.$font-scales, heading-m);
+
+        &.is-margin-small {
+          margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-xxs;
+        }
       }
     }
-
   }
 }
-
 
 /* ボタン */
 .#{acms.$entry-class} {
   p {
     &.text-btn a {
       display: inline-block;
-      padding: 10px 25px;
+      padding: global.$btn-padding-y global.$btn-padding-x;
       color: global.$color-text-inverse;
+      font-weight: bold;
+      font-size: map.get(global.$font-scales, body-m);
       text-align: center;
       background: global.$color-primary;
       border-radius: global.$border-radius-md;
-      transition: background-color .2s;
-      @include acms.font-size(18);
-
+      transition: background-color 0.2s;
 
       &:hover,
       &:visited,
@@ -481,108 +481,91 @@
   }
 }
 
-
 /* リスト */
-.#{acms.$entry-class} .entry-text-unit  {
+.#{acms.$entry-class} .entry-text-unit {
   ul {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
-    padding: 0 0 0 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    padding: 0 0 0 global.$entry-el-padding-md;
 
     li {
       position: relative;
       clear: both;
-      margin: 0 0 10px 0;
-      line-height: 1.5;
+      margin: 0 0 0.5rem;
+      line-height: global.$line-height-lg;
       list-style: none;
 
       &::before {
         position: absolute;
-        top: 8px;
-        left: -20px;
-        width: 6px;
-        height: 6px;
+        top: 0.5rem;
+        left: -1.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
         background: global.$color-secondary;
         border-radius: 50%;
         content: "";
       }
-
-    }
-  }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    ul {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
     }
   }
 }
 
-
 /* 番号付きリスト */
 .#{acms.$entry-class} .entry-text-unit:not(.is-pre) {
   ol {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md (math.div(acms.$unit-gutter, 2));
-    padding: 0 0 0 40px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    padding: 0 0 0 global.$entry-el-padding-md;
     counter-reset: order-list;
 
     li {
       position: relative;
       clear: both;
-      margin: 0 0 10px 0;
-      line-height: 1.5;
+      margin: 0 0 0.5rem;
+      line-height: global.$line-height-lg;
       list-style: none;
 
       &::before {
         position: absolute;
         top: 2px;
-        left: -30px;
+        left: -2rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 20px;
-        height: 20px;
-        margin: 0 10px 0 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 1rem 0 0;
         color: global.$color-white;
+        font-size: map.get(global.$font-scales, body-s);
         background: global.$color-secondary;
         border-radius: 50%;
         content: counter(order-list);
         counter-increment: order-list;
-        @include acms.font-size(14);
       }
-
-    }
-  }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    ol {
-      margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
     }
   }
 }
 
-
 /* 記述リスト */
 .#{acms.$entry-class} .entry-text-unit {
   dl {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
 
     dt {
-      margin: 0 0 20px 0;
+      margin: 0 0 0.5rem;
       font-weight: bold;
-      @include acms.font-size(18);
-      line-height: 1.3;
+      font-size: map.get(global.$font-scales, body-m);
+      line-height: global.$line-height-sm;
     }
 
     dd {
-      @include acms.font-size(16);
-      margin: 0 0 30px 0;
-      line-height: 1.7;
+      margin: 0 0 1rem;
+      font-size: map.get(global.$font-scales, body-m);
+      line-height: global.$line-height-lg;
     }
 
     &.box-bordered {
       border: global.$border-width-sm solid global.$color-gray40;
 
       dt {
-        padding: 30px 25px 0 25px;
+        padding: global.$entry-el-padding-sm global.$entry-el-padding-sm 0 global.$entry-el-padding-sm;
         border-top: global.$border-width-sm solid global.$color-gray40;
 
         &:first-child {
@@ -592,7 +575,7 @@
 
       dd {
         margin: 0;
-        padding: 0 25px 30px 25px;
+        padding: 0 global.$entry-el-padding-sm global.$entry-el-padding-sm global.$entry-el-padding-sm;
       }
     }
   }
@@ -600,42 +583,41 @@
   @media screen and (min-width: acms.$breakpoint-md-min) {
     dl {
       dt {
-        @include acms.font-size(22);
+        margin: 0 0 0.5rem;
       }
 
       &.box-bordered {
-
         dt {
-          padding: 40px 40px 0 40px;
+          padding: global.$entry-el-padding-md global.$entry-el-padding-md 0 global.$entry-el-padding-md;
         }
 
         dd {
-          padding: 0 40px 40px 40px;
+          padding: 0 global.$entry-el-padding-md global.$entry-el-padding-md global.$entry-el-padding-md;
         }
       }
     }
   }
 }
 
-
 /* テーブル */
 .#{acms.$entry-class} .entry-text-unit,
 .#{acms.$entry-class} [class^=column-table] {
   table {
     width: 100%;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
+    margin: 0 0 global.$entry-el-margin-md 0;
     border-bottom: global.$border-width-sm solid global.$color-gray30;
     border-collapse: collapse;
 
     th,
     td {
-      padding: 15px;
-      line-height: 1.5;
-      @include acms.font-size(16);
+      padding: global.$entry-el-padding-xs;
+      font-size: map.get(global.$font-scales, body-m);
+      line-height: global.$line-height-base;
     }
 
     th {
       text-align: left;
+      vertical-align: top;
       background: global.$color-gray10;
     }
 
@@ -646,12 +628,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     table {
-      margin: 0 0 global.$entry-element-margin-bottom-lg 0;
-
       th,
       td {
-        padding: 25px 35px;
-        @include acms.font-size(18);
+        padding: global.$entry-el-padding-sm;
+        font-size: map.get(global.$font-scales, body-m);
       }
     }
   }
@@ -663,30 +643,26 @@
   }
 }
 
-[class^=column-table] .entry-container {
-  margin-bottom: global.$entry-element-margin-bottom-md;
+[class^="column-table"] .entry-container {
+  clear: both;
+  margin-bottom: global.$entry-el-margin-md;
   overflow-x: auto;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  [class^=column-table] .entry-container {
-    margin-bottom: global.$entry-element-margin-bottom-lg;
-  }
-}
-
-
-/* 引用 */
+/*
+　引用
+------------------------------ */
 .#{acms.$entry-class} .entry-text-unit {
   blockquote {
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 25px;
-    @include acms.font-size(16);
-    line-height: 1.7;
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-sm;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: global.$line-height-lg;
     border: global.$border-width-md solid global.$color-gray40;
 
     cite {
       color: global.$color-text-side;
-      @include acms.font-size(14);
+      font-size: map.get(global.$font-scales, body-s);
       font-style: normal;
 
       &::before {
@@ -697,16 +673,16 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     blockquote {
-      margin: 0 0 global.$entry-element-margin-bottom-lg 0;
-      padding: 30px 40px;
+      margin: 0 0 global.$entry-el-margin-lg 0;
+      padding: global.$entry-el-padding-md;
     }
   }
 }
 
-
-/* ユニットグループ */
+/*
+　ユニットグループ
+------------------------------ */
 .#{acms.$entry-class} {
-
   /* 全てのユニットグループ */
   [class*="ug-"] {
     overflow: hidden;
@@ -722,10 +698,10 @@
 
   .ug-bg-gray,
   .ug-bg-primary {
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 35px 20px;
-    border-right: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
-    border-left: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
+    border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
     & > *:not(.entry-reset):last-child > * {
       margin-bottom: 0;
@@ -733,8 +709,8 @@
   }
 
   .ug-cover {
-    margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
-    padding: 35px calc(50vw - 50%);
+    margin: global.$entry-el-margin-md calc(50% - 50vw);
+    padding: global.$entry-el-padding-md calc(50vw - 50% + (global.$unit-gutter-var / 2));
     border: 0;
   }
 
@@ -744,10 +720,10 @@
 
   .ug-border {
     position: relative;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 45px 30px;
-    border-right: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
-    border-left: (math.div(acms.$unit-gutter, 2)) solid global.$color-white;
+    margin: 0 0 global.$entry-el-margin-md 0;
+    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
+    border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
     &::before {
       position: absolute;
@@ -773,9 +749,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .ug-bg-gray,
-    .ug-bg-primary {
-      margin: 0 0 global.$entry-element-margin-bottom-md 0;
-      padding: 45px 35px;
+    .ug-bg-primary,
+    .ug-border {
+      margin: 0 0 global.$entry-el-margin-lg 0;
+      padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
 
       & > *:not(.entry-reset):last-child > * {
         margin-bottom: 0;
@@ -783,42 +760,40 @@
     }
 
     .ug-cover {
-      margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
-      padding: 45px calc(50vw - 50%);
-    }
-
-    .ug-border {
-      padding: 50px;
+      margin: global.$entry-el-margin-lg calc(50% - 50vw);
+      padding: 3rem calc(50vw - 50% + (global.$unit-gutter-var / 2));
     }
   }
 }
 
-
-/* 画像・メディア・画像URLの共通設定 */
+/*
+　画像・メディア・画像URLの共通設定
+------------------------------ */
 [class*="column-image"],
 [class*="column-media"],
 [class*="column-eximage"] {
   .caption {
     color: global.$color-text-side;
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
   }
 }
 
-
-/* ファイルユニット・メディア（ファイル）の設定 */
+/*
+　ファイルユニット・メディア（ファイル）の設定
+------------------------------ */
 [class*="column-file-"],
 .media-file {
   display: inline-block;
 
   a,
-  a[href*=media-download] {
+  a[href*="media-download"] {
     display: inline-flex;
     align-items: center;
-    padding: 15px;
+    padding: 1rem;
     color: global.$color-text;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
     &:hover {
       text-decoration: none;
@@ -829,20 +804,18 @@
   .caption {
     margin: 0;
     color: global.$color-text;
-    @include acms.font-size(16);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .columnIcon {
-    width: 29px;
+    width: 1.75rem;
     height: auto;
-    margin: 0 15px 0 0;
+    margin: 0 1rem 0 0;
   }
 }
 
-
 /* 引用ユニットの設定 */
 [class*="column-quote-"] {
-
   .quote {
     padding: 0;
     border: 0;
@@ -863,58 +836,61 @@
   }
 
   .quote-info {
-    padding: 12px;
+    padding: 1rem;
   }
 
   .quote-title {
-    margin: 0 0 10px 0;
-    @include acms.font-size(18);
-    line-height: 1.4;
+    margin: 0 0 0.5rem;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: global.$line-height-sm;
   }
 
   .quote-site-name {
     margin: 0;
     color: global.$color-text-side;
-    @include acms.font-size(12);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .quote-description {
     display: none;
-    margin: 0 0 10px 0;
+    margin: 0 0 0.5rem;
+    font-size: map.get(global.$font-scales, body-s);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .quote-link {
       flex-direction: row;
     }
+
     .quote-img-wrap {
+      flex: 1 0 auto;
       box-sizing: border-box;
       width: math.div(100%, 3);
-      padding: 30px 15px 30px 30px;
+      padding: 2rem 1rem 2rem 2rem;
     }
+
     .quote-img {
       width: 100%;
     }
+
     .quote-info {
       box-sizing: border-box;
       width: math.div(2, 3);
-      padding: 30px 30px 30px 15px;
+      padding: 2rem 2rem 2rem 1rem;
     }
+
     .quote-title {
-      margin: 0 0 20px 0;
+      margin: 0 0 1.5rem;
       font-weight: bold;
-      @include acms.font-size(24);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
-    .quote-site-name {
-      @include acms.font-size(14);
-    }
+
     .quote-description {
       display: block;
-      @include acms.font-size(14);
     }
   }
 }
-
 
 /*
 　カード
@@ -922,34 +898,25 @@
 .#{acms.$entry-class} {
   .card-title,
   .card-bordered-title {
-    @include acms.font-size(18);
-  }
-
-  @media screen and (min-width: acms.$breakpoint-md-min) {
-    .card-title,
-    .card-bordered-title {
-      @include acms.font-size(22);
-    }
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
 .#{acms.$entry-class} {
   .card-item,
   .card-bordered-item {
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    padding: 0 calc(global.$unit-gutter-var / 2);
   }
 }
-
 
 /*
 　罫線ユニット
 ------------------------------ */
 .unit-separator {
-  margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-md;
+  margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md;
   border: 0;
   border-top: global.$border-width-sm solid global.$color-gray40;
 }
-
 
 /*
 　目次ユニット
@@ -957,23 +924,23 @@
 
 .#{acms.$entry-class} {
   .entry-outline {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) global.$entry-element-margin-bottom-lg;
-    padding: 15px;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-lg;
+    padding: 1rem;
     border: global.$border-width-lg solid global.$color-gray30;
   }
 
   .entry-outline-title {
-    margin: 0 0 15px 0;
-    padding: 0 0 10px 0;
-    @include acms.font-size(16);
+    margin: 0 0 1rem;
+    padding: 0 0 0.5rem;
     font-weight: bold;
+    font-size: map.get(global.$font-scales, body-m);
     border-bottom: 2px solid global.$color-gray30;
   }
 
   .entry-outline-list-wrap {
     .outline-list {
       margin: 0;
-      padding: 0 0 0 25px;
+      padding: 0 0 0 1.5rem;
       counter-reset: a;
 
       &.level-1 {
@@ -991,13 +958,13 @@
 
     .outline-item a {
       display: block;
-      margin: 0 0 10px 5px;
+      margin: 0 0 1rem 0.25rem;
       color: global.$color-text;
 
       &::before {
         display: inline-block;
-        padding-right: 10px;
-        color: global.$color-text-secondary;
+        padding-right: 0.5rem;
+        color: global.$color-gray90;
         font-weight: 700;
         white-space: nowrap;
         content: counters(a, "-") ". ";
@@ -1005,23 +972,21 @@
       }
     }
   }
-
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .#{acms.$entry-class} {
     .entry-outline {
-      padding: 30px;
+      padding: 2rem;
     }
 
     .entry-outline-title {
-      margin: 0 0 20px 0;
-      padding: 0 0 15px 0;
-      @include acms.font-size(20);
+      margin: 0 0 1.5rem;
+      padding: 0 0 1rem;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
-
 
 /*
 　メッセージユニット
@@ -1029,13 +994,13 @@
 .#{acms.$entry-class} {
   .message {
     position: relative;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
+    margin: 0 0 global.$entry-el-margin-md;
   }
 
   .message-bg {
     position: absolute;
     width: 100%;
-    height: 240px;
+    height: 15rem;
     background: no-repeat center;
     background-size: cover;
 
@@ -1045,7 +1010,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(0, 0, 0, .4);
+      background: rgb(0 0 0 / 40%);
       content: "";
     }
   }
@@ -1054,26 +1019,26 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 240px;
-    margin: 0 0 40px 0;
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    height: 15rem;
+    margin: 0 0 2.5rem;
+    padding: 0 calc(global.$unit-gutter-var / 2);
     color: global.$color-text-inverse;
-    @include acms.font-size(24);
     font-weight: bold;
+    font-size: map.get(global.$font-scales, heading-s);
   }
 
   .message-content {
-    margin: 0 (math.div(acms.$unit-gutter, 2)) 50px (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2) 3rem;
   }
 
   .message-source {
-    margin: 0 (math.div(acms.$unit-gutter, 2));
+    margin: 0 calc(global.$unit-gutter-var / 2);
 
     &::before {
       display: inline-block;
-      width: 40px;
+      width: 2.5rem;
       height: 1px;
-      margin: 0 15px 0 0;
+      margin: 0 1rem 0 0;
       vertical-align: middle;
       background: global.$color-text;
       content: "";
@@ -1082,9 +1047,10 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     .message {
-      margin: 0 calc(50% - 50vw) global.$entry-element-margin-bottom-md;
+      margin: 0 calc(50% - 50vw) global.$entry-el-margin-md;
       background-size: cover;
     }
+
     .message-bg {
       top: 0;
       right: 0;
@@ -1096,21 +1062,26 @@
         content: none;
       }
     }
+
     .message-wrap {
       position: relative;
-      width: 50%;
-      padding: 100px 60px;
+      width: calc(50% - (global.$unit-gutter-var / 2));
+      margin: 0 calc(global.$unit-gutter-var / 2);
+      padding: 6.5rem 4rem;
       color: global.$color-text-inverse;
-      background: rgba(0, 0, 0, .4);
+      background: rgb(0 0 0 / 40%);
     }
+
     .message-lead {
       height: auto;
-      margin: 0 0 40px 0;
-      @include acms.font-size(24);
+      margin: 0 0 2.5rem;
+      font-size: map.get(global.$font-scales, heading-s);
     }
+
     .message-content {
-      margin: 0 0 50px 0;
+      margin: 0 0 3rem;
     }
+
     .message-source {
       &::before {
         background: global.$color-white;
@@ -1119,29 +1090,32 @@
   }
 }
 
-
 /*
 　料金テーブル
 ------------------------------ */
 .#{acms.$entry-class} {
   .pricing-group {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
-    margin: 20px 0;
-    padding: 0;
+    margin: 1.5rem 0;
+    padding: 0 (global.$unit-gutter-var / 2);
   }
 
   .pricing-item {
     position: relative;
     display: flex;
-    margin: 0 0 global.$entry-element-margin-bottom-md 0;
-    padding: 0 (math.div(acms.$unit-gutter, 2));
+    flex: 0 1 14rem;
+    margin: 0 0 global.$entry-el-margin-md 0;
     list-style: none;
 
     &.is-reccomend {
       .pricing-inner {
-        margin-top: 20px;
+        margin-top: -1rem;
+        margin-bottom: -1rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
         border: global.$border-width-sm solid global.$color-primary;
       }
     }
@@ -1150,89 +1124,92 @@
   .pricing-inner {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
-    padding: 35px 30px 30px 30px;
-    background: #FFF;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
-    transition: transform .25s ease;
+    padding: 2rem 1rem 1.5rem;
+    background: #fff;
+    box-shadow: global.$elevation02;
+    transition: transform 0.25s ease;
+  }
+
+  .pricing-header {
+    position: relative;
+    margin: 0 0 1rem;
+    padding: 0 0 1rem;
+    text-align: center;
+    border-bottom: global.$border-width-sm solid global.$color-gray30;
   }
 
   .pricing-label-wrap {
-    margin-top: -55px;
-    margin-bottom: 15px;
+    position: absolute;
+    top: -4rem;
+    right: 0;
+    left: 0;
   }
 
   .pricing-label {
     display: inline-block;
     margin: 0;
-    padding: 5px 30px;
+    padding: 0.25rem 2rem;
     color: global.$color-text-inverse;
     font-weight: bold;
-    line-height: 1.3;
+    font-size: map.get(global.$font-scales, heading-ss);
+    line-height: global.$line-height-sm;
     background: global.$color-primary;
-    border-radius: 10em;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-    @include acms.font-size(20);
-  }
-
-  .pricing-header {
-    margin: 0 0 35px 0;
-    padding: 0 0 20px 0;
-    text-align: center;
-    border-bottom: global.$border-width-sm solid global.$color-gray30;
+    border-radius: global.$border-radius-round;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
   }
 
   .pricing-title {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.25rem;
     color: global.$color-primary;
-    @include acms.font-size(22);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 
   .pricing-desc {
     margin: 0;
     color: global.$color-text-side;
-    @include acms.font-size(16);
-    line-height: 1.5;
+    font-size: map.get(global.$font-scales, body-s);
+    line-height: global.$line-height-base;
   }
 
   .pricing-price {
-    margin: 0 0 25px 0;
-    @include acms.font-size(50);
-    line-height: 1;
+    margin: 0 0 0.5rem;
+    font-size: map.get(global.$font-scales, heading-m);
+    line-height: global.$line-height-ss;
+    text-align: center;
   }
 
   .pricing-unit {
-    @include acms.font-size(24);
+    font-size: map.get(global.$font-scales, body-m);
   }
 
   .pricing-check-group {
-    margin: 0 0 30px 0;
+    margin: 0 0 1rem;
     padding: 0;
+    font-size: map.get(global.$font-scales, body-s);
     list-style: none;
 
     li {
-      margin: 0 0 10px 0;
+      margin: 0 0 0.25rem;
 
-      &:before {
+      &::before {
         display: inline-block;
-        width: 18px;
-        height: 18px;
-        margin: 0 10px 0 0;
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem 0 0;
         vertical-align: middle;
         background: url(#{global.$root-theme-img}icon-check.svg);
+        background-size: contain;
         content: "";
       }
     }
   }
 
-  .pricing-footer {
-    margin-top: auto;
-  }
-
   .pricing-button {
     display: block;
-    margin: 0 0 15px 0;
+    margin: 0 0 1rem;
   }
 
   .pricing-text-info {
@@ -1244,51 +1221,36 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .#{acms.$entry-class} {
     .pricing-group {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 60px 0;
+      flex-flow: row wrap;
+      gap: 1rem;
+      margin: 4rem 0;
     }
 
     .pricing-item {
       box-sizing: border-box;
-      width: math.div(100%, 3);
-      margin: 0 0 global.$entry-element-margin-bottom-md 0;
-
-      &.is-reccomend {
-        .pricing-inner {
-          margin-top: -20px;
-          margin-bottom: -20px;
-          padding-top: 55px;
-          padding-bottom: 50px;
-        }
-      }
+      margin: 0 0 global.$entry-el-margin-md 0;
 
       &:hover .pricing-inner {
-        box-shadow: 0 6px 15px rgba(0, 0, 0, .2);
-        transform: translateY(-10px);
+        box-shadow: global.$elevation10;
+        transform: translateY(-0.5rem);
       }
-    }
-
-    .pricing-label-wrap {
-      margin-top: -75px;
-      margin-bottom: 35px;
     }
 
     .pricing-title {
-      @include acms.font-size(28);
+      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }
 
-
 /*
 　ユニット
 ------------------------------ */
+
 /* 各ユニットのマージンの調整 */
 @each $unit in acms.$unit-type {
   [class*="column-#{$unit}"] {
-    @if $unit == 'module' {
-      margin-bottom: math.div(acms.$unit-margin-bottom, 2);
+    @if $unit == "module" {
+      margin-bottom: calc(acms.$unit-margin-bottom / 2);
     } @else {
       margin-bottom: acms.$unit-margin-bottom;
     }
@@ -1298,10 +1260,10 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   @each $unit in acms.$unit-type {
     [class*="column-#{$unit}"] {
-      @if $unit == 'module' {
+      @if $unit == "module" {
         margin-bottom: acms.$unit-margin-bottom;
       } @else {
-      margin-bottom: global.$unit-margin-bottom-lg;
+        margin-bottom: global.$unit-margin-md;
       }
     }
   }
@@ -1311,18 +1273,17 @@
 [class*="column-image-"],
 [class*="column-eximage-"] {
   a {
-    transition: opacity .2s;
+    transition: opacity 0.2s;
 
     &:hover {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
 
 .unit-gallery {
-  margin-bottom: acms.$unit-gutter;
+  margin-bottom: global.$unit-gutter-var;
 }
-
 
 /*
 　SNSシェアボタン
@@ -1331,15 +1292,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 math.div(global.$col-gutter, -2) 40px math.div(global.$col-gutter, -2);
-  padding: 25px;
+  margin: 0 calc(global.$unit-gutter-var / -2) 2.5rem calc(global.$unit-gutter-var / -2);
+  padding: 1.5rem;
   text-align: center;
   background: global.$color-gray10;
 }
 
 .sns-share-title {
-  margin: 0 0 10px 0;
-  @include acms.font-size(16);
+  margin: 0 0 0.5rem;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .share-list {
@@ -1355,24 +1316,29 @@
 }
 
 .share-item {
-  margin: 0 5px;
+  margin: 0 0.5rem;
 
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
+    box-sizing: border-box;
+    width: 3rem;
     height: auto;
-    padding: 10px;
-    transition: transform .2s ease;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
 
     &:hover {
-      transform: scale(.8);
+      transform: scale(0.8);
     }
   }
 
+  .share-list.is-sm & {
+    margin: 0 0.5rem;
+  }
+
   .share-list.is-sm & a {
-    width: 30px;
+    width: auto;
   }
 }
 
@@ -1380,22 +1346,23 @@
   .sns-share-wrapper {
     flex-direction: row;
     align-items: center;
-    margin: 0 0 60px 0;
-    padding: 50px 25px;
+    margin: 0 0 3rem;
+    padding: 3rem 1.5rem;
     border-radius: global.$border-radius-xl;
   }
+
   .sns-share-title {
-    margin: 0 35px 0 0;
-    @include acms.font-size(20);
+    margin: 0 2.5rem 0 0;
+    font-size: map.get(global.$font-scales, heading-ss);
   }
+
   .share-item {
     a {
-      width: 50px;
+      width: 3rem;
     }
 
     .share-list.is-sm & a {
-      width: 30px;
+      width: auto;
     }
   }
-
 }

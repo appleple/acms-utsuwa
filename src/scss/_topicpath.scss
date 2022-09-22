@@ -5,7 +5,7 @@
 　　トピックパス
 ------------------------------ */
 .topicpath {
-  padding: 12px 0;
+  padding: 0.5rem 0;
   background: global.$color-gray20;
 }
 
@@ -20,18 +20,22 @@
 }
 
 .topicpath-item:not(:last-child) {
-  &:after {
+  &::after {
     display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin: 0 8px;
-    border-top: 1px solid global.$color-gray40;
-    border-right: 1px solid global.$color-gray40;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 0.5rem;
+    border-top: 1px solid global.$color-gray60;
+    border-right: 1px solid global.$color-gray60;
     transform: rotate(45deg);
     content: "";
   }
 }
 
 .topicpath-link {
-  @include global.link-color(global.$color-text)
+  color: global.$color-text;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

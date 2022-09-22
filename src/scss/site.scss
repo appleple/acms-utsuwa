@@ -3,7 +3,7 @@
 // グローバルメンバーファイル acms.css兼用
 @forward "global/acms-common";
 
-// グローバルメンバーファイル siteテーマ専用
+// グローバルメンバーファイル テーマ専用
 @forward "global/common";
 
 // ベース
@@ -11,13 +11,14 @@
 @use "override-js";
 
 // プラグイン
-@use '../../node_modules/slick-carousel/slick/slick.css';
+@use "../../node_modules/slick-carousel/slick/slick.css";
 
 // パーツ
 @use "animation";
 @use "badge";
 @use "banner";
 @use "button";
+@use "calendar";
 @use "card";
 @use "carousel";
 @use "cta";
@@ -26,6 +27,7 @@
 @use "headline";
 @use "form";
 @use "list";
+@use "list-group";
 @use "local-nav";
 @use "main-visual";
 @use "media";
@@ -33,6 +35,7 @@
 @use "pager";
 @use "profile";
 @use "section";
+@use "section-side";
 @use "tag";
 @use "topicpath";
 @use "type";

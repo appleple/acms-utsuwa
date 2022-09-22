@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -12,25 +13,29 @@
   .cta + & {
     margin-top: 0;
   }
-
-  a {
-    @include global.link-color(global.$color-text);
-  }
 }
 
 .footer-group {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 50px 0 10px 0;
+  padding: 3rem 0;
 }
 
 .footer-item {
   display: flex;
-}
+  box-sizing: border-box;
+  padding-right: calc(global.$unit-gutter-var / 2);
+  padding-left: calc(global.$unit-gutter-var / 2);
 
-.footer-item {
-  display: flex;
+  @if global.$enable-iphonex == true {
+    padding-right: calc(env(safe-area-inset-right) + (global.$unit-gutter-var / 2));
+    padding-left: calc(env(safe-area-inset-left) + (global.$unit-gutter-var / 2));
+  }
+
+  &.-navigation {
+    display: none;
+  }
 }
 
 /* 企業情報 */
@@ -38,11 +43,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .footer-company-catch {
-  margin: 0 0 10px 0;
+  margin: 0 0 0.5rem;
+  color: global.$color-text-side;
 }
 
 .footer-company-title {
@@ -50,7 +56,7 @@
 }
 
 .footer-company-logo {
-  margin: 0 0 20px 0;
+  margin: 0 0 1rem;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -62,27 +68,39 @@
       margin-top: 0;
     }
   }
+
   .footer-group {
     flex-direction: row;
+  }
+
+  .footer-item {
+    &.-address {
+      width: calc(4 / 12 * 100%);
+    }
+
+    &.-navigation {
+      display: block;
+      width: calc(8 / 12 * 100%);
+    }
   }
 }
 
 /* 所在地 */
 .footer-address {
   margin-top: auto;
-  margin-bottom: 20px;
   font-style: normal;
 }
 
 .footer-address-name {
-  margin: 0 0 5px 0;
+  margin: 0 0 5px;
+  color: global.$color-text-side;
 }
 
 .footer-address-item {
   margin: 0;
-  @include acms.font-size(14);
+  color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-s);
 }
-
 
 /* ナビゲーション */
 .footer-item-nav {
@@ -91,10 +109,9 @@
   width: 100%;
 }
 
-
 .footer-nav {
-  margin: 0 0 60px 0;
-  @include acms.font-size(14);
+  margin: 0;
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .footer-nav-group {
@@ -105,21 +122,21 @@
 
 .footer-nav-item {
   font-weight: bold;
-  @include acms.font-size(15);
+  font-size: map.get(global.$font-scales, body-m);
 
   .footer-nav-item {
     position: relative;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 1rem;
     font-weight: normal;
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
 
     &::before {
       position: absolute;
-      top: .5em;
-      left: -17px;
+      top: 0.5em;
+      left: -1rem;
       display: inline-block;
-      border: 3px solid transparent;
-      border-left: 6px solid rgba(0, 0, 0, .3);
+      border: 0.2rem solid transparent;
+      border-left: 0.4rem solid rgb(0 0 0 / 30%);
       content: "";
     }
   }
@@ -127,13 +144,20 @@
 
 .footer-nav-link {
   display: inline-block;
-  margin: 0 0 15px 0;
+  margin: 0 0 1rem;
   color: global.$color-text-inverse;
 
-  @include global.link-color(global.$color-text-inverse);
+  &:hover {
+    text-decoration: underline;
+  }
 
   .footer-nav-item .footer-nav-item & {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.5rem;
+    color: global.$color-text-side;
+
+    &:hover {
+      color: global.$color-text;
+    }
   }
 
   & + .footer-nav-group {
@@ -141,14 +165,12 @@
   }
 }
 
-
 /* サブ項目 */
 .footer-nav-side {
   display: flex;
   margin-top: auto;
   border-top: global.$border-width-sm solid global.$color-primary-light;
 }
-
 
 /* インラインナビゲーション */
 .footer-nav-inline {
@@ -163,7 +185,7 @@
 }
 
 .footer-nav-inline-item {
-  margin: 20px 30px;
+  margin: 1rem 2rem;
 
   &:first-child {
     margin-left: 0;
@@ -178,28 +200,28 @@
   @include global.link-color(global.$color-text-inverse);
 }
 
-
-
 .footer-bottom {
-  padding: 15px 0;
+  padding: 1rem 0;
   border-top: global.$border-footer;
 }
 
 /* コピーライト */
 .footer-copyright-text {
-  margin: 0 0 10px 0;
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
 }
-
 
 /* SNS */
 .footer-bottom-sns {
   display: none;
 }
+
 .footer-sns {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 10px 0 0 auto;
+  margin: 0.5rem 0 0 auto;
 }
 
 .footer-sns-group {
@@ -210,7 +232,7 @@
 }
 
 .footer-sns-item {
-  margin: 0 5px;
+  margin: 0 0.25rem;
 
   &:first-child {
     margin-left: 0;
@@ -223,15 +245,16 @@
 
 .footer-sns-link {
   display: inline-block;
-  padding: 11px;
+  padding: 0.5rem;
   vertical-align: top;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  .footer-bottom-inner  {
+  .footer-bottom-inner {
     display: flex;
     align-items: center;
   }
+
   .footer-copyright-text {
     margin: 0;
   }
@@ -239,5 +262,9 @@
   .footer-bottom-sns {
     display: block;
     margin-left: auto;
+  }
+
+  .footer-sns {
+    display: none;
   }
 }

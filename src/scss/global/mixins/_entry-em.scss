@@ -2,7 +2,7 @@
 
 // 強調
 @mixin entry-em($color, $color-dot) {
-  padding: 0 0 5px 0;
+  padding: 0 0 5px;
   color: $color;
   font-weight: bold;
   font-style: normal;

@@ -2,12 +2,19 @@
 
 @mixin link-color($color) {
   color: $color;
-  &:visited {
+
+  &:any-link {
     color: $color;
   }
-  &:hover,
+
   &:active,
   &:focus {
-    opacity: .7;
+    text-decoration: underline;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

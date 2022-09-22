@@ -206,15 +206,17 @@
 </li>
 </ul>
 
+<fieldset class="form-group">
+  <legend class="form-label"><span class="label-required">必須</span>プライバシーポリシーへの同意</legend>
+  <label class="acms-form-checkbox form-checkbox-only" for="input-privacy-on" data-validator="privacy"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on}/><i class="acms-ico-checkbox"></i><span class="form-checkbox-only-label"><a href="%{BASE_URL}privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span></label>
+  <input type="hidden" name="field[]" value="privacy"/>
+  <input type="hidden" name="privacy:v#required" id="privacy-v-required"/>
 
-<label class="acms-form-checkbox form-checkbox-only" for="input-privacy-on"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on}/><i class="acms-ico-checkbox"></i><span class="form-checkbox-only-label"><a href="%{BASE_URL}privacy.html" target="_blank">プライバシーボリシー</a>に同意する</span><span class="label-required">必須</span></label>
-<input type="hidden" name="field[]" value="privacy"/>
-<input type="hidden" name="privacy:v#required" id="privacy-v-required"/>
+  <p class="form-helper-text">※お客様の個人情報はお問い合わせへの対応のみに利用させていただきます。</p>
 
-<p class="form-helper-text" style="margin-bottom:20px;">※お客様の個人情報はお問い合わせへの対応のみに利用させていただきます。</p>
-
-<div role="alert" aria-live="assertive">
-  <div data-validator-label="privacy-v-required" class="validator-result-{privacy:v#required}">
-    <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>プライバシーポリシーを確認し、同意いただけないとお問い合わせに応じることができません。</p>
+  <div role="alert" aria-live="assertive">
+    <div data-validator-label="privacy-v-required" class="validator-result-{privacy:v#required}">
+      <p class="form-error-text"><span class="acms-icon acms-icon-news" aria-hidden="true"></span>プライバシーポリシーを確認し、同意いただけないとお問い合わせに応じることができません。</p>
+    </div>
   </div>
-</div>
+</fieldset>

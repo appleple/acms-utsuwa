@@ -4,23 +4,21 @@
     <div class="header-item-title">
       <h1 class="header-title"><a href="%{BASE_URL}"><img src="%{MEDIA_ARCHIVES_DIR}{site_logo@path}" alt="{site_name}" role="img" class="header-logo"></a></h1>
     </div><!-- END_MODULE Blog_Field -->
-    <div class="header-item-nav acms-hide acms-block-lg acms-block-xl">
+    <div class="header-item-nav">
       @include("/include/siteparts/navigation.html")
     </div>
   </header>
 </div>
-<div class="acms-hide-lg acms-hide-xl">
+<div>
   <div class="global-nav-mobile-menu">
     <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn"
             tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
   </div>
-</div>
-<div class="acms-hide-lg acms-hide-xl">
   <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
     <div class="global-nav-mobile-inner">
       <nav aria-label="メインメニュー" class="global-nav-mobile-navbar">
-        <!-- グローバルナビ -->
-        @include("/include/global/sp-header-nav.html")
+        <!-- グローバルナビ（モバイル端末用） -->
+        @include("/include/global/header-nav-mobile.html")
 
         <div class="global-nav-mobile-navbar-footer">
           <!-- SNSアカウント一覧 -->
