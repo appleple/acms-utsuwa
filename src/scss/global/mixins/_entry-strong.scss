@@ -3,5 +3,5 @@
 // 重要
 @mixin entry-strong($color) {
   font-weight: bold;
-  background:linear-gradient(transparent 60%, $color 60%);
+  background: linear-gradient(transparent 60%, $color 60%);
 }

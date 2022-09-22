@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -6,82 +7,105 @@
 ------------------------------ */
 
 .tag-wrapper {
-  margin: 10px 0;
+  margin: 2rem 0;
+}
+
+.tag-title-inline {
+  margin: 0 0 1rem;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .tag-box {
-  padding: 15px 10px 5px;
+  padding: 1rem 0.5rem 0.25rem;
   background: global.$color-gray20;
+}
+
+.tag-filter-heading {
+  margin: 0 0 1rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -5px;
+  margin: 0 -0.25rem;
   padding: 0;
   list-style: none;
 }
 
 .tag-item {
-  margin: 0 5px 10px;
-  @include acms.font-size(18);
+  margin: 0 0.25rem 0.5rem;
   color: global.$color-text-side;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 
   .tag-list.is-sm & {
-    @include acms.font-size(14);
+    font-size: map.get(global.$font-scales, body-s);
   }
 }
 
 .tag-link {
   display: inline-block;
   box-sizing: border-box;
-  padding: 8px 15px;
+  padding: 0.5rem 1rem;
   color: global.$color-text;
-  font-weight: bold;
   background: global.$color-white;
   border: global.$border-width-sm solid global.$color-gray40;
   border-radius: 10em;
 
-  &:link:hover {
-    color: global.$color-text;
-    text-decoration: none;
-    background: global.$color-gray20;
+  &:link,
+  &:visited {
+    color: currentcolor;
   }
 
-  &:visited,
   &:active,
   &:focus {
     color: global.$color-text;
   }
-}
 
+  &:any-link:hover {
+    color: global.$color-text;
+    text-decoration: none;
+    background: global.$color-gray20;
+  }
+}
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .tag-wrapper {
-    margin: 40px 0;
+    display: flex;
+    margin: 2.5rem 0;
   }
+
+  .tag-title-inline {
+    margin: 0.5rem 2rem 0.5rem 0;
+  }
+
   .tag-box {
-    padding: 30px 30px 20px 30px;
+    padding: 2rem 2rem 1.25rem;
   }
+
   .tag-list {
+    flex: 1;
     flex-direction: row;
-    margin: 0 -10px;
+    margin: 0 -0.5rem;
 
     &.is-sm {
-      margin: 0 -5px;
+      margin: 0 -0.25rem;
     }
   }
+
   .tag-item {
-    @include acms.font-size(18);
+    margin: 0 0.5rem 1rem;
+    font-size: map.get(global.$font-scales, body-m);
 
     .tag-list.is-sm & {
-      margin: 0 5px 5px;
-      @include acms.font-size(14);
+      margin: 0 0.25rem 0.25rem;
+      font-size: map.get(global.$font-scales, body-s);
     }
   }
 
   .tag-link {
-    padding: 8px 15px;
+    padding: 0.5rem 1rem;
   }
 }

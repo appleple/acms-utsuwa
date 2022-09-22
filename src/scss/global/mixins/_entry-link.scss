@@ -8,11 +8,11 @@
 
   &:hover {
     text-decoration: none;
-    opacity: .7;
+    opacity: 0.7;
   }
 
   &[href*="tel"] {
-    color: currentColor;
+    color: currentcolor;
     border-bottom: var.$border-width-sm dashed;
   }
 }

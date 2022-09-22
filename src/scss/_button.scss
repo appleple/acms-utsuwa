@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -7,21 +8,17 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 0.75rem 2.25rem;
   color: global.$color-text-inverse;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   text-align: center;
   background: global.$color-primary;
   border: 0;
   border-radius: global.$border-radius-md;
-  transition: background-color .2s;
-  @include acms.font-size(18);
+  transition: background-color 0.2s;
 
-
-  &:hover,
-  &:visited,
-  &:active,
-  &:focus {
+  &:any-link {
     color: global.$color-text-inverse;
     text-decoration: none;
   }
@@ -33,7 +30,7 @@
   &.is-lg {
     display: inline-block;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 1rem 2.25rem;
   }
 
   &.is-block {
@@ -41,26 +38,34 @@
   }
 
   &.is-xl {
-    width: 280px;
+    width: 18rem;
     max-width: 100%;
   }
 
   &.is-width-lg {
-    width: 280px;
+    width: 18rem;
     max-width: 100%;
   }
 
   &.is-shadow {
-    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    box-shadow: global.$elevation08;
   }
 
-  &.is-shadow-light {
-    box-shadow: 0 3px 10px rgba(0,0,0,.3);
+  &.is-shadow-shallow {
+    box-shadow: global.$elevation02;
+
+    &:hover {
+      box-shadow: global.$elevation10;
+    }
   }
 
   &.is-inverse {
     color: global.$color-text;
     background: global.$color-white;
+
+    &:any-link {
+      color: global.$color-text;
+    }
 
     &:hover {
       background: global.$color-gray10;
@@ -72,6 +77,10 @@
     background: transparent;
     border: global.$border-width-sm solid global.$color-gray40;
 
+    &:any-link {
+      color: global.$color-text;
+    }
+
     &:hover {
       background: global.$color-gray20;
     }
@@ -81,12 +90,64 @@
     border-radius: global.$border-radius-round;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min){
+  @media screen and (min-width: acms.$breakpoint-md-min) {
     &.is-xl {
-      min-width: 340px;
-      padding: 15px;
-      @include acms.font-size(24);
+      min-width: 22rem;
+      padding: 1rem;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
+  }
+
+  &:focus {
+    border-color: acms.$acms-form-focus-border-color;
+    box-shadow: global.$box-shadow-focus;
   }
 }
 
+.button-read-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+
+  &::before {
+    position: absolute;
+    right: 0;
+    bottom: -0.25rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: global.$color-secondary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    content: "";
+  }
+
+  &::after {
+    @include global.arrow-circle($size: ss,$color-bg:global.$color-secondary,$color-line:white);
+
+    display: inline-block;
+    margin: 0 0 0 0.5rem;
+    content: "";
+  }
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js .js-animation.is-show & {
+    animation: fade-in 0.2s 1.2s 1 both;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

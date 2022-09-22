@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -9,35 +10,36 @@
 ------------------------------ */
 .form-step {
   display: flex;
-  margin: 0 0 25px 0;
+  margin: 0 0 1.5rem;
   padding: 0;
 
   /* カウンターの設定 */
   counter-reset: mailStep;
 }
+
 .form-step-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 14px 0 10px;
+  padding: 1rem 0 0.5rem;
   color: global.$color-text;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   list-style: none;
-  @include acms.font-size(16);
 
   &::before {
-
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin: 0 0 10px 0;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0 0.5rem;
     color: global.$color-primary;
-    line-height: 1.7;
+    line-height: global.$line-height-lg;
     background: global.$color-gray10;
     border-radius: 50%;
     content: counter(mailStep);
+
     /* カウンターの設定 */
     counter-increment: mailStep;
   }
@@ -50,36 +52,35 @@
   }
 
   &:not(:last-child) {
-    margin: 0 20px 0 0;
+    margin: 0 1.25rem 0 0;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-step-item {
     flex-direction: row;
     justify-content: center;
-    padding: 18px 0 14px;
-    @include acms.font-size(22);
+    padding: 1rem 0;
+    font-size: map.get(global.$font-scales, heading-ss);
 
     &::before {
-      width: 38px;
-      height: 38px;
-      margin: 0 10px 0 0;
-      @include acms.font-size(24);
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0 0.5rem 0 0;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
 
     &:not(:last-child) {
-      margin: 0 30px 0 0;
+      margin: 0 2rem 0 0;
     }
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max){
+@media screen and (max-width: acms.$breakpoint-md-max) {
   .form-step {
     justify-content: center;
   }
 }
-
 
 /* フォームレイアウト
 ------------------------------ */
@@ -92,7 +93,7 @@
   list-style: none;
 
   &.is-confirm {
-    padding: 0 10px;
+    padding: 0 0.5rem;
   }
 }
 
@@ -108,7 +109,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 0 30px 0;
+  margin: 0 0 2rem;
   padding: 0;
 }
 
@@ -116,15 +117,16 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.5rem;
   font-weight: bold;
   text-align: left;
 }
+
 .form-control {
   display: block;
   box-sizing: border-box;
   width: 100%;
-  line-height: 1.7;
+  line-height: global.$line-height-lg;
 }
 
 .form-button-group {
@@ -133,7 +135,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-label {
     vertical-align: top;
   }
@@ -144,113 +146,141 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 30px 0 0 0;
+  margin: 2rem 0 0;
 }
 
-
-
-@media screen and (min-width: acms.$breakpoint-sm-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-button-group {
     flex-direction: row;
-    margin: 40px 0 0 0;
+    margin: 2.5rem 0 0;
   }
 
   .form-button:not(:last-child) {
-    margin: 0 20px 0 0;
+    margin: 0 1.25rem 0 0;
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-sm-max){
+@media screen and (max-width: acms.$breakpoint-md-max) {
   .form-button {
     width: 100%;
-    margin: 0 0 15px 0;
+    margin: 0 0 1rem;
 
     .button {
       width: 100%;
     }
   }
+
   .form-button-return {
     order: 1;
   }
 }
 
-
 /* ラベル
 ------------------------------ */
 .label-required {
-  margin: 0 0 0 5px;
-  padding: 2px 8px;
-  color: #FFF;
+  margin: 0 0 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: #fff;
+  font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
   background: global.$color-error;
-  border-radius: 3px;
-  @include acms.font-size(12);
+  border-radius: global.$border-radius-sm;
 
   &:first-child {
-    margin: 0 5px 0 0;
+    margin: 0 0.25rem 0 0;
   }
 }
-@media screen and (min-width: acms.$breakpoint-md-min){
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .label-required {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0.5rem;
 
     &:first-child {
-      margin: 0 10px 0 0;
+      margin: 0 0.5rem 0 0;
     }
   }
 }
 
 .label-optional {
-  margin: 0 0 0 5px;
-  padding: 2px 8px;
+  margin: 0 0 0 0.25rem;
+  padding: 0.25rem 0.5rem;
   color: global.$color-text;
+  font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
   background: global.$color-gray40;
-  border-radius: 3px;
-  @include acms.font-size(12);
+  border-radius: global.$border-radius-sm;
 
   &:first-child {
-    margin: 0 5px 0 0;
+    margin: 0 0.25rem 0 0;
   }
 }
-@media screen and (min-width: acms.$breakpoint-md-min){
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .label-optional {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0.5rem;
 
     &:first-child {
-      margin: 0 10px 0 0;
+      margin: 0 0.5rem 0 0;
     }
   }
 }
-
 
 /* フォーム要素
 ------------------------------ */
 .form-group {
+  display: block;
+  border: 0;
+
   select {
     &[required]:required {
       border: global.$border-width-sm solid global.$color-error;
     }
+
     &.focused:invalid {
       border: global.$border-width-sm solid global.$color-error;
     }
+
     &[required]:valid {
       border: global.$border-width-sm solid global.$color-gray40;
     }
   }
-  input,
-  textarea {
+
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  textarea,
+  select {
+    border: 1px solid rgb(0 0 0 / 20%);
+
     &[required]:required {
-      background: global.$color-gray10;
+      background-color: global.$color-gray10;
     }
+
     &.focused:invalid,
-    &.invalid{
-      background: global.$color-gray10;
+    &.invalid {
+      background-color: global.$color-gray10;
       border-color: global.$color-error;
       box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
     }
+
     &[required]:valid {
-      background: global.$color-gray10;
+      background-color: global.$color-gray10;
+    }
+
+    &:focus {
+      background-color: global.$color-gray10;
+      border-color: global.$color-focus;
+      box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
     }
   }
 
@@ -267,33 +297,35 @@
   input[type="email"],
   input[type="url"],
   input[type="search"],
-  input[type="tel"]{
-    @include acms.font-size(16);
+  input[type="tel"] {
     box-sizing: border-box;
-    padding: 11px 15px;
-    line-height: 1.5;
+    padding: 0.75rem;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: global.$line-height-base;
+    border: global.$border-width-sm solid rgb(0 0 0 / 20%);
     border-radius: global.$border-radius-sm;
   }
 
   textarea {
-    @include acms.font-size(16);
     box-sizing: border-box;
-    padding: 11px 15px;
+    padding: 0.75rem;
+    font-size: map.get(global.$font-scales, body-m);
     border-radius: global.$border-radius-sm;
   }
 
   select {
     box-sizing: border-box;
-    min-height: 48px;
-    padding: 9px  44px 9px 15px;
+    min-height: 3rem;
+    padding: 0.75rem  3rem 0.75rem 1rem;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: global.$line-height-base;
     vertical-align: top;
     background-color: global.$color-gray10;
-    @include acms.font-size(16);
     border-radius: global.$border-radius-sm;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-group {
     input[type="text"],
     input[type="password"],
@@ -308,25 +340,32 @@
     input[type="url"],
     input[type="search"],
     input[type="tel"] {
-      padding: 11px  15px;
+      padding: 0.75rem;
     }
 
     textarea {
-      padding: 11px 15px;
+      padding: 0.75rem;
     }
-
   }
 }
 
 .form-checkbox-only {
   display: block;
   margin: 0;
-  padding: 16px 15px 12px;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
   background: global.$color-gray20;
-  border-radius: 3px;
+  border: global.$border-width-sm solid rgb(0 0 0 / 10%);
+  border-radius: global.$border-radius-sm;
 
   &:hover {
     background: global.$color-gray30;
+  }
+
+  &:focus-within {
+    background-color: global.$color-gray10;
+    border-color: global.$color-focus;
+    box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
   }
 }
 
@@ -342,7 +381,6 @@
     border-bottom: 1px dashed;
   }
 }
-
 
 /* 検索フォーム
 ------------------------------ */
@@ -362,16 +400,16 @@
   input.form-search-input {
     flex: 1 1 auto;
     box-sizing: border-box;
-    height: 48px;
-    padding: 10px;
+    height: 3rem;
+    padding: 0.5rem;
+    font-size: map.get(global.$font-scales, body-m);
     background: global.$color-gray10;
     border: global.$border-width-sm solid global.$color-gray40;
-    border-radius: 4px;
+    border-radius: global.$border-radius-md;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    transition: background-color .25s ease;
-    -webkit-appearance: none;
-    @include acms.font-size(16);
+    transition: background-color 0.25s ease;
+    appearance: none;
 
     &:hover {
       background: global.$color-white;
@@ -382,7 +420,7 @@
       background: global.$color-white;
       border-color: acms.$acms-form-focus-border-color;
       outline: none;
-      box-shadow: acms.$acms-form-focus-box-shadow, acms.$acms-form-box-shadow;
+      box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
     }
   }
 
@@ -392,32 +430,29 @@
   }
 
   .form-search-button {
-    padding: 12px 15px;
+    padding: 0.75rem 1rem;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min){
+  @media screen and (min-width: acms.$breakpoint-md-min) {
     input.form-search-input {
-      height: 60px;
-      padding: 15px 20px;
-      @include acms.font-size(22);
+      height: 4rem;
+      padding: 1rem 1.25rem;
+      font-size: map.get(global.$font-scales, heading-ss);
     }
 
     .form-search-button {
-      width: 100px;
+      padding: 0.75rem 2rem;
     }
-
   }
 }
-
 
 /* ヘルパーテキスト
 ------------------------------ */
 .form-helper-text {
-  margin: 10px 0;
-  @include acms.font-size(14);
+  margin: 0.5rem 0;
   color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-s);
 }
-
 
 /* バリデーター
 ------------------------------ */
@@ -434,37 +469,40 @@
 
   .invalid {
     border-color: global.$color-error;
+    box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
   }
 }
 
 .form-error-text {
-  margin: 10px 0;
+  margin: 0.5rem 0;
   color: global.$color-error;
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
 
   .form-helper-text + .validator-result-0 & {
     margin-top: 0;
   }
 }
 
-.transaction-notice-, .v-result-, .v-result-1, .validator-result-, .validator-result-1 {
+.transaction-notice-,
+.v-result-,
+.v-result-1,
+.validator-result-,
+.validator-result-1 {
   display: none;
 }
-
 
 /* メッセージ
 ------------------------------ */
 .form-message {
-  margin: 0 0 40px 0;
+  margin: 0 0 3rem;
 }
 
 .form-message-back {
   text-align: center;
 }
 
-
-@media screen and (min-width: acms.$breakpoint-md-min){
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .form-message {
-    margin: 0 0 60px 0;
+    margin: 0 0 4rem;
   }
 }

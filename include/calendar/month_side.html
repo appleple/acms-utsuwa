@@ -1,0 +1,37 @@
+<!-- BEGIN_MODULE Calendar_Month id="{{module_id}}" -->
+<div class="section-side-col is-fix">
+  @include("/admin/module/setting.html")
+  <section class="section-side">
+    <header class="section-side-header -calendar">
+      <h2 class="section-side-title">{year}年{month}月</h2>
+      <a href="{yearUrl}/calendar.html" class="section-side-link">年間カレンダーへ @include("/themes/utsuwa/images/arrow-border-white.svg")</a>
+    </header>
+    <table class="calendar">
+      <thead>
+        <tr class="acms-text-center">
+          <!-- BEGIN weekLabel:loop -->
+          <th class="calendar-label is-week-{w}">{label}</th>
+          <!-- END weekLabel:loop -->
+        </tr>
+      </thead>
+      <tbody>
+      <!-- BEGIN week:loop -->
+      <tr class="acms-text-center">
+        <!-- BEGIN day:loop -->
+        <!-- BEGIN spacer -->
+        <td class="calendar-day">&nbsp;</td>
+        <!-- END spacer -->
+        <!-- BEGIN none -->
+        <td class="calendar-day">{day}</td>
+        <!-- END none -->
+        <!-- BEGIN link -->
+        <td class="calendar-day"><a href="{url}" class="calendar-day-has">{day}</a></td>
+        <!-- END link -->
+        <!-- END day:loop -->
+      </tr>
+      <!-- END week:loop -->
+      </tbody>
+    </table>
+  </section>
+</div>
+<!-- END_MODULE Calendar_Month -->

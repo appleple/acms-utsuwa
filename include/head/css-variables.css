@@ -4,15 +4,16 @@
 :root {
 
 /* カラー */
---color-primary         : #222222;
---color-primary-light   : #e5f5ff;
+--color-primary         : #334EB0;
+--color-primary-hover   : #2B4193;
+--color-primary-light   : #F1F3FA;
 --color-primary-bg      : var(--color-primary-light);
---color-primary-hover   : #525252;
+--color-primary-bg-hover  : #D1D7ED;
 
 --color-secondary       : #6A6A6A;
 
---color-tertiary       : #FFE13B;
---color-tertiary-light : #fffb8b;
+--color-highlight       : #FFE13B;
+--color-highlight-light : #fffb8b;
 
 --color-white           : #FFF;
 --color-black           : #333333;
@@ -45,5 +46,20 @@
 
 --color-text-point      : #676767;
 
---box-shadow-error      : 0 0 0 2px rgba(201, 45, 45, .4);
+--box-shadow-focus      : 0 0 0 .25rem rgba(19, 122, 243, .4);
+--box-shadow-error      : 0 0 0 .25rem rgba(201, 45, 45, .4);
+
+  /* 余白 */
+  --gutter-sm : 1rem;
+  --gutter-md : 2rem;
+
+  /* 余白ユニット */
+  --unit-space-sm: 2rem;
+  --unit-space-md: 3rem;
+  --unit-space-lg: 4rem;
+
+  /* 罫線ユニット余白 */
+  --separator-sm: 2rem;
+  --separator-md: 3rem;
+  --separator-lg: 4rem;
 }

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -5,26 +6,26 @@
 　　タイポグラフィ
 ------------------------------ */
 .heading-lg {
-  margin: -40px 0 global.$entry-element-margin-bottom-sm 0;// アンカーリンクのための余白を打ち消す用
-  padding-top: (global.$header-height + 20px);
-  line-height: 1.4;
-  @include acms.font-size(26);
+  margin: -1rem 0 global.$entry-el-margin-sm 0;
+  padding-top: (global.$header-height + 0.5rem);
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: global.$line-height-sm;
 
   &.heading-line {
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
     border-bottom: global.$border-width-md solid global.$color-gray100;
   }
 
   &.heading-primary {
     position: relative;
-    margin-bottom: global.$entry-element-margin-bottom-lg;
+    margin-bottom: calc(global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm);
 
-    &:before {
+    &::before {
       position: absolute;
-      bottom: -20px;
+      bottom: -1rem;
       left: 0;
       display: block;
-      width: 60px;
+      width: 3.5rem;
       height: global.$border-width-lg;
       background: global.$color-primary;
       content: "";
@@ -32,72 +33,86 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin-top: -20px; // アンカーリンクのための余白を打ち消す用
-    margin-bottom: global.$entry-element-margin-bottom-sm;
-    padding-top: 60px;
-    @include acms.font-size(32);
+    margin-top: -1rem; // アンカーリンクのための余白を打ち消す用
+    margin-bottom: global.$entry-el-margin-sm;
+    padding-top: 3.5rem;
+    font-size: map.get(global.$font-scales, heading-m);
 
     &.heading-primary {
-      margin-bottom: global.$entry-element-margin-bottom-xl;
+      margin-bottom: calc(global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm);
 
-      &:before {
-        bottom: -25px;
+      &::before {
+        bottom: -1.5rem;
       }
     }
   }
 }
 
 .heading-md {
-  margin: 40px 0 global.$entry-element-margin-bottom-sm 0;
-  @include acms.font-size(22);
-  line-height: 1.4;
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
+  font-size: map.get(global.$font-scales, heading-ss);
+  line-height: global.$line-height-sm;
 
   &.heading-line {
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
     border-bottom: global.$border-width-md solid global.$color-gray100;
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 60px 0 global.$entry-element-margin-bottom-md 0;
-    @include acms.font-size(28);
+    margin: 4rem 0 global.$entry-el-margin-md 0;
+    font-size: map.get(global.$font-scales, heading-s);
 
     &.heading-line {
-      margin: 60px 0 global.$entry-element-margin-bottom-sm 0;
+      margin: 4rem 0 (global.$entry-el-margin-sm + 0.5rem) 0;
     }
   }
 }
 
 .heading-sm {
-  margin: 50px 0 global.$entry-element-margin-bottom-sm 0;
-  @include acms.font-size(18);
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
+  font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
-    padding-bottom: 12px;
+    padding-bottom: 1rem;
     border-bottom: global.$border-width-md solid global.$color-gray100;
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 60px 0 global.$entry-element-margin-bottom-sm 0;
-    @include acms.font-size(22);
+    margin: 4rem 0 global.$entry-el-margin-sm 0;
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
+.heading-ss {
+  margin: 4rem 0 global.$entry-el-margin-sm 0;
+  font-size: map.get(global.$font-scales, body-m);
+
+  &.heading-line {
+    padding-bottom: 1rem;
+    border-bottom: global.$border-width-md solid global.$color-gray100;
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+    margin: 4rem 0 global.$entry-el-margin-sm 0;
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
 
 .heading-lg,
 .heading-md,
-.heading-sm {
+.heading-sm,
+.heading-ss {
   &.heading-margin-top-none {
     margin-top: 0;
   }
 }
 
-
 .paragraph {
-  margin: 0 0 global.$entry-element-margin-bottom-md 0;
-  line-height: 1.7;
+  margin: 0 0 global.$entry-el-margin-md 0;
+  line-height: global.$line-height-lg;
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    margin: 0 0 global.$entry-element-margin-bottom-lg 0;
+    margin: 0 0 global.$entry-el-margin-lg 0;
   }
 
   a {
@@ -105,29 +120,27 @@
   }
 }
 
-
 .text-word-break {
   display: inline-block;
 }
 
-
 .unordered-list {
-  margin: 0 0 global.$entry-element-margin-bottom-md 0;
-  padding: 0 0 0 40px;
+  margin: 0 0 global.$entry-el-margin-md 0;
+  padding: 0 0 0 2rem;
 
   li {
     position: relative;
     clear: both;
-    margin: 0 0 10px 0;
-    line-height: 1.5;
+    margin: 0 0 0.5rem;
+    line-height: global.$line-height-base;
     list-style: none;
 
     &::before {
       position: absolute;
-      top: 8px;
-      left: -20px;
-      width: 6px;
-      height: 6px;
+      top: 0.5rem;
+      left: -1.5rem;
+      width: 0.5rem;
+      height: 0.5rem;
       background: global.$color-secondary;
       border-radius: 50%;
       content: "";

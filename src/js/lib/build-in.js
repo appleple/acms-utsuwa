@@ -126,7 +126,9 @@ const lazyLoad = (context, selector = '', options = {}) => {
 const inView = (context, selector) => {
   domContentLoaded(() => {
     const querySelector = selector || '.js-lazy-contents';
-    lazyLoadFn(querySelector, () => true,
+    lazyLoadFn(
+      querySelector,
+      () => true,
       (item) => {
         const type = item.getAttribute('data-type');
         if (!type) {
@@ -140,7 +142,8 @@ const inView = (context, selector) => {
           }
         });
         item.appendChild(script);
-      });
+      },
+    );
   });
 };
 

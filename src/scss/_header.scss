@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -7,6 +8,7 @@
 .header-wrap {
   height: global.$header-height;
 }
+
 .header {
   position: relative;
   z-index: global.$zindex-header;
@@ -15,29 +17,29 @@
   width: 100%;
   height: global.$header-height;
   background: global.$color-white;
-  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  box-shadow: global.$elevation04;
 }
 
 .header-item-title {
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 0.5rem;
 }
+
 .header-title {
   display: flex;
   align-items: center;
   margin: 0;
 }
 
-
 .header-item-nav {
   position: relative;
   height: 100%;
   margin-left: auto;
-  @include acms.font-size(18);
+  font-size: map.get(global.$font-scales, body-m);
 }
 
-@media (max-width : acms.$breakpoint-lg-max) {
+@media (max-width: acms.$breakpoint-lg-max) {
   .header {
     position: fixed;
     height: global.$header-height-fixed;
@@ -45,5 +47,9 @@
 
   .header-wrap {
     height: global.$header-height-fixed;
+  }
+
+  .header-item-nav {
+    display: none;
   }
 }

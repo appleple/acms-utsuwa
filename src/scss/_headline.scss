@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -7,9 +8,7 @@
 .headline {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   list-style: none;
-  border-radius: global.$border-radius-lg;
 
   .js &.js-animation-row {
     opacity: 0;
@@ -17,7 +16,7 @@
   }
 
   .js &.js-animation-row.is-show {
-    animation: fade-in .2s .3s 1 both;
+    animation: fade-in 0.2s 0.3s 1 both;
   }
 }
 
@@ -25,20 +24,35 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  line-height: 1.5;
-  border-bottom: global.$border-width-sm solid global.$color-gray30;
+  line-height: global.$line-height-base;
+
+  &:first-child {
+    .headline-link {
+      border-radius: global.$border-radius-lg global.$border-radius-lg 0 0;
+    }
+  }
 
   &:last-child {
     border: 0;
+
+    .headline-link {
+      border-radius: 0 0  global.$border-radius-lg global.$border-radius-lg;
+    }
   }
 }
 
 .headline-link {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 1rem;
   color: global.$color-text;
   background: global.$color-white;
+  border-bottom: global.$border-width-sm solid global.$color-gray30;
+  box-shadow: global.$elevation02;
+
+  .headline-item:last-child & {
+    border: 0;
+  }
 
   &:hover,
   &:visited,
@@ -50,60 +64,58 @@
 
   &:hover {
     background: global.$color-gray20;
+    box-shadow: global.$elevation10;
   }
-
 }
 
 .headline-info {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.75rem;
   color: global.$color-text-side;
-  line-height: 1.2;
-  @include acms.font-size(14);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-sm;
 }
 
-
 .headline-date {
-  margin-right: 10px;
+  margin-right: 0.5rem;
   color: global.$color-text-side;
 }
 
 .headline-date + .headline-category {
-  margin-right: 10px;
-  padding-left: 15px;
+  margin-right: 0.75rem;
+  padding-left: 0.75rem;
   border-left: global.$border-width-sm solid global.$color-gray70;
 }
 
 .headline-text {
   position: relative;
-  @include acms.font-size(15);
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
 }
 
 .headline-badge-news {
   display: inline-block;
-  margin: 2px 10px 0 0;
+  margin: 0.25rem 0.5rem 0 0;
   font-weight: bold;
-  line-height: 1;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-ss;
   vertical-align: text-top;
-  @include acms.font-size(12);
 }
-
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .headline-link {
-    padding: 30px;
+    padding: 2rem;
   }
 
   .headline-text {
-    @include acms.font-size(18);
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .headline-text {
-    @include acms.font-size(20);
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }

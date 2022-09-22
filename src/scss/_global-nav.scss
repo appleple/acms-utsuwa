@@ -9,9 +9,9 @@
   align-items: center;
   height: 100%;
 }
+
 .global-nav-list {
   display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -21,9 +21,7 @@
 .global-nav-item {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
+  margin: 0 1rem;
 
   &:last-child {
     margin-right: 0;
@@ -35,32 +33,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
-  color: global.$color-text;
+  color: global.$color-text-side;
 
-  &:visited {
-    color: global.$color-text;
-  }
-  &:hover,
+  &:visited,
   &:active,
+  &:hover,
   &:focus {
     color: global.$color-text;
   }
 
+  .is-expand > & {
+    padding: 0 1.75rem 0 0;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-top: 2px solid global.$color-gray100;
+      border-right: 2px solid global.$color-gray100;
+      transform: rotate(135deg);
+      content: "";
+    }
+  }
+
   &::after {
     position: absolute;
-    right: 15px;
+    right: 0;
     bottom: 0;
-    left: 15px;
+    left: 0;
     height: 2px;
     background: global.$color-primary;
     transform: scaleX(0);
-    transition: transform .2s;
+    transition: transform 0.2s;
     content: "";
   }
 
   &:hover {
     text-decoration: none;
+
     &::after {
       transform: scaleX(1);
     }
@@ -74,13 +86,13 @@
   // CTA用のスタイル
   &.is-cta {
     height: global.$header-height;
-    margin: 0 15px;
-    padding: 0 35px;
+    margin: 0 1rem;
+    padding: 0 2rem;
     color: global.$color-text-inverse;
     background: global.$color-primary;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
-    &:after {
+    &::after {
       content: none;
     }
 
@@ -92,8 +104,11 @@
       margin-right: 0;
     }
   }
-}
 
+  .global-nav-item:last-child &.is-cta {
+    margin-right: 0;
+  }
+}
 
 .global-nav-item > .global-nav-list {
   position: absolute;
@@ -101,10 +116,10 @@
   left: 0;
   display: none;
   flex-direction: column;
-  min-width: 10rem;
+  min-width: 14rem;
   overflow: hidden;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  border-radius: global.$border-radius-sm;
+  box-shadow: global.$elevation04;
 
   .global-nav-item {
     width: 100%;
@@ -116,7 +131,13 @@
     position: relative;
     justify-content: flex-start;
     width: 100%;
-    background: #FFF;
+    padding: 1rem 1.5rem;
+    color: global.$color-text-side;
+    background: #fff;
+
+    &:visited {
+      color: global.$color-text-side;
+    }
 
     &:focus-visible::before {
       position: absolute;
@@ -124,12 +145,14 @@
       right: 0;
       bottom: 0;
       left: 0;
-      border: 2px solid global.$color-focus-visible;
+      border: 2px solid global.$color-focus;
       content: "";
     }
 
     &:hover,
+    &:active,
     &:focus {
+      color: global.$color-text;
       background-color: global.$color-gray10;
     }
 
@@ -144,6 +167,11 @@
 }
 
 .global-nav-item:hover > .global-nav-list,
-.global-nav-item:focus-within > .global-nav-list{
+.global-nav-item:focus-within > .global-nav-list {
   display: flex;
+}
+
+.global-nav-item:last-child .global-nav-link.is-cta + .global-nav-list {
+  right: 0;
+  left: inherit;
 }

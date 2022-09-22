@@ -1,23 +1,42 @@
   @extends("/_layouts/base.html")
 
   @section("main")
-    <div class="container-md">
+    <div class="container-sm">
       <div>
         <!-- エントリー本文 -->
         @include("/include/entry/body.html", {"module_id": "body_blog", "tag":"on", "sns":"on"})
-
-        <!-- BEGIN_MODULE Touch_Entry -->
-        <!-- 関連エントリー -->
-        @include("/include/entry/tagrelational-reccomend.html", {"module_id": "tag_relational_blog"})
-        <!-- END_MODULE Touch_Entry -->
       </div>
     </div>
 
+  <!-- BEGIN_MODULE Touch_Entry -->
+  <div class="acms-container">
+    <!-- 関連エントリー -->
+    @include("/include/entry/tagrelational-reccomend.html", {"module_id": "tag_relational_blog"})
+  </div>
+  <!-- END_MODULE Touch_Entry -->
+
     <!-- BEGIN_MODULE Touch_NotEdit -->
     <div class="js-sticky sticky-contents">
-      <div class="container-md">
+      <div class="container-sm">
         <!-- SNSシェアボタン -->
         @include("/include/parts/sns-share.html")
       </div>
     </div><!-- END_MODULE Touch_NotEdit -->
+  @endsection
+
+
+  @section("side")
+  <section class="acms-container">
+    <h3 class="heading-md heading-line">他の方法で記事を探す</h3>
+    <div class="section-side-grid">
+      <!-- カレンダー：月表示 -->
+      @include("/include/calendar/month_side.html", {"module_id": "calendar_side"})
+
+      <!-- カテゴリー：リスト表示 -->
+      @include("/include/category/list_side.html", {"module_id": "category_list"})
+
+      <!-- タグ：リスト表示 -->
+      @include("/include/tag/list_side.html", {"module_id": "tag_cloud"})
+    </div>
+  </section>
   @endsection

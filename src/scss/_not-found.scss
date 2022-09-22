@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -5,31 +6,35 @@
 　　404ページ
 ------------------------------ */
 .not-found-content {
-  margin: 0 0 60px 0;
+  margin: 0 0 4rem;
   text-align: center;
 }
+
 .not-found-title {
-  margin: 0 0 10px 0;
+  margin: 0 0 0.5rem;
   color: global.$color-primary;
   font-weight: bold;
-  @include acms.font-size(100);
-  line-height: 1.2;
-}
-.not-found-paragraph {
-  margin: 0 0 40px 0;
-  font-weight: bold;
-  @include acms.font-size(20);
+  font-size: 6rem;
+  line-height: global.$line-height-sm;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min){
+.not-found-paragraph {
+  margin: 0 0 2.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
   .not-found-content {
-    margin: 0 0 120px 0;
+    margin: 0 0 7.5rem;
   }
+
   .not-found-title {
-    @include acms.font-size(240);
+    font-size: 15rem;
   }
+
   .not-found-paragraph {
-    margin: 0 0 40px 0;
-    @include acms.font-size(22);
+    margin: 0 0 2.5rem;
+    font-size: map.get(global.$font-scales, heading-ss);
   }
 }

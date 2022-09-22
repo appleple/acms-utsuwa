@@ -7,8 +7,13 @@
 
 .badge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 0.25rem 0.5rem;
   color: global.$color-text-side;
   background: global.$color-gray30;
   border-radius: global.$border-radius-sm;
+
+  &.-pill {
+    padding: 0.25rem 1rem;
+    border-radius: global.$border-radius-round;
+  }
 }

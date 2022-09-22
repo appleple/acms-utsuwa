@@ -5,9 +5,8 @@
 
   @if $position {
     object-position: $position;
-    font-family: 'object-fit: #{$value}; object-position: #{$position}', sans-serif;
-  }
-  @else {
-    font-family: 'object-fit: #{$value}', sans-serif;
+    font-family: "object-fit: #{$value}; object-position: #{$position}", sans-serif;
+  } @else {
+    font-family: "object-fit: #{$value}", sans-serif;
   }
 }
