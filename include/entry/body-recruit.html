@@ -56,7 +56,11 @@
     <!-- END entry:veil -->
 
     <!-- BEGIN formBody -->
-    @include("/include/form/unit.html", {"form_heading":"応募フォーム","form_message_step":"弊社にご興味を持ってくださり、ありがとうございます！<br>以下のフォームにあなたの情報をご記入ください。","form_message_result":"お問い合わせありがとうございました。以下の内容で送信しました。"})
+    @include("/include/form/unit.html", {
+      "form_heading":"応募フォーム",
+      "form_message_step":"弊社にご興味を持ってくださり、ありがとうございます！<br>以下のフォームにあなたの情報をご記入ください。",
+      "form_message_result":"弊社へご応募ありがとうございます。以下の内容で送信しました。<br>この後、詳細な面接日程を担当者よりご案内いたしますので、今しばらくお待ちください。"
+    })
     <hr class="clearHidden"/>
     <!-- END formBody -->
 
