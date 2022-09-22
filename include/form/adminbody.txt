@@ -1,10 +1,12 @@
-お問い合わせがありました。
+「{entry_title}」へエントリーがありました。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
 
-■お問い合わせ<!-- BEGIN_MODULE Form2_Unit -->
+■お送りいただいた内容<!-- BEGIN_MODULE Form2_Unit -->
+ご希望の職種：\{entry_title\}
+
 メールアドレス  : \{email\}
 <!-- BEGIN column:loop --><!-- BEGIN text -->
 {label}  : \{form-unit-{utid}\}<!-- END text --><!-- BEGIN textarea -->
