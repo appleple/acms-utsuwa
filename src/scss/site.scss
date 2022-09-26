@@ -34,8 +34,6 @@
 @use "page-title";
 @use "pager";
 @use "profile";
-@use "section";
-@use "section-side";
 @use "tag";
 @use "topicpath";
 @use "type";
@@ -46,6 +44,8 @@
 @use "editor";
 @use "entry";
 @use "not-found";
+@use "section";
+@use "section-side";
 
 // レイアウト
 @use "footer";

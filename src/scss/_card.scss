@@ -88,7 +88,7 @@
 .#{acms.$entry-class} .card-title {
   margin: 0 0 1rem;
   color: global.$color-black;
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, heading-ss);
   line-height: global.$line-height-base;
 
   .js .js-animation-row & {
@@ -101,11 +101,11 @@
   }
 }
 
-.card-time {
+.card-date {
   display: inline-block;
   margin: 0 0 0.25rem;
   color: global.$color-gray90;
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .card-badge-news {
@@ -118,7 +118,7 @@
 .card-text,
 .#{acms.$entry-class} .card-text {
   margin: 0 0 1.5rem;
-  font-size: map.get(global.$font-scales, body-s);
+  font-size: map.get(global.$font-scales, body-m);
   line-height: global.$line-height-lg;
 
   .js .js-animation-row & {
@@ -177,7 +177,7 @@
 
 .card-footer {
   margin-top: auto;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   border-top: global.$border-width-sm solid global.$color-gray30;
 }
 
@@ -189,7 +189,7 @@
 }
 
 .card-author-img {
-  margin: 0 0.5rem 0 0;
+  margin: 0 1rem 0 0;
   border-radius: global.$border-radius-circle;
 }
 
