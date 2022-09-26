@@ -1292,7 +1292,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 calc(global.$unit-gutter-var / -2) 2.5rem calc(global.$unit-gutter-var / -2);
+  margin: 0 calc(global.$col-gutter / -2) 2.5rem calc(global.$col-gutter / -2);
   padding: 1.5rem;
   text-align: center;
   background: global.$color-gray10;
@@ -1364,5 +1364,18 @@
     .share-list.is-sm & a {
       width: auto;
     }
+  }
+}
+
+/*
+　プロフィール
+------------------------------ */
+.profile-heading {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .profile-heading {
+    margin-top: 2.5rem;
   }
 }

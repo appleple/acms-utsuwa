@@ -5,6 +5,7 @@
 /* ------------------------------
 　　プロフィール
 ------------------------------ */
+
 .profile {
   box-sizing: border-box;
   width: 100%;
@@ -18,12 +19,13 @@
 }
 
 .profile-item-img {
-  padding: 0 1.25rem 0 0;
+  padding: 0 2rem 0 0;
 }
 
 .profile-img {
   width: 4.5rem;
   height: 4.5rem;
+  vertical-align: top;
   border-radius: 50%;
 }
 
@@ -48,7 +50,7 @@
 
 .profile-text {
   margin: 0;
-  font-size: map.get(global.$font-scales, body-s);
+  font-size: map.get(global.$font-scales, body-m);
   line-height: global.$line-height-lg;
 }
 
