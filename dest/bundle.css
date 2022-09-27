@@ -3065,6 +3065,7 @@ a[href*=tel]:hover {
 .form-group input[type=tel],
 .form-group textarea,
 .form-group select {
+  color: var(--color-gray100);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .form-group input[type=text][required]:required,
