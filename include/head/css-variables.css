@@ -3,63 +3,63 @@
 ------------------------------ */
 :root {
 
-/* カラー */
---color-primary         : #334EB0;
---color-primary-hover   : #2B4193;
---color-primary-light   : #F1F3FA;
---color-primary-bg      : var(--color-primary-light);
---color-primary-bg-hover  : #D1D7ED;
+  /* カラー */
+  --color-primary           : #334EB0;
+  --color-primary-hover     : #2B4193;
+  --color-primary-light     : #F1F3FA;
+  --color-primary-bg        : var(--color-primary-light);
+  --color-primary-bg-hover  : #D1D7ED;
 
---color-secondary       : #6A6A6A;
+  --color-secondary         : #6A6A6A;
 
---color-highlight       : #FFE13B;
---color-highlight-light : #fffb8b;
+  --color-highlight         : #FFE13B;
+  --color-highlight-light   : #fffb8b;
 
---color-white           : #FFF;
---color-black           : #333333;
+  --color-white             : #FFF;
+  --color-black             : #333333;
+ 
+  --color-gray10            : #F8F8F8;
+  --color-gray20            : #F4F4F4;
+  --color-gray30            : #EBEBEB;
+  --color-gray40            : #DDDDDD;
+  --color-gray50            : #CCCCCC;
+  --color-gray60            : #AAAAAA;
+  --color-gray70            : #999999;
+  --color-gray80            : #777777;
+  --color-gray90            : #666666;
+  --color-gray100           : #333333;
 
---color-gray10          : #F8F8F8;
---color-gray20          : #F4F4F4;
---color-gray30          : #EBEBEB;
---color-gray40          : #DDDDDD;
---color-gray50          : #CCCCCC;
---color-gray60          : #AAAAAA;
---color-gray70          : #999999;
---color-gray80          : #777777;
---color-gray90          : #666666;
---color-gray100         : #333333;
+  --color-form-bg           : var(--color-gray10);
+  --color-form-border       : var(--color-gray40);
 
---color-form-bg         : var(--color-gray10);
---color-form-border     : var(--color-gray40);
+  --color-link              : #0061d1;
 
---color-link            : #0061d1;
+  --color-required          : #c92d2d;
+  --color-error             : #c92d2d;
 
---color-required        : #c92d2d;
---color-error           : #c92d2d;
+  --color-text              : var(--color-gray100);
+  --color-text-side         : var(--color-gray90);
+  --color-text-inverse      : var(--color-white);
 
---color-text            : var(--color-gray100);
---color-text-side       : var(--color-gray90);
---color-text-inverse    : var(--color-white);
+  --color-text-primary      : var(--color-primary);
+  --color-text-secondary    : var(--color-secondary);
 
---color-text-primary    : var(--color-primary);
---color-text-secondary  : var(--color-secondary);
+  --color-text-point        : #676767;
 
---color-text-point      : #676767;
+  --box-shadow-focus        : 0 0 0 .25rem rgba(19, 122, 243, .4);
+  --box-shadow-error        : 0 0 0 .25rem rgba(201, 45, 45, .4);
 
---box-shadow-focus      : 0 0 0 .25rem rgba(19, 122, 243, .4);
---box-shadow-error      : 0 0 0 .25rem rgba(201, 45, 45, .4);
-
-  /* 余白 */
-  --gutter-sm : 1rem;
-  --gutter-md : 2rem;
+  /* ガター */
+  --gutter-sm               : 1rem;
+  --gutter-md               : 2rem;
 
   /* 余白ユニット */
-  --unit-space-sm: 2rem;
-  --unit-space-md: 3rem;
-  --unit-space-lg: 4rem;
+  --unit-space-sm           : 2rem;
+  --unit-space-md           : 3rem;
+  --unit-space-lg           : 4rem;
 
   /* 罫線ユニット余白 */
-  --separator-sm: 2rem;
-  --separator-md: 3rem;
-  --separator-lg: 4rem;
+  --separator-sm            : 2rem;
+  --separator-md            : 3rem;
+  --separator-lg            : 4rem;
 }

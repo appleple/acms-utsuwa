@@ -7,7 +7,7 @@
 ------------------------------ */
 
 .tag-wrapper {
-  margin: 2rem 0;
+  margin: 0 0 1.5rem;
 }
 
 .tag-title-inline {
@@ -29,13 +29,13 @@
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.25rem;
+  margin: 0 -0.5rem;
   padding: 0;
   list-style: none;
 }
 
 .tag-item {
-  margin: 0 0.25rem 0.5rem;
+  margin: 0 0.5rem 1rem;
   color: global.$color-text-side;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
@@ -74,7 +74,7 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .tag-wrapper {
     display: flex;
-    margin: 2.5rem 0;
+    margin: 0 0 1.5rem;
   }
 
   .tag-title-inline {
