@@ -1571,7 +1571,7 @@ a[href*=tel]:hover {
     display: flex;
     padding: 1.5rem;
   }
-  .card-bordered-title {
+  .entry-style .card-bordered-title {
     margin: 0 0 1rem;
     font-size: 1.25rem;
   }
