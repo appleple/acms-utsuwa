@@ -15,7 +15,7 @@
               <div class="card-img-wrap"><!-- BEGIN image:veil -->
                 <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" width="455" height="256" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
               </div>
-              <time class="card-time" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )<!-- BEGIN new --><span class="badge is-inverse card-badge-news">NEW</span><!-- END new --></time>
+              <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )<!-- BEGIN new --><span class="badge is-inverse card-badge-news">NEW</span><!-- END new --></time>
               <h2 class="card-title">{title}</h2>
               <p class="card-text">{summary}[trim(60, '...')]</p>
               <!-- BEGIN userField -->
