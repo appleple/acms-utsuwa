@@ -5007,6 +5007,7 @@ a[href*=tel]:hover {
 ------------------------------ */
 .entry-header-visual {
   position: relative;
+  margin: 0 0 5rem;
 }
 
 .entry-header-visual-img {
@@ -5803,11 +5804,6 @@ a[href*=tel]:hover {
 /*
 　カード
 ------------------------------ */
-.entry-style .card-title,
-.entry-style .card-bordered-title {
-  font-size: 1.25rem;
-}
-
 .entry-style .card-item,
 .entry-style .card-bordered-item {
   padding: 0 calc(var(--gutter) / 2);
