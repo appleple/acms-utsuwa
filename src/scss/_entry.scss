@@ -87,6 +87,7 @@
 ------------------------------ */
 .entry-header-visual {
   position: relative;
+  margin: 0 0 5rem;
 }
 
 .entry-header-visual-img {
@@ -123,7 +124,7 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-header-visual {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
   }
 
   .entry-header-visual-img {
@@ -895,13 +896,6 @@
 /*
 　カード
 ------------------------------ */
-.#{acms.$entry-class} {
-  .card-title,
-  .card-bordered-title {
-    font-size: map.get(global.$font-scales, heading-ss);
-  }
-}
-
 .#{acms.$entry-class} {
   .card-item,
   .card-bordered-item {
