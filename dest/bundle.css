@@ -5046,7 +5046,7 @@ a[href*=tel]:hover {
 
 @media screen and (min-width: 48rem) {
   .entry-header-visual {
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
   }
   .entry-header-visual-img {
     height: 380px;
