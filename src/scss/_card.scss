@@ -371,8 +371,9 @@
     padding: 1.5rem;
   }
 
+  .card-bordered-title,
   .#{ acms.$entry-class } .card-bordered-title {
-    margin: 0 0 1rem;
+    margin: 0;
     font-size: map.get(global.$font-scales, heading-ss);
   }
 
