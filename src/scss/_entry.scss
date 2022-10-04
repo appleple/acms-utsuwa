@@ -37,6 +37,11 @@
   &:active,
   &:focus {
     color: global.$color-gray80;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -58,7 +63,12 @@
 }
 
 .entry-header-title-link {
-  @include global.link-color(global.$color-text);
+  color: currentcolor;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -462,6 +472,7 @@
       font-weight: bold;
       font-size: map.get(global.$font-scales, body-m);
       text-align: center;
+      text-decoration: none;
       background: global.$color-primary;
       border-radius: global.$border-radius-md;
       transition: background-color 0.2s;
@@ -471,7 +482,6 @@
       &:active,
       &:focus {
         color: global.$color-text-inverse;
-        text-decoration: none;
         opacity: 1;
       }
 
@@ -792,6 +802,7 @@
     align-items: center;
     padding: 1rem;
     color: global.$color-text;
+    text-decoration: none;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-md;
     transition: background-color 0.2s;
@@ -827,11 +838,11 @@
     flex-direction: column;
     overflow: hidden;
     color: global.$color-text;
+    text-decoration: none;
     border: global.$border-width-sm solid global.$color-gray40;
     border-radius: global.$border-radius-lg;
 
     &:hover {
-      text-decoration: none;
       background: global.$color-gray20;
     }
   }
@@ -954,6 +965,11 @@
       display: block;
       margin: 0 0 1rem 0.25rem;
       color: global.$color-text;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
 
       &::before {
         display: inline-block;
