@@ -145,7 +145,8 @@
 .footer-nav-link {
   display: inline-block;
   margin: 0 0 1rem;
-  color: global.$color-text-inverse;
+  color: global.$color-text;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

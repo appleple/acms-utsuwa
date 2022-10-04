@@ -40,6 +40,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  text-decoration: none;
 
   @include global.link-card(global.$color-text);
 
@@ -258,6 +259,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  text-decoration: none;
   border-radius: global.$border-radius-lg;
   box-shadow: global.$elevation02;
 

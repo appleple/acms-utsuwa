@@ -347,15 +347,18 @@ template {
 .entryFormLiteEditor a {
   padding: 2px 0;
   color: var(--color-link);
+  text-decoration: none;
   border-bottom: 1px dashed var(--color-link);
 }
 .entryFormLiteEditor a:hover {
-  text-decoration: none;
-  opacity: 0.7;
+  border-color: transparent;
 }
 .entryFormLiteEditor a[href*=tel] {
   color: currentcolor;
   border-bottom: 1px dashed;
+}
+.entryFormLiteEditor a[href*=tel]:hover {
+  border-color: transparent;
 }
 
 .acms-admin-table-admin-edit {

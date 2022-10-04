@@ -35,7 +35,9 @@
   justify-content: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
+  color: global.$color-text;
   font-weight: bold;
+  text-decoration: none;
   background: global.$color-primary-bg;
   border-radius: 0.25rem;
   transition: background-color 0.2s;
@@ -125,6 +127,15 @@
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
   border-bottom: global.$border-width-sm solid global.$color-gray30;
+
+  a {
+    color: global.$color-text;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /* 　年間カレンダー ページネーション

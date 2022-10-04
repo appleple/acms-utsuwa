@@ -23,6 +23,7 @@
   display: block;
   padding: 0 0 1.5rem;
   color: global.$color-text;
+  text-decoration: none;
   border-bottom: global.$border-width-sm solid global.$color-gray30;
 
   &:link,
@@ -34,8 +35,6 @@
   }
 
   &:hover {
-    text-decoration: none;
-
     .media-img {
       transform: scale(1.2);
     }
