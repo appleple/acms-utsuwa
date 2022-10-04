@@ -325,27 +325,11 @@ html {
 
 /* リンクの設定 */
 a {
-  color: currentcolor;
-  text-decoration: none;
   border: none;
-}
-a:-webkit-any-link {
-  color: currentcolor;
-  text-decoration: none;
-}
-a:-moz-any-link {
-  color: currentcolor;
-  text-decoration: none;
-}
-a:any-link {
-  color: currentcolor;
-  text-decoration: none;
-}
-a a:hover {
-  text-decoration: underline;
 }
 a[href*=tel] {
   color: currentcolor;
+  text-decoration: none;
   border-bottom: 1px dashed;
 }
 a[href*=tel]:hover {
@@ -865,8 +849,10 @@ a[href*=tel]:hover {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
+  color: currentcolor;
   font-weight: bold;
   font-size: 1rem;
+  text-decoration: none;
 }
 .button-read-more::before {
   position: absolute;
@@ -954,7 +940,9 @@ a[href*=tel]:hover {
           justify-content: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
+  color: var(--color-gray100);
   font-weight: bold;
+  text-decoration: none;
   background: var(--color-primary-light);
   border-radius: 0.25rem;
   -webkit-transition: background-color 0.2s;
@@ -1053,6 +1041,13 @@ a[href*=tel]:hover {
   font-weight: bold;
   font-size: 1rem;
   border-bottom: 1px solid var(--color-gray30);
+}
+.calendar-header-title a {
+  color: var(--color-gray100);
+  text-decoration: none;
+}
+.calendar-header-title a:hover {
+  text-decoration: underline;
 }
 
 /* 　年間カレンダー ページネーション
@@ -1185,6 +1180,7 @@ a[href*=tel]:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  text-decoration: none;
   color: var(--color-gray100);
 }
 .card-link:visited {
@@ -1431,6 +1427,7 @@ a[href*=tel]:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  text-decoration: none;
   border-radius: 6px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -1952,7 +1949,11 @@ a[href*=tel]:hover {
 .cta-link {
   margin: 0 0 0 -2.5rem;
   color: var(--color-gray100);
+  text-decoration: none;
   color: var(--color-gray100);
+}
+.cta-link:hover {
+  text-decoration: underline;
 }
 .cta-link::before {
   display: inline-block;
@@ -2222,6 +2223,7 @@ a[href*=tel]:hover {
       -ms-flex-pack: center;
           justify-content: center;
   color: var(--color-gray90);
+  text-decoration: none;
 }
 .global-nav-link:visited, .global-nav-link:active, .global-nav-link:hover, .global-nav-link:focus {
   color: var(--color-gray100);
@@ -2646,24 +2648,8 @@ a[href*=tel]:hover {
   position: relative;
   display: block;
   padding: 0.75rem 0;
-  color: var(--color-gray100);
-}
-.global-nav-mobile-side-link:-webkit-any-link {
-  color: var(--color-gray100);
-}
-.global-nav-mobile-side-link:-moz-any-link {
-  color: var(--color-gray100);
-}
-.global-nav-mobile-side-link:any-link {
-  color: var(--color-gray100);
-}
-.global-nav-mobile-side-link:active, .global-nav-mobile-side-link:focus {
-  text-decoration: underline;
-}
-@media (hover: hover) {
-  .global-nav-mobile-side-link:hover {
-    opacity: 0.7;
-  }
+  color: currentcolor;
+  text-decoration: none;
 }
 .global-nav-mobile-side-link:hover {
   color: inherit;
@@ -2721,6 +2707,7 @@ a[href*=tel]:hover {
           flex-direction: column;
   padding: 1rem;
   color: var(--color-gray100);
+  text-decoration: none;
   background: var(--color-white);
   border-bottom: 1px solid var(--color-gray30);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -2731,7 +2718,6 @@ a[href*=tel]:hover {
 }
 .headline-link:hover, .headline-link:visited, .headline-link:active, .headline-link:focus {
   color: var(--color-gray100);
-  text-decoration: none;
 }
 .headline-link:hover {
   background: var(--color-gray20);
@@ -2838,7 +2824,7 @@ a[href*=tel]:hover {
   width: 2rem;
   height: 2rem;
   margin: 0 0 0.5rem;
-  color: var(--color-primary);
+  color: var(--color-gray100);
   line-height: 1.7;
   background: var(--color-gray10);
   border-radius: 50%;
@@ -3404,7 +3390,9 @@ a[href*=tel]:hover {
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
+  color: currentcolor;
   font-weight: normal;
+  text-decoration: none;
   border-bottom: 1px solid var(--color-gray40);
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
@@ -3604,12 +3592,12 @@ a[href*=tel]:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
 }
 .main-visual-scroll-link:link, .main-visual-scroll-link:visited, .main-visual-scroll-link:active, .main-visual-scroll-link:focus {
   color: currentcolor;
 }
 .main-visual-scroll-link:hover {
-  text-decoration: none;
   opacity: 0.6;
 }
 .main-visual-scroll-link::after {
@@ -3663,13 +3651,11 @@ a[href*=tel]:hover {
   display: block;
   padding: 0 0 1.5rem;
   color: var(--color-gray100);
+  text-decoration: none;
   border-bottom: 1px solid var(--color-gray30);
 }
 .media-link:link, .media-link:hover, .media-link:active, .media-link:visited, .media-link:focus {
   color: var(--color-gray100);
-}
-.media-link:hover {
-  text-decoration: none;
 }
 .media-link:hover .media-img {
   -webkit-transform: scale(1.2);
@@ -3970,6 +3956,7 @@ a[href*=tel]:hover {
   height: 3rem;
   padding: 0.25rem;
   color: var(--color-white);
+  text-decoration: none;
   background: var(--color-primary);
   border: 2px solid transparent;
   border-radius: 6px;
@@ -4049,6 +4036,7 @@ a[href*=tel]:hover {
   height: 100%;
   padding: 1rem;
   color: var(--color-gray100);
+  text-decoration: none;
 }
 .serial-nav-item a:hover, .serial-nav-item a:visited, .serial-nav-item a:focus, .serial-nav-item a:active {
   color: inherit;
@@ -4327,6 +4315,7 @@ a[href*=tel]:hover {
           box-sizing: border-box;
   padding: 0.5rem 1rem;
   color: var(--color-gray100);
+  text-decoration: none;
   background: var(--color-white);
   border: 1px solid var(--color-gray40);
   border-radius: 10em;
@@ -4424,6 +4413,7 @@ a[href*=tel]:hover {
 
 .topicpath-link {
   color: var(--color-gray100);
+  text-decoration: none;
 }
 .topicpath-link:hover {
   text-decoration: underline;
@@ -4539,15 +4529,18 @@ a[href*=tel]:hover {
 .paragraph a {
   padding: 2px 0;
   color: var(--color-link);
+  text-decoration: none;
   border-bottom: 1px dashed var(--color-link);
 }
 .paragraph a:hover {
-  text-decoration: none;
-  opacity: 0.7;
+  border-color: transparent;
 }
 .paragraph a[href*=tel] {
   color: currentcolor;
   border-bottom: 1px dashed;
+}
+.paragraph a[href*=tel]:hover {
+  border-color: transparent;
 }
 
 .text-word-break {
@@ -4899,15 +4892,18 @@ a[href*=tel]:hover {
 .entryFormLiteEditor a {
   padding: 2px 0;
   color: var(--color-link);
+  text-decoration: none;
   border-bottom: 1px dashed var(--color-link);
 }
 .entryFormLiteEditor a:hover {
-  text-decoration: none;
-  opacity: 0.7;
+  border-color: transparent;
 }
 .entryFormLiteEditor a[href*=tel] {
   color: currentcolor;
   border-bottom: 1px dashed;
+}
+.entryFormLiteEditor a[href*=tel]:hover {
+  border-color: transparent;
 }
 
 .acms-admin-table-admin-edit {
@@ -4947,6 +4943,10 @@ a[href*=tel]:hover {
 
 .entry-header-category:link, .entry-header-category:visited, .entry-header-category:active, .entry-header-category:focus {
   color: var(--color-gray80);
+  text-decoration: none;
+}
+.entry-header-category:hover {
+  text-decoration: underline;
 }
 
 .entry-header-title {
@@ -4966,24 +4966,11 @@ a[href*=tel]:hover {
 }
 
 .entry-header-title-link {
-  color: var(--color-gray100);
+  color: currentcolor;
+  text-decoration: none;
 }
-.entry-header-title-link:-webkit-any-link {
-  color: var(--color-gray100);
-}
-.entry-header-title-link:-moz-any-link {
-  color: var(--color-gray100);
-}
-.entry-header-title-link:any-link {
-  color: var(--color-gray100);
-}
-.entry-header-title-link:active, .entry-header-title-link:focus {
-  text-decoration: underline;
-}
-@media (hover: hover) {
-  .entry-header-title-link:hover {
-    opacity: 0.7;
-  }
+.entry-header-title-link:hover {
+  opacity: 0.7;
 }
 
 @media screen and (min-width: 48rem) {
@@ -5122,15 +5109,18 @@ a[href*=tel]:hover {
 .entry-style .entry-text-unit a {
   padding: 2px 0;
   color: var(--color-link);
+  text-decoration: none;
   border-bottom: 1px dashed var(--color-link);
 }
 .entry-style .entry-text-unit a:hover {
-  text-decoration: none;
-  opacity: 0.7;
+  border-color: transparent;
 }
 .entry-style .entry-text-unit a[href*=tel] {
   color: currentcolor;
   border-bottom: 1px dashed;
+}
+.entry-style .entry-text-unit a[href*=tel]:hover {
+  border-color: transparent;
 }
 .entry-style .column-image-left + .entry-text-unit {
   overflow: hidden;
@@ -5409,6 +5399,7 @@ a[href*=tel]:hover {
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+  text-decoration: none;
   background: var(--color-primary);
   border-radius: 4px;
   -webkit-transition: background-color 0.2s;
@@ -5416,7 +5407,6 @@ a[href*=tel]:hover {
 }
 .entry-style p.text-btn a:hover, .entry-style p.text-btn a:visited, .entry-style p.text-btn a:active, .entry-style p.text-btn a:focus {
   color: var(--color-white);
-  text-decoration: none;
   opacity: 1;
 }
 .entry-style p.text-btn a:hover {
@@ -5701,6 +5691,7 @@ a[href*=tel]:hover {
           align-items: center;
   padding: 1rem;
   color: var(--color-gray100);
+  text-decoration: none;
   border: 1px solid var(--color-gray40);
   border-radius: 4px;
   -webkit-transition: background-color 0.2s;
@@ -5741,11 +5732,11 @@ a[href*=tel]:hover {
           flex-direction: column;
   overflow: hidden;
   color: var(--color-gray100);
+  text-decoration: none;
   border: 1px solid var(--color-gray40);
   border-radius: 6px;
 }
 [class*=column-quote-] .quote-link:hover {
-  text-decoration: none;
   background: var(--color-gray20);
 }
 [class*=column-quote-] .quote-info {
@@ -5852,6 +5843,10 @@ a[href*=tel]:hover {
   display: block;
   margin: 0 0 1rem 0.25rem;
   color: var(--color-gray100);
+  text-decoration: none;
+}
+.entry-style .entry-outline-list-wrap .outline-item a:hover {
+  text-decoration: underline;
 }
 .entry-style .entry-outline-list-wrap .outline-item a::before {
   display: inline-block;
@@ -6705,8 +6700,10 @@ a[href*=tel]:hover {
       -ms-flex-align: center;
           align-items: center;
   margin-left: auto;
+  color: var(--color-gray100);
   font-weight: bold;
   font-size: 0.8rem;
+  text-decoration: none;
 }
 .section-side-link svg {
   -webkit-box-sizing: border-box;
@@ -6725,9 +6722,8 @@ a[href*=tel]:hover {
 .section-side-link:hover svg path {
   stroke: var(--color-secondary);
 }
-.section-side-link:hover, .section-side-link:visited, .section-side-link:active {
-  color: var(--color-gray100);
-  text-decoration: none;
+.section-side-link:hover {
+  text-decoration: underline;
 }
 
 /* ------------------------------
@@ -6878,7 +6874,8 @@ a[href*=tel]:hover {
 .footer-nav-link {
   display: inline-block;
   margin: 0 0 1rem;
-  color: var(--color-white);
+  color: var(--color-gray100);
+  text-decoration: none;
 }
 .footer-nav-link:hover {
   text-decoration: underline;

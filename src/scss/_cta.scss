@@ -49,6 +49,11 @@
 .cta-link {
   margin: 0 0 0 -2.5rem;
   color: global.$color-text;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   &::before {
     display: inline-block;

@@ -78,8 +78,10 @@
   display: inline-flex;
   align-items: center;
   margin-left: auto;
+  color: global.$color-text;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  text-decoration: none;
 
   svg {
     box-sizing: border-box;
@@ -100,10 +102,7 @@
     }
   }
 
-  &:hover,
-  &:visited,
-  &:active {
-    color: global.$color-text;
-    text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 }

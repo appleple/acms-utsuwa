@@ -303,8 +303,8 @@
   position: relative;
   display: block;
   padding: 0.75rem 0;
-
-  @include global.link-color(global.$color-text);
+  color: currentcolor;
+  text-decoration: none;
 
   &:hover {
     color: inherit;
