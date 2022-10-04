@@ -109,8 +109,10 @@
   display: inline-flex;
   align-items: center;
   margin: 0;
+  color: currentcolor;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  text-decoration: none;
 
   &::before {
     position: absolute;

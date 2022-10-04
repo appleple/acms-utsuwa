@@ -15,7 +15,9 @@
   display: flex;
   align-items: center;
   padding: 1rem;
+  color: currentcolor;
   font-weight: normal;
+  text-decoration: none;
   border-bottom: global.$border-width-sm solid global.$color-gray40;
   transition: background-color 0.2s ease;
 
