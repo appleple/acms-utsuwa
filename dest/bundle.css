@@ -2222,7 +2222,7 @@ a[href*=tel]:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: var(--color-gray90);
+  color: var(--color-gray100);
   text-decoration: none;
 }
 .global-nav-link:visited, .global-nav-link:active, .global-nav-link:hover, .global-nav-link:focus {
@@ -2237,6 +2237,7 @@ a[href*=tel]:hover {
   display: block;
   width: 0.5rem;
   height: 0.5rem;
+  margin-top: -0.25rem;
   border-top: 2px solid var(--color-gray100);
   border-right: 2px solid var(--color-gray100);
   -webkit-transform: rotate(135deg);
