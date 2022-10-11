@@ -3,7 +3,7 @@
 <nav class="acms-pager-container" aria-label="ページ送り">
   <ul class="pager">
     <!-- BEGIN backLink -->
-    <li><a href="{url}" aria-label="前へ" class="pager-link">@include("/themes/utsuwa/images/arrow-pagination-left.svg")</a></li><!-- END backLink -->
+    <li><a href="{url}" aria-label="前へ" class="pager-link">@include("/images/arrow-pagination-left.svg")</a></li><!-- END backLink -->
     <!-- BEGIN firstPage:veil -->
     <li {pageCurAttr}[raw]><span><a href="{firstPageUrl}" class="pager-link">{firstPage}</a></span></li>
     <!-- END firstPage:veil -->
@@ -17,7 +17,7 @@
     <li {pageCurAttr}[raw]><span><a href="{lastPageUrl}" class="pager-link">{lastPage}</a></span></li>
     <!-- END lastPage:veil -->
     <!-- BEGIN forwardLink -->
-    <li><a href="{url}" aria-label="次へ" class="pager-link">@include("/themes/utsuwa/images/arrow-pagination-right.svg")</a></li>
+    <li><a href="{url}" aria-label="次へ" class="pager-link">@include("/images/arrow-pagination-right.svg")</a></li>
     <!-- END forwardLink -->
   </ul>
 </nav>
@@ -28,11 +28,11 @@
 <nav aria-label="ページ送り" class="serial-nav">
   <ul class="serial-nav-list">
     <li class="serial-nav-item serial-nav-item-prev"><!-- BEGIN prevLink -->
-      <a href="{url}"><span class="serial-nav-arrow">@include("/themes/utsuwa/images/arrow-pagination-left.svg") 前のページ</span>{name}</a>
+      <a href="{url}"><span class="serial-nav-arrow">@include("/images/arrow-pagination-left.svg") 前のページ</span>{name}</a>
       <!-- END prevLink -->
     </li>
     <li class="serial-nav-item serial-nav-item-index"><a href="{upperUrl}">一覧へ</a></li>
-    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextLink --><a href="{url}"><span class="serial-nav-arrow">次のページ @include("/themes/utsuwa/images/arrow-pagination-right.svg")</span>{name}</a>
+    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextLink --><a href="{url}"><span class="serial-nav-arrow">次のページ @include("/images/arrow-pagination-right.svg")</span>{name}</a>
       <!-- END nextLink -->
     </li>
   </ul>
@@ -45,10 +45,10 @@
 <nav aria-label="ページ送り">
   <ul class="serial-nav">
     <li class="serial-nav-item serial-nav-item-prev"><!-- BEGIN prevPage -->
-      <a href="{url}"><span class="serial-nav-arrow"></span>@include("/themes/utsuwa/images/arrow-pagination-left.svg") 前のページ</span></a>
+      <a href="{url}"><span class="serial-nav-arrow"></span>@include("/images/arrow-pagination-left.svg") 前のページ</span></a>
       <!-- END prevPage -->
     </li>
-    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextPage --><a href="{url}"><span class="serial-nav-arrow">次のページ @include("/themes/utsuwa/images/arrow-pagination-right.svg")</span></a>
+    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextPage --><a href="{url}"><span class="serial-nav-arrow">次のページ @include("/images/arrow-pagination-right.svg")</span></a>
       <!-- END nextPage -->
     </li>
   </ul>
