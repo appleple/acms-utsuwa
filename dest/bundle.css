@@ -2205,10 +2205,6 @@ a[href*=tel]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 1rem;
-}
-.global-nav-item:last-child {
-  margin-right: 0;
 }
 
 .global-nav-link {
@@ -2222,6 +2218,8 @@ a[href*=tel]:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 3.5rem;
+  margin: 0 1rem;
   color: var(--color-gray100);
   text-decoration: none;
 }
@@ -2276,7 +2274,6 @@ a[href*=tel]:hover {
 }
 .global-nav-link.is-cta {
   height: 3.5rem;
-  margin: 0 1rem;
   padding: 0 2rem;
   color: var(--color-white);
   background: var(--color-primary);
@@ -2299,7 +2296,7 @@ a[href*=tel]:hover {
 .global-nav-item > .global-nav-list {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 1rem;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2322,6 +2319,8 @@ a[href*=tel]:hover {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
+  height: auto;
+  margin: 0;
   padding: 1rem 1.5rem;
   color: var(--color-gray90);
   background: #fff;
