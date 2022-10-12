@@ -31,8 +31,8 @@
 
 .calendar-day-has {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
   color: global.$color-text;
@@ -71,8 +71,8 @@
 ------------------------------ */
 .calendar-group {
   display: grid;
-  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -176,8 +176,8 @@
 
 .calendar-pagination-link {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 2rem;
   height: 2rem;
   border: global.$border-width-sm solid global.$color-gray70;
