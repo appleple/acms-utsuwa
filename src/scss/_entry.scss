@@ -538,8 +538,8 @@
         top: 2px;
         left: -2rem;
         display: inline-flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         width: 1.5rem;
         height: 1.5rem;
         margin: 0 1rem 0 0;
@@ -547,8 +547,8 @@
         font-size: map.get(global.$font-scales, body-s);
         background: global.$color-secondary;
         border-radius: 50%;
-        content: counter(order-list);
         counter-increment: order-list;
+        content: counter(order-list);
       }
     }
   }
@@ -1330,8 +1330,8 @@
 
   a {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: 3rem;
     height: auto;

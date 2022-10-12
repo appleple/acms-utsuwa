@@ -29,8 +29,8 @@
 
     span:not([class]) {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       width: 100%;
       height: 100%;
     }
@@ -39,8 +39,8 @@
 
 .pager-link {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   width: 3rem;
   height: 3rem;
@@ -153,8 +153,8 @@
   white-space: nowrap;
 
   a {
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 }
 
@@ -177,8 +177,8 @@
 
 .serial-nav-index {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin: 0;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
@@ -186,8 +186,8 @@
   a {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     padding: 1rem 1.25rem;

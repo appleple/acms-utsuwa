@@ -30,6 +30,17 @@
   display: flex;
   align-items: center;
   margin: 0;
+  line-height: 1;
+}
+
+.header-title-link {
+  display: flex;
+}
+
+.header-logo {
+  display: block;
+  max-width: 100%;
+  max-height: 2rem;
 }
 
 .header-item-nav {
@@ -42,7 +53,10 @@
 @media (max-width: acms.$breakpoint-lg-max) {
   .header {
     position: fixed;
+    box-sizing: border-box;
+    max-width: 100%;
     height: global.$header-height-fixed;
+    padding: 0 3.5rem 0 0;
   }
 
   .header-wrap {

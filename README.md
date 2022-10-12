@@ -1,4 +1,4 @@
- テーマ「UTSUWA」Ver.2.0.4
+ テーマ「UTSUWA」Ver.2.0.5
 ====================================
 
  GitHub
@@ -17,6 +17,15 @@ https://github.com/appleple/acms-utsuwa
 
 これで、サイトにアクセスするとUTSUWAテーマがインストールされます。
 
+
+ Figma
+------------------------------------
+
+デザインファイルは、Figma Communityにて公開しています。  
+https://www.figma.com/community/file/1154719653085540673 
+
+[Get a copy]ボタンから複製してお使いください。  
+※複製して使うにはFigmaアカウントが必要です（UTSUWAのファイルを触るくらいなら無料プランでOKです）。
 
 
  テーマフォルダ直下のテンプレート
