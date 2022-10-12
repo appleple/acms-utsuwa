@@ -5,8 +5,7 @@
   to {
     opacity: 1;
   }
-}
-@keyframes modal-video {
+}@keyframes modal-video {
   from {
     opacity: 0;
   }
