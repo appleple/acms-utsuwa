@@ -12,8 +12,7 @@
             transform: translateX(-40px);
     opacity: 0;
   }
-}
-@keyframes scroll-hint-appear {
+}@keyframes scroll-hint-appear {
   0% {
     -webkit-transform: translateX(40px);
             transform: translateX(40px);
