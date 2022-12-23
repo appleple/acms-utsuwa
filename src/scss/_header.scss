@@ -30,11 +30,14 @@
   display: flex;
   align-items: center;
   margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-s);
   line-height: 1;
 }
 
 .header-title-link {
   display: flex;
+  color: global.$color-text;
 }
 
 .header-logo {
