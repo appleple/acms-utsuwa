@@ -45,14 +45,10 @@
 
 <!-- BEGIN_MODULE Blog_Field id="BF_root" -->
 <!-- BEGIN_IF [{twitter_account}/nem/] -->
-<meta name="twitter:creator" content="@{twitter_account}">
+<meta name="twitter:site" content="@{twitter_account}">
 <!-- END_IF -->
-<!-- BEGIN_IF [{twitter_creator}/nem/] -->
-<meta name="twitter:site" content="@{twitter_creator}">
-<!-- END_IF -->
-<!-- BEGIN_IF [{twitter_creator}/nem/] -->
-<meta name="twitter:creator" content="@{twitter_creator}">
-<!-- END_IF -->
+
+<!-- GET_Rendered id="twitter_creator" -->
 
 <!-- BEGIN fb_admins:veil -->
 <meta property="fb:admins" content="{fb_admins}">
