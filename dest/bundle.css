@@ -6762,11 +6762,12 @@ a[href*=tel]:hover {
 }
 
 .footer-company-title {
-  margin: 0;
+  margin: 0 0 1rem;
+  font-size: 1.5625rem;
 }
 
 .footer-company-logo {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 48rem) {
