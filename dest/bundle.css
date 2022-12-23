@@ -2433,7 +2433,7 @@ a[href*=tel]:hover {
           transform: translate(0, -0.4rem) rotate(-45deg);
 }
 
-@media (max-width: 63.98rem) {
+@media (max-width: 63rem) {
   .is-locked {
     overflow: hidden;
   }
@@ -2849,7 +2849,7 @@ a[href*=tel]:hover {
     margin: 0 2rem 0 0;
   }
 }
-@media screen and (max-width: 47.98rem) {
+@media screen and (max-width: 47rem) {
   .form-step {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2951,7 +2951,7 @@ a[href*=tel]:hover {
     margin: 0 1.25rem 0 0;
   }
 }
-@media screen and (max-width: 47.98rem) {
+@media screen and (max-width: 47rem) {
   .form-button {
     width: 100%;
     margin: 0 0 1rem;
@@ -4671,7 +4671,7 @@ a[href*=tel]:hover {
     border-left: 1.5rem solid #fff;
   }
 }
-@media screen and (max-width: 47.98rem) {
+@media screen and (max-width: 47rem) {
   .modal-video-inner {
     padding: 0 1.25rem;
   }
@@ -7061,7 +7061,7 @@ a[href*=tel]:hover {
   font-size: 1rem;
 }
 
-@media (max-width: 63.98rem) {
+@media (max-width: 63rem) {
   .header {
     position: fixed;
     -webkit-box-sizing: border-box;
