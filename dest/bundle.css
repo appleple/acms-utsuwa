@@ -7039,6 +7039,8 @@ a[href*=tel]:hover {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
+  font-weight: bold;
+  font-size: 1.5625rem;
   line-height: 1;
 }
 
@@ -7046,6 +7048,7 @@ a[href*=tel]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: var(--color-gray100);
 }
 
 .header-logo {
