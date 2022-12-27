@@ -17,6 +17,9 @@ if (process.env.npm_lifecycle_event === 'uncompress') {
   cssFilename = '[name].css';
   cssChunkFilename = `[name].chunk.css?date=${new Date().getTime()}`;
 }
+if (process.env.npm_lifecycle_event === 'dev') {
+  cssOutput = 'expanded';
+}
 
 module.exports = {
   cache: true,
@@ -78,7 +81,7 @@ module.exports = {
               // 0 => no loaders (default);
               // 1 => postcss-loader;
               // 2 => postcss-loader, sass-loader
-              importLoaders: 3,
+              importLoaders: 2,
               sourceMap: true,
             },
           },
