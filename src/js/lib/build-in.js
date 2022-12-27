@@ -253,11 +253,11 @@ const postInclude = (context) => {
         postIncludeReadyDelay: 0,
         postIncludeIntervalTime: 20000,
         postIncludeArray: [{
-          //        'mark'      : '.js-post_include-original',
-          //        'type'      : 'submit',
-          //        'method'    : 'swap',
-          //        'effect'    : 'slide',
-          //        'speed'     : 'slow'
+          //        'mark'           : '.js-post_include-original',
+          //        'type'           : 'submit',
+          //        'method'         : 'swap',
+          //        'effect'         : 'slide',
+          //        'effectSpeed'    : 'slow'
         }],
       });
     }
