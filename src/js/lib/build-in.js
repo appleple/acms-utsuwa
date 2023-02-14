@@ -78,12 +78,29 @@ const scrollTo = (context, selector) => {
  * @param context
  * @param selector
  */
-const alertUnload = (context, selector = '') => {
+const alertUnload = (context, selector = '', force = false) => {
   domContentLoaded(async () => {
     const querySelector = selector || '.js-unload_alert';
     const targets = context.querySelectorAll(querySelector);
     if (targets.length > 0) {
-      alertUnloadFn(targets);
+      if (force) {
+        alertUnloadFn(targets);
+      } else {
+        let isRegistered = false;
+        [].forEach.call(targets, (target) => {
+          target.addEventListener(
+            'input',
+            () => {
+              if (isRegistered) {
+                return;
+              }
+              alertUnloadFn(targets);
+              isRegistered = true;
+            },
+            { once: true },
+          );
+        });
+      }
     }
   });
 };
@@ -253,11 +270,11 @@ const postInclude = (context) => {
         postIncludeReadyDelay: 0,
         postIncludeIntervalTime: 20000,
         postIncludeArray: [{
-          //        'mark'      : '.js-post_include-original',
-          //        'type'      : 'submit',
-          //        'method'    : 'swap',
-          //        'effect'    : 'slide',
-          //        'speed'     : 'slow'
+          //        'mark'           : '.js-post_include-original',
+          //        'type'           : 'submit',
+          //        'method'         : 'swap',
+          //        'effect'         : 'slide',
+          //        'effectSpeed'    : 'slow'
         }],
       });
     }

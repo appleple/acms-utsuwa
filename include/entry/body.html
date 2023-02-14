@@ -15,6 +15,12 @@
 <!-- END tag:loop -->
 <!-- END_SetRendered -->
 
+<!-- BEGIN_SetRendered id="twitter_creator" -->
+<!-- BEGIN userField --><!-- BEGIN_IF [{twitter_creator}/nem/] -->
+<meta name="twitter:creator" content="@{twitter_creator}"><!-- END_IF -->
+<!-- END userField -->
+<!-- END_SetRendered -->
+
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
