@@ -52,11 +52,12 @@
 }
 
 .footer-company-title {
-  margin: 0;
+  margin: 0 0 1rem;
+  font-size: map.get(global.$font-scales, heading-s);
 }
 
 .footer-company-logo {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {

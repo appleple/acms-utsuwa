@@ -6762,11 +6762,12 @@ a[href*=tel]:hover {
 }
 
 .footer-company-title {
-  margin: 0;
+  margin: 0 0 1rem;
+  font-size: 1.5625rem;
 }
 
 .footer-company-logo {
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 48rem) {
@@ -7039,6 +7040,8 @@ a[href*=tel]:hover {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
+  font-weight: bold;
+  font-size: 1.5625rem;
   line-height: 1;
 }
 
@@ -7046,6 +7049,7 @@ a[href*=tel]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: var(--color-gray100);
 }
 
 .header-logo {
