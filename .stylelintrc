@@ -24,7 +24,8 @@
     "order/order": [
       "custom-properties",
       "declarations"
-    ]
+    ],
+    "number-max-precision": 5
   },
   "ignoreFiles": ["**/*.html"],
   "overrides": [
