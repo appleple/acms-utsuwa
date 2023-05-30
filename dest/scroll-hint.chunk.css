@@ -1,29 +1,13 @@
-@-webkit-keyframes scroll-hint-appear {
+@keyframes scroll-hint-appear {
   0% {
-    -webkit-transform: translateX(40px);
-            transform: translateX(40px);
+    transform: translateX(40px);
     opacity: 0;
   }
   10% {
     opacity: 1;
   }
   50%, 100% {
-    -webkit-transform: translateX(-40px);
-            transform: translateX(-40px);
-    opacity: 0;
-  }
-}@keyframes scroll-hint-appear {
-  0% {
-    -webkit-transform: translateX(40px);
-            transform: translateX(40px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  50%, 100% {
-    -webkit-transform: translateX(-40px);
-            transform: translateX(-40px);
+    transform: translateX(-40px);
     opacity: 0;
   }
 }
@@ -43,12 +27,10 @@
   position: absolute;
   top: calc(50% - 25px);
   left: calc(50% - 60px);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 120px;
   height: 80px;
   border-radius: 5px;
-  -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
   opacity: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -102,8 +84,7 @@
   background-repeat: no-repeat;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMy4yOSIgaGVpZ2h0PSIxMi4wMiIgdmlld0JveD0iMCAwIDMzLjI5IDEyLjAyIj48dGl0bGU+44Ki44K744OD44OIIDE8L3RpdGxlPjxnIGlkPSLjg6zjgqTjg6Tjg7xfMiIgZGF0YS1uYW1lPSLjg6zjgqTjg6Tjg7wgMiI+PGcgaWQ9IuODrOOCpOODpOODvF8xLTIiIGRhdGEtbmFtZT0i44Os44Kk44Ok44O8IDEiPjxsaW5lIHgxPSIxLjg1IiB5MT0iNi4wMSIgeDI9IjEwLjQiIHkyPSI2LjAxIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTEwLjQsNy4xN0gxLjg1YTEuMTYsMS4xNiwwLDEsMSwwLTIuMzFIMTAuNGExLjE2LDEuMTYsMCwxLDEsMCwyLjMxWiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik03LjQsMTJhMS4xNSwxLjE1LDAsMCwxLS43Mi0uMjVsLTYuMjUtNUExLjIsMS4yLDAsMCwxLDAsNS44NywxLjE0LDEuMTQsMCwwLDEsLjQ2LDVMNi43LjIzQTEuMTYsMS4xNiwwLDAsMSw4LjEsMi4wOEwzLDUuOTEsOC4xMiwxMEExLjE2LDEuMTYsMCwwLDEsNy40LDEyWiIgZmlsbD0iI2ZmZiIvPjxsaW5lIHgxPSIzMS40NSIgeTE9IjYuMDEiIHgyPSIyMi44OSIgeTI9IjYuMDEiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMzEuNDUsNy4xN0gyMi44OWExLjE2LDEuMTYsMCwxLDEsMC0yLjMxaDguNTZhMS4xNiwxLjE2LDAsMCwxLDAsMi4zMVoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMjUuOSwxMmExLjE4LDEuMTgsMCwwLDEtLjkxLS40M0ExLjE3LDEuMTcsMCwwLDEsMjUuMTcsMTBsNS4wOS00LjA1TDI1LjIsMi4wOEExLjE2LDEuMTYsMCwwLDEsMjYuNTkuMjNMMzIuODQsNWExLjE2LDEuMTYsMCwwLDEsLjQ1LjkxLDEuMTQsMS4xNCwwLDAsMS0uNDMuOTJsLTYuMjQsNUExLjE3LDEuMTcsMCwwLDEsMjUuOSwxMloiIGZpbGw9IiNmZmYiLz48L2c+PC9nPjwvc3ZnPg==);
   opacity: 0;
-  -webkit-transition-delay: 2.4s;
-          transition-delay: 2.4s;
+  transition-delay: 2.4s;
 }
 
 .scroll-hint-icon-wrap.is-active .scroll-hint-icon:after {
@@ -111,16 +92,13 @@
 }
 
 .scroll-hint-icon-wrap.is-active .scroll-hint-icon:before {
-  -webkit-animation: scroll-hint-appear 1.2s linear;
-          animation: scroll-hint-appear 1.2s linear;
-  -webkit-animation-iteration-count: 2;
-          animation-iteration-count: 2;
+  animation: scroll-hint-appear 1.2s linear;
+  animation-iteration-count: 2;
 }
 
 .scroll-hint-icon-white {
   background-color: #FFF;
-  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
 }
 
 .scroll-hint-icon-white:before {
