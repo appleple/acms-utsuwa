@@ -1,19 +1,4 @@
-@-webkit-keyframes smartphoto {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}@keyframes smartphoto {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes smartphoto-img-wrap {
+@keyframes smartphoto {
   from {
     opacity: 0;
   }
@@ -29,72 +14,26 @@
     opacity: 1;
   }
 }
-@-webkit-keyframes smartphoto-inner {
-  from {
-    -webkit-transform: translate(0, 100px);
-            transform: translate(0, 100px);
-  }
-  to {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-}
 @keyframes smartphoto-inner {
   from {
-    -webkit-transform: translate(0, 100px);
-            transform: translate(0, 100px);
+    transform: translate(0, 100px);
   }
   to {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-}
-@-webkit-keyframes smartphoto-loader {
-  0% {
-    opacity: 0.4;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  100% {
-    opacity: 0.4;
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: translate(0, 0);
   }
 }
 @keyframes smartphoto-loader {
   0% {
     opacity: 0.4;
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   50% {
     opacity: 1;
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   100% {
     opacity: 0.4;
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes smartphoto-appear {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  1% {
-    display: block;
-    opacity: 0;
-  }
-  100% {
-    display: block;
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 @keyframes smartphoto-appear {
@@ -109,20 +48,6 @@
   100% {
     display: block;
     opacity: 1;
-  }
-}
-@-webkit-keyframes smartphoto-hide {
-  0% {
-    display: block;
-    opacity: 1;
-  }
-  99% {
-    display: block;
-    opacity: 0;
-  }
-  100% {
-    display: none;
-    opacity: 0;
   }
 }
 @keyframes smartphoto-hide {
@@ -151,16 +76,11 @@
   opacity: 1;
   font-family: sans-serif;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  -webkit-animation-name: smartphoto;
-          animation-name: smartphoto;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-name: smartphoto;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .smartphoto[aria-hidden=true] {
@@ -179,8 +99,7 @@
 
 .smartphoto-header {
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: fixed;
   z-index: 102;
   top: 0;
@@ -239,16 +158,11 @@
   max-width: none;
   width: auto;
   height: auto;
-  cursor: -webkit-zoom-in;
   cursor: zoom-in;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   -webkit-user-drag: none;
 }
 
@@ -259,40 +173,28 @@
 .smartphoto-img-onmove {
   cursor: grab;
   cursor: -webkit-grab;
-  -webkit-transition: none;
   transition: none;
 }
 
 .smartphoto-img-elasticmove {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .smartphoto-img-wrap {
   display: inline-block;
   opacity: 1;
-  -webkit-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
-  -webkit-animation-name: smartphoto-img-wrap;
-          animation-name: smartphoto-img-wrap;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-name: smartphoto-img-wrap;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .smartphoto-img-left {
-  -webkit-transform: translateX(150%) !important;
-      -ms-transform: translateX(150%) !important;
-          transform: translateX(150%) !important;
+  transform: translateX(150%) !important;
 }
 
 .smartphoto-img-right {
-  -webkit-transform: translateX(-150%) !important;
-      -ms-transform: translateX(-150%) !important;
-          transform: translateX(-150%) !important;
+  transform: translateX(-150%) !important;
 }
 
 .smartphoto-arrows {
@@ -304,17 +206,13 @@
   top: 50%;
   left: 0;
   opacity: 1;
-  -webkit-animation-name: smartphoto-appear;
-          animation-name: smartphoto-appear;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-name: smartphoto-appear;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .smartphoto-arrows[aria-hidden=true] {
-  -webkit-animation-name: smartphoto-hide;
-          animation-name: smartphoto-hide;
+  animation-name: smartphoto-hide;
   display: none;
 }
 
@@ -325,14 +223,10 @@
   width: 30px;
   height: 30px;
   margin-top: -20px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-name: smartphoto-appear;
-          animation-name: smartphoto-appear;
+  box-sizing: content-box;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-name: smartphoto-appear;
 }
 
 .smartphoto-arrows li:focus {
@@ -340,8 +234,7 @@
 }
 
 .smartphoto-arrows [aria-hidden=true] {
-  -webkit-animation-name: smartphoto-hide;
-          animation-name: smartphoto-hide;
+  animation-name: smartphoto-hide;
   display: none;
 }
 
@@ -382,17 +275,13 @@
   left: 0;
   width: 100%;
   opacity: 1;
-  -webkit-animation-name: smartphoto-appear;
-          animation-name: smartphoto-appear;
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
+  animation-name: smartphoto-appear;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .smartphoto-nav[aria-hidden=true] {
-  -webkit-animation-name: smartphoto-hide;
-          animation-name: smartphoto-hide;
+  animation-name: smartphoto-hide;
   display: none;
 }
 
@@ -455,7 +344,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
@@ -464,14 +352,12 @@
 }
 
 .smartphoto-list-onmove {
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
 .smartphoto-caption {
   overflow: hidden;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
@@ -496,9 +382,7 @@
   z-index: 103;
   width: 0;
   height: 0;
-  -webkit-transform: translate(50vw, 50vh);
-      -ms-transform: translate(50vw, 50vh);
-          transform: translate(50vw, 50vh);
+  transform: translate(50vw, 50vh);
 }
 
 .smartphoto-loader {
@@ -513,8 +397,7 @@
   border: 8px solid #17CDDD;
   border-right-color: transparent;
   border-radius: 50%;
-  -webkit-animation: smartphoto-loader 0.5s infinite linear;
-          animation: smartphoto-loader 0.5s infinite linear;
+  animation: smartphoto-loader 0.5s infinite linear;
 }
 
 .smartphoto-img-clone {
@@ -522,7 +405,6 @@
   z-index: 100;
   top: 0;
   left: 0;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 

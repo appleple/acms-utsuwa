@@ -6,6 +6,10 @@
   $breakpoint-sm-min    : 30rem,
   $breakpoint-md-min    : 48rem,
   $breakpoint-lg-min    : 64rem,
-  $breakpoint-xl-min    : 90rem
+  $breakpoint-xl-min    : 90rem,
+  $breakpoint-sm-max    : (30rem - 0.00125rem),
+  $breakpoint-md-max    : (48rem - 0.00125rem),
+  $breakpoint-lg-max    : (64rem - 0.00125rem),
+  $breakpoint-xl-max    : (90rem - 0.00125rem)
 );
 @forward "../../../../system/src/scss/global/mixins";
