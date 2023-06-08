@@ -22,5 +22,3 @@
  *
  * Date: 2022-08-26T17:52Z
  */
-
-/*! npm.im/object-fit-images 3.2.4 */
