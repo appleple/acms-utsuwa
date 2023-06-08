@@ -1,6 +1,5 @@
 import domContentLoaded from 'dom-content-loaded';
 import topPage from './top';
-import polyfill from './lib/polyfill';
 import navigation from './navigation';
 import animation from './animation';
 
@@ -13,7 +12,6 @@ import '../scss/site.scss';
 // JSが有効か判断する
 $('html').removeClass('no-js').addClass('js');
 
-polyfill();// ポリフィル
 animation(); // アニメーション
 topPage(); // トップページ
 navigation(); // ナビゲーション
