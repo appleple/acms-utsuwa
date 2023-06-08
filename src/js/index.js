@@ -1,70 +1,14 @@
 import domContentLoaded from 'dom-content-loaded';
-import DocumentOutliner from 'document-outliner';
 import topPage from './top';
 import polyfill from './lib/polyfill';
 import navigation from './navigation';
 import animation from './animation';
-import edit from './edit';
 
 /**
  * スタイルの読み込み
  */
 import 'normalize.css/normalize.css';
 import '../scss/site.scss';
-import {
-  alertUnload,
-  externalLinks, inView, lazyLoad,
-  linkMatchLocation, modalVideo, openStreetMap, pdfPreview,
-  scrollHint, scrollTo, smartPhoto,
-  validator,
-} from './lib/build-in'; // スタイル読み込み
-
-/**
- * Root
- */
-window.root = '/';
-
-/**
- * BuildInJs
- * ToDo: 使わない組み込みJSはコメントアウト
- */
-if (window.ACMS === undefined) {
-  window.dispatch = (context) => {
-    validator(context);
-    linkMatchLocation(context);
-    externalLinks(context);
-    scrollTo(context);
-    alertUnload(context);
-    smartPhoto(context);
-    lazyLoad(context);
-    inView(context);
-    modalVideo(context);
-    scrollHint(context);
-    // googleMap(context);
-    openStreetMap(context);
-    // datePicker(context);
-    // postInclude(context);
-    pdfPreview(context);
-    // focusedImage(context);
-  };
-
-  if (document.querySelector('.js-outline')) {
-    const outliner = new DocumentOutliner('.js-outline');
-    outliner.makeList('.js-outline-yield', {
-      link: true,
-      listType: 'ol',
-      listClassName: 'outline-list',
-      itemClassName: 'outline-item',
-      linkClassName: 'scrollTo',
-      anchorName: 'heading-$1',
-      levelLimit: '3',
-      exceptClass: 'js-except',
-    });
-  }
-  window.dispatch(document);
-} else {
-  edit();
-}
 
 // JSが有効か判断する
 $('html').removeClass('no-js').addClass('js');
