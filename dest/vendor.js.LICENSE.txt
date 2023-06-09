@@ -22,11 +22,3 @@
  *
  * Date: 2022-08-26T17:52Z
  */
-
-/*! lozad.js - v1.16.0 - 2020-09-06
-* https://github.com/ApoorvSaxena/lozad.js
-* Copyright (c) 2020 Apoorv Saxena; Licensed MIT */
-
-/*! npm.im/object-fit-images 3.2.4 */
-
-/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
