@@ -1,9 +1,9 @@
- テーマ「UTSUWA」Ver.2.0.6
+ テーマ「UTSUWA」Ver.2.0.7
 ====================================
 
  GitHub
 ------------------------------------
-最新版のソースコードは以下のレポジトリでご確認ください。  
+最新版のソースコードは以下のレポジトリでご確認ください。
 https://github.com/appleple/acms-utsuwa
 
 ### GitHubからUTSUWAテーマを使用する手順
@@ -21,10 +21,10 @@ https://github.com/appleple/acms-utsuwa
  Figma
 ------------------------------------
 
-デザインファイルは、Figma Communityにて公開しています。  
-https://www.figma.com/community/file/1154719653085540673 
+デザインファイルは、Figma Communityにて公開しています。
+https://www.figma.com/community/file/1154719653085540673
 
-[Get a copy]ボタンから複製してお使いください。  
+[Get a copy]ボタンから複製してお使いください。
 ※複製して使うにはFigmaアカウントが必要です（UTSUWAのファイルを触るくらいなら無料プランでOKです）。
 
 
@@ -146,10 +146,6 @@ UTSUWAテーマで使用している結合前のjsやscssファイルを管理�
 ------------------------------------
 ### 色について
 /include/head/css-variables.cssにて、各種色を変更できるようになっております。
-配布しているFigmaファイルでシミュレーションできますので、合わせてご利用ください。
-
-* Figmaファイル配布場所：近日公開予定
-
 
 ### スライダーについて
 お知らせのヘッドライン直下で使用しているスライダーはslickというjQueryプラグインを使用しています。使用方法に着いてはslickの公式サイトをご覧ください。
@@ -210,7 +206,6 @@ LiteEditorに関するカスタマイズは下記のファイルで行ってい�
 ### DocumentOutliner
 目次ユニットで使用している組み込みJSです。
 カスタマイズは下記のファイルで行っています。
-* /themes/utsuwa/src/js/index.js
 * /themes/utsuwa/include/entry/body.html
 * /themes/utsuwa/admin/entry/unit/extend.html
 * /themes/utsuwa/include/unit/extend.html
@@ -227,15 +222,6 @@ private/config.system.yaml 記述例：
 ```
 allow_tpl_path: [recruit/thanks.html]
 ```
-
-### 組み込みJS
-
-組み込みJSはログアウト時にはacms.jsが読み込まれていないのでそのままでは使えません。
-/src/js/buildIn/にある各組み込みJSのファイルをインポートして使用します。
-
-index.jsの13行目付近にて読み込み、26行目付近で利用しています。
-ログイン時にはacms.jsを使用しているため、ifでacms.jsが有効か判断しています。
-acms.jsが読み込まれていない場合は各組み込みJSを読み込み、elseの場合はLiteEditorなど編集画面で使用するJSの記述を行います。
 
 
 開発環境について
