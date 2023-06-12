@@ -29,8 +29,8 @@
 
   &::before {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 2rem;
     height: 2rem;
     margin: 0 0 0.5rem;
@@ -38,10 +38,10 @@
     line-height: global.$line-height-lg;
     background: global.$color-gray10;
     border-radius: 50%;
+    content: counter(mailStep);
 
     /* カウンターの設定 */
     counter-increment: mailStep;
-    content: counter(mailStep);
   }
 
   &.is-current {
@@ -144,8 +144,8 @@
 .form-button-group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: 2rem 0 0;
 }
 

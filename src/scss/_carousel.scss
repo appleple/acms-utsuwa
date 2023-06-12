@@ -150,10 +150,7 @@
 
     &::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       z-index: -1;
       border: 2px dotted global.$color-primary;
       content: "";
@@ -167,10 +164,7 @@
 
     &::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       z-index: 1;
       border: 2px dotted global.$color-primary;
       content: "";

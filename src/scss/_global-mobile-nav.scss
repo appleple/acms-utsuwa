@@ -14,8 +14,8 @@
 .global-nav-mobile-menu-btn {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: global.$header-height-fixed;
   height: global.$header-height-fixed;
   background: global.$color-primary;

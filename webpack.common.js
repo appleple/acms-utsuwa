@@ -1,33 +1,17 @@
+const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const { VueLoaderPlugin } = require('vue-loader');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const sass = require('sass');
 const pkg = require('./package.json');
 
-let cssOutput = 'compressed';
-let cssFilename = '[name].min.css';
-let cssChunkFilename = `[name].min.chunk.css?date=${new Date().getTime()}`;
-
-if (process.env.npm_lifecycle_event === 'uncompress') {
-  cssOutput = 'expanded';
-  cssFilename = '[name].css';
-  cssChunkFilename = `[name].chunk.css?date=${new Date().getTime()}`;
-}
-if (process.env.npm_lifecycle_event === 'dev') {
-  cssOutput = 'expanded';
-}
-
 module.exports = {
   cache: true,
   target: ['web', 'es5'],
   entry: {
-    bundle: `${__dirname}/src/js/index.js`,
-    normalize: './src/js/normalize-css.js',
-    admin: `${__dirname}/src/js/admin.js`,
+    // bundle: `${__dirname}/src/js/index.js`,
+    bundle: `${__dirname}/src/scss/site.scss`,
   },
   output: {
     path: `${__dirname}/dest/`,
@@ -45,7 +29,8 @@ module.exports = {
   resolve: {
     extensions: ['.vue', '.js', '.ts', '.tsx'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, './src/js'),
+      vue$: 'vue/dist/vue.runtime.esm-bundler.js',
     },
   },
   module: {
@@ -91,7 +76,7 @@ module.exports = {
               postcssOptions: {
                 plugins: [
                   autoprefixer({
-                    grid: "no-autoplace",
+                    grid: 'no-autoplace',
                   }),
                 ],
               },
@@ -104,7 +89,7 @@ module.exports = {
               implementation: sass,
               sourceMap: true,
               sassOptions: {
-                outputStyle: cssOutput,
+                outputStyle: 'expanded',
               },
             },
           },
@@ -141,20 +126,10 @@ module.exports = {
       failOnError: true,
       fix: true,
     }),
-    // Vue Loader
-    new VueLoaderPlugin(),
-    // HTMLファイルを出力
-    new HtmlWebpackPlugin({
-      template: `${__dirname}/src/index.html`,
-      filename: 'index.html',
-      inject: true,
-    }),
     // cssの書き出し
     new MiniCssExtractPlugin({
-      filename: cssFilename,
-      chunkFilename: cssChunkFilename,
+      filename: '[name].css',
+      chunkFilename: `[name].chunk.css?date=${new Date().getTime()}`,
     }),
-    // 余分なJSを書き出さない
-    new RemoveEmptyScriptsPlugin({ extensions:['css.js'] }),
   ],
 };

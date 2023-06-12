@@ -1,7 +1,18 @@
 @extends("/_layouts/base.html")
 
-@section("main")
+@section("head-link")
+@parent
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+@endsection
 
+@section("head-js")
+@parent
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="/js/top.js" async></script>
+@endsection
+
+@section("main")
 <!-- トップ用メインビジュアル -->
 @include("/include/parts/top-main-visual.html", {"module_id": "MF_main_visual"})
 
@@ -35,11 +46,8 @@
 @include("/include/parts/cta-top.html", {"module_id":"MF_cta_top"})
 @endsection
 
-
 @section("footer-cta")
-
 @endsection
-
 
 @section("footer")
 <footer class="footer">

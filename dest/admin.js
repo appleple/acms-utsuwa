@@ -1,1 +1,0 @@
-!function(){"use strict";window.root="/",ACMS.Ready((function(){ACMS.Config.LiteEditorConf.btnOptions.push({label:"単語区切り",tag:"span",className:"text-word-break"},{label:"ワンポイント",tag:"span",className:"text-point"})}))}();
