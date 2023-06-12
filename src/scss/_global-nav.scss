@@ -26,8 +26,8 @@
 .global-nav-link {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: global.$header-height;
   margin: 0 1rem;
   color: global.$color-text;
@@ -141,10 +141,7 @@
 
     &:focus-visible::before {
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       border: 2px solid global.$color-focus;
       content: "";
     }
