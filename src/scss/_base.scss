@@ -17,7 +17,7 @@ html {
 a {
   border: none;
 
-  &[href*="tel"] {
+  &[href^="tel:"] {
     color: currentcolor;
     text-decoration: none;
     border-bottom: global.$border-width-sm dashed;
