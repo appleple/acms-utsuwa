@@ -11,7 +11,7 @@
     border-color: transparent;
   }
 
-  &[href*="tel"] {
+  &[href^="tel:"] {
     color: currentcolor;
     border-bottom: var.$border-width-sm dashed;
 
