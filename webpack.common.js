@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const autoprefixer = require('autoprefixer');
 const sass = require('sass');
 
@@ -130,5 +131,7 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: `[name].chunk.css?date=${new Date().getTime()}`,
     }),
+    // 余分なJSを書き出さない
+    new RemoveEmptyScriptsPlugin(),
   ],
 };
