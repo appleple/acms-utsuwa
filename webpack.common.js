@@ -4,7 +4,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const sass = require('sass');
-const pkg = require('./package.json');
 
 module.exports = {
   cache: true,
@@ -15,7 +14,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dest/`,
-    publicPath: `/themes/${pkg.config.theme}/dest/`,
+    publicPath: 'auto',
     filename: '[name].js',
     chunkFilename: `[name].chunk.js?date=${new Date().getTime()}`,
     assetModuleFilename: 'assets/[name][ext]',
