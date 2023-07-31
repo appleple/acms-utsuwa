@@ -225,46 +225,6 @@
   }
 }
 
-/* アンカーリンクの際の上部の余白の確保 */
-// グローバルヘッダーを固定した状態でアンカーリンクで飛んだ際にも
-// 視覚的にヘッダーと見出しの間に余白が確保できるように実装しています。
-// borderの高さ（例：3.75rem）+1つ前の要素のmargin-bottom（2rem）+ネガティブマージン（例：-2rem）=視覚的な余白（3.75rem）、画面トップから見出しの余白（5.75rem）
-// ※1 ネガティブマージンをつけすぎるとテキストのドラッグ&ドロップができなくなるので、目安：最大32pxまで（上のオブジェクトの下方向のマージンの分）。
-// ※2 背景色・枠付きユニットグループの時は上部に余白が空き過ぎてしまうので、border-top-widthを調整
-.#{acms.$entry-class} .entry-text-unit {
-  h2,
-  h3,
-  h4 {
-    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
-    border-top: global.$header-height + 0.5rem solid transparent;
-
-    @media screen and (min-width: acms.$breakpoint-md-min) {
-      margin-top: -(global.$entry-el-margin-lg);
-      border-top-width: (global.$header-height + 0.5rem);
-    }
-  }
-
-  h2.heading-primary {
-    border-top: global.$header-height + 1.5rem solid transparent;
-
-    @media screen and (min-width: acms.$breakpoint-md-min) {
-      border-top-width: (global.$header-height + 2rem);
-    }
-  }
-}
-
-// ユニットグループ
-.#{acms.$entry-class} .ug-bg-gray .entry-text-unit,
-.#{acms.$entry-class} .ug-bg-primary .entry-text-unit,
-.#{acms.$entry-class} .ug-border .entry-text-unit {
-  h2,
-  h3,
-  h4 {
-    margin-top: -(global.$entry-el-margin-md) - 1.5rem; // ※1
-    border-top-width: global.$header-height + 0.5rem; // ※2
-  }
-}
-
 /* 見出しが最初の要素の時はページタイトルの余白を相殺する */
 .#{acms.$entry-class}-grid {
   & > .is-h2:first-child h2,
@@ -278,7 +238,7 @@
 ----------------------------- */
 .#{acms.$entry-class} .entry-text-unit {
   h2 {
-    margin: - (global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, heading-s);
     line-height: global.$line-height-sm;
 
@@ -329,7 +289,7 @@
   }
 
   h3 {
-    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, heading-ss);
     line-height: global.$line-height-sm;
 
@@ -356,7 +316,7 @@
   }
 
   h4 {
-    margin: -(global.$entry-el-margin-md) calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-sm;
     font-size: map.get(global.$font-scales, body-m);
     line-height: global.$line-height-sm;
 
