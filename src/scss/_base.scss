@@ -11,6 +11,8 @@ html {
   font-family: global.$font-base;
   line-height: global.$line-height-lg;
   background: global.$color-white;
+  scroll-behavior: smooth;
+  scroll-padding-top: global.$header-height-fixed + 2rem;
 }
 
 /* リンクの設定 */
