@@ -9,6 +9,8 @@ html {
   font-family: "Helvetica Neue", arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo, sans-serif;
   line-height: 1.7;
   background: var(--color-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 /* リンクの設定 */
@@ -3030,6 +3032,7 @@ a[href^="tel:"]:hover {
   margin: 0 0 2.5rem 0;
   color: var(--color-gray100);
   background: var(--color-gray20);
+  background-position: center;
   background-size: cover;
 }
 .page-title-wrapper[style] {
@@ -4251,43 +4254,6 @@ a[href^="tel:"]:hover {
   border-radius: 3px;
 }
 
-/* アンカーリンクの際の上部の余白の確保 */
-.entry-style .entry-text-unit h2,
-.entry-style .entry-text-unit h3,
-.entry-style .entry-text-unit h4 {
-  margin-top: -3.5rem;
-  border-top: 4rem solid transparent;
-}
-@media screen and (min-width: 48rem) {
-  .entry-style .entry-text-unit h2,
-  .entry-style .entry-text-unit h3,
-  .entry-style .entry-text-unit h4 {
-    margin-top: -3rem;
-    border-top-width: 4rem;
-  }
-}
-.entry-style .entry-text-unit h2.heading-primary {
-  border-top: 5rem solid transparent;
-}
-@media screen and (min-width: 48rem) {
-  .entry-style .entry-text-unit h2.heading-primary {
-    border-top-width: 5.5rem;
-  }
-}
-
-.entry-style .ug-bg-gray .entry-text-unit h2,
-.entry-style .ug-bg-gray .entry-text-unit h3,
-.entry-style .ug-bg-gray .entry-text-unit h4,
-.entry-style .ug-bg-primary .entry-text-unit h2,
-.entry-style .ug-bg-primary .entry-text-unit h3,
-.entry-style .ug-bg-primary .entry-text-unit h4,
-.entry-style .ug-border .entry-text-unit h2,
-.entry-style .ug-border .entry-text-unit h3,
-.entry-style .ug-border .entry-text-unit h4 {
-  margin-top: -3.5rem;
-  border-top-width: 4rem;
-}
-
 /* 見出しが最初の要素の時はページタイトルの余白を相殺する */
 .entry-style-grid > .is-h2:first-child h2, .entry-style-grid > .is-h3:first-child h3, .entry-style-grid > .is-h4:first-child h4 {
   margin-top: -4.75rem;
@@ -4296,7 +4262,7 @@ a[href^="tel:"]:hover {
 /* 見出し
 ----------------------------- */
 .entry-style .entry-text-unit h2 {
-  margin: -2rem calc(var(--gutter) / 2) 1.5rem;
+  margin: 0 calc(var(--gutter) / 2) 1.5rem;
   font-size: 1.5625rem;
   line-height: 1.4;
 }
@@ -4338,7 +4304,7 @@ a[href^="tel:"]:hover {
   }
 }
 .entry-style .entry-text-unit h3 {
-  margin: -2rem calc(var(--gutter) / 2) 1.5rem;
+  margin: 0 calc(var(--gutter) / 2) 1.5rem;
   font-size: 1.25rem;
   line-height: 1.4;
 }
@@ -4360,7 +4326,7 @@ a[href^="tel:"]:hover {
   }
 }
 .entry-style .entry-text-unit h4 {
-  margin: -2rem calc(var(--gutter) / 2) 1.5rem;
+  margin: 0 calc(var(--gutter) / 2) 1.5rem;
   font-size: 1rem;
   line-height: 1.4;
 }
