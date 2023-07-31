@@ -2,6 +2,7 @@ import domContentLoaded from 'dom-content-loaded';
 import topPage from './top';
 import navigation from './navigation';
 import animation from './animation';
+import smoothscroll from 'smoothscroll-polyfill';
 
 /**
  * スタイルの読み込み
@@ -15,6 +16,8 @@ $('html').removeClass('no-js').addClass('js');
 animation(); // アニメーション
 topPage(); // トップページ
 navigation(); // ナビゲーション
+
+smoothscroll.polyfill(); // CSSスムーススクロール Safari14以前対応
 
 /**
  * Content Ready
