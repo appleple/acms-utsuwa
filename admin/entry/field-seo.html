@@ -38,7 +38,7 @@
         <th>検索エンジン - <small>noindex</small><i data-acms-tooltip="チェックするとこのエントリーをインデックスされないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
-            <input type="checkbox" name="entry_meta_robots[]" value="noindex"{entry_meta_robots:checked#noindex} />
+            <input type="checkbox" name="entry_meta_robots[]" value="noindex" {entry_meta_robots:checked#noindex} />
             <i class="acms-admin-ico-checkbox"></i>検索エンジンに表示しない
           </label>
           <input type="hidden" name="field[]" value="entry_meta_robots" />
@@ -48,7 +48,7 @@
         <th>サイトマップ - <small>sitemap</small><i data-acms-tooltip="チェックするとこのエントリーをサイトマップに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
-            <input type="checkbox" name="entry_meta_sitemap[]" value="disabled"{entry_meta_sitemap:checked#disabled} />
+            <input type="checkbox" name="entry_meta_sitemap[]" value="disabled" {entry_meta_sitemap:checked#disabled} />
             <i class="acms-admin-ico-checkbox"></i>サイトマップに表示しない
           </label>
           <input type="hidden" name="field[]" value="entry_meta_sitemap" />
@@ -58,25 +58,25 @@
         <th>RSS - <small>rss</small><i data-acms-tooltip="チェックするとこのエントリーをRSSに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
-            <input type="checkbox" name="entry_meta_rss[]" value="disabled"{entry_meta_rss:checked#disabled} />
+            <input type="checkbox" name="entry_meta_rss[]" value="disabled" {entry_meta_rss:checked#disabled} />
             <i class="acms-admin-ico-checkbox"></i>RSSに表示しない
           </label>
           <input type="hidden" name="field[]" value="entry_meta_rss" />
         </td>
       </tr>
-        <tr>
-          <th>OGP画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="Facebook等で利用するOGP画像を設定します。"></i></th>
-          <td class="js-media-field">
-            <div class="js-droparea" data-thumbnail="{ogp_image@thumbnail}" data-type="image" style="width:200px"></div>
-            <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
-            <div class="acms-admin-margin-top-mini">
-              <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
-            </div>
-            <input type="hidden" name="ogp_image" value="{ogp_image}" class="js-value" />
-            <input type="hidden" name="field[]" value="ogp_image" />
-            <input type="hidden" name="ogp_image:extension" value="media" />
-          </td>
-        </tr>
+      <tr>
+        <th>OGP画像 - <small>ogp_image</small><i class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip" data-acms-tooltip="Facebook等で利用するOGP画像を設定します。"></i></th>
+        <td class="js-media-field">
+          <div class="js-droparea" data-thumbnail="{ogp_image@thumbnail}" data-type="image" style="width:200px"></div>
+          <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+          <div class="acms-admin-margin-top-mini">
+            <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+          </div>
+          <input type="hidden" name="ogp_image" value="{ogp_image}" class="js-value" />
+          <input type="hidden" name="field[]" value="ogp_image" />
+          <input type="hidden" name="ogp_image:extension" value="media" />
+        </td>
+      </tr>
     </table>
   </div>
 </div>
