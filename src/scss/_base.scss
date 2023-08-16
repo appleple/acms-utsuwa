@@ -15,6 +15,10 @@ html {
   scroll-padding-top: global.$header-height-fixed + 2rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* リンクの設定 */
 a {
   border: none;
