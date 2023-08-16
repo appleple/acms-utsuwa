@@ -7,7 +7,7 @@
           <div>
             @include("/include/edit/blog-custom.html")<!-- BEGIN site_description:veil -->
             <p class="footer-company-catch">{site_description}</p><!-- END site_description:veil -->
-            <h2 class="footer-company-title"><!-- BEGIN_IF [{site_logo@path}/nem] -->
+            <h2 class="footer-company-title"><!-- BEGIN_IF [{site_footer_logo@path}/nem] -->
               <img src="%{MEDIA_ARCHIVES_DIR}{site_footer_logo@path}" alt="{site_name}" class="footer-company-logo" role="img">
               <!-- ELSE -->{site_name}<!-- END_IF --></h2>
             <address class="footer-address"><!-- BEGIN company_name:veil -->

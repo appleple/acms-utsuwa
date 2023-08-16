@@ -2,14 +2,34 @@
 
 @section("head-link")
 @parent
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 @endsection
 
 @section("head-js")
 @parent
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="/js/top.js" async></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 最新情報バナーのカルーセル
+    new Splide('#news-banner-carousel', {
+      type: 'loop',
+      gap: '0.5rem',
+      arrows: true,
+      pagination: true,
+      perPage: 3,
+      perMove: 1,
+      focus: 0,
+      breakpoints: {
+        768: {
+          perPage: 2,
+        },
+        480: {
+          perPage: 1,
+        },
+      }
+    }).mount();
+  });
+</script>
 @endsection
 
 @section("main")
@@ -41,7 +61,7 @@
 @include("/include/parts/video.html", {"module_id": "MF_video"})
 
 <!-- バナーモジュール（枠付き） -->
-@include("/include/siteparts/banner-bordered.html", {"module_id": "banner_related_site"})
+@include("/include/parts/banner-bordered.html", {"module_id": "banner_related_site"})
 
 @include("/include/parts/cta-top.html", {"module_id":"MF_cta_top"})
 @endsection
