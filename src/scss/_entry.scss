@@ -203,7 +203,7 @@
   @each $unit in acms.$unit-type {
     /* 配置のスタイル */
     @each $align-name in acms.$align {
-      .column-#{$unit}-#{$align-name}  + .entry-text-unit {
+      .column-#{$unit}-#{$align-name} + .entry-text-unit {
         @if $align-name == left {
           overflow: hidden;
         }
@@ -225,15 +225,6 @@
   }
 }
 
-/* 見出しが最初の要素の時はページタイトルの余白を相殺する */
-.#{acms.$entry-class}-grid {
-  & > .is-h2:first-child h2,
-  & > .is-h3:first-child h3,
-  & > .is-h4:first-child h4 {
-    margin-top: -(global.$page-title-margin-bottom + 2.25rem);
-  }
-}
-
 /* 見出し
 ----------------------------- */
 .#{acms.$entry-class} .entry-text-unit {
@@ -249,7 +240,9 @@
 
     &.heading-primary {
       position: relative;
-      margin-bottom: calc(global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm);
+      margin-bottom: calc(
+        global.$entry-el-margin-xs + 0.25rem + global.$entry-el-margin-sm
+      );
 
       &::before {
         position: absolute;
@@ -279,7 +272,9 @@
       }
 
       &.heading-primary {
-        margin-bottom: calc(global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm);
+        margin-bottom: calc(
+          global.$entry-el-margin-md + 0.25rem + global.$entry-el-margin-sm
+        );
 
         &::before {
           bottom: -1.5rem;
@@ -415,7 +410,8 @@
         font-size: map.get(global.$font-scales, heading-m);
 
         &.is-margin-small {
-          margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-xxs;
+          margin: 0 calc(global.$unit-gutter-var / 2)
+            global.$entry-el-margin-xxs;
         }
       }
     }
@@ -455,7 +451,8 @@
 /* リスト */
 .#{acms.$entry-class} .entry-text-unit {
   ul {
-    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md
+      calc(global.$unit-gutter-var / 2);
     padding: 0 0 0 global.$entry-el-padding-md;
 
     li {
@@ -482,7 +479,8 @@
 /* 番号付きリスト */
 .#{acms.$entry-class} .entry-text-unit:not(.is-pre) {
   ol {
-    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md calc(global.$unit-gutter-var / 2);
+    margin: 0 calc(global.$unit-gutter-var / 2) global.$entry-el-margin-md
+      calc(global.$unit-gutter-var / 2);
     padding: 0 0 0 global.$entry-el-padding-md;
     counter-reset: order-list;
 
@@ -536,7 +534,8 @@
       border: global.$border-width-sm solid global.$color-gray40;
 
       dt {
-        padding: global.$entry-el-padding-sm global.$entry-el-padding-sm 0 global.$entry-el-padding-sm;
+        padding: global.$entry-el-padding-sm global.$entry-el-padding-sm 0
+          global.$entry-el-padding-sm;
         border-top: global.$border-width-sm solid global.$color-gray40;
 
         &:first-child {
@@ -546,7 +545,8 @@
 
       dd {
         margin: 0;
-        padding: 0 global.$entry-el-padding-sm global.$entry-el-padding-sm global.$entry-el-padding-sm;
+        padding: 0 global.$entry-el-padding-sm global.$entry-el-padding-sm
+          global.$entry-el-padding-sm;
       }
     }
   }
@@ -559,11 +559,13 @@
 
       &.box-bordered {
         dt {
-          padding: global.$entry-el-padding-md global.$entry-el-padding-md 0 global.$entry-el-padding-md;
+          padding: global.$entry-el-padding-md global.$entry-el-padding-md 0
+            global.$entry-el-padding-md;
         }
 
         dd {
-          padding: 0 global.$entry-el-padding-md global.$entry-el-padding-md global.$entry-el-padding-md;
+          padding: 0 global.$entry-el-padding-md global.$entry-el-padding-md
+            global.$entry-el-padding-md;
         }
       }
     }
@@ -572,7 +574,7 @@
 
 /* テーブル */
 .#{acms.$entry-class} .entry-text-unit,
-.#{acms.$entry-class} [class^=column-table] {
+.#{acms.$entry-class} [class^="column-table"] {
   table {
     width: 100%;
     margin: 0 0 global.$entry-el-margin-md 0;
@@ -608,7 +610,7 @@
   }
 }
 
-.#{acms.$entry-class} [class^=column-table] {
+.#{acms.$entry-class} [class^="column-table"] {
   table {
     margin: 0;
   }
@@ -670,7 +672,8 @@
   .ug-bg-gray,
   .ug-bg-primary {
     margin: 0 0 global.$entry-el-margin-md 0;
-    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    padding: global.$entry-el-padding-md
+      calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
     border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
     border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
@@ -681,7 +684,8 @@
 
   .ug-cover {
     margin: global.$entry-el-margin-md calc(50% - 50vw);
-    padding: global.$entry-el-padding-md calc(50vw - 50% + (global.$unit-gutter-var / 2));
+    padding: global.$entry-el-padding-md
+      calc(50vw - 50% + (global.$unit-gutter-var / 2));
     border: 0;
   }
 
@@ -692,7 +696,8 @@
   .ug-border {
     position: relative;
     margin: 0 0 global.$entry-el-margin-md 0;
-    padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+    padding: global.$entry-el-padding-md
+      calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
     border-right: calc(global.$unit-gutter-var / 2) solid global.$color-white;
     border-left: calc(global.$unit-gutter-var / 2) solid global.$color-white;
 
@@ -720,7 +725,8 @@
     .ug-bg-primary,
     .ug-border {
       margin: 0 0 global.$entry-el-margin-lg 0;
-      padding: global.$entry-el-padding-md calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
+      padding: global.$entry-el-padding-md
+        calc(global.$entry-el-padding-md - (global.$unit-gutter-var / 2));
 
       & > *:not(.entry-reset):last-child > * {
         margin-bottom: 0;
