@@ -2,21 +2,21 @@
   <header class="header">
     <!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
     <div class="header-item-title"><!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
-      <h1 class="header-title"><!-- ELSE --><p class="header-title"><!-- END_IF -->
+      <h1 class="header-title"><!-- ELSE -->
+        <p class="header-title"><!-- END_IF -->
         <a href="%{BASE_URL}" class="header-title-link"><!-- BEGIN_IF [{site_logo@path}/nem] -->
           <img src="%{MEDIA_ARCHIVES_DIR}{site_logo@path}" alt="{site_name}" role="img" class="header-logo"><!-- ELSE -->{site_name}<!-- END_IF -->
         </a><!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
       </h1><!-- ELSE --></p><!-- END_IF -->
     </div><!-- END_MODULE Blog_Field -->
     <div class="header-item-nav">
-      @include("/include/siteparts/navigation.html")
+      @include("/include/parts/navigation.html")
     </div>
   </header>
 </div>
 <div>
   <div class="global-nav-mobile-menu">
-    <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn"
-            tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
+    <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
   </div>
   <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
     <div class="global-nav-mobile-inner">
