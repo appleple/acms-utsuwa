@@ -5,315 +5,38 @@
 /* ------------------------------
 　　カルーセル
 ------------------------------ */
-.carousel {
-  padding: 0 0 2rem;
+
+.splide-wrap {
+  padding-bottom: 2.5rem;
 }
 
-/* Slider */
-
-.slick-slider {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-  user-select: none;
-  touch-action: pan-y;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list {
-  position: relative;
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-
-  &:focus {
-    outline: none;
+.splide {
+  .splide__pagination {
+    bottom: -2.5rem;
   }
 
-  &.dragging {
-    cursor: pointer;
-    cursor: hand;
-  }
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-
-  &::before,
-  &::after {
-    display: table;
-    content: "";
+  .splide__pagination__page {
+    width: 12px;
+    height: 12px;
+    border-width: 4px;
   }
 
-  &::after {
-    clear: both;
+  .splide__pagination > li {
+    margin-right: 4px;
+    margin-left: 4px;
   }
 
-  .slick-loading & {
-    visibility: hidden;
-  }
-}
-
-.slick-slide {
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-
-  [dir="rtl"] & {
-    float: right;
-  }
-
-  img {
-    display: block;
-  }
-
-  &.slick-loading img {
-    display: none;
-  }
-
-  &.dragging img {
-    pointer-events: none;
-  }
-
-  .slick-initialized & {
-    display: block;
-  }
-
-  .slick-loading & {
-    visibility: hidden;
-  }
-
-  .slick-vertical & {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-  }
-
-  a {
-    display: block;
-    transition: opacity 0.2s;
+  .splide__pagination__page {
+    background-color: global.$color-gray60;
+    opacity: 1;
 
     &:hover {
-      opacity: 0.7;
+      background-color: global.$color-primary;
     }
-  }
-}
 
-.slick-arrow.slick-hidden {
-  display: none;
-}
-
-/* カスタマイズ */
-.slick-slider {
-  margin: 0 calc(global.$col-gutter / -2);
-  padding: 0 0 1rem;
-
-  img {
-    margin: 0 auto;
-    border-radius: global.$border-radius-lg;
-  }
-
-  .js .js-animation & {
-    opacity: 0;
-    will-change: transform, opacity;
-  }
-
-  .js .js-animation.is-show & {
-    animation: fade-in 0.3s 0.5s 1 both;
-  }
-}
-
-.slick-slide {
-  margin: 0 0.5rem;
-}
-
-.slick-slide:hover {
-  cursor: pointer;
-}
-
-.slick-list:focus {
-  &:focus {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      border: 2px dotted global.$color-primary;
-      content: "";
-    }
-  }
-}
-
-.js-slider .slick-list {
-  &:focus {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      border: 2px dotted global.$color-primary;
-      content: "";
-    }
-  }
-}
-
-/* ちらつき防止 */
-.slick-track,
-.slick-list {
-  transform: translateZ(0);
-  perspective: 1000;
-}
-
-/* 矢印ナビゲーション */
-.slick-prev,
-.slick-next {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  margin-top: -0.5rem;
-  padding: 0.5rem;
-  color: transparent;
-  font-size: 0;
-  line-height: 0;
-  background: transparent;
-  border: none;
-  outline: none;
-  transform: translate(0, -50%);
-  cursor: pointer;
-
-  &:focus {
-    border: 1px dotted #fff;
-  }
-
-  &::before {
-    display: block;
-    box-shadow: global.$elevation02;
-    content: "";
-
-    @include global.arrow-circle($size: m,$color-bg:global.$color-white,$color-line:gray);
-  }
-
-  @media (hover: hover) {
-    &:hover::before {
-      box-shadow: global.$elevation10;
-    }
-  }
-}
-
-.slick-prev {
-  left: 0.25rem;
-
-  &::before {
-    transform: scale(-1, 1);
-  }
-}
-
-.slick-next {
-  right: 0.25rem;
-}
-
-/* ドットのナビゲーション */
-.slick-dots {
-  position: absolute;
-  bottom: -1.5rem;
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  list-style: none;
-}
-
-.slick-dots li {
-  display: inline-block;
-}
-
-.slick-dots li button {
-  position: relative;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin: 0 0.5rem;
-  font-size: 0;
-  background: global.$color-gray40;
-  border: 1px solid transparent;
-  border-radius: 1rem;
-  content: "";
-}
-
-.slick-dots li button:focus {
-  border: 1px solid global.$color-primary;
-  outline: 0;
-}
-
-.slick-dots li:hover button {
-  cursor: pointer;
-}
-
-.slick-dots li.slick-active button {
-  background: global.$color-primary;
-}
-
-.slick-dots button {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  .slick-slide {
-    margin: 0 calc(global.$col-gutter / 2);
-  }
-
-  .slick-prev,
-  .slick-next {
-    padding: 0;
-    transition: left 0.2s, right 0.2s;
-
-    &::before {
-      width: 3rem;
-      height: 3rem;
-      background-size: 0.625rem 1.1875rem;
-    }
-  }
-
-  .slick-prev {
-    left: -0.5rem;
-
-    @media (hover: hover) {
-      &:hover {
-        left: -1rem;
-      }
-    }
-  }
-
-  .slick-next {
-    right: -0.5rem;
-
-    @media (hover: hover) {
-      &:hover {
-        right: -1rem;
-      }
+    &.is-active {
+      background-color: global.$color-primary;
+      border-color: global.$color-primary;
     }
   }
 }

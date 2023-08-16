@@ -27,13 +27,15 @@
         <p class="section-button is-right"><a href="{indexUrl}" class="button-read-more"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧へ</a></p>
       </div>
     </div>
-    <div class="section-horizontal-footer">
+    <div class="section-horizontal-footer splide-wrap">
       <!-- BEGIN_MODULE Media_Banner id="banner_news" -->
-      <div class="carousel">
+      <div id="news-banner-carousel" class="splide" aria-label="最新情報のバナー">
         @include("/include/edit/module-custom.html", {"hash":"#acms_box2"})
-        <div class="js-carousel-news"><!-- BEGIN banner:loop -->
-          <div><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img --><a href="{url}" target="{target}"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive"></a><!-- END banner#img -->
-          </div><!-- END banner:loop -->
+        <div class="splide__track">
+          <ul class="splide__list"><!-- BEGIN banner:loop -->
+            <li class="splide__slide"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img --><a href="{url}" target="{target}"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive"></a><!-- END banner#img -->
+            </li><!-- END banner:loop -->
+          </ul>
         </div>
       </div><!-- END_MODULE Media_Banner -->
     </div>
