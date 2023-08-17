@@ -13,12 +13,30 @@
 
 .main-visual-bg {
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - #{global.$header-height});
   min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
   animation: zoom 3s 0.3s 1 both;
   animation-duration: ease-out;
+}
+
+#main-visual-slider {
+  width: 100%;
+  height: calc(100vh - 200px);
+  min-height: 20rem;
+
+  .splide__track,
+  .splide__list,
+  .splide__slide,
+  .splide__slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .splide__slide img {
+    object-fit: cover;
+  }
 }
 
 .main-visual-box {
@@ -97,7 +115,7 @@
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  .main-visual-bg {
+  .main-visual-slider {
     height: 70vh;
   }
 
