@@ -31,11 +31,24 @@
   <div class="page-title-filter"></div>
   <div class="page-title-inner">
     <div class="acms-container">
-      <h1 class="page-title">%{ENTRY_TITLE}</h1><!-- BEGIN_MODULE Entry_Field --><!-- BEGIN page_title_en:veil -->
+      <h1 class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{ENTRY_TITLE}</h1><!-- BEGIN_MODULE Entry_Field --><!-- BEGIN page_title_en:veil -->
       <p class="page-title-en">{page_title_en}</p><!-- END page_title_en:veil --><!-- END_MODULE Entry_Field -->
     </div>
   </div>
 </div><!-- END_MODULE Touch_Entry -->
+<!-- BEGIN_MODULE Touch_NotKeyword --><!-- BEGIN_MODULE Touch_NotTag --><!-- BEGIN_MODULE Touch_NotEntry -->
+<!-- BEGIN_MODULE Touch_NotRootBlog --><!-- BEGIN_MODULE Blog_Field -->
+<div class="page-title-wrapper" <!-- BEGIN page_image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page_image@path});"<!-- END page_image:veil -->>
+  <!-- BEGIN_MODULE Touch_SessionWithAdministration --><p class="acms-admin-module-edit"><a href="/bid/{id}/admin/blog_edit/#acms_custom" class="js-dialog-btn js-link_no_rewrite">編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <p class="page-title">%{BLOG_NAME}</p>
+      <p class="page-title-en">%{BCD}</p>
+    </div>
+  </div>
+</div><!-- END_MODULE Blog_Field --><!-- END_MODULE Touch_NotRootBlog -->
+<!-- END_MODULE Touch_NotEntry --><!-- END_MODULE Touch_NotTag --><!-- END_MODULE Touch_NotKeyword -->
 <!-- ELSE -->
 <!-- BEGIN_MODULE Touch_Category --><!-- BEGIN_MODULE Category_Field -->
 <div class="page-title-wrapper" <!-- BEGIN page_image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page_image@path});"<!-- END page_image:veil -->>
