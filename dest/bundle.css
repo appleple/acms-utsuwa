@@ -2507,6 +2507,7 @@ a[href^="tel:"]:hover {
 .main-visual-bg {
   width: 100%;
   height: calc(100vh - 3.5rem);
+  height: calc(100svh - 3.5rem);
   min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
@@ -2517,6 +2518,7 @@ a[href^="tel:"]:hover {
 #main-visual-slider {
   width: 100%;
   height: calc(100vh - 200px);
+  height: calc(100svh - 200px);
   min-height: 20rem;
 }
 #main-visual-slider .splide__track,

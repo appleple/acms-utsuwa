@@ -14,6 +14,7 @@
 .main-visual-bg {
   width: 100%;
   height: calc(100vh - #{global.$header-height});
+  height: calc(100svh - #{global.$header-height});
   min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
@@ -24,6 +25,7 @@
 #main-visual-slider {
   width: 100%;
   height: calc(100vh - 200px);
+  height: calc(100svh - 200px);
   min-height: 20rem;
 
   .splide__track,
