@@ -28,6 +28,27 @@
         },
       }
     }).mount();
+
+    // スタッフブログのスクロールバー
+    const scrollBarSection = document.querySelectorAll('.js-scrollbar');
+    scrollBarSection.forEach((element) => {
+      const scrollBarWrap = element.querySelector('.js-scrollbar-wrap');
+      const scrollBarSlider = element.querySelector('.js-scrollbar-slider');
+      const scrollBarItem = element.querySelectorAll('.js-scrollbar-item');
+      const scrollBarThumb = element.querySelector('.js-scrollbar-thumb');
+      // スクロールバーの高さを設定
+      const wrapWidth = scrollBarWrap.clientWidth;
+      const sliderWidth = scrollBarItem[0].clientWidth * scrollBarItem.length;
+      const thumbWidth = parseInt(wrapWidth * (wrapWidth / sliderWidth));
+      scrollBarThumb.style.width = `${thumbWidth}px`;
+      // スクロールバーの位置を設定
+      const scrollableTrack = wrapWidth - thumbWidth;
+      scrollBarWrap.addEventListener('scroll', (event) => {
+        const self = event.currentTarget;
+        const thumbOffset = self.scrollLeft * scrollableTrack / (sliderWidth - wrapWidth);
+        scrollBarThumb.style.transform = `translateX(${thumbOffset}px)`;
+      });
+    });
   });
 </script>
 @endsection
