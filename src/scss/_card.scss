@@ -213,14 +213,8 @@
 }
 
 @media screen and (max-width: acms.$breakpoint-md-max) {
-  .card-carousel-wrap {
-    overflow: hidden;
-  }
-
   .card-carousel {
     margin-right: -1rem;
-    margin-bottom: -20px;
-    padding-bottom: 20px;
     overflow-x: auto;
 
     .card-list {
