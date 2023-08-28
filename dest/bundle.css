@@ -2506,12 +2506,31 @@ a[href^="tel:"]:hover {
 
 .main-visual-bg {
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 3.5rem);
+  height: calc(100svh - 3.5rem);
   min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
   animation: zoom 3s 0.3s 1 both;
   animation-duration: ease-out;
+}
+
+#main-visual-slider {
+  width: 100%;
+  height: calc(100vh - 200px);
+  height: calc(100svh - 200px);
+  min-height: 20rem;
+}
+#main-visual-slider .splide__track,
+#main-visual-slider .splide__list,
+#main-visual-slider .splide__slide,
+#main-visual-slider .splide__slide img {
+  width: 100%;
+  height: 100%;
+}
+#main-visual-slider .splide__slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main-visual-box {
@@ -2583,7 +2602,7 @@ a[href^="tel:"]:hover {
 }
 
 @media screen and (min-width: 48rem) {
-  .main-visual-bg {
+  .main-visual-slider {
     height: 70vh;
   }
   .main-visual-box {
