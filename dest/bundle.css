@@ -858,6 +858,45 @@ a[href^="tel:"]:hover {
   border-radius: 100%;
 }
 
+.card-scrollbar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  background: var(--color-gray40);
+  border-radius: 4px;
+}
+
+.card-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 50px;
+  background-color: var(--color-primary);
+}
+
+@media screen and (max-width: 47.99875rem) {
+  .card-carousel-wrap {
+    overflow: hidden;
+  }
+  .card-carousel {
+    margin-right: -1rem;
+    margin-bottom: -20px;
+    padding-bottom: 20px;
+    overflow-x: auto;
+  }
+  .card-carousel .card-list {
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+  .card-carousel .card-item {
+    margin-bottom: 0;
+  }
+  .card-carousel .card-link {
+    width: 200px;
+  }
+}
 @media screen and (min-width: 48rem) {
   .card-img-wrap {
     margin: 0 0 1rem;
@@ -886,6 +925,9 @@ a[href^="tel:"]:hover {
   }
   .card.is-lg .card-text {
     margin: 0 0 2rem;
+  }
+  .card-scrollbar {
+    display: none;
   }
 }
 @media screen and (min-width: 64rem) {
