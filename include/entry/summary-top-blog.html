@@ -7,30 +7,32 @@
       <p class="section-vertical-text">{module_heading_small}</p>
     </header><!-- END moduleField -->
     <div>
-      <ul class="card-list"><!-- BEGIN unit:loop -->
-        <!-- BEGIN entry:loop -->
-        <li class="js-animation-row acms-col-sm-6 acms-col-md-3 card-item">
-          <div class="card">
-            <a href="{url}" class="card-link">
-              <div class="card-img-wrap"><!-- BEGIN image:veil -->
-                <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" width="455" height="256" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
-              </div>
-              <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )<!-- BEGIN new --><span class="badge is-inverse card-badge-news">NEW</span><!-- END new --></time>
-              <h2 class="card-title">{title}</h2>
-              <p class="card-text">{summary}[trim(60, '...')]</p>
-              <!-- BEGIN userField -->
-              <div class="card-footer">
-                <p class="card-author"><!-- BEGIN_IF [{image@path}/nem] --><img src="%{MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30, 30)]" class="card-author-img" alt=""><!-- ELSE --><img src="{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" alt="" class="card-author-img"><!-- END_IF -->{fieldUserName}</p>
-              </div>
-              <!-- END userField -->
-            </a>
-          </div>
-        </li><!-- END entry:loop -->
-        <!-- END unit:loop -->
-      </ul>
-
-      <p class="section-button"><a href="{indexUrl}" class="button is-width-lg is-bordered is-rounded"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧へ</a></p>
-
+      <div class="card-carousel">
+        <ul class="card-list"><!-- BEGIN unit:loop -->
+          <!-- BEGIN entry:loop -->
+          <li class="js-animation-row acms-col-sm-6 acms-col-md-3 card-item">
+            <div class="card">
+              <a href="{url}" class="card-link">
+                <div class="card-img-wrap"><!-- BEGIN image:veil -->
+                  <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" width="455" height="256" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
+                </div>
+                <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#m}月{date#d}日( {date#week} )<!-- BEGIN new --><span class="badge is-inverse card-badge-news">NEW</span><!-- END new --></time>
+                <h2 class="card-title">{title}</h2>
+                <p class="card-text">{summary}[trim(60, '...')]</p>
+                <!-- BEGIN userField -->
+                <div class="card-footer">
+                  <p class="card-author"><!-- BEGIN_IF [{image@path}/nem] --><img src="%{MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30, 30)]" class="card-author-img" alt=""><!-- ELSE --><img src="{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" alt="" class="card-author-img"><!-- END_IF -->{fieldUserName}</p>
+                </div>
+                <!-- END userField -->
+              </a>
+            </div>
+          </li><!-- END entry:loop -->
+          <!-- END unit:loop -->
+        </ul>
+      </div>
     </div>
+
+    <p class="section-button"><a href="{indexUrl}" class="button is-width-lg is-bordered is-rounded"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧へ</a></p>
+
   </div>
 </section><!-- END_MODULE Entry_Summary -->
