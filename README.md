@@ -1,4 +1,4 @@
-# テーマ「UTSUWA」Ver.2.0.9
+# テーマ「UTSUWA」Ver.2.1.0
 
 ## GitHub
 
@@ -52,7 +52,7 @@ https://www.figma.com/community/file/1154719653085540673
 
 ### template.yaml
 
-UTSUWA テーマを選択したときに、テンプレートをまとめて設定できるファイルです。使用するかどうかは管理画面＞コンフィグ＞テーマ設定 にて変更できます。
+UTSUWA テーマを選択したときに、テンプレートをまとめて設定できるファイルです。使用するかどうかは管理画面＞テーマ＞テーマ設定 にて変更できます。
 
 ## フォルダ構成
 
@@ -93,10 +93,10 @@ UTSUWA テーマで使っている画像が入ったフォルダです
 
 UTSUWA テーマ内のインクルードしているテンプレートをまとめたフォルダです。
 
-include/edit/：管理画面への編集ボタンを生成するテンプレートです。実際の使い方は、/inlude/entry/summary-blog.html などのテンプレートをご参考にしてください。
-include/form/：動的フォームのテンプレートです
-include/unit/：ユニットのテンプレートです
-include/module/template/：モジュールユニットで使用するテンプレートです
+include/edit/：管理画面への編集ボタンを生成するテンプレートです。実際の使い方は、/inlude/entry/summary-blog.html などのテンプレートをご参考にしてください。<br>
+include/form/：動的フォームのテンプレートです。<br>
+include/unit/：ユニットのテンプレートです。<br>
+include/module/template/：モジュールユニットで使用するテンプレートです。
 
 ### src
 
@@ -182,8 +182,9 @@ UTSUWA テーマでは、独自で以下のユニットのスタイルを調整�
 ### カスタムユニット
 
 カスタムユニットを使い、ユニットの追加に「メッセージ」「余白」「罫線」「価格表」「目次」のボタンを追加しています。
-　* /themes/utsuwa/include/unit/extend.html
-　* /themes/utsuwa/admin/entry/unit/extend.html
+
+- /themes/utsuwa/include/unit/extend.html
+- /themes/utsuwa/admin/entry/unit/extend.html
 
 ### ユニットグループ
 
@@ -233,57 +234,10 @@ LiteEditor に関するカスタマイズは下記のファイルで行ってい
 
 動的フォームでは完了ページを表示するために URL コンテキストに tpl を使用しています。Ver. 2.11.25 より仕様変更があり、tpl はログアウト時にはデフォルトでは無効化される使用となっております（この仕様変更に関しては詳しくは[Ver. 2.11.25 からのテンプレートの仕様変更について](https://developer.a-blogcms.jp/blog/news/template-21125.html)の記事をご覧ください）。
 
-動的フォーム利用前には、private/config.system.yaml にある allow_tpl_path を有効にしてください。なお、ログインしている状態では tpl は有効化されているため問題なく完了ページまで移動することができますので、動作確認時はログアウトをしてからまたはシークレットウィンドウにてご確認ください。
+動的フォーム利用前には、private/config.system.yaml にある allow_tpl_path を有効にしてください。なお、ログインしている状態では tpl は有効化されているため問題なく完了ページまで移動することができますので、動作確認時はログアウトをしてご確認ください。
 
 private/config.system.yaml 記述例：
 
 ```
 allow_tpl_path: [recruit/thanks.html]
 ```
-
-## 開発環境について
-
-UTSUWA テーマでは、SCSS を CSS に変換するために webpack の開発環境を同梱しています。詳しく知りたい場合は[公式テーマの webpack ビルド環境の使い方](https://developer.a-blogcms.jp/document/themes/webpack.html)をご覧ください。また、webpack を使用せず、使い慣れたコンパイルツールを使って SCSS を CSS に変換してもかまいません。
-
-### 使い方
-
-1. themes/utsuwa で `npm install`して UTSUWA で使用している全てのパッケージをインストールする
-2. その後、`npm run start` または `npm run dev` で開発を開始する（JS や CSS が 1 つにまとめたり、SCSS を CSS に自動で変換します）
-3. リリースできるようになったら、`npm run build` でビルドする
-
-マシンに node.js が入っていない方は npm コマンドが使えないため、[公式サイト](https://nodejs.org/ja/)からインストールしてください。
-.node-version に記載しているバージョンと同じバージョンをインストールしてください。
-
-### package.json
-
-package.json には UTSUWA で使用できるコマンドと使用しているパッケージがリストされています。
-
-以下、一部の設定について紹介します。
-
-#### package.json の config
-
-- local ... 後述する npm run start のライブリロードで使用します。開発環境を表示しているドメインなどあれば記入してください。
-- theme ... 使用しているテーマを記述します
-
-#### package.json の scripts
-
-- npm run build ... リリース用の CSS と JS を書き出します
-- npm run dev ... 開発時用の CSS と JS を書き出します。（ソースマップを書き出すので、開発者ツール上からどの SCSS ファイルのコードかわかります）
-- npm run start ... dev の機能に加えて、さらにライブリロードを行います
-- npm run analyze ... 結合したファイルの各パッケージがどのくらいの容量を占めているか可視化してくれる機能です。
-
-### webpack
-
-- webpack.analyze.js ... バンドルファイル内の各パッケージがどのくらいの容量を占めているか知りたい
-- webpack.common.js ... 各 script 実行時に共通のファイルです。
-- webpack.dev.js ... 開発中のタスクに使用する
-- webpack.prod.js ... リリース時のタスクに使用する
-
-### 不可視ファイル
-
-- .babelrc ... Babel の設定ファイル（JS 関係）
-- .editorconfig ... 自動で整形してくれる editorconfig の設定ファイル
-- .eslintrc ... ESLint の設定ファイル（JS 関係）
-- .gitignore ... Git で管理しないものを設定するファイル
-- .node-version ... node.js のバージョンを管理するファイル。開発時に使用された Node.js のバージョンが記載されており、nodenv などのバージョン管理ツール使用時に適用されます。
-- .stylelintrc ... StyleLint の設定ファイル（SCSS、CSS 関係）

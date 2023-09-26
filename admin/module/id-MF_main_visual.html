@@ -1,16 +1,76 @@
 <h3 class="acms-admin-admin-title2">メインビジュアルの設定</h3>
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メインビジュアルの背景画像を設定します。"></i></th>
-    <td class="js-media-field">
-      <div class="js-droparea" data-thumbnail="{main_visual_bg_image@thumbnail}" data-type="image" style="width:200px"></div>
-      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
-      <div class="acms-admin-margin-top-mini">
-        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
-      </div>
-      <input type="hidden" name="main_visual_bg_image" value="{main_visual_bg_image}" class="js-value" />
-      <input type="hidden" name="field[]" value="main_visual_bg_image" />
-      <input type="hidden" name="main_visual_bg_image:extension" value="media" />
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メインビジュアルの背景画像を設定します。複数枚設定した場合はフェードインスライドになります。"></i></th>
+    <td>
+      <table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+        <thead class="acms-admin-hide-sp">
+          <tr>
+            <th class="acms-admin-table-left acms-admin-admin-config-table-item-handle"> </th>
+            <th></th>
+            <th class="acms-admin-table-left acms-admin-admin-config-table-action">削除</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- BEGIN main_visual_bg:loop -->
+          <tr class="sortable-item">
+            <td class="item-handle acms-admin-table-nowrap">
+              <i class="acms-admin-icon-sort"></i>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td class="js-media-field">
+                    <div class="js-droparea" data-thumbnail="{bg_image@thumbnail}" data-type="image" data-width="400px" data-height="160px"></div>
+                    <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+                    <div class="acms-admin-margin-top-mini">
+                      <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+                    </div>
+                    <input type="hidden" name="bg_image[]" value="{bg_image}" class="js-value" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td class="acms-admin-table-nowrap">
+              <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+            </td>
+          </tr>
+          <!-- END main_visual_bg:loop -->
+          <tr class="sortable-item item-template">
+            <td class="item-handle acms-admin-table-nowrap">
+              <i class="acms-admin-icon-sort"></i>
+            </td>
+            <td>
+              <table>
+                <tr>
+                  <td class="js-media-field">
+                    <div class="js-droparea" data-type="image" data-thumbnail-type="{bg_image@type}" data-width="400px" data-height="160px"></div>
+                    <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+                    <div class="acms-admin-margin-top-mini">
+                      <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+                    </div>
+                    <input type="hidden" name="bg_image[]" value="" class="js-value" />
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td class="acms-admin-table-nowrap">
+              <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="3">
+              <input type="button" class="item-insert acms-admin-btn-admin" value="追加" />
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+      <input type="hidden" name="bg_image:extension" value="media" />
+      <input type="hidden" name="@main_visual_bg[]" value="bg_image" />
+      <input type="hidden" name="field[]" value="bg_image" />
+      <input type="hidden" name="field[]" value="@main_visual_bg" />
     </td>
   </tr>
   <tr>
