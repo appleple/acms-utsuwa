@@ -1,22 +1,23 @@
-import domContentLoaded from "dom-content-loaded";
-import animation from "./animation";
-import navigation from "./navigation";
-// import topPage from './top';
-if (!("scrollBehavior" in document.documentElement.style)) {
-  await import("scroll-behavior-polyfill");
-}
+import domContentLoaded from 'dom-content-loaded';
+import animation from './animation';
+import navigation from './navigation';
 
 /**
  * スタイルの読み込み
  */
-import "normalize.css/normalize.css";
-import "../scss/site.scss";
+import 'normalize.css/normalize.css';
+import '../scss/site.scss';
 
 // JSが有効か判断する
-$("html").removeClass("no-js").addClass("js");
+$('html').removeClass('no-js').addClass('js');
+
+(async () => {
+  if (!('scrollBehavior' in document.documentElement.style)) {
+    await import(/* webpackChunkName: "scroll-behavior-polyfill" */ 'scroll-behavior-polyfill');
+  }
+})();
 
 animation(); // アニメーション
-// topPage();トップページ
 navigation(); // ナビゲーション
 
 /**
@@ -24,29 +25,25 @@ navigation(); // ナビゲーション
  */
 domContentLoaded(() => {
   $.fn.delayAddClass = function (className, delay) {
-    // eslint-disable-line func-names
     return $(this)
       .delay(delay)
       .queue(function (next) {
-        // eslint-disable-line func-names
         $(this).addClass(className);
         next();
       });
   };
   $.fn.delayRemoveClass = function (className, delay) {
-    // eslint-disable-line func-names
     return $(this)
       .delay(delay)
       .queue(function (next) {
-        // eslint-disable-line func-names
         $(this).removeClass(className);
         next();
       });
   };
 
   function fixElement() {
-    const $fixArea = $(".js-sticky-area");
-    const $fix = $(".js-sticky");
+    const $fixArea = $('.js-sticky-area');
+    const $fix = $('.js-sticky');
 
     if ($fixArea.length && $fix.length) {
       const fixTop = $fixArea.offset().top;
@@ -55,17 +52,17 @@ domContentLoaded(() => {
       const winheight = $(window).height();
 
       if (winScroll < fixTop - winheight) {
-        $fix.delayRemoveClass("is-show", 1).delayRemoveClass("is-active", 20);
+        $fix.delayRemoveClass('is-show', 1).delayRemoveClass('is-active', 20);
       } else if (winScroll > fixEnd - winheight) {
-        $fix.delayRemoveClass("is-show", 1).delayRemoveClass("is-active", 20);
+        $fix.delayRemoveClass('is-show', 1).delayRemoveClass('is-active', 20);
       } else {
-        $fix.delayAddClass("is-active", 1).delayAddClass("is-show", 10);
+        $fix.delayAddClass('is-active', 1).delayAddClass('is-show', 10);
       }
     }
   }
 
   // 固定CTA
-  $(window).on("load scroll", () => {
+  $(window).on('load scroll', () => {
     fixElement();
   });
 });
