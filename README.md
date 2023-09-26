@@ -93,10 +93,10 @@ UTSUWA テーマで使っている画像が入ったフォルダです
 
 UTSUWA テーマ内のインクルードしているテンプレートをまとめたフォルダです。
 
-include/edit/：管理画面への編集ボタンを生成するテンプレートです。実際の使い方は、/inlude/entry/summary-blog.html などのテンプレートをご参考にしてください。
-include/form/：動的フォームのテンプレートです
-include/unit/：ユニットのテンプレートです
-include/module/template/：モジュールユニットで使用するテンプレートです
+include/edit/：管理画面への編集ボタンを生成するテンプレートです。実際の使い方は、/inlude/entry/summary-blog.html などのテンプレートをご参考にしてください。<br>
+include/form/：動的フォームのテンプレートです。<br>
+include/unit/：ユニットのテンプレートです。<br>
+include/module/template/：モジュールユニットで使用するテンプレートです。
 
 ### src
 
@@ -182,8 +182,9 @@ UTSUWA テーマでは、独自で以下のユニットのスタイルを調整�
 ### カスタムユニット
 
 カスタムユニットを使い、ユニットの追加に「メッセージ」「余白」「罫線」「価格表」「目次」のボタンを追加しています。
-　* /themes/utsuwa/include/unit/extend.html
-　* /themes/utsuwa/admin/entry/unit/extend.html
+
+- /themes/utsuwa/include/unit/extend.html
+- /themes/utsuwa/admin/entry/unit/extend.html
 
 ### ユニットグループ
 
