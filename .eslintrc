@@ -20,7 +20,8 @@
     "template-curly-spacing": ["off", "never"],
     "indent": ["error", 2, {
       "ignoredNodes": ["TemplateLiteral"]
-    }]
+    }],
+    "func-names": "off"
   },
   "settings": {
     "import/resolver": {
