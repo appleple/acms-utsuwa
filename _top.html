@@ -45,6 +45,9 @@
 </script>
 @endsection
 
+@section("admin-part")
+@endsection
+
 @section("main")
 <!-- トップ用メインビジュアル -->
 @include("/include/parts/top-main-visual.html", {"module_id": "MF_main_visual"})
@@ -53,6 +56,12 @@
 @include("/include/parts/top-message.html", {"module_id": "MF_message"})
 
 <hr class="section-separator">
+
+<div class="acms-container">
+  <!-- ※管理用パーツ -->
+  @include("/admin/action.html")
+  @include("/admin/switch-user.html")
+</div>
 
 <!-- エントリーサマリー：事業内容 -->
 @include("/include/entry/summary-top-thumbnail.html", {"module_id": "summary_service"})
