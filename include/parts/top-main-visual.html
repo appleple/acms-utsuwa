@@ -1,8 +1,8 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
 <section class="main-visual">
   @include("/include/edit/module-custom.html", {"hash":"#acms_box3"})
-  <!-- BEGIN_IF [{bg_image@path[1]}/em]-->
-  <div class="main-visual-bg" style="background-image: url(%{MEDIA_ARCHIVES_DIR}{bg_image@path[0]});"></div>
+  <!-- BEGIN_IF [{main_visual_bg_image@path[1]}/em]-->
+  <div class="main-visual-bg" style="background-image: url(%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image@path[0]});"></div>
   <!-- ELSE -->
   <div class="main-visual-slider">
     <div id="main-visual-slider" class="splide" role="group">
@@ -10,7 +10,7 @@
         <div class="splide__list">
           <!-- BEGIN main_visual_bg:loop -->
           <div class="splide__slide">
-            <img src="%{MEDIA_ARCHIVES_DIR}{bg_image@path}" alt="{bg_image@alt}">
+            <img src="%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image@path}" alt="{main_visual_bg_image@alt}">
           </div>
           <!-- END main_visual_bg:loop -->
         </div>
@@ -24,7 +24,7 @@
       <h1 class="main-visual-catch">{main_visual_copy_main}[raw|nl2br]</h1><!-- END main_visual_copy_main:veil -->
       <!-- BEGIN main_visual_copy_sub:veil -->
       <p class="main-visual-catch-sub">{main_visual_copy_sub}[raw|nl2br]</p><!-- END main_visual_copy_sub:veil -->
-      <!-- BEGIN_IF [{bg_image@path[1]}/em]-->
+      <!-- BEGIN_IF [{main_visual_bg_image@path[1]}/em]-->
       <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
       <!-- END_IF -->
     </div>
