@@ -27,7 +27,7 @@
   }
 
   .splide__pagination__page {
-    background-color: global.$color-gray60;
+    background-color: global.$color-gray30;
     opacity: 1;
 
     &:hover {
@@ -37,6 +37,7 @@
     &.is-active {
       background-color: global.$color-primary;
       border-color: global.$color-primary;
+      transform: none;
     }
   }
 }
