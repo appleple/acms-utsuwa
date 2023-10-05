@@ -1,90 +1,362 @@
-<h3 class="acms-admin-admin-title2">メインビジュアルの設定</h3>
-<table class="adminTable acms-admin-table-admin-edit">
+<h2 class="acms-admin-admin-title2">スライダー設定 <i data-acms-tooltip="メインビジュアルの背景画像を2枚以上設定するとスライダーが有効になります。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></h2>
+<table class="acms-admin-table-admin-edit">
   <tr>
-    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="メインビジュアルの背景画像を設定します。複数枚設定した場合はフェードインスライドになります。"></i></th>
+    <th>タイプ</th>
     <td>
-      <table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
-        <thead class="acms-admin-hide-sp">
-          <tr>
-            <th class="acms-admin-table-left acms-admin-admin-config-table-item-handle"> </th>
-            <th></th>
-            <th class="acms-admin-table-left acms-admin-admin-config-table-action">削除</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- BEGIN main_visual_bg:loop -->
-          <tr class="sortable-item">
-            <td class="item-handle acms-admin-table-nowrap">
-              <i class="acms-admin-icon-sort"></i>
-            </td>
-            <td>
-              <table>
-                <tr>
-                  <td class="js-media-field">
-                    <div class="js-droparea" data-thumbnail="{main_visual_bg_image@thumbnail}" data-type="image" data-width="400px" data-height="160px"></div>
-                    <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
-                    <div class="acms-admin-margin-top-mini">
-                      <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
-                    </div>
-                    <input type="hidden" name="main_visual_bg_image[]" value="{main_visual_bg_image}" class="js-value" />
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td class="acms-admin-table-nowrap">
-              <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
-            </td>
-          </tr>
-          <!-- END main_visual_bg:loop -->
-          <tr class="sortable-item item-template">
-            <td class="item-handle acms-admin-table-nowrap">
-              <i class="acms-admin-icon-sort"></i>
-            </td>
-            <td>
-              <table>
-                <tr>
-                  <td class="js-media-field">
-                    <div class="js-droparea" data-type="image" data-thumbnail-type="{main_visual_bg_image@type}" data-width="400px" data-height="160px"></div>
-                    <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
-                    <div class="acms-admin-margin-top-mini">
-                      <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
-                    </div>
-                    <input type="hidden" name="main_visual_bg_image[]" value="" class="js-value" />
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td class="acms-admin-table-nowrap">
-              <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan="3">
-              <input type="button" class="item-insert acms-admin-btn-admin" value="追加" />
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-      <input type="hidden" name="main_visual_bg_image:extension" value="media" />
-      <input type="hidden" name="@main_visual_bg[]" value="main_visual_bg_image" />
-      <input type="hidden" name="field[]" value="main_visual_bg_image" />
-      <input type="hidden" name="field[]" value="@main_visual_bg" />
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="main_visual_slider_type" value="fade" {main_visual_slider_type:checked#fade}<!-- BEGIN_IF [{main_visual_slider_type}/em] --> checked<!-- END_IF --> id="input-radio-main_visual_slider_type-fade" />
+        <label for="input-radio-main_visual_slider_type-fade">
+          <i class="acms-admin-ico-radio"></i>フェード</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="main_visual_slider_type" value="slide" {main_visual_slider_type:checked#slide} id="input-radio-main_visual_slider_type-slide" />
+        <label for="input-radio-main_visual_slider_type-slide">
+          <i class="acms-admin-ico-radio"></i>スライド</label>
+      </div>
+      <input type="hidden" name="field[]" value="main_visual_slider_type" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-main_visual_copy_main">メインキャッチコピー</label></th>
+    <th>表示時間
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="画像1枚あたりの表示時間を設定します"></i>
+    </th>
     <td>
-      <textarea name="main_visual_copy_main" id="input-text-main_visual_copy_main" class="acms-admin-form-width-3quarters">{main_visual_copy_main}</textarea>
-      <input type="hidden" name="field[]" value="main_visual_copy_main">
+      <input type="text" name="main_visual_slider_interval" value="{main_visual_slider_interval}<!-- BEGIN_IF [{main_visual_slider_interval}/em] -->4000<!-- END_IF -->" class="width-input-color" /> ミリ秒
+      <p class="acms-admin-margin-none"><small>ミリ秒単位で入力してください。（例：1秒 = 1000ミリ秒）</small></p>
+      <input type="hidden" name="field[]" value="main_visual_slider_interval" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-main_visual_copy_sub">サブキャッチコピー</label></th>
+    <th>移動時間
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="次の画像に切り替わるまでの時間を設定します"></i>
+    </th>
     <td>
-      <textarea name="main_visual_copy_sub" id="input-text-main_visual_copy_sub" class="acms-admin-form-width-3quarters">{main_visual_copy_sub}</textarea>
-      <input type="hidden" name="field[]" value="main_visual_copy_sub">
+      <input type="text" name="main_visual_slider_speed" value="{main_visual_slider_speed}<!-- BEGIN_IF [{main_visual_slider_speed}/em] -->400<!-- END_IF -->" class="width-input-color" /> ミリ秒
+      <p class="acms-admin-margin-none"><small>ミリ秒単位で入力してください。（例：1秒 = 1000ミリ秒）</small></p>
+      <input type="hidden" name="field[]" value="main_visual_slider_speed" />
+    </td>
+  </tr>
+  <tr>
+    <th>表示領域（PC）
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="PC表示時のメインビジュアルの高さを設定します。設定がなかった場合は、高さ768pxで表示されます。"></i>
+    </th>
+    <td>
+      <input type="number" name="main_visual_height_pc" value="{main_visual_height_pc}" placeholder="768" class="width-input-color" />px
+      <input type="hidden" name="field[]" value="main_visual_height_pc" />
+    </td>
+  </tr>
+  <tr>
+    <th>表示領域（SP）
+      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="スマートフォン表示時のメインビジュアルの高さを設定します。設定がなかった場合は、画面いっぱいに表示されます。"></i>
+    </th>
+    <td>
+      <input type="number" name="main_visual_height_sp" value="{main_visual_height_sp}" placeholder="640" class="width-input-color" />px
+      <input type="hidden" name="field[]" value="main_visual_height_sp" />
     </td>
   </tr>
 </table>
+
+<h2 class="acms-admin-admin-title2">メインビジュアルの設定</h2>
+<table class="js-fieldgroup-sortable adminTable acms-admin-table-admin-edit">
+  <thead class="acms-admin-hide-sp">
+    <tr>
+      <th class="acms-admin-table-left acms-admin-admin-config-table-item-handle"> </th>
+      <th></th>
+      <th class="acms-admin-table-left acms-admin-admin-config-table-action">削除</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- BEGIN main_visual:loop -->
+    <tr class="sortable-item">
+      <td class="item-handle acms-admin-table-nowrap">
+        <i class="acms-admin-icon-sort"></i>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <th>表示設定</th>
+            <td>
+              <div class="acms-admin-form-checkbox">
+                <input type="checkbox" name="main_visual_display[]" value="1" {main_visual_display:checked#1} id="input-checkbox-main_visual_display-1" />
+                <label for="input-checkbox-main_visual_display-1">
+                  <i class="acms-admin-ico-checkbox"></i>表示する</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2" class="acms-admin-cell-text-left">画像設定</th>
+          </tr>
+          <tr>
+            <th>背景画像（PC）</th>
+            <td class="js-media-field">
+              <div class="js-droparea" data-thumbnail="{main_visual_bg_image@thumbnail}" data-type="image" data-width="320px" data-height="180px"></div>
+              <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+              <div class="acms-admin-margin-top-mini">
+                <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+              </div>
+              <input type="hidden" name="main_visual_bg_image[]" value="{main_visual_bg_image}" class="js-value" />
+            </td>
+          </tr>
+          <tr>
+            <th>背景画像（SP）</th>
+            <td class="js-media-field">
+              <div class="js-droparea" data-thumbnail="{main_visual_bg_image_sp@thumbnail}" data-type="image" data-width="180px" data-height="240px"></div>
+              <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+              <div class="acms-admin-margin-top-mini">
+                <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+              </div>
+              <input type="hidden" name="main_visual_bg_image_sp[]" value="{main_visual_bg_image_sp}" class="js-value" />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2" class="acms-admin-cell-text-left">コンテンツ設定</th>
+          </tr>
+          <tr>
+            <th>配置<i data-acms-tooltip="キャッチコピー・ボタンのグループを配置する位置を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+            <td>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="left" {main_visual_content_position:checked#left}<!-- BEGIN_IF [{main_visual_content_position}/em] --> checked<!-- END_IF --> id="input-radio-main_visual_content_position-left" />
+                <label for="input-radio-main_visual_content_position-left">
+                  <i class="acms-admin-ico-radio"></i>左</label>
+              </div>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="center" {main_visual_content_position:checked#center} id="input-radio-main_visual_content_position-center" />
+                <label for="input-radio-main_visual_content_position-center">
+                  <i class="acms-admin-ico-radio"></i>中央</label>
+              </div>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="right" {main_visual_content_position:checked#right} id="input-radio-main_visual_content_position-right" />
+                <label for="input-radio-main_visual_content_position-right">
+                  <i class="acms-admin-ico-radio"></i>右</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>背景色<i data-acms-tooltip="背景色をRGB値で設定します。設定がなかった場合の背景色は白（透明度90%）が適用されます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+            <td>
+              <div class="acms-admin-inline-block">
+                R <input type="number" min="0" max="255" name="main_visual_bg_color_red[]" value="{main_visual_bg_color_red}" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                G <input type="number" min="0" max="255" name="main_visual_bg_color_green[]" value="{main_visual_bg_color_green}" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                B <input type="number" min="0" max="255" name="main_visual_bg_color_blue[]" value="{main_visual_bg_color_blue}" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                透明度 <input type="number" min="0" max="100" name="main_visual_bg_color_alpha[]" value="{main_visual_bg_color_alpha}" placeholder="90" class="width-input-color" />%
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>メインキャッチコピー</th>
+            <td>
+              <textarea name="main_visual_copy_main[]" class="acms-admin-form-width-3quarters">{main_visual_copy_main}</textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>サブキャッチコピー</th>
+            <td>
+              <textarea name="main_visual_copy_sub[]" class="acms-admin-form-width-3quarters">{main_visual_copy_sub}</textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンテキスト（背景色あり）</th>
+            <td>
+              <input type="text" name="main_visual_link01_text[]" value="{main_visual_link01_text}" class="acms-admin-form-width-mini" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンリンク先URL（背景色あり）</th>
+            <td>
+              <input type="text" name="main_visual_link01_href[]" value="{main_visual_link01_href}" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンテキスト（背景色なし）</th>
+            <td>
+              <input type="text" name="main_visual_link02_text[]" value="{main_visual_link02_text}" class="acms-admin-form-width-mini" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンリンク先URL（背景色なし）</th>
+            <td>
+              <input type="text" name="main_visual_link02_href[]" value="{main_visual_link02_href}" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td class="acms-admin-table-nowrap">
+        <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+      </td>
+    </tr>
+    <!-- END main_visual:loop -->
+    <tr class="sortable-item item-template">
+      <td class="item-handle acms-admin-table-nowrap">
+        <i class="acms-admin-icon-sort"></i>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <th>表示設定</th>
+            <td>
+              <div class="acms-admin-form-checkbox">
+                <input type="checkbox" name="main_visual_display[]" value="1" id="input-checkbox-main_visual_display-1" checked />
+                <label for="input-checkbox-main_visual_display-1">
+                  <i class="acms-admin-ico-checkbox"></i>表示する</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2" class="acms-admin-cell-text-left">画像設定</th>
+          </tr>
+          <tr>
+            <th>背景画像（PC）</th>
+            <td class="js-media-field">
+              <div class="js-droparea" data-type="image" data-thumbnail-type="{main_visual_bg_image@type}" data-width="320px" data-height="180px"></div>
+              <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+              <div class="acms-admin-margin-top-mini">
+                <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+              </div>
+              <input type="hidden" name="main_visual_bg_image[]" value="" class="js-value" />
+            </td>
+          </tr>
+          <tr>
+            <th>背景画像（SP）</th>
+            <td class="js-media-field">
+              <div class="js-droparea" data-type="image" data-thumbnail-type="{main_visual_bg_image_sp@type}" data-width="180px" data-height="240px"></div>
+              <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+              <div class="acms-admin-margin-top-mini">
+                <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+              </div>
+              <input type="hidden" name="main_visual_bg_image_sp[]" value="" class="js-value" />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="2" class="acms-admin-cell-text-left">コンテンツ設定</th>
+          </tr>
+          <tr>
+            <th>配置</th>
+            <td>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="left" id="input-radio-main_visual_content_position-left" checked />
+                <label for="input-radio-main_visual_content_position-left">
+                  <i class="acms-admin-ico-radio"></i>左</label>
+              </div>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="center" id="input-radio-main_visual_content_position-center" />
+                <label for="input-radio-main_visual_content_position-center">
+                  <i class="acms-admin-ico-radio"></i>中央</label>
+              </div>
+              <div class="acms-admin-form-radio">
+                <input type="radio" name="main_visual_content_position[]" value="right" id="input-radio-main_visual_content_position-right" />
+                <label for="input-radio-main_visual_content_position-right">
+                  <i class="acms-admin-ico-radio"></i>右</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>背景色<i data-acms-tooltip="背景色をRGB値で設定します。設定がなかった場合の背景色は白（透明度90%）が適用されます。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+            <td>
+              <div class="acms-admin-inline-block">
+                R <input type="number" min="0" max="255" name="main_visual_bg_color_red[]" value="" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                G <input type="number" min="0" max="255" name="main_visual_bg_color_green[]" value="" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                B <input type="number" min="0" max="255" name="main_visual_bg_color_blue[]" value="" placeholder="255" class="width-input-color" />
+              </div>
+              <div class="acms-admin-margin-left-mini acms-admin-inline-block">
+                透明度 <input type="number" min="0" max="100" name="main_visual_bg_color_alpha[]" value="" placeholder="90" class="width-input-color" />%
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th>メインキャッチコピー</th>
+            <td>
+              <textarea name="main_visual_copy_main[]" class="acms-admin-form-width-3quarters"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>サブキャッチコピー</th>
+            <td>
+              <textarea name="main_visual_copy_sub[]" class="acms-admin-form-width-3quarters"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンテキスト（背景色あり）</th>
+            <td>
+              <input type="text" name="main_visual_link01_text[]" value="" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンリンク先URL（背景色あり）</th>
+            <td>
+              <input type="text" name="main_visual_link01_href[]" value="" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンテキスト（背景色なし）</th>
+            <td>
+              <input type="text" name="main_visual_link02_text[]" value="" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+          <tr>
+            <th>ボタンリンク先URL（背景色なし）</th>
+            <td>
+              <input type="text" name="main_visual_link02_href[]" value="" class="acms-admin-form-width-full" />
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td class="acms-admin-table-nowrap">
+        <input type="button" class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger" value="削除" />
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colSpan="3">
+        <input type="button" class="item-insert acms-admin-btn-admin" value="追加" />
+      </td>
+    </tr>
+  </tfoot>
+</table>
+<input type="hidden" name="@main_visual[]" value="main_visual_display" />
+<input type="hidden" name="field[]" value="main_visual_display" />
+<input type="hidden" name="main_visual_bg_image:extension" value="media" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_image" />
+<input type="hidden" name="field[]" value="main_visual_bg_image" />
+<input type="hidden" name="main_visual_bg_image_sp:extension" value="media" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_image_sp" />
+<input type="hidden" name="field[]" value="main_visual_bg_image_sp" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_color_red" />
+<input type="hidden" name="field[]" value="main_visual_bg_color_red" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_color_green" />
+<input type="hidden" name="field[]" value="main_visual_bg_color_green" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_color_blue" />
+<input type="hidden" name="field[]" value="main_visual_bg_color_blue" />
+<input type="hidden" name="@main_visual[]" value="main_visual_bg_color_alpha" />
+<input type="hidden" name="field[]" value="main_visual_bg_color_alpha" />
+<input type="hidden" name="@main_visual[]" value="main_visual_copy_main" />
+<input type="hidden" name="field[]" value="main_visual_copy_main" />
+<input type="hidden" name="@main_visual[]" value="main_visual_copy_sub" />
+<input type="hidden" name="field[]" value="main_visual_copy_sub" />
+<input type="hidden" name="@main_visual[]" value="main_visual_link01_text" />
+<input type="hidden" name="field[]" value="main_visual_link01_text" />
+<input type="hidden" name="@main_visual[]" value="main_visual_link01_href" />
+<input type="hidden" name="field[]" value="main_visual_link01_href" />
+<input type="hidden" name="@main_visual[]" value="main_visual_link02_text" />
+<input type="hidden" name="field[]" value="main_visual_link02_text" />
+<input type="hidden" name="@main_visual[]" value="main_visual_link02_href" />
+<input type="hidden" name="field[]" value="main_visual_link02_href" />
+<input type="hidden" name="@main_visual[]" value="main_visual_content_position" />
+<input type="hidden" name="field[]" value="main_visual_content_position" />
+<input type="hidden" name="field[]" value="@main_visual" />
+
+<style>
+  .width-input-color {
+    width: 64px;
+  }
+</style>
