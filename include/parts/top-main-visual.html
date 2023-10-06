@@ -1,21 +1,24 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
 <section class="main-visual">
   @include("/include/edit/module-custom.html", {"hash":"#acms_box3"})
-    <!-- BEGIN_IF [{main_visual_bg_image@path[1]}/em/_or_/<!-- BEGIN main_visual:loop -->{main_visual_display}<!-- END main_visual:loop -->/eq/1] -->
+    <!-- BEGIN_IF [<!-- BEGIN main_visual:loop -->{main_visual_display}<!-- END main_visual:loop -->/eq/1] -->
     <!-- 背景画像が1枚のみ設定されている場合 -->
+    <!-- BEGIN main_visual:loop -->
+    <!-- BEGIN_IF [{main_visual_display}/eq/1] -->
     <picture class="main-visual-bg">
       <!-- BEGIN main_visual_bg_image_sp:veil -->
-      <source srcset="%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image_sp@path[0]}" media="(max-width: 767px)" />
+      <source srcset="%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image_sp@path}" media="(max-width: 767px)" />
       <!-- END main_visual_bg_image_sp:veil -->
-      <img src="%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image@path[0]}" alt="{main_visual_bg_image@alt}" class="is-alone">
+      <img src="%{MEDIA_ARCHIVES_DIR}{main_visual_bg_image@path}" alt="{main_visual_bg_image@alt}" class="is-alone">
     </picture>
+    <!-- BEGIN_IF [{main_visual_copy_main}/nem/_or_/{main_visual_copy_sub}/nem/_or_/{main_visual_link01_href}/nem/_or_/{main_visual_link02_href}/nem] -->
     <div class="main-visual-box<!-- BEGIN main_visual_content_position:veil --> is-{main_visual_content_position}<!-- END main_visual_content_position:veil --> js-contrast-color" data-black-color="var(--color-primary)" data-white-color="#fff"<!-- BEGIN bg_color:veil --> style="background: rgb({main_visual_bg_color_red} {main_visual_bg_color_green} {main_visual_bg_color_blue} / {main_visual_bg_color_alpha}%)"<!-- END bg_color:veil -->>
       <!-- BEGIN main_visual_copy:veil -->
       <div>
         <!-- BEGIN main_visual_copy_main:veil -->
-        <h1 class="main-visual-catch">{main_visual_copy_main[0]}[raw|nl2br]</h1><!-- END main_visual_copy_main:veil -->
+        <h1 class="main-visual-catch">{main_visual_copy_main}[raw|nl2br]</h1><!-- END main_visual_copy_main:veil -->
         <!-- BEGIN main_visual_copy_sub:veil -->
-        <p class="main-visual-catch-sub">{main_visual_copy_sub[0]}[raw|nl2br]</p><!-- END main_visual_copy_sub:veil -->
+        <p class="main-visual-catch-sub">{main_visual_copy_sub}[raw|nl2br]</p><!-- END main_visual_copy_sub:veil -->
       </div>
       <!-- END main_visual_copy:veil -->
       <!-- BEGIN main_visual_link:veil -->
@@ -29,16 +32,19 @@
       </div>
       <!-- END main_visual_link:veil -->
     </div>
+    <!-- END_IF -->
     <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
+    <!-- END_IF -->
+    <!-- END main_visual:loop -->
     <!-- ELSE -->
     <!-- 背景画像が複数枚設定されている場合 -->
     <div id="main-visual-slider" class="splide" role="group">
       <div class="splide__track">
         <div class="splide__list">
           <!-- BEGIN main_visual:loop -->
-          <!-- BEGIN_IF [{main_visual_display}/neq/0] -->
+          <!-- BEGIN_IF [{main_visual_display}/eq/1] -->
           <div class="splide__slide">
-            <!-- BEGIN_IF [{main_visual_copy_main}/nem/_or_/{main_visual_copy_sub}/nem/_or_/{main_visual_link01_href}/_or_/{main_visual_link02_href}/nem] -->
+            <!-- BEGIN_IF [{main_visual_copy_main}/nem/_or_/{main_visual_copy_sub}/nem/_or_/{main_visual_link01_href}/nem/_or_/{main_visual_link02_href}/nem] -->
             <div class="main-visual-box<!-- BEGIN main_visual_content_position:veil --> is-{main_visual_content_position}<!-- END main_visual_content_position:veil --> js-contrast-color" data-black-color="var(--color-primary)" data-white-color="#fff"<!-- BEGIN bg_color:veil --> style="background: rgb({main_visual_bg_color_red} {main_visual_bg_color_green} {main_visual_bg_color_blue} / {main_visual_bg_color_alpha}%)"<!-- END bg_color:veil -->>
               <!-- BEGIN main_visual_copy:veil -->
               <div>
