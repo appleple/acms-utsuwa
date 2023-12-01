@@ -1,0 +1,70 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　よくあるご質問
+------------------------------ */
+.faq {
+  padding: 1.25rem 1.5rem;
+  border-radius: global.$border-radius-md;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+.faq-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-m);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.faq-question,
+.faq-answer {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.faq-question {
+  .faq-icon {
+    color: global.$color-primary;
+  }
+
+  .faq-title {
+    margin: 0;
+    padding: .5rem 0;
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+.faq-answer {
+  margin-top: 10px;
+
+  .faq-icon {
+    color: global.$color-gray90;
+  }
+
+  .faq-body {
+    padding-top: .5rem;
+  }
+
+  .entry-style {
+    margin-bottom: -1rem;
+  }
+}
+
+
+/* 質問リスト */
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

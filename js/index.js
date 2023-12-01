@@ -107,4 +107,14 @@ $(() => {
   $(window).on('load scroll', () => {
     fixElement();
   });
+
+  // アコーディオン
+  $('.js-toggle-button').on('click', (e) => {
+    const $self = $(e.currentTarget);
+    const $parent = $self.closest('.js-toggle');
+    const $body = $parent.find('.js-toggle-body');
+    console.log($parent)
+    $self.toggleClass('is-active');
+    $body.slideToggle();
+  });
 });
