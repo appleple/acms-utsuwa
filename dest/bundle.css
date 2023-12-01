@@ -1888,6 +1888,65 @@ a[href^="tel:"]:hover {
   }
 }
 /* ------------------------------
+　　よくあるご質問
+------------------------------ */
+.faq {
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.faq + .faq {
+  margin-top: 1rem;
+}
+
+.faq-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.953125rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.faq-question,
+.faq-answer {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.faq-question .faq-icon {
+  color: var(--color-primary);
+}
+.faq-question .faq-title {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.faq-answer {
+  margin-top: 10px;
+}
+.faq-answer .faq-icon {
+  color: var(--color-gray90);
+}
+.faq-answer .faq-body {
+  padding-top: 0.5rem;
+}
+.faq-answer .entry-style {
+  margin-bottom: -1rem;
+}
+
+/* 質問リスト */
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ------------------------------
 　　お問い合わせ
 ------------------------------ */
 /* ステップ
@@ -2447,6 +2506,37 @@ a[href^="tel:"]:hover {
   margin-left: auto;
 }
 
+/* ------------------------------
+　　ローディングアイコン
+------------------------------ */
+.content-loading {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.content-loading-icon {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gray40);
+  border-radius: 50%;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+.content-loading-icon:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.content-loading-icon:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
 /* ------------------------------
 　　ローカルナビゲーション
 ------------------------------ */
@@ -3323,6 +3413,37 @@ a[href^="tel:"]:hover {
     padding: 0.5rem 1rem;
   }
 }
+/* ------------------------------
+　　アコーディオン
+------------------------------ */
+.toggle-button {
+  width: 100%;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1.7;
+  text-align: left;
+  background: none;
+  border: 0;
+}
+.toggle-button.js-post-include-disabled {
+  color: inherit;
+  opacity: 1;
+}
+
+.toggle-icon {
+  margin-top: 0.85rem;
+  margin-left: auto;
+  line-height: 1;
+  transition: 0.3s ease;
+}
+.toggle-button.is-active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.toggle-body {
+  display: none;
+}
+
 /* ------------------------------
 　　トピックパス
 ------------------------------ */
