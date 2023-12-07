@@ -1375,12 +1375,16 @@
   .entry-style & {
     margin-right: 1rem;
     margin-left: 0;
-    line-height: global.$line-height-ss;
+    line-height: global.$line-height-sm;
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-faq-body-icon {
     font-size: map.get(global.$font-scales, heading-m);
+  
+    .entry-style & {
+      line-height: global.$line-height-ss;
+    }
   }
 }
