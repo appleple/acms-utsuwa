@@ -5243,12 +5243,15 @@ a[href^="tel:"]:hover {
 .entry-style .entry-faq-body-icon {
   margin-right: 1rem;
   margin-left: 0;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 @media screen and (min-width: 48rem) {
   .entry-faq-body-icon {
     font-size: 1.953125rem;
+  }
+  .entry-style .entry-faq-body-icon {
+    line-height: 1;
   }
 }
 /* ------------------------------
