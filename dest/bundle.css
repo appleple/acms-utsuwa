@@ -1928,8 +1928,10 @@ a[href^="tel:"]:hover {
 .faq-answer {
   margin-top: 10px;
 }
-.faq-answer .faq-icon {
+.faq-answer .faq-icon,
+.faq-answer .faq-icon a {
   color: var(--color-gray90);
+  text-decoration: none;
 }
 .faq-answer .faq-body {
   padding-top: 0.5rem;
@@ -3366,12 +3368,12 @@ a[href^="tel:"]:hover {
 .toggle-button {
   width: 100%;
   padding: 0;
+  color: var(--color-gray100);
   font-family: inherit;
   line-height: 1.7;
   text-align: left;
   background: none;
   border: 0;
-  color: var(--color-gray100);
 }
 .toggle-button.js-post-include-disabled {
   color: inherit;
@@ -5158,6 +5160,42 @@ a[href^="tel:"]:hover {
 @media screen and (min-width: 48rem) {
   .profile-heading {
     margin-top: 2.5rem;
+  }
+}
+/*
+　FAQ
+------------------------------ */
+.entry-faq-title {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-title-icon {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  color: var(--color-primary);
+}
+
+.entry-faq-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-body-icon {
+  flex: 0 0 auto;
+  color: var(--color-gray90);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.entry-style .entry-faq-body-icon {
+  margin-right: 1rem;
+  margin-left: 0;
+  line-height: 1;
+}
+
+@media screen and (min-width: 48rem) {
+  .entry-faq-body-icon {
+    font-size: 1.953125rem;
   }
 }
 /* ------------------------------
