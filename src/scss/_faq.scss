@@ -48,8 +48,10 @@
 .faq-answer {
   margin-top: 10px;
 
-  .faq-icon {
+  .faq-icon,
+  .faq-icon a {
     color: global.$color-gray90;
+    text-decoration: none;
   }
 
   .faq-body {
