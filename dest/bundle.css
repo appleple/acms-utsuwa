@@ -3424,6 +3424,7 @@ a[href^="tel:"]:hover {
   text-align: left;
   background: none;
   border: 0;
+  color: var(--color-gray100);
 }
 .toggle-button.js-post-include-disabled {
   color: inherit;
