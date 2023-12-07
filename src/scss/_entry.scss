@@ -1346,3 +1346,41 @@
     margin-top: 2.5rem;
   }
 }
+
+/*
+　FAQ
+------------------------------ */
+.entry-faq-title {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-title-icon {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  color: global.$color-primary;
+}
+
+.entry-faq-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-body-icon {
+  flex: 0 0 auto;
+  color: global.$color-gray90;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
+  
+  .entry-style & {
+    margin-right: 1rem;
+    margin-left: 0;
+    line-height: global.$line-height-ss;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .entry-faq-body-icon {
+    font-size: map.get(global.$font-scales, heading-m);
+  }
+}
