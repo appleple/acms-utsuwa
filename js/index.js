@@ -113,8 +113,8 @@ $(() => {
     const $self = $(e.currentTarget);
     const $parent = $self.closest('.js-toggle');
     const $body = $parent.find('.js-toggle-body');
-    console.log($parent)
-    $self.toggleClass('is-active');
+    const ariaPressed = $self.attr('aria-pressed') === 'true' ? 'false' : 'true';
+    $self.toggleClass('is-active').attr('aria-pressed', ariaPressed);
     $body.slideToggle();
   });
 });
