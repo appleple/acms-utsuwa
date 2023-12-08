@@ -5,65 +5,75 @@
 /* ------------------------------
 　　メインビジュアル
 ------------------------------ */
-
 .main-visual {
   position: relative;
+  height: var(--mv-height-sp, calc(100svh - 3.5rem));
+  min-height: 20rem;
   overflow: hidden;
 }
 
 .main-visual-bg {
   width: 100%;
-  height: calc(100vh - #{global.$header-height});
-  height: calc(100svh - #{global.$header-height});
-  min-height: 20rem;
-  background: no-repeat center;
-  background-size: cover;
-  animation: zoom 3s 0.3s 1 both;
-  animation-duration: ease-out;
+  height: 100%;
+
+  .is-alone {
+    animation: zoom 3s 0.3s 1 both;
+    animation-duration: ease-out;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 #main-visual-slider {
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
-  height: calc(100vh - 200px);
-  height: calc(100svh - 200px);
-  min-height: 20rem;
+  height: 100%;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
 
   .splide__track,
   .splide__list,
   .splide__slide,
+  .splide__slide picture,
   .splide__slide img {
     width: 100%;
     height: 100%;
   }
 
+  .splide__slide picture,
   .splide__slide img {
     object-fit: cover;
+  }
+
+  .splide__pagination {
+    bottom: 0;
   }
 }
 
 .main-visual-box {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-  color: global.$color-text-inverse;
-  text-align: center;
-
-  &::before {
-    position: absolute;
-    inset: 0;
-    display: block;
-    background: rgb(0 0 0 / 30%);
-    content: "";
-  }
+  top: 50%;
+  left: 50%;
+  display: grid;
+  gap: 2rem;
+  box-sizing: border-box;
+  width: calc(100vw - 40px);
+  max-width: 480px;
+  padding: 2.5rem 2rem;
+  color: global.$color-primary;
+  background: rgb(255 255 255 / 90%);
+  transform: translate(-50%,-50%);
+  place-content: center;
 }
 
 .main-visual-catch {
-  margin: 0 0 0.5rem;
-  font-size: map.get(global.$font-scales, display-s);
+  margin: 0;
+  font-size: map.get(global.$font-scales, heading-l);
   line-height: global.$line-height-sm;
   animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
@@ -71,22 +81,34 @@
 
 .main-visual-catch-sub {
   margin: 0;
-  font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
   line-height: global.$line-height-lg;
   animation: fade-in 0.3s 1.3s 1 both;
   will-change: transform, opacity;
 }
 
+.main-visual-links {
+  display: grid;
+  gap: 1rem;
+
+  .button.is-bordered:not(:hover) {
+    background: global.$color-white;
+  }
+}
+
 .main-visual-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
+  width: 100%;
   margin: 0;
+  text-align: center;
   animation: fade-in 0.3s 2.8s 1 both;
   will-change: transform, opacity;
 }
 
 .main-visual-scroll-link {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
@@ -95,7 +117,7 @@
   &:visited,
   &:active,
   &:focus {
-    color: currentcolor;
+    color: global.$color-white;
   }
 
   &:hover {
@@ -117,19 +139,56 @@
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  .main-visual-slider {
-    height: 70vh;
+  .main-visual {
+    height: var(--mv-height-pc, 48rem);
   }
 
   .main-visual-box {
-    padding: 3rem 4.5rem;
+    box-sizing: content-box;
+    width: auto;
+    min-width: 434px;
+    max-width: 100%;
+    padding: 5.5rem 6.5rem;
+
+    &.is-left {
+      left: 0;
+      text-align: left;
+      transform: translate(0,-50%);
+    }
+
+    &.is-center {
+      text-align: center;
+    }
+
+    &.is-right {
+      right: 0;
+      left: auto;
+      text-align: right;
+      transform: translate(0,-50%);
+    }
   }
 
   .main-visual-catch {
     font-size: map.get(global.$font-scales, display-m);
   }
 
-  .main-visual-catch-sub {
-    font-size: map.get(global.$font-scales, heading-ss);
+  .main-visual-links {
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 2rem;
+    justify-content: center;
+    max-width: 434px;
+    margin: 0 auto;
+
+    .main-visual-box.is-left & {
+      justify-content: flex-start;
+    }
+
+    .main-visual-box.is-right & {
+      justify-content: flex-end;
+    }
+  }
+
+  .main-visual-scroll {
+    margin-bottom: 1rem;
   }
 }
