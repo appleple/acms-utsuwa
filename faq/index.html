@@ -5,6 +5,7 @@
   <main class="main">
     <div class="acms-grid">
       <div class="container-md">
+        @include("/include/category/local-nav.html", {"module_id": "category_list_child"})
         <!-- 質問一覧 -->
         @include("/include/entry/list-faq.html", {"module_id": "list_faq"})
         @include("/include/category/entry-list-faq.html", {"module_id": "category_entrylist_faq"})
