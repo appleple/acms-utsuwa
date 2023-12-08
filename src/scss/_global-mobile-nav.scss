@@ -18,11 +18,8 @@
   justify-content: center;
   width: global.$header-height-fixed;
   height: global.$header-height-fixed;
+  text-decoration: none;
   background: global.$color-primary;
-
-  &:hover {
-    text-decoration: none;
-  }
 
   &:active,
   &:focus {
