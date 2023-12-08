@@ -46,8 +46,7 @@ a[href^="tel:"]:hover {
 
 .container-md {
   --gutter: var(--gutter-md);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 60rem;
   margin: 0 auto;
   padding-right: 1rem;
@@ -58,8 +57,7 @@ a[href^="tel:"]:hover {
 
 .container-sm {
   --gutter: var(--gutter-sm);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 47rem;
   margin: 0 auto;
   padding-right: 1rem;
@@ -93,26 +91,18 @@ a[href^="tel:"]:hover {
   bottom: 0;
   z-index: 9000;
   display: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 1rem 0;
-  -webkit-transform: translateY(40px);
-      -ms-transform: translateY(40px);
-          transform: translateY(40px);
+  transform: translateY(40px);
   opacity: 0;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.2s;
-  transition: opacity 0.3s, -webkit-transform 0.2s;
   transition: opacity 0.3s, transform 0.2s;
-  transition: opacity 0.3s, transform 0.2s, -webkit-transform 0.2s;
 }
 .sticky-contents.is-centered {
   text-align: center;
 }
 .sticky-contents.is-show {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   opacity: 1;
 }
 .sticky-contents.is-active {
@@ -137,15 +127,12 @@ a[href^="tel:"]:hover {
 .slick-slider {
   position: relative;
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
-  -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 }
@@ -169,8 +156,6 @@ a[href^="tel:"]:hover {
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -241,136 +226,58 @@ a[href^="tel:"]:hover {
 /* ------------------------------
 　　アニメーション
 ------------------------------ */
-@-webkit-keyframes zoom {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
 @keyframes zoom {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-@-webkit-keyframes fade-in {
-  0% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
+    transform: scale(1.1);
   }
 }
 @keyframes fade-in {
   0% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    transform: translateY(10px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-in-drop {
-  0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes fade-in-drop {
   0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fade-in-card {
-  0% {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes fade-in-card {
   0% {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
+    transform: translateY(50px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
-  }
-}
-@-webkit-keyframes slide-in-left {
-  0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
   }
 }
 @keyframes slide-in-left {
   0% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-@-webkit-keyframes slide-in-right {
-  0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
 @keyframes slide-in-right {
   0% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
   }
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
 /* ------------------------------
@@ -400,8 +307,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .banner-list {
-  -webkit-animation: fade-in 0.4s 0.5s 1 both;
-          animation: fade-in 0.4s 0.5s 1 both;
+  animation: fade-in 0.4s 0.5s 1 both;
 }
 
 .banner-item {
@@ -410,7 +316,6 @@ a[href^="tel:"]:hover {
 
 .banner-link {
   display: block;
-  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 .banner-link:hover {
@@ -429,8 +334,7 @@ a[href^="tel:"]:hover {
 ------------------------------ */
 .button {
   display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0.75rem 2.25rem;
   color: var(--color-white);
   font-weight: bold;
@@ -439,7 +343,6 @@ a[href^="tel:"]:hover {
   background: var(--color-primary);
   border: 0;
   border-radius: 4px;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .button:-moz-any-link {
@@ -470,16 +373,13 @@ a[href^="tel:"]:hover {
   max-width: 100%;
 }
 .button.is-shadow {
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .button.is-shadow-shallow {
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .button.is-shadow-shallow:hover {
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .button.is-inverse {
   color: var(--color-gray100);
@@ -520,18 +420,13 @@ a[href^="tel:"]:hover {
 }
 .button:focus {
   border-color: #137AF3;
-  -webkit-box-shadow: var(--box-shadow-focus);
-          box-shadow: var(--box-shadow-focus);
+  box-shadow: var(--box-shadow-focus);
 }
 
 .button-read-more {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   color: currentcolor;
   font-weight: bold;
@@ -546,16 +441,9 @@ a[href^="tel:"]:hover {
   width: 100%;
   height: 2px;
   background-color: var(--color-secondary);
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   content: "";
 }
 .button-read-more::after {
@@ -576,14 +464,11 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .button-read-more {
-  -webkit-animation: fade-in 0.2s 1.2s 1 both;
-          animation: fade-in 0.2s 1.2s 1 both;
+  animation: fade-in 0.2s 1.2s 1 both;
 }
 @media (hover: hover) {
   .button-read-more:hover::before {
-    -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
@@ -613,15 +498,9 @@ a[href^="tel:"]:hover {
 }
 
 .calendar-day-has {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
   color: var(--color-gray100);
@@ -629,7 +508,6 @@ a[href^="tel:"]:hover {
   text-decoration: none;
   background: var(--color-primary-light);
   border-radius: 0.25rem;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .calendar-day-has:hover {
@@ -656,11 +534,8 @@ a[href^="tel:"]:hover {
 /* 　年間カレンダーレイアウト
 ------------------------------ */
 .calendar-group {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
-  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   gap: 2rem;
   margin: 0;
@@ -669,33 +544,22 @@ a[href^="tel:"]:hover {
 }
 
 .calendar-group-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100%;
   margin: 0 0 1rem;
   text-align: center;
 }
 
 .calendar-group-item-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100%;
   padding: 0 0 0.5rem;
 }
 
 @media screen and (min-width: 48rem) {
   .calendar-group {
-    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     border-top: 1px solid var(--color-gray30);
@@ -709,7 +573,6 @@ a[href^="tel:"]:hover {
 }
 @media screen and (min-width: 64rem) {
   .calendar-group {
-    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -742,8 +605,6 @@ a[href^="tel:"]:hover {
 
 .calendar-pagination {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   margin: 0 0 1rem;
   padding: 0 4.5rem;
@@ -760,8 +621,6 @@ a[href^="tel:"]:hover {
   position: absolute;
   top: 1rem;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin: 0;
@@ -775,23 +634,16 @@ a[href^="tel:"]:hover {
 }
 
 .calendar-pagination-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 2rem;
   height: 2rem;
   border: 1px solid var(--color-gray70);
   border-radius: 100%;
 }
 .calendar-pagination-link svg {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 1.25rem;
 }
 .calendar-pagination-link polygon {
@@ -818,32 +670,23 @@ a[href^="tel:"]:hover {
 　　カード
 ------------------------------ */
 .card-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 -1rem 1.25rem;
   padding: 0;
   list-style: none;
 }
 
 .card-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 0 2rem;
 }
 
 .card-item-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
@@ -856,13 +699,8 @@ a[href^="tel:"]:hover {
 }
 .card-link {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   text-decoration: none;
   color: var(--color-gray100);
@@ -876,22 +714,17 @@ a[href^="tel:"]:hover {
 }
 @media (hover: hover) {
   .card-link:hover .card-img {
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   .card-link:hover .card-read-more::before {
-    -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
 .card-img-wrap {
   position: relative;
   z-index: 1;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   margin: 0 0 1.25rem;
   overflow: hidden;
   border-radius: 6px;
@@ -899,7 +732,6 @@ a[href^="tel:"]:hover {
 
 .card-img {
   width: 100%;
-  -webkit-transition: 0.4s 0.2s ease-out;
   transition: 0.4s 0.2s ease-out;
   will-change: transform;
 }
@@ -925,8 +757,7 @@ a[href^="tel:"]:hover {
 }
 .js .js-animation-row.is-show .card-title,
 .js .js-animation-row.is-show .entry-style .card-title {
-  -webkit-animation: fade-in 0.2s 0.7s 1 both;
-          animation: fade-in 0.2s 0.7s 1 both;
+  animation: fade-in 0.2s 0.7s 1 both;
 }
 
 .card-date {
@@ -955,8 +786,7 @@ a[href^="tel:"]:hover {
 }
 .js .js-animation-row.is-show .card-text,
 .js .js-animation-row.is-show .entry-style .card-text {
-  -webkit-animation: fade-in 0.2s 1s 1 both;
-          animation: fade-in 0.2s 1s 1 both;
+  animation: fade-in 0.2s 1s 1 both;
 }
 
 .card-action {
@@ -966,12 +796,8 @@ a[href^="tel:"]:hover {
 .card-read-more,
 .entry-style .card-read-more {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   font-weight: bold;
   font-size: 1rem;
@@ -985,16 +811,9 @@ a[href^="tel:"]:hover {
   width: 100%;
   height: 2px;
   background-color: var(--color-secondary);
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   content: "";
 }
 .card-read-more::after,
@@ -1018,8 +837,7 @@ a[href^="tel:"]:hover {
 }
 .js .js-animation-row.is-show .card-read-more,
 .js .js-animation-row.is-show .entry-style .card-read-more {
-  -webkit-animation: fade-in 0.2s 1.2s 1 both;
-          animation: fade-in 0.2s 1.2s 1 both;
+  animation: fade-in 0.2s 1.2s 1 both;
 }
 
 .card-footer {
@@ -1029,12 +847,8 @@ a[href^="tel:"]:hover {
 }
 
 .card-author {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   font-size: 1rem;
 }
@@ -1068,8 +882,7 @@ a[href^="tel:"]:hover {
     overflow-x: auto;
   }
   .card-carousel .card-list {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     margin-bottom: 0;
   }
   .card-carousel .card-item {
@@ -1119,19 +932,14 @@ a[href^="tel:"]:hover {
 }
 /* ボーダー付きカード */
 .card-bordered-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 -1rem;
   padding: 0;
   list-style: none;
 }
 
 .card-bordered-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 0 2rem;
 }
@@ -1141,18 +949,12 @@ a[href^="tel:"]:hover {
 }
 
 .card-bordered-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   text-decoration: none;
   border-radius: 6px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   color: var(--color-gray100);
 }
 .card-bordered-link:visited {
@@ -1164,18 +966,13 @@ a[href^="tel:"]:hover {
 }
 @media (hover: hover) {
   .card-bordered-link:hover {
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   }
   .card-bordered-link:hover .card-bordered-img {
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   .card-bordered-link:hover .card-bordered-read-more::before {
-    -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
@@ -1187,7 +984,6 @@ a[href^="tel:"]:hover {
 
 .card-bordered-img {
   width: 100%;
-  -webkit-transition: 0.4s 0.2s ease-out;
   transition: 0.4s 0.2s ease-out;
   will-change: transform;
 }
@@ -1209,12 +1005,8 @@ a[href^="tel:"]:hover {
 .card-bordered-read-more,
 .entry-style .card-bordered-read-more {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   font-weight: bold;
   font-size: 1rem;
@@ -1228,16 +1020,9 @@ a[href^="tel:"]:hover {
   width: 100%;
   height: 2px;
   background-color: var(--color-secondary);
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   content: "";
 }
 .card-bordered-read-more::after,
@@ -1260,17 +1045,12 @@ a[href^="tel:"]:hover {
 }
 .js .js-animation-row.is-show .card-bordered-read-more,
 .js .js-animation-row.is-show .entry-style .card-bordered-read-more {
-  -webkit-animation: fade-in 0.2s 1.2s 1 both;
-          animation: fade-in 0.2s 1.2s 1 both;
+  animation: fade-in 0.2s 1.2s 1 both;
 }
 
 .card-bordered-text-inline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 1rem;
 }
 .card-bordered-text-inline .card-bordered-title,
@@ -1285,8 +1065,6 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .card-bordered-text-inline {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     padding: 1.5rem;
   }
@@ -1374,8 +1152,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .cta-button-wrap {
-  -webkit-animation: fade-in 0.4s 0.5s 1 both;
-          animation: fade-in 0.4s 0.5s 1 both;
+  animation: fade-in 0.4s 0.5s 1 both;
 }
 
 .cta-link-wrap {
@@ -1404,9 +1181,7 @@ a[href^="tel:"]:hover {
   background-position: center;
   background-size: 5px 10px;
   border-radius: 100%;
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
   content: "";
 }
 .cta-link:-moz-any-link {
@@ -1428,8 +1203,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .cta-link {
-  -webkit-animation: fade-in 0.4s 0.5s 1 both;
-          animation: fade-in 0.4s 0.5s 1 both;
+  animation: fade-in 0.4s 0.5s 1 both;
 }
 
 .cta-micro-copy {
@@ -1489,8 +1263,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .cta-round-button-wrap {
-  -webkit-animation: fade-in 0.4s 0.5s 1 both;
-          animation: fade-in 0.4s 0.5s 1 both;
+  animation: fade-in 0.4s 0.5s 1 both;
 }
 
 .cta-round-micro-copy {
@@ -1581,8 +1354,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .cta-visual-read-more {
-  -webkit-animation: fade-in 0.4s 0.5s 1 both;
-          animation: fade-in 0.4s 0.5s 1 both;
+  animation: fade-in 0.4s 0.5s 1 both;
 }
 
 @media screen and (min-width: 48rem) {
@@ -1613,18 +1385,12 @@ a[href^="tel:"]:hover {
 　　グローバルナビゲーション
 ------------------------------ */
 .global-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 100%;
 }
 
 .global-nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding: 0;
@@ -1634,22 +1400,14 @@ a[href^="tel:"]:hover {
 
 .global-nav-item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .global-nav-link {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 3.5rem;
   margin: 0 1rem;
   color: var(--color-gray100);
@@ -1670,9 +1428,7 @@ a[href^="tel:"]:hover {
   margin-top: -0.25rem;
   border-top: 2px solid var(--color-gray100);
   border-right: 2px solid var(--color-gray100);
-  -webkit-transform: rotate(135deg);
-      -ms-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
   content: "";
 }
 .global-nav-link::after {
@@ -1682,34 +1438,24 @@ a[href^="tel:"]:hover {
   left: 0;
   height: 2px;
   background: var(--color-primary);
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
+  transform: scaleX(0);
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
   content: "";
 }
 .global-nav-link:hover {
   text-decoration: none;
 }
 .global-nav-link:hover::after {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 .global-nav-item.stay > .global-nav-link::after {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 .global-nav-link.is-cta {
   height: 3.5rem;
   padding: 0 2rem;
   color: var(--color-white);
   background: var(--color-primary);
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .global-nav-link.is-cta::after {
@@ -1730,15 +1476,11 @@ a[href^="tel:"]:hover {
   top: 100%;
   left: 1rem;
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-width: 14rem;
   overflow: hidden;
   border-radius: 3px;
-  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 .global-nav-item > .global-nav-list .global-nav-item {
   width: 100%;
@@ -1747,9 +1489,7 @@ a[href^="tel:"]:hover {
 }
 .global-nav-item > .global-nav-list .global-nav-link {
   position: relative;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: auto;
   margin: 0;
@@ -1779,8 +1519,6 @@ a[href^="tel:"]:hover {
 
 .global-nav-item:hover > .global-nav-list,
 .global-nav-item:focus-within > .global-nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1798,25 +1536,14 @@ a[href^="tel:"]:hover {
   }
 }
 .global-nav-mobile-menu-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 3.5rem;
   height: 3.5rem;
-  background: var(--color-primary);
-}
-.global-nav-mobile-menu-btn:hover {
   text-decoration: none;
+  background: var(--color-primary);
 }
 .global-nav-mobile-menu-btn:active, .global-nav-mobile-menu-btn:focus {
   outline: 0;
@@ -1839,7 +1566,6 @@ a[href^="tel:"]:hover {
   vertical-align: middle;
   background-color: var(--color-white);
   border-radius: 1px;
-  -webkit-transition: 0.1s all;
   transition: 0.1s all;
 }
 .global-nav-mobile-icon-toggle-menu::before, .global-nav-mobile-icon-toggle-menu::after {
@@ -1849,7 +1575,6 @@ a[href^="tel:"]:hover {
   height: 2px;
   background-color: var(--color-white);
   border-radius: 1px;
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   content: "";
 }
@@ -1864,15 +1589,11 @@ a[href^="tel:"]:hover {
 }
 [aria-expanded=true] .global-nav-mobile-icon-toggle-menu::before {
   width: 1.25rem;
-  -webkit-transform: translate(0, 0.4rem) rotate(45deg);
-      -ms-transform: translate(0, 0.4rem) rotate(45deg);
-          transform: translate(0, 0.4rem) rotate(45deg);
+  transform: translate(0, 0.4rem) rotate(45deg);
 }
 [aria-expanded=true] .global-nav-mobile-icon-toggle-menu::after {
   width: 1.25rem;
-  -webkit-transform: translate(0, -0.4rem) rotate(-45deg);
-      -ms-transform: translate(0, -0.4rem) rotate(-45deg);
-          transform: translate(0, -0.4rem) rotate(-45deg);
+  transform: translate(0, -0.4rem) rotate(-45deg);
 }
 
 @media (max-width: 63.99875rem) {
@@ -1886,19 +1607,15 @@ a[href^="tel:"]:hover {
   left: 0;
   z-index: 10001;
   display: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   padding-top: 4rem;
   overflow-y: scroll;
   background-color: var(--color-white);
   opacity: 0;
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 0.3s;
   transition-property: all;
 }
 .global-nav-mobile.is-active {
@@ -1911,14 +1628,9 @@ a[href^="tel:"]:hover {
 /* モバイルメニュー開いた時
 ------------------------------ */
 .global-nav-mobile-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  align-items: center;
+  box-sizing: border-box;
   padding: 0 1.25rem;
 }
 
@@ -1930,16 +1642,9 @@ a[href^="tel:"]:hover {
 }
 
 .global-nav-mobile-navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   padding: 0 0 50px;
 }
@@ -1972,25 +1677,18 @@ a[href^="tel:"]:hover {
   background-color: var(--color-gray100);
   border: 0;
   border-radius: 1px;
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   content: "";
 }
 .global-nav-mobile-item.is-expand .icon-expand::before {
-  -webkit-transform: translate(-2px, -0.5rem) rotate(90deg);
-      -ms-transform: translate(-2px, -0.5rem) rotate(90deg);
-          transform: translate(-2px, -0.5rem) rotate(90deg);
+  transform: translate(-2px, -0.5rem) rotate(90deg);
 }
 .global-nav-mobile-item.is-expand .icon-expand::after {
-  -webkit-transform: translate(-2px, -0.5rem);
-      -ms-transform: translate(-2px, -0.5rem);
-          transform: translate(-2px, -0.5rem);
+  transform: translate(-2px, -0.5rem);
 }
 .global-nav-mobile-item.is-expand .icon-expand.is-close::before, .global-nav-mobile-item.is-expand .icon-expand.is-close::after {
   width: 1.25rem;
-  -webkit-transform: translate(-2px, -0.5rem);
-      -ms-transform: translate(-2px, -0.5rem);
-          transform: translate(-2px, -0.5rem);
+  transform: translate(-2px, -0.5rem);
 }
 .global-nav-mobile-item .global-nav-mobile-group {
   display: none;
@@ -2052,9 +1750,7 @@ a[href^="tel:"]:hover {
   height: 0.5rem;
   border-top: 2px solid var(--color-gray100);
   border-right: 2px solid var(--color-gray100);
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   content: "";
 }
 
@@ -2101,18 +1797,12 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .headline.js-animation-row.is-show {
-  -webkit-animation: fade-in 0.2s 0.3s 1 both;
-          animation: fade-in 0.2s 0.3s 1 both;
+  animation: fade-in 0.2s 0.3s 1 both;
 }
 
 .headline-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: 0;
   line-height: 1.5;
 }
@@ -2127,20 +1817,14 @@ a[href^="tel:"]:hover {
 }
 
 .headline-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 1rem;
   color: var(--color-gray100);
   text-decoration: none;
   background: var(--color-white);
   border-bottom: 1px solid var(--color-gray30);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .headline-item:last-child .headline-link {
   border: 0;
@@ -2150,19 +1834,13 @@ a[href^="tel:"]:hover {
 }
 .headline-link:hover {
   background: var(--color-gray20);
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .headline-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
   margin: 0 0 0.75rem;
   color: var(--color-gray90);
   font-size: 0.8rem;
@@ -2214,8 +1892,6 @@ a[href^="tel:"]:hover {
 /* ステップ
 ------------------------------ */
 .form-step {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 0 1.5rem;
   padding: 0;
@@ -2224,16 +1900,9 @@ a[href^="tel:"]:hover {
 }
 
 .form-step-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem 0 0.5rem;
   color: var(--color-gray100);
   font-weight: bold;
@@ -2241,15 +1910,9 @@ a[href^="tel:"]:hover {
   list-style: none;
 }
 .form-step-item::before {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 2rem;
   height: 2rem;
   margin: 0 0 0.5rem;
@@ -2271,13 +1934,8 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .form-step-item {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: row;
+    justify-content: center;
     padding: 1rem 0;
     font-size: 1.25rem;
   }
@@ -2293,19 +1951,14 @@ a[href^="tel:"]:hover {
 }
 @media screen and (max-width: 47.99875rem) {
   .form-step {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
 }
 /* フォームレイアウト
 ------------------------------ */
 .form-group-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -2316,22 +1969,16 @@ a[href^="tel:"]:hover {
 }
 
 .form-group-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .form-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   margin: 0 0 2rem;
   padding: 0;
@@ -2339,8 +1986,7 @@ a[href^="tel:"]:hover {
 
 .form-label {
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin: 0 0 0.5rem;
   font-weight: bold;
@@ -2349,8 +1995,7 @@ a[href^="tel:"]:hover {
 
 .form-control {
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   line-height: 1.7;
 }
@@ -2365,28 +2010,16 @@ a[href^="tel:"]:hover {
   }
 }
 .form-button-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 2rem 0 0;
 }
 
 @media screen and (min-width: 48rem) {
   .form-button-group {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     margin: 2.5rem 0 0;
   }
   .form-button:not(:last-child) {
@@ -2402,9 +2035,7 @@ a[href^="tel:"]:hover {
     width: 100%;
   }
   .form-button-return {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    order: 1;
   }
 }
 /* ラベル
@@ -2532,8 +2163,7 @@ a[href^="tel:"]:hover {
 .form-group select.invalid {
   background-color: var(--color-gray10);
   border-color: var(--color-error);
-  -webkit-box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 .form-group input[type=text][required]:valid,
 .form-group input[type=password][required]:valid,
@@ -2569,8 +2199,7 @@ a[href^="tel:"]:hover {
 .form-group select:focus {
   background-color: var(--color-gray10);
   border-color: #0061d1;
-  -webkit-box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 .form-group input[type=text],
 .form-group input[type=password],
@@ -2585,8 +2214,7 @@ a[href^="tel:"]:hover {
 .form-group input[type=url],
 .form-group input[type=search],
 .form-group input[type=tel] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -2594,15 +2222,13 @@ a[href^="tel:"]:hover {
   border-radius: 3px;
 }
 .form-group textarea {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0.75rem;
   font-size: 1rem;
   border-radius: 3px;
 }
 .form-group select {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 3rem;
   padding: 0.75rem 3rem 0.75rem 1rem;
   font-size: 1rem;
@@ -2647,8 +2273,7 @@ a[href^="tel:"]:hover {
 .form-checkbox-only:focus-within {
   background-color: var(--color-gray10);
   border-color: #0061d1;
-  -webkit-box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 .form-checkbox-only-label {
@@ -2666,8 +2291,6 @@ a[href^="tel:"]:hover {
 /* 検索フォーム
 ------------------------------ */
 .form-search .form-search-action {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
@@ -2677,11 +2300,8 @@ a[href^="tel:"]:hover {
   border-bottom-left-radius: 0;
 }
 .form-search input.form-search-input {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex: 1 1 auto;
+  box-sizing: border-box;
   height: 3rem;
   padding: 0.5rem;
   font-size: 1rem;
@@ -2690,7 +2310,6 @@ a[href^="tel:"]:hover {
   border-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  -webkit-transition: background-color 0.25s ease;
   transition: background-color 0.25s ease;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -2704,12 +2323,9 @@ a[href^="tel:"]:hover {
   background: var(--color-white);
   border-color: #137AF3;
   outline: none;
-  -webkit-box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 .form-search .form-search-side-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   white-space: nowrap;
 }
@@ -2747,8 +2363,7 @@ a[href^="tel:"]:hover {
 }
 .form-group .invalid {
   border-color: var(--color-error);
-  -webkit-box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-          box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 .form-error-text {
@@ -2812,18 +2427,13 @@ a[href^="tel:"]:hover {
 }
 
 .list-group-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 1rem;
   color: currentcolor;
   font-weight: normal;
   text-decoration: none;
   border-bottom: 1px solid var(--color-gray40);
-  -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
 .list-group-item + .list-group {
@@ -2849,7 +2459,6 @@ a[href^="tel:"]:hover {
   bottom: 0;
   display: block;
   width: 1rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(var(--color-white)));
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--color-white));
   content: "";
 }
@@ -2872,8 +2481,6 @@ a[href^="tel:"]:hover {
 }
 
 .local-nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding: 0;
@@ -2885,17 +2492,12 @@ a[href^="tel:"]:hover {
 }
 
 .local-nav-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   color: var(--color-gray100);
 }
 .local-nav-link svg {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 1rem;
   height: 1rem;
   margin: 0 0.5rem 0 0;
@@ -2944,10 +2546,8 @@ a[href^="tel:"]:hover {
   min-height: 20rem;
   background: no-repeat center;
   background-size: cover;
-  -webkit-animation: zoom 3s 0.3s 1 both;
-          animation: zoom 3s 0.3s 1 both;
-  -webkit-animation-duration: ease-out;
-          animation-duration: ease-out;
+  animation: zoom 3s 0.3s 1 both;
+  animation-duration: ease-out;
 }
 
 #main-visual-slider {
@@ -2971,19 +2571,10 @@ a[href^="tel:"]:hover {
 .main-visual-box {
   position: absolute;
   inset: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 1.25rem;
   color: var(--color-white);
   text-align: center;
@@ -3000,8 +2591,7 @@ a[href^="tel:"]:hover {
   margin: 0 0 0.5rem;
   font-size: 3.0517578125rem;
   line-height: 1.4;
-  -webkit-animation: fade-in 0.3s 0.8s 1 both;
-          animation: fade-in 0.3s 0.8s 1 both;
+  animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
 }
 
@@ -3009,8 +2599,7 @@ a[href^="tel:"]:hover {
   margin: 0;
   font-size: 0.8rem;
   line-height: 1.7;
-  -webkit-animation: fade-in 0.3s 1.3s 1 both;
-          animation: fade-in 0.3s 1.3s 1 both;
+  animation: fade-in 0.3s 1.3s 1 both;
   will-change: transform, opacity;
 }
 
@@ -3018,22 +2607,14 @@ a[href^="tel:"]:hover {
   position: absolute;
   bottom: 2rem;
   margin: 0;
-  -webkit-animation: fade-in 0.3s 2.8s 1 both;
-          animation: fade-in 0.3s 2.8s 1 both;
+  animation: fade-in 0.3s 2.8s 1 both;
   will-change: transform, opacity;
 }
 
 .main-visual-scroll-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
 }
 .main-visual-scroll-link:link, .main-visual-scroll-link:visited, .main-visual-scroll-link:active, .main-visual-scroll-link:focus {
@@ -3051,9 +2632,7 @@ a[href^="tel:"]:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
   content: "";
 }
 
@@ -3075,11 +2654,8 @@ a[href^="tel:"]:hover {
 　　メディア
 ------------------------------ */
 .media-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
   padding: 0;
   list-style: none;
@@ -3100,14 +2676,10 @@ a[href^="tel:"]:hover {
   color: var(--color-gray100);
 }
 .media-link:hover .media-img {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
 .media-link:hover .media-read-more::before {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .media-time {
@@ -3136,10 +2708,7 @@ a[href^="tel:"]:hover {
 }
 
 .media-img {
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   will-change: transform;
 }
 
@@ -3152,12 +2721,8 @@ a[href^="tel:"]:hover {
 
 .media-read-more {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0.5rem 0 0;
   font-weight: bold;
   font-size: 1rem;
@@ -3170,16 +2735,9 @@ a[href^="tel:"]:hover {
   width: 100%;
   height: 2px;
   background-color: var(--color-secondary);
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-      -ms-transform-origin: left;
-          transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   content: "";
 }
 .media-read-more::after {
@@ -3205,41 +2763,29 @@ a[href^="tel:"]:hover {
   }
   .media-link {
     position: relative;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-rows: auto 1fr;
     grid-template-rows: auto 1fr;
-    -ms-grid-columns: 1fr 180px;
     grid-template-columns: 1fr 180px;
     padding: 1.25rem 0;
   }
   .media-link.is-noimage {
-    -ms-grid-columns: auto;
     grid-template-columns: auto;
   }
   .media-item {
     margin: 0;
   }
   .media-item-header {
-    -ms-grid-row: 1;
     grid-row: 1;
-    -ms-grid-column: 1;
     grid-column: 1;
     padding: 0 2rem 0 0;
   }
   .media-item-body {
-    -ms-grid-row: 2;
     grid-row: 2;
-    -ms-grid-column: 1;
     grid-column: 1;
     padding: 0 2rem 0 0;
   }
   .media-item-img {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
     grid-row: 1 / 3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2 / 3;
     margin: 0;
   }
@@ -3260,7 +2806,6 @@ a[href^="tel:"]:hover {
 }
 @media screen and (min-width: 48rem) {
   .media-link {
-    -ms-grid-columns: 1fr 280px;
     grid-template-columns: 1fr 280px;
     padding: 2.5rem 0;
   }
@@ -3356,8 +2901,7 @@ a[href^="tel:"]:hover {
   margin: 0 0.25rem 0.5rem;
 }
 .pager li.cur { /* 現在いる位置 */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 3rem;
   height: 3rem;
   padding: 0.25rem;
@@ -3367,31 +2911,18 @@ a[href^="tel:"]:hover {
   border-radius: 6px;
 }
 .pager li span:not([class]) {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
 
 .pager-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   width: 3rem;
   height: 3rem;
   padding: 0.25rem;
@@ -3431,13 +2962,8 @@ a[href^="tel:"]:hover {
 }
 
 .serial-nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -3445,31 +2971,17 @@ a[href^="tel:"]:hover {
 }
 
 .serial-nav-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   line-height: 1.5;
   border-bottom: 1px solid var(--color-gray40);
 }
 .serial-nav-item a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 100%;
   padding: 1rem;
   color: var(--color-gray100);
@@ -3488,9 +3000,7 @@ a[href^="tel:"]:hover {
   text-align: left;
 }
 .serial-nav-item-prev a {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 .serial-nav-item-prev svg {
   margin: 0 0.5rem 0 0;
@@ -3500,9 +3010,7 @@ a[href^="tel:"]:hover {
   text-align: right;
 }
 .serial-nav-item-next a {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
 }
 .serial-nav-item-next svg {
   margin: 0 0 0 0.5rem;
@@ -3516,28 +3024,19 @@ a[href^="tel:"]:hover {
   white-space: nowrap;
 }
 .serial-nav-item-index a {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .serial-nav-arrow {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0 0 0.5rem;
   font-weight: bold;
   font-size: 1rem;
 }
 .serial-nav-arrow svg {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 1.25rem;
   height: 1.25rem;
   padding: 6px;
@@ -3546,33 +3045,18 @@ a[href^="tel:"]:hover {
 }
 
 .serial-nav-index {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   font-weight: bold;
   font-size: 1rem;
 }
 .serial-nav-index a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   padding: 1rem 1.25rem;
@@ -3592,10 +3076,7 @@ a[href^="tel:"]:hover {
     margin: 0 0 4rem;
   }
   .serial-nav-list {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .serial-nav-item {
     width: 50%;
@@ -3608,8 +3089,6 @@ a[href^="tel:"]:hover {
     font-size: 1.25rem;
   }
   .serial-nav-item-index {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: auto;
   }
@@ -3624,8 +3103,7 @@ a[href^="tel:"]:hover {
 　　プロフィール
 ------------------------------ */
 .profile {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin: 0 0 2.5rem;
   padding: 1.5rem;
@@ -3633,8 +3111,6 @@ a[href^="tel:"]:hover {
 }
 
 .profile-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -3650,16 +3126,9 @@ a[href^="tel:"]:hover {
 }
 
 .profile-item-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .profile-position {
@@ -3726,11 +3195,8 @@ a[href^="tel:"]:hover {
 }
 
 .tag-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 -0.5rem;
   padding: 0;
   list-style: none;
@@ -3748,8 +3214,7 @@ a[href^="tel:"]:hover {
 
 .tag-link {
   display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0.5rem 1rem;
   color: var(--color-gray100);
   text-decoration: none;
@@ -3776,8 +3241,6 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .tag-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 0 0 1.5rem;
   }
@@ -3788,13 +3251,8 @@ a[href^="tel:"]:hover {
     padding: 2rem 2rem 1.25rem;
   }
   .tag-list {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex: 1;
+    flex-direction: row;
     margin: 0 -0.5rem;
   }
   .tag-list.is-sm {
@@ -3837,9 +3295,7 @@ a[href^="tel:"]:hover {
   margin: 0 0.5rem;
   border-top: 1px solid var(--color-gray60);
   border-right: 1px solid var(--color-gray60);
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   content: "";
 }
 
@@ -4006,15 +3462,9 @@ a[href^="tel:"]:hover {
 ------------------------------ */
 .video-modal {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-modal-thumbnail {
@@ -4024,26 +3474,17 @@ a[href^="tel:"]:hover {
   margin: 0 auto 2rem;
   overflow: hidden;
   border-radius: 10px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  -webkit-transition: -webkit-box-shadow 0.2s;
-  transition: -webkit-box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.2s;
-  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
 }
 .video-modal-thumbnail .video-modal-play-icon {
-  -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
 }
 .video-modal-thumbnail:hover {
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 .video-modal-thumbnail:hover .video-modal-play-icon {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 
 .video-modal-play-icon-wrap {
@@ -4058,8 +3499,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .video-modal-play-icon-wrap {
-  -webkit-animation: fade-in 0.2s 0.8s 1 both;
-          animation: fade-in 0.2s 0.8s 1 both;
+  animation: fade-in 0.2s 0.8s 1 both;
 }
 
 .video-modal-play-icon {
@@ -4069,12 +3509,8 @@ a[href^="tel:"]:hover {
   height: 4rem;
   background: var(--color-primary);
   border-radius: 50%;
-  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 .video-modal-play-icon::before {
   position: absolute;
@@ -4095,9 +3531,7 @@ a[href^="tel:"]:hover {
 }
 @media screen and (min-width: 48rem) {
   .video-modal {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
     padding: 0 10% 0 0;
   }
 }
@@ -4183,29 +3617,25 @@ a[href^="tel:"]:hover {
 .entry-style [class*=column-image] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-file] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-map] {
   border-right: calc(var(--gutter) / 2) solid transparent;
   border-left: calc(var(--gutter) / 2) solid transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-yolp] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-street-view]:not(.column-street-view-inner) {
@@ -4216,29 +3646,25 @@ a[href^="tel:"]:hover {
 .entry-style [class*=column-youtube] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-video] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-eximage] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-media] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .entry-style [class*=column-quote] {
@@ -4249,8 +3675,7 @@ a[href^="tel:"]:hover {
 .entry-style [class*=column-module] {
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(var(--gutter) / 2);
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* ------------------------------
@@ -4318,7 +3743,6 @@ a[href^="tel:"]:hover {
 }
 .entryFormLiteEditor strong {
   font-weight: bold;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, var(--color-highlight-light)));
   background: linear-gradient(transparent 60%, var(--color-highlight-light) 60%);
 }
 .entryFormLiteEditor a {
@@ -4441,8 +3865,7 @@ a[href^="tel:"]:hover {
 }
 
 .entry-header-visual-box {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0 calc(var(--gutter) / -2);
   padding: 2rem 1.5rem;
   color: var(--color-white);
@@ -4486,9 +3909,7 @@ a[href^="tel:"]:hover {
     width: 50%;
     margin: 0 calc(var(--gutter) / 2);
     padding: 2.5rem 2.5rem 2rem;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
   }
   .entry-header-visual-title {
     font-size: 1.953125rem;
@@ -4535,7 +3956,6 @@ a[href^="tel:"]:hover {
 }
 .entry-style .entry-text-unit strong {
   font-weight: bold;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, var(--color-highlight-light)));
   background: linear-gradient(transparent 60%, var(--color-highlight-light) 60%);
 }
 .entry-style .entry-text-unit a {
@@ -4792,7 +4212,6 @@ a[href^="tel:"]:hover {
   text-decoration: none;
   background: var(--color-primary);
   border-radius: 4px;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .entry-style p.text-btn a:hover, .entry-style p.text-btn a:visited, .entry-style p.text-btn a:active, .entry-style p.text-btn a:focus {
@@ -4843,15 +4262,9 @@ a[href^="tel:"]:hover {
   position: absolute;
   top: 2px;
   left: -2rem;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 1.5rem;
   height: 1.5rem;
   margin: 0 1rem 0 0;
@@ -5070,18 +4483,13 @@ a[href^="tel:"]:hover {
 [class*=column-file-] a[href*=media-download],
 .media-file a,
 .media-file a[href*=media-download] {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 1rem;
   color: var(--color-gray100);
   text-decoration: none;
   border: 1px solid var(--color-gray40);
   border-radius: 4px;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 [class*=column-file-] a:hover,
@@ -5110,13 +4518,8 @@ a[href^="tel:"]:hover {
   border: 0;
 }
 [class*=column-quote-] .quote-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
   color: var(--color-gray100);
   text-decoration: none;
@@ -5147,17 +4550,11 @@ a[href^="tel:"]:hover {
 }
 @media screen and (min-width: 48rem) {
   [class*=column-quote-] .quote-link {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   [class*=column-quote-] .quote-img-wrap {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    flex: 1 0 auto;
+    box-sizing: border-box;
     width: 33.3333333333%;
     padding: 2rem 1rem 2rem 2rem;
   }
@@ -5165,8 +4562,7 @@ a[href^="tel:"]:hover {
     width: 100%;
   }
   [class*=column-quote-] .quote-info {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     width: 0.6666666667;
     padding: 2rem 2rem 2rem 1rem;
   }
@@ -5277,12 +4673,8 @@ a[href^="tel:"]:hover {
 }
 .entry-style .message-lead {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 15rem;
   margin: 0 0 2.5rem;
   padding: 0 calc(var(--gutter) / 2);
@@ -5342,26 +4734,17 @@ a[href^="tel:"]:hover {
 　料金テーブル
 ------------------------------ */
 .entry-style .pricing-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 1.5rem 0;
   padding: 0 var(--gutter)/2;
 }
 .entry-style .pricing-item {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 14rem;
-          flex: 0 1 14rem;
+  flex: 0 1 14rem;
   margin: 0 0 2rem 0;
   list-style: none;
 }
@@ -5373,27 +4756,15 @@ a[href^="tel:"]:hover {
   border: 1px solid var(--color-primary);
 }
 .entry-style .pricing-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
   width: 100%;
   padding: 2rem 1rem 1.5rem;
   background: #fff;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  -webkit-transition: -webkit-transform 0.25s ease;
-  transition: -webkit-transform 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease;
-  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 .entry-style .pricing-header {
   position: relative;
@@ -5418,8 +4789,7 @@ a[href^="tel:"]:hover {
   line-height: 1.4;
   background: var(--color-primary);
   border-radius: 10em;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .entry-style .pricing-title {
   margin: 0 0 0.25rem;
@@ -5471,24 +4841,17 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .entry-style .pricing-group {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+    flex-flow: row wrap;
     gap: 1rem;
     margin: 4rem 0;
   }
   .entry-style .pricing-item {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     margin: 0 0 2rem 0;
   }
   .entry-style .pricing-item:hover .pricing-inner {
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    -webkit-transform: translateY(-0.5rem);
-        -ms-transform: translateY(-0.5rem);
-            transform: translateY(-0.5rem);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.5rem);
   }
   .entry-style .pricing-title {
     font-size: 1.25rem;
@@ -5580,7 +4943,6 @@ a[href^="tel:"]:hover {
 [class*=column-media-] a,
 [class*=column-image-] a,
 [class*=column-eximage-] a {
-  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 [class*=column-media-] a:hover,
@@ -5597,16 +4959,9 @@ a[href^="tel:"]:hover {
 　SNSシェアボタン
 ------------------------------ */
 .sns-share-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 -1rem 2.5rem -1rem;
   padding: 1.5rem;
   text-align: center;
@@ -5619,49 +4974,31 @@ a[href^="tel:"]:hover {
 }
 
 .share-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .share-list.is-align-right {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .share-item {
   margin: 0 0.5rem;
 }
 .share-item a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   width: 3rem;
   height: auto;
   padding: 0.5rem;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 .share-item a:hover {
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
 .share-list.is-sm .share-item {
   margin: 0 0.5rem;
@@ -5672,13 +5009,8 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .sns-share-wrapper {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    align-items: center;
     margin: 0 0 3rem;
     padding: 3rem 1.5rem;
     border-radius: 10px;
@@ -5789,8 +5121,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .section-horizontal-heading-side {
-  -webkit-animation: fade-in 0.2s 0.5s 1 both;
-          animation: fade-in 0.2s 0.5s 1 both;
+  animation: fade-in 0.2s 0.5s 1 both;
 }
 
 .section-horizontal-lead {
@@ -5825,8 +5156,6 @@ a[href^="tel:"]:hover {
 }
 @media screen and (min-width: 64rem) {
   .section-horizontal {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .section-horizontal-header {
@@ -5875,20 +5204,13 @@ a[href^="tel:"]:hover {
   content: "";
 }
 .js .js-animation .section-vertical-header::after {
-  -webkit-transform: scaleY(0);
-      -ms-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: top;
-      -ms-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition: 0.2s ease-out 0.5s;
+  transform: scaleY(0);
+  transform-origin: top;
   transition: 0.2s ease-out 0.5s;
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .section-vertical-header::after {
-  -webkit-transform: scaleY(1);
-      -ms-transform: scaleY(1);
-          transform: scaleY(1);
+  transform: scaleY(1);
 }
 
 .section-vertical-heading {
@@ -5909,8 +5231,7 @@ a[href^="tel:"]:hover {
   will-change: transform, opacity;
 }
 .js-animation.is-show .section-vertical-text {
-  -webkit-animation: fade-in 0.2s 0.5s 1 both;
-          animation: fade-in 0.2s 0.5s 1 both;
+  animation: fade-in 0.2s 0.5s 1 both;
 }
 
 @media screen and (min-width: 48rem) {
@@ -5954,17 +5275,12 @@ a[href^="tel:"]:hover {
   content: "";
 }
 .js .section-animation-bg.js-animation::before {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
+  transform: translateX(100%);
   transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
   will-change: transform;
 }
 .js .section-animation-bg.js-animation.is-show::before {
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 @media screen and (min-width: 48rem) {
@@ -5997,20 +5313,14 @@ a[href^="tel:"]:hover {
 　　サイドセクション
 ------------------------------ */
 .section-side-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
+  flex-flow: column;
   margin-right: calc(var(--gutter) / -2);
   margin-left: calc(var(--gutter) / -2);
 }
 
 .section-side-col {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding-right: calc(var(--gutter) / 2);
   padding-left: calc(var(--gutter) / 2);
@@ -6020,27 +5330,19 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .section-side-grid {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+    flex-flow: row wrap;
   }
   .section-side-col {
     width: auto;
   }
   .section-side-col.is-fix {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
+    flex: 0 1 auto;
   }
   .section-side-col.is-full {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
+    flex: 1 1 auto;
   }
   .section-side-col.is-fix + .section-side-col.is-full {
-    -ms-flex-preferred-size: min-content;
-        flex-basis: min-content;
+    flex-basis: min-content;
     min-width: 30%;
   }
 }
@@ -6049,12 +5351,8 @@ a[href^="tel:"]:hover {
 }
 
 .section-side-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0 0 1rem;
 }
 .section-side-header.-calendar {
@@ -6074,12 +5372,8 @@ a[href^="tel:"]:hover {
   }
 }
 .section-side-link {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-left: auto;
   color: var(--color-gray100);
   font-weight: bold;
@@ -6087,8 +5381,7 @@ a[href^="tel:"]:hover {
   text-decoration: none;
 }
 .section-side-link svg {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 1rem;
   height: 1rem;
   margin: 0 0 0 0.5rem;
@@ -6119,23 +5412,15 @@ a[href^="tel:"]:hover {
 }
 
 .footer-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   padding: 3rem 0;
 }
 
 .footer-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding-right: calc(var(--gutter) / 2);
   padding-left: calc(var(--gutter) / 2);
   padding-right: calc(env(safe-area-inset-right) + var(--gutter) / 2);
@@ -6147,13 +5432,8 @@ a[href^="tel:"]:hover {
 
 /* 企業情報 */
 .footer-item-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   font-size: 0.8rem;
 }
@@ -6180,10 +5460,7 @@ a[href^="tel:"]:hover {
     margin-top: 0;
   }
   .footer-group {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .footer-item.-address {
     width: 33.3333333333%;
@@ -6212,13 +5489,8 @@ a[href^="tel:"]:hover {
 
 /* ナビゲーション */
 .footer-item-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -6275,8 +5547,6 @@ a[href^="tel:"]:hover {
 
 /* サブ項目 */
 .footer-nav-side {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-top: auto;
   border-top: 1px solid var(--color-primary-light);
@@ -6284,14 +5554,10 @@ a[href^="tel:"]:hover {
 
 /* インラインナビゲーション */
 .footer-nav-inline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .footer-nav-inline-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding: 0;
@@ -6344,21 +5610,13 @@ a[href^="tel:"]:hover {
 }
 
 .footer-sns {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin: 0.5rem 0 0 auto;
 }
 
 .footer-sns-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 0;
   padding: 0;
@@ -6383,12 +5641,8 @@ a[href^="tel:"]:hover {
 
 @media screen and (min-width: 48rem) {
   .footer-bottom-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .footer-copyright-text {
     margin: 0;
@@ -6411,36 +5665,23 @@ a[href^="tel:"]:hover {
 .header {
   position: relative;
   z-index: 10000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 100%;
   height: 3.5rem;
   background: var(--color-white);
-  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .header-item-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0 0.5rem;
 }
 
 .header-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0;
   font-weight: bold;
   font-size: 1.5625rem;
@@ -6448,8 +5689,6 @@ a[href^="tel:"]:hover {
 }
 
 .header-title-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: var(--color-gray100);
 }
@@ -6470,8 +5709,7 @@ a[href^="tel:"]:hover {
 @media (max-width: 63.99875rem) {
   .header {
     position: fixed;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     max-width: 100%;
     height: 3.5rem;
     padding: 0 3.5rem 0 0;
