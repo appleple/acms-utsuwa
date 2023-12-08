@@ -11,17 +11,22 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // メインビジュアルのフェードインスライド
-    new Splide('#main-visual-slider', {
-      type: 'fade',
-      autoplay: true,
-      interval: 4000,
+    <!-- BEGIN_MODULE Module_Field id="MF_main_visual" -->
+    <!-- BEGIN_IF [<!-- BEGIN main_visual:loop -->{main_visual_display}<!-- END main_visual:loop -->/neq/1] -->
+    new Splide('#main-visual-slider', {<!-- BEGIN main_visual_slider_type:veil -->
+      type: '{main_visual_slider_type}',<!-- END main_visual_slider_type:veil -->
+      autoplay: true,<!-- BEGIN main_visual_slider_interval:veil -->
+      interval: {main_visual_slider_interval},<!-- END main_visual_slider_interval:veil --><!-- BEGIN main_visual_slider_speed:veil -->
+      speed: {main_visual_slider_speed},<!-- END main_visual_slider_speed:veil -->
       arrows: false,
-      pagination: false,
+      pagination: true,
       perPage: 1,
       perMove: 1,
       focus: 0,
       rewind: true,
     }).mount();
+    <!-- END_IF -->
+    <!-- END_MODULE Module_Field -->
 
     // 最新情報バナーのカルーセル
     new Splide('#news-banner-carousel', {
