@@ -1,0 +1,20 @@
+<!-- BEGIN_MODULE Category_List id="{{module_id}}" -->
+<div class="local-nav-wrap">
+  <div class="local-nav-inner">
+    <div class="local-nav">
+      <div class="acms-container">
+        @include("/admin/module/setting.html")
+        <ul class="local-nav-list">
+        <!-- BEGIN category:loop --><!-- BEGIN ul#front -->
+        <!-- END ul#front --><!-- BEGIN li#front -->
+          <li class="local-nav-item"><!-- END li#front --><!-- BEGIN category:veil -->
+            <a href="#{ccd}" class="local-nav-link scrollTo">@include("/themes/utsuwa/images/arrow-border-white.svg"){name}</a>
+            <!-- END category:veil --><!-- BEGIN li#rear -->
+          </li><!-- END li#rear --><!-- BEGIN ul#rear -->
+        <!-- END ul#rear --><!-- END category:loop -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Category_List -->
