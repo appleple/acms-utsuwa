@@ -1488,15 +1488,18 @@ config:
     - { config_key: navigation_parent, config_value: '', config_sort: 17, config_rule_id: null, config_module_id: 20, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 1, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 2, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_target, config_value: '', config_sort: 3, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation@sort, config_value: '', config_sort: 4, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: サイトマップ, config_sort: 5, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: プライバシーポリシー, config_sort: 6, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}sitemap.html', config_sort: 7, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}privacy.html', config_sort: 8, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_attr, config_value: '', config_sort: 9, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_a_attr, config_value: '', config_sort: 10, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '', config_sort: 11, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_publish, config_value: 'on', config_sort: 3, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_target, config_value: '', config_sort: 4, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation@sort, config_value: '', config_sort: 5, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: よくあるご質問, config_sort: 6, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: サイトマップ, config_sort: 7, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: プライバシーポリシー, config_sort: 8, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}faq/', config_sort: 9, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}sitemap.html', config_sort: 10, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}privacy.html', config_sort: 11, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_attr, config_value: '', config_sort: 12, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_a_attr, config_value: '', config_sort: 13, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_parent, config_value: '', config_sort: 14, config_rule_id: null, config_module_id: 21, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_body_order, config_value: datetime-desc, config_sort: 1, config_rule_id: null, config_module_id: 7, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_body_order2, config_value: id-desc, config_sort: 2, config_rule_id: null, config_module_id: 7, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_body_category_order, config_value: child_order, config_sort: 3, config_rule_id: null, config_module_id: 7, config_set_id: null, config_blog_id: 1 }
