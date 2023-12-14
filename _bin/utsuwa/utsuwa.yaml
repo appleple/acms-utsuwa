@@ -1449,26 +1449,22 @@ config:
     - { config_key: navigation_publish, config_value: 'on', config_sort: 2, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 3, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 4, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_publish, config_value: 'on', config_sort: 5, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_target, config_value: '', config_sort: 6, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation@sort, config_value: '', config_sort: 7, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: 事業紹介, config_sort: 8, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: 採用情報, config_sort: 9, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: 募集要項, config_sort: 10, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: 代表メッセージ, config_sort: 11, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_label, config_value: よくある質問, config_sort: 12, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}service/', config_sort: 13, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/', config_sort: 14, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/#requirement', config_sort: 15, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/#message', config_sort: 16, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/#faq', config_sort: 17, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_attr, config_value: '', config_sort: 18, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_a_attr, config_value: '', config_sort: 19, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '', config_sort: 20, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '', config_sort: 21, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '2', config_sort: 22, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '2', config_sort: 23, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
-    - { config_key: navigation_parent, config_value: '2', config_sort: 24, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_target, config_value: '', config_sort: 5, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation@sort, config_value: '', config_sort: 6, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: 事業紹介, config_sort: 7, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: 採用情報, config_sort: 8, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: 募集要項, config_sort: 9, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_label, config_value: 代表メッセージ, config_sort: 10, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}service/', config_sort: 11, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/', config_sort: 12, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/#requirement', config_sort: 13, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_uri, config_value: '%{HOME_URL}recruit/#message', config_sort: 14, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_attr, config_value: '', config_sort: 15, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_a_attr, config_value: '', config_sort: 16, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_parent, config_value: '', config_sort: 17, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_parent, config_value: '', config_sort: 18, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_parent, config_value: '2', config_sort: 19, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
+    - { config_key: navigation_parent, config_value: '2', config_sort: 20, config_rule_id: null, config_module_id: 19, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 1, config_rule_id: null, config_module_id: 20, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 2, config_rule_id: null, config_module_id: 20, config_set_id: null, config_blog_id: 1 }
     - { config_key: navigation_publish, config_value: 'on', config_sort: 3, config_rule_id: null, config_module_id: 20, config_set_id: null, config_blog_id: 1 }
