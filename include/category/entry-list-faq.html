@@ -6,13 +6,15 @@
   <!-- BEGIN entry:veil --><ul class="faq-list"><!-- BEGIN entry:loop -->
     <li class="toggle faq js-toggle">
       <form action="{entryUrl}" method="post" class="js-post_include" target="#jsIncludeTo{entryId}">
-        <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question js-toggle-button" aria-pressed="false">
-          <p class="faq-icon">Q</p>
-          <p class="faq-title">{entryTitle}</p>
-          <span class="toggle-icon" aria-hidden="false">
-            <img src="/images/arrow-down-gray.svg" width="18" height="18" alt="">
-          </span>
-        </button>
+        <h3 class="faq-question">
+          <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question-button js-toggle-button" aria-pressed="false">
+            <span class="faq-icon">Q</span>
+            <span class="faq-title">{entryTitle}</span>
+            <span class="toggle-icon" aria-hidden="false">
+              <img src="/images/arrow-down-gray.svg" width="18" height="18" alt="">
+            </span>
+          </button>
+        </h3>
         <input type="hidden" name="tpl" value="faq/post-entry.html" />
       </form>
       <div class="toggle-body js-toggle-body">
