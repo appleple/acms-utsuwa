@@ -1,0 +1,17 @@
+<!-- BEGIN_MODULE Entry_Body id="body_faq_post" -->
+<!-- BEGIN entry:loop -->
+<div aria-label="回答">
+  <!-- BEGIN unit:veil -->
+  <div class="acms-entry entry-style">
+    <div class="entry-style-grid">
+    @include("/include/unit.html")
+    </div>
+  </div>
+  <hr class="clearHidden">
+  <!-- END unit:veil -->
+  @include("/admin/entry/edit-%{IS_ADMIN}.html")
+
+  @include("/admin/entry/action.html")
+</div>
+<!-- END entry:loop -->
+<!-- END_MODULE Entry_Body -->
