@@ -232,7 +232,7 @@ LiteEditor に関するカスタマイズは下記のファイルで行ってい
 
 ### 動的フォーム
 
-動的フォームでは完了ページを表示するために URL コンテキストに tpl を使用しています。Ver. 2.11.25 より仕様変更があり、tpl はログアウト時にはデフォルトでは無効化される使用となっております（この仕様変更に関しては詳しくは[Ver. 2.11.25 からのテンプレートの仕様変更について](https://developer.a-blogcms.jp/blog/news/template-21125.html)の記事をご覧ください）。
+動的フォームでは完了ページを表示するために URL コンテキストに tpl を使用しています。Ver. 2.11.25 より仕様変更があり、tpl はログアウト時にはデフォルトでは無効化される仕様となっております（この仕様変更に関しては詳しくは[Ver. 2.11.25 からのテンプレートの仕様変更について](https://developer.a-blogcms.jp/blog/news/template-21125.html)の記事をご覧ください）。
 
 動的フォーム利用前には、private/config.system.yaml にある allow_tpl_path を有効にしてください。なお、ログインしている状態では tpl は有効化されているため問題なく完了ページまで移動することができますので、動作確認時はログアウトをしてご確認ください。
 
@@ -240,4 +240,18 @@ private/config.system.yaml 記述例：
 
 ```
 allow_tpl_path: [recruit/thanks.html]
+```
+
+### サイトパーツ「よくあるご質問」
+
+「よくあるご質問」は質問ごとにエントリーを作成し、一覧ページでの質問文押下時に回答内容を[ポストインクルード](https://developer.a-blogcms.jp/document/postinclude/)で取得する仕様となっております。  
+この記述のなかで tpl パラメーターを使用しており、前述の「**動的フォーム**」と同様の理由により private/config.system.yaml での allow_tpl_path の設定が必要です。
+
+「よくあるご質問」をご利用の際は、以下のようにご設定ください。  
+（allow_tpl_path を複数設定される場合は、`,` で区切ってご設定ください）
+
+private/config.system.yaml 記述例：
+
+```
+allow_tpl_path: [faq/post-entry.html]
 ```

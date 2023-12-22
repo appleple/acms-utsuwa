@@ -1,0 +1,40 @@
+<!-- BEGIN_MODULE Category_EntryList id="{{module_id}}" -->
+<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+<!-- END categoryUl#front --><!-- BEGIN category:loop -->
+<section id="{categoryCode}">
+<h2 class="heading-md">{categoryName}</h2>
+  <!-- BEGIN entry:veil --><ul class="faq-list"><!-- BEGIN entry:loop -->
+    <li class="toggle faq js-toggle">
+      <form action="{entryUrl}" method="post" class="js-post_include" target="#jsIncludeTo{entryId}">
+        <h3 class="faq-question">
+          <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{entryId}">
+            <span class="faq-icon">Q</span>
+            <span class="faq-title">{entryTitle}</span>
+            <span class="toggle-icon" aria-hidden="false">
+              <img src="/images/arrow-down-gray.svg" width="18" height="18" alt="">
+            </span>
+          </button>
+        </h3>
+        <input type="hidden" name="tpl" value="faq/post-entry.html" />
+      </form>
+      <div id="answer{entryId}" class="toggle-body js-toggle-body" aria-hidden="true">
+        <div class="faq-answer">
+          <p class="faq-icon"><a href="{entryUrl}">A</a></p>
+          <div class="faq-body">
+            <div id="jsIncludeTo{entryId}">
+              <div class="content-loading">
+                <span class="content-loading-icon"></span>
+                <span class="content-loading-icon"></span>
+                <span class="content-loading-icon"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- END entry:loop -->
+  </ul><!-- END entry:veil -->
+</section><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+<!-- END_MODULE Category_EntryList -->
