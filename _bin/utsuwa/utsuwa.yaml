@@ -2499,6 +2499,7 @@ field:
     - { field_key: btn_url, field_value: '#', field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 13, field_blog_id: 1 }
     - { field_key: cta_bg_image@media, field_value: '7', field_sort: 1, field_search: 'off', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 13, field_blog_id: 1 }
     - { field_key: main_visual_bg_image, field_value: '14', field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_blog_id: 1 }
+    - { field_key: main_visual_display, field_value: '1', field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_blog_id: 1 }
     - { field_key: main_visual_copy_main, field_value: 'TRY WITH US!', field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_blog_id: 1 }
     - { field_key: main_visual_copy_sub, field_value: 一緒に挑戦しよう。私たちと。, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_blog_id: 1 }
     - { field_key: main_visual_bg_image@media, field_value: '14', field_sort: 1, field_search: 'off', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_blog_id: 1 }
