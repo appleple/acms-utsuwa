@@ -7,7 +7,7 @@
     <li class="toggle faq js-toggle">
       <form action="{entryUrl}" method="post" class="js-post_include" target="#jsIncludeTo{entryId}">
         <h3 class="faq-question">
-          <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question-button js-toggle-button" aria-pressed="false">
+          <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{entryId}">
             <span class="faq-icon">Q</span>
             <span class="faq-title">{entryTitle}</span>
             <span class="toggle-icon" aria-hidden="false">
@@ -17,7 +17,7 @@
         </h3>
         <input type="hidden" name="tpl" value="faq/post-entry.html" />
       </form>
-      <div class="toggle-body js-toggle-body">
+      <div id="answer{entryId}" class="toggle-body js-toggle-body" aria-hidden="true">
         <div class="faq-answer">
           <p class="faq-icon"><a href="{entryUrl}">A</a></p>
           <div class="faq-body">
