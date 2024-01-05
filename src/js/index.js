@@ -1,6 +1,7 @@
 import domContentLoaded from 'dom-content-loaded';
 import animation from './animation';
 import navigation from './navigation';
+import toggle from './toggle';
 
 /**
  * スタイルの読み込み
@@ -19,6 +20,7 @@ $('html').removeClass('no-js').addClass('js');
 
 animation(); // アニメーション
 navigation(); // ナビゲーション
+toggle(); // アコーディオン
 
 /**
  * Content Ready

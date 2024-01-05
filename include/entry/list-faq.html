@@ -1,0 +1,34 @@
+<!-- BEGIN_MODULE Entry_List id="{{module_id}}" -->
+<ul class="faq-list">
+  <!-- BEGIN entry:loop -->
+  <li class="toggle faq js-toggle">
+    <form action="{url}" method="post" class="js-post_include" target="#jsIncludeTo{eid}">
+      <h3 class="faq-question">
+        <button type="submit" name="ACMS_POST_2GET" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}">
+          <span class="faq-icon">Q</span>
+          <span class="faq-title">{title}</span>
+          <span class="toggle-icon" aria-hidden="false">
+            <img src="/images/arrow-down-gray.svg" width="18" height="18" alt="">
+          </span>
+        </button>
+      </h3>
+      <input type="hidden" name="tpl" value="faq/post-entry.html" />
+    </form>
+    <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
+      <div class="faq-answer">
+        <p class="faq-icon"><a href="{url}">A</a></p>
+        <div class="faq-body">
+          <div id="jsIncludeTo{eid}">
+            <div class="content-loading">
+              <span class="content-loading-icon"></span>
+              <span class="content-loading-icon"></span>
+              <span class="content-loading-icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <!-- END entry:loop -->
+</ul>
+<!-- END_MODULE Entry_List -->
