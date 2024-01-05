@@ -1111,7 +1111,7 @@ a[href^="tel:"]:hover {
   margin-left: 4px;
 }
 .splide .splide__pagination__page {
-  background-color: var(--color-gray60);
+  background-color: var(--color-gray30);
   opacity: 1;
 }
 .splide .splide__pagination__page:hover {
@@ -1120,6 +1120,7 @@ a[href^="tel:"]:hover {
 .splide .splide__pagination__page.is-active {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  transform: none;
 }
 
 /* ------------------------------
@@ -1887,6 +1888,70 @@ a[href^="tel:"]:hover {
   }
 }
 /* ------------------------------
+　　よくあるご質問
+------------------------------ */
+.faq {
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.faq + .faq {
+  margin-top: 1rem;
+}
+
+.faq-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.953125rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.faq-question-button,
+.faq-answer {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.faq-question {
+  margin: 0;
+}
+.faq-question .faq-icon {
+  color: var(--color-primary);
+}
+.faq-question .faq-title {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.faq-answer {
+  margin-top: 10px;
+}
+.faq-answer .faq-icon,
+.faq-answer .faq-icon a {
+  color: var(--color-gray90);
+  text-decoration: none;
+}
+.faq-answer .faq-body {
+  padding-top: 0.5rem;
+}
+.faq-answer .entry-style {
+  margin-bottom: -1rem;
+}
+
+/* 質問リスト */
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ------------------------------
 　　お問い合わせ
 ------------------------------ */
 /* ステップ
@@ -2447,6 +2512,37 @@ a[href^="tel:"]:hover {
 }
 
 /* ------------------------------
+　　ローディングアイコン
+------------------------------ */
+.content-loading {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.content-loading-icon {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gray40);
+  border-radius: 50%;
+  animation: bounce 0.6s infinite ease-in-out;
+}
+.content-loading-icon:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.content-loading-icon:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+/* ------------------------------
 　　ローカルナビゲーション
 ------------------------------ */
 .local-nav-wrap {
@@ -2536,60 +2632,70 @@ a[href^="tel:"]:hover {
 ------------------------------ */
 .main-visual {
   position: relative;
+  height: var(--mv-height-sp, calc(100svh - 3.5rem));
+  min-height: 20rem;
   overflow: hidden;
 }
 
 .main-visual-bg {
   width: 100%;
-  height: calc(100vh - 3.5rem);
-  height: calc(100svh - 3.5rem);
-  min-height: 20rem;
-  background: no-repeat center;
-  background-size: cover;
+  height: 100%;
+}
+.main-visual-bg .is-alone {
   animation: zoom 3s 0.3s 1 both;
   animation-duration: ease-out;
 }
-
-#main-visual-slider {
-  width: 100%;
-  height: calc(100vh - 200px);
-  height: calc(100svh - 200px);
-  min-height: 20rem;
-}
-#main-visual-slider .splide__track,
-#main-visual-slider .splide__list,
-#main-visual-slider .splide__slide,
-#main-visual-slider .splide__slide img {
+.main-visual-bg img {
   width: 100%;
   height: 100%;
-}
-#main-visual-slider .splide__slide img {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+#main-visual-slider {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+}
+#main-visual-slider .splide__track,
+#main-visual-slider .splide__list,
+#main-visual-slider .splide__slide,
+#main-visual-slider .splide__slide picture,
+#main-visual-slider .splide__slide img {
+  width: 100%;
+  height: 100%;
+}
+#main-visual-slider .splide__slide picture,
+#main-visual-slider .splide__slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main-visual-slider .splide__pagination {
+  bottom: 0;
+}
+
 .main-visual-box {
   position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.25rem;
-  color: var(--color-white);
-  text-align: center;
-}
-.main-visual-box::before {
-  position: absolute;
-  inset: 0;
-  display: block;
-  background: rgba(0, 0, 0, 0.3);
-  content: "";
+  top: 50%;
+  left: 50%;
+  display: grid;
+  gap: 2rem;
+  box-sizing: border-box;
+  width: calc(100vw - 40px);
+  max-width: 480px;
+  padding: 2.5rem 2rem;
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.9);
+  transform: translate(-50%, -50%);
+  place-content: center;
 }
 
 .main-visual-catch {
-  margin: 0 0 0.5rem;
-  font-size: 3.0517578125rem;
+  margin: 0;
+  font-size: 2.44140625rem;
   line-height: 1.4;
   animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
@@ -2597,28 +2703,39 @@ a[href^="tel:"]:hover {
 
 .main-visual-catch-sub {
   margin: 0;
-  font-size: 0.8rem;
+  font-weight: bold;
+  font-size: 1rem;
   line-height: 1.7;
   animation: fade-in 0.3s 1.3s 1 both;
   will-change: transform, opacity;
 }
 
+.main-visual-links {
+  display: grid;
+  gap: 1rem;
+}
+.main-visual-links .button.is-bordered:not(:hover) {
+  background: var(--color-white);
+}
+
 .main-visual-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
+  width: 100%;
   margin: 0;
+  text-align: center;
   animation: fade-in 0.3s 2.8s 1 both;
   will-change: transform, opacity;
 }
 
 .main-visual-scroll-link {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
 }
 .main-visual-scroll-link:link, .main-visual-scroll-link:visited, .main-visual-scroll-link:active, .main-visual-scroll-link:focus {
-  color: currentcolor;
+  color: var(--color-white);
 }
 .main-visual-scroll-link:hover {
   opacity: 0.6;
@@ -2637,17 +2754,48 @@ a[href^="tel:"]:hover {
 }
 
 @media screen and (min-width: 48rem) {
-  .main-visual-slider {
-    height: 70vh;
+  .main-visual {
+    height: var(--mv-height-pc, 48rem);
   }
   .main-visual-box {
-    padding: 3rem 4.5rem;
+    box-sizing: content-box;
+    width: auto;
+    min-width: 434px;
+    max-width: 100%;
+    padding: 5.5rem 6.5rem;
+  }
+  .main-visual-box.is-left {
+    left: 0;
+    text-align: left;
+    transform: translate(0, -50%);
+  }
+  .main-visual-box.is-center {
+    text-align: center;
+  }
+  .main-visual-box.is-right {
+    right: 0;
+    left: auto;
+    text-align: right;
+    transform: translate(0, -50%);
   }
   .main-visual-catch {
     font-size: 3.8146972656rem;
   }
-  .main-visual-catch-sub {
-    font-size: 1.25rem;
+  .main-visual-links {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    max-width: 434px;
+    margin: 0 auto;
+  }
+  .main-visual-box.is-left .main-visual-links {
+    justify-content: flex-start;
+  }
+  .main-visual-box.is-right .main-visual-links {
+    justify-content: flex-end;
+  }
+  .main-visual-scroll {
+    margin-bottom: 1rem;
   }
 }
 /* ------------------------------
@@ -3270,6 +3418,38 @@ a[href^="tel:"]:hover {
     padding: 0.5rem 1rem;
   }
 }
+/* ------------------------------
+　　アコーディオン
+------------------------------ */
+.toggle-button {
+  width: 100%;
+  padding: 0;
+  color: var(--color-gray100);
+  font-family: inherit;
+  line-height: 1.7;
+  text-align: left;
+  background: none;
+  border: 0;
+}
+.toggle-button.js-post-include-disabled {
+  color: inherit;
+  opacity: 1;
+}
+
+.toggle-icon {
+  margin-top: 0.85rem;
+  margin-left: auto;
+  line-height: 1;
+  transition: 0.3s ease;
+}
+.toggle-button.is-active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.toggle-body {
+  display: none;
+}
+
 /* ------------------------------
 　　トピックパス
 ------------------------------ */
@@ -5036,6 +5216,45 @@ a[href^="tel:"]:hover {
 @media screen and (min-width: 48rem) {
   .profile-heading {
     margin-top: 2.5rem;
+  }
+}
+/*
+　FAQ
+------------------------------ */
+.entry-faq-title {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-title-icon {
+  flex: 0 0 auto;
+  margin-right: 1rem;
+  color: var(--color-primary);
+}
+
+.entry-faq-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.entry-faq-body-icon {
+  flex: 0 0 auto;
+  color: var(--color-gray90);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.entry-style .entry-faq-body-icon {
+  margin-right: 1rem;
+  margin-left: 0;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 48rem) {
+  .entry-faq-body-icon {
+    font-size: 1.953125rem;
+  }
+  .entry-style .entry-faq-body-icon {
+    line-height: 1;
   }
 }
 /* ------------------------------
