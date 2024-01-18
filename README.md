@@ -1,4 +1,4 @@
-# テーマ「UTSUWA」Ver.2.1.3
+# テーマ「UTSUWA」Ver.2.1.4
 
 ## GitHub
 
@@ -244,10 +244,10 @@ allow_tpl_path: [recruit/thanks.html]
 
 ### サイトパーツ「よくあるご質問」
 
-「よくあるご質問」は質問ごとにエントリーを作成し、一覧ページでの質問文押下時に回答内容を[ポストインクルード](https://developer.a-blogcms.jp/document/postinclude/)で取得する仕様となっております。  
+「よくあるご質問」は質問ごとにエントリーを作成し、一覧ページでの質問文押下時に回答内容を[ポストインクルード](https://developer.a-blogcms.jp/document/postinclude/)で取得する仕様となっております。
 この記述のなかで tpl パラメーターを使用しており、前述の「**動的フォーム**」と同様の理由により private/config.system.yaml での allow_tpl_path の設定が必要です。
 
-「よくあるご質問」をご利用の際は、以下のようにご設定ください。  
+「よくあるご質問」をご利用の際は、以下のようにご設定ください。
 （allow_tpl_path を複数設定される場合は、`,` で区切ってご設定ください）
 
 private/config.system.yaml 記述例：
