@@ -43,7 +43,6 @@
     "modal-video": "^2.4.8",
     "normalize.css": "^8.0.1",
     "object-fit-images": "^3.2.4",
-    "pdfjs-dist": "^3.7.107",
     "query-string": "^8.1.0",
     "scroll-behavior-polyfill": "^2.0.13",
     "scroll-hint": "^1.2.5",
