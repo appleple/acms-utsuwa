@@ -1095,8 +1095,8 @@ config:
     - { config_key: image_size_tiny_criterion, config_value: width, config_sort: 275, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
     - { config_key: image_size_tiny, config_value: width280, config_sort: 276, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
     - { config_key: image_size_square, config_value: '', config_sort: 277, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
-    - { config_key: image_jpeg_quality, config_value: '85', config_sort: 278, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
-    - { config_key: resize_image_jpeg_quality, config_value: '', config_sort: 279, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
+    - { config_key: image_jpeg_quality, config_value: '75', config_sort: 278, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
+    - { config_key: resize_image_jpeg_quality, config_value: '75', config_sort: 279, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
     - { config_key: file_savename, config_value: rawfilename, config_sort: 280, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
     - { config_key: file_prohibit_textfile, config_value: 'on', config_sort: 281, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
     - { config_key: column_form_add_type, config_value: text, config_sort: 282, config_rule_id: null, config_module_id: null, config_set_id: null, config_blog_id: 1 }
@@ -1840,8 +1840,8 @@ config:
     - { config_key: image_size_tiny_criterion, config_value: width, config_sort: 275, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: image_size_tiny, config_value: width280, config_sort: 276, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: image_size_square, config_value: '', config_sort: 277, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
-    - { config_key: image_jpeg_quality, config_value: '85', config_sort: 278, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
-    - { config_key: resize_image_jpeg_quality, config_value: '', config_sort: 279, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
+    - { config_key: image_jpeg_quality, config_value: '75', config_sort: 278, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
+    - { config_key: resize_image_jpeg_quality, config_value: '75', config_sort: 279, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: file_savename, config_value: rawfilename, config_sort: 280, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: file_prohibit_textfile, config_value: 'on', config_sort: 281, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: column_form_add_type, config_value: text, config_sort: 282, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
