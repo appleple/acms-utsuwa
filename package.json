@@ -1,10 +1,14 @@
 {
   "name": "utsuwa",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "description": "Webサイト制作プロジェクト",
   "keywords": [
     "CMS",
     "a-blog cms"
+  ],
+  "browserslist": [
+    "defaults",
+    "safari >= 12"
   ],
   "config": {
     "local": "localhost",
