@@ -1,20 +1,20 @@
 @extends("/_layouts/base.html")
 
 @section("main")
-  <div class="container-sm">
-  <!-- エントリー本文 -->
-  @include("/include/entry/body.html", {"module_id": "body_date", "tag":"on", "sns":"on"})
-  </div>
+<div class="acms-container">
+  <main class="main">
+    <div class="acms-grid">
+      <div class="container-md">
+        <!-- タグフィルター -->
+        @include("/include/tag/filter.html")
 
-  <!-- BEGIN_MODULE Touch_NotEdit -->
-  <div class="js-sticky sticky-contents">
-    <div class="container-sm">
-      <!-- SNSシェアボタン -->
-      @include("/include/parts/sns-share.html")
+        <!-- サマリー：記事一覧 -->
+        @include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+      </div>
     </div>
-  </div><!-- END_MODULE Touch_NotEdit -->
+  </main>
+</div>
 @endsection
-
 
 @section("side")
 <section class="acms-container">
