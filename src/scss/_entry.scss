@@ -216,12 +216,13 @@
   }
 
   code {
-    margin: 0 0.25rem;
-    padding: 0.25rem;
-    color: global.$color-primary;
-    background: global.$color-white;
-    border: global.$border-width-sm solid currentcolor;
-    border-radius: global.$border-radius-sm;
+    padding: 0.25em;
+    overflow-x: auto;
+    color: acms.$acms-red;
+    font-size: 0.8rem;
+    background-color: acms.$acms-color-gray20;
+    border: 1px solid acms.$acms-color-gray50;
+    border-radius: 0.1875rem;
   }
 }
 
@@ -574,6 +575,7 @@
 
 /* テーブル */
 .#{acms.$entry-class} .entry-text-unit,
+.#{acms.$entry-class} [class^='column-block-editor'],
 .#{acms.$entry-class} [class^="column-table"] {
   table {
     width: 100%;
@@ -581,11 +583,16 @@
     border-bottom: global.$border-width-sm solid global.$color-gray30;
     border-collapse: collapse;
 
+    p {
+      margin: 0;
+    }
+
     th,
     td {
       padding: global.$entry-el-padding-xs;
       font-size: map.get(global.$font-scales, body-m);
       line-height: global.$line-height-base;
+      white-space: normal
     }
 
     th {
@@ -606,6 +613,15 @@
         padding: global.$entry-el-padding-sm;
         font-size: map.get(global.$font-scales, body-m);
       }
+    }
+  }
+
+  .acms-table-scrollable,
+  .js-table-unit-scroll-hint {
+    th,
+    td {
+      display: table-cell !important;
+      white-space: nowrap;
     }
   }
 }
@@ -1371,7 +1387,7 @@
   color: global.$color-gray90;
   font-weight: bold;
   font-size: map.get(global.$font-scales, heading-ss);
-  
+
   .entry-style & {
     margin-right: 1rem;
     margin-left: 0;
@@ -1382,7 +1398,7 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-faq-body-icon {
     font-size: map.get(global.$font-scales, heading-m);
-  
+
     .entry-style & {
       line-height: global.$line-height-ss;
     }
