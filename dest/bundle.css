@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/* ------------------------------
+  Popover
+------------------------------- */
+/* ------------------------------
+  Popover
+------------------------------- */
 /* stylelint-disable max-line-length */
 /* stylelint-enable max-line-length */
 /* ------------------------------
@@ -419,7 +425,7 @@ a[href^="tel:"]:hover {
   }
 }
 .button:focus {
-  border-color: #137AF3;
+  border-color: #137af3;
   box-shadow: var(--box-shadow-focus);
 }
 
@@ -447,7 +453,6 @@ a[href^="tel:"]:hover {
   content: "";
 }
 .button-read-more::after {
-  display: inline-block;
   background: var(--color-secondary) no-repeat;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0LjcxMSIgaGVpZ2h0PSI3Ljk4NiIgdmlld0JveD0iMCAwIDQuNzExIDcuOTg2Ij4KICA8cGF0aCBkPSJNMTY4OC41LDM1NjAuMzgxbDMuNjM5LDMuNC0zLjYzOSwzLjg4MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2ODguMTM1IC0zNTYwLjAxNikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPgo=);
   background-position: center;
@@ -818,7 +823,6 @@ a[href^="tel:"]:hover {
 }
 .card-read-more::after,
 .entry-style .card-read-more::after {
-  display: inline-block;
   background: var(--color-secondary) no-repeat;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0LjcxMSIgaGVpZ2h0PSI3Ljk4NiIgdmlld0JveD0iMCAwIDQuNzExIDcuOTg2Ij4KICA8cGF0aCBkPSJNMTY4OC41LDM1NjAuMzgxbDMuNjM5LDMuNC0zLjYzOSwzLjg4MiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2ODguMTM1IC0zNTYwLjAxNikiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPgo=);
   background-position: center;
@@ -1164,7 +1168,6 @@ a[href^="tel:"]:hover {
 
 .cta-link {
   margin: 0 0 0 -2.5rem;
-  color: var(--color-gray100);
   text-decoration: none;
   color: var(--color-gray100);
 }
@@ -2228,7 +2231,7 @@ a[href^="tel:"]:hover {
 .form-group select.invalid {
   background-color: var(--color-gray10);
   border-color: var(--color-error);
-  box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-error), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 .form-group input[type=text][required]:valid,
 .form-group input[type=password][required]:valid,
@@ -2264,7 +2267,7 @@ a[href^="tel:"]:hover {
 .form-group select:focus {
   background-color: var(--color-gray10);
   border-color: #0061d1;
-  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 .form-group input[type=text],
 .form-group input[type=password],
@@ -2338,7 +2341,7 @@ a[href^="tel:"]:hover {
 .form-checkbox-only:focus-within {
   background-color: var(--color-gray10);
   border-color: #0061d1;
-  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 .form-checkbox-only-label {
@@ -2386,9 +2389,9 @@ a[href^="tel:"]:hover {
 }
 .form-search input.form-search-input:focus {
   background: var(--color-white);
-  border-color: #137AF3;
+  border-color: #137af3;
   outline: none;
-  box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-focus), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 .form-search .form-search-side-button {
   display: flex;
@@ -2428,7 +2431,7 @@ a[href^="tel:"]:hover {
 }
 .form-group .invalid {
   border-color: var(--color-error);
-  box-shadow: var(--box-shadow-error), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: var(--box-shadow-error), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 
 .form-error-text {
@@ -4221,12 +4224,13 @@ a[href^="tel:"]:hover {
   overflow: hidden;
 }
 .entry-style code {
-  margin: 0 0.25rem;
-  padding: 0.25rem;
-  color: var(--color-primary);
-  background: var(--color-white);
-  border: 1px solid currentcolor;
-  border-radius: 3px;
+  padding: 0.25em;
+  overflow-x: auto;
+  color: #dc4040;
+  font-size: 0.8rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 0.1875rem;
 }
 
 /* 見出し
@@ -4499,38 +4503,66 @@ a[href^="tel:"]:hover {
 
 /* テーブル */
 .entry-style .entry-text-unit table,
+.entry-style [class^=column-block-editor] table,
 .entry-style [class^=column-table] table {
   width: 100%;
   margin: 0 0 2rem 0;
   border-bottom: 1px solid var(--color-gray30);
   border-collapse: collapse;
 }
+.entry-style .entry-text-unit table p,
+.entry-style [class^=column-block-editor] table p,
+.entry-style [class^=column-table] table p {
+  margin: 0;
+}
 .entry-style .entry-text-unit table th,
 .entry-style .entry-text-unit table td,
+.entry-style [class^=column-block-editor] table th,
+.entry-style [class^=column-block-editor] table td,
 .entry-style [class^=column-table] table th,
 .entry-style [class^=column-table] table td {
   padding: 1rem;
   font-size: 1rem;
   line-height: 1.5;
+  white-space: normal;
 }
 .entry-style .entry-text-unit table th,
+.entry-style [class^=column-block-editor] table th,
 .entry-style [class^=column-table] table th {
   text-align: left;
   vertical-align: top;
   background: var(--color-gray10);
 }
 .entry-style .entry-text-unit table tr,
+.entry-style [class^=column-block-editor] table tr,
 .entry-style [class^=column-table] table tr {
   border-top: 1px solid var(--color-gray30);
 }
 @media screen and (min-width: 48rem) {
   .entry-style .entry-text-unit table th,
   .entry-style .entry-text-unit table td,
+  .entry-style [class^=column-block-editor] table th,
+  .entry-style [class^=column-block-editor] table td,
   .entry-style [class^=column-table] table th,
   .entry-style [class^=column-table] table td {
     padding: 1.5rem;
     font-size: 1rem;
   }
+}
+.entry-style .entry-text-unit .acms-table-scrollable th,
+.entry-style .entry-text-unit .acms-table-scrollable td,
+.entry-style .entry-text-unit .js-table-unit-scroll-hint th,
+.entry-style .entry-text-unit .js-table-unit-scroll-hint td,
+.entry-style [class^=column-block-editor] .acms-table-scrollable th,
+.entry-style [class^=column-block-editor] .acms-table-scrollable td,
+.entry-style [class^=column-block-editor] .js-table-unit-scroll-hint th,
+.entry-style [class^=column-block-editor] .js-table-unit-scroll-hint td,
+.entry-style [class^=column-table] .acms-table-scrollable th,
+.entry-style [class^=column-table] .acms-table-scrollable td,
+.entry-style [class^=column-table] .js-table-unit-scroll-hint th,
+.entry-style [class^=column-table] .js-table-unit-scroll-hint td {
+  display: table-cell !important;
+  white-space: nowrap;
 }
 
 .entry-style [class^=column-table] table {
