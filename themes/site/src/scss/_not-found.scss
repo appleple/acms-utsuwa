@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　404ページ
+------------------------------ */
+.not-found-content {
+  margin: 0 0 4rem;
+}
+
+.not-found-title {
+  margin: 0 0 1rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: var(--line-height-sm);
+  text-align: center;
+}
+
+.not-found-paragraph {
+  margin: 0 0 2rem;
+
+  a {
+    @include global.entry-link(var(--color-link), var(--color-text));
+  }
+}
+
+.not-found-search {
+
+  .form-search {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 3rem;
+
+  }
+
+  .form-search-action {
+    max-width: 29rem;
+  }
+}
+
+.not-found-button {
+  margin: 1rem 0 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .not-found-content {
+    margin: 0 0 7.5rem;
+  }
+
+  .not-found-title {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+
+  }
+
+}

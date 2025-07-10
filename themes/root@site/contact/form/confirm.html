@@ -1,0 +1,41 @@
+<h3 class="heading-md heading-padding-top-none ">お問い合わせ情報</h3>
+<ul class="form-group-list is-confirm">
+  <li class="form-group">
+    <div class="form-label">ご用件</div>
+    <div class="form-control">{subject}</div>
+  </li>
+  <li class="form-group">
+    <div class="form-label">お問い合わせ内容</div>
+    <div class="form-control">{inquiry}[nl2br]</div>
+  </li>
+</ul>
+<h3 class="heading-md heading-padding-top-none">お客様情報</h3>
+<ul class="form-group-list is-confirm">
+  <li class="form-group-inner">
+    <!-- BEGIN organization:veil -->
+    <li class="form-group">
+      <div class="form-label">所属</div>
+      <div class="form-control">{organization}</div>
+    </li>
+    <!-- END organization:veil -->
+    <li class="form-group">
+      <div class="form-label">お名前</div>
+      <div class="form-control">{name}</div>
+    </li>
+    <li class="form-group">
+      <div class="form-label">メールアドレス</div>
+      <div class="form-control">{email}</div>
+    </li>
+    <!-- BEGIN tel:veil -->
+    <li class="form-group">
+      <div class="form-label">お電話番号</div>
+      <div class="form-control">{tel}</div>
+    </li>
+    <!-- END tel:veil -->
+    <li class="form-group">
+      <div class="form-label">ご住所</div>
+      <div class="form-control">〒{postal-code}<br />
+        {address-level1}{address1}{address2}</div>
+    </li>
+  </div>
+  </div>

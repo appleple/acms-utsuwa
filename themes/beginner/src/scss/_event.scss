@@ -1,0 +1,80 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　イベント詳細
+------------------------------ */
+.event-main-image {
+  margin: 0 calc(global.$unit-gutter-var / 2) 2rem;
+}
+
+.event-detail-wrap {
+  padding-bottom: 2rem;
+}
+
+.event-detail {
+  border: 1px solid global.$color-gray30;
+  border-radius: global.$border-radius-md;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: global.$color-text;
+    border-bottom: 1px dotted global.$color-text;
+  }
+}
+
+.event-detail-group {
+  display: flex;
+  gap: .5rem;
+}
+
+.event-googlemap {
+  position: relative;
+
+  svg {
+    position: absolute;
+    margin-left: 0.5rem;
+    vertical-align: text-bottom;
+
+    path {
+      fill: global.$color-gray100;
+    }
+  }
+}
+
+@media (min-width: acms.$breakpoint-md-min) {
+  .event-detail {
+    dt {
+      width: 8rem;
+    }
+    dd {
+      flex: 1;
+    }
+  }
+
+  .event-detail-group {
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem 2rem;
+  }
+}
+
+.event-footer {
+  text-align: center;
+}

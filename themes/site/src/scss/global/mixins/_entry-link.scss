@@ -1,0 +1,20 @@
+@use "../variables" as var;
+
+// リンク
+@mixin entry-link($color, $border) {
+  padding: 2px 0;
+  color: $color;
+  text-decoration: none;
+
+  &:not(:has(img)) {
+    border-bottom: 1px dotted $border;
+  }
+
+  &:hover {
+    border-color: transparent;
+    text-decoration: none;
+  }
+
+
+}
+

@@ -1,0 +1,233 @@
+<header>
+  <div>@include("/admin/topicpath.html")</div>
+  <div>
+    @include("/admin/config/parts/header.html", {"title": "<!--T-->プロパティ設定<!--/T-->"})
+  </div>
+</header>
+
+<!-- BEGIN_MODULE Admin_Config -->
+<!-- BEGIN_IF [{notice_mess}/nem/] -->
+<p class="acms-admin-alert acms-admin-alert-info acms-admin-alert-icon">
+  <span class="acms-admin-alert-icon-before acms-admin-icon-news"></span>
+  <!--T-->プロパティ情報を保存しました<!--/T-->
+  <button　class="js-acms-alert-close acms-admin-alert-icon-after acms-admin-margin-right-mini">×</button>
+</p>
+<!-- END_IF -->
+
+<form action="" method="post" class="acms-admin-form">
+  <div class="js-acms_fix_marker acms_fix_bg">
+    <div class="acms_fix_bg_index">
+      <a href="{indexUrl}" class="acms-admin-btn-admin"><!--T-->一覧<!--/T--></a>
+      <input
+        type="submit"
+        name="ACMS_POST_Config"
+        value="<!--T-->保存<!--/T-->"
+        class="acms-admin-btn-admin acms-admin-btn-admin-primary acms-admin-btn-admin-save js-saving-splash"
+      />
+      <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+      <div class="acms-admin-float-right">
+        <a
+          href="%{ADMIN_BASE_URL}bid/%{BID}/admin/config_import-part/?setid=%{setid}&rid=%{rid}"
+          class="acms-admin-btn-admin"
+        >
+          <!--T-->インポート<!--/T-->
+        </a>
+        <input
+          type="submit"
+          name="ACMS_POST_Config_PartExport"
+          class="acms-admin-btn-admin"
+          value="<!--T-->エクスポート<!--/T-->"
+        />
+        <a
+          href="{shortcutUrl}"
+          class="acms-admin-btn-admin"
+        >
+          <i class="acms-admin-icon acms-admin-icon-shortcut"></i>
+          <!--T-->ショートカットに追加<!--/T-->
+        </a>
+      </div>
+      <!-- END_MODULE Touch_SessionWithAdministration -->
+    </div>
+  </div>
+
+  <p class="transaction-notice-{config:validator} acms-admin-alert acms-admin-alert-danger">
+    <!--T-->コンフィグを保存出来ませんでした。<!--/T-->
+  </p>
+
+  <h2 class="acms-admin-admin-title2"><!--T-->メタ情報<!--/T--></h2>
+  <table class="adminTable acms-admin-table-admin-edit">
+    <tr>
+      <th>
+        <!--T-->キーワード<!--/T-->
+        <i
+          class="acms-admin-icon-tooltip js-acms-tooltip-hover"
+          data-acms-tooltip='<!--T-->このサイトの meta name="keywords" の内容として使用できます。「,（カンマ）」で区切ることで複数登録することができます。この入力内容は、グローバル変数の&#37;&#123;META_KEYWORDS}で表示できます。<!--/T-->'
+        ></i>
+      </th>
+      <td>
+        <textarea name="meta_keywords" class="acms-admin-form-width-full" rows="5">{meta_keywords}</textarea>
+        <input type="hidden" name="config[]" value="meta_keywords" />
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <!--T-->説明 ( ディスクリプション )<!--/T-->
+        <i
+          class="acms-admin-icon-tooltip js-acms-tooltip-hover"
+          data-acms-tooltip='<!--T-->このサイトの meta name="description" の内容として使用できます。この入力内容は、グローバル変数の&#37;&#123;META_DESCRIPTION}で表示できます。<!--/T-->'
+        ></i>
+      </th>
+      <td>
+        <textarea name="meta_description" class="acms-admin-form-width-full" rows="5">{meta_description}</textarea>
+        <input type="hidden" name="config[]" value="meta_description" />
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="acms-admin-admin-title2"><!--T-->ウェブサービス<!--/T--></h2>
+  <table class="adminTable acms-admin-table-admin-edit">
+    <tr>
+      <th>
+        <a href="https://console.developers.google.com">
+          <!--T-->Google Maps API Key<!--/T-->
+        </a>
+        <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="<!--T-->取得したGoogle Maps API Keyを設定します。Google Mapsをご利用の場合はここの設定が必要です。<!--/T-->"></i>
+      </th>
+      <td>
+        <input type="text" name="google_api_key" value="{google_api_key}" class="acms-admin-form-width-large"/>
+        <input type="hidden" name="config[]" value="google_api_key"/>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <a href="https://console.mapbox.com/account/access-tokens/">
+          <!--T-->Mapbox API Key<!--/T-->
+        </a>
+        <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="<!--T-->取得した Mapbox API Keyを設定します。Mapboxをご利用の場合はここの設定が必要です。<!--/T-->"></i>
+      </th>
+      <td>
+        <input type="text" name="mapbox_api_key" value="{mapbox_api_key}" class="acms-admin-form-width-large"/>
+        <input type="hidden" name="config[]" value="mapbox_api_key"/>
+      </td>
+    </tr>
+  </table>
+
+  <h2 class="acms-admin-admin-title2"><!--T-->Pingショット<!--/T--></h2>
+  <table class="adminTable acms-admin-table-admin-edit">
+    <tr>
+      <th>
+        <!--T-->エンドポイント<!--/T-->
+        <i
+          class="acms-admin-icon-tooltip js-acms-tooltip-hover"
+          data-acms-tooltip="<!--T-->Ping送信先のRPCエンドポイントを指定します。<!--/T-->"
+        ></i>
+      </th>
+      <td>
+        <ul class="js-fieldgroup-sortable acms-admin-list-nostyle">
+          <!-- BEGIN ping_weblog_updates_endpoint:loop -->
+          <li class="sortable-item acms-admin-margin-bottom-mini">
+            <input
+              type="text"
+              name="ping_weblog_updates_endpoint[]"
+              value="{ping_weblog_updates_endpoint}"
+              class="acms-admin-form-width-large"
+            />
+            <input
+              type="button"
+              value="<!--T-->削除<!--/T-->"
+              class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp"
+            />
+          </li>
+          <!-- END ping_weblog_updates_endpoint:loop -->
+          <li class="sortable-item item-template acms-admin-margin-bottom-mini">
+            <input
+              type="text"
+              name="ping_weblog_updates_endpoint[]"
+              class="acms-admin-form-width-large"
+            />
+            <input
+              type="button"
+              value="<!--T-->削除<!--/T-->"
+              class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp"
+            />
+          </li>
+          <li>
+            <input
+              type="button"
+              value="<!--T-->追加<!--/T-->"
+              class="item-insert acms-admin-btn-admin"
+            />
+          </li>
+        </ul>
+        <input
+          type="hidden"
+          name="config[]"
+          value="ping_weblog_updates_endpoint"
+        />
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <!--T-->拡張エンドポイント<!--/T-->
+        <i
+          class="acms-admin-icon-tooltip js-acms-tooltip-hover"
+          data-acms-tooltip="<!--T-->拡張規格に対応した、Ping送信先のエンドポイントを指定します。<!--/T-->"
+        ></i>
+      </th>
+      <td>
+        <ul class="js-fieldgroup-sortable acms-admin-list-nostyle">
+          <!-- BEGIN ping_weblog_updates_extended_endpoint:loop -->
+          <li class="sortable-item acms-admin-margin-bottom-mini">
+            <input
+              type="text"
+              name="ping_weblog_updates_extended_endpoint[]"
+              value="{ping_weblog_updates_extended_endpoint}"
+              class="acms-admin-form-width-large"
+            />
+            <input
+              type="button"
+              value="<!--T-->削除<!--/T-->"
+              class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp"
+            />
+          </li>
+          <!-- END ping_weblog_updates_extended_endpoint:loop -->
+          <li class="sortable-item item-template acms-admin-margin-bottom-mini">
+            <input
+              type="text"
+              name="ping_weblog_updates_extended_endpoint[]"
+              class="acms-admin-form-width-large"
+            />
+            <input
+              type="button"
+              value="<!--T-->削除<!--/T-->"
+              class="item-delete acms-admin-btn-admin acms-admin-btn-admin-danger acms-admin-margin-top-bottom-sp"
+            />
+          </li>
+          <li>
+            <input
+              type="button"
+              value="<!--T-->追加<!--/T-->"
+              class="item-insert acms-admin-btn-admin"
+            />
+          </li>
+        </ul>
+        <input
+          type="hidden"
+          name="config[]"
+          value="ping_weblog_updates_extended_endpoint"
+        />
+      </td>
+    </tr>
+  </table>
+
+  <!-- BEGIN_MODULE Admin_Rule_Name -->
+  <input type="hidden" name="rid" value="{rid}"/>
+  <!-- END_MODULE Admin_Rule_Name -->
+  <!-- BEGIN_MODULE Admin_Module_Name -->
+  <input type="hidden" name="mid" value="{mid}"/>
+  <!-- END_MODULE Admin_Module_Name -->
+  <!-- BEGIN_MODULE Admin_Config_Set_Name -->
+  <input type="hidden" name="setid" value="{setid}"/>
+  <!-- END_MODULE Admin_Config_Set_Name -->
+</form>
+<!-- END_MODULE Admin_Config -->

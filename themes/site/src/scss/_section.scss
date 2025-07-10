@@ -1,0 +1,277 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　セクション
+------------------------------ */
+.section {
+  overflow-x: hidden;
+  padding: 3rem 0;
+
+  &.is-bg {
+    background: var(--color-gray10);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .section {
+    padding: 6.5rem 0;
+
+    &.news-banner {
+      padding: 6.5rem 0 7.75rem;
+
+    }
+    &.banner {
+      padding: 6.5rem 0 4.5rem;
+    }
+  }
+}
+
+/* 水平方向の見出し */
+.section-horizontal-header {
+  margin: 0 0 1.5rem;
+  word-break: break-all;
+}
+
+.section-horizontal-header-inner {
+  position: relative;
+}
+
+.section-horizontal-heading {
+  margin: 0;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, heading-l);
+  line-height: var(--line-height-base);
+}
+
+.section-horizontal-heading-side {
+  margin: 0;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js .js-animation.is-show & {
+    animation: fade-in 0.2s 0.5s 1 both;
+  }
+}
+
+.section-horizontal-lead {
+  margin: 0 0 1em;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-base);
+}
+
+.section-horizontal-text p {
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: 1.7;
+}
+
+.section-horizontal-footer {
+  margin: 2.5rem 0 0;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section-horizontal-heading {
+    font-size: map.get(global.$font-scales, headling-l);
+  }
+
+  .section-horizontal-lead {
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, heading-s);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .section-horizontal {
+    display: flex;
+    gap: 3.5rem;
+  }
+
+  .section-horizontal-header {
+    width: 30%;
+    min-width: 240px;
+    word-break: break-all;
+  }
+
+  .section-horizontal-header-inner {
+    padding: 0 1.25rem 1.5rem 0;
+  }
+
+  .section-horizontal-heading {
+    font-size: map.get(global.$font-scales, display-s);
+  }
+
+  .section-horizontal-lead {
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, heading-m);
+  }
+
+  .section-horizontal-text p {
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: 1.7;
+  }
+
+  .section-horizontal-main {
+    width: 70%;
+  }
+
+  .section-horizontal-footer {
+    margin: 5rem 0 0;
+  }
+}
+
+/* 垂直方向の見出し */
+.section-vertical-header {
+  position: relative;
+  margin: 0 0 4rem;
+  text-align: center;
+  word-break: break-all;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+    left: 0;
+    width: 1px;
+    height: 1.5rem;
+    margin: 0 auto;
+    background: var(--color-gray30);
+    content: "";
+  }
+
+  .js .js-animation & {
+    &::after {
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.2s ease-out 0.5s;
+      will-change: transform, opacity;
+    }
+  }
+
+  .js .js-animation.is-show & {
+    &::after {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.section-vertical-heading {
+  margin: 0;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, heading-l);
+  line-height: var(--line-height-base);
+}
+
+.section-vertical-text {
+  margin: 0;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+
+  .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js-animation.is-show & {
+    animation: fade-in 0.2s 0.5s 1 both;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section-vertical-heading {
+    font-size: map.get(global.$font-scales, heading-l);
+  }
+
+  .section-vertical-text {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .section-vertical-header {
+    margin: 0 0 4.5rem;
+
+    &::after {
+      bottom: -2.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .section-vertical-heading {
+    font-size: map.get(global.$font-scales, display-s);
+  }
+
+  .section-vertical-text {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
+
+/* 背景あり */
+.section-animation-bg {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 50%;
+    background: var(--color-gray10);
+    content: "";
+  }
+
+  .js &.js-animation::before {
+    transform: translateX(100%);
+    transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
+    will-change: transform;
+  }
+
+  .js &.js-animation.is-show::before {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .section-animation-bg {
+    padding: 3rem 0;
+
+  }
+}
+
+/* セクション内で使用するボタンのレイアウト */
+.section-button {
+  margin: 2rem 0 0;
+  text-align: center;
+
+  &.is-right {
+    text-align: right;
+  }
+}
+
+/* 視覚的なセパレーター */
+.section-separator {
+  max-width: calc(var(--container) - var(--gutter-md) * 3);
+  margin: 0 auto;
+  border: 0;
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+}

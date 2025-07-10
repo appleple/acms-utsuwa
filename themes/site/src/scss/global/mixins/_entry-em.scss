@@ -1,0 +1,8 @@
+@use "../variables" as var;
+
+// 強調
+@mixin entry-em($color) {
+  font-weight: normal;
+  font-style: normal;
+  background: linear-gradient(transparent 60%, $color 60%);
+}

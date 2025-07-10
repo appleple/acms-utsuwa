@@ -1,0 +1,128 @@
+<!-- BEGIN unit#custom_unit_space -->
+<hr class="clearHidden" style="padding-bottom: var(--unit-space-{unit_space})">
+<!-- END unit#custom_unit_space -->
+
+<!-- BEGIN unit#custom_separator -->
+<hr class="unit-separator" style="margin-top: calc(var(--separator-{unit_space}) - 2rem);margin-bottom:  var(--separator-{unit_space});">
+<!-- END unit#custom_separator -->
+
+<!-- BEGIN unit#custom_outline -->
+<nav class="entry-outline">
+  <h2 class="entry-outline-title js-except">目次</h2>
+  <div class="js-outline-yield entry-outline-list-wrap"></div>
+</nav>
+<!-- END unit#custom_outline -->
+
+<!-- BEGIN unit#custom_message -->
+<div class="message">
+  <div class="message-image"><img src="%{MEDIA_ARCHIVES_DIR}{message_image@path}" class="acms-img-responsive" alt=""></div>
+  <div class="message-wrap"><!-- BEGIN message_lead:veil -->
+    <h3 class="message-lead">{message_lead}[nl2br]</h3><!-- END message_lead:veil -->
+    <!-- BEGIN message_content:veil -->
+    <p class="message-content">{message_content}[nl2br]</p><!-- END message_content:veil -->
+    <!-- BEGIN message_source:veil -->
+    <p class="message-source">{message_source}</p><!-- END message_source:veil -->
+  </div>
+</div>
+<!-- END unit#custom_message -->
+
+<!-- BEGIN unit#custom_pricing -->
+<ul class="pricing-group"><!-- BEGIN group_pricing:loop -->
+  <li class="pricing-item<!-- BEGIN_IF [{pricing_reccommend}/eq/true] --> is-reccomend<!-- END_IF -->">
+    <div class="pricing-inner">
+      <div class="pricing-header"><!-- BEGIN_IF [{pricing_reccommend}/eq/true] -->
+        <div class="pricing-label-wrap">
+          <p class="pricing-label">おすすめ</p>
+        </div><!-- END_IF --><!-- BEGIN pricing_title:veil -->
+        <h3 class="pricing-title">{pricing_title}</h3><!-- END pricing_title:veil --><!-- BEGIN pricing_desc:veil -->
+        <p class="pricing-desc">{pricing_desc}[nl2br]</p><!-- END pricing_desc:veil -->
+      </div>
+      <div class="pricing-body"><!-- BEGIN_IF [{pricing_price}/nem] -->
+        <p class="pricing-price">{pricing_price}<span class="pricing-unit">{pricing_price_unit}</span></p>
+        <!-- END_IF --><!-- BEGIN pricing_check_list:veil -->
+        <ul class="pricing-check-group">
+          {pricing_check_list}[list]
+        </ul><!-- WND pricing_check_list:veil -->
+      </div>
+      <div class="pricing-footer"><!-- BEGIN pricing_btn-url:veil -->
+        <a href="{pricing_btn-url}" class="button pricing-button">詳しく見る</a><!-- END pricing_btn-url:veil -->
+        <!-- BEGIN pricing_micro_copy:veil -->
+        <p class="text-info pricing-text-info">{pricing_micro_copy}</p><!-- END pricing_micro_copy:veil -->
+      </div>
+    </div>
+  </li><!-- END group_pricing:loop -->
+</ul>
+<!-- END unit#custom_pricing -->
+
+<!-- BEGIN unit#custom_sample -->
+<!-- END unit#custom_sample -->
+
+<!-- BEGIN unit#osmap_mapbox -->
+
+<!-- Mapbox の CSS と JS を読み込む -->
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.9.3/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.9.3/mapbox-gl.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2F6dW1pY2giLCJhIjoiY202YzlyNnFvMDdjNDJtc2I3M2lieThjdyJ9.zHb9SkiAIuJhAJjLWriDig';
+
+    document.querySelectorAll(".js-mapbox-map").forEach(mapElement => {
+      const lat = parseFloat(mapElement.dataset.lat);
+      const lng = parseFloat(mapElement.dataset.lng);
+      let zoomRaw = mapElement.dataset.zoom;
+
+      // `data-zoom` の値を数値に変換し、無効ならデフォルト値を適用
+      let zoom = Number(zoomRaw);
+      if (isNaN(zoom)) {
+        zoom = 15; // デフォルトのズーム値
+      }
+
+      let adjustedZoom = Math.max(0, zoom - 1);
+
+      if (mapElement.offsetWidth === 0 || mapElement.offsetHeight === 0) {
+        return; // コンテナのサイズが 0 の場合はスキップ
+      }
+
+      const map = new mapboxgl.Map({
+        container: mapElement,
+        style: 'mapbox://styles/kazumich/clpqtq2i100dg01ope9em2wo5',
+        center: [lng, lat],
+        zoom: adjustedZoom
+      });
+
+      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+      new mapboxgl.Marker()
+        .setLngLat([lng, lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(mapElement.dataset.msg || "ここにマーカーがあります"))
+        .addTo(map);
+    });
+  });
+</script>
+
+<div class="column-map-{align}{display_size_class}" {display_size}[raw]>
+  <div class="js-mapbox-map" data-lat="{lat}" data-lng="{lng}" data-zoom="{zoom}" data-msg="{msgRaw}" style="width: {x}px; height: {y}px;"></div>
+</div>
+<!-- END unit#osmap_mapbox -->
+
+<!-- BEGIN unit#custom_bubble -->
+<div class="bubble-item">
+  <div class="bubble-image-wrap">
+    <!-- BEGIN_IF [{bubble-image@path}/nem] -->
+
+    <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{bubble-image@path}" alt="" />
+    <!-- ELSE -->
+    <img src="/images/noimage.png" alt="" class="acms-img-responsive">
+    <!-- END_IF -->
+  </div>
+  <div class="bubble-heading-wrap">
+    <!-- BEGIN bubble-heading:veil -->
+    <p class="bubble-heading">{bubble-heading1}<!-- END bubble-heading1:veil --><!-- BEGIN bubble-heading2:veil --><br>{bubble-heading2}<!-- END bubble-heading2:veil -->
+    </p>
+    <!-- END bubble-heading:veil -->
+    <p class="bubble-name">{bubble-name}</p>
+  </div>
+  <div class="bubble-text">{bubble-text}</div>
+</div>
+<!-- END unit#custom_bubble -->

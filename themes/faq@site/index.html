@@ -1,0 +1,18 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <main class="main">
+    <div class="acms-grid">
+      <div class="container-md">
+        <!-- ローカルナビゲーション -->
+        @include("/include/category/local-nav.html", {"module_id": "category_list_child", "direction":"is-down"})
+        <!-- 質問一覧 -->
+        <!-- カテゴリーなしとカテゴリーありを両方読み込む -->
+        @include("/include/htmx/faq/faq-no-category.html", {"module_id": "entry_list_faq"})
+        @include("/include/htmx/faq/faq-with-category.html", {"module_id": "category_entrylist_faq"})
+      </div>
+    </div>
+  </main>
+</div>
+@endsection

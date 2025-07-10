@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+
+  <head>
+    @section("head-meta")
+    @include("/include/head/meta.html")
+    @endsection
+
+    @section("head-link")
+    @include("/include/head/link.html")
+    @endsection
+
+    @section("head-js")
+    @include("/include/head/js.html")
+    @endsection
+  </head>
+
+  <body id="top">
+    @section("body-start")
+    @include("/include/body-start.html")
+    @endsection
+
+    @section("header")
+    <!-- ヘッダー -->
+    @include("/include/header/header.html")
+    @endsection
+
+    @section("page-title")
+    <!-- ページタイトル -->
+    @include("/include/parts/page-title-%{VIEW}.html")
+    @endsection
+    @section("topicpath")
+    @include("/include/parts/topicpath.html")
+    @endsection
+
+
+    <div class="acms-container">
+      @section("admin-part")
+      <!-- ※管理用パーツ -->
+      @include("/admin/action.html")
+      @include("/admin/switch-user.html")
+      @endsection
+    </div>
+    @section("content-wrapper")
+    <div class="content-wrapper">
+      @section("main")
+      <p>継承してメインコンテンツを設定してください</p>
+      @endsection
+    </div>
+    @endsection
+
+    @section("side")
+    @endsection
+
+    @section("check-seo")
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- 確認用テンプレート -->
+    <div class="acms-margin-top-large">
+      @include("/include/check-seo.html")
+    </div><!-- END_MODULE Touch_Login -->
+    @endsection
+
+    @section("footer-cta")
+    <!-- Call to Action -->
+    @include("/include/parts/cta-visual.html", {"module_id": "cta_visual"})
+    @endsection
+
+    @section("footer")
+    <!-- フッター -->
+    @include("/include/footer/footer.html")
+    @endsection
+
+    @section("body-end")
+    @include("/include/body-end.html")
+    @endsection
+  </body>
+
+</html>

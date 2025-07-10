@@ -1,0 +1,75 @@
+@use "sass:map";
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　バッジ
+------------------------------ */
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  min-width: 2.5rem;
+  box-sizing: border-box;
+  color: var(--color-text-2nd);
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  font-size: map.get(global.$font-scales, body-s);
+
+  &.-pill {
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-round);
+  }
+
+  &.-day {
+    padding: 0;
+    min-width: initial;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-round);
+  }
+}
+
+/* ------------------------------
+　　ラベル
+------------------------------ */
+
+.label {
+  display: inline-block;
+  color: var(--color-text);
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-md);
+  font-size: map.get(global.$font-scales, body-s);
+  padding: 0 0.5rem;
+
+  &.is-md {
+    padding: 0.25rem 0.5rem;
+
+  }
+
+  &.is-white {
+    background: var(--color-white);
+
+  }
+
+  &.is-gray {
+    color: var(--color-white);
+    background: var(--color-gray60);
+  }
+
+  &.is-dark {
+    color: var(--color-white);
+    background: var(--color-gray80);
+
+  }
+
+  &.is-required {
+    color: var(--color-danger);
+    background: var(--color-danger-light);
+  }
+}

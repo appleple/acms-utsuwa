@@ -1,0 +1,106 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ページタイトル
+------------------------------ */
+.page-title-wrapper {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: global.$page-title-height;
+  color: global.$color-text;
+  background: global.$color-gray10;
+  background-position: center;
+  background-size: cover;
+
+  &[style] {
+    height: global.$page-title-height-image;
+    color: global.$color-text-inverse;
+    text-align: center;
+
+    .page-title-filter {
+      display: block;
+    }
+
+    .page-title-en {
+      color: global.$color-text-inverse;
+    }
+  }
+}
+
+.page-title-inner {
+  position: relative;
+  display: table-cell;
+  padding: 1rem 0;
+  vertical-align: middle;
+}
+
+.page-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
+  line-height: global.$line-height-sm;
+  word-break: break-all;
+}
+
+.page-title-text-wrap {
+  width: fit-content;
+
+  &.left {
+    margin-right: auto;
+    text-align: left;
+  }
+
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &.right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.page-title-en {
+  margin: 0.25rem 0 0;
+  color: global.$color-text-side;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-sm;
+}
+
+@media (min-width: acms.$breakpoint-md-min) {
+  .page-title-wrapper {
+    height: global.$page-title-height-md;
+
+    &[style] {
+      height: global.$page-title-height-image-md;
+    }
+  }
+
+
+
+  .page-title {
+    font-size: map.get(global.$font-scales, heading-m);
+  }
+
+
+  .page-title-en {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+/* ------------------------------
+　　ページサブタイトル
+------------------------------ */
+
+
+.page-sub-title {
+  font-size: map.get(global.$font-scales, heading-m);
+  color: global.$color-gray100;
+  margin: 0 0 2rem;
+
+}

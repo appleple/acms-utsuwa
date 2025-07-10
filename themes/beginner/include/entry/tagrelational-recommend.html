@@ -1,0 +1,45 @@
+<!-- BEGIN_MODULE Entry_TagRelational id="{{module_id}}" -->
+<section class="tag-relational clearfix">
+  <h3 class="heading-md">おすすめ記事</h3>
+  @include("/admin/module/setting.html")
+  <!-- BEGIN notFound -->
+  <div class="paragraph">この記事のハッシュタグに関連する記事が見つかりませんでした。</div><!-- END notFound -->
+  <!-- BEGIN_IF [<!-- BEGIN notFound -->notFound<!-- END notFound -->/em] -->
+  <div class="paragraph acms-margin-bottom-medium">この記事のハッシュタグ
+    <ul class="list-inline"><!-- GET_Rendered id="tag" --></ul>
+    から関連する記事を表示しています。
+  </div>
+  <ul class="card-list">
+    <!-- BEGIN entry:loop -->
+    <li class="{entry:loop.class} card-item">
+      <div class="card">
+        <a href="{url}" class="card-link">
+          <div class="card-img-wrap"><!-- BEGIN image:veil -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
+          </div>
+          <div class="card-text-wrap">
+            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="acms-admin-label">new</span><!-- END new --></time>
+            <h2 class="card-title">{title}</h2>
+            <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+            <p class="card-text">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+            <!-- BEGIN tag:veil -->
+            <p class="card-text"><!-- BEGIN tag:loop -->#{name}<!-- BEGIN tagGlue --> / <!-- END tagGlue --><!-- END tag:loop --></p><!-- BEGIN tag:veil -->
+            <!-- BEGIN userField -->
+            <!-- BEGIN userField -->
+            <p class="card-author">
+              <!-- BEGIN_IF [{image@path}/nem] -->
+              <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+              <!-- ELSE -->
+              <img src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+            </p>
+            <!-- END_IF -->
+            <!-- END userField -->
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END entry:loop -->
+  </ul>
+  <!-- END_IF -->
+</section>
+<!-- END_MODULE Entry_TagRelational -->

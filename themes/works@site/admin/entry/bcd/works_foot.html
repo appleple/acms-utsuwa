@@ -1,0 +1,41 @@
+<div class="acms-admin-margin-bottom-medium">
+  <h2 class="acms-admin-admin-title2">お客様の声</h2>
+  <table class="acms-admin-table-admin-edit">
+    <tbody>
+      <tr>
+        <th>アイコン画像</th>
+        <td class="js-media-field">
+          <div class="js-droparea" data-thumbnail="{person-image@thumbnail}" data-type="image" data-thumbnail-type="{person-image@type}" data-width="200px" data-height="200px"></div>
+          <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+          <div class="acms-admin-margin-top-mini">
+            <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+          </div>
+          <input type="hidden" name="person-image" class="js-value" value="{person-image}" />
+          <input type="hidden" name="field[]" value="person-image" />
+          <input type="hidden" name="person-image:extension" value="media" />
+        </td>
+      </tr>
+      <tr>
+        <th>所属</th>
+        <td>
+          <input type="text" name="person-department" class="acms-admin-form-width-full" value="{person-department}" />
+          <input type="hidden" name="field[]" value="person-department" />
+        </td>
+      </tr>
+      <tr>
+        <th>担当者名</th>
+        <td>
+          <input type="text" name="person-in-charge" class="acms-admin-form-width-half" value="{person-in-charge}" />
+          <input type="hidden" name="field[]" value="person-in-charge" />
+        </td>
+      </tr>
+      <tr>
+        <th>担当者の声</th>
+        <td>
+          <textarea name="person-voice" class="acms-admin-form-width-full" rows="5">{person-voice}</textarea>
+          <input type="hidden" name="field[]" value="person-voice" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,222 @@
+@use "sass:map";
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+
+
+#adminBox {
+  margin-top: 20px;
+}
+
+/* ------------------------------
+　　ベース
+------------------------------ */
+html {
+  color: var(--color-text);
+  font-family: var(--font-base);
+  line-height: var(--line-height-lg);
+  background: var(--color-white);
+  scroll-behavior: smooth;
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+    scroll-padding-top: var(--header-height-fixed);
+
+    &:has(.nav-bottom.sticky) {
+      scroll-padding-top: 12rem;
+    }
+
+    &:has(.logo-center.sticky) {
+      scroll-padding-top: 10rem;
+    }
+  }
+
+}
+
+/* リンクの設定 */
+a {
+  border: none;
+}
+
+::placeholder {
+  color: var(--color-gray60) !important;
+}
+
+/* コンテナー */
+.acms-container {
+
+  max-width: var(--container);
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
+
+  @if global.$enable-iphonex ==true {
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-lg-min) {
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
+
+    @if global.$enable-iphonex ==true {
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+    }
+  }
+
+  .acms-container {
+    padding: 0;
+  }
+}
+
+.container-md {
+  box-sizing: border-box;
+  max-width: var(--container-md);
+  margin: 0 auto;
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
+
+  @if global.$enable-iphonex ==true {
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-lg-min) {
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
+
+    @if global.$enable-iphonex ==true {
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+    }
+  }
+
+  .container-md {
+    padding: 0;
+  }
+}
+
+.container-sm {
+  --gutter: var(--gutter-sm);
+  box-sizing: border-box;
+  max-width: var(--container-sm);
+  margin: 0 auto;
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
+
+  @if global.$enable-iphonex ==true {
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-lg-min) {
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
+
+    @if global.$enable-iphonex ==true {
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+    }
+  }
+}
+
+.content-wrapper {
+  padding: var(--page-title-margin-bottom) 0 0;
+
+  &.is-_top {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .content-wrapper {
+    padding: var(--page-title-margin-bottom-md) 0 0;
+
+    &.two-columns {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* グリッド */
+.acms-grid {
+  margin: 0 calc(var(--unit-gutter-var) / -2);
+}
+
+[class*="acms-col"] {
+  padding-right: calc(var(--unit-gutter-var) / 2);
+  padding-left: calc(var(--unit-gutter-var) / 2);
+}
+
+
+/* 2カラム */
+
+.side-container {
+  padding-top: 1rem;
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .main-container {
+    width: var(--width-main-container);
+    padding-top: 1rem;
+  }
+
+  .side-container {
+    width: var(--width-side-container);
+  }
+}
+
+/* 固定コンテンツ */
+.sticky-contents {
+  position: fixed;
+  bottom: 0;
+  z-index: var(--zindex-fixed-contents);
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem 0;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.2s;
+
+  &.is-centered {
+    text-align: center;
+  }
+
+  &.is-show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
+  &.is-bg {
+    background-color: var(--color-footer-sticky);
+  }
+}
+
+/* モジュール */
+
+
+/* スクリーンリーダー */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* その他上書き */
+
+.js-open-street-map {
+  z-index: 0;
+}

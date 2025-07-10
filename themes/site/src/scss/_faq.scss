@@ -1,0 +1,115 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　よくあるご質問
+------------------------------ */
+.faq {
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+
+  &:hover {
+    box-shadow: var(--box-shadow-hover);
+
+    .faq-question {
+      background: var(--color-hover-bg-2nd);
+    }
+
+    .faq-answer {
+      border-top: 1px solid transparent;
+    }
+  }
+}
+
+.faq-icon {
+  flex: 0 0 auto;
+  width: 2rem;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.faq-question-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &.toggle-button {
+    padding: 2rem 1rem;
+  }
+}
+
+.faq-question {
+  margin: 0;
+  font-size: map.get(global.$font-scales, body-m);
+
+  .faq-icon {
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .faq-title {
+    margin: 0;
+    font-weight: bold;
+    line-height: var(--line-height-base);
+  }
+}
+
+.faq-answer {
+  margin: 0 1rem;
+  padding: 2rem 0;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-top: 10px;
+  border-top: 1px solid var(--color-gray30);
+
+  .faq-icon,
+  .faq-icon a {
+    color: var(--color-gray90);
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .entry-style {
+    margin-bottom: -1rem;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .faq-question {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+
+  .faq-question-button {
+
+    &.toggle-button {
+      padding: 2rem;
+    }
+  }
+
+  .faq-icon {
+    font-size: map.get(global.$font-scales, heading-m);
+
+  }
+
+  .faq-answer {
+    margin: 0 2rem;
+
+  }
+}
+
+/* 質問リスト */
+.faq-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: var(--entry-el-margin-md);
+  }
+}

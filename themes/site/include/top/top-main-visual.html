@@ -1,0 +1,125 @@
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+ <section class="main-visual">
+  @include("/include/edit/module-custom.html", {"label":"メインビジュアルを編集する" ,"hash":"#acms_box3"})
+    <!-- BEGIN_IF [<!-- BEGIN main-visual:loop -->{main-visual-display}<!-- END main-visual:loop -->/eq/1] -->
+    <!-- 背景画像が1枚のみ設定されている場合 -->
+    <!-- BEGIN main-visual:loop -->
+    <!-- BEGIN_IF [{main-visual-display}/eq/1] -->
+    <picture class="main-visual-bg">
+      <!-- BEGIN main-visual-bg-image-sp:veil -->
+      <source srcset="%{HTTP_MEDIA_ARCHIVES_DIR}{main-visual-bg-image-sp@path}" media="(max-width: 767px)" />
+      <!-- END main-visual-bg-image-sp:veil -->
+      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-visual-bg-image@path}" alt="{main-visual-bg-image@alt}" class="is-alone">
+    </picture>
+
+    <!-- BEGIN_IF [{main-visual-copy-main}[delnl]/nem/_or_/{main-visual-copy-sub}[delnl]/nem/_or_/{main-visual-link01-href}/nem/_or_/{main-visual-link02-href}/nem] -->
+    <div class="main-visual-box<!-- BEGIN main-visual-content-position:veil --> is-{main-visual-content-position}<!-- END main-visual-content-position:veil --> js-contrast-color" data-black-color="var(--color-primary)" data-white-color="#fff"<!-- BEGIN bg_color:veil --> style="background: rgb({main-visual-bg-color-red} {main-visual-bg-color-green} {main-visual-bg-color-blue} / {main-visual-bg-color-alpha}%)"<!-- END bg_color:veil -->>
+      <!-- BEGIN main-visual-copy:veil -->
+      <div>
+        <!-- BEGIN main-visual-copy-main:veil -->
+        <h1 class="main-visual-catch">{main-visual-copy-main}[raw|nl2br]</h1><!-- END main-visual-copy-main:veil -->
+        <!-- BEGIN main-visual-copy-sub:veil -->
+        <p class="main-visual-catch-sub">{main-visual-copy-sub}[raw|nl2br]</p><!-- END main-visual-copy-sub:veil -->
+      </div>
+      <!-- END main-visual-copy:veil -->
+      <!-- BEGIN main-visual-link:veil -->
+      <div class="main-visual-links">
+        <!-- BEGIN main-visual-link01:veil -->
+        <a href="{main-visual-link01-href}" class="button js-viewing-indelible">{main-visual-link01-text}</a>
+        <!-- END main-visual-link01:veil -->
+        <!-- BEGIN main-visual-link02:veil -->
+        <a href="{main-visual-link02-href}" class="button is-bordered js-viewing-indelible">{main-visual-link02-text}</a>
+        <!-- END main-visual-link02:veil -->
+
+      </div>
+      <!-- END main-visual-link:veil -->
+      <p class="main-visual-scroll"><a href="#message" class="main-visual-scroll-link">SCROLL</a></p>
+
+    </div>
+    <!-- END_IF -->
+    <!-- END_IF -->
+    <!-- END main-visual:loop -->
+    <!-- ELSE -->
+    <!-- 背景画像が複数枚設定されている場合 -->
+    <div id="main-visual-slider" class="splide main-visual-slider" role="group">
+      <div class="splide__track">
+        <div class="splide__list">
+          <!-- BEGIN main-visual:loop -->
+          <!-- BEGIN_IF [{main-visual-display}/eq/1] -->
+          <div class="splide__slide">
+            <!-- BEGIN_IF [{main-visual-copy-main}[delnl]/nem/_or_/{main-visual-copy-sub}[delnl]/nem/_or_/{main-visual-link01-href}/nem/_or_/{main-visual-link02-href}/nem] -->
+            <div class="main-visual-box<!-- BEGIN main-visual-content-position:veil --> is-{main-visual-content-position}<!-- END main-visual-content-position:veil --> js-contrast-color" data-black-color="var(--color-primary)" data-white-color="#fff"<!-- BEGIN bg_color:veil --> style="background: rgb({main-visual-bg-color-red} {main-visual-bg-color-green} {main-visual-bg-color-blue} / {main-visual-bg-color-alpha}%)"<!-- END bg_color:veil -->>
+              <!-- BEGIN main-visual-copy:veil -->
+              <div>
+                <!-- BEGIN main-visual-copy-main:veil -->
+                <h1 class="main-visual-catch">{main-visual-copy-main}[raw|nl2br]</h1><!-- END main-visual-copy-main:veil -->
+                <!-- BEGIN main-visual-copy-sub:veil -->
+                <p class="main-visual-catch-sub">{main-visual-copy-sub}[raw|nl2br]</p><!-- END main-visual-copy-sub:veil -->
+              </div>
+              <!-- END main-visual-copy:veil -->
+              <!-- BEGIN main-visual-link:veil -->
+              <div class="main-visual-links">
+                <!-- BEGIN main-visual-link01:veil -->
+                <a href="{main-visual-link01-href}" class="button js-viewing-indelible">{main-visual-link01-text}</a>
+                <!-- END main-visual-link01:veil -->
+                <!-- BEGIN main-visual-link02:veil -->
+                <a href="{main-visual-link02-href}" class="button is-bordered js-viewing-indelible">{main-visual-link02-text}</a>
+                <!-- END main-visual-link02:veil -->
+              </div>
+              <!-- END main-visual-link:veil -->
+            </div>
+            <!-- END_IF -->
+            <picture>
+              <!-- BEGIN main-visual-bg-image-sp:veil -->
+              <source srcset="%{HTTP_MEDIA_ARCHIVES_DIR}{main-visual-bg-image-sp@path}" media="(max-width: 767px)" />
+              <!-- END main-visual-bg-image-sp:veil -->
+              <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-visual-bg-image@path}" alt="{main-visual-bg-image@alt}">
+            </picture>
+          </div>
+          <!-- END_IF -->
+          <!-- END main-visual:loop -->
+        </div>
+      </div>
+      <div class="splide__controls">
+      <div class="splide__pagination"></div>
+        <button class="splide__toggle">
+          <span class="splide__toggle__play"></span>
+          <span class="splide__toggle__pause"></span>
+        </button>
+      </div>
+      <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
+    </div>
+    <!-- END_IF -->
+</section>
+
+<!-- BEGIN style:veil -->
+<style>
+  .main-visual {
+    <!-- BEGIN main-visual-height-pc:veil -->--mv-height-pc: {main-visual-height-pc}px;<!-- END main-visual-height-pc:veil --><!-- BEGIN main-visual-height-sp:veil -->--mv-height-sp: {main-visual-height-sp}px;<!-- END main-visual-height-sp:veil -->
+  }
+</style>
+<!-- END style:veil -->
+<!-- END_MODULE Module_Field -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // メインビジュアルのフェードインスライド
+    <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+    <!-- BEGIN_IF [<!-- BEGIN main-visual:loop -->{main-visual-display}<!-- END main-visual:loop -->/neq/1] -->
+    new Splide('#main-visual-slider', {
+      <!-- BEGIN main-visual-slider-type:veil -->
+      type: '{main-visual-slider-type}',<!-- END main-visual-slider-type:veil -->
+      autoplay: true,<!-- BEGIN main-visual-slider_interval:veil -->
+      interval: {main-visual-slider_interval},<!-- END main-visual-slider_interval:veil --><!-- BEGIN main-visual-slider_speed:veil -->
+      speed: {main-visual-slider_speed},<!-- END main-visual-slider_speed:veil -->
+      arrows: false,
+      pagination: true,
+      perPage: 1,
+      perMove: 1,
+      focus: 0,
+      rewind: true,
+    }).mount();
+    <!-- END_IF -->
+    <!-- END_MODULE Module_Field -->
+  });
+</script>

@@ -1,0 +1,1 @@
+【%{BLOG_NAME}】{description}お問い合わせ No.%{Y}%{n}%{j}%{H}%{i}%{s}

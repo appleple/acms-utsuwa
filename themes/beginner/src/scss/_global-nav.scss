@@ -1,0 +1,289 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　グローバルナビゲーション
+------------------------------ */
+.global-nav {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+
+  @media (max-width: acms.$breakpoint-lg-max) {
+    display: none;
+  }
+}
+
+.global-nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  list-style: none;
+
+}
+
+.global-nav-item {
+  position: relative;
+  display: flex;
+
+
+}
+
+.global-nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: global.$header-height;
+  margin: 0 1rem;
+  color: global.$color-text;
+  text-decoration: none;
+
+  &:visited,
+  &:active,
+  &:hover,
+  &:focus {
+    color: global.$color-text;
+  }
+
+  &:has(+ul) {
+    padding: 0 1.75rem 0 0;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      display: block;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: -0.25rem;
+      border-top: 2px solid global.$color-gray100;
+      border-right: 2px solid global.$color-gray100;
+      transform: rotate(135deg);
+      content: "";
+    }
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: global.$color-primary;
+    transform: scaleX(0);
+    transition: transform 0.2s;
+    content: "";
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  // 現在位置
+  .global-nav-item.stay>&::after {
+    transform: scaleX(1);
+  }
+
+  // CTA用のスタイル
+  &.is-cta {
+    height: global.$header-height;
+    padding: 0 2rem;
+    color: global.$color-text-inverse;
+    background: global.$color-primary;
+    transition: background-color 0.2s;
+
+    &::after {
+      content: none;
+    }
+
+    &:hover {
+      background: global.$color-primary-hover;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .global-nav-item:last-child &.is-cta {
+    margin-right: 0;
+  }
+}
+
+.global-nav-item>.global-nav-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  min-width: 14rem;
+  overflow: hidden;
+  border-radius: global.$border-radius-sm;
+  box-shadow: global.$elevation04;
+
+
+  .global-nav-item {
+    width: 100%;
+    margin: 0;
+    border-top: global.$border-width-sm solid global.$color-gray30;
+
+  }
+
+  .global-nav-link {
+    position: relative;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    color: global.$color-text-side;
+    background: #fff;
+
+    &:visited {
+      color: global.$color-text-side;
+    }
+
+    &:focus-visible::before {
+      position: absolute;
+      inset: 0;
+      border: 2px solid global.$color-focus;
+      content: "";
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: global.$color-text;
+      background-color: global.$color-gray10;
+    }
+
+    &:hover::after {
+      content: none;
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+}
+
+.global-nav-item:hover>.global-nav-list,
+.global-nav-item:focus-within>.global-nav-list {
+  display: flex;
+}
+
+.global-nav-item:last-child .global-nav-link.is-cta+.global-nav-list {
+  right: 0;
+  left: inherit;
+}
+
+/* ロゴ中央・グローバルナビが下
+------------------------------ */
+
+.nav-bottom,
+.logo-center {
+
+  .global-nav {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: global.$container;
+
+    @media screen and (min-width: acms.$breakpoint-lg-min) {
+      padding-right: calc(global.$col-gutter / 1);
+      padding-left: calc(global.$col-gutter / 1);
+    }
+  }
+
+  .global-nav-list {
+    width: 100%;
+    border-left: 1px solid global.$color-gray30;
+
+  }
+
+  .global-nav-item {
+    width: 100%;
+    border-right: 1px solid global.$color-gray30;
+    justify-content: center;
+
+    >.global-nav-list {
+      left: 0;
+      min-width: initial;
+
+    }
+  }
+
+  .global-nav-link {
+    height: calc(global.$header-height - 1rem);
+
+    &.is-cta {
+      width: 100%;
+      height: calc(global.$header-height - 1rem);
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+
+  .nav-bottom,
+  .logo-center {
+    .global-nav {
+      padding-right: calc(global.$col-gutter / 1);
+      padding-left: calc(global.$col-gutter / 1);
+    }
+
+    >.global-nav-list {
+      .global-nav-item {
+        border-right: 1px solid global.$color-gray30;
+      }
+    }
+  }
+
+  .logo-center {
+    .global-nav-item:hover {
+
+      &:has(ul) {
+        position: static;
+
+        .global-nav-list {
+          overflow: initial;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-self: flex-start;
+          margin: auto;
+          padding: 3rem;
+          box-sizing: border-box;
+          box-shadow: none;
+
+          &:after {
+            position: absolute;
+            display: inline-block;
+            content: '';
+            background-color: global.$color-gray30;
+            width: 100vw;
+            width: 200vw;
+            height: 100%;
+            left: 0;
+            z-index: -1;
+            top: 0;
+            margin: 0 -50vw;
+          }
+
+          .global-nav-item {
+            width: calc(100% / 3);
+            box-sizing: border-box;
+          }
+        }
+      }
+
+    }
+  }
+
+}

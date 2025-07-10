@@ -1,0 +1,133 @@
+<div class="entry-form-wrapper">
+  <!-- BEGIN_MODULE Form -->
+  <!-- BEGIN step -->
+  <!-- フォームステップ：初期 -->
+  <div class="container-md">
+    <div class="acms-entry entry-style">
+      <div class="acms-grid">
+        <h2 id="form" class="heading-lg">{{form_heading}}</h2>
+        <div class="form-message-group">
+          <p class="form-message-text">{{form_message_step}}</p>
+        </div>
+      </div>
+      <!-- フォームステップ -->
+      @include("/include/form/step.html")
+      <form action="?step=reapply#form" method="post" class="acms-form">
+        <div class="acms-margin-bottom-medium">
+          @include("/include/form/input.html")
+        </div>
+        <div class="form-button-group clearfix">
+          <input type="hidden" name="step" value="confirm">
+          <input type="hidden" name="id" value="{form_id}">
+          <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg">
+          <hr class="clearHidden">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END step -->
+
+  <!-- BEGIN step#reapply -->
+  <!-- フォームステップ：修正・エラー -->
+  <div class="container-md">
+    <div class="acms-entry entry-style">
+      <div class="acms-grid">
+        <h2 id="form" class="heading-lg">{{form_heading}}</h2>
+        <div class="form-message-group">
+          <p class="form-message">入力内容を、もう一度ご確認下さい。</p>
+        </div>
+      </div>
+      <!-- フォームステップ -->
+      @include("/include/form/step.html")
+      <form action="?step=reapply#form" method="post" class="acms-form">
+        <div class="acms-margin-bottom-medium">
+          @include("/include/form/input.html")
+        </div>
+        <div class="form-button-group clearfix">
+          <input type="hidden" name="step" value="confirm">
+          <input type="hidden" name="id" value="{form_id}">
+          <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg">
+          <hr class="clearHidden">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END step#reapply -->
+
+  <!-- BEGIN step#confirm -->
+  <!-- フォームステップ：確認画面 -->
+  <div class="container-md">
+    <div class="acms-entry entry-style">
+      <div class="acms-grid">
+        <h2 id="form" class="heading-lg">{{form_heading}}</h2>
+        <!-- フォームステップ -->
+        @include("/include/form/step.html")
+        <div class="form-message-group">
+          <p class="form-message">内容をご確認ください。</p>
+        </div>
+      </div>
+
+      <div class="acms-margin-bottom-medium">
+        @include("/include/form/confirm.html")
+      </div>
+      <div class="form-button-group clearfix">
+        <form action="?step=reapply#form" method="post" class="form-button form-button-return">
+          <input type="hidden" name="step" value="reapply">
+          <input type="hidden" name="takeover" value="{takeover}">
+          <input type="submit" name="ACMS_POST_Form_Chain" value="修正する" id="btnToInput" class="button is-lg is-bordered">
+        </form>
+
+        <form action="/bid/%{BID}/eid/%{EID}/tpl/recruit/thanks.html#form" method="post" class="form-button form-button-send">
+          <input type="hidden" name="To[]" value="{email}">
+          <input type="hidden" name="AdminReply-To[]" value="{email}">
+          <input type="hidden" name="AdminFrom[]" value="{email}">
+          <input type="hidden" name="step" value="result">
+          <input type="hidden" name="takeover" value="{takeover}">
+          <input type="hidden" name="id" value="{form_id}">
+          <input type="submit" name="ACMS_POST_Form_Submit" value="送信する" id="btnSubmit" class="button is-lg is-width-lg">
+        </form>
+      </div>
+      <hr class="clearHidden">
+    </div>
+  </div>
+  <!-- END step#confirm -->
+
+  <!-- BEGIN step#result -->
+  <!-- フォームステップ：完了画面 -->
+  <div class="container-md">
+    <div class="acms-entry entry-style">
+      <div class="acms-grid">
+        <h2 id="form" class="heading-lg">{{form_heading}}</h2>
+        <div class="form-message-group">
+          <p class="form-message">{{form_message_result}}</p>
+        </div>
+
+      </div>
+      @include("/include/form/confirm.html")
+      <div class="form-message-group">
+        <p class="form-message-back"><a href="%{BASE_URL}" class="button is-lg is-width-lg">トップページに戻る</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- END step#result -->
+
+  <!-- BEGIN step#forbidden -->
+  <div class="container-md">
+    <div class="acms-entry entry-style">
+      <div class="acms-grid">
+        <h2 id="form" class="heading-lg">不正なアクセスです。</h2>
+        <div class="form-message-group">
+          <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
+          <p class="form-message-back"><a href="%{PERMALINK}" class="button is-lg is-width-lg">フォームに戻る</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END step#forbidden -->
+
+  <!-- BEGIN error -->
+  <!-- フォームID : {formID} / エラー項目 : {errorKey} -->
+  <!-- END error -->
+
+  <!-- END_MODULE Form -->
+</div>

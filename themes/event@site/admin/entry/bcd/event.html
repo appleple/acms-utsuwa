@@ -1,0 +1,180 @@
+<table class="acms-admin-table-admin-edit">
+  <tbody>
+    <tr>
+      <th>メインイメージ</th>
+      <td class="js-media-field">
+        <div class="js-droparea" data-thumbnail="{main-image@thumbnail}" data-type="image" data-thumbnail-type="{main-image@type}" data-width="200px" data-height="200px"></div>
+        <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+        <div class="acms-admin-margin-top-mini">
+          <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+        </div>
+        <input type="hidden" name="main-image" class="js-value" value="{main-image}" />
+        <input type="hidden" name="field[]" value="main-image" />
+        <input type="hidden" name="main-image:extension" value="media" />
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <span>イベントステータス</span>
+      </th>
+      <td>
+        <div class="acms-admin-form-radio">
+          <input type="radio" name="event-status" {event-status:checked#pre} id="event-status-cHJl" value="pre" />
+          <label for="event-status-cHJl">
+            <i class="acms-admin-ico-radio"></i>募集前</label>
+        </div>
+        <div class="acms-admin-form-radio">
+          <input type="radio" name="event-status" {event-status:checked#open} id="event-status-b3Blbg" value="open" />
+          <label for="event-status-b3Blbg">
+            <i class="acms-admin-ico-radio"></i>募集中</label>
+        </div>
+        <div class="acms-admin-form-radio">
+          <input type="radio" name="event-status" {event-status:checked#full} id="event-status-ZnVsbA" value="full" />
+          <label for="event-status-ZnVsbA">
+            <i class="acms-admin-ico-radio"></i>満員御礼</label>
+        </div>
+        <div class="acms-admin-form-radio">
+          <input type="radio" name="event-status" {event-status:checked#closed} id="event-status-Y2xvc2Vk" value="closed" />
+          <label for="event-status-Y2xvc2Vk">
+            <i class="acms-admin-ico-radio"></i>終了</label>
+        </div>
+        <input type="hidden" name="field[]" value="event-status" />
+      </td>
+    </tr>
+    <tr>
+      <th>紹介文</th>
+      <td>
+        <div class="field-lite-editor-wrap">
+          <textarea name="event-description" class="js-lite-editor-field acms-admin-form-width-full">{event-description}</textarea>
+          <input type="hidden" name="field[]" value="event-description" />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>こんな方におすすめ</th>
+      <td>
+        <textarea name="event-recommend" class="acms-admin-form-width-full">{event-recommend}</textarea>
+        <input type="hidden" name="field[]" value="event-recommend" />
+      </td>
+    </tr>
+    <tr>
+      <th>開催日</th>
+      <td>
+        {date}[date('Y年n月d日')]
+      </td>
+    </tr>
+    <tr>
+      <th>開催時間</th>
+      <td>
+        <input type="text" name="event-time" class="acms-admin-form-width-full" value="{event-time}" />
+        <input type="hidden" name="field[]" value="event-time" />
+      </td>
+    </tr>
+    <tr>
+      <th>参加費</th>
+      <td>
+        <input type="text" name="event-fee" class="acms-admin-form-width-full" value="{event-fee}" />
+        <input type="hidden" name="field[]" value="event-fee" />
+      </td>
+    </tr>
+    <tr>
+      <th>会場名</th>
+      <td>
+        <input type="text" name="event-location" class="acms-admin-form-width-full" value="{event-location}" />
+        <input type="hidden" name="field[]" value="event-location" />
+      </td>
+    </tr>
+    <tr>
+      <th>都道府県</th>
+      <td>
+        <select name="event-pref">
+          <option value=""></option>
+          <option value="北海道" {event-pref:selected#北海道}>北海道</option>
+          <option value="青森県" {event-pref:selected#青森県}>青森県</option>
+          <option value="岩手県" {event-pref:selected#岩手県}>岩手県</option>
+          <option value="宮城県" {event-pref:selected#宮城県}>宮城県</option>
+          <option value="秋田県" {event-pref:selected#秋田県}>秋田県</option>
+          <option value="山形県" {event-pref:selected#山形県}>山形県</option>
+          <option value="福島県" {event-pref:selected#福島県}>福島県</option>
+          <option value="茨城県" {event-pref:selected#茨城県}>茨城県</option>
+          <option value="栃木県" {event-pref:selected#栃木県}>栃木県</option>
+          <option value="群馬県" {event-pref:selected#群馬県}>群馬県</option>
+          <option value="埼玉県" {event-pref:selected#埼玉県}>埼玉県</option>
+          <option value="千葉県" {event-pref:selected#千葉県}>千葉県</option>
+          <option value="東京都" {event-pref:selected#東京都}>東京都</option>
+          <option value="神奈川県" {event-pref:selected#神奈川県}>神奈川県</option>
+          <option value="新潟県" {event-pref:selected#新潟県}>新潟県</option>
+          <option value="富山県" {event-pref:selected#富山県}>富山県</option>
+          <option value="石川県" {event-pref:selected#石川県}>石川県</option>
+          <option value="福井県" {event-pref:selected#福井県}>福井県</option>
+          <option value="山梨県" {event-pref:selected#山梨県}>山梨県</option>
+          <option value="長野県" {event-pref:selected#長野県}>長野県</option>
+          <option value="岐阜県" {event-pref:selected#岐阜県}>岐阜県</option>
+          <option value="静岡県" {event-pref:selected#静岡県}>静岡県</option>
+          <option value="愛知県" {event-pref:selected#愛知県}>愛知県</option>
+          <option value="三重県" {event-pref:selected#三重県}>三重県</option>
+          <option value="滋賀県" {event-pref:selected#滋賀県}>滋賀県</option>
+          <option value="京都府" {event-pref:selected#京都府}>京都府</option>
+          <option value="大阪府" {event-pref:selected#大阪府}>大阪府</option>
+          <option value="兵庫県" {event-pref:selected#兵庫県}>兵庫県</option>
+          <option value="奈良県" {event-pref:selected#奈良県}>奈良県</option>
+          <option value="和歌山県" {event-pref:selected#和歌山県}>和歌山県</option>
+          <option value="鳥取県" {event-pref:selected#鳥取県}>鳥取県</option>
+          <option value="島根県" {event-pref:selected#島根県}>島根県</option>
+          <option value="岡山県" {event-pref:selected#岡山県}>岡山県</option>
+          <option value="広島県" {event-pref:selected#広島県}>広島県</option>
+          <option value="山口県" {event-pref:selected#山口県}>山口県</option>
+          <option value="徳島県" {event-pref:selected#徳島県}>徳島県</option>
+          <option value="香川県" {event-pref:selected#香川県}>香川県</option>
+          <option value="愛媛県" {event-pref:selected#愛媛県}>愛媛県</option>
+          <option value="高知県" {event-pref:selected#高知県}>高知県</option>
+          <option value="福岡県" {event-pref:selected#福岡県}>福岡県</option>
+          <option value="佐賀県" {event-pref:selected#佐賀県}>佐賀県</option>
+          <option value="長崎県" {event-pref:selected#長崎県}>長崎県</option>
+          <option value="熊本県" {event-pref:selected#熊本県}>熊本県</option>
+          <option value="大分県" {event-pref:selected#大分県}>大分県</option>
+          <option value="宮崎県" {event-pref:selected#宮崎県}>宮崎県</option>
+          <option value="鹿児島県" {event-pref:selected#鹿児島県}>鹿児島県</option>
+          <option value="沖縄県" {event-pref:selected#沖縄県}>沖縄県</option>
+          <option value="オンライン" {event-pref:selected#オンライン}>オンライン</option>
+        </select>
+        <input type="hidden" name="field[]" value="event-pref" />
+      </td>
+    </tr>
+    <tr>
+      <th>会場住所</th>
+      <td>
+        <input type="text" name="event-address" class="acms-admin-form-width-full" value="{event-address}" />
+        <input type="hidden" name="field[]" value="event-address" />
+      </td>
+    </tr>
+    <tr>
+      <th>会場地図HTML</th>
+      <td>
+        <textarea name="event-googlemap-iframe" class="acms-admin-form-width-full">{event-googlemap-iframe}</textarea>
+        <input type="hidden" name="field[]" value="event-googlemap-iframe" />
+      </td>
+    </tr>
+    <tr>
+      <th>会場地図リンク</th>
+      <td>
+        <input type="text" name="event-googlemap" class="acms-admin-form-width-full" value="{event-googlemap}" />
+        <input type="hidden" name="field[]" value="event-googlemap" />
+      </td>
+    </tr>
+    <tr>
+      <th>申し込み方法</th>
+      <td>
+        <textarea name="event-entry" class="acms-admin-form-width-full">{event-entry}</textarea>
+        <input type="hidden" name="field[]" value="event-entry" />
+      </td>
+    </tr>
+    <tr>
+      <th>申し込みURL</th>
+      <td>
+        <input type="text" name="event-url" class="acms-admin-form-width-full" value="{event-url}" />
+        <input type="hidden" name="field[]" value="event-url" />
+      </td>
+    </tr>
+  </tbody>
+</table>

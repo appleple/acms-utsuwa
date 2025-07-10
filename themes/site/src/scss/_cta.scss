@@ -1,0 +1,219 @@
+@use "sass:map";
+@use "sass:math";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　CTA（コール・トゥ・アクション）
+------------------------------ */
+
+.cta {
+  padding: 1.5rem 0;
+  text-align: center;
+
+  &.is-bg {
+    margin: 0;
+    padding: 1.5rem 0;
+    background: var(--color-primary);
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .cta {
+    padding: 4.5rem 0 6.5rem;
+
+    .blog1-top & {
+      padding: 6.5rem 0;
+    }
+  }
+}
+
+/* シンプルなCTA */
+.cta-general {
+  padding: 3rem 1rem;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-xl);
+  line-height: var(--line-height-base);
+
+}
+
+.cta-general-title {
+  margin: 0 0 1.5rem;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, heading-s);
+}
+
+.cta-general-button-wrap {
+  font-weight: bold;
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js .js-animation.is-show & {
+    animation: fade-in 0.4s 0.5s 1 both;
+  }
+}
+
+
+.cta-general-micro-copy {
+  margin: 1rem 0 0;
+
+  a[href^="tel:"] {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: var(--border-width-sm) dotted var(--color-text);
+
+
+    .text-btn & {
+      color: var(--color-white);
+    }
+
+
+    &:hover {
+      text-decoration: none;
+      border: 0;
+    }
+  }
+}
+
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .cta-general {
+    margin-top: 1rem;
+    padding: 5rem 2rem;
+    border-radius: var(--border-radius-xxl);
+  }
+
+  .cta-general-title {
+    margin: 0 0 2rem;
+    font-size: map.get(global.$font-scales, heading-m);
+  }
+
+  .cta-general-button {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+/* 背景画像付きのCTA */
+.cta-visual {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  padding: 4rem 0 3rem;
+  color: var(--color-white);
+  text-align: center;
+  background: no-repeat center;
+  background-size: cover;
+
+  a {
+    color: var(--color-white);
+
+    &[href^="tel:"] {
+      text-decoration: none;
+      border-bottom: var(--border-width-sm) dotted var(--color-white);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 30%);
+    content: "";
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cta-visual-comment {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.25rem 1.5rem;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: calc(map.get(global.$font-scales, heading-ss) * 0.7);
+  line-height: var(--line-height-base);
+  background: var(--color-white);
+  border-radius: var(--border-radius-round);
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 10px;
+    background-color: var(--color-white);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+}
+
+.cta-visual-title {
+  position: relative;
+  margin: 0 0 1rem;
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-base);
+}
+
+.cta-visual-text {
+  position: relative;
+  margin: 0 0 1.5rem;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+
+  a {
+    color: var(--color-white);
+  }
+}
+
+.cta-visual-read-more {
+  position: relative;
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js .js-animation.is-show & {
+    animation: fade-in 0.4s 0.5s 1 both;
+  }
+}
+
+.cta-visual-micro-copy {
+  color: var(--color-white);
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .cta-visual {
+    margin-top: 0;
+    padding: 5rem 0;
+
+    &:has(+ .footer) {
+      margin-top: 4.5rem;
+    }
+  }
+
+  .cta-visual-title {
+    font-size: map.get(global.$font-scales, heading-l);
+  }
+
+  .cta-visual-text {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+
+  .cta-visual-comment {
+    margin: 0 0 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: calc(map.get(global.$font-scales, heading-m) * 0.7);
+  }
+}

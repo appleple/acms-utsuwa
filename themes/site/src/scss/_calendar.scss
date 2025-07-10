@@ -1,0 +1,297 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　カレンダー
+------------------------------ */
+.calendar,
+.event-calendar {
+  width: 100%;
+
+
+  .is-week-0 {
+    color: var(--color-text-sunday);
+  }
+
+  .is-week-6 {
+    color: var(--color-text-saturday);
+  }
+}
+
+.calendar-label {
+  padding: 0.5rem 0;
+  color: var(--color-text-2nd);
+  font-weight: normal;
+}
+
+.calendar-day {
+  padding: 0.5rem 0;
+  color: var(--color-text-2nd);
+}
+
+.calendar-day-has {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -0.5rem auto;
+  padding: 0.5rem 0;
+  color: currentColor;
+  font-weight: bold;
+  text-decoration: none;
+  background: var(--color-gray10);
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-hover-bg-2nd);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-label {
+    width: 3.5rem;
+    padding: 0 0 0.75rem;
+  }
+
+  .calendar-day {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0;
+
+    .section-side & {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  .calendar-day-has {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+
+    .section-side & {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+  }
+}
+
+/* 　年間カレンダーレイアウト
+------------------------------ */
+.calendar-group {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: var(--col-gutter);
+  margin: 0;
+  padding: 0 1rem 2rem;
+  list-style: none;
+}
+
+.calendar-group-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.calendar-group-item-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 0 0.5rem;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-group {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calendar-group-item {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .calendar-group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* 　イベントカレンダー
+------------------------------ */
+
+.event-calendar-table {
+  width: 100%;
+  padding-bottom: var(--entry-el-margin-md);
+
+  tr {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  th {
+    width: 5rem;
+    padding-top: 1rem;
+    vertical-align: top;
+  }
+
+  td {
+    flex: 1;
+  }
+}
+
+.event-calendar-item {
+  padding: 1rem;
+
+  &:last-of-type {
+    padding-bottom: 2rem;
+  }
+}
+
+.event-calendar-day {
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1rem;
+  text-align: right;
+  font-weight: bold;
+  line-height: 2rem;
+  font-size: map.get(global.$font-scales, heading-s);
+  vertical-align: bottom;
+}
+
+.event-calendar-table {
+
+  .event-calendar-item-link {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .calendar-item-img-wrap {
+    width: 10rem;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+
+  }
+}
+
+.calendar-item-title {
+  margin: 0;
+}
+
+.calendar-item-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {}
+
+/* 　カレンダー ヘッダー
+------------------------------ */
+.calendar-header {
+  margin: 0 0 0.5rem;
+}
+
+.calendar-header-title {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: map.get(global.$font-scales, heading-ss);
+  font-weight: bold;
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* 　カレンダー ページネーション
+------------------------------ */
+.calendar-pagination-wrap {
+  text-align: center;
+  position: relative;
+  padding: 1rem 1rem 2rem;
+}
+
+
+.calendar-pagination-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: map.get(global.$font-scales, heading-m);
+
+  &.is-return {
+    transform: translateY(100%);
+  }
+}
+
+.calendar-pagination-group {
+  position: static;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-pagination-item-previous,
+.calendar-pagination-item-next {
+  position: absolute;
+  top: 1.5rem;
+}
+
+.calendar-pagination-item-previous {
+  left: 1rem;
+
+  .icon-button {
+    margin-right: 0.5rem;
+  }
+}
+
+.calendar-pagination-item-next {
+  right: 1rem;
+
+  .icon-button {
+    margin-left: 0.5rem;
+  }
+}
+
+.calendar-pagination-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .calendar-pagination {
+    display: inline-flex;
+    padding: 0 4.5rem;
+  }
+
+  .calendar-pagination-title {
+    font-size: map.get(global.$font-scales, heading-m);
+
+    &.is-return {
+      transform: translateY(0);
+    }
+  }
+}

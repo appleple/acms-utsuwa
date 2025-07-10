@@ -1,0 +1,15 @@
+@use "sass:math";
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　一覧
+------------------------------ */
+
+/*
+　ヘッダー
+------------------------------ */
+.category-header {
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,130 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　プロフィール
+------------------------------ */
+
+.profile {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: global.$color-gray10;
+  border-radius: global.$border-radius-sm;
+}
+
+.profile-body {
+  display: flex;
+}
+
+.profile-item-img {
+  padding: 0 1rem 0 0;
+}
+
+.profile-img {
+  width: 4.5rem;
+  height: 4.5rem;
+  vertical-align: top;
+  border-radius: 50%;
+}
+
+.profile-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.profile-position {
+  margin: 0 0.5rem 0 0;
+
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: global.$line-height-sm;
+}
+
+.profile-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: global.$line-height-sm;
+}
+
+.profile-text {
+  margin: 0;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: global.$line-height-lg;
+}
+
+.profile-footer {
+  margin: 1.5rem 0 0;
+}
+
+.profile-author-link {
+  margin: 1rem 0 0;
+  text-align: right;
+  a {
+    font-size: map.get(global.$font-scales, body-s);
+
+    color: global.$color-gray100;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .icon-button {
+    margin-left: 0.5rem;
+  }
+}
+
+.profile-sns {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .profile {
+    position: relative;
+    padding: 2rem;
+  }
+
+  .profile-item-img {
+    padding: 0 2rem 0 0;
+  }
+
+  .profile-img {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .profile-name {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+  .profile-footer {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    margin: 0;
+  }
+}

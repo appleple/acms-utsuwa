@@ -1,0 +1,64 @@
+<!-- BEGIN main-image:veil -->
+<div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}" width="928" height="{main-image@ratio}[getHeightFromRatio(928)]" alt="{main-image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
+
+<dl class="detail-panel is-works">
+  <div class="detail-panel-group">
+    <dt>クライアント</dt>
+    <dd>{title}</dd>
+  </div>
+  <!-- BEGIN work-industry:veil -->
+  <div class="detail-panel-group">
+    <dt>業種</dt>
+    <dd>
+      {work-industry}
+    </dd>
+  </div>
+  <!-- END work-industry:veil -->
+  <!-- BEGIN work-scale:veil -->
+  <div class="detail-panel-group">
+    <dt>規模</dt>
+    <dd>
+      {work-scale}
+    </dd>
+  </div>
+  <!-- END work-scale:veil -->
+  <!-- BEGIN work-category:veil -->
+  <div class="detail-panel-group">
+    <dt>サイト種別</dt>
+    <dd>
+      {work-category}
+    </dd>
+  </div>
+  <!-- END work-category:veil -->
+  <!-- BEGIN work-type:veil -->
+  <div class="detail-panel-group">
+    <dt>目的</dt>
+    <dd>
+      <!-- BEGIN work-type:loop --><!-- BEGIN glue --> , <!-- END glue -->
+      {work-type}
+      <!-- END work-type:loop -->
+    </dd>
+  </div>
+  <!-- END work-type:veil -->
+  <!-- BEGIN work-period:veil -->
+  <div class="detail-panel-group">
+    <dt>期間</dt>
+    <dd>
+      {work-period}
+    </dd>
+  </div>
+  <!-- END work-period:veil -->
+  <!-- BEGIN work-period:veil -->
+  <div class="detail-panel-group">
+    <dt>ウェブサイト</dt>
+    <dd>
+      <a href="{work-url}" class="link-url">{work-url}<!-- BEGIN_IF [{work-url}/lk/http] -->@include("/images/icon-target_blank.svg)<!-- END_IF --> </a>
+    </dd>
+  </div>
+  <!-- END work-period:veil -->
+</dl>
+<!-- BEGIN introduction:veil -->
+<div class="introduction">
+  {introduction}[markdown]
+</div>
+<!-- END introduction:veil -->

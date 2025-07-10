@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+  <head>
+    @include("/include/head/meta.html")
+    @include("/include/head/link.html")
+    @include("/include/head/js.html")
+  </head>
+  <body>
+    @include("/include/body-start.html")
+
+    <div class="page-wrapper">
+      <!-- ヘッダー -->
+      @include("/include/header/header.html")
+
+      <!-- ページタイトル -->
+      @include("/include/parts/page-title.html")
+      @include("/include/parts/topicpath.html")
+
+      <!-- BEGIN_MODULE Touch_Login -->
+      <!-- ※管理用パーツ -->
+      <div class="acms-container">
+        @include("/admin/action.html")
+        @include("/admin/switch-user.html")
+      </div>
+      <!-- END_MODULE Touch_Login -->
+
+<div class="acms-container">
+  <div class="content-wrapper">
+
+
+  <!-- 検索パネル -->
+  @include("/include/parts/search-realestate.html")
+
+  <!-- エントリーサマリー（カスタムフィールド画像表示） -->
+  @include("/include/entry/summary-realestate.html", {"module_id": "summary_realestate"})
+  </div>
+</div>
+
+
+      <!-- フッター -->
+      @include("/include/footer/footer.html")
+    </div>
+    @include("/include/body-end.html")
+  </body>
+</html>

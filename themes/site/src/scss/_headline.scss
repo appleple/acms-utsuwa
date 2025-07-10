@@ -1,0 +1,123 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ヘッドライン
+------------------------------ */
+.headline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-shadow: var(--box-shadow);
+
+  .js &.js-animation-row {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js &.js-animation-row.is-show {
+    animation: fade-in 0.2s 0.3s 1 both;
+  }
+}
+
+.headline-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  line-height: var(--line-height-base);
+
+  &:first-child {
+    .headline-link {
+      border-top-left-radius: var(--border-radius-lg);
+      border-top-right-radius: var(--border-radius-lg);
+    }
+  }
+
+  &:last-child {
+    border: 0;
+
+    .headline-link {
+      border-bottom-right-radius: var(--border-radius-lg);
+      border-bottom-left-radius: var(--border-radius-lg);
+    }
+  }
+}
+
+.headline-link {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  background: var(--color-white);
+  border-bottom: var(--border-width-sm) solid var(--color-gray10);
+
+  .headline-item:last-child & {
+    border: 0;
+  }
+
+  &:hover,
+  &:visited,
+  &:active,
+  &:focus {
+    color: var(--color-text);
+  }
+
+  &:hover {
+    position: relative;
+    background: var(--color-hover-bg-2nd);
+    box-shadow: var(--box-shadow-hover);
+  }
+}
+
+.headline-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 0.75rem;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-sm);
+}
+
+.headline-date {
+  margin-right: 0.5rem;
+  color: var(--color-text-2nd);
+}
+
+.headline-category {
+  margin-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.headline-text {
+  position: relative;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
+.headline-badge-news {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-ss);
+  vertical-align: text-top;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .headline-link {
+    padding: 2rem;
+  }
+
+  .headline-text {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-lg-min) {
+  .headline-text {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
