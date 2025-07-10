@@ -1,0 +1,15 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <main class="main">
+    <div class="container-md">
+      <div aria-labelledby="search-form-heading" class="search-result-heading">
+        @include("/include/parts/search-general.html")
+      </div>
+      <!-- サマリー：記事一覧 -->
+      @include("/include/entry/summary.html",{"module_id": "summary_index_date", "item-amount": "on"})
+    </div>
+  </main>
+</div>
+@endsection

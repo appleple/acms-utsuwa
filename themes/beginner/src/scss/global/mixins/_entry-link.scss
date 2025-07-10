@@ -1,0 +1,23 @@
+@use "../variables" as var;
+
+// リンク
+@mixin entry-link($color, $border) {
+  padding: 2px 0;
+  color: $color;
+  text-decoration: none;
+  border-bottom: 1px dotted $border;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  &[href^="tel:"] {
+    // border-bottom: var.$border-width-sm dashed;
+    .text-btn & {
+      color: #FFF;
+    }
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}

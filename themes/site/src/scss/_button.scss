@@ -1,0 +1,215 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ボタン
+------------------------------ */
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  text-align: center;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+  line-height: 1.5;
+
+  &:any-link {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+
+  &.is-sm {
+    display: inline-block;
+    font-size: map.get(global.$font-scales, body-s);
+    margin: 0 auto;
+    padding: 0.25rem 0.5rem;
+    min-width: initial;
+  }
+
+  &.is-lg {
+    min-width: 15rem;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+
+  }
+
+  &.is-block {
+    width: 100%;
+    min-width: initial;
+  }
+
+  &.is-xl {
+    min-width: 18rem;
+    width: 100%;
+  }
+
+  &.is-width-lg {
+    min-width: 15rem;
+    max-width: 100%;
+  }
+
+  &.is-inverse {
+    color: var(--color-text);
+    background: var(--color-white);
+
+    &:any-link {
+      color: var(--color-text);
+    }
+
+    &:hover {
+      background: var(--color-hover-bg);
+    }
+  }
+
+  &.is-bordered {
+    color: var(--color-text);
+    background: transparent;
+    border: var(--border-width-sm) solid var(--color-gray30);
+
+    &:any-link {
+      color: var(--color-text);
+    }
+
+    &:hover {
+      background: var(--color-hover-bg);
+    }
+  }
+
+  &.is-rounded {
+    border-radius: var(--border-radius-round);
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+
+    &.is-xl {
+      width: initial;
+      min-width: 18rem;
+      padding: 1rem;
+      font-size: map.get(global.$font-scales, heading-s);
+    }
+  }
+
+  &:focus {
+    border-color: acms.$acms-form-focus-border-color;
+    box-shadow: var(--box-shadow-focus);
+  }
+}
+
+/* ------------------------------
+　　もっと見るボタン
+------------------------------ */
+
+.read-more-pager {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 1rem 2rem;
+}
+
+.button-read-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: currentcolor;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  text-decoration: none;
+
+  .icon-button {
+    margin: 0 0 0 0.5rem;
+  }
+
+  .js .js-animation & {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .js .js-animation.is-show & {
+    animation: fade-in 0.2s 1.2s 1 both;
+  }
+
+}
+
+/* ------------------------------
+　　アイコン
+------------------------------ */
+
+.icon-button {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+
+  svg {
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    background: var(--color-icon-bg);
+    transition: 0.2s;
+
+    path {
+      stroke: var(--color-white);
+    }
+
+    a:hover & {
+      background: var(--color-icon-bg-hover);
+    }
+  }
+
+  &.is-sm {
+    svg {
+      padding: 4px;
+    }
+  }
+
+  .bg {
+    fill: var(--color-icon-bg)
+  }
+
+  .arrow {
+    stroke: var(--color-white);
+
+  }
+
+  &.is-sm {
+    width: 1rem;
+    height: 1rem;
+
+  }
+
+  &.is-xl {
+    width: 3rem;
+    height: 3rem;
+
+  }
+
+  &.is-2xl {
+    width: 4rem;
+    height: 4rem;
+
+  }
+
+  &.is-left,
+  &.is-prev {
+    rotate: 180deg;
+  }
+
+  &.is-down {
+    rotate: 90deg;
+  }
+}

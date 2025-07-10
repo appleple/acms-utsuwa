@@ -1,0 +1,20 @@
+@use "../variables" as var;
+
+@mixin link-color($color) {
+  color: $color;
+
+  &:any-link {
+    color: $color;
+  }
+
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

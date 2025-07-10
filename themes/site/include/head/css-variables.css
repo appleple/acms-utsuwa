@@ -1,0 +1,210 @@
+/* ------------------------------
+　　CSS変数
+------------------------------ */
+:root {
+
+  /* ------------------------------
+  カラー
+  ------------------------------- */
+
+  --color-primary: #334EB0;
+  --color-primary-hover: #2B4193;
+  --color-primary-light: #F5F6FB;
+  --color-primary-light-hover: #D5DAEF;
+  --color-primary-bg: var(--color-primary-light);
+  --color-primary-bg-hover: #D1D7ED;
+
+  --color-secondary: #6A6A6A;
+
+  --color-highlight: #FFFB8B;
+
+  --color-danger: #C92D2D;
+  --color-danger-light: #FCF5F5;
+
+  --color-white: #FFF;
+  --color-black: #333333;
+  --color-white90: rgba(255, 255, 255, .9);
+  --color-black30: rgba(0, 0, 0, .3);
+  --color-black80: rgba(0, 0, 0, .8);
+
+  --color-gray10: #F5F5F5;
+  --color-gray20: #DFDFDF;
+  --color-gray30: #CACACA;
+  --color-gray40: #B4B4B4;
+  --color-gray50: #9F9F9F;
+  --color-gray60: #898989;
+  --color-gray70: #747474;
+  --color-gray80: #5E5E5E;
+  --color-gray90: #494949;
+  --color-gray100: #333333;
+
+  --color-form-bg: var(--color-gray10);
+  --color-form-border: var(--color-gray40);
+
+  --color-link: #0061D1;
+  --color-focus: var(-color-link);
+  --color-page-title-bg: var(--color-gray10);
+  --color-hover-bg: var(--color-gray10);
+  --color-hover-bg-2nd: rgba(0, 0, 0, 0.05);
+
+  --color-required: #c92d2d;
+  --color-error: #c92d2d;
+
+  --color-text: var(--color-gray100);
+  --color-text-2nd: var(--color-gray80);
+  --color-text-inverse: var(--color-white);
+
+  --color-text-primary: var(--color-primary);
+  --color-text-secondary: var(--color-secondary);
+
+  --color-text-sunday: #b91414;
+  --color-text-saturday: #0151ae;
+
+  --color-globalnav-bg: var(--color-gray30);
+  --color-footer-sticky: rgba(0, 0, 0, 0.3);
+  --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  --box-shadow-focus: 0 0 0 .25rem rgba(0, 97, 209, 0.4);
+  --box-shadow-error: 0 0 0 .25rem rgba(201, 45, 45, 0.4);
+
+  --color-icon-bg: var(--color-gray80);
+  --color-icon-bg-hover: var(--color-gray100);
+
+  --label-on-image-text: var(--color-white);
+  --label-on-image-bg: var(--color-gray80);
+
+  /* ------------------------------
+  フォント
+  ------------------------------- */
+  --font-hiragino: "Helvetica Neue", arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo, sans-serif;
+  --font-yu-gothic: "Helvetica Neue", arial, yugothic, "yu gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", meiryo, sans-serif;
+  --font-meiryo: "Helvetica Neue", arial, meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  --font-base: var(--font-meiryo);
+
+  /* ------------------------------
+  レイアウト
+  ------------------------------- */
+
+  /* 1120px */
+  --container: calc(70rem + var(--gutter-lg) * 2);
+  /* 928px */
+  --container-md: calc(58rem + var(--gutter-lg) * 2);
+  /* 720px */
+  --container-sm: calc(45rem + var(--gutter-lg) * 2);
+
+  /* 2カラム */
+  --width-main-container: calc(100% - var(--width-side-container) - var(--gutter-md) * 1.5);
+  --width-side-container: var(--width-side-container);
+
+  /* サブカラムの幅 */
+  --width-side-container: 19rem;
+
+  /* ページタイトル */
+  --page-title-height: 7.5rem;
+  --page-title-height-image: 10rem;
+  --page-title-margin-bottom: 3rem;
+  --page-title-height-md: 17.5rem;
+  --page-title-height-image-md: 19rem;
+  --page-title-margin-bottom-md: 5.5rem;
+
+  --page-title-filter: rgba(0, 0, 0, 0.5);
+
+  /* ヘッダー */
+
+  --header-height: 3.5rem;
+  --header-height-fixed: 3.5rem;
+
+  /* フッター */
+  --footer-margin-top-md: 1rem;
+  --footer-margin-top-lg: 4.5rem;
+
+  /* 　z-index */
+  --zindex-fixed-contents: 9000;
+  --zindex-header: 10000;
+  --zindex-mobile-nav: 10001;
+  --zindex-mobile-nav-btn: 10002;
+
+
+  /* ------------------------------
+  余白
+  ------------------------------- */
+
+  /* ガター */
+  --gutter-sm: 1rem;
+  --gutter-md: 2rem;
+  --gutter-lg: 3rem;
+
+  /* グリッドの間隔 */
+  --col-gutter: var(--gutter-md);
+  --unit-gutter-var: var(--gutter-md);
+
+  /* 余白ユニット */
+  --unit-space-sm: 2rem;
+  --unit-space-md: 3rem;
+  --unit-space-lg: 4rem;
+
+  /* 罫線ユニット余白 */
+  --separator-sm: 2rem;
+  --separator-md: 3rem;
+  --separator-lg: 4rem;
+
+  /* ------------------------------
+  パーツ
+  ------------------------------- */
+
+  /* ボタン */
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 2rem;
+
+  /* ボーダー太さ */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+
+  /* 角丸 */
+  --border-radius-sm: 3px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 6px;
+  --border-radius-xl: 16px;
+  --border-radius-xxl: 32px;
+  --border-radius-round: 10em;
+  --border-radius-circle: 100%;
+
+
+  /* 装飾 */
+  --border-link: var(--border-width-sm) dotted var(--color-text);
+  --border-footer: var(--border-width-sm) solid var(--color-gray30);
+
+  /* 行高さ */
+  --line-height-base: 1.5;
+  --line-height-ss: 1;
+  --line-height-sm: 1.4;
+  --line-height-lg: 1.7;
+
+  /* エントリー マージン */
+  --entry-el-margin-xxs: 0.5rem;  /*  8px */
+  --entry-el-margin-xs: 1rem;  /*  16px */
+  --entry-el-margin-sm: 1.5rem;  /*  24px */
+  --entry-el-margin-md: 2rem;  /*  32px */
+  --entry-el-margin-lg: 3rem;  /*  48px */
+
+  /* エントリー パディング */
+  --entry-el-padding-xxs: 0.5rem;  /*  8px */
+  --entry-el-padding-xs: 1rem;  /*  16px */
+  --entry-el-padding-sm: 1.5rem;  /*  24px */
+  --entry-el-padding-md: 2rem;  /*  32px */
+
+  /* ユニット マージン */
+  --unit-margin-md: 2rem;
+
+  /* ------------------------------
+  メインビジュアル
+  ------------------------------- */
+
+  --mv-height-sp: 36.5rem;
+  --mv-extend-height-sp: calc(100vh - var(--header-height-fixed));
+  --mv-height-pc: 48rem;
+  --mv-logo-center-height-pc: calc(100vh - 10rem);
+  --mv-nav-bottom-height-pc: calc(100vh - 12rem);
+
+}

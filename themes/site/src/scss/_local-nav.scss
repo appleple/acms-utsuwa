@@ -1,0 +1,78 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ローカルナビゲーション
+------------------------------ */
+.local-nav-wrap {
+  position: relative;
+  padding: 0 0 2rem;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 1rem;
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
+    content: "";
+  }
+
+  .page-title-wrapper+& {
+    margin-top: -(var(--page-title-margin-bottom));
+  }
+}
+
+.local-nav-inner {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.local-nav {
+  font-weight: bold;
+}
+
+.local-nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.local-nav-item {
+  padding: 0 1.5rem 0 0;
+}
+
+.local-nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  text-decoration: none;
+
+  .icon-button {
+    margin: 0 0 0 0.5rem;
+  }
+
+  &:hover,
+  &:visited,
+  &:active {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .local-nav-wrap {
+    padding: 0 0 3rem;
+
+    .page-title-wrapper+& {
+      margin-top: -(var(--page-title-margin-bottom-md));
+    }
+  }
+
+}

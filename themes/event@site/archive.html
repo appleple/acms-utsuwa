@@ -1,0 +1,18 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <!-- タグフィルター -->
+  @include("/include/tag/filter.html")
+
+  <!-- ローカルナビ -->
+  @include("/include/parts/local-nav.html"", {"module_id": "event-nav-local", "direction": "is-right"})
+
+  <!-- サマリー：記事一覧 -->
+  @include("/include/entry/summary-event.html", {"module_id": "summary_event_archive"})
+</div>
+@endsection
+
+@section("side")
+
+@endsection

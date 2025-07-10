@@ -1,0 +1,61 @@
+<div class="entry-share-modal" x-data>
+  <button @click="$refs.shareDialog.showModal()" class="button is-bordered share-button">
+    @include("/images/icon-arrow-up-to-line.svg")
+    この記事をシェアする
+  </button>
+  <dialog x-ref="shareDialog" class="share-dialog">
+    <h3 class="dialog-title">この記事をシェアする</h3>
+
+    <ul class="sns-list">
+      <li>
+        <a href="http://www.facebook.com/share.php?u=%{CURRENT_URL}" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank" class="sns-link">
+          <span class="sr-only">Xでシェアする</span>
+          <img src="/images/icon-color-x.svg" width="40" height="40" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="http://www.facebook.com/share.php?u=%{CURRENT_URL}" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank" class="sns-link"> <span class="sr-only">Facebookでシェアする</span>
+          <img src="/images/icon-color-facebook.svg" width="40" height="40" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="https://social-plugins.line.me/lineit/share?url=%{CURRENT_URL}" target="_blank" class="sns-link line">
+
+          <span class="sr-only">LINEでシェアする</span>
+          <img src="/images/icon-color-line.svg" width="40" height="40" alt="">
+        </a>
+      </li>
+    </ul>
+    <div class="url-copy-area">
+      <div class="copy-input-wrap">
+        <span class="copy-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+          </svg> </span>
+        <input type="text" readonly value="%{CURRENT_URL}" class="copy-input">
+      </div>
+      <div class="flex" x-data="{
+            copyText: '%{CURRENT_URL}',
+            copied: false,
+            copyToClipboard() {
+                navigator.clipboard.writeText(this.copyText);
+                this.copied = true;
+                let that = this;
+                setTimeout(function(){
+                    that.copied = false;
+                }, 3000);
+            }
+          }"> <button type="button" @click="copyToClipboard();" class="button">
+          <span x-show="!copied">コピーする</span>
+          <span x-show="copied">コピーしました</span>
+        </button>
+      </div>
+    </div>
+    <button @click="$refs.shareDialog.close()" class="dialog-close">
+      <span class="sr-only">閉じる</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </dialog>
+</div>

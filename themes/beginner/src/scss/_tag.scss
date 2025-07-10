@@ -1,0 +1,181 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　タグ
+------------------------------ */
+
+.tag-wrapper {
+  margin: 0 0 1.5rem;
+}
+
+.tag-title-inline {
+  margin: 0 0 1rem;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
+.tag-box {
+  padding: 1rem 0.5rem 0.25rem;
+  background: global.$color-gray20;
+}
+
+.tag-filter {
+  margin-bottom: 3rem;
+}
+
+.tag-filter-heading {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-m);
+}
+
+.tag-filter-selected {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+  li {
+    font-weight: bold;
+  }
+}
+
+.tag-filter-heading-more {
+  font-weight: normal;
+  margin: 1rem 0 0.5rem;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  .tag-filter & {
+    gap: 1rem;
+    padding: 0;
+
+    .tag-link {
+      border-bottom: 1px dotted global.$color-gray100;
+    }
+  }
+
+
+}
+
+.tag-item {
+  color: global.$color-text-side;
+  font-size: map.get(global.$font-scales, body-m);
+
+  .tag-list.is-sm & {
+    font-size: map.get(global.$font-scales, body-s);
+  }
+  
+}
+
+.tag-link {
+  display: inline-block;
+  box-sizing: border-box;
+  color: global.$color-text;
+  text-decoration: none;
+  background: global.$color-white;
+
+  &:link,
+  &:visited {
+    color: currentcolor;
+  }
+
+  &:active,
+  &:focus {
+    color: global.$color-text;
+  }
+
+  &:any-link:hover {
+    color: global.$color-text;
+    text-decoration: none;
+    background: global.$color-gray10;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .tag-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+  }
+
+  .tag-title-inline {
+    margin: 0.5rem 2rem 0.5rem 0;
+  }
+
+  .tag-box {
+    padding: 2rem 2rem 1.25rem;
+  }
+
+
+  .tag-list {
+    flex: 1;
+    flex-direction: row;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    // padding: 0.75rem 0;
+  }
+
+  .tag-item {
+    display: flex;
+    align-items: center;
+    font-size: map.get(global.$font-scales, body-m);
+  }
+
+}
+
+[class^="tag-item-level"] {
+  .tag-link {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.tag-item-level1,
+.tag-item-level2,
+.tag-item-level3,
+.tag-item-level4,
+.tag-item-level5,
+.tag-item-level6 {
+  font-size: map.get(global.$font-scales, body-s);
+
+}
+
+.tag-item-level7,
+.tag-item-level8,
+.tag-item-level9,
+.tag-item-level10,
+.tag-item-level11,
+.tag-item-level12 {
+  font-size: map.get(global.$font-scales, body-m);
+
+}
+
+.tag-item-level13,
+.tag-item-level14,
+.tag-item-level15,
+.tag-item-level16,
+.tag-item-level17,
+.tag-item-level18 {
+  font-size: map.get(global.$font-scales, heading-ss);
+
+}
+
+.tag-item-level19,
+.tag-item-level20,
+.tag-item-level21,
+.tag-item-level22,
+.tag-item-level23,
+.tag-item-level24,
+.tag-item-level25 {
+  font-size: map.get(global.$font-scales, heading-s);
+
+}

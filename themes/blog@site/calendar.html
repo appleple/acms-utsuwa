@@ -1,0 +1,13 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <main class="main">
+    <!-- カレンダー：年間表示 -->
+    @include("/include/calendar/year.html", {"module_id": "calendar_year"})
+  </main>
+</div>
+@endsection
+
+@section("side")
+@endsection

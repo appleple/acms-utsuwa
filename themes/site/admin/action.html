@@ -1,0 +1,17 @@
+@extends("/admin/_layouts/action.html")
+
+
+@section("extra")
+<form action="" method="post">
+<input type="hidden" name="target[]" value="page" />
+<input type="hidden" name="target[]" value="template" />
+<input type="hidden" name="target[]" value="config" />
+<input type="hidden" name="target[]" value="field" />
+<input type="hidden" name="target[]" value="module" />
+<input type="hidden" name="target[]" value="temp" />
+<input type="hidden" name="field[]" value="target" />
+<input type="submit" name="ACMS_POST_Cache" value="キャッシュをクリア" class="acms-admin-btn-admin"/>
+<input type="hidden" name="forcing" value="true" />
+</form>
+
+@endsection

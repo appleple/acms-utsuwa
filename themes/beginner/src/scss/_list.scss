@@ -1,0 +1,70 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　リスト
+------------------------------ */
+.list-inline {
+  display: inline-block;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+/* ------------------------------
+　　リストグループ
+------------------------------ */
+.list-group {
+  margin: 0 calc(global.$unit-gutter-var / -4);
+  padding: 0;
+  list-style: none;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  color: currentcolor;
+  font-weight: normal;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  +.list-group {
+    border: 0;
+    margin: 0;
+  }
+
+  &.level-2 {
+    svg {
+      width: 12px;
+      height: auto;
+      margin-right: 0.75rem;
+
+      path {
+        fill: global.$color-gray30;
+      }
+    }
+
+
+  }
+
+  &:hover {
+    background: global.$color-gray10;
+    .badge {
+      background: global.$color-white;
+
+    }
+  }
+
+  .badge {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,82 @@
+/* ------------------------------
+　　CSS変数
+------------------------------ */
+:root {
+
+  /* カラー */
+  --color-primary: #334EB0;
+  --color-primary-hover: #2B4193;
+  --color-primary-light: #F1F3FA;
+  --color-primary-bg: var(--color-primary-light);
+  --color-primary-bg-hover: #D1D7ED;
+
+  --color-secondary: #6A6A6A;
+
+  --color-highlight: #FFE13B;
+  --color-highlight-light: #fffb8b;
+
+  --color-danger: #C92D2D;
+  --color-danger-light: #FCF5F5;
+
+  --color-white: #FFF;
+  --color-black: #333333;
+  --color-black80: rgba(0, 0, 0, .8);
+
+  --color-gray10: #F5F5F5;
+  --color-gray20: #DFDFDF;
+  --color-gray30: #CACACA;
+  --color-gray40: #B4B4B4;
+  --color-gray50: #9F9F9F;
+  --color-gray60: #898989;
+  --color-gray70: #747474;
+  --color-gray80: #5E5E5E;
+  --color-gray90: #494949;
+  --color-gray100: #333333;
+
+  --color-form-bg: var(--color-gray10);
+  --color-form-border: var(--color-gray40);
+
+  --color-link: #0061d1;
+
+  --color-required: #c92d2d;
+  --color-error: #c92d2d;
+
+  --color-text: var(--color-gray100);
+  --color-text-side: var(--color-gray80);
+  --color-text-inverse: var(--color-white);
+
+  --color-text-primary: var(--color-primary);
+  --color-text-secondary: var(--color-secondary);
+
+  --color-text-point: #676767;
+
+  --color-globalnav-bg: var(--color-gray30);
+  --color-footer-sticky: rgba(0, 0, 0, .3);
+  --box-shadow-focus: 0 0 0 .25rem rgba(0, 97, 209, .4);
+  --box-shadow-error: 0 0 0 .25rem rgba(201, 45, 45, .4);
+
+  --color-icon-bg: var(--color-gray80);
+  --color-icon-bg-hover: var(--color-gray100);
+
+  --color-label-text: var(--color-white);
+  --color-label-bg:  var(--color-gray80);
+
+  /* ガター */
+  --gutter-sm: 1rem;
+  --gutter-md: 2rem;
+  --gutter-lg: 3rem;
+
+  /* 余白ユニット */
+  --unit-space-sm: 2rem;
+  --unit-space-md: 3rem;
+  --unit-space-lg: 4rem;
+
+  /* 罫線ユニット余白 */
+  --separator-sm: 2rem;
+  --separator-md: 3rem;
+  --separator-lg: 4rem;
+
+  /* サブカラムの幅 */
+  --width-sub-container: 19rem;
+
+}

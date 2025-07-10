@@ -1,0 +1,119 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ページタイトル
+------------------------------ */
+.page-title-wrapper {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: var(--page-title-height);
+  color: var(--color-text);
+  background: var(--color-page-title-bg);
+  background-position: center;
+  background-size: cover;
+
+  &[style] {
+    color: var(--color-white);
+    text-align: center;
+    background-color: var(--color-white);
+
+    .page-title-filter {
+      display: block;
+    }
+
+    .page-title-en {
+      color: var(--color-white);
+    }
+  }
+}
+
+.page-title-inner {
+  position: relative;
+  display: table-cell;
+  padding: 1rem 0;
+  vertical-align: middle;
+}
+
+.page-title-filter {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: var(--page-title-filter);
+}
+
+.page-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-sm);
+  word-break: break-all;
+}
+
+.page-title-text-wrap {
+  width: fit-content;
+
+  &.left {
+    margin-right: auto;
+    text-align: left;
+  }
+
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &.right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+.page-title-en {
+  margin: 0;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-sm);
+  text-transform: capitalize;
+}
+
+
+
+@media (min-width: acms.$breakpoint-md-min) {
+  .page-title-wrapper {
+    height: var(--page-title-height-md);
+
+    // &[style] {
+    //   height: var(--page-title-height-image)-md;
+    // }
+  }
+
+
+
+  .page-title {
+    font-size: map.get(global.$font-scales, heading-m);
+  }
+
+
+  .page-title-en {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+/* ------------------------------
+　　ページサブタイトル
+------------------------------ */
+
+.page-sub-title {
+  font-size: map.get(global.$font-scales, heading-m);
+  color: var(--color-text);
+  margin: 0 0 2rem;
+
+}
+
+.category-header {
+  margin-bottom: 3rem;
+}

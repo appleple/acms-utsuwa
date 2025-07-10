@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* stylelint-disable value-keyword-case */
+/* stylelint-disable max-line-length */
+/* stylelint-enable max-line-length */
+/* ------------------------------
+　　テキストユニットのエディターの設定
+------------------------------ */
+/* エントリー内ボタン */
+.entryFormLiteEditor .text-word-break {
+  display: inline-block;
+}
+.entryFormLiteEditor .text-word-break::after {
+  margin: 0 2px;
+  color: var(--color-gray40);
+  content: "|";
+}
+.entryFormLiteEditor em {
+  padding: 0 0 5px;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-style: normal;
+  background-image: radial-gradient(var(--color-highlight) 30%, transparent 30%);
+  background-repeat: repeat-x;
+  background-position: bottom -2px left;
+  background-size: 8px 8px;
+}
+.entryFormLiteEditor strong {
+  font-weight: bold;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, var(--color-highlight-light)));
+  background: linear-gradient(transparent 60%, var(--color-highlight-light) 60%);
+}
+.entryFormLiteEditor a {
+  padding: 2px 0;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px dotted 1px dotted var(--color-link);
+}
+.entryFormLiteEditor a:hover {
+  border-color: transparent;
+}
+.text-btn .entryFormLiteEditor a[href^="tel:"] {
+  color: #FFF;
+}
+.entryFormLiteEditor a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-table-admin-edit {
+  border-collapse: collapse;
+}
+.acms-admin-table-admin-edit .sortable-item {
+  border-top: 1px solid #ccc;
+}
+.acms-admin-table-admin-edit .sortable-item:first-child {
+  border: 0;
+}

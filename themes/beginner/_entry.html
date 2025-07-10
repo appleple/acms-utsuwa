@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+  <head>
+    @include("/include/head/meta.html")
+    @include("/include/head/link.html")
+    @include("/include/head/js.html")
+  </head>
+  <body>
+    @include("/include/body-start.html")
+
+    <div class="page-wrapper">
+      <!-- ヘッダー -->
+      @include("/include/header/header.html")
+
+      <!-- ページタイトル -->
+      @include("/include/parts/page-title.html")
+      @include("/include/parts/topicpath.html")
+
+      <!-- BEGIN_MODULE Touch_Login -->
+      <!-- ※管理用パーツ -->
+      <div class="acms-container">
+        @include("/admin/action.html")
+        @include("/admin/switch-user.html")
+      </div>
+      <!-- END_MODULE Touch_Login -->
+
+      <div class="acms-container js-pretty-scroll-container">
+        <div class="content-wrapper two-columns">
+          <div class="main-container">
+            <main>
+
+              @include("/include/entry/body.html", {"module_id": "body_blog", "tag":"on", "sns":"on"})
+
+      <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+      <!-- 確認用テンプレート -->
+      <div class="acms-margin-top-large">
+        @include("/include/check-seo.html")
+      </div>
+      <!-- END_MODULE Touch_SessionWithAdministration -->
+
+            </main>
+          </div>
+          <div class="sub-container">
+            <div class="js-pretty-scroll">
+
+              <!-- エントリーサマリー：サイドバー用 -->
+@include("/include/entry/summary-side.html", {"module_id": "summary_side"})
+
+<!-- カテゴリー：リスト表示 -->
+@include("/include/category/list_side.html", {"module_id": "category_list"})
+
+<!-- タグ：リスト表示 -->
+@include("/include/tag/list_side.html", {"module_id": "tag_cloud"})
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- フッター -->
+      @include("/include/footer/footer.html")
+    </div>
+    @include("/include/body-end.html")
+  </body>
+</html>
+
+

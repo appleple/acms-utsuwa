@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+
+  <head>
+    @section("head-meta")
+    @include("/include/head/meta.html")
+    @endsection
+
+    @section("head-link")
+    @include("/include/head/link.html")
+    @endsection
+
+    @section("head-js")
+    @include("/include/head/js.html")
+    @endsection
+  </head>
+
+  <body>
+    @section("body-start")
+    @include("/include/body-start.html")
+    @endsection
+
+    <div class="page-wrapper">
+      @section("header")
+      <!-- ヘッダー -->
+      @include("/include/header/header.html")
+      @endsection
+
+      @section("page-title")
+      <!-- ページタイトル -->
+      @include("/include/parts/page-title.html")
+      @include("/include/parts/topicpath.html")
+      @endsection
+
+      @section("admin-part")
+      <!-- ※管理用パーツ -->
+      <!-- BEGIN_MODULE Touch_SessionWithContribution -->
+      <div class="acms-container">
+        @include("/admin/action.html")
+      </div>
+      <!-- END_MODULE Touch_SessionWithContribution -->
+      <!-- BEGIN_MODULE Touch_Login -->
+      <div class="acms-container">
+        @include("/admin/switch-user.html")
+      </div>
+      <!-- END_MODULE Touch_Login -->
+      @endsection
+
+      <div class="acms-container js-pretty-scroll-container">
+        <div class="content-wrapper two-columns">
+          <div class="main-container">
+            <main>
+              @section("main")
+              <p>継承してメインコンテンツを設定してください</p>
+              @endsection
+            </main>
+          </div>
+          <div class="side-container">
+            <div class="js-pretty-scroll">
+              @section("side")
+              @endsection
+            </div>
+
+          </div>
+        </div>
+      </div>
+      @section("check-seo")
+      <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+      <!-- 確認用テンプレート -->
+      <div class="acms-margin-top-large">
+        @include("/include/check-seo.html")
+      </div>
+      <!-- END_MODULE Touch_SessionWithAdministration -->
+      @endsection
+
+      @section("footer-cta")
+      <!-- Call to Action -->
+      @include("/include/parts/cta-visual.html", {"module_id": "cta_visual"})
+      @endsection
+
+
+      @section("footer")
+      <!-- フッター -->
+      @include("/include/footer/footer.html")
+      @endsection
+    </div>
+
+    @section("body-end")
+    @include("/include/body-end.html")
+    @endsection
+  </body>
+
+</html>

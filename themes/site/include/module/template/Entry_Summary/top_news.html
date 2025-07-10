@@ -1,0 +1,31 @@
+<!-- BEGIN_MODULE Entry_Summary id="summary_news" --><!-- BEGIN moduleField -->
+<section class="section js-animation {section-class}">
+  <div class="acms-container">
+    <div class="section-horizontal">
+      @include("/include/edit/module-custom-box2.html",{"hash":"#acms_box3"})
+      <header class="section-horizontal-header">
+        <div class="section-horizontal-header-inner">
+          <h2 class="section-horizontal-heading">{module-heading}</h2>
+          <p class="section-horizontal-heading-side">{module-heading-small}</p>
+        </div>
+      </header><!-- END moduleField -->
+      <div class="section-horizontal-main">
+        <ul class="headline js-animation-row"><!-- BEGIN unit:loop -->
+          <!-- BEGIN entry:loop -->
+          <li class="headline-item">
+            <a href="{url}" class="headline-link">
+            <div class="headline-info">
+              <time class="headline-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日( {date#week} )</time><!-- BEGIN categoryField -->
+              <span class="headline-category">{fieldCategoryName}</span><!-- END categoryField --><!-- BEGIN new -->
+              <span class="badge headline-badge-news">NEW</span><!-- END new -->
+            </div><span class="headline-text">{title}</span>
+            </a>
+          </li>
+          <!-- END entry:loop -->
+          <!-- END unit:loop -->
+        </ul>
+        <p class="section-button is-right"><a href="{indexUrl}" class="button-read-more"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る <span class="icon-button">@include("/images/icon-button.svg")</span></a></p>
+      </div>
+    </div>
+  </div>
+</section><!-- END_MODULE Entry_Summary -->

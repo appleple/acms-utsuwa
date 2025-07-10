@@ -1,0 +1,63 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　トピックパス
+------------------------------ */
+.topicpath {
+  position: relative;
+  padding: 0.5rem 0;
+  overflow: hidden;
+
+  &::after {
+    display: inline-block;
+    content: '';
+    width: 5rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.topicpath-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.topicpath-item {
+  display: inline-block;
+}
+
+.topicpath-item:not(:last-child) {
+  &::after {
+    display: inline-block;
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0 0.5rem;
+    background: url(../images/icon-topicpath.svg) center center no-repeat;
+    background-size: contain;
+  }
+}
+
+.topicpath-link {
+  color: global.$color-text;
+  text-decoration: none;
+  font-size: map.get(global.$font-scales, body-s);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+

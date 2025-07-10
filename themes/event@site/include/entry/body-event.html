@@ -1,0 +1,116 @@
+<!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
+<!-- BEGIN notFound -->
+<section class="acms-entry entry">
+  <h2 class="not-found-title">Not Found</h2>
+  <p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+</section>
+<!-- END notFound -->
+
+<!-- 1記事▼▼ -->
+<!-- BEGIN entry:loop -->
+
+<!-- BEGIN_SetRendered id="tag" -->
+<!-- BEGIN tag:loop -->
+<li class="list-inline-item"><a href="{url}" class="entry-tag-label">#{name}</a></li>
+<!-- END tag:loop -->
+<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="twitter-creator" -->
+<!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
+<meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
+<!-- END userField -->
+<!-- END_SetRendered -->
+<!-- BEGIN_SetRendered id="user_entrylist" -->
+<p class="profile-author-link"><a href="%{BLOG_URL}uid/{entry:loop.uid}/">この人が書いた記事一覧 <span class="icon-button">@include("/images/arrow-border-white.svg")</span></a></p>
+<!-- END_SetRendered -->
+
+<!-- BEGIN_MODULE Touch_Login -->
+<div class="acms-form-group">
+  @include("/admin/entry/revision-info.html")
+</div><!-- END_MODULE Touch_Login -->
+
+<article class="entry clearfix {entry:loop.class}">
+  @include("/admin/entry/title.html")
+
+  <div class="js-sticky-area">
+    <!-- BEGIN_IF [%{ECD}/nem]-->
+    <!-- エントリーのタイトル　開始▼▼ --><!-- BEGIN title:veil -->
+    <header class="entry-header">
+      <!-- BEGIN_MODULE Touch_Entry -->
+      <h1 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
+      <!-- BEGIN_MODULE Touch_NotEntry -->
+      <h2 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h2>
+      <!-- END_MODULE Touch_NotEntry -->
+      <div class="entry-header-info">
+        <!-- BEGIN date:veil -->
+        <div class="entry-header-date -event">
+          <span class="entry-header-date-label">開催日時</span>
+          <time datetime="{date#Y}-{date#n}-{date#j}" class="entry-header-time">
+            <span>{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</span>
+          </time><!-- END date:veil -->
+        </div>
+        <!-- BEGIN category:veil -->
+        <div class="entry-header-category"><!-- BEGIN category:loop -->
+          <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue --><!-- END glue --><!-- END category:loop -->
+          <!-- BEGIN event-pref:veil -->
+          <a href="%{BLOG_URL}field/pref/{event-pref}" class="entry-header-category-item is-bordered js-viewing-indelible">{event-pref}</a>
+          <!-- END event-pref:veil -->
+          <!-- BEGIN new --><span class="label is-md">NEW</span><!-- END new -->
+        </div><!-- END category:veil -->
+      </div>
+      <!-- BEGIN_IF [{{tag}}/eq/on] -->
+      <!-- BEGIN tag:veil -->
+      <ul class="tag-list">
+        <!-- BEGIN tag:loop -->
+        <li class="tag-item"><a href="{url}" class="tag-link">#{name}</a></li>
+        <!-- END tag:loop -->
+      </ul>
+      <!-- END tag:veil -->
+      <!-- END_IF -->
+    </header>
+    <!-- END title:veil --><!-- END_IF -->
+
+    <!-- BEGIN entry:veil -->
+    <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
+      <div class="entry-style-grid">
+        <!-- カスタムフィールドの読み込み -->
+        @include("/include/entry/field.html")
+        <!-- BEGIN unit:veil -->
+        @include("/include/unit.html")
+        <hr class="clearHidden" />
+        <!-- END unit:veil -->
+        <!-- 続きを読む -->
+        @include("/include/parts/continue.html")
+
+        <!-- BEGIN_MODULE Touch_Entry -->
+        <!-- カスタムフィールドの読み込み -->
+        @include("/include/entry/field_foot.html")
+        <!-- END_MODULE Touch_Entry -->
+      </div>
+    </div>
+    <!-- END entry:veil -->
+
+    <!-- BEGIN formBody -->
+    @include("/include/form/unit.html")
+    <hr class="clearHidden" />
+    <!-- END formBody -->
+
+    @include("/admin/entry/edit-%{IS_ADMIN}.html")
+    <div class="acms-box-medium">
+      @include("/admin/entry/action.html")
+    </div>
+  </div>
+  <!-- BEGIN_MODULE Touch_Entry -->
+  <footer class="entry-footer"><!-- BEGIN_IF [{{sns}}/eq/on] -->
+    <!-- SNSシェアボタン -->
+    @include("/include/parts/sns-share.html")
+    <!-- END_IF -->
+  </footer>
+  <!-- END_MODULE Touch_Entry -->
+</article>
+<!-- END entry:loop -->
+<!-- 1記事▲▲ -->
+
+<!-- ページャー -->
+@include("/include/parts/pager.html")
+
+<!-- END_MODULE Entry_Body -->

@@ -1,0 +1,26 @@
+<!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
+<div class="header-wrap {global-nav} {header_sticky}">
+
+  @include("/include/header/header-logo-center.html")
+
+  <div class="global-nav-mobile-menu">
+    <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
+    <!-- BEGIN_IF [{global-nav}/eq/logo-center] -->
+    <button class="global-nav-mobile-search-btn header-search-open-button">@include("/themes/utsuwa/images/icon-search.svg")</button>
+    <!-- END_IF -->
+  </div>
+  <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
+    <div class="global-nav-mobile-inner">
+      <nav aria-label="メインメニュー" class="global-nav-mobile-navbar">
+        <!-- グローバルナビ（モバイル端末用） -->
+        @include("/include/header/header-nav-mobile.html")
+
+        <div class="global-nav-mobile-navbar-footer">
+          <!-- SNSアカウント一覧 -->
+          @include("/include/parts/sns-accounts.html")
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Blog_Field -->

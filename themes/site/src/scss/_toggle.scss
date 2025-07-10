@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　アコーディオン
+------------------------------ */
+.toggle-button {
+  width: 100%;
+  padding: 0;
+  color: var(--color-text);
+  font-family: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+
+  &.js-post-include-disabled {
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+.toggle-icon {
+  margin-left: auto;
+  line-height: 1;
+  transition: .3s ease;
+
+  .toggle-button.is-active & {
+    transform: rotate(180deg);
+  }
+
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.toggle-body {
+  display: none;
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .toggle-icon {
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+

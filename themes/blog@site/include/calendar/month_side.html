@@ -1,0 +1,40 @@
+<!-- BEGIN_MODULE Calendar_Month id="{{module_id}}" -->
+<div id="calendar" class="section-side-col is-fix">
+  <section class="section-side">
+    <header class="section-side-header -calendar">
+      <h2 class="section-side-title">{year}年{month}月</h2>
+      <div class="calendar-next-prev-button">
+        <a href="{url}" hx-ext="ajax-header" hx-target="#calendar" hx-get="{prevUrl}tpl/include/calendar/month_side.html" hx-swap="outerHTML" hx-push-url="%{PERMALINK}"><span class="icon-button is-prev">@include("/images/icon-button.svg")</span></a>
+        <a href="{url}" hx-ext="ajax-header" hx-target="#calendar" hx-get="{nextUrl}tpl/include/calendar/month_side.html" hx-swap="outerHTML" hx-push-url="%{PERMALINK}"><span class="icon-button is-next">@include("/images/icon-button.svg")</span></a>
+      </div>
+    </header>
+    <table class="calendar">
+      <thead>
+        <tr class="acms-text-center">
+          <!-- BEGIN weekLabel:loop -->
+          <th class="calendar-label is-week-{w}">{label}</th>
+          <!-- END weekLabel:loop -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- BEGIN week:loop -->
+        <tr class="acms-text-center">
+          <!-- BEGIN day:loop -->
+          <!-- BEGIN spacer -->
+          <td class="calendar-day">&nbsp;</td>
+          <!-- END spacer -->
+          <!-- BEGIN none -->
+          <td class="calendar-day is-week-{w}">{day}</td>
+          <!-- END none -->
+          <!-- BEGIN link -->
+          <td class="calendar-day is-week-{w}"><a href="{url}" class="calendar-day-has">{day}</a></td>
+          <!-- END link -->
+          <!-- END day:loop -->
+        </tr>
+        <!-- END week:loop -->
+      </tbody>
+    </table>
+    <a href="%{BASE_URL}calendar.html" class="section-side-link">年間カレンダーで見る <span class="icon-button is-sm">@include("/images/icon-button.svg")</span></a></a>
+  </section>
+</div>
+<!-- END_MODULE Calendar_Month -->

@@ -1,0 +1,29 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+<!-- タグフィルター -->
+@include("/include/tag/filter.html")
+<!-- BEGIN_IF [%{CID}/nem] -->
+<header class="category-header">
+  <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+</header>
+<!-- END_IF -->
+<!-- サマリー：記事一覧 -->
+@include("/include/entry/summary-blog.html", {"module_id": "summary_index_date"})
+</div>
+@endsection
+
+@section("side")
+<!-- カテゴリー：リスト表示 -->
+<!-- @include("/include/category/list_side.html", {"module_id": "category_list"}) -->
+
+<!-- タグ：リスト表示 -->
+<!-- @include("/include/tag/list_side.html", {"module_id": "tag_cloud"}) -->
+
+<!-- カレンダー：月表示 -->
+<!-- @include("/include/calendar/month_side.html", {"module_id": "calendar_side"}) -->
+
+<!-- エントリーサマリー：サイドバー用 -->
+<!-- @include("/include/entry/summary-side.html", {"module_id": "summary_side"}) -->
+@endsection

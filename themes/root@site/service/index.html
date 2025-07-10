@@ -1,0 +1,13 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <!-- エントリーサマリー：サムネイル表示 -->
+    @include("/include/entry/thumbnail.html", {"module_id":"summary_index"})
+</div>
+@endsection
+
+@section("footer-cta")
+<!-- Call to Action -->
+@include("/include/parts/cta.html", {"module_id": "cta_request"})
+@endsection

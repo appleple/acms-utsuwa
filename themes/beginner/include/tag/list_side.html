@@ -1,0 +1,17 @@
+<!-- BEGIN_MODULE Tag_Cloud id="{{module_id}}" -->
+<div class="section-side-col is-full">
+  <section class="section-side">
+    <header class="section-side-header">
+      <h2 class="section-side-title">ハッシュタグ</h2>
+    </header>
+    @include("/admin/module/setting.html")
+    <ul class="tag-list">
+      <!-- BEGIN tag:loop -->
+      <li class="tag-item-level{level} tag-item">
+        <a href="{url}" title="{amount}件" class="tag-link">#{name} {level}</a>
+      </li>
+      <!-- END tag:loop -->
+    </ul>
+  </section>
+</div>
+<!-- END_MODULE Tag_Cloud -->
