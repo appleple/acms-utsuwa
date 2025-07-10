@@ -49,7 +49,17 @@
           <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue -->
           <!-- END glue --><!-- END category:loop -->
           <!-- BEGIN works-industry:veil -->
-          <a href="%{BLOG_URL}field/work-industry/{work-industry}" class="entry-header-category-item is-bordered js-viewing-indelible">{work-industry}</a>
+          <a href="%{BLOG_URL}field/work-industry/{work-industry}" class="entry-header-category-item is-bordered js-viewing-indelible">
+      <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work-industry}/eq/industry9] -->ウェブサービス・デザイン<!-- END_IF -->
+          </a>
           <!-- END works-indutry:veil -->
 
         </div><!-- END category:veil -->

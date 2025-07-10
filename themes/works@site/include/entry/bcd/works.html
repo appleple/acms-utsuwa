@@ -10,7 +10,15 @@
   <div class="detail-panel-group">
     <dt>業種</dt>
     <dd>
-      {work-industry}
+      <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
     </dd>
   </div>
   <!-- END work-industry:veil -->
@@ -18,33 +26,34 @@
   <div class="detail-panel-group">
     <dt>規模</dt>
     <dd>
-      {work-scale}
+      <!-- BEGIN_IF [{work-scale}/eq/scale1] -->1-10名
+       <!-- ELSE_IF [{work-scale}/eq/scale2] -->11-100名
+       <!-- ELSE_IF [{work-scale}/eq/scale3] -->100名以上<!-- END_IF -->
     </dd>
   </div>
   <!-- END work-scale:veil -->
-  <!-- BEGIN work-category:veil -->
-  <div class="detail-panel-group">
-    <dt>サイト種別</dt>
-    <dd>
-      {work-category}
-    </dd>
-  </div>
-  <!-- END work-category:veil -->
-  <!-- BEGIN work-type:veil -->
+  <!-- BEGIN work-goal:veil -->
   <div class="detail-panel-group">
     <dt>目的</dt>
     <dd>
-      <!-- BEGIN work-type:loop --><!-- BEGIN glue --> , <!-- END glue -->
-      {work-type}
-      <!-- END work-type:loop -->
+      <!-- BEGIN work-goal:loop --><!-- BEGIN glue --> , <!-- END glue -->
+        <!-- BEGIN_IF [{work-goal}/eq/goal1] -->売上向上 / コンバージョン改善
+         <!-- ELSE_IF [{work-goal}/eq/goal2] -->ユーザー体験 (UX) 改善
+         <!-- ELSE_IF [{work-goal}/eq/goal3] -->業務効率化 / コスト削減
+         <!-- ELSE_IF [{work-goal}/eq/goal4] -->顧客獲得 / 集客強化
+         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --> 
+      <!-- END work-goal:loop -->
     </dd>
   </div>
-  <!-- END work-type:veil -->
+  <!-- END work-goal:veil -->
   <!-- BEGIN work-period:veil -->
   <div class="detail-panel-group">
     <dt>期間</dt>
     <dd>
-      {work-period}
+      <!-- BEGIN_IF [{work-period}/eq/short] -->短期（1〜3カ月）
+       <!-- ELSE_IF [{work-period}/eq/mid] -->中期（3〜6カ月）
+       <!-- ELSE_IF [{work-period}/eq/long] -->長期（6〜9カ月）
+       <!-- ELSE_IF [{work-period}/eq/large] -->大規模（9〜12カ月）<!-- END_IF -->
     </dd>
   </div>
   <!-- END work-period:veil -->
