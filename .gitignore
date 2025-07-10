@@ -1,9 +1,31 @@
-.DS_Store
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+*.local
+.env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
-.yarn
-.vscode
-npm-debug.log
-/node_modules
-/build
-/_tmp
-/vendor
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache
+.eslintcache
+.stylelintcache
+
+# Etc
+dist
+build
