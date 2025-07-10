@@ -1,5 +1,5 @@
 {
-  "name": "utsuwa",
+  "name": "site",
   "version": "2.1.14",
   "description": "Webサイト制作プロジェクト",
   "keywords": [
@@ -12,7 +12,7 @@
   ],
   "config": {
     "local": "localhost",
-    "theme": "utsuwa"
+    "theme": "site"
   },
   "main": "index.js",
   "scripts": {

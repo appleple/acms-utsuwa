@@ -19,7 +19,7 @@
     padding-right: calc(var(--unit-gutter-var) / 4);
     padding-left: calc(var(--unit-gutter-var) / 4);
 
-    @if global.$enable-iphonex ==true {
+    @if global.$enable-iphonex == true {
       padding-right: calc(env(safe-area-inset-right) + (var(--unit-gutter-var) / 4));
       padding-left: calc(env(safe-area-inset-left) + (var(--unit-gutter-var) / 4));
     }
@@ -57,8 +57,8 @@
 
 .section-side-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   &.-calendar {
     margin: 0 0 0.5rem;
@@ -81,12 +81,12 @@
 .section-side-link {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   margin-left: auto;
   color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
   text-decoration: none;
-  justify-content: flex-end;
 
 
   &:hover {
@@ -101,7 +101,7 @@
 .summary-side-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 math.div(acms.$unit-gutter, -4) 1.5rem;
+  margin: 0 calc(acms.$unit-gutter / -4) 1.5rem;
   padding: 0.5rem 0 0;
   list-style: none;
 }
@@ -109,10 +109,10 @@
 .summary-side-item {
   display: flex;
   gap: 0.5rem;
-  margin: 0;
   width: 100%;
+  margin: 0;
 
-  &[class*=acms-col] {
+  &[class*="acms-col"] {
     padding-right: 0;
     padding-left: 0;
   }
@@ -120,13 +120,13 @@
 
 .summary-side-link {
   display: grid;
-  grid-template-columns: 6rem 1fr;
-  grid-template-rows: 1fr;
   grid-column-gap: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6rem 1fr;
   width: 100%;
   padding: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 
   &:hover {
     background: var(--color-hover-bg-2nd);
@@ -135,25 +135,25 @@
 }
 
 .summary-side-img-wrap {
+  display: flex;
   grid-area: 1 / 1 / 2 / 2;
+  justify-content: center;
   overflow: hidden;
   border-radius: var(--border-radius-md);
   aspect-ratio: 1 / 1;
-  display: flex;
-  justify-content: center;
 
   .noimage {
-    height: 100%;
     max-width: initial;
+    height: 100%;
   }
 }
 
 .summary-side-title {
-  margin: 0;
-  font-size: map.get(global.$font-scales, body-m);
-  color: var(--color-black);
-  overflow: hidden;
   display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-black);
+  font-size: map.get(global.$font-scales, body-m);
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

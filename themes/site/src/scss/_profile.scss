@@ -32,13 +32,12 @@
 .profile-item-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1rem;
+  justify-content: center;
 }
 
 .profile-position {
   margin: 0 0.5rem 0 0;
-
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-sm);
 }
@@ -65,9 +64,9 @@
   text-align: right;
 
   a {
-    font-size: map.get(global.$font-scales, body-s);
     color: var(--color-text);
     font-weight: bold;
+    font-size: map.get(global.$font-scales, body-s);
     text-decoration: none;
 
     &:hover {
@@ -88,9 +87,9 @@
 .profile-sns {
   display: flex;
   gap: 1rem;
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 
   a {
     display: block;

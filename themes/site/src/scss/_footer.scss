@@ -24,9 +24,9 @@
 .footer-group {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   width: 100%;
   padding: 3rem 0;
-  gap: 2rem;
 }
 
 .footer-item {
@@ -59,8 +59,8 @@
 }
 
 .footer-company-logo {
-  margin: 0;
   max-height: 2rem;
+  margin: 0;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -75,8 +75,8 @@
 
   .footer-group {
     flex-direction: row;
-    padding: 3.5rem 0;
     gap: 3.5rem;
+    padding: 3.5rem 0;
 
   }
 
@@ -110,9 +110,9 @@
   font-size: map.get(global.$font-scales, body-s);
 
   a {
+    color: var(--color-text-2nd);
     text-decoration: none;
     border-bottom: 1px dotted var(--color-gray80);
-    color: var(--color-text-2nd);
 
   }
 }
@@ -120,6 +120,7 @@
 /* ナビゲーション */
 .footer-item-nav {
   display: flex;
+
   // flex-direction: column;
   flex-wrap: wrap;
   gap: 0 1rem;
@@ -140,9 +141,9 @@
 }
 
 .footer-nav-item {
+  margin: 0 0 1rem;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  margin: 0 0 1rem;
 
   .footer-nav-item {
     position: relative;
@@ -215,7 +216,6 @@
 
 .footer-item {
   .form-search {
-
     @media screen and (min-width: acms.$breakpoint-md-min) {
       display: flex;
     }
@@ -225,8 +225,8 @@
       font-weight: bold;
 
       @media screen and (max-width: acms.$breakpoint-md-max) {
-        line-height: initial;
         margin-bottom: 0.5rem;
+        line-height: initial;
       }
 
     }
@@ -251,7 +251,6 @@
 }
 
 .footer-sns-item {
-
   img {
     width: 24px;
   }

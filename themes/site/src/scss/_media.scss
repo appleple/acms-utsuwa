@@ -90,11 +90,11 @@
 }
 
 .media-text {
+  display: -webkit-box;
   margin: 0;
+  overflow: hidden;
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-m);
-  overflow: hidden;
-  display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -105,9 +105,9 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  width: max-content;
   margin: 0;
   padding: 0.25rem 0;
-  width: max-content;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
 
@@ -133,7 +133,7 @@
 @media screen and (min-width: acms.$breakpoint-sm-min) {
   .media-list {
     display: block;
-    margin: -1rem math.div(acms.$unit-gutter, -2) 0;
+    margin: -1rem calc(acms.$unit-gutter / -2) 0;
 
   }
 

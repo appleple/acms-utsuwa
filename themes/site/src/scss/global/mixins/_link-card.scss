@@ -2,13 +2,16 @@
 
 @mixin link-card($color) {
   color: $color;
+
   &:visited {
     color: $color;
   }
+
   &:hover {
     background-color: var(--color-hover-bg-2nd);
 
   }
+
   &:hover,
   &:active,
   &:focus {

@@ -16,8 +16,8 @@
 .header-wrap {
   position: relative;
   z-index: 1;
-  background-color: var(--color-white);
   z-index: var(--zindex-header);
+  background-color: var(--color-white);
 
   &.sticky {
     position: sticky;
@@ -87,10 +87,10 @@
   }
 
   .button,
-  input[type=search] {
+  input[type="search"] {
     min-width: initial;
-    padding: 0.5rem 1rem;
     height: 2.5rem;
+    padding: 0.5rem 1rem;
   }
 
 }
@@ -132,9 +132,9 @@
 
   .header-item-nav {
     position: relative;
+    height: var(--header-height-fixed);
     margin-left: auto;
     font-size: map.get(global.$font-scales, body-m);
-    height: var(--header-height-fixed);
   }
 
   .header-nav-tel {
@@ -160,9 +160,9 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    max-width: var(--container);
     margin-right: auto;
     margin-left: auto;
-    max-width: var(--container);
 
   }
 
@@ -171,8 +171,8 @@
   }
 
   .header-nav-tel-no {
-    font-weight: bold;
     color: var(--color-primary);
+    font-weight: bold;
 
     a {
       color: var(--color-primary);
@@ -260,9 +260,9 @@
   }
 
   .global-nav-mobile-menu-btn {
-    background-color: var(--color-white);
-    left: 0;
     right: initial;
+    left: 0;
+    background-color: var(--color-white);
 
     .global-nav-mobile-menu-text {
       display: none;
@@ -278,7 +278,7 @@
     }
   }
 
-  [aria-expanded=true] .global-nav-mobile-icon-toggle-menu {
+  [aria-expanded="true"] .global-nav-mobile-icon-toggle-menu {
     background: transparent;
   }
 
@@ -289,8 +289,8 @@
     z-index: var(--zindex-mobile-nav);
     width: 3.5rem;
     height: 3.5rem;
-    border: none;
     background-color: #FFF;
+    border: none;
 
     svg {
       width: 1.75rem;
@@ -308,10 +308,9 @@
 
     .header-item-wrap {
       display: grid;
-      grid-template-columns: 1fr 240px 1fr;
+      grid-gap: 0 var(--col-gutter);
       grid-template-rows: 1fr;
-      grid-column-gap: var(--col-gutter);
-      grid-row-gap: 0px;
+      grid-template-columns: 1fr 240px 1fr;
       align-items: center;
       padding: 1.5rem calc(var(--col-gutter) * 1.5) 0;
       text-align: initial;
@@ -402,8 +401,8 @@
   top: var(--header-height-fixed);
   right: 0;
   left: 0;
-  background: var(--color-globalnav-bg);
   padding: 3rem 0 2rem;
+  background: var(--color-globalnav-bg);
   opacity: 0;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 0.3s;
@@ -433,21 +432,20 @@
 .header-search-close-btn {
   display: flex;
   align-items: center;
+  min-height: 2.5rem;
   margin: 1.5rem auto 0;
   padding: 0.5rem 0;
-  border: none;
   background: var(--color-gray0);
-  min-height: 2.5rem;
+  border: none;
 
   svg {
-    margin-right: 0.5rem;
-    border-radius: 50%;
     box-sizing: border-box;
     width: 1.25rem;
     height: 1.25rem;
+    margin-right: 0.5rem;
     padding: 5px;
-
     background: var(--color-icon-bg);
+    border-radius: 50%;
 
     path {
       stroke: var(--color-white);

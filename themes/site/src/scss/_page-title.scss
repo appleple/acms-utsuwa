@@ -108,9 +108,9 @@
 ------------------------------ */
 
 .page-sub-title {
-  font-size: map.get(global.$font-scales, heading-m);
-  color: var(--color-text);
   margin: 0 0 2rem;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, heading-m);
 
 }
 

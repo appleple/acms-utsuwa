@@ -12,8 +12,8 @@
 
   &.splide {
     .splide__slide {
-      border-radius: var(--border-radius-lg);
       overflow: hidden;
+      border-radius: var(--border-radius-lg);
 
       img {
         box-shadow: var(--box-shadow);
@@ -25,10 +25,10 @@
       transform: translateY(100%);
 
       >li {
+        box-sizing: border-box;
         width: 1.75rem;
         height: 1.75rem;
         padding: 0.5rem;
-        box-sizing: border-box;
       }
     }
 
