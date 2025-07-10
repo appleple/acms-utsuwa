@@ -12,12 +12,12 @@
   color: var(--color-white);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  line-height: 1.5;
   text-align: center;
   background: var(--color-primary);
   border: 0;
   border-radius: var(--border-radius-md);
   transition: background-color 0.2s;
-  line-height: 1.5;
 
   &:any-link {
     color: var(--color-white);
@@ -30,15 +30,15 @@
 
   &.is-sm {
     display: inline-block;
-    font-size: map.get(global.$font-scales, body-s);
+    min-width: initial;
     margin: 0 auto;
     padding: 0.25rem 0.5rem;
-    min-width: initial;
+    font-size: map.get(global.$font-scales, body-s);
   }
 
   &.is-lg {
-    min-width: 15rem;
     display: inline-block;
+    min-width: 15rem;
     margin: 0 auto;
     padding: 0.75rem 2rem;
 
@@ -50,8 +50,8 @@
   }
 
   &.is-xl {
-    min-width: 18rem;
     width: 100%;
+    min-width: 18rem;
   }
 
   &.is-width-lg {
@@ -91,7 +91,6 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-
     &.is-xl {
       width: initial;
       min-width: 18rem;
@@ -153,13 +152,13 @@
   vertical-align: middle;
 
   svg {
-    margin-right: 0.5rem;
-    border-radius: 50%;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    margin-right: 0.5rem;
     padding: 6px;
     background: var(--color-icon-bg);
+    border-radius: 50%;
     transition: 0.2s;
 
     path {

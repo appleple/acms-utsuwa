@@ -2,8 +2,6 @@
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
-
-
 /* ------------------------------
 　　メインビジュアル（デフォルト）
 ------------------------------ */
@@ -15,10 +13,10 @@
 
   .main-visual-filter {
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000000 100%);
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, #000 100%);
 
 
   }
@@ -84,9 +82,9 @@
   .main-visual-scroll {
     position: absolute;
     bottom: 0;
+    box-sizing: border-box;
     width: 100%;
     padding: 2rem;
-    box-sizing: border-box;
     font-weight: bold;
     text-align: center;
     animation: fade-in 0.3s 2.8s 1 both;
@@ -128,10 +126,10 @@
     position: static;
 
     >li {
+      box-sizing: border-box;
       width: 1.75rem;
       height: 1.75rem;
       padding: 0.5rem;
-      box-sizing: border-box;
     }
 
   }
@@ -174,8 +172,9 @@
       display: flex;
       gap: calc(var(--col-gutter) / 2);
       justify-content: space-between;
-      margin: 0 auto;
       width: 100%;
+      margin: 0 auto;
+
       .button {
         flex: 1;
       }
@@ -203,10 +202,10 @@
 
   .main-visual-filter {
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #000000 100%);
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, #000 100%);
   }
 
   .main-visual-bg {
@@ -272,9 +271,9 @@
       display: flex;
       align-items: center;
       height: 2rem;
-      text-decoration: none;
       color: var(--color-white);
       font-weight: bold;
+      text-decoration: none;
 
       .icon-button {
         width: 2rem;
@@ -283,8 +282,8 @@
       }
 
       svg {
-        border: 1px solid var(--color-white);
         background-color: transparent;
+        border: 1px solid var(--color-white);
 
         path {
           stroke: var(--color-white);
@@ -300,13 +299,12 @@
 
   .splide__controls {
     position: absolute;
-    z-index: 10;
-    padding: 1.5rem 0;
-    gap: 0;
-    z-index: 10;
     right: auto;
     bottom: 0;
     left: 1rem;
+    z-index: 10;
+    gap: 0;
+    padding: 1.5rem 0;
 
   }
 
@@ -317,11 +315,11 @@
   }
 
   .pagination-page-extend01 {
+    box-sizing: border-box;
     width: 40px;
     height: 20px;
-    box-sizing: border-box;
-    border: 0;
     background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDI0IDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PG1hc2sgaWQ9InBhdGgtMS1pbnNpZGUtMV85MTE4XzE0OCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0wIDBIMjRWNEgwVjBaIi8+PC9tYXNrPjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0yNCAwSDI1Vi0xSDI0VjBaTTI0IDRWNUgyNVY0SDI0Wk0wIDRILTFWNUgwVjRaTTAgMUgyNFYtMUgwVjFaTTIzIDBWNEgyNVYwSDIzWk0yNCAzSDBWNUgyNFYzWk0xIDRWMEgtMVY0SDFaIiBmaWxsPSJ3aGl0ZSIgbWFzaz0idXJsKCNwYXRoLTEtaW5zaWRlLTFfOTExOF8xNDgpIi8+PC9zdmc+") center no-repeat;
+    border: 0;
 
     &.is-active {
       background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDI0IDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjQiIGZpbGw9IndoaXRlIi8+PC9zdmc+");
@@ -384,7 +382,7 @@
         transform: translate(0, 0);
       }
 
-      &.is-center {}
+      // &.is-center {}
 
       &.is-right {
         right: 0;
@@ -440,14 +438,14 @@
     }
 
     .main-visual-scroll {
-      display: block;
       position: absolute;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       left: 0;
-      margin: 0 auto 2rem;
       z-index: 10;
+      display: block;
       width: fit-content;
+      margin: 0 auto 2rem;
       font-weight: bold;
       text-align: center;
     }
@@ -499,13 +497,13 @@
   .main-visual-catch {
     display: inline;
     margin: 0;
-    background: var(--color-primary);
-    color: var(--color-white);
-    box-decoration-break: clone;
-    padding-left: 1rem;
     padding-right: 1rem;
+    padding-left: 1rem;
+    color: var(--color-white);
     font-size: map.get(global.$font-scales, heading-m);
     line-height: var(--line-height-base);
+    background: var(--color-primary);
+    box-decoration-break: clone;
     animation: fade-in 0.3s 0.8s 1 both;
     will-change: transform, opacity;
   }
@@ -519,12 +517,12 @@
     display: inline;
     margin: 0;
     padding: 0.25rem 0.5rem;
-    background: var(--color-gray100);
     color: var(--color-white);
-    box-decoration-break: clone;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
     line-height: 1.8;
+    background: var(--color-gray100);
+    box-decoration-break: clone;
     animation: fade-in 0.3s 1.3s 1 both;
     will-change: transform, opacity;
   }
@@ -538,9 +536,9 @@
       display: flex;
       align-items: center;
       height: 2rem;
-      text-decoration: none;
       color: var(--color-white);
       font-weight: bold;
+      text-decoration: none;
 
       .icon-button {
         width: 2rem;
@@ -549,8 +547,8 @@
       }
 
       svg {
-        border: 1px solid var(--color-white);
         background-color: transparent;
+        border: 1px solid var(--color-white);
 
         path {
           stroke: var(--color-white);
@@ -565,10 +563,10 @@
     bottom: 0;
 
     >li {
+      box-sizing: border-box;
       width: 1.75rem;
       height: 1.75rem;
       padding: 0.5rem;
-      box-sizing: border-box;
     }
 
   }
@@ -580,8 +578,8 @@
 
     .main-visual-bg {
       img {
-        width: 70% !important;
         display: block;
+        width: 70% !important;
         margin-left: auto;
       }
     }
@@ -634,8 +632,8 @@
           height: 3rem;
 
           svg {
-            border: 1px solid var(--color-primary);
             background-color: var(--color-white);
+            border: 1px solid var(--color-primary);
 
             path {
               stroke: var(--color-primary);
@@ -669,8 +667,8 @@
 
     .splide__controls {
       position: absolute;
-      left: 5rem;
       bottom: 0;
+      left: 5rem;
       z-index: 10;
     }
   }

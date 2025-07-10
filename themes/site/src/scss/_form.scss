@@ -211,7 +211,6 @@
   border-radius: var(--border-radius-sm);
 
   &:first-child {
-
     margin: 0 0.25rem 0 0;
   }
 }
@@ -229,16 +228,6 @@
 /* フォーム要素
 ------------------------------ */
 input::placeholder {
-  color: red;
-}
-
-/* IE */
-input:-ms-input-placeholder {
-  color: red;
-}
-
-/* Edge */
-input::-ms-input-placeholder {
   color: red;
 }
 
@@ -275,8 +264,8 @@ input::-ms-input-placeholder {
   input[type="tel"],
   textarea,
   select {
-    background-color: var(--color-white);
     color: var(--color-text);
+    background-color: var(--color-white);
     border: 1px solid rgb(0 0 0 / 20%);
     box-shadow: none;
 
@@ -333,8 +322,8 @@ input::-ms-input-placeholder {
   }
 
   select {
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
     min-height: 3rem;
     padding: 0.75rem 3rem 0.75rem 1rem;
     font-size: map.get(global.$font-scales, body-m);
@@ -356,40 +345,40 @@ input::-ms-input-placeholder {
     }
 
     input[type="checkbox"] {
-      opacity: 0;
       position: absolute;
       width: 24px;
       height: 24px;
       margin: 0;
+      opacity: 0;
 
       &:checked+.ico-checkbox {
         background-color: var(--color-primary);
-        background-image: url('../images/icon-check.svg');
+        background-image: url('#{global.$root-theme-img}icon-check.svg');
         border-color: var(--color-primary);
       }
 
       &:focus+.ico-checkbox {
         border-color: var(--color-primary);
-        box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+        box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
       }
     }
 
     .ico-checkbox {
+      display: inline-block;
+      box-sizing: border-box;
       width: 24px;
       height: 24px;
-      border: 1px solid var(--color-gray30);
-      display: inline-block;
       margin-right: 8px;
-      box-sizing: border-box;
+      vertical-align: middle;
       background-color: transparent;
+      background-color: var(--color-white);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 70% auto;
+      border: 1px solid var(--color-gray30);
       border-radius: var(--border-radius-md);
       transition: background-color 0.2s, border-color 0.2s;
       pointer-events: none;
-      background-color: var(--color-white);
-      vertical-align: middle;
 
       &.invalid {
         border-color: var(--color-danger);
@@ -403,7 +392,7 @@ input::-ms-input-placeholder {
     padding: 0.75rem 1rem;
     line-height: 1.5;
     background: var(--color-gray10);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0 0 0 / 10%);
     border-radius: 3px;
   }
 
@@ -414,7 +403,7 @@ input::-ms-input-placeholder {
   .form-checkbox-only:focus-within {
     background-color: var(--color-gray10);
     border-color: #0061d1;
-    box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
   }
 
   .form-checkbox-only-label {
@@ -438,7 +427,6 @@ input::-ms-input-placeholder {
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .form-group {
-
     input[type="text"],
     input[type="password"],
     input[type="datetime"],
@@ -466,7 +454,6 @@ input::-ms-input-placeholder {
 }
 
 .form-radio {
-
   label {
     position: relative;
     display: inline-flex;
@@ -477,35 +464,35 @@ input::-ms-input-placeholder {
 
   input[type="radio"] {
     position: absolute;
-    opacity: 0;
     width: 24px;
     height: 24px;
     margin: 0;
+    opacity: 0;
 
     &:checked+.ico-radio {
       background-color: var(--color-primary);
       background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOS44MDAxOSA1LjAwMjY0QzkuODAwMTkgNy42NTM2IDcuNjUxMTYgOS44MDI2NCA1LjAwMDE5IDkuODAyNjRDMi4zNDkyMyA5LjgwMjY0IDAuMjAwMTk1IDcuNjUzNiAwLjIwMDE5NSA1LjAwMjY0QzAuMjAwMTk1IDIuMzUxNjcgMi4zNDkyMyAwLjIwMjYzNyA1LjAwMDE5IDAuMjAyNjM3QzcuNjUxMTYgMC4yMDI2MzcgOS44MDAxOSAyLjM1MTY3IDkuODAwMTkgNS4wMDI2NFoiIGZpbGw9IndoaXRlIi8+PC9zdmc+");
-      border-color: var(--color-primary);
       background-size: 10px 10px;
+      border-color: var(--color-primary);
     }
 
     &:focus+.ico-radio {
       border-color: var(--color-primary);
-      box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+      box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
     }
   }
 
   .ico-radio {
+    display: inline-block;
+    box-sizing: border-box;
     width: 24px;
     height: 24px;
-    border: 1px solid var(--color-gray30);
-    display: inline-block;
     margin-right: 8px;
-    box-sizing: border-box;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% auto;
+    border: 1px solid var(--color-gray30);
     border-radius: var(--border-radius-round);
     transition: background-color 0.2s, border-color 0.2s;
     pointer-events: none;
@@ -543,7 +530,7 @@ input::-ms-input-placeholder {
     box-shadow: var(--box-shadow-error), acms.$acms-form-box-shadow;
   }
 
-  [class*=acms-col] {
+  [class*="acms-col"] {
     margin-bottom: 1.5rem;
   }
 
@@ -561,8 +548,8 @@ input::-ms-input-placeholder {
     .error-icon {
       display: inline-block;
       flex: 0 0 1.25rem;
-      padding: 1.5px;
       box-sizing: border-box;
+      padding: 1.5px;
 
       svg {
         width: 100%;
@@ -597,13 +584,13 @@ input::-ms-input-placeholder {
 }
 
 .form-privacy-body {
-  background: var(--color-gray10);
   box-sizing: border-box;
+  height: 20rem;
   margin: 0 0 1rem;
   padding: 1rem 0;
-  border-radius: var(--border-radius-lg);
-  height: 20rem;
   overflow-y: auto;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-lg);
 }
 
 /* 動的フォーム

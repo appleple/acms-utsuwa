@@ -9,14 +9,14 @@
 
 .badge {
   display: inline-block;
-  padding: 0.25rem 0.5rem;
-  min-width: 2.5rem;
   box-sizing: border-box;
+  min-width: 2.5rem;
+  padding: 0.25rem 0.5rem;
   color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  text-align: center;
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
-  text-align: center;
-  font-size: map.get(global.$font-scales, body-s);
 
   &.-pill {
     padding: 0.25rem 0.5rem;
@@ -24,13 +24,13 @@
   }
 
   &.-day {
-    padding: 0;
-    min-width: initial;
-    width: 2rem;
-    height: 2rem;
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 2rem;
+    min-width: initial;
+    height: 2rem;
+    padding: 0;
     border-radius: var(--border-radius-round);
   }
 }
@@ -41,11 +41,11 @@
 
 .label {
   display: inline-block;
+  padding: 0 0.5rem;
   color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-s);
   background: var(--color-gray10);
   border-radius: var(--border-radius-md);
-  font-size: map.get(global.$font-scales, body-s);
-  padding: 0 0.5rem;
 
   &.is-md {
     padding: 0.25rem 0.5rem;

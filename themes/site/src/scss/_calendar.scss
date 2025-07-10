@@ -36,7 +36,7 @@
   justify-content: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
-  color: currentColor;
+  color: currentcolor;
   font-weight: bold;
   text-decoration: none;
   background: var(--color-gray10);
@@ -129,10 +129,10 @@
   padding-bottom: var(--entry-el-margin-md);
 
   tr {
-    border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
   }
 
   th {
@@ -158,28 +158,27 @@
   display: inline-block;
   width: 2rem;
   margin-right: 1rem;
-  text-align: right;
   font-weight: bold;
-  line-height: 2rem;
   font-size: map.get(global.$font-scales, heading-s);
+  line-height: 2rem;
+  text-align: right;
   vertical-align: bottom;
 }
 
 .event-calendar-table {
-
   .event-calendar-item-link {
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
-    text-decoration: none;
+    justify-content: space-between;
     color: var(--color-text);
+    text-decoration: none;
   }
 
   .calendar-item-img-wrap {
     width: 10rem;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--border-radius-lg);
     overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    aspect-ratio: 16 / 9;
 
     img {
       object-fit: cover;
@@ -199,7 +198,7 @@
   margin: 0;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {}
+// @media screen and (min-width: acms.$breakpoint-md-min) {}
 
 /* 　カレンダー ヘッダー
 ------------------------------ */
@@ -210,8 +209,8 @@
 .calendar-header-title {
   margin: 0;
   padding: 0.5rem;
-  font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
 
   a {
     color: var(--color-text);
@@ -226,9 +225,9 @@
 /* 　カレンダー ページネーション
 ------------------------------ */
 .calendar-pagination-wrap {
-  text-align: center;
   position: relative;
   padding: 1rem 1rem 2rem;
+  text-align: center;
 }
 
 
@@ -275,10 +274,10 @@
 .calendar-pagination-link {
   display: flex;
   align-items: center;
-  color: var(--color-text);
-  text-decoration: none;
   padding: 0.5rem 0;
+  color: var(--color-text);
   font-weight: bold;
+  text-decoration: none;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {

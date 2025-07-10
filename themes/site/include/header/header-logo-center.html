@@ -15,7 +15,7 @@
         <!-- END_IF -->
       </div>
       <div class="header-sub-navi">
-        <button class="header-search-open-button button is-inverse" aria-controls="header-search" aria-expanded="false">@include("/themes/utsuwa/images/icon-search.svg")サイト内検索</button>
+        <button class="header-search-open-button button is-inverse" aria-controls="header-search" aria-expanded="false">@include("/themes/site/images/icon-search.svg")サイト内検索</button>
         <!-- BEGIN_IF [{contact-button}/eq/true] -->
         <a href="{contact-button-url}[buildGlobalVars]" class="button is-shadow">{contact-button-text}[raw]</a>
         <!-- END_IF -->
@@ -27,6 +27,6 @@
 <!-- BEGIN_IF [{global-nav}/eq/logo-center] -->
 <div id="header-search" class="header-search" aria-hidden="true" hidden>
   @include("/include/parts/search-general.html", {"search-id":"header-lg"})
-  <button class="header-search-close-btn">@include("/themes/utsuwa/images/icon-close.svg")閉じる</button>
+  <button class="header-search-close-btn">@include("/themes/site/images/icon-close.svg")閉じる</button>
 </div>
 <!-- END_IF -->

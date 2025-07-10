@@ -8,16 +8,16 @@
 .form-search {
   .form-search-action {
     display: flex;
-    width: 100%;
     gap: 0.5rem;
+    width: 100%;
     text-align: center;
 
   }
 
   .form-search-label {
-    font-size: map.get(global.$font-scales, body-s);
-    font-weight: bold;
     margin-right: 1rem;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-s);
     line-height: 3rem;
     white-space: nowrap;
   }
@@ -59,7 +59,6 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-
     .form-search-button {
       padding: 0.75rem 2rem;
     }

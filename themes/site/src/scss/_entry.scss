@@ -104,8 +104,8 @@
 
   .entry-header-info {
     flex-direction: row;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
   }
 
   .entry-header-title {
@@ -168,10 +168,7 @@
 
   .entry-header-visual-inner {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
   }
 
   .entry-header-visual {
@@ -188,8 +185,8 @@
   .entry-header-visual-img {
     width: 100%;
     height: 100%;
-    vertical-align: bottom;
     object-fit: cover;
+    vertical-align: bottom;
   }
 
   .entry-header-visual-title {
@@ -244,16 +241,15 @@
 
 
 
-  @each $unit in acms.$unit-type {
-
+  @each $unit in acms.$unit-types {
     /* 配置のスタイル */
-    @each $align-name in acms.$align {
+    @each $align-name in acms.$alignments {
       .column-#{$unit}-#{$align-name}+.entry-text-unit {
-        @if $align-name ==left {
+        @if $align-name == left {
           overflow: hidden;
         }
 
-        @if $align-name ==right {
+        @if $align-name == right {
           overflow: hidden;
         }
       }
@@ -280,7 +276,6 @@
 }
 
 .#{acms.$entry-class} .entry-text-unit {
-
   h2,
   h3,
   h4 {
@@ -291,8 +286,6 @@
     &.heading-primary {
       position: relative;
       margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-sm);
-
-
       padding: var(--entry-el-padding-md) 0 calc(var(--entry-el-padding-xs) + 0.25rem);
 
       &::before {
@@ -431,8 +424,8 @@
       text-align: center;
       text-decoration: none;
       background: var(--color-primary);
-      border-radius: var(--border-radius-md);
       border-bottom: 0;
+      border-radius: var(--border-radius-md);
       transition: background-color 0.2s;
 
       &:hover,
@@ -448,16 +441,16 @@
       }
 
       &.outer-link {
-        &:after {
-          margin-left: 0.5rem;
+        &::after {
           display: inline-block;
           width: 14px;
           height: 14px;
-          background-color: var(--color-text-inverse);
-          mask-image: url(../images/icon-target_blank.svg);
-          mask-size: contain;
-          content: '';
+          margin-left: 0.5rem;
           vertical-align: baseline;
+          background-color: var(--color-text-inverse);
+          content: '';
+          mask-image: url("#{global.$root-theme-img}icon-target_blank.svg");
+          mask-size: contain;
         }
       }
 
@@ -519,13 +512,13 @@
         position: absolute;
         top: 2px;
         left: -1.5rem;
-        font-weight: bold;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 1.5rem;
         height: 1.5rem;
         color: var(--color-text-2nd);
+        font-weight: bold;
         border-radius: 50%;
         content: counter(order-list) '.';
         counter-increment: order-list;
@@ -596,8 +589,8 @@
   table {
     width: 100%;
     margin: 0 0 var(--entry-el-margin-md) 0;
-    border-top: var(--border-width-sm) solid rgb(235, 235, 235);
-    border-left: var(--border-width-sm) solid rgb(235, 235, 235);
+    border-top: var(--border-width-sm) solid rgb(235 235 235);
+    border-left: var(--border-width-sm) solid rgb(235 235 235);
     border-collapse: collapse;
 
     th,
@@ -605,8 +598,8 @@
       padding: var(--entry-el-padding-xs);
       font-size: map.get(global.$font-scales, body-m);
       line-height: var(--line-height-base);
-      border-right: var(--border-width-sm) solid rgb(235, 235, 235);
-      border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+      border-right: var(--border-width-sm) solid rgb(235 235 235);
+      border-bottom: var(--border-width-sm) solid rgb(235 235 235);
     }
 
     th {
@@ -619,7 +612,6 @@
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     table {
-
       th,
       td {
         padding: var(--entry-el-padding-sm);
@@ -685,13 +677,11 @@
 　ユニットグループ
 ------------------------------ */
 .#{acms.$entry-class} {
-
   /* 全てのユニットグループ */
   [class*="ug-"] {
     overflow: hidden;
 
     @media screen and (min-width: acms.$breakpoint-md-min) {
-
       .pricing-group {
         margin-right: 0;
         margin-left: 0;
@@ -700,7 +690,6 @@
     }
 
     >.entry-text-unit {
-
       h2,
       h3,
       h4 {
@@ -772,7 +761,6 @@
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-
     .ug-bg-gray,
     .ug-bg-primary,
     .ug-border {
@@ -809,9 +797,9 @@
 
     &.download a {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -886,23 +874,23 @@
 
   .quote-title {
     margin: 0 0 0.5rem;
+    overflow: hidden;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-sm);
-    overflow: hidden;
-    text-overflow: ellipsis;
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .quote-description {
-    margin: 0;
-    font-size: map.get(global.$font-scales, body-s);
     display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: map.get(global.$font-scales, body-s);
+    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -935,11 +923,11 @@
 
     .quote-title {
       margin: 0;
+      overflow: hidden;
       font-weight: bold;
       font-size: map.get(global.$font-scales, heading-ss);
-      overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
   }
@@ -949,7 +937,6 @@
 　カード
 ------------------------------ */
 .#{acms.$entry-class} {
-
   .card-bordered-item {
     padding: 0 calc(var(--unit-gutter-var) / 2);
   }
@@ -1005,8 +992,8 @@
 
       strong,
       em {
-        font-style: normal;
         font-weight: normal;
+        font-style: normal;
         background: none;
       }
 
@@ -1078,11 +1065,11 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   .message {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
-    background: var(--color-gray10);
     margin: 0 calc(var(--gutter-md) / 2) var(--entry-el-margin-md);
+    background: var(--color-gray10);
   }
 
   .message-wrap {
@@ -1130,7 +1117,6 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .#{acms.$entry-class} {
-
     .message {
       flex-direction: row;
     }
@@ -1138,15 +1124,15 @@
 
     .message-wrap {
       position: relative;
+      box-sizing: border-box;
       width: 50%;
       padding: 6rem 3rem;
-      box-sizing: border-box;
     }
 
     .message-image {
+      order: 1;
       width: 50%;
       height: initial;
-      order: 1;
 
       img {
         width: 100%;
@@ -1174,12 +1160,12 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   .pricing-group {
-    padding: 4rem 0 2rem;
     display: flex;
     flex-wrap: wrap;
     gap: var(--col-gutter);
     justify-content: center;
     margin: 1.5rem 0;
+    padding: 4rem 0 2rem;
     padding: 0 (var(--unit-gutter-var) / 2);
 
     &:has(.is-reccomend) {
@@ -1190,9 +1176,9 @@
   .pricing-item {
     position: relative;
     display: flex;
+    flex: 0 1 100%;
     margin: 0 0 var(--entry-el-margin-md) 0;
     list-style: none;
-    flex: 0 1 100%;
 
   }
 
@@ -1203,8 +1189,8 @@
     box-sizing: border-box;
     width: 100%;
     padding: 2.5rem 2rem 1.5rem;
-    border-radius: var(--border-radius-lg);
     background: #fff;
+    border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow);
     transition: transform 0.25s ease;
   }
@@ -1236,15 +1222,15 @@
     border-radius: var(--border-radius-round);
     box-shadow: var(--box-shadow);
 
-    &:after {
-      content: "";
+    &::after {
       position: absolute;
       bottom: -9px;
       left: 50%;
-      transform: translateX(-50%);
       width: 12px;
       height: 10px;
       background-color: var(--color-primary);
+      transform: translateX(-50%);
+      content: "";
       clip-path: polygon(50% 100%, 0 0, 100% 0);
     }
   }
@@ -1264,8 +1250,8 @@
 
   .pricing-price {
     margin: 0 0 0.5rem;
-    font-size: map.get(global.$font-scales, heading-l);
     font-weight: bold;
+    font-size: map.get(global.$font-scales, heading-l);
     line-height: var(--line-height-ss);
     text-align: center;
   }
@@ -1320,9 +1306,9 @@
     }
 
     .pricing-item {
+      flex: 1 1 calc(100% / 3 - 2rem);
       box-sizing: border-box;
       margin: 0 0 var(--entry-el-margin-md) 0;
-      flex: 1 1 calc(100% / 3 - 2rem);
 
       &:hover .pricing-inner {
         box-shadow: var(--box-shadow-hover);
@@ -1340,26 +1326,22 @@
 ------------------------------ */
 
 /* 各ユニットのマージンの調整 */
-@each $unit in acms.$unit-type {
+@each $unit in acms.$unit-types {
   [class*="column-#{$unit}"] {
-    @if $unit =="module" {
+    @if $unit == "module" {
       margin-bottom: calc(acms.$unit-margin-bottom / 2);
-    }
-
-    @else {
+    } @else {
       margin-bottom: acms.$unit-margin-bottom;
     }
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  @each $unit in acms.$unit-type {
+  @each $unit in acms.$unit-types {
     [class*="column-#{$unit}"] {
-      @if $unit =="module" {
+      @if $unit == "module" {
         margin-bottom: acms.$unit-margin-bottom;
-      }
-
-      @else {
+      } @else {
         margin-bottom: var(--unit-margin-md);
       }
     }
@@ -1370,8 +1352,8 @@
 [class*="column-image-"],
 [class*="column-eximage-"] {
   a {
-    transition: opacity 0.2s;
     box-sizing: border-box;
+    transition: opacity 0.2s;
 
     &:hover {
       opacity: 0.7;
@@ -1462,8 +1444,8 @@
 　プロフィール
 ------------------------------ */
 .profile-heading {
-  margin-bottom: 0.75rem;
   margin-top: 0;
+  margin-bottom: 0.75rem;
 }
 
 
@@ -1519,19 +1501,18 @@
 
 
 .entry-bottom-button {
-  text-align: center;
   padding: 1rem 1rem 2rem;
+  text-align: center;
 }
 
 /*
 　シェア用モーダルウインドウ
 ------------------------------ */
 .entry-share-modal {
-
   .share-button {
     display: inline-flex;
-    align-items: center;
     gap: 0.375rem;
+    align-items: center;
     cursor: pointer;
   }
 
@@ -1552,15 +1533,15 @@
   .share-dialog {
     z-index: 1000;
     box-sizing: border-box;
-    width: 91.666667%;
+    width: 91.667%;
     max-width: 32rem;
     margin: auto;
     padding: 2rem;
+    background-color: #fff;
+    background-blend-mode: multiply;
     border: 0;
     border-radius: var(--border-radius-lg);
-    background-color: #ffffff;
     backdrop-filter: blur(8px);
-    background-blend-mode: multiply;
 
     &::backdrop {
       background-color: var(--color-black80);
@@ -1577,9 +1558,9 @@
 
   .sns-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
     margin: 1.5rem 0;
     padding: 0;
     list-style-type: none;
@@ -1618,8 +1599,8 @@
   .copy-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    border-radius: var(--border-radius-md);
     border: 1px solid var(--color-gray30);
+    border-radius: var(--border-radius-md);
   }
 
   .copy-button-wrap {
@@ -1628,11 +1609,11 @@
 
   .copy-button {
     padding: 0.75rem 2rem;
-    border-radius: var(--border-radius-md);
-    background-color: var(--color-primary);
-    color: #ffffff;
-    font-size: 0.875rem;
+    color: #fff;
     font-weight: bold;
+    font-size: 0.875rem;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
   }
 
@@ -1643,11 +1624,11 @@
     width: 1.5rem;
     height: 1.5rem;
     padding: 0.25rem;
+    color: #fff;
+    text-align: center;
+    background-color: #6b7280;
     border: none;
     border-radius: var(--border-radius-round);
-    background-color: #6b7280;
-    color: #ffffff;
-    text-align: center;
     cursor: pointer;
   }
 
@@ -1670,8 +1651,8 @@
 }
 
 .bubble-heading-wrap {
-  grid-column-start: 2;
   grid-row-start: 1;
+  grid-column-start: 2;
 }
 
 .bubble-heading {
@@ -1693,22 +1674,22 @@
 
 .bubble-text {
   position: relative;
+  grid-row-start: 2;
   grid-column: span 2 / span 2;
   grid-column-start: 1;
-  grid-row-start: 2;
-  padding: 2rem 1rem;
   clear: both;
+  padding: 2rem 1rem;
   background-color: var(--color-gray10);
   border-radius: var(--border-radius-lg);
 
-  &:after {
-    content: "";
+  &::after {
     position: absolute;
     top: -10px;
     left: calc(3rem - 6px);
     width: 12px;
     height: 10px;
     background-color: var(--color-gray10);
+    content: "";
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 }
@@ -1745,14 +1726,14 @@
     background-color: var(--color-gray10);
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 
-    &:after {
-      content: "";
+    &::after {
       position: absolute;
       top: calc(3rem - 6px);
       left: -10px;
       width: 10px;
       height: 12px;
       background-color: var(--color-gray10);
+      content: "";
       clip-path: polygon(0 50%, 100% 0, 100% 100%);
     }
 
@@ -1770,7 +1751,7 @@
     padding: 0 2rem 2rem;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 
-    &:after {
+    &::after {
       content: none;
     }
   }
@@ -1795,15 +1776,14 @@
 }
 
 .detail-panel {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+  justify-content: space-between;
   margin: 0 0 2rem;
   padding: 2rem 1rem;
   border: 1px solid var(--color-gray30);
   border-radius: var(--border-radius-md);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
 
   dt {
     font-weight: bold;
@@ -1819,19 +1799,17 @@
 }
 
 @media (min-width: acms.$breakpoint-md-min) {
-
   .detail-panel,
   .detail-panel-group {
     flex-direction: row;
   }
 
   .detail-panel-group {
-
     .is-works &,
     .is-event & {
       flex-direction: row;
-      width: 100%;
       gap: 1rem 2rem;
+      width: 100%;
     }
   }
 
@@ -1850,17 +1828,17 @@
       color: var(--color-text);
 
       svg {
-        margin-left: 0.5rem;
         width: 14px;
         height: 14px;
+        margin-left: 0.5rem;
         vertical-align: middle;
       }
     }
   }
 
   .detail-panel-group {
-    width: calc(50% - 1rem);
     gap: 1rem 2rem;
+    width: calc(50% - 1rem);
   }
 }
 

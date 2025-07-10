@@ -1,6 +1,6 @@
 @use "sass:map";
-@use "global/acms-common" as acms;
-@use "global/common" as global;
+@use "../global/acms-common" as acms;
+@use "../global/common" as global;
 
 /* 物件一覧
 ----------------------------- */
@@ -15,9 +15,9 @@
 }
 
 .works-search-panel {
-  background: var(--color-gray10);
   margin-bottom: 2rem;
   padding: 2rem 1rem;
+  background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
 
   .form-checkbox {
@@ -50,8 +50,8 @@
   align-items: center;
 
   &.price {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -66,7 +66,6 @@
 @media (min-width: acms.$breakpoint-md-min) {
   .works-search-panel {
     margin-bottom: 3rem;
-
     padding: 3rem;
     border-radius: var(--border-radius-xxl);
 
@@ -76,8 +75,7 @@
 
     .work-search-group {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-flow: row wrap;
       gap: var(--col-gutter);
     }
 
@@ -92,8 +90,8 @@
     }
 
     .work-search-input {
-      gap: 1.5rem;
       flex: 1;
+      gap: 1.5rem;
 
       &.price {
         flex-direction: row;
@@ -107,7 +105,7 @@
 
   .works-sub-images {
     display: flex;
-    justify-content: space-between;
     gap: var(--col-gutter);
+    justify-content: space-between;
   }
 }
