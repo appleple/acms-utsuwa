@@ -7,22 +7,38 @@
     <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p>
     <!-- END notFound -->
     <!-- BEGIN pager:veil -->
-    <!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-type}/nem] -->
+    <!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] -->
     <p class="search-amount">検索結果　{itemsAmount}件</p>
     <!-- END_IF -->
     <!-- END pager:veil -->
     <!-- BEGIN_MODULE Field_Search -->
-    <!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-type}/nem] -->
+    <!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] -->
     <dl class="search-conditions">
       <dt>検索条件</dt>
       <!-- BEGIN_IF [%{CATEGORY_NAME}/nem] -->
-      <dd>カテゴリー：%{CATEGORY_NAME}</dd>
+      <dd>サイト種別：%{CATEGORY_NAME}</dd>
       <!-- END_IF -->
-      <!-- BEGIN station:veil -->
-      <dd>業種： <!-- BEGIN work-industry:loop --><!-- BEGIN work-industry:glue -->, <!-- END work-industry:glue -->{work-industry}<!-- END work-industry:loop -->
-        <!-- END station:veil -->
-      <dd>タグ： <!-- BEGIN work-type:loop --><!-- BEGIN work-type:glue -->, <!-- END work-type:glue -->{work-type}<!-- END work-type:loop -->
+      <!-- BEGIN industry:veil -->
+      <dd>業種： <!-- BEGIN work-industry:loop --><!-- BEGIN work-industry:glue -->, <!-- END work-industry:glue -->
+       <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF --><!-- END work-industry:loop -->
+        <!-- END industry:veil -->
+      <!-- BEGIN industry:veil -->
+       <dd>目的： <!-- BEGIN work-goal:loop --><!-- BEGIN work-goal:glue -->, <!-- END work-goal:glue -->
+        <!-- BEGIN_IF [{work-goal}/eq/goal1] -->売上向上 / コンバージョン改善
+         <!-- ELSE_IF [{work-goal}/eq/goal2] -->ユーザー体験 (UX) 改善
+         <!-- ELSE_IF [{work-goal}/eq/goal3] -->業務効率化 / コスト削減
+         <!-- ELSE_IF [{work-goal}/eq/goal4] -->顧客獲得 / 集客強化
+         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --><!-- END work-goal:loop -->
       </dd>
+      <!-- END industry:veil -->
     </dl>
     <!-- END_IF -->
     <!-- END_MODULE Field_Search -->
@@ -58,7 +74,16 @@
               <li class="label">
                 {fieldCategoryName}</li><!-- END categoryField --><!-- BEGIN category:veil -->
               <!-- BEGIN industry:veil -->
-              <li class="label">{work-industry}
+              <li class="label">
+      <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
               </li><!-- END industry:veil -->
             </ul>
           </div>

@@ -16,126 +16,102 @@
         </td>
       </tr>
       <tr>
-        <th>サイト種別</th>
-        <td>
-          <select name="work-category">
-            <option value="">選択してください</option>
-            <option value="コーポレートサイト" {work-category:selected#コーポレートサイト}>コーポレートサイト</option>
-            <option value="ECサイト" {work-category:selected#ECサイト}>ECサイト</option>
-            <option value="採用サイト" {work-category:selected#採用サイト}>採用サイト</option>
-            <option value="サービスサイト" {work-category:selected#サービスサイト}>サービスサイト</option>
-            <option value="メディアサイト" {work-category:selected#メディアサイト}>メディアサイト</option>
-          </select>
-          <input type="hidden" name="field[]" value="work-category" />
-        </td>
-      </tr>
-      <tr>
         <th>業種</th>
         <td>
           <select name="work-industry">
-            <option value="">選択してください</option>
-            <option value="製造業" {work-industry:selected#製造業}>製造業</option>
-            <option value="建設・建築" {work-industry:selected#建設・建築}>建設・建築</option>
-            <option value="卸売・小売" {work-industry:selected#卸売・小売}>卸売・小売</option>
-            <option value="医療・福祉" {work-industry:selected#医療・福祉}>医療・福祉</option>
-            <option value="人材紹介・派遣" {work-industry:selected#人材紹介・派遣}>人材紹介・派遣</option>
-            <option value="不動産" {work-industry:selected#不動産}>不動産</option>
-            <option value="自治体・官公庁" {work-industry:selected#自治体・官公庁}>自治体・官公庁</option>
-            <option value="IT・システム開発" {work-industry:selected#IT・システム開発}>IT・システム開発</option>
-            <option value="その他" {work-industry:selected#その他}>その他</option>
+            <option value=""></option>
+            <option value="industry1" {work-industry:selected#industry1}>製造業</option>
+            <option value="industry2" {work-industry:selected#industry2}>建設・建築</option>
+            <option value="industry3" {work-industry:selected#industry3}>卸売・小売</option>
+            <option value="industry4" {work-industry:selected#industry4}>医療・福祉</option>
+            <option value="industry5" {work-industry:selected#industry5}>人材紹介・派遣</option>
+            <option value="industry6" {work-industry:selected#industry6}>不動産</option>
+            <option value="industry7" {work-industry:selected#industry7}>自治体・官公庁</option>
+            <option value="industry8" {work-industry:selected#industry8}>IT・システム開発</option>
+            <option value="industry9" {work-industry:selected#industry9}>ウェブサービス・デザイン</option>
           </select>
           <input type="hidden" name="field[]" value="work-industry" />
         </td>
       </tr>
-    <tr>
-      <th>
-        <span>規模</span>
-      </th>
-      <td>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-scale" {work-scale:checked#1-10名} id="work-scale-MS0xMCUyNUU1JTI1OTAlMjU4RA" value="1-10名" />
-          <label for="work-scale-MS0xMCUyNUU1JTI1OTAlMjU4RA">
-            <i class="acms-admin-ico-radio"></i>1-10名</label>
-        </div>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-scale" {work-scale:checked#11-100名} id="work-scale-MTEtMTAwJTI1RTUlMjU5MCUyNThE" value="11-100名" />
-          <label for="work-scale-MTEtMTAwJTI1RTUlMjU5MCUyNThE">
-            <i class="acms-admin-ico-radio"></i>11-100名</label>
-        </div>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-scale" {work-scale:checked#100名以上} id="work-scale-MTAwJTI1RTUlMjU5MCUyNThEJTI1RTQlMjVCQiUyNUE1JTI1RTQlMjVCOCUyNThB" value="100名以上" />
-          <label for="work-scale-MTAwJTI1RTUlMjU5MCUyNThEJTI1RTQlMjVCQiUyNUE1JTI1RTQlMjVCOCUyNThB">
-            <i class="acms-admin-ico-radio"></i>100名以上</label>
-        </div>
-        <input type="hidden" name="field[]" value="work-scale" />
-      </td>
-    </tr>
+      <tr>
+        <th>規模</th>
+        <td>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-scale" {work-scale:checked#scale1} id="input-radio-work-scale-scale1" value="scale1" />
+            <label for="input-radio-work-scale-scale1">
+              <i class="acms-admin-ico-radio"></i>1-10名</label>
+          </div>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-scale" {work-scale:checked#scale2} id="input-radio-work-scale-scale2" value="scale2" />
+            <label for="input-radio-work-scale-scale2">
+              <i class="acms-admin-ico-radio"></i>10-50名</label>
+          </div>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-scale" {work-scale:checked#scale3} id="input-radio-work-scale-scale3" value="scale3" />
+            <label for="input-radio-work-scale-scale3">
+              <i class="acms-admin-ico-radio"></i>50名以上</label>
+          </div>
+          <input type="hidden" name="field[]" value="work-scale" />
+        </td>
+      </tr>
 
       <tr>
         <th>目的</th>
         <td>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-type[]" {work-type:checked#コンバージョン改善} id="input-checkbox-work-type-コンバージョン改善" value="コンバージョン改善" />
-            <label for="input-checkbox-work-type-コンバージョン改善">
+            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal1} id="input-checkbox-work-goal-goal1" value="goal1" />
+            <label for="input-checkbox-work-goal-goal1">
               <i class="acms-admin-ico-checkbox"></i>コンバージョン改善</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-type[]" {work-type:checked#ユーザー体験 (UX) 改善} id="input-checkbox-work-type-ユーザー体験 (UX) 改善" value="ユーザー体験 (UX) 改善" />
-            <label for="input-checkbox-work-type-ユーザー体験 (UX) 改善">
-              <i class="acms-admin-ico-checkbox"></i>ユーザー体験 (UX) 改善</label>
+            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal2} id="input-checkbox-work-goal-goal2" value="goal2" />
+            <label for="input-checkbox-work-goal-goal2">
+              <i class="acms-admin-ico-checkbox"></i>ユーザー体験(UX)改善</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-type[]" {work-type:checked#業務効率化} id="input-checkbox-work-type-業務効率化" value="業務効率化" />
-            <label for="input-checkbox-work-type-業務効率化">
+            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal3} id="input-checkbox-work-goal-goal3" value="goal3" />
+            <label for="input-checkbox-work-goal-goal3">
               <i class="acms-admin-ico-checkbox"></i>業務効率化</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-type[]" {work-type:checked#集客強化} id="input-checkbox-work-type-集客強化" value="集客強化" />
-            <label for="input-checkbox-work-type-集客強化">
+            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal4} id="input-checkbox-work-goal-goal4" value="goal4" />
+            <label for="input-checkbox-work-goal-goal4">
               <i class="acms-admin-ico-checkbox"></i>集客強化</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-type[]" {work-type:checked#ブランドイメージ強化} id="input-checkbox-work-type-ブランドイメージ強化" value="ブランドイメージ強化" />
-            <label for="input-checkbox-work-type-ブランドイメージ強化">
-              <i class="acms-admin-ico-checkbox"></i>ブランドイメージ強化</label>
+            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal5} id="input-checkbox-work-goal-goal5" value="goal5" />
+            <label for="input-checkbox-work-goal-goal5">
+              <i class="acms-admin-ico-checkbox"></i>ブランドイメージ向上</label>
           </div>
-          <input type="hidden" name="field[]" value="work-type" />
+          <input type="hidden" name="field[]" value="work-goal" />
         </td>
       </tr>
-
-    <tr>
-      <th>
-        <span>期間</span>
-      </th>
-      <td>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-period" {work-period:checked#短期（1〜3カ月）} id="work-period-JTI1RTclMjU5RiUyNUFEJTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4MSUyNUUzJTI1ODAlMjU5QzMlMjVFMyUyNTgyJTI1QUIlMjVFNiUyNTlDJTI1ODglMjVFRiUyNUJDJTI1ODk" value="短期（1〜3カ月）"
-          />
-          <label for="work-period-JTI1RTclMjU5RiUyNUFEJTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4MSUyNUUzJTI1ODAlMjU5QzMlMjVFMyUyNTgyJTI1QUIlMjVFNiUyNTlDJTI1ODglMjVFRiUyNUJDJTI1ODk">
-            <i class="acms-admin-ico-radio"></i>短期（1〜3カ月）</label>
-        </div>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-period" {work-period:checked#中期（3〜6カ月）} id="work-period-JTI1RTQlMjVCOCUyNUFEJTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4MyUyNUUzJTI1ODAlMjU5QzYlMjVFMyUyNTgyJTI1QUIlMjVFNiUyNTlDJTI1ODglMjVFRiUyNUJDJTI1ODk" value="中期（3〜6カ月）"
-          />
-          <label for="work-period-JTI1RTQlMjVCOCUyNUFEJTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4MyUyNUUzJTI1ODAlMjU5QzYlMjVFMyUyNTgyJTI1QUIlMjVFNiUyNTlDJTI1ODglMjVFRiUyNUJDJTI1ODk">
-            <i class="acms-admin-ico-radio"></i>中期（3〜6カ月）</label>
-        </div>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-period" {work-period:checked#長期（6〜12カ月）} id="work-period-JTI1RTklMjU5NSUyNUI3JTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4NiUyNUUzJTI1ODAlMjU5QzEyJTI1RTMlMjU4MiUyNUFCJTI1RTYlMjU5QyUyNTg4JTI1RUYlMjVCQyUyNTg5" value="長期（6〜12カ月）"
-          />
-          <label for="work-period-JTI1RTklMjU5NSUyNUI3JTI1RTYlMjU5QyUyNTlGJTI1RUYlMjVCQyUyNTg4NiUyNUUzJTI1ODAlMjU5QzEyJTI1RTMlMjU4MiUyNUFCJTI1RTYlMjU5QyUyNTg4JTI1RUYlMjVCQyUyNTg5">
-            <i class="acms-admin-ico-radio"></i>長期（6〜12カ月）</label>
-        </div>
-        <div class="acms-admin-form-radio">
-          <input type="radio" name="work-period" {work-period:checked#大規模（1年以上）} id="work-period-JTI1RTUlMjVBNCUyNUE3JTI1RTglMjVBNiUyNThGJTI1RTYlMjVBOCUyNUExJTI1RUYlMjVCQyUyNTg4MSUyNUU1JTI1QjklMjVCNCUyNUU0JTI1QkIlMjVBNSUyNUU0JTI1QjglMjU4QSUyNUVGJTI1QkMlMjU4OQ"
-            value="大規模（1年以上）" />
-          <label for="work-period-JTI1RTUlMjVBNCUyNUE3JTI1RTglMjVBNiUyNThGJTI1RTYlMjVBOCUyNUExJTI1RUYlMjVCQyUyNTg4MSUyNUU1JTI1QjklMjVCNCUyNUU0JTI1QkIlMjVBNSUyNUU0JTI1QjglMjU4QSUyNUVGJTI1QkMlMjU4OQ">
-            <i class="acms-admin-ico-radio"></i>大規模（1年以上）</label>
-        </div>
-        <input type="hidden" name="field[]" value="work-period" />
-      </td>
-    </tr>
-
+      <tr>
+        <th>期間</th>
+        <td>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-period" {work-period:checked#short} id="input-radio-work-period-short" value="short" />
+            <label for="input-radio-work-period-short">
+              <i class="acms-admin-ico-radio"></i>短期（1〜3カ月）</label>
+          </div>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-period" {work-period:checked#mid} id="input-radio-work-period-mid" value="mid" />
+            <label for="input-radio-work-period-mid">
+              <i class="acms-admin-ico-radio"></i>中期（3〜6カ月）</label>
+          </div>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-period" {work-period:checked#long} id="input-radio-work-period-long" value="long" />
+            <label for="input-radio-work-period-long">
+              <i class="acms-admin-ico-radio"></i>長期（6〜12カ月）</label>
+          </div>
+          <div class="acms-admin-form-radio">
+            <input type="radio" name="work-period" {work-period:checked#large} id="input-radio-work-period-large" value="large" />
+            <label for="input-radio-work-period-large">
+              <i class="acms-admin-ico-radio"></i>大規模（1年以上）</label>
+          </div>
+          <input type="hidden" name="field[]" value="work-period" />
+        </td>
+      </tr>
       <tr>
         <th>コピー</th>
         <td>
