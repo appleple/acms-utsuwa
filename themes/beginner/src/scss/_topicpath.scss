@@ -11,23 +11,23 @@
   overflow: hidden;
 
   &::after {
-    display: inline-block;
-    content: '';
-    width: 5rem;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+    display: inline-block;
+    width: 5rem;
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%) 0%, #FFF 100%);
+    content: '';
   }
 }
 
 .topicpath-list {
   margin: 0;
   padding: 0;
-  list-style: none;
-  white-space: nowrap;
   overflow-x: auto;
+  white-space: nowrap;
+  list-style: none;
 }
 
 .topicpath-item {
@@ -37,19 +37,19 @@
 .topicpath-item:not(:last-child) {
   &::after {
     display: inline-block;
-    content: '';
     width: 0.75rem;
     height: 0.75rem;
     margin: 0 0.5rem;
-    background: url(../images/icon-topicpath.svg) center center no-repeat;
+    background: url("../images/icon-topicpath.svg") center center no-repeat;
     background-size: contain;
+    content: '';
   }
 }
 
 .topicpath-link {
   color: var(--color-text);
-  text-decoration: none;
   font-size: map.get(global.$font-scales, body-s);
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

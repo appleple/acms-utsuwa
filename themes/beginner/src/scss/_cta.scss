@@ -32,9 +32,9 @@
 /* シンプルなCTA */
 .cta-general {
   padding: 3rem 1rem;
+  line-height: var(--line-height-base);
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
-  line-height: var(--line-height-base);
 
 }
 
@@ -146,14 +146,14 @@
   border-radius: var(--border-radius-round);
 
   &::before {
-    content: "";
     position: absolute;
     bottom: -10px;
     left: 50%;
-    transform: translateX(-50%);
     width: 12px;
     height: 10px;
     background-color: var(--color-white);
+    transform: translateX(-50%);
+    content: "";
     clip-path: polygon(50% 100%, 0 0, 100% 0);
   }
 }
