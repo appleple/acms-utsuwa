@@ -1,6 +1,5 @@
 @use "sass:list";
 @use "sass:map";
-@use "sass:math";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
@@ -133,7 +132,7 @@
 @media screen and (min-width: acms.$breakpoint-sm-min) {
   .media-list {
     display: block;
-    margin: -1rem math.div(acms.$unit-gutter, -2) 0;
+    margin: -1rem calc(acms.$unit-gutter / -2) 0;
 
   }
 
