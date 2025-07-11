@@ -1,10 +1,11 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<section class="section">
 <div class="acms-container">
-    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
-    <header class="section-vertical-header">
-      <h2 id="summary_blog" class="section-vertical-heading">{module-heading}</h2>
-      <p class="section-vertical-text">{module-heading-small}</p>
-    </header><!-- END moduleField -->
+  @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+  <header class="section-vertical-header">
+    <h2 id="summary_blog" class="section-vertical-heading">{module-heading}</h2>
+    <p class="section-vertical-text">{module-heading-small}</p>
+  </header><!-- END moduleField -->
   @include("/include/edit/module-custom.html")
   <ul class="card-list"><!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
@@ -31,7 +32,7 @@
             </h2>
             <p class="card-text">
               <!-- BEGIN categoryField --><span class="label">{fieldCategoryName}</span><!-- END categoryField -->
-               <span class="label">{station}</span> <span class="label">{madori}</span>
+              <span class="label">{station}</span> <span class="label">{madori}</span>
             </p>
             <!-- BEGIN tag:veil -->
             <ul class="tag-list is-sm">
@@ -40,13 +41,13 @@
               <!-- END tag:loop -->
             </ul>
             <!-- END tag:veil -->
-
           </div>
         </a>
-    </li>
-    <!-- END entry:loop -->
-  </ul>
-  <!-- END unit:loop -->
-  @include("/include/parts/pager.html")
-</div>
+      </li>
+      <!-- END entry:loop -->
+    </ul>
+    <!-- END unit:loop -->
+    <p class="section-button"><a href="{indexUrl}" class="button is-width-lg is-bordered"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る</a></p>
+  </div>
+</section>
 <!-- END_MODULE Entry_Summary -->
