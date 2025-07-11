@@ -28,8 +28,8 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   max-width: $_video-thumbnail-size;
   margin: 0 auto 2rem;
   overflow: hidden;
-  border-radius: global.$border-radius-lg;
-  box-shadow: global.$elevation02;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
   transition: box-shadow 0.2s;
 
   .video-modal-play-icon {
@@ -37,7 +37,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   }
 
   &:hover {
-    box-shadow: global.$elevation10;
+    box-shadow: var(--box-shadow-hover);
 
     .video-modal-play-icon {
       transform: scale(1);
@@ -67,9 +67,9 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   display: block;
   width: $_video-play-btn-size;
   height: $_video-play-btn-size;
-  background: global.$color-primary;
+  background: var(--color-primary);
   border-radius: 50%;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+  box-shadow: var(--box-shadow);
   transition: transform 0.2s ease;
 
   &::before {

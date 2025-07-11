@@ -48,11 +48,12 @@
   box-sizing: border-box;
   text-decoration: none;
   padding: 1rem;
-  @include global.link-card(global.$color-text);
+  @include global.link-card(var(--color-text));
 
   @media (hover: hover) {
     &:hover {
-      border-radius: global.$border-radius-lg;
+      border-radius: var(--border-radius-lg);
+
       .card-img {
         transform: scale(1.2);
       }
@@ -70,20 +71,19 @@
 
 .card-img-wrap {
   position: relative;
-  z-index: 1;
   flex-shrink: 0;
   margin: 0 0 1.25rem;
   overflow: hidden;
-  border-radius: global.$border-radius-lg;
+  border-radius: var(--border-radius-lg);
 
   .card-category-label {
     position: absolute;
-    background: var(--color-label-bg);
-    color: var(--color-label-text);
+    background: var(--label-on-image-bg);
+    color: var(--label-on-image-text);
     padding: 0 0.5rem;
     height: 1.25rem;
     font-size: map.get(global.$font-scales, body-s);
-    border-radius: global.$border-radius-md;
+    border-radius: var(--border-radius-md);
 
     &.left-top {
       top: 10px;
@@ -128,12 +128,18 @@
   gap: 0.5rem;
 }
 
+.card-text-header {
+  .card-category {
+    margin-top: 0.25rem;
+  }
+}
+
 .card-title,
 .#{acms.$entry-class} .card-title {
   margin: 0;
-  color: global.$color-black;
+  color: var(--color-black);
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 
   .js .js-animation-row & {
     opacity: 0;
@@ -153,15 +159,15 @@
 
 .card-date {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0;
-  color: global.$color-gray80;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
 }
 
 .card-category {
   margin: 0;
-  color: global.$color-gray80;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
 
 }
@@ -170,18 +176,24 @@
   margin: 0 0 0 0.5rem;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-ss;
+  line-height: var(--line-height-ss);
 }
 
 .card-text,
 .#{acms.$entry-class} .card-text {
   margin: 0;
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-lg;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-2nd);
+
+  &:not(&.full) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+  }
 
   .js .js-animation-row & {
     opacity: 0;
@@ -239,7 +251,7 @@
 
 .card-author-img {
   margin: 0 0.5rem 0 0;
-  border-radius: global.$border-radius-circle;
+  border-radius: var(--border-radius-round);
 }
 
 .card-scrollbar {
@@ -247,7 +259,7 @@
   width: 100%;
   height: 4px;
   overflow: hidden;
-  background: global.$color-gray40;
+  background: var(--color-gray40);
   border-radius: 4px;
 }
 
@@ -257,7 +269,7 @@
   bottom: 0;
   left: 0;
   min-width: 50px;
-  background-color: global.$color-primary;
+  background-color: var(--color-primary);
 }
 
 @media screen and (max-width: acms.$breakpoint-md-max) {
@@ -275,7 +287,7 @@
     }
 
     .card-link {
-      width: 200px;
+      width: 258px;
     }
   }
 }
@@ -283,7 +295,6 @@
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .card-img-wrap {
     margin: 0 0 1rem;
-
 
     .card-read-more,
     .#{acms.$entry-class} .card-read-more {
@@ -320,6 +331,10 @@
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .card-list {
     margin-bottom: 2rem;
+
+    .blog1-top & {
+      justify-content: center;
+    }
   }
 }
 
@@ -328,9 +343,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 0;
-  margin: 0 math.div(acms.$unit-gutter, -2) 2rem;
+  margin: 0 math.div(acms.$unit-gutter, -2);
   padding: 0;
   list-style: none;
+
+  .blog1-top & {
+    justify-content: center;
+  }
+
 }
 
 .card-bordered-item {
@@ -346,14 +366,14 @@
   flex-direction: column;
   width: 100%;
   text-decoration: none;
-  border-radius: global.$border-radius-lg;
-  box-shadow: global.$elevation02;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow);
 
-  @include global.link-card(global.$color-text);
+  @include global.link-card(var(--color-text));
 
   @media (hover: hover) {
     &:hover {
-      box-shadow: global.$elevation10;
+      box-shadow: var(--box-shadow);
 
       .card-bordered-img {
         transform: scale(1.2);
@@ -371,7 +391,7 @@
 .card-bordered-img-wrap {
   margin: 0;
   overflow: hidden;
-  border-radius: global.$border-radius-lg global.$border-radius-lg 0 0;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .card-bordered-img {
@@ -391,9 +411,9 @@
 .card-bordered-title,
 .#{ acms.$entry-class } .card-bordered-title {
   margin: 0 0 1rem;
-  color: global.$color-black;
+  color: var(--color-black);
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
 }
 
 .card-bordered-read-more,
@@ -412,18 +432,11 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: global.$color-secondary;
+    background-color: var(--color-secondary);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
     content: "";
-  }
-
-  &::after {
-    margin: 0 0 0 0.5rem;
-    content: "";
-
-    @include global.arrow-circle($size: ss, $color-bg: global.$color-secondary, $color-line: white);
   }
 
   .js .js-animation-row & {
@@ -496,7 +509,7 @@
 
   svg {
     .st1 {
-      fill: global.$color-icon-bg;
+      fill: var(--color-icon-bg)
     }
   }
 

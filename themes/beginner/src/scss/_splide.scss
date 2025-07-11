@@ -1,16 +1,140 @@
+@use "sass:map";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
 /* ------------------------------
-　　splide.cssを上書き
+　　splide.cssの上書き
 ------------------------------ */
 
-.splide__pagination__page {
-  border: 1px solid global.$color-white;
-}
+.main-visual-slider,
+.news-banner-carousel {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 
-.splide .splide__slide a {
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.20);
-  border-radius: global.$border-radius-lg;
-  overflow: hidden;
+
+  .splide__slide {
+    overflow: hidden;
+  }
+
+  .splide__pagination__page {
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--color-white);
+  }
+
+  .splide__pagination {
+    bottom: 0;
+
+    >li {
+      box-sizing: border-box;
+    }
+  }
+
+  .splide__pagination__page {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    opacity: 1;
+    margin: 0;
+
+    &:hover {
+      background-color: var(--color-primary);
+    }
+
+    &.is-active {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
+      transform: none;
+    }
+  }
+
+  .splide__controls {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+  }
+
+  .splide__arrow {
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    top: 50%;
+    transform: translateY(-1.5rem);
+    opacity: 1;
+
+    &.splide__arrow--prev {
+      left: -1.5rem;
+    }
+
+    &.splide__arrow--next {
+      right: -1.5rem;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      path {
+        stroke: var(--color-gray80);
+        fill: transparent;
+      }
+
+      .splide__arrow--prev & {
+        transform-origin: top;
+      }
+    }
+  }
+
+  .splide__track,
+  .splide__list,
+  .splide__slide,
+  .splide__slide picture,
+  .splide__slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .splide__slide picture,
+  .splide__slide img {
+    object-fit: cover;
+  }
+
+  .splide__toggle {
+    border: none;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .splide__toggle__play,
+    .splide__toggle__pause {
+      width: 100%;
+      height: 100%;
+      content: '';
+      filter: brightness(20);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+
+    .splide__toggle__play {
+      background: url(../images/icon-triangle.svg) no-repeat center center;
+      background-size: 1rem;
+    }
+
+    .splide__toggle__pause {
+      background: url(../images/icon-stop.svg) no-repeat center center;
+      background-size: 1rem;
+
+    }
+  }
 }

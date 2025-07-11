@@ -13,7 +13,7 @@
 .content-loading-icon {
   width: 8px;
   height: 8px;
-  background: global.$color-gray40;
+  background: var(--color-gray40);
   border-radius: 50%;
   animation: bounce .6s infinite ease-in-out;
 

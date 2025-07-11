@@ -1,0 +1,15 @@
+<!-- BEGIN_MODULE Touch_NotEdit -->
+<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<section class="cta-visual js-animation {section-class}<!-- BEGIN cta_size:veil --> is-{cta_size}<!-- END cta_size:veil --><!-- BEGIN_IF [{{enable_margin_top}}/eq/true] --> is-cta-margin-top<!-- END_IF -->"<!-- BEGIN cta-bg-image:veil  --> style="background-image: url(%{MEDIA_ARCHIVES_DIR}{cta-bg-image@path});"<!-- END cta-bg-image:veil  -->>
+@include("/include/edit/module-custom-box2.html")
+<div class="acms-container">
+  <!-- BEGIN cta-comment:veil  -->
+  <p class="cta-visual-comment">{cta-comment}</p><!-- END cta-comment:veil  --><!-- BEGIN cta-lead:veil  -->
+  <h2 class="cta-visual-title">{cta-lead}[nl2br]</h2><!-- END cta-lead:veil  --><!-- BEGIN cta-desc:veil  -->
+  <p class="cta-visual-text">{cta-desc}[nl2br]</p><!-- END cta-desc:veil  -->
+  <!-- BEGIN_IF [{btn-text}/nem/_and_/{btn-url}/nem] -->
+  <p class="cta-visual-read-more"><a href="{btn-url}[buildGlobalVars]" class="button is-lg is-width-lg is-shadow js-viewing-indelible">{btn-text}</a></p><!-- END_IF -->
+</div>
+</section>
+<!-- END_MODULE Module_Field -->
+<!-- END_MODULE Touch_NotEdit -->

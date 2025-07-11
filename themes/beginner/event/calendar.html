@@ -1,0 +1,14 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="container-md">
+  <!-- タグフィルター -->
+  @include("/include/tag/filter.html")
+  @include("/include/parts/link.html")
+  <!-- サマリー：記事一覧 -->
+  @include("/include/calendar/month-event.html", {"module_id": "calendar_event"})
+</div>
+@endsection
+
+@section("side")
+@endsection

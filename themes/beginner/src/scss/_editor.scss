@@ -12,21 +12,21 @@
 
     &::after {
       margin: 0 2px;
-      color: global.$color-gray40;
+      color: var(--color-gray40);
       content: "|";
     }
   }
 
   em {
-    @include global.entry-em(global.$color-primary,global.$color-highlight);
+    @include global.entry-em(var(--color-highlight));
   }
 
   strong {
-    @include global.entry-strong(global.$color-highlight-light);
+    @include global.entry-strong(var(--color-highlight));
   }
 
   a {
-    @include global.entry-link(global.$color-link,global.$border-link);
+    @include global.entry-link(var(--color-text), var(--color-text));
   }
 }
 

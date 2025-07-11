@@ -15,7 +15,7 @@
     @endsection
   </head>
 
-  <body id="top">
+  <body id="top" class="blog%{BID}-%{VIEW}">
     @section("body-start")
     @include("/include/body-start.html")
     @endsection
@@ -27,7 +27,7 @@
 
     @section("page-title")
     <!-- ページタイトル -->
-    @include("/include/parts/page-title-%{VIEW}.html")
+    @include("/include/parts/page-title.html")
     @endsection
     @section("topicpath")
     @include("/include/parts/topicpath.html")

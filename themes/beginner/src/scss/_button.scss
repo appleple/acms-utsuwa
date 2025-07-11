@@ -8,24 +8,24 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  padding: 0.75rem 2.25rem;
-  color: global.$color-text-inverse;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  color: var(--color-white);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
   text-align: center;
-  background: global.$color-primary;
+  background: var(--color-primary);
   border: 0;
-  border-radius: global.$border-radius-md;
+  border-radius: var(--border-radius-md);
   transition: background-color 0.2s;
   line-height: 1.5;
 
   &:any-link {
-    color: global.$color-text-inverse;
+    color: var(--color-white);
     text-decoration: none;
   }
 
   &:hover {
-    background: global.$color-primary-hover;
+    background: var(--color-primary-hover);
   }
 
   &.is-sm {
@@ -37,9 +37,11 @@
   }
 
   &.is-lg {
+    min-width: 15rem;
     display: inline-block;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
+
   }
 
   &.is-block {
@@ -57,66 +59,62 @@
     max-width: 100%;
   }
 
-  &.is-shadow {
-    box-shadow: global.$elevation08;
-  }
-
-  &.is-shadow-shallow {
-    box-shadow: global.$elevation02;
-
-    &:hover {
-      box-shadow: global.$elevation10;
-    }
-  }
-
   &.is-inverse {
-    color: global.$color-text;
-    background: global.$color-white;
+    color: var(--color-text);
+    background: var(--color-white);
 
     &:any-link {
-      color: global.$color-text;
+      color: var(--color-text);
     }
 
     &:hover {
-      background: global.$color-gray10;
+      background: var(--color-hover-bg);
     }
   }
 
   &.is-bordered {
-    color: global.$color-text;
+    color: var(--color-text);
     background: transparent;
-    border: global.$border-width-sm solid global.$color-gray30;
+    border: var(--border-width-sm) solid var(--color-gray30);
 
     &:any-link {
-      color: global.$color-text;
+      color: var(--color-text);
     }
 
     &:hover {
-      background: global.$color-gray10;
+      background: var(--color-hover-bg);
     }
   }
 
   &.is-rounded {
-    border-radius: global.$border-radius-round;
+    border-radius: var(--border-radius-round);
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    &.is-lg {
-      min-width: 15rem;
-    }
 
     &.is-xl {
       width: initial;
       min-width: 18rem;
       padding: 1rem;
-      font-size: map.get(global.$font-scales, heading-ss);
+      font-size: map.get(global.$font-scales, heading-s);
     }
   }
 
   &:focus {
     border-color: acms.$acms-form-focus-border-color;
-    box-shadow: global.$box-shadow-focus;
+    box-shadow: var(--box-shadow-focus);
   }
+}
+
+/* ------------------------------
+　　もっと見るボタン
+------------------------------ */
+
+.read-more-pager {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 1rem 1rem 2rem;
 }
 
 .button-read-more {
@@ -132,7 +130,6 @@
     margin: 0 0 0 0.5rem;
   }
 
-
   .js .js-animation & {
     opacity: 0;
     will-change: transform, opacity;
@@ -142,13 +139,6 @@
     animation: fade-in 0.2s 1.2s 1 both;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      &::before {
-        transform: scaleX(1);
-      }
-    }
-  }
 }
 
 /* ------------------------------
@@ -171,8 +161,9 @@
     padding: 6px;
     background: var(--color-icon-bg);
     transition: 0.2s;
+
     path {
-      stroke: global.$color-white;
+      stroke: var(--color-white);
     }
 
     a:hover & {
@@ -187,17 +178,12 @@
   }
 
   .bg {
-    fill: global.$color-icon-bg;
+    fill: var(--color-icon-bg)
   }
 
   .arrow {
-    stroke: global.$color-white;
+    stroke: var(--color-white);
 
-  }
-
-  &.is-right {
-    order: 1;
-    rotate: 180deg;
   }
 
   &.is-sm {
@@ -218,6 +204,7 @@
 
   }
 
+  &.is-left,
   &.is-prev {
     rotate: 180deg;
   }

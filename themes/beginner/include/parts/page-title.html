@@ -1,52 +1,44 @@
+<!-- BEGIN_MODULE Touch_Index -->
 <!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
+<!-- 404 Not foundの場合 -->
 <div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
   <div class="page-title-inner">
     <div class="acms-container">
-      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field --> {title-position}<!-- END_MODULE Blog_Field -->">
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field ctx="bid/1" --> {title-position}<!-- END_MODULE Blog_Field -->">
         <h1 class="page-title">404</h1>
         <p class="page-title-en">404 Not Found</p>
       </div>
     </div>
   </div>
 </div>
-<!-- ELSE_IF [%{KEYWORD}/nem/_or_/%{TAG}/nem/] -->
-<div class="page-title-wrapper">
-  <div class="page-title-inner">
-    <div class="acms-container">
-      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field --> {title-position}<!-- END_MODULE Blog_Field -->">
-        <!-- BEGIN_MODULE Touch_Keyword -->
-        <h1 class="page-title">サイト内検索</h1>
-        <p class="page-title-en">Search</p>
-        <!-- END_MODULE Touch_Keyword -->
-        <!-- BEGIN_MODULE Touch_Tag -->
-        <h1 class="page-title">タグ一覧</h1>
-        <p class="page-title-en">Tags</p>
-        <!-- END_MODULE Touch_Tag -->
-      </div>
-    </div>
-  </div>
-</div>
 <!-- ELSE_IF [%{CCD}/nem] -->
+<!-- カテゴリーに所属するページの場合 -->
 <!-- BEGIN_MODULE Category_Field -->
-<div class="page-title-wrapper" <!-- BEGIN page-image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
+ <div class="page-title-wrapper" <!-- BEGIN page-image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
   <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
   <p class="acms-admin-module-edit"><a href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">カテゴリー情報の編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+  <div class="page-title-filter"></div>
   <div class="page-title-inner">
     <div class="acms-container">
-      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field --> {title-position}<!-- END_MODULE Blog_Field -->">
-        <h1 class="page-title"><!-- BEGIN_IF [%{BID}/neq/%{RBID}] -->%{BLOG_NAME} - <!-- END_IF -->%{CATEGORY_NAME}</h1>
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field ctx="bid/1" --> {title-position}<!-- END_MODULE Blog_Field -->">
+        <h1 class="page-title">%{CATEGORY_NAME}</h1>
         <p class="page-title-en">%{CCD}</p>
       </div>
     </div>
   </div>
-</div><!-- END_MODULE Category_Field -->
+</div>
+<!-- END_MODULE Category_Field -->
+
 <!-- ELSE -->
+<!-- カテゴリーに所属しないページの場合 -->
 <!-- BEGIN_MODULE Blog_Field -->
 <div class="page-title-wrapper" <!-- BEGIN page-image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
+  <div class="page-title-filter"></div>
   <div class="page-title-inner">
     <div class="acms-container">
-      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field --> {title-position}<!-- END_MODULE Blog_Field -->">
-        <p class="page-title">%{BLOG_NAME}</p>
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field ctx="bid/1" --> {title-position}<!-- END_MODULE Blog_Field -->">
+        <p class="page-title">%{BLOG_NAME}　<!-- BEGIN_IF [%{DATE}/nem] --><small> - %{DATE_YEAR}年%{DATE_MONTH}月</small><!-- END_IF --></p>
         <p class="page-title-en">%{BCD}</p>
       </div>
     </div>
@@ -54,3 +46,47 @@
 </div>
 <!-- END_MODULE Blog_Field -->
 <!-- END_IF -->
+<!-- END_MODULE Touch_Index -->
+
+<!-- エントリーの場合（カテゴリー名とカテゴリーコードを出す） -->
+<!-- BEGIN_MODULE Touch_Entry -->
+<!-- BEGIN_MODULE Category_Field -->
+<div class="page-title-wrapper" <!-- BEGIN page-image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
+  <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+  <p class="acms-admin-module-edit"><a href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">カテゴリー情報の編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field ctx="bid/1" --> {title-position}<!-- END_MODULE Blog_Field -->">
+        <!-- BEGIN_IF [%{CATEGORY_NAME}/nem] -->
+        <p class="page-title">%{CATEGORY_NAME}</p>
+        <!-- ELSE -->
+        <p class="page-title">%{ENTRY_TITLE}</p>
+        <!-- END_IF -->
+        <!-- BEGIN page_title_en:veil -->
+        <p class="page-title-en">{code}</p><!-- END page_title_en:veil -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Category_Field -->
+<!-- END_MODULE Touch_Entry -->
+
+<!-- トップページの場合（このテーマでは表示されない） -->
+<!-- BEGIN_MODULE Touch_Top -->
+<!-- BEGIN_MODULE Blog_Field -->
+<div class="page-title-wrapper" <!-- BEGIN page-image:veil -->style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
+  <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+  <p class="acms-admin-module-edit"><a href="/bid/{id}/admin/blog_edit/#acms_custom" class="js-dialog-btn js-link_no_rewrite">ブログ情報の編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field ctx="bid/1" --> {title-position}<!-- END_MODULE Blog_Field -->">
+        <p class="page-title">%{BLOG_NAME}</p>
+        <p class="page-title-en">%{BCD}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Blog_Field -->
+<!-- END_MODULE Touch_Top -->

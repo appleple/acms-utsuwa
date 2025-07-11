@@ -1,11 +1,11 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
-<section class="section js-animation is-bg">
-  <div class="acms-container">
-  @include("/include/edit/module-custom.html")<!-- BEGIN moduleField -->
-  <header class="section-vertical-header">
-    <h2 class="section-vertical-heading">{module-heading}</h2>
-    <p class="section-vertical-text">{module-heading-small}</p>
-  </header><!-- END moduleField -->
+<div class="acms-container">
+    @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})<!-- BEGIN moduleField -->
+    <header class="section-vertical-header">
+      <h2 id="summary_blog" class="section-vertical-heading">{module-heading}</h2>
+      <p class="section-vertical-text">{module-heading-small}</p>
+    </header><!-- END moduleField -->
+  @include("/include/edit/module-custom.html")
   <ul class="card-list"><!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
     <li class="card-item {entry:loop.class}">
@@ -21,6 +21,7 @@
             <span class="label-triangle {new-label-position}">@include("/images/label-new-triangle.svg")</span>
             <!-- END moduleField -->
             <!-- END new -->
+            <span class="card-category-label right-bottom">{price}[number_format]円/月</span>
           </div>
           <div class="card-text-wrap">
             <h2 class="card-title">{title} <!-- BEGIN moduleField -->
@@ -28,9 +29,9 @@
               <span class="label">NEW</span>
               <!-- END_IF --> <!-- END moduleField -->
             </h2>
-            <p class="card-text is-bold">{station} <!-- BEGIN toho:veil -->より徒歩{toho}分<!-- END toho:veil -->　{price}[number_format]円/月</p>
             <p class="card-text">
-              <!-- BEGIN categoryField --><span class="label">{fieldCategoryName}</span><!-- END categoryField --><span class="label">{madori}</span>
+              <!-- BEGIN categoryField --><span class="label">{fieldCategoryName}</span><!-- END categoryField -->
+               <span class="label">{station}</span> <span class="label">{madori}</span>
             </p>
             <!-- BEGIN tag:veil -->
             <ul class="tag-list is-sm">
@@ -48,5 +49,4 @@
   <!-- END unit:loop -->
   @include("/include/parts/pager.html")
 </div>
-</section>
 <!-- END_MODULE Entry_Summary -->

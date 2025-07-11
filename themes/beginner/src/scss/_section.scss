@@ -10,9 +10,8 @@
   padding: 3rem 0;
 
   &.is-bg {
-    background: global.$color-gray10;
+    background: var(--color-gray10);
   }
-
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -26,8 +25,11 @@
     padding: 6.5rem 0;
 
     &.news-banner {
-      padding: 5rem 0;
+      padding: 6.5rem 0 7.75rem;
 
+    }
+    &.banner {
+      padding: 6.5rem 0 4.5rem;
     }
   }
 }
@@ -40,22 +42,21 @@
 
 .section-horizontal-header-inner {
   position: relative;
-  padding: 0.25rem 0;
 }
 
 .section-horizontal-heading {
   margin: 0;
-  color: global.$color-gray100;
+  color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-l);
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 }
 
 .section-horizontal-heading-side {
   margin: 0;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 
   .js .js-animation & {
     opacity: 0;
@@ -69,14 +70,14 @@
 
 .section-horizontal-lead {
   margin: 0 0 1em;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 }
 
 .section-horizontal-text p {
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-m);
   line-height: 1.7;
 }
@@ -86,20 +87,12 @@
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  .section-horizontal-header-inner {
-    padding: 1rem 1.25rem 1rem 0;
-  }
-
   .section-horizontal-heading {
     font-size: map.get(global.$font-scales, headling-l);
   }
 
-  .section-horizontal-heading-side {
-    font-size: map.get(global.$font-scales, body-m);
-  }
-
   .section-horizontal-lead {
-    color: global.$color-text-side;
+    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, heading-s);
   }
 }
@@ -124,18 +117,13 @@
     font-size: map.get(global.$font-scales, display-s);
   }
 
-  .section-horizontal-heading-side {
-    margin-top: 1rem;
-    font-size: map.get(global.$font-scales, body-m);
-  }
-
   .section-horizontal-lead {
-    color: global.$color-text-side;
+    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, heading-m);
   }
 
   .section-horizontal-text p {
-    color: global.$color-text-side;
+    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-m);
     line-height: 1.7;
   }
@@ -152,19 +140,19 @@
 /* 垂直方向の見出し */
 .section-vertical-header {
   position: relative;
-  margin: 0 0 3rem;
+  margin: 0 0 4rem;
   text-align: center;
   word-break: break-all;
 
   &::after {
     position: absolute;
     right: 0;
-    bottom: -2rem;
+    bottom: -1.5rem;
     left: 0;
     width: 1px;
-    height: 1.25rem;
+    height: 1.5rem;
     margin: 0 auto;
-    background: global.$color-gray40;
+    background: var(--color-gray30);
     content: "";
   }
 
@@ -186,14 +174,14 @@
 
 .section-vertical-heading {
   margin: 0;
-  color: global.$color-gray100;
+  color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-l);
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 }
 
 .section-vertical-text {
-  margin: 0 0 0.5rem;
-  color: global.$color-text-side;
+  margin: 0;
+  color: var(--color-text-2nd);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
 
@@ -239,7 +227,6 @@
 /* 背景あり */
 .section-animation-bg {
   position: relative;
-  padding: 1.25rem 0.5rem;
   overflow: hidden;
 
   &::before {
@@ -249,7 +236,7 @@
     bottom: 0;
     z-index: -1;
     width: 50%;
-    background: global.$color-gray10;
+    background: var(--color-gray10);
     content: "";
   }
 
@@ -283,8 +270,8 @@
 
 /* 視覚的なセパレーター */
 .section-separator {
-  max-width: global.$container;
+  max-width: calc(var(--container) - var(--gutter-md) * 3);
   margin: 0 auto;
   border: 0;
-  border-top: global.$border-width-sm solid global.$color-gray30;
+  border-top: var(--border-width-sm) solid var(--color-gray30);
 }

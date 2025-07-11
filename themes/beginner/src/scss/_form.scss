@@ -21,8 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: global.$color-text;
-  font-weight: bold;
+  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   list-style: none;
 
@@ -33,9 +32,9 @@
     width: 2rem;
     height: 2rem;
     margin: 0 0 0.5rem;
-    color: global.$color-text;
-    line-height: global.$line-height-lg;
-    background: global.$color-gray10;
+    color: var(--color-text);
+    line-height: var(--line-height-lg);
+    background: var(--color-gray10);
     border-radius: 50%;
     content: counter(mailStep);
 
@@ -44,9 +43,11 @@
   }
 
   &.is-current {
+    font-weight: bold;
+
     &::before {
-      color: global.$color-text-inverse;
-      background: global.$color-primary;
+      color: var(--color-white);
+      background: var(--color-primary);
     }
   }
 
@@ -56,6 +57,10 @@
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
+  .form-step {
+    padding: 1rem 1rem 1rem 0;
+  }
+
   .form-step-item {
     flex-direction: row;
     justify-content: space-between;
@@ -82,13 +87,23 @@
 
 /* フォームレイアウト
 ------------------------------ */
+
+.form-input-wrap {
+  padding-bottom: 3rem;
+}
+
 .form-group-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+
+  &.is-confirm {
+    padding-bottom: var(--gutter-lg);
+  }
 
 }
 
@@ -104,7 +119,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 0 2rem;
   padding: 0;
 }
 
@@ -121,7 +135,13 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  line-height: global.$line-height-lg;
+  line-height: var(--line-height-lg);
+
+  &.form-item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 .form-button-group {
@@ -141,13 +161,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0 0;
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .form-button-group {
     flex-direction: row;
-    margin: 2.5rem 0 0;
   }
 
   .form-button:not(:last-child) {
@@ -173,37 +191,24 @@
 /* ラベル
 ------------------------------ */
 .label-required {
-  margin: 0 0 0 0.25rem;
+  margin: 0 0 0 1rem;
   padding: 0.25rem 0.5rem;
-  color: global.$color-danger;
+  color: var(--color-danger);
   font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
-  background: global.$color-danger-light;
-  border-radius: global.$border-radius-sm;
+  background: var(--color-danger-light);
+  border-radius: var(--border-radius-sm);
 
-  &:first-child {
-    margin: 0 0.25rem 0 0;
-  }
-}
-
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  .label-required {
-    margin: 0 0 0 1rem;
-
-    &:first-child {
-      margin: 0 0 0 1rem;
-    }
-  }
 }
 
 .label-optional {
   margin: 0 0 0 0.25rem;
   padding: 0.25rem 0.5rem;
-  color: global.$color-text;
+  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
-  background: global.$color-gray10;
-  border-radius: global.$border-radius-sm;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-sm);
 
   &:first-child {
 
@@ -243,15 +248,15 @@ input::-ms-input-placeholder {
 
   select {
     &[required]:required {
-      border: global.$border-width-sm solid global.$color-error;
+      border: var(--border-width-sm) solid var(--color-error);
     }
 
     &.focused:invalid {
-      border: global.$border-width-sm solid global.$color-error;
+      border: var(--border-width-sm) solid var(--color-error);
     }
 
     &[required]:valid {
-      border: global.$border-width-sm solid global.$color-gray40;
+      border: var(--border-width-sm) solid var(--color-gray30);
     }
   }
 
@@ -270,34 +275,31 @@ input::-ms-input-placeholder {
   input[type="tel"],
   textarea,
   select {
-    background-color: global.$color-white;
-    color: global.$color-text;
+    background-color: var(--color-white);
+    color: var(--color-text);
     border: 1px solid rgb(0 0 0 / 20%);
+    box-shadow: none;
 
     &[required]:required {
-      background-color: global.$color-white;
+      background-color: var(--color-white);
     }
 
     &.focused:invalid,
     &.invalid {
-      background-color: global.$color-white;
-      border-color: global.$color-error;
-      box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
+      background-color: var(--color-white);
+      border-color: var(--color-error);
+      box-shadow: var(--box-shadow-error), acms.$acms-form-box-shadow;
     }
 
     &[required]:valid {
-      background-color: global.$color-white;
+      background-color: var(--color-white);
     }
 
-    &:hover {
-      background-color: global.$color-gray10;
-
-    }
 
     &:focus {
-      background-color: global.$color-white;
-      border-color: global.$color-focus;
-      box-shadow: global.$box-shadow-focus, acms.$acms-form-box-shadow;
+      background-color: var(--color-white);
+      border-color: var(--color-focus);
+      box-shadow: var(--box-shadow-focus), acms.$acms-form-box-shadow;
     }
   }
 
@@ -318,16 +320,16 @@ input::-ms-input-placeholder {
     box-sizing: border-box;
     padding: 0.75rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: global.$line-height-base;
-    border: global.$border-width-sm solid rgb(0 0 0 / 20%);
-    border-radius: global.$border-radius-sm;
+    line-height: var(--line-height-base);
+    border: var(--border-width-sm) solid rgb(0 0 0 / 20%);
+    border-radius: var(--border-radius-md);
   }
 
   textarea {
     box-sizing: border-box;
     padding: 0.75rem;
     font-size: map.get(global.$font-scales, body-m);
-    border-radius: global.$border-radius-sm;
+    border-radius: var(--border-radius-sm);
   }
 
   select {
@@ -336,36 +338,38 @@ input::-ms-input-placeholder {
     min-height: 3rem;
     padding: 0.75rem 3rem 0.75rem 1rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: global.$line-height-base;
+    line-height: var(--line-height-base);
     vertical-align: top;
-    border-radius: global.$border-radius-sm;
+    border-radius: var(--border-radius-sm);
   }
 
   .form-checkbox {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    font-size: 1rem;
+    display: flex;
+    gap: 0.5rem;
 
     label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
       cursor: pointer;
     }
 
     input[type="checkbox"] {
-      position: absolute;
       opacity: 0;
+      position: absolute;
       width: 24px;
       height: 24px;
       margin: 0;
 
       &:checked+.ico-checkbox {
-        background-color: global.$color-primary;
+        background-color: var(--color-primary);
         background-image: url('../images/icon-check.svg');
-        border-color: global.$color-primary;
+        border-color: var(--color-primary);
       }
 
       &:focus+.ico-checkbox {
-        border-color: global.$color-primary;
+        border-color: var(--color-primary);
         box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
       }
     }
@@ -373,7 +377,7 @@ input::-ms-input-placeholder {
     .ico-checkbox {
       width: 24px;
       height: 24px;
-      border: 1px solid global.$color-gray30;
+      border: 1px solid var(--color-gray30);
       display: inline-block;
       margin-right: 8px;
       box-sizing: border-box;
@@ -381,20 +385,20 @@ input::-ms-input-placeholder {
       background-repeat: no-repeat;
       background-position: center;
       background-size: 70% auto;
-      border-radius: global.$border-radius-sm;
+      border-radius: var(--border-radius-md);
       transition: background-color 0.2s, border-color 0.2s;
       pointer-events: none;
-      background-color: global.$color-white;
+      background-color: var(--color-white);
       vertical-align: middle;
 
       &.invalid {
-        border-color: global.$color-danger;
+        border-color: var(--color-danger);
       }
     }
   }
 
   .form-checkbox-only {
-    display: block;
+    display: flex;
     margin: 0;
     padding: 0.75rem 1rem;
     line-height: 1.5;
@@ -415,6 +419,10 @@ input::-ms-input-placeholder {
 
   .form-checkbox-only-label {
     vertical-align: middle;
+
+    a {
+      color: var(--color-text);
+    }
   }
 
   .form-checkbox-only-label a:link,
@@ -450,19 +458,20 @@ input::-ms-input-placeholder {
     textarea {
       padding: 0.75rem;
     }
-      select {
-        width: initial;
-      }
+
+    select {
+      width: fit-content;
+    }
   }
 }
 
 .form-radio {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  font-size: 1rem;
 
   label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
     cursor: pointer;
   }
 
@@ -474,14 +483,14 @@ input::-ms-input-placeholder {
     margin: 0;
 
     &:checked+.ico-radio {
-      background-color: global.$color-primary;
+      background-color: var(--color-primary);
       background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOS44MDAxOSA1LjAwMjY0QzkuODAwMTkgNy42NTM2IDcuNjUxMTYgOS44MDI2NCA1LjAwMDE5IDkuODAyNjRDMi4zNDkyMyA5LjgwMjY0IDAuMjAwMTk1IDcuNjUzNiAwLjIwMDE5NSA1LjAwMjY0QzAuMjAwMTk1IDIuMzUxNjcgMi4zNDkyMyAwLjIwMjYzNyA1LjAwMDE5IDAuMjAyNjM3QzcuNjUxMTYgMC4yMDI2MzcgOS44MDAxOSAyLjM1MTY3IDkuODAwMTkgNS4wMDI2NFoiIGZpbGw9IndoaXRlIi8+PC9zdmc+");
-      border-color: global.$color-primary;
+      border-color: var(--color-primary);
       background-size: 10px 10px;
     }
 
     &:focus+.ico-radio {
-      border-color: global.$color-primary;
+      border-color: var(--color-primary);
       box-shadow: var(--box-shadow-focus), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
     }
   }
@@ -489,27 +498,26 @@ input::-ms-input-placeholder {
   .ico-radio {
     width: 24px;
     height: 24px;
-    border: 1px solid global.$color-gray30;
+    border: 1px solid var(--color-gray30);
     display: inline-block;
     margin-right: 8px;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% auto;
-    border-radius: global.$border-radius-circle;
+    border-radius: var(--border-radius-round);
     transition: background-color 0.2s, border-color 0.2s;
     pointer-events: none;
   }
 }
 
 
-
 /* ヘルパーテキスト
 ------------------------------ */
 .form-helper-text {
-  margin: 1rem 0;
-  color: global.$color-text-side;
+  margin: 1rem 0 0;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
 
   .acms-entry & {
@@ -531,55 +539,57 @@ input::-ms-input-placeholder {
   }
 
   .invalid {
-    border-color: global.$color-error;
-    box-shadow: global.$box-shadow-error, acms.$acms-form-box-shadow;
+    border-color: var(--color-error);
+    box-shadow: var(--box-shadow-error), acms.$acms-form-box-shadow;
   }
 
   [class*=acms-col] {
     margin-bottom: 1.5rem;
   }
-}
 
-.form-error-text {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1rem 0 0;
-  color: global.$color-error;
-  font-size: map.get(global.$font-scales, body-s);
+  .form-error-text {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0 0;
+    color: var(--color-error);
+    font-size: map.get(global.$font-scales, body-s);
 
-  .form-helper-text+.validator-result-0 & {
-    margin-top: 0;
-  }
+    .form-helper-text+.validator-result-0 & {
+      margin-top: 0;
+    }
 
-  .error-icon {
-    display: inline-block;
-    flex: 0 0 1.25rem;
-    padding: 1.5px;
-    box-sizing: border-box;
+    .error-icon {
+      display: inline-block;
+      flex: 0 0 1.25rem;
+      padding: 1.5px;
+      box-sizing: border-box;
 
-    svg {
-      width: 100%;
-      height: auto;
+      svg {
+        width: 100%;
+        height: auto;
 
-      path {
-        stroke: global.$color-error;
+        path {
+          stroke: var(--color-error);
+        }
       }
     }
   }
+
+  .transaction-notice-,
+  .v-result-,
+  .v-result-1,
+  .validator-result-,
+  .validator-result-1 {
+    display: none;
+  }
 }
 
-.transaction-notice-,
-.v-result-,
-.v-result-1,
-.validator-result-,
-.validator-result-1 {
-  display: none;
-}
 
 /* メッセージ
 ------------------------------ */
 .form-message {
   margin: 0 0 3rem;
+  font-weight: bold;
 }
 
 .form-message-back {
@@ -587,10 +597,11 @@ input::-ms-input-placeholder {
 }
 
 .form-privacy-body {
-  background: global.$color-gray10;
+  background: var(--color-gray10);
   box-sizing: border-box;
   margin: 0 0 1rem;
   padding: 1rem 0;
+  border-radius: var(--border-radius-lg);
   height: 20rem;
   overflow-y: auto;
 }
@@ -600,26 +611,21 @@ input::-ms-input-placeholder {
 
 .entry-form-wrapper {
   padding: 2rem 1rem;
-  border: 1px solid global.$color-gray10;
-  border-radius: global.$border-radius-xl;
-  box-shadow: global.$elevation08;
+  border: 1px solid var(--color-gray10);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--box-shadow);
 
   .heading-lg {
     margin-top: 0;
     padding-top: 0;
   }
 
-  .form-step,
-  .form-group-list.is-confirm {
-    margin-right: calc(var(--gutter-md) / 2);
-    margin-left: calc(var(--gutter-md) / 2);
-  }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .entry-form-wrapper {
-    margin: 4.5rem 0 2rem;
+    margin: 2rem 0;
     padding: 4rem 5rem;
-    border-radius: global.$border-radius-xxl;
+    border-radius: var(--border-radius-xxl);
   }
 }

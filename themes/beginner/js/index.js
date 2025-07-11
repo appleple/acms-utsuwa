@@ -11,8 +11,6 @@ $.fn.delayRemoveClass = function (className, delay) {
   });
 };
 
-
-
 $(() => {
   // JSが有効か判断する
   $('html').removeClass('no-js').addClass('js');
@@ -63,24 +61,30 @@ $(() => {
   // モバイル時のナビゲーション
   const $mobileNavTrigger = $('.js-mobile-nav-btn');
   const $mobileNavContents = $('.js-mobile-nav');
+  const $menuText = $('.global-nav-mobile-menu-text'); // 追加：テキスト要素を取得
 
-  $($mobileNavTrigger).click(() => {
+  $mobileNavTrigger.click(() => {
     $('body').toggleClass('is-locked');
-    const $mobileNavAttr = $($mobileNavTrigger).attr('aria-expanded');
-    if ($mobileNavAttr === 'true') {
-      $($mobileNavTrigger).attr('aria-expanded', false);
-      $($mobileNavContents).delayRemoveClass('is-opened', 1).delayRemoveClass('is-active', 100);
+    const isExpanded = $mobileNavTrigger.attr('aria-expanded') === 'true';
+
+    if (isExpanded) {
+      $mobileNavTrigger.attr('aria-expanded', false);
+      $mobileNavContents.delayRemoveClass('is-opened', 1).delayRemoveClass('is-active', 100);
+      $menuText.text('MENU'); // メニューを閉じたら「MENU」に
     } else {
-      $($mobileNavTrigger).attr('aria-expanded', true);
-      $($mobileNavContents).delayAddClass('is-active', 1).delayAddClass('is-opened', 100);
+      $mobileNavTrigger.attr('aria-expanded', true);
+      $mobileNavContents.delayAddClass('is-active', 1).delayAddClass('is-opened', 100);
+      $menuText.text('CLOSE'); // メニューを開いたら「CLOSE」に
     }
 
-    $($mobileNavContents).find('[href*="#"]').click(() => {
-      $($mobileNavTrigger).attr('aria-expanded', false);
-      $($mobileNavContents).delayRemoveClass('is-opened', 1).delayRemoveClass('is-active', 100);
+    $mobileNavContents.find('[href*="#"]').click(() => {
+      $mobileNavTrigger.attr('aria-expanded', false);
+      $mobileNavContents.delayRemoveClass('is-opened', 1).delayRemoveClass('is-active', 100);
       $('body').removeClass('is-locked');
+      $menuText.text('MENU'); // ハッシュリンクで閉じたときも「MENU」に戻す
     });
   });
+
 
   // .global-nav-mobile-groupを子に持つ.global-nav-mobile-itemのリンククリックで展開
   $($mobileNavContents).find('.global-nav-mobile-item:has(.global-nav-mobile-group) > a').click(function (event) {
@@ -112,6 +116,7 @@ $(() => {
   $(window).on('load scroll', () => {
     fixElement();
   });
+
 
   // アコーディオン
   $('.js-toggle-button').on('click', (e) => {
@@ -203,4 +208,5 @@ $(() => {
     }
   });
 });
+
 

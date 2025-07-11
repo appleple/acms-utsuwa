@@ -23,8 +23,8 @@ $_hightlight-colors: #ff6,#a0ffff,#9f9,#f99,#f6f,#800 !default;
 .#{acms.$entry-class} {
   @each $text-unit in $_text-unit-tags {
     #{$text-unit} {
-      margin-right: calc(global.$unit-gutter-var / 2);
-      margin-left: calc(global.$unit-gutter-var / 2);
+      margin-right: calc(var(--unit-gutter-var) / 2);
+      margin-left: calc(var(--unit-gutter-var) / 2);
     }
   }
 
@@ -42,20 +42,20 @@ $_hightlight-colors: #ff6,#a0ffff,#9f9,#f99,#f6f,#800 !default;
 @each $unit in $_unit-type {
   .#{acms.$entry-class} [class*="column-#{$unit}"] {
     @if $unit == "map" {
-      border-right: calc(global.$unit-gutter-var / 2) solid transparent;
-      border-left: calc(global.$unit-gutter-var / 2) solid transparent;
+      border-right: calc(var(--unit-gutter-var) / 2) solid transparent;
+      border-left: calc(var(--unit-gutter-var) / 2) solid transparent;
       box-sizing: border-box;
     } @else if $unit == "quote" {
-      margin-right: calc(global.$unit-gutter-var / 2);
-      margin-left: calc(global.$unit-gutter-var / 2);
+      margin-right: calc(var(--unit-gutter-var) / 2);
+      margin-left: calc(var(--unit-gutter-var) / 2);
     } @else if $unit == "street-view" {
       &:not(.column-street-view-inner) {
-        padding-right: calc(global.$unit-gutter-var / 2);
-        padding-left: calc(global.$unit-gutter-var / 2);
+        padding-right: calc(var(--unit-gutter-var) / 2);
+        padding-left: calc(var(--unit-gutter-var) / 2);
       }
     } @else {
-      padding-left: calc(global.$unit-gutter-var / 2);
-      padding-right: calc(global.$unit-gutter-var / 2);
+      padding-left: calc(var(--unit-gutter-var) / 2);
+      padding-right: calc(var(--unit-gutter-var) / 2);
       box-sizing: border-box;
     }
   }
@@ -65,8 +65,8 @@ $_hightlight-colors: #ff6,#a0ffff,#9f9,#f99,#f6f,#800 !default;
  共通の要素
 ------------------------------ */
 .entry-container {
-  margin-right: calc(global.$unit-gutter-var / 2);
-  margin-left: calc(global.$unit-gutter-var / 2);
+  margin-right: calc(var(--unit-gutter-var) / 2);
+  margin-left: calc(var(--unit-gutter-var) / 2);
 }
 
 /* ------------------------------

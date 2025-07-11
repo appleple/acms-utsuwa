@@ -1,0 +1,73 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<div>
+  @include("/include/edit/module-custom.html")
+  <!-- BEGIN search-results:veil -->
+  <div class="search-results">
+
+    <!-- BEGIN pager:veil -->
+    <!-- BEGIN_IF [{work-category}{work-industry}{work-type}/nem] -->
+    <p class="search-amount">検索結果　{itemsAmount}件</p>
+    <!-- END_IF -->
+    <!-- END pager:veil -->
+    <!-- BEGIN_MODULE Field_Search -->
+    <!-- BEGIN_IF [{work-category}{work-industry}{work-type}/nem] -->
+    <dl class="search-conditions">
+      <dt>検索条件</dt>
+      <!-- BEGIN work-category:veil -->
+      <dd>サイト種別：{work-category}</dd>
+      <!-- END work-category:veil -->
+      <!-- BEGIN station:veil -->
+      <dd>業種： <!-- BEGIN work-industry:loop --><!-- BEGIN work-industry:glue -->, <!-- END work-industry:glue -->{work-industry}<!-- END work-industry:loop -->
+        <!-- END station:veil -->
+      <!-- BEGIN work-type:veil -->
+      <dd>目的： <!-- BEGIN work-type:loop --><!-- BEGIN work-type:glue -->, <!-- END work-type:glue -->{work-type}<!-- END work-type:loop -->
+      </dd><!-- END work-type:veil -->
+    </dl>
+    <!-- END_IF -->
+    <!-- END_MODULE Field_Search -->
+    <!-- BEGIN notFound -->
+    <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p>
+    <!-- END notFound -->
+    <!-- END search-results:veil -->
+  </div>
+  <ul class="card-list"><!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="{entry:loop.class} card-item">
+      <div class="card">
+        <a href="{url}" class="card-link">
+          <div class="card-img-wrap">
+            <!-- BEGIN_IF [{main-img@path}/nem] -->
+            <img src="%{MEDIA_ARCHIVES_DIR}{main-img@path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256">
+            <!-- ELSE -->
+            <!-- BEGIN image:veil -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
+            <!-- END_IF -->
+            <!-- BEGIN new -->
+            <!-- BEGIN moduleField -->
+            <span class="label-triangle {new-label-position}">@include("/images/label-new-triangle.svg")</span>
+            <!-- END moduleField -->
+            <!-- END new -->
+          </div>
+          <div class="card-text-wrap">
+            <!-- BEGIN_IF [{work-copy}/nem] -->
+            <h2 class="card-title">{work-copy}</h2>
+            <p class="card-text is-bold">{title}</p>
+            <!-- ELSE -->
+            <h2 class="card-title">{title}</h2>
+            <!-- END_IF -->
+            <ul class="tag-list"><!-- BEGIN work-category:veil -->
+              <li class="label">
+                {work-category}</li><!-- BEGIN work-category:veil -->
+              <!-- BEGIN industry:veil -->
+              <li class="label">{work-industry}
+              </li><!-- END industry:veil -->
+            </ul>
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+  @include("/include/parts/pager.html")
+</div>
+<!-- END_MODULE Entry_Summary -->

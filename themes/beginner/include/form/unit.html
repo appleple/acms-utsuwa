@@ -13,9 +13,7 @@
       <!-- フォームステップ -->
       @include("/include/form/step.html")
       <form action="?step=reapply#form" method="post" class="acms-form">
-        <div class="acms-margin-bottom-medium">
-          @include("/include/form/input.html")
-        </div>
+        @include("/include/form/input.html")
         <div class="form-button-group clearfix">
           <input type="hidden" name="step" value="confirm">
           <input type="hidden" name="id" value="{form_id}">
@@ -40,9 +38,7 @@
       <!-- フォームステップ -->
       @include("/include/form/step.html")
       <form action="?step=reapply#form" method="post" class="acms-form">
-        <div class="acms-margin-bottom-medium">
-          @include("/include/form/input.html")
-        </div>
+        @include("/include/form/input.html")
         <div class="form-button-group clearfix">
           <input type="hidden" name="step" value="confirm">
           <input type="hidden" name="id" value="{form_id}">
@@ -66,15 +62,12 @@
           <p class="form-message">内容をご確認ください。</p>
         </div>
       </div>
-
-      <div class="acms-margin-bottom-medium">
-        @include("/include/form/confirm.html")
-      </div>
+      @include("/include/form/confirm.html")
       <div class="form-button-group clearfix">
         <form action="?step=reapply#form" method="post" class="form-button form-button-return">
           <input type="hidden" name="step" value="reapply">
           <input type="hidden" name="takeover" value="{takeover}">
-          <input type="submit" name="ACMS_POST_Form_Chain" value="修正する" id="btnToInput" class="button is-lg is-bordered">
+          <input type="submit" name="ACMS_POST_Form_Chain" value="修正する" id="btnToInput" class="button is-bordered">
         </form>
 
         <form action="/bid/%{BID}/eid/%{EID}/tpl/recruit/thanks.html#form" method="post" class="form-button form-button-send">
@@ -101,7 +94,6 @@
         <div class="form-message-group">
           <p class="form-message">{{form_message_result}}</p>
         </div>
-
       </div>
       @include("/include/form/confirm.html")
       <div class="form-message-group">
@@ -117,6 +109,7 @@
       <div class="acms-grid">
         <h2 id="form" class="heading-lg">不正なアクセスです。</h2>
         <div class="form-message-group">
+
           <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
           <p class="form-message-back"><a href="%{PERMALINK}" class="button is-lg is-width-lg">フォームに戻る</a></p>
         </div>

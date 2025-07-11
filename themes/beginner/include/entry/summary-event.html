@@ -1,0 +1,39 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<div>
+  <!-- BEGIN_SetRendered id="new-label-position" -->
+  <!-- BEGIN moduleField --> {new-label-position}<!-- END moduleField -->
+  <!-- END_SetRendered -->
+  @include("/include/edit/module-custom.html")
+
+  <ul class="card-list"><!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="{entry:loop.class} card-item">
+      <div class="card">
+        <a href="{url}" class="card-link">
+          <div class="card-img-wrap">
+            <!-- BEGIN_IF [{main-image@path}/nem] -->
+            <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- ELSE -->
+            <img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256">
+            <!-- END_IF --><!-- BEGIN category:veil -->
+            <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->">
+              <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
+              <!-- ELSE_IF [{event-status}/eq/open] -->募集中
+              <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
+              <!-- ELSE_IF [{event-status}/eq/closed] -->終了
+              <!-- END_IF -->
+            </span><!-- END category:veil -->
+          </div>
+          <div class="card-text-wrap">
+            <h2 class="card-title">{title}</h2>
+            <!-- BEGIN summary:veil -->
+            <p class="card-text"><time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <span class="label">{event-pref}</span></time>
+            </p>
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+  @include("/include/parts/pager.html")
+</div>
+<!-- END_MODULE Entry_Summary -->
