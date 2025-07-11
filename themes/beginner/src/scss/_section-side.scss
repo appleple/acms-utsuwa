@@ -19,7 +19,7 @@
     padding-right: calc(var(--unit-gutter-var) / 4);
     padding-left: calc(var(--unit-gutter-var) / 4);
 
-    @if global.$enable-iphonex ==true {
+    @if global.$enable-iphonex == true {
       padding-right: calc(env(safe-area-inset-right) + (var(--unit-gutter-var) / 4));
       padding-left: calc(env(safe-area-inset-left) + (var(--unit-gutter-var) / 4));
     }
