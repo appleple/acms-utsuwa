@@ -44,7 +44,6 @@ a {
 
 /* コンテナー */
 .acms-container {
-
   max-width: var(--container);
   padding-right: calc(var(--col-gutter) / 2);
   padding-left: calc(var(--col-gutter) / 2);
@@ -98,6 +97,7 @@ a {
 
 .container-sm {
   --gutter: var(--gutter-sm);
+
   box-sizing: border-box;
   max-width: var(--container-sm);
   margin: 0 auto;
@@ -207,12 +207,12 @@ a {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* その他上書き */

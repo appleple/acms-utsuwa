@@ -6,8 +6,8 @@
 　　セクション
 ------------------------------ */
 .section {
-  overflow-x: hidden;
   padding: 3rem 0;
+  overflow-x: hidden;
 
   &.is-bg {
     background: var(--color-gray10);
@@ -28,6 +28,7 @@
       padding: 6.5rem 0 7.75rem;
 
     }
+
     &.banner {
       padding: 6.5rem 0 4.5rem;
     }

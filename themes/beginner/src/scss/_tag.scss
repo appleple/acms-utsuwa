@@ -31,11 +31,11 @@
 }
 
 .tag-filter-selected {
+  display: flex;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style-type: none;
-  display: flex;
-  gap: 1rem;
 
   li {
     font-weight: bold;
@@ -43,8 +43,8 @@
 }
 
 .tag-filter-heading-more {
-  font-weight: normal;
   margin: 1rem 0 0.5rem;
+  font-weight: normal;
   font-size: map.get(global.$font-scales, body-m);
 }
 
@@ -145,7 +145,6 @@
 .tag-item-level6,
 .tag-item-level7,
 .tag-item-level8 {
-
   font-size: map.get(global.$font-scales, body-s);
 
 }
@@ -158,7 +157,6 @@
 .tag-item-level14,
 .tag-item-level15,
 .tag-item-level16 {
-
   font-size: map.get(global.$font-scales, body-m);
 
 }

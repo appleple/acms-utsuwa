@@ -14,15 +14,14 @@
 }
 
 .event-detail {
-  border: 1px solid var(--color-gray30);
-  border-radius: var(--border-radius-md);
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-flow: column wrap;
   gap: 1rem;
+  justify-content: space-between;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
+  border: 1px solid var(--color-gray30);
+  border-radius: var(--border-radius-md);
 
   dt {
     font-weight: bold;
@@ -58,6 +57,7 @@
     dt {
       width: 8rem;
     }
+
     dd {
       flex: 1;
     }
@@ -65,8 +65,8 @@
 
   .event-detail-group {
     flex-direction: row;
-    width: 100%;
     gap: 1rem 2rem;
+    width: 100%;
   }
 }
 

@@ -34,8 +34,8 @@
 .faq-question-button {
   position: relative;
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 
   &.toggle-button {
     padding: 2rem 1rem;
@@ -59,20 +59,20 @@
 }
 
 .faq-answer {
-  margin: 0 1rem;
-  padding: 2rem 0;
   position: relative;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  margin: 0 1rem;
   margin-top: 10px;
+  padding: 2rem 0;
   border-top: 1px solid var(--color-gray30);
 
   .faq-icon,
   .faq-icon a {
     color: var(--color-gray90);
-    text-decoration: none;
     line-height: 1;
+    text-decoration: none;
   }
 
   .entry-style {
@@ -86,7 +86,6 @@
   }
 
   .faq-question-button {
-
     &.toggle-button {
       padding: 2rem;
     }
