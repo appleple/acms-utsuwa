@@ -2,18 +2,15 @@
 <ul class="faq-list">
   <!-- BEGIN entry:loop -->
   <li class="toggle faq js-toggle">
-    <form action="{url}" method="post" class="js-post_include" target="#jsIncludeTo{eid}">
-      <h3 class="faq-question">
-        <button type="submit" name="ACMS_POST_2GET_Ajax" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}">
-          <span class="faq-icon">Q</span>
-          <span class="faq-title">{title}</span>
-          <span class="toggle-icon" aria-hidden="false">
-            <img src="/images/icon-chevron-down.svg" alt="">
-          </span>
-        </button>
-      </h3>
-      <input type="hidden" name="tpl" value="body-answer.html" />
-    </form>
+    <h3 class="faq-question">
+      <button type="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq-answer.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
+        <span class="faq-icon">Q</span>
+        <span class="faq-title">{title}</span>
+        <span class="toggle-icon" aria-hidden="false">
+          <img src="/images/icon-chevron-down.svg" alt="">
+        </span>
+      </button>
+    </h3>
     <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
       <div class="faq-answer">
         <p class="faq-icon"><a href="{url}">A</a></p>
