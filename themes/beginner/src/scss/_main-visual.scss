@@ -12,6 +12,7 @@
   height: var(--mv-height-sp, calc(100svh - 3.5rem));
   min-height: 20rem;
   margin-bottom: 5rem;
+  overflow: hidden;
 
   .main-visual-filter {
     position: absolute;
