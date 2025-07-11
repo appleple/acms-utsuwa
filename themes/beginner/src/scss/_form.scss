@@ -231,16 +231,6 @@ input::placeholder {
   color: red;
 }
 
-/* IE */
-input:input-placeholder {
-  color: red;
-}
-
-/* Edge */
-input::input-placeholder {
-  color: red;
-}
-
 .form-group {
   display: block;
   border: 0;
