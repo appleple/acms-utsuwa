@@ -18,7 +18,9 @@
             <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
           </div>
           <div class="card-text-wrap">
-            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="acms-admin-label">new</span><!-- END new --></time>
+            <div class="card-text-header">
+              <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+            </div>
             <h2 class="card-title">{title}</h2>
             <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
             <p class="card-text">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
@@ -30,10 +32,10 @@
               <!-- BEGIN_IF [{image@path}/nem] -->
               <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
               <!-- ELSE -->
-              <img src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
-            </p>
-            <!-- END_IF -->
-            <!-- END userField -->
+              <img src="{fieldUserIcon}" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+              <!-- END_IF -->
+              <!-- END_IF -->
+              <!-- END userField -->
           </div>
         </a>
       </div>

@@ -4,7 +4,6 @@
 @use "global/common" as global;
 
 
-/* 構築用（後で削除） */
 
 #adminBox {
   margin-top: 20px;
@@ -14,54 +13,55 @@
 　　ベース
 ------------------------------ */
 html {
-  color: global.$color-text;
-  font-family: global.$font-base;
-  line-height: global.$line-height-lg;
-  background: global.$color-white;
+  color: var(--color-text);
+  font-family: var(--font-base);
+  line-height: var(--line-height-lg);
+  background: var(--color-white);
   scroll-behavior: smooth;
-  scroll-padding-top: global.$header-height-fixed + 2rem;
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
-    scroll-padding-top: global.$header-height-pc + 2rem;
+    scroll-padding-top: var(--header-height-fixed);
 
+    &:has(.nav-bottom.sticky) {
+      scroll-padding-top: 12rem;
+    }
+
+    &:has(.logo-center.sticky) {
+      scroll-padding-top: 10rem;
+    }
   }
-}
 
-body {
-  overflow-x: hidden;
 }
 
 /* リンクの設定 */
 a {
   border: none;
-
 }
 
 ::placeholder {
-  color: global.$color-gray60 !important;
+  color: var(--color-gray60) !important;
 }
 
 /* コンテナー */
 .acms-container {
 
-  max-width: global.$container;
-  padding-right: calc(global.$col-gutter / 3);
-  padding-left: calc(global.$col-gutter / 3);
+  max-width: var(--container);
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
 
   @if global.$enable-iphonex ==true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 3));
-    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 3));
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
   }
 
   @media screen and (min-width: acms.$breakpoint-lg-min) {
-    padding-right: calc(global.$col-gutter * 1.5);
-    padding-left: calc(global.$col-gutter * 1.5);
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
 
     @if global.$enable-iphonex ==true {
-      padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter * 1.5));
-      padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter * 1.5));
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
     }
-
   }
 
   .acms-container {
@@ -70,27 +70,25 @@ a {
 }
 
 .container-md {
-
   box-sizing: border-box;
-  max-width: global.$container-md;
+  max-width: var(--container-md);
   margin: 0 auto;
-  padding-right: calc(global.$col-gutter / 2);
-  padding-left: calc(global.$col-gutter / 2);
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
 
   @if global.$enable-iphonex ==true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 2));
-    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 2));
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
   }
 
   @media screen and (min-width: acms.$breakpoint-lg-min) {
-    padding-right: global.$col-gutter;
-    padding-left: global.$col-gutter;
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
 
     @if global.$enable-iphonex ==true {
-      padding-right: calc(env(safe-area-inset-right) + global.$col-gutter );
-      padding-left: calc(env(safe-area-inset-left) + global.$col-gutter );
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
     }
-
   }
 
   .container-md {
@@ -101,19 +99,29 @@ a {
 .container-sm {
   --gutter: var(--gutter-sm);
   box-sizing: border-box;
-  max-width: global.$container-sm;
+  max-width: var(--container-sm);
   margin: 0 auto;
-  padding-right: calc(global.$col-gutter / 2);
-  padding-left: calc(global.$col-gutter / 2);
+  padding-right: calc(var(--col-gutter) / 2);
+  padding-left: calc(var(--col-gutter) / 2);
 
   @if global.$enable-iphonex ==true {
-    padding-right: calc(env(safe-area-inset-right) + (global.$col-gutter / 2));
-    padding-left: calc(env(safe-area-inset-left) + (global.$col-gutter / 2));
+    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
+    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-lg-min) {
+    padding-right: calc(var(--col-gutter) * 1.5);
+    padding-left: calc(var(--col-gutter) * 1.5);
+
+    @if global.$enable-iphonex ==true {
+      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
+      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+    }
   }
 }
 
 .content-wrapper {
-  padding: global.$page-title-margin-bottom 0 0;
+  padding: var(--page-title-margin-bottom) 0 0;
 
   &.is-_top {
     padding: 0;
@@ -121,48 +129,41 @@ a {
 }
 
 @media screen and (min-width: acms.$breakpoint-lg-min) {
-
   .content-wrapper {
-    padding: global.$page-title-margin-bottom-md 0 0;
+    padding: var(--page-title-margin-bottom-md) 0 0;
 
     &.two-columns {
       display: flex;
       justify-content: space-between;
-
     }
   }
 }
 
 /* グリッド */
 .acms-grid {
-  margin: 0 calc(global.$unit-gutter-var / -2);
+  margin: 0 calc(var(--unit-gutter-var) / -2);
 }
 
 [class*="acms-col"] {
-  padding-right: calc(global.$unit-gutter-var / 2);
-  padding-left: calc(global.$unit-gutter-var / 2);
+  padding-right: calc(var(--unit-gutter-var) / 2);
+  padding-left: calc(var(--unit-gutter-var) / 2);
 }
 
-.main {
-  margin: 0 0 5rem;
-}
-
-@media screen and (min-width: acms.$breakpoint-md-min) {
-  .main {
-    margin: 0 0 6.5rem;
-  }
-}
 
 /* 2カラム */
+
+.side-container {
+  padding-top: 1rem;
+}
+
 @media screen and (min-width: acms.$breakpoint-lg-min) {
   .main-container {
-    width: global.$width-main-container;
+    width: var(--width-main-container);
     padding-top: 1rem;
   }
 
-  .sub-container {
-    width: global.$width-sub-container;
-    padding-top: 1rem;
+  .side-container {
+    width: var(--width-side-container);
   }
 }
 
@@ -170,7 +171,7 @@ a {
 .sticky-contents {
   position: fixed;
   bottom: 0;
-  z-index: global.$zindex-fixed-contents;
+  z-index: var(--zindex-fixed-contents);
   display: none;
   box-sizing: border-box;
   width: 100%;

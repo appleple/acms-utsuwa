@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  box-shadow: var(--box-shadow);
 
   .js &.js-animation-row {
     opacity: 0;
@@ -24,11 +25,12 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  line-height: global.$line-height-base;
+  line-height: var(--line-height-base);
 
   &:first-child {
     .headline-link {
-      border-radius: global.$border-radius-lg global.$border-radius-lg 0 0;
+      border-top-left-radius: var(--border-radius-lg);
+      border-top-right-radius: var(--border-radius-lg);
     }
   }
 
@@ -36,7 +38,8 @@
     border: 0;
 
     .headline-link {
-      border-radius: 0 0  global.$border-radius-lg global.$border-radius-lg;
+      border-bottom-right-radius: var(--border-radius-lg);
+      border-bottom-left-radius: var(--border-radius-lg);
     }
   }
 }
@@ -45,11 +48,10 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  color: global.$color-text;
+  color: var(--color-text);
   text-decoration: none;
-  background: global.$color-white;
-  border-bottom: global.$border-width-sm solid global.$color-gray10;
-  box-shadow: global.$elevation02;
+  background: var(--color-white);
+  border-bottom: var(--border-width-sm) solid var(--color-gray10);
 
   .headline-item:last-child & {
     border: 0;
@@ -59,12 +61,13 @@
   &:visited,
   &:active,
   &:focus {
-    color: global.$color-text;
+    color: var(--color-text);
   }
 
   &:hover {
-    background: global.$color-gray10;
-    box-shadow: global.$elevation10;
+    position: relative;
+    background: var(--color-hover-bg-2nd);
+    box-shadow: var(--box-shadow-hover);
   }
 }
 
@@ -73,14 +76,14 @@
   flex-wrap: wrap;
   align-items: center;
   margin: 0 0 0.75rem;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
 }
 
 .headline-date {
   margin-right: 0.5rem;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
 }
 
 .headline-category {
@@ -99,7 +102,7 @@
   margin: 0.25rem 0.5rem 0 0;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-ss;
+  line-height: var(--line-height-ss);
   vertical-align: text-top;
 }
 

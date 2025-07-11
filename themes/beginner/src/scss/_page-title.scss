@@ -9,23 +9,23 @@
   position: relative;
   display: table;
   width: 100%;
-  height: global.$page-title-height;
-  color: global.$color-text;
-  background: global.$color-gray10;
+  height: var(--page-title-height);
+  color: var(--color-text);
+  background: var(--color-page-title-bg);
   background-position: center;
   background-size: cover;
 
   &[style] {
-    height: global.$page-title-height-image;
-    color: global.$color-text-inverse;
+    color: var(--color-white);
     text-align: center;
+    background-color: var(--color-white);
 
     .page-title-filter {
       display: block;
     }
 
     .page-title-en {
-      color: global.$color-text-inverse;
+      color: var(--color-white);
     }
   }
 }
@@ -37,11 +37,18 @@
   vertical-align: middle;
 }
 
+.page-title-filter {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: var(--page-title-filter);
+}
+
 .page-title {
   margin: 0;
   font-weight: bold;
-  font-size: map.get(global.$font-scales, heading-ss);
-  line-height: global.$line-height-sm;
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-sm);
   word-break: break-all;
 }
 
@@ -65,20 +72,23 @@
 }
 
 .page-title-en {
-  margin: 0.25rem 0 0;
-  color: global.$color-text-side;
+  margin: 0;
+  color: var(--color-text-2nd);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
+  text-transform: capitalize;
 }
+
+
 
 @media (min-width: acms.$breakpoint-md-min) {
   .page-title-wrapper {
-    height: global.$page-title-height-md;
+    height: var(--page-title-height-md);
 
-    &[style] {
-      height: global.$page-title-height-image-md;
-    }
+    // &[style] {
+    //   height: var(--page-title-height-image)-md;
+    // }
   }
 
 
@@ -97,10 +107,13 @@
 　　ページサブタイトル
 ------------------------------ */
 
-
 .page-sub-title {
   font-size: map.get(global.$font-scales, heading-m);
-  color: global.$color-gray100;
+  color: var(--color-text);
   margin: 0 0 2rem;
 
+}
+
+.category-header {
+  margin-bottom: 3rem;
 }

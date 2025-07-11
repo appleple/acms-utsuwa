@@ -17,9 +17,11 @@
                   <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" width="455" height="256" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
                 </div>
                 <div class="card-text-wrap">
-                  <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="acms-admin-label">new</span><!-- END new --></time>
-                  <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-                  <p class="card-category">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+                  <div class="card-text-header">
+                    <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+                    <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+                    <p class="card-category">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+                  </div>
                   <h2 class="card-title">{title}</h2>
                   <!-- BEGIN summary:veil -->
                   <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->

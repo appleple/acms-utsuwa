@@ -1,0 +1,22 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="container-md">
+  <!-- エントリー本文 -->
+  @include("/include/entry/body-works.html", {"module_id": "body_blog", "tag":"on", "sns":"on"})
+
+  <!-- 関連エントリー -->
+  <!-- BEGIN_MODULE Touch_Entry -->
+  @include("/include/entry/tagrelational-works.html", {"module_id": "tag_relational_works"})
+  <!-- END_MODULE Touch_Entry -->
+</div>
+
+@endsection
+
+@section("side")
+@endsection
+
+@section("footer-cta")
+<!-- CTA：仕事募集 -->
+@include("/include/parts/cta.html", {"module_id":"cta_request"})
+@endsection

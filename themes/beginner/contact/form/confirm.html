@@ -1,40 +1,41 @@
-  <h3 class="heading-sm heading-margin-top-none ">お問い合わせ情報</h3>
-  <table class="form-group-list">
-    <tbody class="form-group-inner">
-      <tr class="form-group">
-        <th class="form-label">ご用件</th>
-        <td class="form-control">{description}</td>
-      </tr>
-      <tr class="form-group">
-        <th class="form-label">お問い合わせ内容</th>
-        <td class="form-control">{inquiry}[nl2br]</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 class="heading-sm heading-margin-top-none">お客様情報</h3>
-  <table class="form-group-list">
-    <tbody class="form-group-inner">
-      <tr class="form-group">
-        <th class="form-label">所属</th>
-        <td class="form-control">{organization}</td>
-      </tr>
-      <tr class="form-group">
-        <th class="form-label">お名前</th>
-        <td class="form-control">{name}</td>
-      </tr>
-      <tr class="form-group">
-        <th class="form-label">メールアドレス</th>
-        <td class="form-control">{email}</td>
-      </tr>
-      <tr class="form-group">
-        <th class="form-label">お電話番号</th>
-        <td class="form-control">{tel}</td>
-      </tr>
-      <tr class="form-group">
-        <th class="form-label">ご住所</th>
-        <td class="form-control">〒{postal-code}<br />
-          {address-level1}{address1}{address2}</td>
-      </tr>
-    </tbody>
-  </table>
+<h3 class="heading-md heading-padding-top-none ">お問い合わせ情報</h3>
+<ul class="form-group-list is-confirm">
+  <li class="form-group">
+    <div class="form-label">ご用件</div>
+    <div class="form-control">{subject}</div>
+  </li>
+  <li class="form-group">
+    <div class="form-label">お問い合わせ内容</div>
+    <div class="form-control">{inquiry}[nl2br]</div>
+  </li>
+</ul>
+<h3 class="heading-md heading-padding-top-none">お客様情報</h3>
+<ul class="form-group-list is-confirm">
+  <li class="form-group-inner">
+    <!-- BEGIN organization:veil -->
+    <li class="form-group">
+      <div class="form-label">所属</div>
+      <div class="form-control">{organization}</div>
+    </li>
+    <!-- END organization:veil -->
+    <li class="form-group">
+      <div class="form-label">お名前</div>
+      <div class="form-control">{name}</div>
+    </li>
+    <li class="form-group">
+      <div class="form-label">メールアドレス</div>
+      <div class="form-control">{email}</div>
+    </li>
+    <!-- BEGIN tel:veil -->
+    <li class="form-group">
+      <div class="form-label">お電話番号</div>
+      <div class="form-control">{tel}</div>
+    </li>
+    <!-- END tel:veil -->
+    <li class="form-group">
+      <div class="form-label">ご住所</div>
+      <div class="form-control">〒{postal-code}<br />
+        {address-level1}{address1}{address2}</div>
+    </li>
+  </div>
+  </div>

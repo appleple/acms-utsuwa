@@ -1,43 +1,55 @@
-<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id|default("summary_index_date")}}" -->
 <div>
-  @include("/include/edit/module-custom.html")
-  <ul class="card-list"><!-- BEGIN unit:loop -->
-    <!-- BEGIN entry:loop -->
-    <li class="{entry:loop.class} card-item">
-      <div class="card">
-        <a href="{url}" class="card-link">
-          <div class="card-img-wrap"><!-- BEGIN image:veil -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
-          </div>
-          <div class="card-text-wrap">
-            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="acms-admin-label">new</span><!-- END new --></time>
-            <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-            <p class="card-category">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
-            <h2 class="card-title">{title}</h2>
-            <!-- BEGIN summary:veil -->
-            <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
+  <!-- BEGIN notFound -->
+  <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+  <p class="result-text">「%{KEYWORD}」に一致する記事は見つかりませんでした。</p><!-- ELSE -->
+  <p class="result-text">ただいまページを準備しております。もうしばらくお待ちください。</p>
+  <!-- END_IF -->
+  <div class="result-button">
+    <a href="%{ROOT_BLOG_URL}" class="button is-lg is-bordered">ホームへ戻る</a>
+  </div>
+  <!-- END notFound -->
+  <!-- BEGIN media-list-wrap:veil -->
+  <div class="media-list-wrap">
+    <!-- BEGIN_IF [{{item-amount}}/eq/on] -->
+    <!-- BEGIN itemsAmount:veil -->
+    <p class="media-item-amount">「%{KEYWORD}」の検索結果　{itemsAmount}件</p>
+    <!-- END itemsAmount:veil -->
+    <!-- END_IF -->
+    <ul class="media-list"><!-- BEGIN unit:loop -->
+      <!-- BEGIN entry:loop -->
+      <li class="media-item">
+        <a href="{url}" class="media-link<!-- BEGIN_IF [{path}/em] --> is-noimage<!-- END_IF -->">
+          <!-- BEGIN image:veil -->
+          <div class="media-item-img">
+            <div class="media-img-wrap">
+              <img src="%{ROOT_DIR}{path}[resizeImg('480','270')]" alt="" width="480" height="270" class="acms-img-responsive media-img">
+            </div>
+          </div><!-- END image:veil -->
+          <div class="media-item-text">
+            <div class="media-item-header">
+              <time class="media-time" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time><!-- BEGIN new --><span class="label">New</span><!-- END new -->
+              <!-- BEGIN categoryField --><span class="media-category">{fieldCategoryName}</span><!-- END categoryField -->
+              <h2 class="media-title">{title}</h2>
+            </div>
+            <p class="media-text">{summary}[trim(280, '...')]</p>
             <!-- BEGIN tag:veil -->
-            <ul class="tag-list is-sm">
-              <!-- BEGIN tag:loop -->
-              <li class="tag-item">#{name}</li>
-              <!-- END tag:loop -->
-            </ul>
-            <!-- END tag:veil -->
-            <!-- BEGIN userField -->
-            <p class="card-author">
-              <!-- BEGIN_IF [{image@path}/nem] -->
-              <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
-              <!-- ELSE -->
-              <img src="{fieldUserIcon}" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
-              <!-- END_IF -->
-            </p>
-            <!-- END userField -->
+            <div class="media-tag-wrap">
+              <ul class="tag-list is-sm" aria-label="関連タグ">
+                <!-- BEGIN tag:loop -->
+                <li class="tag-item">#{name}</li>
+                <!-- END tag:loop -->
+              </ul>
+            </div><!-- END tag:veil -->
+            <p class="media-read-more">詳しく見る <span class="icon-button">@include("/images/icon-button.svg")</span></p>
           </div>
         </a>
-      </div>
-    </li><!-- END entry:loop -->
-    <!-- END unit:loop -->
-  </ul>
-  @include("/include/parts/pager.html")
+      </li><!-- END entry:loop -->
+      <!-- END unit:loop -->
+    </ul>
+  </div>
+  <!-- END media-list-wrap:veil -->
+
 </div>
+@include("/include/parts/pager-read-more.html")
 <!-- END_MODULE Entry_Summary -->

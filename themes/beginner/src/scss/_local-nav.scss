@@ -7,7 +7,7 @@
 ------------------------------ */
 .local-nav-wrap {
   position: relative;
-  padding: 0 0 1rem;
+  padding: 0 0 2rem;
 
   &::after {
     position: absolute;
@@ -16,12 +16,12 @@
     bottom: 0;
     display: block;
     width: 1rem;
-    background: linear-gradient(90deg, rgb(255 255 255 / 0%), global.$color-white);
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
     content: "";
   }
 
   .page-title-wrapper+& {
-    margin-top: -(global.$page-title-margin-bottom);
+    margin-top: -(var(--page-title-margin-bottom));
   }
 }
 
@@ -35,7 +35,6 @@
 
 .local-nav {
   font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
 }
 
 .local-nav-list {
@@ -52,7 +51,7 @@
 .local-nav-link {
   display: flex;
   align-items: center;
-  color: global.$color-text;
+  color: var(--color-text);
   text-decoration: none;
 
   .icon-button {
@@ -62,7 +61,7 @@
   &:hover,
   &:visited,
   &:active {
-    color: global.$color-text;
+    color: var(--color-text);
     text-decoration: none;
   }
 }
@@ -72,12 +71,8 @@
     padding: 0 0 3rem;
 
     .page-title-wrapper+& {
-      margin-top: -(global.$page-title-margin-bottom-md);
+      margin-top: -(var(--page-title-margin-bottom-md));
     }
-  }
-
-  .local-nav {
-    font-size: map.get(global.$font-scales, body-m);
   }
 
 }

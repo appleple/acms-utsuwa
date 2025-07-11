@@ -47,7 +47,7 @@
 }
 
 .topicpath-link {
-  color: global.$color-text;
+  color: var(--color-text);
   text-decoration: none;
   font-size: map.get(global.$font-scales, body-s);
 

@@ -1,0 +1,57 @@
+@extends("/_layouts/base.html")
+
+@section("page-title")
+
+<!-- ページタイトル -->
+<!-- BEGIN_IF [%{ECD}/nem] -->
+<!-- BEGIN_MODULE Entry_Field -->
+<div class="entry-header-visual">
+  <div class="entry-header-visual-inner"><!-- BEGIN bg-image:veil -->
+    <img src="%{MEDIA_ARCHIVES_DIR}{bg-image@path}" alt="" class="entry-header-visual-img" width="{bg-image@path}[imageRatioSizeW(380)]" height="380">
+    <!-- END bg-image:veil -->
+  </div>
+  <div class="acms-container">
+    <div class="acms-grid">
+      <div class="entry-header-visual-box">
+        <h1 class="entry-header-visual-title entryTitle">{title}</h1>
+        <p class="entry-header-visual-desc">{page-description}</p>
+        <!-- BEGIN btn:veil -->
+        <p class="entry-header-visual-btn-wrap"><a href="{btn-url}" class="button is-inverse">{btn-text}</a></p>
+        <!-- END btn:veil -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Entry_Field -->
+<!-- ELSE -->
+@include("/include/parts/page-title-entry.html")
+<!-- END_IF -->
+@endsection
+
+@section("main")
+<div class="container-md">
+  <!-- エントリー本文：採用情報用 -->
+  @include("/include/entry/body-recruit.html", {"module_id": "body_no_date"})
+</div>
+
+<!-- BEGIN_IF [%{ECD}/nem/_and_/%{QUERY}/nlk/step] -->
+<!-- エントリーサマリー：募集中の職種 -->
+@include("/include/entry/summary-recruit-footer.html", {"module_id": "top_recruit", "module_heading":"募集中の職種"})
+<!-- END_IF -->
+@endsection
+
+@section("footer-cta")
+<!-- BEGIN_IF [%{ECD}/em] -->
+<!-- Call to Action -->
+@include("/include/parts/cta-visual.html", {"module_id": "cta_visual"})
+<!-- END_IF -->
+<!-- BEGIN_MODULE Touch_NotEdit -->
+<div class="js-sticky sticky-contents is-centered is-bg">
+  <div class="acms-container">
+    <!-- 応募ボタン -->
+    <!-- BEGIN_MODULE Entry_Field --><!-- BEGIN btn-url:veil -->
+    <a href="{btn-url}" class="button is-width-lg is-shadow">{btn-text}</a>
+    <!-- END btn-url:veil --><!-- END_MODULE Entry_Field -->
+  </div>
+</div><!-- END_MODULE Touch_NotEdit -->
+@endsection

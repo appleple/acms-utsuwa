@@ -9,32 +9,25 @@
 .event-calendar {
   width: 100%;
 
-  thead {
-    padding-bottom: 1rem;
-  }
-
-  tbody {
-    padding-top: 0.25rem;
-  }
 
   .is-week-0 {
-    color: global.$color-text-sunday;
+    color: var(--color-text-sunday);
   }
 
   .is-week-6 {
-    color: global.$color-text-saturday;
+    color: var(--color-text-saturday);
   }
 }
 
 .calendar-label {
   padding: 0.5rem 0;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-weight: normal;
 }
 
 .calendar-day {
   padding: 0.5rem 0;
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
 }
 
 .calendar-day-has {
@@ -43,23 +36,22 @@
   justify-content: center;
   margin: -0.5rem auto;
   padding: 0.5rem 0;
-  color: global.$color-text;
+  color: currentColor;
   font-weight: bold;
   text-decoration: none;
-  background: global.$color-primary-bg;
+  background: var(--color-gray10);
   border-radius: 0.25rem;
   transition: background-color 0.2s;
 
   &:hover {
-    color: global.$color-text;
-    background: global.$color-primary-bg-hover;
+    background: var(--color-hover-bg-2nd);
   }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .calendar-label {
     width: 3.5rem;
-    padding: 0.5rem 0;
+    padding: 0 0 0.75rem;
   }
 
   .calendar-day {
@@ -92,7 +84,7 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: var(--col-gutter);
   margin: 0;
   padding: 0 1rem 2rem;
   list-style: none;
@@ -134,7 +126,7 @@
 
 .event-calendar-table {
   width: 100%;
-  padding-bottom: global.$entry-el-margin-md;
+  padding-bottom: var(--entry-el-margin-md);
 
   tr {
     border-bottom: 1px solid #ddd;
@@ -174,20 +166,19 @@
 }
 
 .event-calendar-table {
-  .event-calendar-item {}
 
   .event-calendar-item-link {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     text-decoration: none;
-    color: global.$color-text
+    color: var(--color-text);
   }
 
   .calendar-item-img-wrap {
     width: 10rem;
     aspect-ratio: 16 / 9;
-    border-radius: global.$border-radius-lg;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
 
     img {
@@ -220,10 +211,10 @@
   margin: 0;
   padding: 0.5rem;
   font-size: map.get(global.$font-scales, heading-ss);
-  font-weight: normal;
+  font-weight: bold;
 
   a {
-    color: global.$color-text;
+    color: var(--color-text);
     text-decoration: none;
 
     &:hover {
@@ -267,6 +258,7 @@
 
 .calendar-pagination-item-previous {
   left: 1rem;
+
   .icon-button {
     margin-right: 0.5rem;
   }
@@ -274,6 +266,7 @@
 
 .calendar-pagination-item-next {
   right: 1rem;
+
   .icon-button {
     margin-left: 0.5rem;
   }
@@ -282,7 +275,7 @@
 .calendar-pagination-link {
   display: flex;
   align-items: center;
-  color: global.$color-gray100;
+  color: var(--color-text);
   text-decoration: none;
   padding: 0.5rem 0;
   font-weight: bold;
@@ -296,8 +289,9 @@
 
   .calendar-pagination-title {
     font-size: map.get(global.$font-scales, heading-m);
-  &.is-return {
-    transform: translateY(0);
-  }
+
+    &.is-return {
+      transform: translateY(0);
+    }
   }
 }

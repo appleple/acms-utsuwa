@@ -17,7 +17,7 @@
 
 .tag-box {
   padding: 1rem 0.5rem 0.25rem;
-  background: global.$color-gray20;
+  background: var(--color-gray20);
 }
 
 .tag-filter {
@@ -36,6 +36,7 @@
   list-style-type: none;
   display: flex;
   gap: 1rem;
+
   li {
     font-weight: bold;
   }
@@ -60,29 +61,27 @@
     padding: 0;
 
     .tag-link {
-      border-bottom: 1px dotted global.$color-gray100;
+      border-bottom: 1px dotted var(--color-text);
     }
   }
-
-
 }
 
 .tag-item {
-  color: global.$color-text-side;
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-m);
 
   .tag-list.is-sm & {
     font-size: map.get(global.$font-scales, body-s);
   }
-  
+
 }
 
 .tag-link {
   display: inline-block;
   box-sizing: border-box;
-  color: global.$color-text;
+  color: var(--color-text);
   text-decoration: none;
-  background: global.$color-white;
+  background: var(--color-white);
 
   &:link,
   &:visited {
@@ -91,13 +90,13 @@
 
   &:active,
   &:focus {
-    color: global.$color-text;
+    color: var(--color-text);
   }
 
   &:any-link:hover {
-    color: global.$color-text;
-    text-decoration: none;
-    background: global.$color-gray10;
+    color: var(--color-text);
+    border-color: transparent;
+    border-radius: var(--border-radius-lg);
   }
 }
 
@@ -122,7 +121,6 @@
     flex-direction: row;
     gap: 0.25rem 1rem;
     margin: 0;
-    // padding: 0.75rem 0;
   }
 
   .tag-item {
@@ -144,31 +142,29 @@
 .tag-item-level3,
 .tag-item-level4,
 .tag-item-level5,
-.tag-item-level6 {
+.tag-item-level6,
+.tag-item-level7,
+.tag-item-level8 {
+
   font-size: map.get(global.$font-scales, body-s);
 
 }
 
-.tag-item-level7,
-.tag-item-level8,
 .tag-item-level9,
 .tag-item-level10,
 .tag-item-level11,
-.tag-item-level12 {
+.tag-item-level12,
+.tag-item-level13,
+.tag-item-level14,
+.tag-item-level15,
+.tag-item-level16 {
+
   font-size: map.get(global.$font-scales, body-m);
 
 }
 
-.tag-item-level13,
-.tag-item-level14,
-.tag-item-level15,
-.tag-item-level16,
 .tag-item-level17,
-.tag-item-level18 {
-  font-size: map.get(global.$font-scales, heading-ss);
-
-}
-
+.tag-item-level18,
 .tag-item-level19,
 .tag-item-level20,
 .tag-item-level21,
@@ -176,6 +172,6 @@
 .tag-item-level23,
 .tag-item-level24,
 .tag-item-level25 {
-  font-size: map.get(global.$font-scales, heading-s);
+  font-size: map.get(global.$font-scales, heading-ss);
 
 }

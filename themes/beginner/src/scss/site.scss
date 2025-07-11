@@ -16,18 +16,17 @@
 @use "badge-label";
 @use "banner";
 @use "button";
+@use "content-loading";
 @use "calendar";
 @use "card";
-@use "carousel";
+@use "related-site";
 @use "cta";
 @use "global-nav";
 @use "global-mobile-nav";
 @use "headline";
-@use "index";
 @use "faq";
 @use "form";
 @use "list";
-@use "content-loading";
 @use "local-nav";
 @use "main-visual";
 @use "media";
@@ -35,12 +34,12 @@
 @use "pager";
 @use "profile";
 @use "search-form";
+@use "splide";
 @use "tag";
 @use "toggle";
 @use "topicpath";
 @use "type";
 @use "video-modal";
-@use "splide";
 
 // コンテンツ
 @use "unit";
@@ -55,6 +54,8 @@
 @use "header";
 
 // 追加コンテンツ
-@use "realestate";
-@use "works";
-@use "event";
+@use "recruit";
+
+@use "option/realestate";
+@use "option/works";
+@use "option/event";

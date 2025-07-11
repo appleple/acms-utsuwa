@@ -5,19 +5,16 @@
   padding: 2px 0;
   color: $color;
   text-decoration: none;
-  border-bottom: 1px dotted $border;
+
+  &:not(:has(img)) {
+    border-bottom: 1px dotted $border;
+  }
 
   &:hover {
     border-color: transparent;
+    text-decoration: none;
   }
 
-  &[href^="tel:"] {
-    // border-bottom: var.$border-width-sm dashed;
-    .text-btn & {
-      color: #FFF;
-    }
-    &:hover {
-      border-color: transparent;
-    }
-  }
+
 }
+

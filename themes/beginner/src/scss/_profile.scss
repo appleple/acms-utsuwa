@@ -10,8 +10,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 1.5rem 1rem;
-  background: global.$color-gray10;
-  border-radius: global.$border-radius-sm;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-sm);
 }
 
 .profile-body {
@@ -40,20 +40,20 @@
   margin: 0 0.5rem 0 0;
 
   font-size: map.get(global.$font-scales, body-s);
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
 }
 
 .profile-name {
   margin: 0;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
 }
 
 .profile-text {
   margin: 0;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: global.$line-height-lg;
+  line-height: var(--line-height-lg);
 }
 
 .profile-footer {
@@ -63,10 +63,11 @@
 .profile-author-link {
   margin: 1rem 0 0;
   text-align: right;
+
   a {
     font-size: map.get(global.$font-scales, body-s);
-
-    color: global.$color-gray100;
+    color: var(--color-text);
+    font-weight: bold;
     text-decoration: none;
 
     &:hover {
@@ -121,6 +122,7 @@
   .profile-name {
     font-size: map.get(global.$font-scales, body-m);
   }
+
   .profile-footer {
     position: absolute;
     right: 2rem;

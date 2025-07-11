@@ -165,37 +165,4 @@
 
 </div>
 
-<div class="realestate-map realestate-map-entry js-open-street-map-editable" style="margin: 10px;">
-	<h3 class="acms-admin-margin-bottom-mini">物件地図</h3>
-	<div class="acms-admin-margin-bottom-mini acms-admin-osm-container">
-		<div class="acms-admin-gmap-container js-open-street-map-picker"></div>
-	</div>
-	<div class="acms-admin-margin-bottom-small">
-    <!-- BEGIN_IF [{map_lat}/nem] -->
-		<label for="input-text-map_lat"><strong>緯度</strong></label> <input type="text" name="map_lat" value="{map_lat}" size="20" id="input-text-map_lat" class="js-osm-lat">
-		<label for="input-text-map_lng"><strong>経度</strong></label> <input type="text" name="map_lng" value="{map_lng}" size="20" id="input-text-map_lng" class="js-osm-lng">
-		<label for="input-text-map_zoom"><strong>ズーム</strong></label> <input type="text" name="map_zoom" value="{map_zoom}" size="5" id="input-text-map_zoom" class="js-osm-zoom">
-    <!-- ELSE -->
-		<label for="input-text-map_lat">緯度</label> <input type="text" name="map_lat" value="35.172782255170084" size="20" id="input-text-map_lat" class="js-osm-lat">
-		<label for="input-text-map_lng">経度</label> <input type="text" name="map_lng" value="136.88741683959964" size="20" id="input-text-map_lng" class="js-osm-lng">
-		<label for="input-text-map_zoom">ズーム</label> <input type="text" name="map_zoom" value="8" size="5" id="input-text-map_zoom" class="js-osm-zoom">
-    <!-- END_IF -->
-    <input type="hidden" name="field[]" value="map_lat">
-		<input type="hidden" name="field[]" value="map_lng">
-		<input type="hidden" name="field[]" value="map_zoom">
-		<input type="hidden" class="js-osm-msg">
-	</div>
-<!--
-	<div class="acms-admin-grid">
-		<div class="acms-admin-col-md-6">
-			<label for="input-text-map-search">検索</label>
-			<div class="acms-admin-form-action acms-admin-form-action-seperate">
-				<input type="text" name="" value="" id="input-text-map-search" class="js-osm-search acms-admin-form-width-full">
-				<span class="acms-admin-form-side-btn"><input type="button" name="" value="検索" class="js-osm-search-btn acms-admin-btn"></span>
-			</div>
-		</div>
-	</div>
--->
-</div>
-
 </div>

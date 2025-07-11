@@ -13,12 +13,16 @@
   margin: 0 0 1rem;
   font-weight: bold;
   font-size: 1.25rem;
-  line-height: global.$line-height-sm;
+  line-height: var(--line-height-sm);
   text-align: center;
 }
 
 .not-found-paragraph {
-  margin: 0 0 2.5rem;
+  margin: 0 0 2rem;
+
+  a {
+    @include global.entry-link(var(--color-link), var(--color-text));
+  }
 }
 
 .not-found-search {
@@ -51,7 +55,4 @@
 
   }
 
-  .not-found-paragraph {
-    margin: 0 0 2.5rem;
-  }
 }

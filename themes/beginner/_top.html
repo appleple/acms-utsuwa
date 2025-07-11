@@ -1,52 +1,56 @@
-<!DOCTYPE html>
-<html class="no-js" lang="ja" scroll-behavior="smooth">
-  <head>
-    @include("/include/head/meta.html")
-    @include("/include/head/link.html")
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    @include("/include/head/js.html")
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="/js/top.js"></script>
-  </head>
-  <body id="top">
-    @include("/include/body-start.html")
+@extends("/_layouts/base.html")
 
-    <!-- ヘッダー -->
-    @include("/include/header/header.html")
+@section("head-link")
+@parent
+<!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- サイトトップページ用 構造化データ -->
+@include("/include/head/structured-data-sitetop.html")
+<!-- END_MODULE Touch_RootBlog -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+@endsection
 
-    @include("/include/top/top-main-visual.html", {"module_id": "MF_main_visual"})
+@section("head-js")
+@parent
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="/js/top.js"></script>
+@endsection
 
-    <div class="acms-container">
-      <!-- ※管理用パーツ -->
-      @include("/admin/action.html")
-      @include("/admin/switch-user.html")
-    </div>
+@section("page-title")
+@endsection
 
-    <div class="content-wrapper">
+@section("topicpath")
+@endsection
 
-    <!-- エントリーサマリー&バナー：最新情報 -->
-    @include("/include/top/summary-top-news.html", {"module_id": "top_news"})
+@section("admin-part")
+@endsection
 
-    <hr class="section-separator">
+@section("content-wrapper")
+@section("main")
 
-    <!-- エントリーサマリー：事業内容 -->
-    @include("/include/top/summary-top-realestate.html", {"module_id": "top_realestate"})
+<!-- トップ用メインビジュアル -->
+@include("/include/top/top-main-visual.html", {"module_id": "top_main_visual"})
 
-    <hr class="section-separator">
+<div class="acms-container">
+  <!-- ※管理用パーツ -->
+  @include("/admin/action.html")
+  @include("/admi n/switch-user.html")
+</div>
 
-    <!-- バナーモジュール -->
-    @include("/include/parts/banner-bordered.html", {"module_id": "top_banner"})
+<!-- エントリーサマリー：お知らせ -->
+@include("/include/top/summary-top-news.html", {"module_id": "top_news"})
 
-    </div>
+<hr class="section-separator">
 
-    <!-- BEGIN_MODULE Touch_Login -->
-    <!-- 確認用テンプレート -->
-    <div class="acms-margin-top-large">
-      @include("/include/check-seo.html")
-    </div><!-- END_MODULE Touch_Login -->
+<!-- エントリーサマリー：物件情報 -->
+@include("/include/top/summary-top-realestate.html", {"module_id": "top_realestate"})
 
-    <!-- フッター -->
-    @include("/include/footer/footer.html")
-    @include("/include/body-end.html")
-  </body>
-</html>
+<!-- 採用情報 -->
+@include("/include/parts/cta-visual.html", {"module_id": "cta_visual"})
+
+<!-- バナーモジュール -->
+@include("/include/parts/banner-bordered.html", {"module_id": "top_banner"})
+@endsection
+@endsection
+
+@section("footer-cta")
+@endsection

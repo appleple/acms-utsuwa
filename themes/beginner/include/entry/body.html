@@ -8,7 +8,11 @@
 
 <!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
-
+<!-- BEGIN_SetRendered id="twitter-creator" -->
+<!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
+<meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
+<!-- END userField -->
+<!-- END_SetRendered -->
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
@@ -27,8 +31,8 @@
       <h2 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h2>
       <!-- END_MODULE Touch_NotEntry -->
       <div class="entry-header-info">
-
-        <div class="entry-header-date"><!-- BEGIN date:veil -->
+        <!-- BEGIN date:veil -->
+        <div class="entry-header-date">
           <time datetime="{date#Y}-{date#n}-{date#j}" class="entry-header-time">
             {date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）
           </time><!-- END date:veil --><!-- BEGIN new --><span class="label is-md">NEW</span><!-- END new -->
@@ -39,6 +43,7 @@
           <!-- END glue --><!-- END category:loop -->
         </div><!-- END category:veil -->
       </div>
+      <!-- BEGIN_IF [{{tag}}/eq/on] -->
       <!-- BEGIN tag:veil -->
       <ul class="tag-list">
         <!-- BEGIN tag:loop -->
@@ -46,14 +51,13 @@
         <!-- END tag:loop -->
       </ul>
       <!-- END tag:veil -->
-
+      <!-- END_IF -->
     </header>
     <!-- END title:veil --><!-- END_IF -->
 
     <!-- BEGIN entry:veil -->
-    <div class="acms-entry entry-style">
+    <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
       <div class="entry-style-grid">
-
         <!-- カスタムフィールドの読み込み -->
         @include("/include/entry/field.html")
 
@@ -83,11 +87,12 @@
     </div>
   </div>
   <!-- BEGIN_MODULE Touch_Entry -->
-  <footer class="entry-footer"><!-- BEGIN_IF [{{sns}}/eq/on] -->
+  <!-- BEGIN_IF [{{sns}}/eq/on] -->
+  <footer class="entry-footer">
     <!-- SNSシェアボタン -->
     @include("/include/parts/sns-share.html")
-    <!-- END_IF -->
   </footer>
+  <!-- END_IF -->
   <!-- END_MODULE Touch_Entry -->
 </article>
 <!-- END entry:loop -->

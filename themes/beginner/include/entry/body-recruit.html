@@ -13,15 +13,11 @@
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
 </div><!-- END_MODULE Touch_Login -->
-
 <article class="entry clearfix {entry:loop.class}">
   @include("/admin/entry/title.html")
+  <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
 
-  <!-- BEGIN_IF [%{ECD}/nem] -->
-  <!-- エントリーのタイトル　開始▼▼ -->
-  <!-- BEGIN title:veil -->
 
-  <!-- END title:veil --><!-- END_IF -->
   <!-- BEGIN entry:veil -->
   <div class="js-sticky-area">
     <div class="acms-entry entry-style">
@@ -44,6 +40,7 @@
     </div>
   </div>
   <!-- END entry:veil -->
+  <!-- END_IF -->
 
   <!-- BEGIN formBody -->
   @include("/include/form/unit.html", {

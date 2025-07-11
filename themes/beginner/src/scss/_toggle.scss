@@ -8,9 +8,8 @@
 .toggle-button {
   width: 100%;
   padding: 0;
-  color: global.$color-text;
+  color: var(--color-text);
   font-family: inherit;
-  line-height: global.$line-height-lg;
   text-align: left;
   background: none;
   border: 0;
@@ -22,7 +21,6 @@
 }
 
 .toggle-icon {
-  margin-top: .85rem;
   margin-left: auto;
   line-height: 1;
   transition: .3s ease;
@@ -30,9 +28,23 @@
   .toggle-button.is-active & {
     transform: rotate(180deg);
   }
-}
 
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
 
 .toggle-body {
   display: none;
 }
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .toggle-icon {
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+

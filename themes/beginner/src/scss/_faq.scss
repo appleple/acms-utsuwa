@@ -6,11 +6,19 @@
 　　よくあるご質問
 ------------------------------ */
 .faq {
-  border-radius: global.$border-radius-md;
-  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
 
-  &+& {
-    margin-top: 1rem;
+  &:hover {
+    box-shadow: var(--box-shadow-hover);
+
+    .faq-question {
+      background: var(--color-hover-bg-2nd);
+    }
+
+    .faq-answer {
+      border-top: 1px solid transparent;
+    }
   }
 }
 
@@ -19,57 +27,52 @@
   width: 2rem;
   margin: 0;
   font-weight: bold;
-  font-size: map.get(global.$font-scales, heading-m);
   line-height: 1.5;
   text-align: center;
 }
 
 .faq-question-button {
-  padding: 1.25rem 1.5rem;
   position: relative;
   display: flex;
+  align-items: center;
   gap: 1rem;
-  align-items: flex-start;
-}
 
-.faq-question-button.toggle-button {
-  padding: 1.25rem 1.5rem;
-
+  &.toggle-button {
+    padding: 2rem 1rem;
+  }
 }
 
 .faq-question {
   margin: 0;
+  font-size: map.get(global.$font-scales, body-m);
 
   .faq-icon {
-    color: global.$color-primary;
+    color: var(--color-primary);
+    line-height: 1;
   }
 
   .faq-title {
     margin: 0;
-    padding: .5rem 0;
-    font-size: map.get(global.$font-scales, heading-ss);
     font-weight: bold;
+    line-height: var(--line-height-base);
   }
 }
 
 .faq-answer {
-  margin: 0 1.5rem;
-  padding: 1.25rem 0;
+  margin: 0 1rem;
+  padding: 2rem 0;
   position: relative;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
   margin-top: 10px;
-  border-top: 1px solid global.$color-gray30;
+  border-top: 1px solid var(--color-gray30);
 
   .faq-icon,
   .faq-icon a {
-    color: global.$color-gray90;
+    color: var(--color-gray90);
     text-decoration: none;
-  }
-
-  .faq-body {
-    padding-top: .5rem;
+    line-height: 1;
   }
 
   .entry-style {
@@ -77,10 +80,36 @@
   }
 }
 
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .faq-question {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+
+  .faq-question-button {
+
+    &.toggle-button {
+      padding: 2rem;
+    }
+  }
+
+  .faq-icon {
+    font-size: map.get(global.$font-scales, heading-m);
+
+  }
+
+  .faq-answer {
+    margin: 0 2rem;
+
+  }
+}
 
 /* 質問リスト */
 .faq-list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  li {
+    margin-bottom: var(--entry-el-margin-md);
+  }
 }
