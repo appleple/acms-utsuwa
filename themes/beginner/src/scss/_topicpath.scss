@@ -40,7 +40,7 @@
     width: 0.75rem;
     height: 0.75rem;
     margin: 0 0.5rem;
-    background: url("../images/icon-topicpath.svg") center center no-repeat;
+    background: url("#{global.$root-theme-img}icon-topicpath.svg") center center no-repeat;
     background-size: contain;
     content: '';
   }

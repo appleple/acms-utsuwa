@@ -127,12 +127,12 @@
 
 
     .splide__toggle__play {
-      background: url("../images/icon-triangle.svg") no-repeat center center;
+      background: url("#{global.$root-theme-img}icon-triangle.svg") no-repeat center center;
       background-size: 1rem;
     }
 
     .splide__toggle__pause {
-      background: url("../images/icon-stop.svg") no-repeat center center;
+      background: url("#{global.$root-theme-img}icon-stop.svg") no-repeat center center;
       background-size: 1rem;
 
     }

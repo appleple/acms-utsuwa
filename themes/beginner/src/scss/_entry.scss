@@ -449,7 +449,7 @@
           vertical-align: baseline;
           background-color: var(--color-text-inverse);
           content: '';
-          mask-image: url("../images/icon-target_blank.svg");
+          mask-image: url("#{global.$root-theme-img}icon-target_blank.svg");
           mask-size: contain;
         }
       }
