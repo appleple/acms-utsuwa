@@ -241,9 +241,9 @@
 
 
 
-  @each $unit in acms.$unit-type {
+  @each $unit in acms.$unit-types {
     /* 配置のスタイル */
-    @each $align-name in acms.$align {
+    @each $align-name in acms.$alignments {
       .column-#{$unit}-#{$align-name}+.entry-text-unit {
         @if $align-name == left {
           overflow: hidden;
@@ -1326,7 +1326,7 @@
 ------------------------------ */
 
 /* 各ユニットのマージンの調整 */
-@each $unit in acms.$unit-type {
+@each $unit in acms.$unit-types {
   [class*="column-#{$unit}"] {
     @if $unit == "module" {
       margin-bottom: calc(acms.$unit-margin-bottom / 2);
@@ -1337,7 +1337,7 @@
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
-  @each $unit in acms.$unit-type {
+  @each $unit in acms.$unit-types {
     [class*="column-#{$unit}"] {
       @if $unit == "module" {
         margin-bottom: acms.$unit-margin-bottom;
