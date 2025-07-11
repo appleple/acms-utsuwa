@@ -2,27 +2,11 @@
   <div class="header-item-wrap">
     @include("/include/edit/blog-custom.html",{"label":"ルートブログ情報を編集する"})
     <!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
-    <h1 class="header-title"><!-- ELSE -->
-      <p class="header-title"><!-- END_IF -->
+    <h1 class="header-title"><!-- ELSE --><p class="header-title"><!-- END_IF -->
         <a href="%{HOME_URL}" class="header-title-link"><!-- BEGIN_IF [{site-logo@path}/nem] -->
           <img src="%{MEDIA_ARCHIVES_DIR}{site-logo@path}" alt="{site_name}" role="img" class="header-logo"><!-- ELSE -->{site_name}<!-- END_IF -->
         </a><!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
     </h1><!-- ELSE --></p><!-- END_IF -->
-    <div class="header-nav-wrap">
-      <div class="header-nav-tel"></div>
-      <div class="header-sub-navi">
-        <button class="header-search-open-button button is-inverse" aria-controls="header-search" aria-expanded="false">@include("/themes/utsuwa/images/icon-search.svg")サイト内検索</button>
-        <!-- BEGIN_IF [{contact-button}/eq/true] -->
-        <a href="{contact-button-url}[buildGlobalVars]" class="button is-shadow">{contact-button-text}[raw]</a>
-        <!-- END_IF -->
-      </div>
-    </div>
   </div>
   @include("/include/parts/global-nav.html")
 </header>
-<!-- BEGIN_IF [{global-nav}/eq/logo-center] -->
-<div id="header-search" class="header-search" aria-hidden="true" hidden>
-  @include("/include/parts/search-general.html", {"search-id":"header-lg"})
-  <button class="header-search-close-btn">@include("/themes/utsuwa/images/icon-close.svg")閉じる</button>
-</div>
-<!-- END_IF -->
