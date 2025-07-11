@@ -148,6 +148,12 @@
   --separator-md: 3rem;
   --separator-lg: 4rem;
 
+  /* systemでも参照しているプロパティを定義 */
+  --acms-col-gap-x          : var(--gutter-md);
+  --unit-gap-x              : var(--gutter-md);
+  --unit-margin-top         : 0;
+  --unit-margin-bottom      : 2rem;
+
   /* ------------------------------
   パーツ
   ------------------------------- */
