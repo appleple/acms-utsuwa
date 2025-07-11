@@ -245,6 +245,7 @@
 .footer-sns-group {
   display: flex;
   gap: 1.5rem;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -272,6 +273,7 @@
 .footer-bottom-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-bottom: 1.5rem;
 }
 
