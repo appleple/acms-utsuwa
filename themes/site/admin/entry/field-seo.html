@@ -2,7 +2,7 @@
   <h3 class="acms-admin-accordion-title"><a href="#fadeSeoInfo" class="js-fader acms-admin-accordion-title-link">SEO設定<span class="acms-admin-icon-arrow-small-down"></span></a></h3>
   <div id="fadeSeoInfo" class="acms-admin-accordion-inner">
     <table class="entryFormTable acms-admin-table-entry">
-      <tr>
+      <tr id="seo-entry_meta_title">
         <th>タイトル - <small>title</small><i data-acms-tooltip="エントリーの titleタグを設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i>
           <div>
             <span class="acms-admin-label"><span class="keyword_countup"></span> 文字</span>
@@ -14,7 +14,7 @@
           <input type="hidden" name="entry_meta_title:search" value="0" />
         </td>
       </tr>
-      <tr>
+      <tr id="seo-entry_meta_keywords">
         <th>キーワード - <small>keywords</small><i data-acms-tooltip="エントリーの METAタグ（Keywords）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <input type="text" name="entry_meta_keywords" value="{entry_meta_keywords}" class="acms-admin-form-width-full" />
@@ -22,7 +22,7 @@
           <input type="hidden" name="entry_meta_keywords:search" value="0" />
         </td>
       </tr>
-      <tr>
+      <tr id="seo-entry_meta_description">
         <th>概要文 - <small>description</small><i data-acms-tooltip="エントリーの METAタグ（Description）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i>
           <div>
             <span class="acms-admin-label"><span class="description_countup"></span> 文字</span>
@@ -34,7 +34,7 @@
           <input type="hidden" name="entry_meta_description:search" value="0" />
         </td>
       </tr>
-      <tr>
+      <tr id="seo-entry_meta_robots">
         <th>検索エンジン - <small>noindex</small><i data-acms-tooltip="チェックするとこのエントリーをインデックスされないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
@@ -44,7 +44,7 @@
           <input type="hidden" name="field[]" value="entry_meta_robots" />
         </td>
       </tr>
-      <tr>
+      <tr id="seo-entry_meta_sitemap">
         <th>サイトマップ - <small>sitemap</small><i data-acms-tooltip="チェックするとこのエントリーをサイトマップに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
@@ -54,7 +54,7 @@
           <input type="hidden" name="field[]" value="entry_meta_sitemap" />
         </td>
       </tr>
-      <tr>
+      <tr id="seo-entry_meta_rss">
         <th>RSS - <small>rss</small><i data-acms-tooltip="チェックするとこのエントリーをRSSに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
@@ -64,17 +64,17 @@
           <input type="hidden" name="field[]" value="entry_meta_rss" />
         </td>
       </tr>
-      <tr>
-        <th>OGP画像 - <small>og:image</small><i class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip" data-acms-tooltip="Facebook等で利用するOGP画像を設定します。"></i></th>
+      <tr id="seo-entry_main_image">
+        <th>メイン画像 - <small>main_image</small><i class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip" data-acms-tooltip="一覧表示で利用する画像や、SNS等で利用するOGP画像を設定します。"></i></th>
         <td class="js-media-field">
-          <div class="js-droparea" data-thumbnail="{ogp_image@thumbnail}" data-type="image" style="width:200px"></div>
+          <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" style="width:200px"></div>
           <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
           <div class="acms-admin-margin-top-mini">
             <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
           </div>
-          <input type="hidden" name="ogp_image" value="{ogp_image}" class="js-value" />
-          <input type="hidden" name="field[]" value="ogp_image" />
-          <input type="hidden" name="ogp_image:extension" value="media" />
+          <input type="hidden" name="entry_main_image" value="{entry_main_image}" class="js-value js-block-editor-set-main-image" />
+          <input type="hidden" name="field[]" value="entry_main_image" />
+          <input type="hidden" name="entry_main_image:extension" value="media" />
         </td>
       </tr>
     </table>
