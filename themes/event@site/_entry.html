@@ -23,16 +23,14 @@
 
 @section("main")
 <div class="container-md">
-  <div>
-    <!-- エントリー本文 -->
-    @include("/include/entry/body-event.html", {"module_id": "body_blog", "tag":"on", "sns":"on"})
-  </div>
-  <!-- BEGIN_MODULE Touch_Entry -->
-  <!-- タグリレーショナル -->
-  @include("/include/entry/tagrelational-event.html", {"module_id": "tag_relational"})
-  <!-- 関連エントリー -->
-  @include("/include/entry/summary-related-event.html", {"module_id": "summary_related"})
-  <!-- END_MODULE Touch_Entry -->
+
+  <!-- エントリー本文 -->
+  @include("/include/entry/body-event.html", {"module_id": "body_event"})
+
+  <h3 class="heading-md">開催予定のイベント</h3>
+
+  @include("/include/entry/summary-event.html", {"module_id": "summary_event_entry"})
+
 </div>
 @endsection
 
