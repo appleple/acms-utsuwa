@@ -1,0 +1,2035 @@
+@charset "UTF-8";
+/** ------------------------------
+ * @media screen 対応
+ * ユーティリティで使用しています。
+ ------------------------------ */
+/* ------------------------------
+  Popover
+------------------------------- */
+/* stylelint-disable max-line-length */
+/* stylelint-enable max-line-length */
+/* ------------------------------
+　フィールドスタイル調整
+------------------------------ */
+/* 価格表ユニットのユニットグループアイテムの境界線 */
+.acms-admin-table-admin-edit {
+  border-collapse: collapse;
+}
+.acms-admin-table-admin-edit .sortable-item {
+  border-top: 1px solid #ccc;
+}
+.acms-admin-table-admin-edit .sortable-item:first-child {
+  border: 0;
+}
+
+/* ------------------------------
+ テキスト
+------------------------------ */
+/* 共通設定 */
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body h2 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body h2 a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body h2 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body h2 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor h2 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor h2 a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor h2 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor h2 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body h3 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body h3 a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body h3 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body h3 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor h3 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor h3 a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor h3 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor h3 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body h4 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body h4 a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body h4 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body h4 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor h4 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor h4 a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor h4 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor h4 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body h5 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body h5 a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body h5 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body h5 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor h5 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor h5 a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor h5 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor h5 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body h6 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body h6 a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body h6 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body h6 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor h6 a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor h6 a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor h6 a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor h6 a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body p a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body p a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body p a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body p a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor p a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor p a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor p a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor p a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body ul a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body ul a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body ul a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body ul a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor ul a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor ul a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor ul a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor ul a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body ol a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body ol a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body ol a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body ol a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor ol a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor ol a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor ol a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor ol a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* テキストユニット（閲覧側）の左右グリッド調整 */
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+/* リンク */
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body dl a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.acms-admin-block-editor-body dl a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body dl a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.acms-admin-block-editor-body dl a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.entryFormLiteEditor dl a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+}
+.entryFormLiteEditor dl a:hover {
+  border-color: transparent;
+}
+.entryFormLiteEditor dl a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entryFormLiteEditor dl a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* インライン要素
+----------------------------- */
+/* 強調 */
+.entry-style em:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+}
+
+.acms-admin-block-editor-body em {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+}
+
+.entryFormLiteEditor em {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+}
+
+/* 重要 */
+.entry-style strong:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  font-weight: bold;
+}
+
+.acms-admin-block-editor-body strong {
+  font-weight: bold;
+}
+
+.entryFormLiteEditor strong {
+  font-weight: bold;
+}
+
+/* マーカー */
+.entry-style mark:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  color: inherit;
+  background-color: var(--color-highlight);
+  border-radius: 0.125rem; /* 2px */
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding-block: 0.125rem;
+}
+
+.acms-admin-block-editor-body mark {
+  color: inherit;
+  background-color: var(--color-highlight);
+  border-radius: 0.125rem; /* 2px */
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding-block: 0.125rem;
+}
+
+.entryFormLiteEditor mark {
+  color: inherit;
+  background-color: var(--color-highlight);
+  border-radius: 0.125rem; /* 2px */
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding-block: 0.125rem;
+}
+
+/* コード */
+.entry-style code:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=code-highlight], [class~=code-highlight] *)) {
+  margin-inline: 0.25rem;
+  padding: 0 0.25rem;
+  color: var(--color-primary);
+  font-size: 87.5%;
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid currentcolor;
+  border-radius: var(--border-radius-sm);
+}
+
+.acms-admin-block-editor-body code {
+  margin-inline: 0.25rem;
+  padding: 0 0.25rem;
+  color: var(--color-primary);
+  font-size: 87.5%;
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid currentcolor;
+  border-radius: var(--border-radius-sm);
+}
+
+.entryFormLiteEditor code {
+  margin-inline: 0.25rem;
+  padding: 0 0.25rem;
+  color: var(--color-primary);
+  font-size: 87.5%;
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid currentcolor;
+  border-radius: var(--border-radius-sm);
+}
+
+/* 単語区切り LiteEditor内での表示用 */
+:where(.entryFormLiteEditor) .text-word-break {
+  display: inline-block;
+}
+:where(.entryFormLiteEditor) .text-word-break::after {
+  margin: 0 2px;
+  color: var(--color-gray40);
+  content: "|";
+}
+
+/* 見出し
+----------------------------- */
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    font-size: 1.953125rem;
+  }
+}
+
+.acms-admin-block-editor-body h2 {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body h2.heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h2.heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.acms-admin-block-editor-body h2.heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body h2 {
+    font-size: 1.953125rem;
+  }
+}
+
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    font-size: 1.5625rem;
+  }
+}
+
+.acms-admin-block-editor-body h3 {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body h3.heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h3.heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.acms-admin-block-editor-body h3.heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body h3 {
+    font-size: 1.5625rem;
+  }
+}
+
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    font-size: 1.25rem;
+  }
+}
+
+.acms-admin-block-editor-body h4 {
+  margin-block: 0;
+  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body h4.heading-line {
+  margin-bottom: var(--entry-el-margin-sm);
+  padding-bottom: var(--entry-el-padding-xs);
+  border-bottom: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h4.heading-primary {
+  position: relative;
+  margin-bottom: var(--entry-el-margin-sm);
+}
+.acms-admin-block-editor-body h4.heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  background: var(--color-primary);
+  content: "";
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body h4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* 本文
+----------------------------- */
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  font-size: 1rem;
+  margin-block: 0 var(--entry-el-margin-md);
+  line-height: var(--line-height-lg);
+  /* 注釈 */
+  /* 注意文 */
+  /* リード文1 */
+  /* リード文2 */
+  /* ボタン */
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-info {
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-danger {
+  color: var(--color-error);
+  font-size: 0.8rem;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-primary {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+@media screen and (min-width: 48rem) {
+  .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-primary {
+    margin-bottom: 3rem;
+    font-size: 2.44140625rem;
+  }
+  .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-primary.is-margin-small {
+    margin-bottom: var(--entry-el-margin-xxs);
+  }
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info {
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info.is-margin-small {
+  margin-bottom: var(--entry-el-margin-xxs);
+}
+@media screen and (min-width: 48rem) {
+  .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info {
+    margin-bottom: 3rem;
+    font-size: 1.953125rem;
+  }
+  .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info.is-margin-small {
+    margin-bottom: var(--entry-el-margin-xxs);
+  }
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a {
+  display: inline-block;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border-bottom: 0;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s ease;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a, .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a:link, .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a:visited {
+  color: var(--color-white);
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a:hover {
+  background-color: var(--color-primary-hover);
+  opacity: 1;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a.outer-link::after {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 0.5rem;
+  vertical-align: baseline;
+  background-color: var(--color-text-inverse);
+  content: "";
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDEyLjVWMjFIM1YzSDExLjVNMTQgM0gyMU0yMSAzVjkuNU0yMSAzTDExLjUgMTIuNSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K);
+          mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDEyLjVWMjFIM1YzSDExLjVNMTQgM0gyMU0yMSAzVjkuNU0yMSAzTDExLjUgMTIuNSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a[href^="tel:"] {
+  color: var(--color-white);
+}
+.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-btn a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+.acms-admin-block-editor-body p {
+  font-size: 1rem;
+  margin-block: 0 var(--entry-el-margin-md);
+  line-height: var(--line-height-lg);
+  /* 注釈 */
+  /* 注意文 */
+  /* リード文1 */
+  /* リード文2 */
+  /* ボタン */
+}
+.acms-admin-block-editor-body p.text-info {
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+}
+.acms-admin-block-editor-body p.text-danger {
+  color: var(--color-error);
+  font-size: 0.8rem;
+}
+.acms-admin-block-editor-body p.text-lead-primary {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body p.text-lead-primary {
+    margin-bottom: 3rem;
+    font-size: 2.44140625rem;
+  }
+  .acms-admin-block-editor-body p.text-lead-primary.is-margin-small {
+    margin-bottom: var(--entry-el-margin-xxs);
+  }
+}
+.acms-admin-block-editor-body p.text-lead-info {
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body p.text-lead-info.is-margin-small {
+  margin-bottom: var(--entry-el-margin-xxs);
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body p.text-lead-info {
+    margin-bottom: 3rem;
+    font-size: 1.953125rem;
+  }
+  .acms-admin-block-editor-body p.text-lead-info.is-margin-small {
+    margin-bottom: var(--entry-el-margin-xxs);
+  }
+}
+.acms-admin-block-editor-body p.text-btn a {
+  display: inline-block;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  border-bottom: 0;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s ease;
+}
+.acms-admin-block-editor-body p.text-btn a, .acms-admin-block-editor-body p.text-btn a:link, .acms-admin-block-editor-body p.text-btn a:visited {
+  color: var(--color-white);
+}
+.acms-admin-block-editor-body p.text-btn a:hover {
+  background-color: var(--color-primary-hover);
+  opacity: 1;
+}
+.acms-admin-block-editor-body p.text-btn a.outer-link::after {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 0.5rem;
+  vertical-align: baseline;
+  background-color: var(--color-text-inverse);
+  content: "";
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDEyLjVWMjFIM1YzSDExLjVNMTQgM0gyMU0yMSAzVjkuNU0yMSAzTDExLjUgMTIuNSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K);
+          mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDEyLjVWMjFIM1YzSDExLjVNMTQgM0gyMU0yMSAzVjkuNU0yMSAzTDExLjUgMTIuNSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8L3N2Zz4K);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.acms-admin-block-editor-body p.text-btn a[href^="tel:"] {
+  color: var(--color-white);
+}
+.acms-admin-block-editor-body p.text-btn a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+
+/* 注釈や注意文が、隣り合った時、テーブルの下に来た時は上余白を詰めてまとまり感を出す */
+p + p.text-info,
+p + p.text-danger,
+p + p.text-info,
+p + p.text-danger,
+.tableWrapper + p.text-info,
+.tableWrapper + p.text-danger,
+[class*=column-table-] + p.text-info,
+[class*=column-table-] + p.text-danger {
+  margin-top: -1rem;
+}
+
+/* リスト
+----------------------------- */
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0 var(--entry-el-margin-md);
+  padding-left: 1.875rem;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  list-style: none;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li::before {
+  position: absolute;
+  top: 0.5rem;
+  left: -1.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-secondary);
+  border-radius: 50%;
+  content: "";
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li:last-child {
+  margin-bottom: 0;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li > * {
+  /* ブロックエディタ：リセット用 */
+  margin-bottom: 0;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li ul {
+  margin-top: 0.5rem;
+}
+
+.acms-admin-block-editor-body ul {
+  margin-block: 0 var(--entry-el-margin-md);
+  padding-left: 1.875rem;
+}
+.acms-admin-block-editor-body ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  list-style: none;
+}
+.acms-admin-block-editor-body ul li::before {
+  position: absolute;
+  top: 0.5rem;
+  left: -1.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-secondary);
+  border-radius: 50%;
+  content: "";
+}
+.acms-admin-block-editor-body ul li:last-child {
+  margin-bottom: 0;
+}
+.acms-admin-block-editor-body ul li > * {
+  /* ブロックエディタ：リセット用 */
+  margin-bottom: 0;
+}
+.acms-admin-block-editor-body ul li ul {
+  margin-top: 0.5rem;
+}
+
+/* 番号付きリスト */
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0 var(--entry-el-margin-md);
+  padding-left: var(--entry-el-padding-md);
+  counter-reset: order-list;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li {
+  position: relative;
+  clear: both;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  list-style: none;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li::before {
+  position: absolute;
+  top: 2px;
+  left: -1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1rem 0 0;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  border-radius: 50%;
+  content: counter(order-list) ".";
+  counter-increment: order-list;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li:last-child {
+  margin-bottom: 0;
+}
+.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li ol {
+  margin-top: 0.5rem;
+}
+
+.acms-admin-block-editor-body ol {
+  margin-block: 0 var(--entry-el-margin-md);
+  padding-left: var(--entry-el-padding-md);
+  counter-reset: order-list;
+}
+.acms-admin-block-editor-body ol li {
+  position: relative;
+  clear: both;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  list-style: none;
+}
+.acms-admin-block-editor-body ol li::before {
+  position: absolute;
+  top: 2px;
+  left: -1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1rem 0 0;
+  color: var(--color-text-2nd);
+  font-weight: bold;
+  border-radius: 50%;
+  content: counter(order-list) ".";
+  counter-increment: order-list;
+}
+.acms-admin-block-editor-body ol li:last-child {
+  margin-bottom: 0;
+}
+.acms-admin-block-editor-body ol li ol {
+  margin-top: 0.5rem;
+}
+
+/* 記述リスト */
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  display: block; /* リセット用 */
+  padding-block: 0; /* リセット用 */
+  margin-block: 0 var(--entry-el-margin-md);
+  border: 0; /* リセット用 */
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) dt {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-sm);
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) dd {
+  margin-bottom: 1rem;
+  margin-left: 0; /* リセット用 */
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) dd + dt {
+  margin-top: 0; /* リセット用 */
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered {
+  border: var(--border-width-sm) solid var(--color-gray30);
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dt {
+  padding-top: var(--entry-el-padding-sm);
+  padding-inline: var(--entry-el-padding-sm);
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dt:first-child {
+  border: 0;
+}
+.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dd {
+  margin-bottom: 0;
+  padding-bottom: var(--entry-el-padding-sm);
+  padding-inline: var(--entry-el-padding-sm);
+}
+@media screen and (min-width: 48rem) {
+  .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dt {
+    padding-top: var(--entry-el-padding-md);
+    padding-inline: var(--entry-el-padding-md);
+  }
+  .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dd {
+    padding-bottom: var(--entry-el-padding-md);
+    padding-inline: var(--entry-el-padding-md);
+  }
+}
+
+.acms-admin-block-editor-body dl {
+  display: block; /* リセット用 */
+  padding-block: 0; /* リセット用 */
+  margin-block: 0 var(--entry-el-margin-md);
+  border: 0; /* リセット用 */
+}
+.acms-admin-block-editor-body dl dt {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-sm);
+}
+.acms-admin-block-editor-body dl dd {
+  margin-bottom: 1rem;
+  margin-left: 0; /* リセット用 */
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+}
+.acms-admin-block-editor-body dl dd + dt {
+  margin-top: 0; /* リセット用 */
+}
+.acms-admin-block-editor-body dl.box-bordered {
+  border: var(--border-width-sm) solid var(--color-gray30);
+}
+.acms-admin-block-editor-body dl.box-bordered dt {
+  padding-top: var(--entry-el-padding-sm);
+  padding-inline: var(--entry-el-padding-sm);
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+}
+.acms-admin-block-editor-body dl.box-bordered dt:first-child {
+  border: 0;
+}
+.acms-admin-block-editor-body dl.box-bordered dd {
+  margin-bottom: 0;
+  padding-bottom: var(--entry-el-padding-sm);
+  padding-inline: var(--entry-el-padding-sm);
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body dl.box-bordered dt {
+    padding-top: var(--entry-el-padding-md);
+    padding-inline: var(--entry-el-padding-md);
+  }
+  .acms-admin-block-editor-body dl.box-bordered dd {
+    padding-bottom: var(--entry-el-padding-md);
+    padding-inline: var(--entry-el-padding-md);
+  }
+}
+
+/* ソースコード
+----------------------------- */
+.acms-admin-block-editor-body pre,
+.code-highlight {
+  max-width: 100%;
+  padding: var(--entry-el-padding-sm);
+  overflow: auto;
+  color: var(--color-text); /* 閲覧側画面の文字色はライブラリに依存 */
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  margin-block: 0 var(--entry-el-margin-md);
+}
+.acms-admin-block-editor-body pre code,
+.code-highlight code {
+  /* リセット用 */
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body pre,
+  .code-highlight {
+    padding: var(--entry-el-padding-md);
+  }
+}
+
+/* 水平罫線
+----------------------------- */
+.entry-style hr:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=clearHidden], [class~=clearHidden] *)) {
+  margin-bottom: var(--entry-el-margin-md);
+  border: 0 solid var(--color-gray70);
+  border-top-width: var(--border-width-sm);
+}
+@media screen and (min-width: 48rem) {
+  .entry-style hr:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=clearHidden], [class~=clearHidden] *)) {
+    margin-bottom: var(--entry-el-margin-lg);
+  }
+}
+
+.acms-admin-block-editor-body hr {
+  margin-bottom: var(--entry-el-margin-md);
+  border: 0 solid var(--color-gray70);
+  border-top-width: var(--border-width-sm);
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body hr {
+    margin-bottom: var(--entry-el-margin-lg);
+  }
+}
+
+/* ブロックエディタ用 */
+[data-type=horizontalRule] {
+  margin-block: var(--entry-el-margin-md);
+}
+[data-type=horizontalRule] hr {
+  margin-block: 0;
+}
+@media screen and (min-width: 48rem) {
+  [data-type=horizontalRule] {
+    margin-block: var(--entry-el-margin-md);
+  }
+  [data-type=horizontalRule] hr {
+    margin-block: 0;
+  }
+}
+
+/* ------------------------------
+ ブロックエディター内要素のレイアウト
+------------------------------ */
+/* レイアウト */
+:where(.acms-admin-block-editor-body) :where([data-type=columns]),
+:where(.entry-style) :where([data-type=columns]) {
+  display: grid;
+  grid-auto-flow: column;
+  box-sizing: border-box;
+  margin-block: 0 var(--entry-el-margin-md);
+}
+:where(.acms-admin-block-editor-body) :where([data-type=columns]).layout-two-column,
+:where(.entry-style) :where([data-type=columns]).layout-two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+:where(.acms-admin-block-editor-body) :where([data-type=columns]).layout-three-column,
+:where(.entry-style) :where([data-type=columns]).layout-three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 管理画面側 */
+:where(.acms-admin-block-editor-body) :where([data-type=columns]) {
+  gap: 1rem;
+}
+
+/* 閲覧画面側 */
+:where(.entry-style) :where([data-type=columns]) {
+  gap: calc(var(--unit-gutter-var) / 2);
+}
+
+/* カラム上下余白
+/* 編集画面でのブロックエディターでのカラム上下余白親要素でとるため、
+/* 子要素の最初と最後の上下マージンをリセット
+/* 上書きのため詳細度高め（0,0,2,0）
+----------------------------- */
+:where(.acms-admin-block-editor-body) [data-type=column] > *:first-child,
+:where(.entry-style) [data-type=column] > *:first-child {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+:where(.acms-admin-block-editor-body) [data-type=column] > *:last-child,
+:where(.entry-style) [data-type=column] > *:last-child {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+/* 配置
+/* メディア・ファイル・リンクボタン
+----------------------------- */
+:where(.media-image-block).media-align-center,
+:where(.media-file-block).media-align-center,
+:where(.link-button-block).media-align-center {
+  display: flex;
+  justify-content: center;
+}
+:where(.media-image-block).media-align-left,
+:where(.media-file-block).media-align-left,
+:where(.link-button-block).media-align-left {
+  display: flex;
+  justify-content: flex-start;
+}
+:where(.media-image-block).media-align-right,
+:where(.media-file-block).media-align-right,
+:where(.link-button-block).media-align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* メディアサイズ
+----------------------------- */
+:where(.media-image-block) figure {
+  /* リセット用 */
+  margin: 0;
+}
+:where(.media-image-block) .media-width-25 {
+  max-width: 25%;
+}
+:where(.media-image-block) .media-width-25 img {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-33 {
+  max-width: 33%;
+}
+:where(.media-image-block) .media-width-33 img {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-50 {
+  max-width: 50%;
+}
+:where(.media-image-block) .media-width-50 img {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-66 {
+  max-width: 66%;
+}
+:where(.media-image-block) .media-width-66 img {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-75 {
+  max-width: 75%;
+}
+:where(.media-image-block) .media-width-75 img {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-100 {
+  max-width: 100%;
+}
+:where(.media-image-block) .media-width-100 img {
+  max-width: 100%;
+}
+
+/* ------------------------------
+ 引用
+------------------------------ */
+/* 閲覧側の左右グリッド調整 */
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
+  margin-inline: calc(var(--unit-gutter-var) / 2);
+}
+
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  padding: var(--entry-el-padding-sm);
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  border: var(--border-width-md) solid var(--color-gray30);
+  margin-block: 0 var(--entry-el-margin-md);
+  /* リセット用 */
+  margin-inline: 0;
+  /* ブロックエディタ調整：リセット用 */
+  /* ブロックエディタ調整 */
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > * {
+  margin-block: 0;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) * + * {
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
+  /* 中に画像が入っているリンクの時 */
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:has(img) {
+  display: inline-block;
+  border-bottom: 0; /* リセット用 */
+  transition: opacity 0.2s ease;
+  padding-block: 0; /* リセット用 */
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:has(img):hover {
+  opacity: 0.7;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) img {
+  width: 100%;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) strong {
+  /* リセット用 */
+  background: transparent;
+}
+@media screen and (min-width: 48rem) {
+  .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    margin-bottom: var(--entry-el-margin-lg);
+    padding: var(--entry-el-padding-md);
+  }
+}
+
+.acms-admin-block-editor-body blockquote {
+  padding: var(--entry-el-padding-sm);
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  border: var(--border-width-md) solid var(--color-gray30);
+  margin-block: 0 var(--entry-el-margin-md);
+  /* リセット用 */
+  margin-inline: 0;
+  /* ブロックエディタ調整：リセット用 */
+  /* ブロックエディタ調整 */
+}
+.acms-admin-block-editor-body blockquote > * {
+  margin-block: 0;
+}
+.acms-admin-block-editor-body blockquote * + * {
+  -webkit-margin-before: 1rem;
+          margin-block-start: 1rem;
+}
+.acms-admin-block-editor-body blockquote a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
+  /* 中に画像が入っているリンクの時 */
+}
+.acms-admin-block-editor-body blockquote a:hover {
+  border-color: transparent;
+}
+.acms-admin-block-editor-body blockquote a:has(img) {
+  display: inline-block;
+  border-bottom: 0; /* リセット用 */
+  transition: opacity 0.2s ease;
+  padding-block: 0; /* リセット用 */
+}
+.acms-admin-block-editor-body blockquote a:has(img):hover {
+  opacity: 0.7;
+}
+.acms-admin-block-editor-body blockquote img {
+  width: 100%;
+}
+.acms-admin-block-editor-body blockquote strong {
+  /* リセット用 */
+  background: transparent;
+}
+@media screen and (min-width: 48rem) {
+  .acms-admin-block-editor-body blockquote {
+    margin-bottom: var(--entry-el-margin-lg);
+    padding: var(--entry-el-padding-md);
+  }
+}
+
+/* 引用URLユニット
+------------------------------ */
+[class*=column-quote-] .quote {
+  padding: 0;
+  border: 0;
+}
+[class*=column-quote-] .quote-link {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--color-text);
+  text-decoration: none;
+  border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
+}
+[class*=column-quote-] .quote-link:hover {
+  background: var(--color-hover-bg);
+}
+[class*=column-quote-] .quote-info {
+  padding: 1rem;
+}
+[class*=column-quote-] .quote-site-name {
+  margin: 0;
+  color: var(--color-text);
+}
+[class*=column-quote-] .quote-title {
+  margin: 0 0 0.5rem;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[class*=column-quote-] .quote-description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+@media screen and (min-width: 48rem) {
+  [class*=column-quote-] .quote-link {
+    flex-direction: row;
+  }
+  [class*=column-quote-] .quote-img-wrap {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    width: 33.3333333333%;
+    padding: 0;
+  }
+  [class*=column-quote-] .quote-img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  [class*=column-quote-] .quote-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-sizing: border-box;
+    width: 0.6666666667;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  [class*=column-quote-] .quote-title {
+    margin: 0;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+/* ------------------------------
+ リンクボタン・ブロックエディタファイルボタン
+------------------------------ */
+.acms-admin-block-editor-link-button-link,
+.link-button-block-link,
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
+.entry-style .media-file-block-link {
+  display: inline-grid;
+  box-sizing: border-box;
+  min-height: auto;
+  padding: 1em 2em;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.3;
+  background-color: var(--color-white);
+  border: solid 1px var(--color-gray60);
+  border-radius: 0.25em;
+  place-items: center;
+}
+.acms-admin-block-editor-link-button-link, .acms-admin-block-editor-link-button-link:link, .acms-admin-block-editor-link-button-link:visited,
+.link-button-block-link,
+.link-button-block-link:link,
+.link-button-block-link:visited,
+.acms-admin-block-editor-file-link,
+.acms-admin-block-editor-file-link:link,
+.acms-admin-block-editor-file-link:visited,
+.media-file-block-link,
+.media-file-block-link:link,
+.media-file-block-link:visited,
+.entry-style .media-file-block-link,
+.entry-style .media-file-block-link:link,
+.entry-style .media-file-block-link:visited {
+  color: var(--color-text);
+}
+
+.link-button-block-link,
+.media-file-block-link,
+.media-file-block .media-file-block-link {
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.link-button-block-link:hover,
+.media-file-block-link:hover,
+.media-file-block .media-file-block-link:hover {
+  background: var(--color-gray20);
+  opacity: 1;
+}
+
+/* リンクボタン */
+.link-button-block,
+:where(.acms-admin-block-editor-body) .node-linkButton {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
+/* ------------------------------
+ メディアファイル・ファイル
+------------------------------ */
+/* 共通上下余白設定 */
+.media-file-block,
+:where(.acms-admin-block-editor-body) .node-fileBlock,
+[class*=column-file],
+[class*=column-media]:has(a[href*=media-download]) {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
+/* Descender space 対策 */
+.media-file-block,
+.acms-admin-block-editor-file {
+  line-height: 0;
+}
+
+/* ファイルアイコン */
+.acms-admin-block-editor-file img,
+[class*=column-media] .columnIcon,
+[class*=column-file] .columnIcon {
+  display: inline-block;
+  width: 1.75rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ボタン型 */
+[class*=column-file] a,
+[class*=column-media] a[href*=media-download] {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem;
+  /* リセット用 */
+  text-decoration: none;
+  border: var(--border-width-sm) solid var(--color-gray40);
+  border-radius: var(--border-radius-md);
+  /* マウスオーバー用 */
+  transition: background-color 0.2s ease;
+}
+[class*=column-file] a:hover,
+[class*=column-media] a[href*=media-download]:hover {
+  background: var(--color-gray20);
+}
+
+/* 非ブロックエディターのボタン型でファイルアイコン付きのキャプション */
+[class*=column-file] .caption,
+[class*=column-media]:has(a[href*=media-download]):has(.columnIcon) .caption {
+  display: block;
+  margin: 0 0 0 1rem;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: var(--line-height-sm);
+}
+
+/* PDFプレビュー
+/* ブロックエディター（ファイルアイコンでの表示）
+/* 共通
+------------------------------ */
+/* キャプション */
+[class*=column-media]:has(.column-pdf-image) .caption,
+.media-file-block:has(img) .caption,
+.acms-admin-block-editor-file-caption,
+p.acms-admin-block-editor-file-caption {
+  display: block;
+  margin: 4px 0 0;
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+  line-height: var(--line-height-sm);
+}
+
+/* リンク */
+[class*=column-media]:has(.column-pdf-image) a,
+.media-file-block:has(img) a {
+  /* マウスオーバー用 */
+  transition: opacity 0.2s ease;
+}
+[class*=column-media]:has(.column-pdf-image) a:hover,
+.media-file-block:has(img) a:hover {
+  opacity: 0.7;
+}
+
+/* ------------------------------
+ メディア画像・画像・画像URL
+------------------------------ */
+/* 管理画面側：ブロックエディターfigure要素リセット用 */
+.acms-admin-block-editor-image {
+  margin: 0;
+}
+
+/* 上下余白 */
+:where(.media-image-block),
+:where(.acms-admin-block-editor-body) .node-imageBlock,
+[class*=column-image],
+[class*=column-media],
+[class*=column-eximage] {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
+/* 画像ユニット：style属性でwidth指定された場合の横はみ出し防止 */
+[class*=column-image][style*=width] {
+  max-width: 100%;
+}
+
+/* 共通設定
+------------------------------ */
+:where(.media-image-block),
+:where(.acms-admin-block-editor-image),
+[class*=column-image],
+[class*=column-media],
+[class*=column-eximage] {
+  line-height: 0; /* Descender space 対策 */
+  text-align: center;
+}
+:where(.media-image-block) a,
+:where(.acms-admin-block-editor-image) a,
+[class*=column-image] a,
+[class*=column-media] a,
+[class*=column-eximage] a {
+  display: inline-block;
+  /* リセット用 */
+  text-decoration: none;
+  /* マウスオーバー用 */
+  transition: opacity 0.2s ease;
+}
+:where(.media-image-block) a:hover,
+:where(.acms-admin-block-editor-image) a:hover,
+[class*=column-image] a:hover,
+[class*=column-media] a:hover,
+[class*=column-eximage] a:hover {
+  opacity: 0.7;
+}
+:where(.media-image-block) img,
+:where(.acms-admin-block-editor-image) img,
+[class*=column-image] img,
+[class*=column-media] img,
+[class*=column-eximage] img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* キャプション
+------------------------------ */
+:where(.media-image-block) figcaption,
+:where(.acms-admin-block-editor-image) figcaption,
+[class*=column-image] .caption,
+[class*=column-media] .caption,
+[class*=column-eximage] .caption {
+  display: block;
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+  line-height: var(--line-height-sm);
+  -webkit-margin-before: 4px;
+          margin-block-start: 4px;
+  margin-inline: 0;
+}
+
+/* ------------------------------
+ テーブル
+------------------------------ */
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  background-color: var(--color-white);
+  border: 0; /* リセット用 */
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th,
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
+  padding: var(--entry-el-padding-xs);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  border: 0; /* リセット用 */
+  border-right: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th {
+  text-align: left;
+  vertical-align: top;
+  background-color: var(--color-gray10);
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
+  background-color: var(--color-white); /* リセット用 */
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) p {
+  margin-block: 0;
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
+  border-color: transparent;
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+@media screen and (min-width: 48rem) {
+  .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th,
+  .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
+    padding: var(--entry-el-padding-sm);
+    font-size: 1rem;
+  }
+}
+
+.tableWrapper table {
+  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  background-color: var(--color-white);
+  border: 0; /* リセット用 */
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+.tableWrapper table th,
+.tableWrapper table td {
+  padding: var(--entry-el-padding-xs);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  border: 0; /* リセット用 */
+  border-right: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+}
+.tableWrapper table th {
+  text-align: left;
+  vertical-align: top;
+  background-color: var(--color-gray10);
+}
+.tableWrapper table td {
+  background-color: var(--color-white); /* リセット用 */
+}
+.tableWrapper table p {
+  margin-block: 0;
+}
+.tableWrapper table a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
+}
+.tableWrapper table a:hover {
+  border-color: transparent;
+}
+.tableWrapper table a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+.tableWrapper table a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+@media screen and (min-width: 48rem) {
+  .tableWrapper table th,
+  .tableWrapper table td {
+    padding: var(--entry-el-padding-sm);
+    font-size: 1rem;
+  }
+}
+
+[class*=column-table] table {
+  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  background-color: var(--color-white);
+  border: 0; /* リセット用 */
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-collapse: collapse;
+}
+[class*=column-table] table th,
+[class*=column-table] table td {
+  padding: var(--entry-el-padding-xs);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  border: 0; /* リセット用 */
+  border-right: var(--border-width-sm) solid rgb(235, 235, 235);
+  border-bottom: var(--border-width-sm) solid rgb(235, 235, 235);
+}
+[class*=column-table] table th {
+  text-align: left;
+  vertical-align: top;
+  background-color: var(--color-gray10);
+}
+[class*=column-table] table td {
+  background-color: var(--color-white); /* リセット用 */
+}
+[class*=column-table] table p {
+  margin-block: 0;
+}
+[class*=column-table] table a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
+}
+[class*=column-table] table a:hover {
+  border-color: transparent;
+}
+[class*=column-table] table a[href^="tel:"] {
+  color: currentcolor;
+  border-bottom: var(--border-width-sm) dashed;
+}
+[class*=column-table] table a[href^="tel:"]:hover {
+  border-color: transparent;
+}
+@media screen and (min-width: 48rem) {
+  [class*=column-table] table th,
+  [class*=column-table] table td {
+    padding: var(--entry-el-padding-sm);
+    font-size: 1rem;
+  }
+}
+
+/* ブロックエディター内のテーブル */
+.tableWrapper {
+  margin-bottom: var(--entry-el-margin-md);
+  overflow-x: auto;
+}
+.tableWrapper table {
+  width: 100%;
+  margin: 0;
+}
+
+/* テーブルユニット */
+[class*=column-table] .entry-container {
+  clear: both;
+  -webkit-margin-after: var(--entry-el-margin-md);
+          margin-block-end: var(--entry-el-margin-md);
+  overflow-x: auto;
+}
+[class*=column-table] table {
+  width: 100%;
+  margin: 0;
+}
+
+/* スクロールするテーブル */
+.acms-table-scrollable th,
+.acms-table-scrollable td,
+.js-table-unit-scroll-hint th,
+.js-table-unit-scroll-hint td,
+.tableWrapper .js-table-unit-scroll-hint th,
+.tableWrapper .js-table-unit-scroll-hint td {
+  white-space: nowrap;
+  word-break: keep-all;
+}
