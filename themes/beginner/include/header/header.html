@@ -1,8 +1,17 @@
-<!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
-<div class="header-wrap {global-nav} {header_sticky}">
-
-  @include("/include/header/header-logo-center.html")
-
+<!-- BEGIN_MODULE Blog_Field -->
+<div class="header-wrap logo-center {header_sticky}">
+<header class="header">
+  <div class="header-item-wrap">
+    @include("/include/edit/blog-custom.html",{"label":"ルートブログ情報を編集する"})
+    <!-- BEGIN_IF [%{VIEW}/eq/top] -->
+    <h1 class="header-title"><!-- ELSE --><p class="header-title"><!-- END_IF -->
+        <a href="%{HOME_URL}" class="header-title-link"><!-- BEGIN_IF [{site-logo@path}/nem] -->
+          <img src="%{MEDIA_ARCHIVES_DIR}{site-logo@path}" alt="{site_name}" role="img" class="header-logo"><!-- ELSE -->{site_name}<!-- END_IF -->
+        </a><!-- BEGIN_IF [%{VIEW}/eq/top] -->
+    </h1><!-- ELSE --></p><!-- END_IF -->
+  </div>
+  @include("/include/parts/global-nav.html")
+</header>
   <div class="global-nav-mobile-menu">
     <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
   </div>
