@@ -1,8 +1,8 @@
-@extends("/_layouts/two-column.html")
+@extends("/_layouts/base.html")
 
 @section("main")
-
-@include("/include/parts/local-nav.html"", {"module_id": "realestate-nav-local", "direction":"is-down"})
+<div class="acms-container">
+@include("/include/parts/local-nav.html", {"module_id": "realestate-nav-local", "direction":"is-down"})
 
 <!-- タグフィルター -->
 @include("/include/tag/filter.html")
@@ -11,16 +11,9 @@
 @include("/include/entry/summary-realestate.html", {"module_id": "summary_realestate"})
 
 @include("/include/parts/search-realestate.html")
-
+</div>
 @endsection
 
 @section("side")
-<!-- カテゴリー：リスト表示 -->
-@include("/include/category/list_side.html", {"module_id": "category_list_side"})
 
-<!-- タグ：リスト表示 -->
-@include("/include/tag/list_side.html", {"module_id": "tag_cloud"})
-
-<!-- エントリーサマリー：サイドバー用 -->
-@include("/include/entry/summary-side.html", {"module_id": "summary_side"})
 @endsection
