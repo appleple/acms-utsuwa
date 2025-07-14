@@ -21,7 +21,14 @@
   margin: 0 0 2rem;
 
   a {
-    @include global.entry-link(var(--color-link), var(--color-text));
+    padding-block: 2px;
+    color: var(--color-link);
+    text-decoration: none;
+    border-bottom: var(--color-text);
+
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 

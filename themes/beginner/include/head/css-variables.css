@@ -176,11 +176,6 @@
   --border-radius-round: 10em;
   --border-radius-circle: 100%;
 
-
-  /* 装飾 */
-  --border-link: var(--border-width-sm) dotted var(--color-text);
-  --border-footer: var(--border-width-sm) solid var(--color-gray30);
-
   /* 行高さ */
   --line-height-base: 1.5;
   --line-height-ss: 1;
