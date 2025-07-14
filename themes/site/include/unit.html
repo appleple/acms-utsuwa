@@ -1,35 +1,5 @@
 @extends("/_layouts/unit.html")
 
-@section(text-unit)
-<!-- テキスト -->
-<div class="entry-text-unit <!-- BEGIN p -->is-p<!-- END p --><!-- BEGIN h2 -->is-h2<!-- END h2 --><!-- BEGIN h3 -->is-h3<!-- END h3 --><!-- BEGIN h4 -->is-h4<!-- END h4 --><!-- BEGIN h5 -->is-h5<!-- END h5 --><!-- BEGIN ul -->is-ul<!-- END ul --><!-- BEGIN ol -->is-ol<!-- END ol --><!-- BEGIN dl -->is-dl<!-- END dl --><!-- BEGIN blockquote -->is-blockquote<!-- END blockquote --><!-- BEGIN table -->is-table<!-- END table --><!-- BEGIN pre -->is-pre<!-- END pre --><!-- BEGIN none -->is-none<!-- END none --><!-- BEGIN markdown -->is-markdown<!-- END markdown --><!-- BEGIN wysiwyg -->is-wysiwyg<!-- END wysiwyg -->">
-  <!-- テキスト --><!-- BEGIN p -->
-  <p{class}>{text}[raw|nl2br]</p><!-- END p --><!-- BEGIN h2 -->
-    <h2{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h2><!-- END h2 --><!-- BEGIN h3 -->
-      <h3{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h3><!-- END h3 --><!-- BEGIN h4 -->
-        <h4{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h4><!-- END h4 --><!-- BEGIN h5 -->
-          <h5{class}<!-- BEGIN_IF [{extend_tag}/nem] --> id="{extend_tag}"<!-- END_IF -->>{text}[raw|nl2br]</h5><!-- END h5 --><!-- BEGIN ul -->
-            <ul{class}>{text}[raw|list]</ul><!-- END ul --><!-- BEGIN ol -->
-              <ol{class}>{text}[raw|list]</ol><!-- END ol --><!-- BEGIN dl -->
-                <dl{class}>{text}[raw|definition_list]</dl><!-- END dl --><!-- BEGIN blockquote -->
-                  <div class="entry-container">
-                    <blockquote{class}>{text}[raw|nl2br]</blockquote>
-                  </div><!-- END blockquote --><!-- BEGIN table -->
-                  <div class="entry-container">
-                    <table{class}>{text}[raw|table]</table>
-                  </div><!-- END table --><!-- BEGIN pre -->
-                  <div class="entry-container">
-                    <pre{class}>{text}</pre>
-                  </div><!-- END pre --><!-- BEGIN none -->
-                  {text}[raw]<!-- END none --><!-- BEGIN markdown -->
-                  {text}[raw|markdown]<!-- END markdown --><!-- BEGIN wysiwyg -->
-                  {text}[raw]<!-- END wysiwyg -->
-
-                  @include("/include/unit/tag-select.html")
-</div>
-@endsection
-
-
 @section(file-unit)
 <!-- ファイル -->
 <div class="column-file-{align} js_notStyle">

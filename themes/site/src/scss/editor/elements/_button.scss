@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* ------------------------------
+ リンクボタン・ブロックエディタファイルボタン
+------------------------------ */
+.acms-admin-block-editor-link-button-link,
+.link-button-block-link,
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
+.#{acms.$entry-class} .media-file-block-link {
+  display: inline-grid;
+  box-sizing: border-box;
+  min-height: auto;
+  padding: 1em 2em;
+  font-weight: normal;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: 1.3;
+  background-color: var(--color-white);
+  border: solid 1px var(--color-gray60);
+  border-radius: 0.25em;
+  place-items: center;
+
+  &,
+  &:link,
+  &:visited {
+    color: var(--color-text);
+  }
+}
+
+.link-button-block-link,
+.media-file-block-link,
+.media-file-block .media-file-block-link {
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--color-gray20);
+    opacity: 1;
+  }
+}
+
+/* リンクボタン */
+.link-button-block,
+:where(.acms-admin-block-editor-body) .node-linkButton {
+  margin-block: 0 var(--entry-el-margin-md);
+}

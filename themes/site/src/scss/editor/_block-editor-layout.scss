@@ -1,0 +1,139 @@
+@use "sass:map";
+@use "../global/acms-common" as acms;
+@use "../global/common" as global;
+
+/* ------------------------------
+ ブロックエディター内要素のレイアウト
+------------------------------ */
+
+/* レイアウト */
+:where(.acms-admin-block-editor-body) :where([data-type="columns"]),
+:where(.#{acms.$entry-class}) :where([data-type="columns"]) {
+  display: grid;
+  grid-auto-flow: column;
+  box-sizing: border-box;
+  margin-block: 0 var(--entry-el-margin-md);
+
+  // 2カラム
+  &.layout-two-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // 3カラム
+  &.layout-three-column {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 管理画面側 */
+:where(.acms-admin-block-editor-body) :where([data-type="columns"]) {
+  gap: 1rem; // 管理画面では余白が広くなりすぎないよう固定値を指定
+}
+
+/* 閲覧画面側 */
+:where(.#{acms.$entry-class}) :where([data-type="columns"]) {
+  gap: calc(var(--unit-gutter-var) / 2);
+}
+
+/* カラム上下余白
+/* 編集画面でのブロックエディターでのカラム上下余白親要素でとるため、
+/* 子要素の最初と最後の上下マージンをリセット
+/* 上書きのため詳細度高め（0,0,2,0）
+----------------------------- */
+:where(.acms-admin-block-editor-body),
+:where(.#{acms.$entry-class}) {
+  [data-type="column"] > * {
+    &:first-child {
+      margin-block-start: 0;
+    }
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+}
+
+/* 配置
+/* メディア・ファイル・リンクボタン
+----------------------------- */
+:where(.media-image-block),
+:where(.media-file-block),
+:where(.link-button-block) {
+  &.media-align-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &.media-align-left {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &.media-align-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* メディアサイズ
+----------------------------- */
+:where(.media-image-block) {
+  figure {
+    /* リセット用 */
+    margin: 0;
+  }
+
+  .media-width-25 {
+    max-width: 25%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .media-width-33 {
+    max-width: 33%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .media-width-50 {
+    max-width: 50%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .media-width-66 {
+    max-width: 66%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .media-width-75 {
+    max-width: 75%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .media-width-100 {
+    max-width: 100%;
+
+    // ToDo：media-width-** のサイズ指定が figure と img の両方に適用されているため、img の max-width を指定している。figure指定のみに変更されたらこのスタイルは削除すること。
+    img {
+      max-width: 100%;
+    }
+  }
+}

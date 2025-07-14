@@ -1,0 +1,375 @@
+@use "sass:map";
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* ------------------------------
+ カスタムユニット
+------------------------------ */
+
+/* カード
+------------------------------ */
+.#{acms.$entry-class} {
+  .card-item,
+  .card-bordered-item {
+    padding-inline: calc(var(--unit-gutter-var) / 2);
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+    .card-bordered-item {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+/* 罫線ユニット
+------------------------------ */
+.unit-separator {
+  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  border: 0;
+  border-top: var(--border-width-sm) solid var(--color-gray40);
+}
+
+/* 目次ユニット
+------------------------------ */
+.#{acms.$entry-class} {
+  .entry-outline {
+    margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-lg);
+    padding: 1rem;
+    border: var(--border-width-lg) solid var(--color-gray30);
+  }
+
+  .entry-outline-title {
+    margin: 0 0 1rem;
+    padding: 0 0 0.5rem;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-m);
+    border-bottom: 2px solid var(--color-gray30);
+  }
+
+  .entry-outline-list-wrap {
+    .outline-list {
+      margin: 0;
+      padding: 0 0 0 var(--entry-el-margin-sm);
+      counter-reset: a;
+
+      &.level-1 {
+        padding: 0;
+      }
+    }
+
+    .outline-item {
+      strong,
+      em {
+        font-weight: normal;
+        font-style: normal;
+        background: none;
+      }
+
+      > strong {
+        display: inline-block;
+        margin: 0 0 1rem 0.25rem;
+
+      }
+    }
+
+    .outline-item::marker {
+      content: none;
+    }
+
+    .outline-item a {
+      display: block;
+      margin: 0 0 1rem 0.25rem;
+      color: var(--color-text);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::before {
+        display: inline-block;
+        padding-right: 0.5rem;
+        color: var(--color-gray90);
+        font-weight: 700;
+        white-space: nowrap;
+        content: counters(a, "-") ". ";
+        counter-increment: a;
+      }
+
+    }
+
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .#{acms.$entry-class} {
+    .entry-outline {
+      padding: 2rem;
+    }
+
+    .entry-outline-title {
+      margin: 0 0 1.5rem;
+      padding: 0 0 1rem;
+      font-size: map.get(global.$font-scales, heading-ss);
+    }
+  }
+}
+
+/* メッセージユニット
+------------------------------ */
+.#{acms.$entry-class} {
+  .message {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+    background: var(--color-gray10);
+  }
+
+  .message-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .message-image {
+    height: 15rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .message-lead {
+    position: relative;
+    margin: 0;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, heading-s);
+  }
+
+  .message-content {
+    margin: 0;
+  }
+
+  .message-source {
+    margin: 0;
+
+    &::before {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1px;
+      margin: 0 1rem 0 0;
+      vertical-align: middle;
+      background: var(--color-gray30);
+      content: "";
+    }
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .#{acms.$entry-class} {
+    .message {
+      flex-direction: row;
+    }
+
+
+    .message-wrap {
+      position: relative;
+      box-sizing: border-box;
+      width: 50%;
+      padding: 6rem 3rem;
+    }
+
+    .message-image {
+      order: 1;
+      width: 50%;
+      height: initial;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+      }
+
+    }
+
+    .message-lead {
+      height: auto;
+      font-size: map.get(global.$font-scales, heading-s);
+    }
+
+    .message-content {
+      margin: 0;
+    }
+  }
+}
+
+/* 料金テーブル
+------------------------------ */
+.#{acms.$entry-class} {
+  .pricing-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--col-gutter);
+    justify-content: center;
+    margin: 1.5rem 0;
+    padding: 4rem 0 2rem;
+    padding: 0 (var(--unit-gutter-var) / 2);
+
+    &:has(.is-reccomend) {
+      padding-top: 16px;
+    }
+  }
+
+  .pricing-item {
+    position: relative;
+    display: flex;
+    flex: 0 1 100%;
+    margin: 0 0 var(--entry-el-margin-md) 0;
+    list-style: none;
+
+  }
+
+  .pricing-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2.5rem 2rem 1.5rem;
+    background: #fff;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.25s ease;
+  }
+
+  .pricing-header {
+    margin: 0 0 1rem;
+    padding: 0 0 1rem;
+    text-align: center;
+    border-bottom: var(--border-width-sm) solid var(--color-gray30);
+  }
+
+  .pricing-label-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .pricing-label {
+    display: inline-block;
+    margin: 0;
+    padding: 0.25rem 2rem;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: calc(map.get(global.$font-scales, heading-s) * 0.7);
+    line-height: var(--line-height-sm);
+    background: var(--color-primary);
+    border-radius: var(--border-radius-round);
+    box-shadow: var(--box-shadow);
+
+    &::after {
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      width: 12px;
+      height: 10px;
+      background-color: var(--color-primary);
+      transform: translateX(-50%);
+      content: "";
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+  }
+
+  .pricing-title {
+    margin: 0 0 0.5rem;
+    color: var(--color-primary);
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+
+  .pricing-desc {
+    margin: 0;
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, body-s);
+    line-height: var(--line-height-base);
+  }
+
+  .pricing-price {
+    margin: 0 0 0.5rem;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, heading-l);
+    line-height: var(--line-height-ss);
+    text-align: center;
+  }
+
+  .pricing-unit {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+
+  .pricing-check-group {
+    margin: 0 0 1rem;
+    padding: 0;
+    font-size: map.get(global.$font-scales, body-s);
+    list-style: none;
+
+    li {
+      margin: 0 0 0.5rem;
+
+      &::before {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem 0 0;
+        vertical-align: middle;
+        background: url(#{global.$root-theme-img}icon-circle-check-blue.svg);
+        background-size: contain;
+        content: "";
+      }
+    }
+  }
+
+  .pricing-button {
+    display: block;
+    margin: 0 0 1rem;
+  }
+
+  .pricing-text-info {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: acms.$breakpoint-md-min) {
+  .#{acms.$entry-class} {
+    .pricing-group {
+      flex-flow: row wrap;
+      gap: var(--col-gutter);
+      margin: 0 calc(var(--unit-gutter-var) / 2);
+      padding: 6rem 0 4rem;
+
+
+
+    }
+
+    .pricing-item {
+      flex: 1 1 calc(100% / 3 - 2rem);
+      box-sizing: border-box;
+      margin: 0 0 var(--entry-el-margin-md) 0;
+
+      &:hover .pricing-inner {
+        box-shadow: var(--box-shadow-hover);
+      }
+    }
+
+    .pricing-title {
+      font-size: map.get(global.$font-scales, heading-ss);
+    }
+  }
+}

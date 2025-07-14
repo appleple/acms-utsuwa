@@ -1,0 +1,90 @@
+@use "sass:map";
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* ------------------------------
+ メディアファイル・ファイル
+------------------------------ */
+
+/* 共通上下余白設定 */
+.media-file-block,
+:where(.acms-admin-block-editor-body) .node-fileBlock,
+[class*="column-file"],
+[class*="column-media"]:has(a[href*="media-download"]) {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
+/* Descender space 対策 */
+.media-file-block,
+.acms-admin-block-editor-file {
+  line-height: 0;
+}
+
+/* ファイルアイコン */
+.acms-admin-block-editor-file img,
+[class*="column-media"] .columnIcon,
+[class*="column-file"] .columnIcon {
+  display: inline-block;
+  width: 1.75rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ボタン型 */
+[class*="column-file"] a,
+[class*="column-media"] a[href*="media-download"] {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem;
+
+  /* リセット用 */
+  text-decoration: none;
+  border: var(--border-width-sm) solid var(--color-gray40);
+  border-radius: var(--border-radius-md);
+
+  /* マウスオーバー用 */
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--color-gray20);
+  }
+}
+
+/* 非ブロックエディターのボタン型でファイルアイコン付きのキャプション */[class*="column-file"] .caption,
+[class*="column-media"]:has(a[href*="media-download"]):has(.columnIcon) .caption {
+  display: block;
+  margin: 0 0 0 1rem;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-sm);
+}
+
+/* PDFプレビュー
+/* ブロックエディター（ファイルアイコンでの表示）
+/* 共通
+------------------------------ */
+
+/* キャプション */
+[class*="column-media"]:has(.column-pdf-image) .caption,
+.media-file-block:has(img) .caption,
+.acms-admin-block-editor-file-caption,
+p.acms-admin-block-editor-file-caption {
+  display: block;
+  margin: 4px 0 0;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-sm);
+}
+
+/* リンク */
+[class*="column-media"]:has(.column-pdf-image),
+.media-file-block:has(img) {
+  a {
+    /* マウスオーバー用 */
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

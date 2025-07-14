@@ -12,6 +12,7 @@ module.exports = {
   entry: {
     // bundle: `${__dirname}/src/js/index.js`,
     bundle: `${__dirname}/src/scss/site.scss`,
+    editor: `${__dirname}/src/scss/site-editor.scss`,
   },
   output: {
     path: `${__dirname}/dest/`,

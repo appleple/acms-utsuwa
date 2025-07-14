@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+// 編集画面設定
+@use "./editor/field";
+
+// エディター共通タイポグラフィー（編集画面と共通）
+@use "./editor/elements/typography";
+
+// ブロックエディターのレイアウト（編集画面と共通）
+@use "./editor/block-editor-layout";
+
+// ユニットパーツ（編集画面と共通）
+@use "./editor/elements/blockquote";
+@use "./editor/elements/button";
+@use "./editor/elements/file";
+@use "./editor/elements/image";
+@use "./editor/elements/table";
