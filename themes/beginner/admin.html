@@ -1,12 +1,12 @@
 @extends("/_layouts/admin.html")
 
-@section("admin-css")
-@parent
-
-<!-- カスタムCSSを記述 -->
-<!-- BEGIN_MODULE Touch_Edit -->
-<link href="/include/edit/custom.css" rel="stylesheet">
-<!-- END_MODULE Touch_Edit -->
+@section("editor-css")
+<!-- テーマ用のCSSカスタムプロパティを読み込み -->
+<link rel="stylesheet" href="/include/head/css-variables.css" />
+<!-- 編集画面とエディタ内要素のスタイル（編集・閲覧画面両方に適用）を読み込み -->
+<link rel="stylesheet" href="/dest/editor.css">
+<!-- 編集画面用カスタムCSSを読み込み -->
+<link rel="stylesheet" href="/include/edit/custom.css">
 @endsection
 
 @section("admin-js")

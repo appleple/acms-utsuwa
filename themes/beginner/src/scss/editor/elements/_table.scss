@@ -1,0 +1,107 @@
+@use "sass:map";
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* ------------------------------
+ テーブル
+------------------------------ */
+$_table-border-color: rgb(235 235 235);
+
+@include acms.editor-style(
+  ("table"),
+  $extension-contexts: (".tableWrapper", '[class*="column-table"]'), /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
+) {
+  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  background-color: var(--color-white);
+  border: 0; /* リセット用 */
+  border-bottom: var(--border-width-sm) solid $_table-border-color;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: var(--entry-el-padding-xs);
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: var(--line-height-base);
+    border: 0; /* リセット用 */
+    border-right: var(--border-width-sm) solid $_table-border-color;
+    border-bottom: var(--border-width-sm) solid $_table-border-color;
+  }
+
+  th {
+    text-align: left;
+    vertical-align: top;
+    background-color: var(--color-gray10);
+  }
+
+  td {
+    background-color: var(--color-white); /* リセット用 */
+  }
+
+  p {
+    margin-block: 0;
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+    border-bottom: var(--border-width-sm) dotted var(--color-link);
+    padding-block: 2px;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &[href^="tel:"] {
+      color: currentcolor;
+      border-bottom: var(--border-width-sm) dashed;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  @media screen and (min-width: acms.$breakpoint-md-min) {
+    th,
+    td {
+      padding: var(--entry-el-padding-sm);
+      font-size: map.get(global.$font-scales, body-m);
+    }
+  }
+}
+
+/* ブロックエディター内のテーブル */
+.tableWrapper {
+  margin-bottom: var(--entry-el-margin-md);
+  overflow-x: auto; // 横スクロールする時用
+
+  table {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* テーブルユニット */
+[class*="column-table"] {
+  .entry-container {
+    clear: both;
+    margin-block-end: var(--entry-el-margin-md);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* スクロールするテーブル */
+.acms-table-scrollable,
+.js-table-unit-scroll-hint,
+.tableWrapper .js-table-unit-scroll-hint {
+  th,
+  td {
+    white-space: nowrap;
+    word-break: keep-all; // 横スクロールするテーブルの時は常時テキスト折り返しなし
+  }
+}
