@@ -1,17 +1,24 @@
-<!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
-<div class="header-wrap {global-nav} {header_sticky}">
-  <!-- BEGIN_IF [{global-nav}/eq/nav-bottom] -->
-  @include("/include/header/header-nav-bottom.html")
-  <!-- ELSE_IF [{global-nav}/eq/logo-center] -->
-  @include("/include/header/header-logo-center.html")
-  <!-- ELSE -->
-  @include("/include/header/header-default.html")
-  <!-- END_IF -->
+<!-- BEGIN_MODULE Blog_Field id="root" -->
+<div class="header-wrap nav-default {header_sticky}">
+
+<header class="header">
+  <div class="header-item-wrap">
+    @include("/include/edit/blog-custom.html",{"label":"ブログ情報を編集する"})
+    <!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
+    <h1 class="header-title"><!-- ELSE -->
+      <p class="header-title"><!-- END_IF -->
+        <a href="%{HOME_URL}" class="header-title-link"><!-- BEGIN_IF [{site-logo@path}/nem] -->
+          <img src="%{MEDIA_ARCHIVES_DIR}{site-logo@path}" alt="{site_name}" role="img" class="header-logo"><!-- ELSE -->{site_name}<!-- END_IF -->
+        </a><!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] -->
+    </h1><!-- ELSE --></p><!-- END_IF -->
+  </div>
+  <div class="header-item-nav">
+    @include("/include/parts/global-nav.html")
+  </div>
+</header>
+
   <div class="global-nav-mobile-menu">
     <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
-    <!-- BEGIN_IF [{global-nav}/eq/logo-center] -->
-    <button class="global-nav-mobile-search-btn header-search-open-button">@include("/themes/site/images/icon-search.svg")</button>
-    <!-- END_IF -->
   </div>
   <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
     <div class="global-nav-mobile-inner">

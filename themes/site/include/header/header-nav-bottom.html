@@ -1,3 +1,6 @@
+<!-- BEGIN_MODULE Blog_Field id="root" -->
+<div class="header-wrap nav-bottom {header_sticky}">
+
 <header class="header">
   <div class="header-item-wrap">
     @include("/include/edit/blog-custom.html",{"label":"ブログ情報を編集する"})
@@ -11,12 +14,14 @@
     <div class="header-item-nav">
       <div class="header-nav-wrap">
         <div class="header-nav-tel">
-          <!-- BEGIN_IF [{header-tel}/nem/_and_/{tel}/nem] -->
+          <!-- BEGIN_IF [{header-tel}/eq/true/_and_/{tel}/nem] -->
           <span class="header-nav-tel-no">TEL： <a href="tel:{tel}">{tel}</a></span> <span class="header-nav-tel-time">{tel-time}</span>
           <!-- END_IF -->
         </div>
         <div class="header-sub-navi">
+          <!-- BEGIN_IF [{search-button}/eq/true] -->
           @include("/include/parts/search-general.html")
+          <!-- END_IF -->
           <!-- BEGIN_IF [{contact-button}/eq/true] -->
           <div class="header-nav-button"><a href="%{BASE_URL}{contact-button-url}" class="button is-shadow">{contact-button-text}</a></div>
           <!-- END_IF -->
@@ -26,3 +31,24 @@
   </div>
   @include("/include/parts/global-nav.html")
 </header>
+
+
+  <div class="global-nav-mobile-menu">
+    <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
+
+  </div>
+  <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
+    <div class="global-nav-mobile-inner">
+      <nav aria-label="メインメニュー" class="global-nav-mobile-navbar">
+        <!-- グローバルナビ（モバイル端末用） -->
+        @include("/include/header/header-nav-mobile.html")
+
+        <div class="global-nav-mobile-navbar-footer">
+          <!-- SNSアカウント一覧 -->
+          @include("/include/parts/sns-accounts.html")
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Blog_Field -->
