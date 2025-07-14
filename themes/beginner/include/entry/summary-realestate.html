@@ -7,8 +7,8 @@
       <div class="card">
         <a href="{url}" class="card-link">
           <div class="card-img-wrap">
-            <!-- BEGIN_IF [{main-image@path}/nem] -->
-            <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- ELSE -->
+            <!-- BEGIN_IF [{path}/nem] -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- ELSE -->
             <img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256">
             <!-- END_IF -->
             <!-- BEGIN new -->
