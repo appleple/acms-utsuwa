@@ -2,14 +2,14 @@
 
 @section("main")
 <!-- エントリー本文 -->
-@include("/include/entry/body.html", {"module_id": "body_blog"})
+@include("/include/entry/body.html", {"module_id": "body_realestate"})
 
 @endsection
 
 @section("side")
 
 <!-- カテゴリー：リスト表示 -->
-@include("/include/category/list_side.html", {"module_id": "category_list_side"})
+@include("/include/category/list.html", {"module_id": "category_list"})
 
 <!-- エントリーサマリー：サイドバー用 -->
 @include("/include/entry/summary-side.html", {"module_id": "summary_side"})
