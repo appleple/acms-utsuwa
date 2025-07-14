@@ -41,9 +41,19 @@
 @use "type";
 @use "video-modal";
 
+// ユニットサイド余白（閲覧画面のみで使用）
+@use "./editor/unit-side-space";
+
+// ユニットのグルーピング（閲覧画面のみで使用）
+@use "./editor/group";
+
+// ユニットパーツ（閲覧画面のみで使用）
+@use "./editor/elements/custom-unit";
+@use "./editor/elements/embed";
+@use "./editor/elements/map";
+@use "./editor/elements/module-unit";
+
 // コンテンツ
-@use "unit";
-@use "editor";
 @use "entry";
 @use "not-found";
 @use "section";

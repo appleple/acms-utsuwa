@@ -139,17 +139,6 @@ a {
   }
 }
 
-/* グリッド */
-.acms-grid {
-  margin: 0 calc(var(--unit-gutter-var) / -2);
-}
-
-[class*="acms-col"] {
-  padding-right: calc(var(--unit-gutter-var) / 2);
-  padding-left: calc(var(--unit-gutter-var) / 2);
-}
-
-
 /* 2カラム */
 
 .side-container {

@@ -1,0 +1,19 @@
+@use "../global/acms-common" as acms;
+@use "../global/common" as global;
+
+/* ------------------------------
+　フィールドスタイル調整
+------------------------------ */
+
+/* 価格表ユニットのユニットグループアイテムの境界線 */
+.acms-admin-table-admin-edit {
+  border-collapse: collapse;
+
+  .sortable-item {
+    border-top: 1px solid #ccc;
+
+    &:first-child {
+      border: 0;
+    }
+  }
+}

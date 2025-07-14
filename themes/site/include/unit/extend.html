@@ -1,20 +1,20 @@
 <!-- BEGIN unit#custom_unit_space -->
-<hr class="clearHidden" style="padding-bottom: var(--unit-space-{unit_space})">
+<hr class="clearHidden not-editor-style" style="padding-bottom: var(--unit-space-{unit_space})">
 <!-- END unit#custom_unit_space -->
 
 <!-- BEGIN unit#custom_separator -->
-<hr class="unit-separator" style="margin-top: calc(var(--separator-{unit_space}) - 2rem);margin-bottom:  var(--separator-{unit_space});">
+<hr class="unit-separator not-editor-style" style="margin-top: calc(var(--separator-{unit_space}) - 2rem);margin-bottom:  var(--separator-{unit_space});">
 <!-- END unit#custom_separator -->
 
 <!-- BEGIN unit#custom_outline -->
-<nav class="entry-outline">
+<nav class="entry-outline not-editor-style">
   <h2 class="entry-outline-title js-except">目次</h2>
   <div class="js-outline-yield entry-outline-list-wrap"></div>
 </nav>
 <!-- END unit#custom_outline -->
 
 <!-- BEGIN unit#custom_message -->
-<div class="message">
+<div class="message not-editor-style">
   <div class="message-image"><img src="%{MEDIA_ARCHIVES_DIR}{message_image@path}" class="acms-img-responsive" alt=""></div>
   <div class="message-wrap"><!-- BEGIN message_lead:veil -->
     <h3 class="message-lead">{message_lead}[nl2br]</h3><!-- END message_lead:veil -->
@@ -27,7 +27,7 @@
 <!-- END unit#custom_message -->
 
 <!-- BEGIN unit#custom_pricing -->
-<ul class="pricing-group"><!-- BEGIN group_pricing:loop -->
+<ul class="pricing-group not-editor-style"><!-- BEGIN group_pricing:loop -->
   <li class="pricing-item<!-- BEGIN_IF [{pricing_reccommend}/eq/true] --> is-reccomend<!-- END_IF -->">
     <div class="pricing-inner">
       <div class="pricing-header"><!-- BEGIN_IF [{pricing_reccommend}/eq/true] -->
@@ -53,9 +53,6 @@
   </li><!-- END group_pricing:loop -->
 </ul>
 <!-- END unit#custom_pricing -->
-
-<!-- BEGIN unit#custom_sample -->
-<!-- END unit#custom_sample -->
 
 <!-- BEGIN unit#osmap_mapbox -->
 
@@ -101,13 +98,13 @@
   });
 </script>
 
-<div class="column-map-{align}{display_size_class}" {display_size}[raw]>
+<div class="column-map-{align}{display_size_class} not-editor-style" {display_size}[raw]>
   <div class="js-mapbox-map" data-lat="{lat}" data-lng="{lng}" data-zoom="{zoom}" data-msg="{msgRaw}" style="width: {x}px; height: {y}px;"></div>
 </div>
 <!-- END unit#osmap_mapbox -->
 
 <!-- BEGIN unit#custom_bubble -->
-<div class="bubble-item">
+<div class="bubble-item not-editor-style">
   <div class="bubble-image-wrap">
     <!-- BEGIN_IF [{bubble-image@path}/nem] -->
 
