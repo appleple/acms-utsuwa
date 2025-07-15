@@ -2,7 +2,7 @@
 
 @section("main")
 <!-- エントリー本文 -->
-@include("/include/entry/body.html", {"module_id": "body_realestate"})
+@include("/include/entry/body.html", {"module_id": "body_no_date"})
 
 @endsection
 
@@ -12,10 +12,11 @@
 @include("/include/category/list.html", {"module_id": "category_list"})
 
 <!-- エントリーサマリー：サイドバー用 -->
-@include("/include/entry/summary-side.html", {"module_id": "summary_side"})
+@include("/include/entry/summary-side.html", {"module_id": "summary_side", "module_title": "新着物件"})
 
 <!-- タグ：リスト表示 -->
 @include("/include/tag/cloud.html", {"module_id": "tag_cloud"})
 
+@include("/include/parts/banner-side.html", {"module_id": "banner_side"})
 
 @endsection
