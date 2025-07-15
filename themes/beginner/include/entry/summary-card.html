@@ -7,10 +7,11 @@
       <div class="card">
         <a href="{url}" class="card-link">
           <div class="card-img-wrap"><!-- BEGIN image:veil -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
+            <img src="%{ROOT_DIR}{path}[resizeImg(455,455)]" alt="" class="acms-img-responsive card-img" width="455" height="455"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
           </div>
           <div class="card-text-wrap">
-            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+            <!-- BEGIN date:veil -->
+            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time><!-- END date:veil -->
             <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
             <p class="card-category">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
             <h2 class="card-title">{title}</h2>
