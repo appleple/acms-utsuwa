@@ -3,72 +3,103 @@
 @use "../../global/common" as global;
 
 /* ------------------------------
- メディアファイル・ファイル
+ - メディアファイル
+ - ファイル
+ - ブロックエディタのファイル（縦積み、ボタン型）
 ------------------------------ */
-
-/* 共通上下余白設定 */
 .media-file-block,
 :where(.acms-admin-block-editor-body) .node-fileBlock,
 [class*="column-file"],
 [class*="column-media"]:has(a[href*="media-download"]) {
+  font-size: 0; /* Descender space 対策 */
   margin-block: 0 var(--entry-el-margin-md);
 }
 
-/* Descender space 対策 */
-.media-file-block,
-.acms-admin-block-editor-file {
-  line-height: 0;
+/* ボタン型
+------------------------------ */
+
+/* リンク */
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
+[class*="column-file"] a,
+[class*="column-media"] a[href*="media-download"] {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+
+  /* リセット用 */
+  text-decoration: none;
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid var(--color-gray40);
+  border-radius: var(--border-radius-md);
+
+  &:hover {
+    opacity: 1; /* リセット */
+  }
+}
+
+/* リンク（閲覧画面用） */
+.media-file-block-link,
+[class*="column-file"] a,
+[class*="column-media"] a[href*="media-download"] {
+  @media (hover: hover) {
+    transition: background-color 0.2s ease;
+
+    &:where(:any-link):hover {
+      background-color: var(--color-gray20);
+    }
+  }
 }
 
 /* ファイルアイコン */
-.acms-admin-block-editor-file img,
+.acms-admin-block-editor-file-link img,
+.media-file-block-link img,
 [class*="column-media"] .columnIcon,
 [class*="column-file"] .columnIcon {
   display: inline-block;
-  width: 1.75rem;
+  width: 2rem;
   max-width: 100%;
   height: auto;
 }
 
-/* ボタン型 */
-[class*="column-file"] a,
-[class*="column-media"] a[href*="media-download"] {
-  display: inline-flex;
-  align-items: center;
-  padding: 1rem;
+/* キャプションタイポグラフィ設定 */
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
+[class*="column-file"] .caption,
+[class*="column-media"]:has(a[href*="media-download"]):has(.columnIcon) .caption {
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+}
 
-  /* リセット用 */
-  text-decoration: none;
-  border: var(--border-width-sm) solid var(--color-gray40);
-  border-radius: var(--border-radius-md);
-
-  /* マウスオーバー用 */
-  transition: background-color 0.2s ease;
-
+/* ブロックエディタのファイルボタン型キャプションカラーリセット */
+.acms-admin-block-editor-file-link,
+.media-file-block-link {
+  &:link,
+  &:visited,
   &:hover {
-    background: var(--color-gray20);
+    color: var(--color-text);
   }
 }
 
-/* 非ブロックエディターのボタン型でファイルアイコン付きのキャプション */[class*="column-file"] .caption,
+/* キャプションレイアウトリセット */
+.acms-admin-block-editor-file-link .caption,
+.media-file-block-link .caption,
+[class*="column-file"] .caption,
 [class*="column-media"]:has(a[href*="media-download"]):has(.columnIcon) .caption {
-  display: block;
-  margin: 0 0 0 1rem;
-  color: var(--color-text);
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-sm);
+  margin: 0;
 }
 
 /* PDFプレビュー
-/* ブロックエディター（ファイルアイコンでの表示）
-/* 共通
 ------------------------------ */
+.column-pdf-image {
+  width: 100%;
+  border: var(--border-width-sm) solid var(--color-gray40);
+}
 
 /* キャプション */
-[class*="column-media"]:has(.column-pdf-image) .caption,
-.media-file-block:has(img) .caption,
-.acms-admin-block-editor-file-caption,
-p.acms-admin-block-editor-file-caption {
+[class*="column-media"]:has(.column-pdf-image) .caption {
   display: block;
   margin: 4px 0 0;
   color: var(--color-text-2nd);
@@ -77,10 +108,55 @@ p.acms-admin-block-editor-file-caption {
 }
 
 /* リンク */
-[class*="column-media"]:has(.column-pdf-image),
-.media-file-block:has(img) {
+[class*="column-media"]:has(.column-pdf-image) {
   a {
+    /* リンクスタイルリセット */
+    padding: 0;
+    border: 0;
+
     /* マウスオーバー用 */
+    transition: opacity 0.2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* ブロックエディタのファイル（縦積み）
+------------------------------ */
+
+/* キャプション */
+.media-file-block:not(:has(.media-file-block-link)) .caption,
+.acms-admin-block-editor-file-caption,
+p.acms-admin-block-editor-file-caption {
+  display: block;
+  margin: 4px 0 0;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-md);
+}
+
+.media-file-block:not(:has(.media-file-block-link)),
+.acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)) {
+  text-align: center;
+
+  img {
+    width: 4.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* リンク（閲覧画面用） */
+.media-file-block:not(:has(.media-file-block-link)) a {
+  /* リンクスタイルリセット */
+  padding: 0;
+  border: 0;
+
+  @media (hover: hover) {
     transition: opacity 0.2s ease;
 
     &:hover {
