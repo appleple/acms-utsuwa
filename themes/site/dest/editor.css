@@ -1633,124 +1633,153 @@ p + p.text-danger,
 }
 
 /* ------------------------------
- リンクボタン・ブロックエディタファイルボタン
+ リンクボタン
 ------------------------------ */
-.acms-admin-block-editor-link-button-link,
-.link-button-block-link,
-.acms-admin-block-editor-file-link,
-.media-file-block-link,
-.entry-style .media-file-block-link {
-  display: inline-grid;
-  box-sizing: border-box;
-  min-height: auto;
-  padding: 1em 2em;
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.3;
-  background-color: var(--color-white);
-  border: solid 1px var(--color-gray60);
-  border-radius: 0.25em;
-  place-items: center;
-}
-.acms-admin-block-editor-link-button-link, .acms-admin-block-editor-link-button-link:link, .acms-admin-block-editor-link-button-link:visited,
-.link-button-block-link,
-.link-button-block-link:link,
-.link-button-block-link:visited,
-.acms-admin-block-editor-file-link,
-.acms-admin-block-editor-file-link:link,
-.acms-admin-block-editor-file-link:visited,
-.media-file-block-link,
-.media-file-block-link:link,
-.media-file-block-link:visited,
-.entry-style .media-file-block-link,
-.entry-style .media-file-block-link:link,
-.entry-style .media-file-block-link:visited {
-  color: var(--color-text);
-}
-
-.link-button-block-link,
-.media-file-block-link,
-.media-file-block .media-file-block-link {
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-.link-button-block-link:hover,
-.media-file-block-link:hover,
-.media-file-block .media-file-block-link:hover {
-  background: var(--color-gray20);
-  opacity: 1;
-}
-
-/* リンクボタン */
+/* 上下余白 */
 .link-button-block,
 :where(.acms-admin-block-editor-body) .node-linkButton {
   margin-block: 0 var(--entry-el-margin-md);
 }
 
+/* リンク */
+.acms-admin-block-editor-link-button-link,
+.link-button-block-link {
+  display: inline-flex;
+  box-sizing: border-box;
+  min-height: auto;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.3;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-md);
+  place-items: center;
+}
+.acms-admin-block-editor-link-button-link, .acms-admin-block-editor-link-button-link:link, .acms-admin-block-editor-link-button-link:visited,
+.link-button-block-link,
+.link-button-block-link:link,
+.link-button-block-link:visited {
+  color: var(--color-white);
+}
+
+/* リンクスタイル（閲覧画面のみ） */
+.link-button-block-link {
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .link-button-block-link {
+    transition: background-color 0.2s ease;
+  }
+  .link-button-block-link:where(:-moz-any-link):hover {
+    background: var(--color-primary-hover);
+    opacity: 1;
+  }
+  .link-button-block-link:where(:any-link):hover {
+    background: var(--color-primary-hover);
+    opacity: 1;
+  }
+}
+
 /* ------------------------------
- メディアファイル・ファイル
+ - メディアファイル
+ - ファイル
+ - ブロックエディタのファイル（縦積み、ボタン型）
 ------------------------------ */
-/* 共通上下余白設定 */
 .media-file-block,
 :where(.acms-admin-block-editor-body) .node-fileBlock,
 [class*=column-file],
 [class*=column-media]:has(a[href*=media-download]) {
+  font-size: 0; /* Descender space 対策 */
   margin-block: 0 var(--entry-el-margin-md);
 }
 
-/* Descender space 対策 */
-.media-file-block,
-.acms-admin-block-editor-file {
-  line-height: 0;
+/* ボタン型
+------------------------------ */
+/* リンク */
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
+[class*=column-file] a,
+[class*=column-media] a[href*=media-download] {
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  /* リセット用 */
+  text-decoration: none;
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid var(--color-gray40);
+  border-radius: var(--border-radius-md);
+}
+.acms-admin-block-editor-file-link:hover,
+.media-file-block-link:hover,
+[class*=column-file] a:hover,
+[class*=column-media] a[href*=media-download]:hover {
+  opacity: 1; /* リセット */
+}
+
+/* リンク（閲覧画面用） */
+@media (hover: hover) {
+  .media-file-block-link,
+  [class*=column-file] a,
+  [class*=column-media] a[href*=media-download] {
+    transition: background-color 0.2s ease;
+  }
+  .media-file-block-link:where(:-moz-any-link):hover, [class*=column-file] a:where(:-moz-any-link):hover, [class*=column-media] a[href*=media-download]:where(:-moz-any-link):hover {
+    background-color: var(--color-gray20);
+  }
+  .media-file-block-link:where(:any-link):hover,
+  [class*=column-file] a:where(:any-link):hover,
+  [class*=column-media] a[href*=media-download]:where(:any-link):hover {
+    background-color: var(--color-gray20);
+  }
 }
 
 /* ファイルアイコン */
-.acms-admin-block-editor-file img,
+.acms-admin-block-editor-file-link img,
+.media-file-block-link img,
 [class*=column-media] .columnIcon,
 [class*=column-file] .columnIcon {
   display: inline-block;
-  width: 1.75rem;
+  width: 2rem;
   max-width: 100%;
   height: auto;
 }
 
-/* ボタン型 */
-[class*=column-file] a,
-[class*=column-media] a[href*=media-download] {
-  display: inline-flex;
-  align-items: center;
-  padding: 1rem;
-  /* リセット用 */
-  text-decoration: none;
-  border: var(--border-width-sm) solid var(--color-gray40);
-  border-radius: var(--border-radius-md);
-  /* マウスオーバー用 */
-  transition: background-color 0.2s ease;
-}
-[class*=column-file] a:hover,
-[class*=column-media] a[href*=media-download]:hover {
-  background: var(--color-gray20);
-}
-
-/* 非ブロックエディターのボタン型でファイルアイコン付きのキャプション */
+/* キャプションタイポグラフィ設定 */
+.acms-admin-block-editor-file-link,
+.media-file-block-link,
 [class*=column-file] .caption,
 [class*=column-media]:has(a[href*=media-download]):has(.columnIcon) .caption {
-  display: block;
-  margin: 0 0 0 1rem;
   color: var(--color-text);
   font-size: 1rem;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-base);
+}
+
+/* ブロックエディタのファイルボタン型キャプションカラーリセット */
+.acms-admin-block-editor-file-link:link, .acms-admin-block-editor-file-link:visited, .acms-admin-block-editor-file-link:hover,
+.media-file-block-link:link,
+.media-file-block-link:visited,
+.media-file-block-link:hover {
+  color: var(--color-text);
+}
+
+/* キャプションレイアウトリセット */
+.acms-admin-block-editor-file-link .caption,
+.media-file-block-link .caption,
+[class*=column-file] .caption,
+[class*=column-media]:has(a[href*=media-download]):has(.columnIcon) .caption {
+  margin: 0;
 }
 
 /* PDFプレビュー
-/* ブロックエディター（ファイルアイコンでの表示）
-/* 共通
 ------------------------------ */
+.column-pdf-image {
+  width: 100%;
+  border: var(--border-width-sm) solid var(--color-gray40);
+}
+
 /* キャプション */
-[class*=column-media]:has(.column-pdf-image) .caption,
-.media-file-block:has(img) .caption,
-.acms-admin-block-editor-file-caption,
-p.acms-admin-block-editor-file-caption {
+[class*=column-media]:has(.column-pdf-image) .caption {
   display: block;
   margin: 4px 0 0;
   color: var(--color-text-2nd);
@@ -1759,14 +1788,56 @@ p.acms-admin-block-editor-file-caption {
 }
 
 /* リンク */
-[class*=column-media]:has(.column-pdf-image) a,
-.media-file-block:has(img) a {
+[class*=column-media]:has(.column-pdf-image) a {
+  /* リンクスタイルリセット */
+  padding: 0;
+  border: 0;
   /* マウスオーバー用 */
   transition: opacity 0.2s ease;
 }
-[class*=column-media]:has(.column-pdf-image) a:hover,
-.media-file-block:has(img) a:hover {
-  opacity: 0.7;
+@media (hover: hover) {
+  [class*=column-media]:has(.column-pdf-image) a:hover {
+    opacity: 0.7;
+  }
+}
+
+/* ブロックエディタのファイル（縦積み）
+------------------------------ */
+/* キャプション */
+.media-file-block:not(:has(.media-file-block-link)) .caption,
+.acms-admin-block-editor-file-caption,
+p.acms-admin-block-editor-file-caption {
+  display: block;
+  margin: 4px 0 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: var(--line-height-md);
+}
+
+.media-file-block:not(:has(.media-file-block-link)),
+.acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)) {
+  text-align: center;
+}
+.media-file-block:not(:has(.media-file-block-link)) img,
+.acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)) img {
+  width: 4.5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* リンク（閲覧画面用） */
+.media-file-block:not(:has(.media-file-block-link)) a {
+  /* リンクスタイルリセット */
+  padding: 0;
+  border: 0;
+}
+@media (hover: hover) {
+  .media-file-block:not(:has(.media-file-block-link)) a {
+    transition: opacity 0.2s ease;
+  }
+  .media-file-block:not(:has(.media-file-block-link)) a:hover {
+    opacity: 0.7;
+  }
 }
 
 /* ------------------------------

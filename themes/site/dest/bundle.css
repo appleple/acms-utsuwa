@@ -5325,14 +5325,6 @@ input::placeholder {
   }
 }
 /* ------------------------------
- 動画ユニット
------------------------------- */
-[class*=column-youtube],
-[class*=column-video] {
-  margin-block: 0 var(--entry-el-margin-md);
-}
-
-/* ------------------------------
  地図
 ------------------------------ */
 [class*=column-map],
@@ -5352,6 +5344,14 @@ input::placeholder {
     margin-top: 1rem;
   }
 }
+/* ------------------------------
+ 動画ユニット
+------------------------------ */
+[class*=column-youtube],
+[class*=column-video] {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
 /* ------------------------------
 　　エントリー
 ------------------------------ */
