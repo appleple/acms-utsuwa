@@ -28,7 +28,7 @@
 @section("main")
 
 <!-- トップ用メインビジュアル -->
-@include("/include/header/main-visual.html", {"module_id": "top_main_visual"})
+@include("/include/header/main-visual.html", {"module_id": "main_visual"})
 
 <div class="acms-container">
   <!-- ※管理用パーツ -->
@@ -37,18 +37,18 @@
 </div>
 
 <!-- エントリーサマリー：お知らせ -->
-@include("/include/entry/summary-news-top.html", {"module_id": "top_news"})
+@include("/include/entry/summary-news-top.html", {"module_id": "summary_news_top"})
 
 <hr class="section-separator">
 
 <!-- エントリーサマリー：物件情報 -->
-@include("/include/entry/summary-realestate-top.html", {"module_id": "top_realestate"})
+@include("/include/entry/summary-realestate-top.html", {"module_id": "summary_realestate_top"})
 
 <!-- 採用情報 -->
 @include("/include/parts/cta-visual.html", {"module_id": "cta_visual"})
 
 <!-- バナーモジュール -->
-@include("/include/parts/banner-top.html", {"module_id": "top_banner"})
+@include("/include/parts/banner-top.html", {"module_id": "banner_top"})
 @endsection
 @endsection
 
