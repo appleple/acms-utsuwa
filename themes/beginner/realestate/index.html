@@ -2,10 +2,10 @@
 
 @section("main")
 <div class="acms-container">
-@include("/include/parts/local-nav.html", {"module_id": "realestate-nav-local", "direction":"is-down"})
+@include("/include/parts/local-nav.html", {"module_id": "realestate_nav"})
 
 <!-- タグフィルター -->
-@include("/include/tag/filter.html")
+@include("/include/tag/filter.html", {"module_id": "tag_filter"})
 
 <!-- サマリー：記事一覧 -->
 @include("/include/entry/summary-realestate.html", {"module_id": "summary_realestate"})
