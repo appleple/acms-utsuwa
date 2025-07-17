@@ -2,24 +2,45 @@
 
 @section(file-unit)
 <!-- ファイル -->
-<div class="column-file-{align} js_notStyle">
-  <a href="%{HTTP_ROOT}{path}"><img class="columnIcon" src="%{HTTP_ROOT}{icon}" alt="ファイルを開く" width="{x}" height="{y}">
-    <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-    <p class="caption">{caption}[raw|nl2br] </p><!-- END_IF -->
+<div class="column-file-{align}">
+  <a href="%{HTTP_ROOT}{path}">
+    <img
+      <!-- BEGIN_IF [{anker}/nem] -->
+      id="{anker}"
+      <!-- END_IF -->
+      class="columnIcon
+      unit-id-{utid}"
+      src="%{HTTP_ROOT}{icon}"
+      alt="ファイルを開く"
+      width="{x}"
+      height="{y}"
+      loading="lazy"
+      decoding="async"
+    >
+    <!-- BEGIN_IF [{caption}[delnl]/nem] --><p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
   </a>
 </div>
 @endsection
-
 
 @section(quote-unit)
 <!-- 引用 -->
 <div class="column-quote-{align}" {display_size}[raw]><!-- BEGIN html:veil -->
   {quote_html}[raw]<!-- END html:veil --><!-- BEGIN_IF [{quote_title}/nem/] -->
   <blockquote class="quote">
-    <a href="{quote_url}" class="quote-link"><!-- BEGIN image:veil -->
+    <a class="quote-link" <!-- BEGIN_IF [{anker}/nem] --> id="{anker}"<!-- END_IF --> href="{quote_url}" target="_blank" rel="noopener noreferrer">
+      <!-- BEGIN image:veil -->
       <div class="quote-img-wrap">
-        <img src="{quote_image}" class="quote-img acms-img-responsive" width="{x}" height="{y}" alt="">
-      </div><!-- END image:veil -->
+        <img
+          src="{quote_image}"
+           class="quote-img acms-img-responsive"
+          width="{x}"
+          height="{y}"
+          loading="lazy"
+          decoding="async"
+          alt="{quote_title}"
+        >
+      </div>
+      <!-- END image:veil -->
       <div class="quote-info">
         <!-- BEGIN site_name:veil -->
         <p class="quote-site-name">{quote_site_name}</p><!-- END site_name:veil -->
@@ -33,38 +54,97 @@
 
 @section(media-unit)
 <!-- media -->
-<div class="column-media-{align}{display_size_class}" {display_size}[raw]><!-- BEGIN type#image -->
+<div class="column-media-{align}{display_size_class}"{display_size}[raw]>
+  <!-- BEGIN type#image -->
   <!-- BEGIN link#front -->
-  <a href="{url}" {viewer}[raw]><!-- END link#front -->
-    <img class="js-lazy-load columnImage" src="/images/placeholder/image.svg" data-src="%{HTTP_ROOT}{path}[resizeImg({resizeWidth})]" width="{x}" height="{y}" alt="{alt}"><!-- BEGIN link#rear -->
-  </a><!-- END link#rear --><!-- BEGIN_IF [{caption}[delnl]/nem] -->
-  <p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
-
-  <!-- END type#image --><!-- BEGIN type#svg -->
-
-  <!-- BEGIN link#front -->
-  <a href="{url}" {viewer}[raw]><!-- END link#front -->
-    <img class="js-lazy-load columnImage" src="/images/placeholder/image.svg" data-src="%{HTTP_ROOT}{path}" alt="{alt}" width="{x}" height="{y}"><!-- BEGIN link#rear -->
-  </a><!-- END link#rear --><!-- BEGIN_IF [{caption}[delnl]/nem] -->
-  <p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
-
-  <!-- END type#svg --><!-- BEGIN type#file -->
-
-  <!-- BEGIN_IF [{thumbnail}/nem/_and_/{use_icon}/neq/yes] -->
-  <a href="{url}" target="_blank" download>
-    <img class="column-pdf-image" src="%{MEDIA_ARCHIVES_DIR}{thumbnail}" alt="{alt}">
+  <a href="{url}" {viewer}[raw] data-group="{link_eid}">
+  <!-- END link#front -->
+    <img
+      <!-- BEGIN_IF [{anker}/nem] -->
+      id="{anker}"
+      <!-- END_IF -->
+      src="%{HTTP_ROOT}{path}[resizeImg({resizeWidth})]"
+      class="columnImage unit-id-{image_utid}"
+      width="{x}"
+      height="{y}"
+      alt="{alt}"
+      loading="lazy"
+      decoding="async"
+    >
+  <!-- BEGIN link#rear -->
   </a>
+  <!-- END link#rear -->
   <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-  <p class="caption download"><a href="{url}" target="_blank" download><img class="columnIcon" src="%{HTTP_ROOT}{icon}" alt="{alt}" width="32" height="37">{caption}[raw|nl2br] <img src="/images/icon-arrow-down-to-line.svg" alt=""></a></p>
+  <p class="caption">{caption}[raw|nl2br]</p>
   <!-- END_IF -->
-  <!-- ELSE -->
-  <div class="media-file">
-    <a href="{url}" target="_blank">
-      <img class="columnIcon" src="%{HTTP_ROOT}{icon}" alt="{alt}" width="{x}" height="{y}"><!-- BEGIN_IF [{caption}[delnl]/nem] -->
+
+  <!-- END type#image -->
+  <!-- BEGIN type#svg -->
+  <!-- BEGIN link#front -->
+  <a href="{url}" {viewer}[raw] data-group="{link_eid}">
+  <!-- END link#front -->
+    <img
+      <!-- BEGIN_IF [{anker}/nem] -->
+      id="{anker}"
+      <!-- END_IF -->
+      src="%{HTTP_ROOT}{path}"
+      class="columnImage unit-id-{svg_utid}"
+      alt="{alt}"
+      width="{x}"
+      height="{y}"
+      loading="lazy"
+      decoding="async"
+    >
+  <!-- BEGIN link#rear -->
+  </a>
+  <!-- END link#rear -->
+  <!-- BEGIN_IF [{caption}[delnl]/nem] -->
+  <p class="caption">{caption}[raw|nl2br]</p>
+  <!-- END_IF -->
+
+  <!-- END type#svg -->
+
+  <!-- BEGIN type#file -->
+  <!-- BEGIN_IF [{thumbnail}/nem/_and_/{use_icon}/neq/yes] -->
+  <a<!-- BEGIN_IF [{anker}/nem] --> id="{anker}"<!-- END_IF --> href="{url}" download>
+    <img
+      class="column-pdf-image unit-id-{file_utid}"
+      src="%{MEDIA_ARCHIVES_DIR}{thumbnail}"
+      alt="{alt}"
+      loading="lazy"
+      decoding="async"
+    >
+    <div class="column-pdf-image-caption-box">
+      <img
+        class="columnIcon"
+        src="%{HTTP_ROOT}{icon}"
+        alt="{alt}"
+        width="{x}"
+        height="{y}"
+        loading="lazy"
+        decoding="async"
+      >
+      <!-- BEGIN_IF [{caption}[delnl]/nem] -->
       <p class="caption">{caption}[raw|nl2br]</p>
       <!-- END_IF -->
-    </a>
-  </div>
+      <img src="/images/icon-arrow-down-to-line.svg" alt="ダウンロード" class="column-pdf-image-download-icon" loading="lazy" decoding="async">
+    </div>
+  </a>
+  <!-- ELSE -->
+  <a<!-- BEGIN_IF [{anker}/nem] --> id="{anker}"<!-- END_IF --> href="{url}" target="_blank">
+    <img
+      class="columnIcon"
+      src="%{HTTP_ROOT}{icon}"
+      alt="{alt}"
+      width="{x}"
+      height="{y}"
+      loading="lazy"
+      decoding="async"
+    >
+    <!-- BEGIN_IF [{caption}[delnl]/nem] -->
+    <p class="caption">{caption}[raw|nl2br]</p>
+    <!-- END_IF -->
+  </a>
   <!-- END_IF -->
   <!-- END type#file -->
 </div>
