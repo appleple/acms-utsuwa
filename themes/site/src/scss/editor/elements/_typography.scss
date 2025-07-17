@@ -106,21 +106,19 @@
 
 /* 見出し
 ----------------------------- */
-@include acms.editor-style("h2") {
-  margin-block: 0;
-  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
-  font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+@include acms.editor-style(("h1", "h2", "h3", "h4", "h5", "h6")) {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
 
+@include acms.editor-style(("h2", "h3", "h4")) {
   &.heading-line {
-    margin-bottom: var(--entry-el-margin-sm);
-    padding-bottom: var(--entry-el-padding-xs);
-    border-bottom: var(--border-width-md) solid var(--color-gray100);
+    padding-block-end: var(--entry-el-padding-xs);
+    border-block-end: var(--border-width-md) solid var(--color-gray100);
   }
 
   &.heading-primary {
     position: relative;
-    margin-bottom: var(--entry-el-margin-sm);
+    padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 
     &::before {
       position: absolute;
@@ -133,6 +131,11 @@
       content: "";
     }
   }
+}
+
+@include acms.editor-style("h2") {
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-base);
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     font-size: map.get(global.$font-scales, heading-m);
@@ -140,32 +143,8 @@
 }
 
 @include acms.editor-style("h3") {
-  margin-block: 0;
-  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: var(--line-height-base);
-
-  &.heading-line {
-    margin-bottom: var(--entry-el-margin-sm);
-    padding-bottom: var(--entry-el-padding-xs);
-    border-bottom: var(--border-width-md) solid var(--color-gray100);
-  }
-
-  &.heading-primary {
-    position: relative;
-    margin-bottom: var(--entry-el-margin-sm);
-
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 2em;
-      height: var(--border-width-lg);
-      background: var(--color-primary);
-      content: "";
-    }
-  }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     font-size: map.get(global.$font-scales, heading-s);
@@ -173,32 +152,8 @@
 }
 
 @include acms.editor-style("h4") {
-  margin-block: 0;
-  padding-block: var(--entry-el-padding-md) var(--entry-el-padding-sm);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
-
-  &.heading-line {
-    margin-bottom: var(--entry-el-margin-sm);
-    padding-bottom: var(--entry-el-padding-xs);
-    border-bottom: var(--border-width-md) solid var(--color-gray100);
-  }
-
-  &.heading-primary {
-    position: relative;
-    margin-bottom: var(--entry-el-margin-sm);
-
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 2em;
-      height: var(--border-width-lg);
-      background: var(--color-primary);
-      content: "";
-    }
-  }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
     font-size: map.get(global.$font-scales, heading-ss);
