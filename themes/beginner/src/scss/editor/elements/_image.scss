@@ -34,7 +34,6 @@
 [class*="column-media"],
 [class*="column-eximage"] {
   line-height: 0; /* Descender space 対策 */
-  text-align: center;
 
   a {
     display: inline-block;
@@ -55,6 +54,11 @@
     max-width: 100%;
     height: auto;
   }
+}
+
+:where(.media-image-block),
+:where(.acms-admin-block-editor-image) {
+  text-align: center;
 }
 
 /* キャプション
