@@ -42,7 +42,7 @@
 /* リンク（閲覧画面用） */
 .media-file-block-link,
 [class*="column-file"] a,
-[class*="column-media"] a[href*="media-download"] {
+[class*="column-media"]:not(:has(.column-pdf-image)) a[href*="media-download"] {
   @media (hover: hover) {
     transition: background-color 0.2s ease;
 
@@ -93,35 +93,59 @@
 
 /* PDFプレビュー
 ------------------------------ */
-.column-pdf-image {
-  width: 100%;
-  border: var(--border-width-sm) solid var(--color-gray40);
-}
-
-/* キャプション */
-[class*="column-media"]:has(.column-pdf-image) .caption {
-  display: block;
-  margin: 4px 0 0;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-sm);
-}
 
 /* リンク */
 [class*="column-media"]:has(.column-pdf-image) {
   a {
+    display: inline-grid;
+    gap: 0.25rem;
+    justify-content: center;
+
     /* リンクスタイルリセット */
     padding: 0;
     border: 0;
 
-    /* マウスオーバー用 */
-    transition: opacity 0.2s ease;
-
     @media (hover: hover) {
       &:hover {
-        opacity: 0.7;
+        .column-pdf-image {
+          opacity: 0.7;
+        }
+
+        .caption {
+          border-bottom-color: currentcolor;
+        }
       }
     }
+  }
+}
+
+.column-pdf-image {
+  width: 100%;
+  border: var(--border-width-sm) solid var(--color-gray40);
+  transition: opacity 0.2s ease;
+}
+
+.column-pdf-image-caption-box {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  .columnIcon {
+    width: 2rem;
+  }
+
+  .caption {
+    margin: 0;
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, body-s);
+    line-height: var(--line-height-sm);
+    border-bottom: var(--border-width-sm) dotted transparent;
+  }
+
+  .column-pdf-image-download-icon {
+    width: 20px;
   }
 }
 
