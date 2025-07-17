@@ -7,9 +7,32 @@
 ------------------------------ */
 .main-visual {
   position: relative;
-  height: var(--mv-height-sp, calc(100svh - 3.5rem));
-  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
   margin-bottom: 5rem;
+  
+  &:not(:has(.main-visual-slider)) {
+    min-height: var(--mv-height-sp, calc(100svh - var(--header-height-sp)));
+    overflow: hidden;
+    padding-block: 6.5rem;
+  }
+
+  &:has(.main-visual-slider) {
+    min-height: var(--mv-height-sp, 36.5rem);
+  }
+
+  .main-visual-slider {
+    --slider-controls-height: 80px;
+
+    min-height: var(--mv-height-sp, 36.5rem);
+
+    .splide__track,
+    .splide__list,
+    .splide__slide {
+      min-height: calc(var(--mv-height-sp, 36.5rem) - var(--slider-controls-height));
+    }
+  }
 
   .main-visual-filter {
     position: absolute;
@@ -17,13 +40,12 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, #000 100%);
-
-
   }
 
   .main-visual-bg {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    display: block;
+    inset: 0;
 
     .is-alone {
       animation: zoom 3s 0.3s 1 both;
@@ -38,9 +60,8 @@
   }
 
   .main-visual-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+    z-index: 5;
     display: grid;
     gap: var(--col-gutter);
     box-sizing: border-box;
@@ -49,7 +70,6 @@
     padding: 2rem;
     color: var(--color-primary);
     background: rgb(255 255 255 / 90%);
-    transform: translate(-50%, -50%);
     place-content: center;
   }
 
@@ -84,6 +104,7 @@
     bottom: 0;
     box-sizing: border-box;
     width: 100%;
+    margin: 0;
     padding: 2rem;
     font-weight: bold;
     text-align: center;
@@ -122,23 +143,60 @@
     }
   }
 
-  .splide__pagination {
-    position: static;
-
-    >li {
+  .main-visual-slider {
+    .splide__slide {
+      position: relative;
+      display: flex;
+      align-items: center;
       box-sizing: border-box;
-      width: 1.75rem;
-      height: 1.75rem;
-      padding: 0.5rem;
+      height: auto;
+      min-height: 100%;
+      padding-block: 6.5rem;
+
+      picture, img {
+        height: 100%;
+      }
+
+      picture {
+        position: absolute;
+        display: block;
+        inset: 0;
+      }
     }
 
-  }
+    .splide__pagination {
+      position: static;
 
+      >li {
+        box-sizing: border-box;
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0.5rem;
+      }
+
+    }
+  }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .main-visual {
-    height: var(--mv-height-pc, 48rem);
+    &:not(:has(.main-visual-slider)) {
+      min-height: calc(100vh - var(--header-height-pc));
+    }
+  
+    &:has(.main-visual-slider) {
+      min-height: var(--mv-height-pc, 38rem);
+    }
+
+    .main-visual-slider {
+      min-height: var(--mv-height-pc, 38rem);
+
+      .splide__track,
+      .splide__list,
+      .splide__slide {
+        min-height: calc(var(--mv-height-pc, 38rem) - var(--slider-controls-height));
+      }
+    }
 
     .main-visual-box {
       box-sizing: border-box;
@@ -147,20 +205,18 @@
       padding: 5rem 6.5rem;
 
       &.is-left {
-        left: 0;
+        margin-right: auto;
         text-align: left;
-        transform: translate(0, -50%);
       }
 
       &.is-center {
+        margin-inline: auto;
         text-align: center;
       }
 
       &.is-right {
-        right: 0;
-        left: auto;
+        margin-left: auto;
         text-align: right;
-        transform: translate(0, -50%);
       }
     }
 
@@ -190,6 +246,7 @@
 
   }
 }
+
 
 /* ------------------------------
 　　メインビジュアル（top-main-visual-ex01.html）
@@ -289,7 +346,6 @@
           stroke: var(--color-white);
         }
       }
-
     }
   }
 
@@ -305,7 +361,6 @@
     z-index: 10;
     gap: 0;
     padding: 1.5rem 0;
-
   }
 
   .splide__pagination {
@@ -397,7 +452,6 @@
 
     .main-visual-catch-sub {
       font-size: map.get(global.$font-scales, heading-ss);
-
     }
 
     .main-visual-links {
@@ -431,10 +485,8 @@
       }
     }
 
-
     .splide__controls {
       left: 5rem;
-
     }
 
     .main-visual-scroll {
@@ -449,14 +501,13 @@
       font-weight: bold;
       text-align: center;
     }
-
   }
 }
+
 
 /* ------------------------------
 　　メインビジュアル（top-main-visual-ex02.html）
 ------------------------------ */
-
 .main-visual-extend02 {
   position: relative;
   height: var(--mv-height-sp, calc(100svh - 3.5rem));
@@ -568,7 +619,6 @@
       height: 1.75rem;
       padding: 0.5rem;
     }
-
   }
 }
 
@@ -615,7 +665,6 @@
 
     .main-visual-catch-sub {
       font-size: map.get(global.$font-scales, heading-ss);
-
     }
 
     .main-visual-links {
@@ -639,7 +688,6 @@
               stroke: var(--color-primary);
             }
           }
-
         }
 
         &:hover {
@@ -672,6 +720,4 @@
       z-index: 10;
     }
   }
-
-
 }
