@@ -7,9 +7,17 @@
 ------------------------------ */
 $_table-border-color: rgb(235 235 235);
 
+/* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
+:where(.acms-admin-block-editor-body) .tableWrapper {
+  th,
+  td {
+    min-width: 100px; /* 入力しやすいよう最小幅を確保 */
+  }
+}
+
 @include acms.editor-style(
   ("table"),
-  $extension-contexts: (".tableWrapper", '[class*="column-table"]'), /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
+  $extension-contexts: (".tableWrapper", '[class*="column-table"]'),
 ) {
   margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
   background-color: var(--color-white);
@@ -70,6 +78,11 @@ $_table-border-color: rgb(235 235 235);
   }
 }
 
+/* tableの左右marginが.entry-containerのpaddingと干渉しないようリセット */
+.entry-container table {
+  margin-inline: 0;
+}
+
 /* ブロックエディター内のテーブル */
 .tableWrapper {
   margin-bottom: var(--entry-el-margin-md);
@@ -91,7 +104,7 @@ $_table-border-color: rgb(235 235 235);
 
   table {
     width: 100%;
-    margin: 0;
+    margin-block: 0;
   }
 }
 
