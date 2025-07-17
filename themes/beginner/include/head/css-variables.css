@@ -203,7 +203,7 @@
   ------------------------------- */
 
   /* --mv-height-sp: 36.5rem; */
-  --mv-extend-height-sp: calc(100vh - var(--header-height-fixed));
-  /* --mv-height-pc: 48rem; */
-  --header-height-fixed: 147px;
+  /* --mv-height-pc: 38rem; */
+  --header-height-sp: 56px;
+  --header-height-pc: 146px;
 }
