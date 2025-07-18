@@ -6,10 +6,10 @@
     <div class="acms-grid">
       <div class="container-md">
         <!-- タグフィルター -->
-        @include("/include/tag/filter.html")
+        @include("/include/tag/filter.html",{"module_id": "tag_filter"})
 
         <!-- サマリー：記事一覧 -->
-        @include("/include/entry/summary-card.html",{"module_id": "summary_date"})
+        @include("/include/entry/summary-news.html",{"module_id": "summary_date"})
       </div>
     </div>
   </main>
