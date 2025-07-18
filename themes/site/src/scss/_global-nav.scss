@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--header-height);
+  height: var(--header-height-sp);
   margin: 0 1.5rem;
   color: var(--color-text);
   text-decoration: none;
@@ -91,7 +91,7 @@
 
   // CTA用のスタイル
   &.is-cta {
-    height: var(--header-height);
+    height: var(--header-height-sp);
     padding: 0 2rem;
     color: var(--color-white);
     background: var(--color-primary);

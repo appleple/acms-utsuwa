@@ -67,27 +67,26 @@ domContentLoaded(() => {
   $(window).on('load scroll', () => {
     fixElement();
   });
-});
 
-/**
- * 外部リンクアイコンの追加
- */
-document.addEventListener('DOMContentLoaded', function () {
+  // 外部リンクアイコンの追加
   const anchors = document.querySelectorAll('.text-btn a');
   const currentHost = location.host;
-
+  
   anchors.forEach(function (a) {
     const href = a.getAttribute('href');
     const target = a.getAttribute('target');
-
+  
     if (!href) return;
-
+  
     // 外部リンクかどうかを判定
     const isExternal = /^https?:\/\//.test(href) && href.indexOf(currentHost) === -1;
-
+  
     // target="_blank" または 外部リンクのいずれかに該当する場合
     if (isExternal || target === '_blank') {
       a.classList.add('outer-link');
     }
   });
+
+  // メインビジュアルの高さを算出
+
 });

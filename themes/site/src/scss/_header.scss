@@ -55,12 +55,12 @@
     position: fixed;
     box-sizing: border-box;
     max-width: 100%;
-    height: var(--header-height-fixed);
+    height: var(--header-height-sp);
     padding: 0 3.5rem 0 0;
   }
 
   .header-wrap {
-    height: var(--header-height-fixed);
+    height: var(--header-height-sp);
   }
 
   .header-item-nav,
@@ -83,7 +83,7 @@
   }
 
   .form-search-label {
-    height: 2.5rem;
+    line-height: 2.5rem;
   }
 
   .button,
@@ -103,16 +103,16 @@
   .header {
     display: flex;
     align-items: center;
-    height: var(--header-height-fixed);
+    height: var(--header-height-sp);
     box-shadow: var(--box-shadow);
 
     @media screen and (min-width: acms.$breakpoint-lg-min) {
-      height: var(--header-height-fixed);
+      height: var(--header-height-pc);
     }
   }
 
   .header-wrap {
-    height: var(--header-height);
+    height: var(--header-height-sp);
   }
 
   .header-title {
@@ -132,7 +132,7 @@
 
   .header-item-nav {
     position: relative;
-    height: var(--header-height-fixed);
+    height: var(--header-height-sp);
     margin-left: auto;
     font-size: map.get(global.$font-scales, body-m);
   }
@@ -163,7 +163,6 @@
     max-width: var(--container);
     margin-right: auto;
     margin-left: auto;
-
   }
 
   .header-nav-tel {
@@ -189,11 +188,11 @@
 /* グローバルナビ（下）
 ------------------------------ */
 
-
 .nav-bottom {
   .header-item-wrap {
     display: flex;
-
+    height: 100%;
+    padding-left: 1rem;
   }
 
   .header-nav-tel {
@@ -213,8 +212,6 @@
     max-width: 35rem;
   }
 }
-
-
 
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -321,7 +318,6 @@
       text-align: center;
     }
 
-
     .header-nav-tel {
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -398,7 +394,7 @@
 
 .header-search {
   position: absolute;
-  top: var(--header-height-fixed);
+  top: var(--header-height-sp);
   right: 0;
   left: 0;
   padding: 3rem 0 2rem;

@@ -1,5 +1,5 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
-<section class="main-visual">
+<section id="main-visual-wrapper" class="main-visual">
   @include("/include/edit/module-custom.html", {"label":"メインビジュアルを編集する" ,"hash":"#acms_box3"})
   <!-- BEGIN_IF [<!-- BEGIN main-visual:loop -->{main-visual-display}<!-- END main-visual:loop -->/eq/1] -->
   <!-- 背景画像が1枚のみ設定されている場合 -->
@@ -33,9 +33,8 @@
 
     </div>
     <!-- END main-visual-link:veil -->
-    <p class="main-visual-scroll"><a href="#message" class="main-visual-scroll-link">SCROLL</a></p>
-
   </div>
+  <p class="main-visual-scroll"><a href="#message" class="main-visual-scroll-link">SCROLL</a></p>
   <!-- END_IF -->
   <!-- END_IF -->
   <!-- END main-visual:loop -->
@@ -87,7 +86,6 @@
         <span class="splide__toggle__pause"></span>
       </button>
     </div>
-    <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
   </div>
   <!-- END_IF -->
 </section>
@@ -121,5 +119,17 @@
     }).mount();
     <!-- END_IF -->
     <!-- END_MODULE Module_Field -->
+
+    // メインビジュアルの高さを設定
+    const header = document.querySelector('.header');
+    const headerHeight = header.offsetHeight;
+    const mainVisual = document.querySelector('#main-visual-wrapper');
+    const slider = document.querySelector('#main-visual-slider-list');
+    if (slider) {
+      const sliderControlsHeight = 80;
+      slider.style.height = `calc(100vh - ${headerHeight}px - ${sliderControlsHeight}px)`;
+    } else {
+      mainVisual.style.height = `calc(100vh - ${headerHeight}px)`;
+    }
   });
 </script>
