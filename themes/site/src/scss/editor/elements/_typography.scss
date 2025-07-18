@@ -6,9 +6,8 @@
  テキスト
 ------------------------------ */
 
-/* 共通設定 */
+/* テキストユニット（閲覧側）の左右グリッド調整 */
 @each $tag in acms.$unit-text-tags {
-  /* テキストユニット（閲覧側）の左右グリッド調整 */
   @include acms.editor-style(
     ($tag),
     $exclude-classes: ("not-editor-style", "column-block-editor"),
@@ -16,58 +15,87 @@
   ) {
     margin-inline: calc(var(--unit-gutter-var) / 2);
   }
+}
 
-  /* リンク */
-  @include acms.editor-style(
-    ($tag),
-    $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor"),
-  ) {
-    a {
-      padding-block: 2px;
-      color: var(--color-link);
-      text-decoration: none;
-      border-bottom: var(--border-width-sm) dotted var(--color-link);
+/* リンク
+----------------------------- */
+@mixin _text-link-common {
+  margin-right: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: var(--border-width-sm) dotted var(--color-link);
+  padding-block: 2px;
 
-      &:hover {
-        border-color: transparent;
-      }
+  &::after {
+    display: inline-block;
+    width: 0.875em;
+    height: 0.875em;
+    margin-left: 4px;
+    vertical-align: baseline;
+    background-color: currentcolor;
+    content: '';
+    mask-image: url("#{global.$root-theme-img}icon-target_blank.svg");
+    mask-size: contain;
+  }
 
-      &[href^="tel:"] {
-        color: currentcolor;
-        border-bottom: var(--border-width-sm) dashed;
-
-        &:hover {
-          border-color: transparent;
-        }
-      }
+  @media (hover: hover) {
+    &:any-link:hover {
+      border-color: transparent;
     }
   }
 }
 
-/* インライン要素
------------------------------ */
+@each $tag in acms.$unit-text-tags {
+  @include acms.editor-style($tag) {
+    a {
+      @include _text-link-common;
+    }
+  }
+}
 
-/* 強調 */
+:where(.entryFormLiteEditor) {
+  a {
+    @include _text-link-common;
+
+    /* acms-system.css スタイルの上書き */
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+}
+
+/* em
+----------------------------- */
 @include acms.editor-style(
   ("em"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor"),
+  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   font-style: normal;
   background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
 }
 
-/* 重要 */
+/* strong
+----------------------------- */
 @include acms.editor-style(
   ("strong"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor"),
+  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   font-weight: bold;
 }
 
-/* マーカー */
+/* mark
+----------------------------- */
+@mixin _text-mark-common {
+  color: inherit;
+  background-color: var(--color-highlight);
+  border-radius: 0.125rem; /* 2px */
+  box-decoration-break: clone;
+  padding-block: 0.125rem;
+}
+
 @include acms.editor-style(
   ("mark"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor"),
+  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   color: inherit;
   background-color: var(--color-highlight);
@@ -76,11 +104,12 @@
   padding-block: 0.125rem;
 }
 
-/* コード */
+/* code
+----------------------------- */
 @include acms.editor-style(
   ("code"),
   $exclude-classes: ("not-editor-style", "code-highlight"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor"),
+  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   margin-inline: 0.25rem;
   padding: 0.0.25rem;
@@ -91,7 +120,10 @@
   border-radius: var(--border-radius-sm);
 }
 
-/* 単語区切り LiteEditor内での表示用 */
+/* 単語区切り
+----------------------------- */
+
+/* LiteEditor内での表示用 */
 :where(.entryFormLiteEditor) {
   .text-word-break {
     display: inline-block;
