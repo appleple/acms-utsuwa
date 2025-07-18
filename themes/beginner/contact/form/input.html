@@ -211,41 +211,4 @@
     </li>
   </ul>
 </div>
-<div class="form-input-wrap">
 
-  <h3 class="heading-md heading-padding-top-none">個人情報のお取り扱いについて</h3>
-  <div class="form-label">
-    <label for="privacy">プライバシーポリシー</label><span class="label-required">必須</span>
-  </div>
-  <!-- プライバシーポリシーの読み込み -->
-  <!-- BEGIN_MODULE Entry_Body id="body_privacy" -->
-  <!-- BEGIN notFound -->
-  <!-- END notFound -->
-  <fieldset class="form-group">
-    <div class="form-privacy-body entry-style">
-      @include("/admin/entry/title.html")
-      <!-- BEGIN unit:veil -->
-      @include("/include/unit.html")
-      <!-- END unit:veil -->
-      <!-- BEGIN continueLink:veil -->
-      <p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
-      <!-- END continueLink:veil -->
-
-      @include("/admin/entry/edit-%{IS_ADMIN}.html")
-      @include("/admin/entry/action.html")
-    </div>
-
-    <!-- END entry:loop -->
-    <!-- END_MODULE Entry_Body -->
-
-    <label class="form-checkbox" for="input-privacy-on"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on} /><i class="ico-checkbox" data-validator="privacy"></i><span class="">プライバシーポリシーに同意する</span></label>
-    <input type="hidden" name="field[]" value="privacy" />
-    <input type="hidden" name="privacy:v#required" id="privacy-v-required" />
-    <p class="form-helper-text">プライバシーポリシーをよくお読みいただき、同意いただける場合はチェックをお願いします。</p>
-    <div role="alert" aria-live="assertive">
-      <div data-validator-label="privacy-v-required" class="validator-result-{privacy:v#required}">
-        <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>同意するにチェックを入れてください。</p>
-      </div>
-    </div>
-  </fieldset>
-</div>
