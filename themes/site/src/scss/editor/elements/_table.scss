@@ -54,15 +54,6 @@
     &:hover {
       border-color: transparent;
     }
-
-    &[href^="tel:"] {
-      color: currentcolor;
-      border-bottom: var(--border-width-sm) dashed;
-
-      &:hover {
-        border-color: transparent;
-      }
-    }
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {

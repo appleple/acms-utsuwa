@@ -5,6 +5,7 @@
 /* ------------------------------
  テーブル
 ------------------------------ */
+
 /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
 :where(.acms-admin-block-editor-body) .tableWrapper {
   th,
@@ -52,15 +53,6 @@
 
     &:hover {
       border-color: transparent;
-    }
-
-    &[href^="tel:"] {
-      color: currentcolor;
-      border-bottom: var(--border-width-sm) dashed;
-
-      &:hover {
-        border-color: transparent;
-      }
     }
   }
 
