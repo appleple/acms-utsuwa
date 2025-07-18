@@ -243,8 +243,7 @@
 ------------------------------ */
 .main-visual-extend01 {
   position: relative;
-  height: var(--mv-extend-height-sp);
-  min-height: 20rem;
+  min-height: var(--mv-height-sp, 36.5rem);
   overflow: hidden;
 
   .main-visual-filter {
@@ -405,15 +404,7 @@
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .main-visual-extend01 {
-    height: var(--mv-height-pc, 48rem);
-
-    &.logo-center {
-      height: var(--mv-logo-center-height-pc);
-    }
-
-    &.nav-bottom {
-      height: var(--mv-nav-bottom-height-pc);
-    }
+    min-height: var(--mv-height-pc, 38rem);
 
     .main-visual-box {
       box-sizing: border-box;
@@ -500,8 +491,7 @@
 ------------------------------ */
 .main-visual-extend02 {
   position: relative;
-  height: var(--mv-height-sp, calc(100svh - 3.5rem));
-  min-height: 20rem;
+  min-height: var(--mv-height-sp, 36.5rem);
   overflow: hidden;
 
   .main-visual-bg {
@@ -599,6 +589,13 @@
     }
   }
 
+  .splide__controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .splide__pagination {
     position: relative;
     bottom: 0;
@@ -610,11 +607,20 @@
       padding: 0.5rem;
     }
   }
+
+  .splide__pagination__page:not(.is-active) {
+    border: 1px solid var(--color-white);
+  }
+
+  .splide__toggle__pause {
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+  }
 }
 
 @media screen and (min-width: acms.$breakpoint-md-min) {
   .main-visual-extend02 {
-    height: var(--mv-height-pc, 48rem);
+    min-height: var(--mv-height-pc, 38rem);
 
     .main-visual-bg {
       img {

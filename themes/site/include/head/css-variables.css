@@ -202,8 +202,5 @@
   ------------------------------- */
 
   --mv-height-sp: 36.5rem;
-  --mv-extend-height-sp: calc(100vh - var(--header-height-sp));
   --mv-height-pc: 38rem;
-  --mv-logo-center-height-pc: calc(100vh - 10rem);
-  --mv-nav-bottom-height-pc: calc(100vh - 12rem);
 }

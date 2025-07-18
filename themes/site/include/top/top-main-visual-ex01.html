@@ -1,6 +1,5 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
- <section class="main-visual-extend01 <!-- BEGIN_MODULE Blog_Field --> {global-nav}<!-- END_MODULE Blog_Field -->
- ">
+<section id="main-visual-wrapper" class="main-visual-extend01 <!-- BEGIN_MODULE Blog_Field --> {global-nav}<!-- END_MODULE Blog_Field -->">
   @include("/include/edit/module-custom.html", {"label":"メインビジュアルを編集する" ,"hash":"#acms_box3"})
     <!-- BEGIN_IF [<!-- BEGIN main-visual:loop -->{main-visual-display}<!-- END main-visual:loop -->/eq/1] -->
     <!-- 背景画像が1枚のみ設定されている場合 -->
@@ -124,9 +123,20 @@
       classes: {
         pagination: 'pagination-extend01',
         page: 'pagination-page-extend01',
-       },
+      },
     }).mount();
     <!-- END_IF -->
     <!-- END_MODULE Module_Field -->
+
+    // メインビジュアルの高さを設定
+    const header = document.querySelector('.header');
+    const headerHeight = header.offsetHeight;
+    const mainVisual = document.querySelector('#main-visual-wrapper');
+    const slider = document.querySelector('#main-visual-slider-list');
+    if (slider) {
+      slider.style.height = `calc(100vh - ${headerHeight}px)`;
+    } else {
+      mainVisual.style.height = `calc(100vh - ${headerHeight}px)`;
+    }
   });
 </script>
