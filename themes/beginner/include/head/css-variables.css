@@ -110,9 +110,8 @@
   --page-title-filter: rgba(0, 0, 0, 0.5);
 
   /* ヘッダー */
-
-  --header-height: 3.5rem;
-  --header-height-fixed: 3.5rem;
+  --header-height-sp: 3.5rem;
+  --header-height-pc: 9rem;
 
   /* フッター */
   --footer-margin-top-md: 1rem;
@@ -204,6 +203,4 @@
 
   /* --mv-height-sp: 36.5rem; */
   /* --mv-height-pc: 38rem; */
-  --header-height-sp: 56px;
-  --header-height-pc: 146px;
 }
