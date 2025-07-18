@@ -1,3 +1,5 @@
+<!-- エントリーのスタイルを適用しています。not-editor-style クラスをつけないでください。 -->
+
 <!-- BEGIN main-image:veil -->
 <div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}" width="928" height="{main-image@ratio}[getHeightFromRatio(928)]" alt="{main-image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
 
@@ -61,7 +63,7 @@
   <div class="detail-panel-group">
     <dt>ウェブサイト</dt>
     <dd>
-      <a href="{work-url}" class="link-url">{work-url}<!-- BEGIN_IF [{work-url}/lk/http] -->@include("/images/icon-target_blank.svg)<!-- END_IF --> </a>
+      <a href="{work-url}" class="link-url">{work-url}</a>
     </dd>
   </div>
   <!-- END work-period:veil -->

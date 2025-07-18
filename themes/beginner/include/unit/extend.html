@@ -104,22 +104,24 @@
 <!-- END unit#osmap_mapbox -->
 
 <!-- BEGIN unit#custom_bubble -->
-<div class="bubble-item not-editor-style">
-  <div class="bubble-image-wrap">
-    <!-- BEGIN_IF [{bubble-image@path}/nem] -->
+<div class="entry-container">
+  <div class="bubble-item not-editor-style">
+    <div class="bubble-image-wrap">
+      <!-- BEGIN_IF [{bubble-image@path}/nem] -->
 
-    <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{bubble-image@path}" alt="" />
-    <!-- ELSE -->
-    <img src="/images/noimage.png" alt="" class="acms-img-responsive">
-    <!-- END_IF -->
+      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{bubble-image@path}" alt="" />
+      <!-- ELSE -->
+      <img src="/images/noimage.png" alt="" class="acms-img-responsive">
+      <!-- END_IF -->
+    </div>
+    <div class="bubble-heading-wrap">
+      <!-- BEGIN bubble-heading:veil -->
+      <p class="bubble-heading">{bubble-heading1}<!-- END bubble-heading1:veil --><!-- BEGIN bubble-heading2:veil --><br>{bubble-heading2}<!-- END bubble-heading2:veil -->
+      </p>
+      <!-- END bubble-heading:veil -->
+      <p class="bubble-name">{bubble-name}</p>
+    </div>
+    <div class="bubble-text">{bubble-text}</div>
   </div>
-  <div class="bubble-heading-wrap">
-    <!-- BEGIN bubble-heading:veil -->
-    <p class="bubble-heading">{bubble-heading1}<!-- END bubble-heading1:veil --><!-- BEGIN bubble-heading2:veil --><br>{bubble-heading2}<!-- END bubble-heading2:veil -->
-    </p>
-    <!-- END bubble-heading:veil -->
-    <p class="bubble-name">{bubble-name}</p>
-  </div>
-  <div class="bubble-text">{bubble-text}</div>
 </div>
 <!-- END unit#custom_bubble -->
