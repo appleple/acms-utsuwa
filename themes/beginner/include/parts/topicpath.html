@@ -22,7 +22,16 @@
         <!-- END glue -->
         <a href="{url}" class="topicpath-link">{title}</a>
       </li>
-      <!-- END entry --><!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
+      <!-- END entry -->
+      <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+      <li class="topicpath-item">
+        <a href="%{INHERLINK}" class="topicpath-link">キーワード検索：%{KEYWORD}</a>
+      </li><!-- END_IF -->
+      <!-- BEGIN_IF [%{TAG}/nem] -->
+      <li class="topicpath-item">
+        <a href="%{INHERLINK}" class="topicpath-link">タグ検索：%{TAG}</a>
+      </li><!-- END_IF -->
+      <!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
       <li class="topicpath-item">
         <a href="%{HTTP_ROOT}404.html" class="topicpath-link">お探しのページは見つかりませんでした</a>
       </li><!-- END_IF -->
