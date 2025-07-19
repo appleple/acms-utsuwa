@@ -1,0 +1,56 @@
+@extends("/_layouts/base.html")
+
+@section("head-link")
+@parent
+<!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- サイトトップページ用 構造化データ -->
+@include("/include/head/structured-data-sitetop.html")
+<!-- END_MODULE Touch_RootBlog -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+@endsection
+
+@section("head-js")
+@parent
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script src="/js/top.js"></script>
+@endsection
+
+@section("page-title")
+@endsection
+
+@section("topicpath")
+@endsection
+
+@section("admin-part")
+@endsection
+
+@section("content-wrapper")
+@section("main")
+
+<!-- トップ用メインビジュアル -->
+@include("/include/header/main-visual.html", {"module_id": "main_visual"})
+
+<div class="acms-container">
+  <!-- ※管理用パーツ -->
+  @include("/admin/action.html")
+  @include("/admin/switch-user.html")
+</div>
+
+<!-- エントリーサマリー：お知らせ -->
+@include("/include/entry/summary-news-top.html", {"module_id": "summary_news_top"})
+
+<hr class="section-separator">
+
+<!-- エントリーサマリー：物件情報 -->
+@include("/include/entry/summary-realestate-top.html", {"module_id": "summary_realestate_top"})
+
+<!-- 採用情報 -->
+@include("/include/parts/cta.html", {"module_id": "cta_visual"})
+
+<!-- バナーモジュール -->
+@include("/include/parts/banner-top.html", {"module_id": "banner_top"})
+@endsection
+@endsection
+
+@section("footer-cta")
+@endsection

@@ -1,31 +1,23 @@
-@extends("/_layouts/base.html")
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+  <head>
+    @include("/include/head/meta.html")
+    @include("/include/head/link.html")
+    @include("/include/head/structured-data-sitetop.html")
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    @include("/include/head/js.html")
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="/js/top.js"></script>
+  </head>
 
-@section("head-link")
-@parent
-<!-- BEGIN_MODULE Touch_RootBlog -->
-<!-- サイトトップページ用 構造化データ -->
-@include("/include/head/structured-data-sitetop.html")
-<!-- END_MODULE Touch_RootBlog -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-@endsection
+  <body id="top" class="blog%{BID}-%{VIEW}">
+    @include("/include/body-start.html")
 
-@section("head-js")
-@parent
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-<script src="/js/top.js"></script>
-@endsection
+    <!-- ヘッダー -->
+    @include("/include/header/header.html")
 
-@section("page-title")
-@endsection
 
-@section("topicpath")
-@endsection
 
-@section("admin-part")
-@endsection
-
-@section("content-wrapper")
-@section("main")
 
 <!-- トップ用メインビジュアル -->
 @include("/include/header/main-visual.html", {"module_id": "main_visual"})
@@ -49,8 +41,17 @@
 
 <!-- バナーモジュール -->
 @include("/include/parts/banner-top.html", {"module_id": "banner_top"})
-@endsection
-@endsection
 
-@section("footer-cta")
-@endsection
+
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- 確認用テンプレート -->
+    <div class="acms-margin-top-large">
+      @include("/include/check-seo.html")
+    </div><!-- END_MODULE Touch_Login -->
+
+    <!-- フッター -->
+    @include("/include/footer/footer.html")
+
+    @include("/include/body-end.html")
+  </body>
+</html>

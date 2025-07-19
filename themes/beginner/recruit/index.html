@@ -1,22 +1,53 @@
-@extends("/_layouts/base.html")
+<!DOCTYPE html>
+<html class="no-js" lang="ja" scroll-behavior="smooth">
+  <head>
+    @include("/include/head/meta.html")
+    @include("/include/head/link.html")
+    @include("/include/head/js.html")
+  </head>
 
-@section("main")
-<div class="acms-container">
-  <main class="main">
-    <div class="acms-grid">
-      <div class="container-md">
-        <!-- タグフィルター -->
-        @include("/include/tag/filter.html")
+  <body id="top" class="blog%{BID}-%{VIEW}">
+    @include("/include/body-start.html")
 
-        <!-- サマリー：記事一覧 -->
-        @include("/include/entry/summary-recruit.html",{"module_id": "summary_recruit"})
-      </div>
+    <!-- ヘッダー -->
+    @include("/include/header/header.html")
+
+    <!-- ページタイトル -->
+    @include("/include/parts/page-title.html")
+
+    <!-- トピックパス -->
+    @include("/include/parts/topicpath.html")
+
+    <div class="acms-container">
+      <!-- ※管理用パーツ -->
+      @include("/admin/action.html")
+      @include("/admin/switch-user.html")
     </div>
-  </main>
-</div>
-@endsection
 
+    <div class="content-wrapper">
 
-@section("side")
+	  <div class="acms-container">
+	    <div class="container-md">
+	      <!-- サマリー：記事一覧 -->
+        @include("/include/entry/summary-recruit.html",{"module_id": "summary_recruit"})
+	    </div>
+	  </div>
+	  
+    </div>
 
-@endsection
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- 確認用テンプレート -->
+    <div class="acms-margin-top-large">
+      @include("/include/check-seo.html")
+    </div><!-- END_MODULE Touch_Login -->
+
+    <!-- Call to Action -->
+    @include("/include/parts/cta.html", {"module_id": "cta_visual"})
+
+    <!-- フッター -->
+    @include("/include/footer/footer.html")
+
+    @include("/include/body-end.html")
+  </body>
+</html>
+

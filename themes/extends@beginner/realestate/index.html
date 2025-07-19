@@ -1,0 +1,19 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+@include("/include/parts/local-nav.html", {"module_id": "nav_realestate"})
+
+<!-- タグフィルター -->
+@include("/include/tag/filter.html", {"module_id": "tag_filter"})
+
+<!-- サマリー：記事一覧 -->
+@include("/include/entry/summary-realestate.html", {"module_id": "summary_realestate"})
+
+@include("/include/parts/search-realestate.html")
+</div>
+@endsection
+
+@section("side")
+
+@endsection

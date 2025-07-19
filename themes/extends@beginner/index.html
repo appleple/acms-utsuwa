@@ -1,0 +1,21 @@
+@extends("/_layouts/base.html")
+
+@section("main")
+<div class="acms-container">
+  <main class="main">
+    <div class="container-md">
+      
+      <!-- BEGIN_IF [%{KEYWORD}/nem]-->
+      <div aria-labelledby="search-form-heading" class="search-result-heading">
+        @include("/include/parts/search-general.html")
+      </div>
+      <!-- END_IF -->
+      
+      @include("/include/tag/filter.html",{"module_id": "tag_filter"})
+
+      <!-- サマリー：記事一覧 -->
+      @include("/include/entry/summary.html",{"module_id": "summary_date"})
+    </div>
+  </main>
+</div>
+@endsection
