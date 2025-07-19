@@ -3,7 +3,7 @@
   @include("/admin/module/setting.html")
   <!-- BEGIN tagBox -->
   <h2 class="tag-filter-heading">選択されているタグ</h2>
-  <ul class="tag-filter-selected"><!-- BEGIN selected:loop --><li>#{name}</li><!-- END selected:loop --></ul>
+  <ul class="tag-filter-selected"><!-- BEGIN selected:loop --><li><a href="{url}" class="tag-link">#{name}</a></li><!-- END selected:loop --></ul>
   <!-- BEGIN choice:veil -->
   <h3 class="tag-filter-heading-more">さらにタグを絞り込む</h3>
   <ul class="tag-list">
