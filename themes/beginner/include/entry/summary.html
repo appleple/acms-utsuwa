@@ -10,13 +10,13 @@
     <a href="%{ROOT_BLOG_URL}" class="button is-lg is-bordered">ホームへ戻る</a>
   </div>
   <!-- END notFound -->
+
+  <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+  <p class="media-item-amount">「%{KEYWORD}」の検索結果　{itemsAmount}件</p>
+  <!-- END_IF -->
+
   <!-- BEGIN media-list-wrap:veil -->
   <div class="media-list-wrap">
-    <!-- BEGIN_IF [{{item-amount}}/eq/on] -->
-    <!-- BEGIN itemsAmount:veil -->
-    <p class="media-item-amount">「%{KEYWORD}」の検索結果　{itemsAmount}件</p>
-    <!-- END itemsAmount:veil -->
-    <!-- END_IF -->
     <ul class="media-list"><!-- BEGIN unit:loop -->
       <!-- BEGIN entry:loop -->
       <li class="media-item">
