@@ -1,6 +1,15 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <div>
   @include("/include/edit/module-custom.html")
+
+  
+  <p class="media-item-amount">%{CATEGORY_NAME} %{KEYWORD} %{TAG} <!-- BEGIN_MODULE Field_Search -->{station} 
+    <!-- BEGIN price0:veil -->{price[0]}[number_format]円以上 <!-- END price0:veil -->
+    <!-- BEGIN price1:veil -->{price[1]}[number_format]円以下<!-- END price1:veil --><!-- END_MODULE Field_Search -->
+    <!-- BEGIN_IF [{itemsAmount}/nem] -->の検索結果 {itemsAmount} 件<!-- ELSE -->
+    に一致する物件は見つかりませんでした。<!-- END_IF --></p>
+  
+
   <ul class="card-list"><!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
     <li class="card-item {entry:loop.class}">
