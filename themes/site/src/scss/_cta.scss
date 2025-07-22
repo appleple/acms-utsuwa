@@ -114,6 +114,12 @@
     &[href^="tel:"] {
       text-decoration: none;
       border-bottom: var(--border-width-sm) dotted var(--color-white);
+
+      @media (hover: hover) {
+        &:any-link:hover {
+          border-color: transparent;
+        }
+      }
     }
   }
 

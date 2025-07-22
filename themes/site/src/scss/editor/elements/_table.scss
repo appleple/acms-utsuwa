@@ -5,16 +5,22 @@
 /* ------------------------------
  テーブル
 ------------------------------ */
-$_table-border-color: rgb(235 235 235);
+
+/* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
+:where(.acms-admin-block-editor-body) .tableWrapper {
+  th,
+  td {
+    min-width: 100px; /* 入力しやすいよう最小幅を確保 */
+  }
+}
 
 @include acms.editor-style(
   ("table"),
-  $extension-contexts: (".tableWrapper", '[class*="column-table"]'), /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
+  $extension-contexts: (".tableWrapper", '[class*="column-table"]'),
 ) {
   margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
   background-color: var(--color-white);
   border: 0; /* リセット用 */
-  border-bottom: var(--border-width-sm) solid $_table-border-color;
   border-collapse: collapse;
 
   th,
@@ -22,9 +28,7 @@ $_table-border-color: rgb(235 235 235);
     padding: var(--entry-el-padding-xs);
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
-    border: 0; /* リセット用 */
-    border-right: var(--border-width-sm) solid $_table-border-color;
-    border-bottom: var(--border-width-sm) solid $_table-border-color;
+    border: var(--border-width-sm) solid var(--color-gray30);
   }
 
   th {
@@ -50,15 +54,6 @@ $_table-border-color: rgb(235 235 235);
     &:hover {
       border-color: transparent;
     }
-
-    &[href^="tel:"] {
-      color: currentcolor;
-      border-bottom: var(--border-width-sm) dashed;
-
-      &:hover {
-        border-color: transparent;
-      }
-    }
   }
 
   @media screen and (min-width: acms.$breakpoint-md-min) {
@@ -68,6 +63,11 @@ $_table-border-color: rgb(235 235 235);
       font-size: map.get(global.$font-scales, body-m);
     }
   }
+}
+
+/* tableの左右marginが.entry-containerのpaddingと干渉しないようリセット */
+.entry-container table {
+  margin-inline: 0;
 }
 
 /* ブロックエディター内のテーブル */
@@ -91,7 +91,7 @@ $_table-border-color: rgb(235 235 235);
 
   table {
     width: 100%;
-    margin: 0;
+    margin-block: 0;
   }
 }
 

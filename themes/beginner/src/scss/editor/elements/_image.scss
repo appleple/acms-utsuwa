@@ -14,7 +14,7 @@
 :where(.media-image-block),
 :where(.acms-admin-block-editor-body) .node-imageBlock,
 [class*="column-image"],
-[class*="column-media"],
+[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])),
 [class*="column-eximage"] {
   margin-block: 0 var(--entry-el-margin-md);
 }
@@ -31,10 +31,9 @@
 :where(.media-image-block),
 :where(.acms-admin-block-editor-image),
 [class*="column-image"],
-[class*="column-media"],
+[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])),
 [class*="column-eximage"] {
   line-height: 0; /* Descender space 対策 */
-  text-align: center;
 
   a {
     display: inline-block;
@@ -57,17 +56,27 @@
   }
 }
 
+:where(.media-image-block),
+:where(.acms-admin-block-editor-image) {
+  text-align: center;
+}
+
 /* キャプション
 ------------------------------ */
 :where(.media-image-block) figcaption,
 :where(.acms-admin-block-editor-image) figcaption,
 [class*="column-image"] .caption,
-[class*="column-media"] .caption,
+[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])) .caption,
 [class*="column-eximage"] .caption {
   display: block;
+  margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-sm);
-  margin-block-start: 4px;
-  margin-inline: 0;
+}
+
+[class*="column-image"] .caption,
+[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])) .caption,
+[class*="column-eximage"] .caption {
+  text-align: center;
 }

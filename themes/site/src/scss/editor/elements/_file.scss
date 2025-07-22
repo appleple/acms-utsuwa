@@ -6,10 +6,11 @@
  - ブロックエディタのファイル（縦積み、ボタン型）
  - メディアファイル
  - ファイル
+ ※ media-downloadは動的、storageは静的書き出しに対応
 ------------------------------ */
 :where(.acms-admin-block-editor-body) .node-fileBlock,
 .media-file-block,
-[class*="column-media"]:has(a[href*="media-download"]),
+[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]),
 [class*="column-file"] {
   font-size: 0; /* Descender space 対策 */
   margin-block: 0 var(--entry-el-margin-md);
@@ -22,27 +23,23 @@
 .acms-admin-block-editor-file-link,
 .media-file-block[data-display-type="button"] a,
 [class*="column-media"] a[href*="media-download"],
+[class*="column-media"] a[href*="storage"],
 [class*="column-file"] a {
   display: inline-flex;
   gap: 1rem;
   align-items: center;
   padding: 1rem 1.5rem;
   color: var(--color-text);
-
-  /* リセット用 */
-  text-decoration: none;
+  text-decoration: none; /* リセット用 */
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray40);
   border-radius: var(--border-radius-md);
-
-  &:hover {
-    opacity: 1; /* リセット */
-  }
 }
 
 /* リンク動作スタイル（閲覧画面のみ） */
 .media-file-block[data-display-type="button"] a,
-[class*="column-media"]:not(:has(.column-pdf-image)) a[href*="media-download"],
+[class*="column-media"] a[href*="media-download"],
+[class*="column-media"] a[href*="storage"],
 [class*="column-file"] a {
   @media (hover: hover) {
     transition: background-color 0.2s ease;
@@ -68,7 +65,7 @@
 .acms-admin-block-editor-file-link .caption,
 .media-file-block[data-display-type="button"] .caption,
 [class*="column-file"] .caption,
-[class*="column-media"]:has(a[href*="media-download"]):has(.columnIcon) .caption {
+[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon) .caption {
   margin: 0; /* リセット */
   color: currentcolor;
   font-size: map.get(global.$font-scales, body-m);
@@ -91,6 +88,7 @@
 
     @media (hover: hover) {
       &:hover {
+        background-color: transparent; /* リセット */
         .column-pdf-image {
           opacity: 0.7;
         }
@@ -121,7 +119,7 @@
   }
 
   .caption {
-    margin: 0;
+    margin: 0; /* リセット */
     color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-sm);
@@ -140,7 +138,7 @@
 .acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)) .caption,
 .media-file-block[data-display-type="icon"] .caption {
   display: block;
-  margin: 4px 0 0;
+  margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-md);

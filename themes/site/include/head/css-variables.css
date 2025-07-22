@@ -41,8 +41,8 @@
   --color-form-bg: var(--color-gray10);
   --color-form-border: var(--color-gray40);
 
-  --color-link: #0061D1;
-  --color-focus: var(-color-link);
+  --color-link: var(--color-gray100);
+  --color-focus: #0061D1;
   --color-page-title-bg: var(--color-gray10);
   --color-hover-bg: var(--color-gray10);
   --color-hover-bg-2nd: rgba(0, 0, 0, 0.05);
@@ -147,6 +147,9 @@
   --separator-sm: 2rem;
   --separator-md: 3rem;
   --separator-lg: 4rem;
+
+  /* ユニットの見出し要素上追加マージン */
+  --unit-heading-margin-top-add: 0.6em;
 
   /* systemでも参照しているプロパティを定義 */
   --acms-col-gap-x          : var(--gutter-md);

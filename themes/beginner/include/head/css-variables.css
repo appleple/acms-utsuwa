@@ -148,6 +148,9 @@
   --separator-md: 3rem;
   --separator-lg: 4rem;
 
+  /* ユニットの見出し要素上追加マージン */
+  --unit-heading-margin-top-add: 0.6em;
+
   /* systemでも参照しているプロパティを定義 */
   --acms-col-gap-x          : var(--gutter-md);
   --unit-gap-x              : var(--gutter-md);
