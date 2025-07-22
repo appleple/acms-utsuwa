@@ -1446,6 +1446,14 @@ a:hover .icon-button svg {
   text-decoration: none;
   border-bottom: var(--border-width-sm) dotted var(--color-white);
 }
+@media (hover: hover) {
+  .cta-visual a[href^="tel:"]:-moz-any-link:hover {
+    border-color: transparent;
+  }
+  .cta-visual a[href^="tel:"]:any-link:hover {
+    border-color: transparent;
+  }
+}
 .cta-visual::before {
   position: absolute;
   z-index: -1;
@@ -5784,7 +5792,6 @@ input::placeholder {
   display: grid;
   grid-template-columns: 6rem 1fr;
   gap: 1rem;
-  margin: 0 calc(var(--gutter-md) / 2);
   padding-bottom: 2rem;
 }
 
