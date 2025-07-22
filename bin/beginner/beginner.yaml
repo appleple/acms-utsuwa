@@ -716,8 +716,8 @@ config:
     - { config_key: column_def_add_module_field_5, config_value: '', config_sort: 168, config_rule_id: null, config_module_id: null, config_set_id: 3, config_blog_id: 1 }
     - { config_key: meta_keywords, config_value: '', config_sort: 1, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: meta_description, config_value: '', config_sort: 2, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
-    - { config_key: google_api_key, config_value: , config_sort: 3, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
-    - { config_key: mapbox_api_key, config_value: p, config_sort: 4, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
+    - { config_key: google_api_key, config_value: '', config_sort: 3, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
+    - { config_key: mapbox_api_key, config_value: '', config_sort: 4, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: ping_weblog_updates_endpoint, config_value: 'http://rpc.pingomatic.com', config_sort: 5, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: ping_weblog_updates_extended_endpoint, config_value: '', config_sort: 6, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: tpl_entry_edit, config_value: _entry.html, config_sort: 8, config_rule_id: null, config_module_id: null, config_set_id: 2, config_blog_id: 1 }
