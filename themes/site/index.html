@@ -5,11 +5,20 @@
   <main class="main">
     <div class="acms-grid">
       <div class="container-md">
+
+        <!-- BEGIN_IF [%{KEYWORD}/nem]-->
+        <div aria-labelledby="search-form-heading" class="search-result-heading">
+          @include("/include/parts/search-general.html")
+        </div>
+        <!-- END_IF -->
+
         <!-- タグフィルター -->
-        @include("/include/tag/filter.html")
+        @include("/include/tag/filter.html",{"module_id": "tag_filter"})
+
 
         <!-- サマリー：記事一覧 -->
-        @include("/include/entry/summary.html",{"module_id": "summary_index_date"})
+        @include("/include/entry/summary.html",{"module_id": "summary_date"})
+
       </div>
     </div>
   </main>
@@ -18,18 +27,5 @@
 
 
 @section("side")
-<section class="acms-container">
-  <h3 class="heading-md heading-line">他の方法で記事を探す</h3>
-  <div class="section-side-grid">
-    <!-- BEGIN_MODULE Touch_NotCategory -->
-    <!-- カテゴリー：リスト表示 -->
-    @include("/include/category/list_side.html", {"module_id": "category_list"})
-    <!-- END_MODULE Touch_NotCategory -->
 
-    <!-- BEGIN_MODULE Touch_NotTag -->
-    <!-- タグ：リスト表示 -->
-    @include("/include/tag/list_side.html", {"module_id": "tag_cloud"})
-    <!-- END_MODULE Touch_NotTag -->
-  </div>
-</section>
 @endsection
