@@ -7,10 +7,6 @@ process.env.BABEL_ENV = 'development';
 module.exports = webpackMerge.merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-  },
-  target: 'web',
   devServer: {
     open: true,
     openPage: '',
