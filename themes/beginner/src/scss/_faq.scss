@@ -87,8 +87,7 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  margin: 0 1rem;
-  margin-top: 10px;
+  margin: 0 calc(var(--unit-gutter-var) / 2);
   padding: 2rem 0;
   border-top: 1px solid var(--color-gray30);
 
@@ -101,7 +100,7 @@
   }
 
   .entry-style {
-    margin-bottom: -1rem;
+    margin-bottom: calc(var(--entry-el-margin-md) * -1);
   }
 
   @media (hover: hover) {
