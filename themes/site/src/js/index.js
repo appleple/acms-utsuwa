@@ -6,17 +6,10 @@ import toggle from './toggle';
 /**
  * スタイルの読み込み
  */
-import 'normalize.css/normalize.css';
 import '../scss/site.scss';
 
 // JSが有効か判断する
 $('html').removeClass('no-js').addClass('js');
-
-(async () => {
-  if (!('scrollBehavior' in document.documentElement.style)) {
-    await import(/* webpackChunkName: "scroll-behavior-polyfill" */ 'scroll-behavior-polyfill');
-  }
-})();
 
 animation(); // アニメーション
 navigation(); // ナビゲーション
@@ -72,18 +65,17 @@ domContentLoaded(() => {
 /**
  * 外部リンクアイコンの追加
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const anchors = document.querySelectorAll('.text-btn a');
-  const currentHost = location.host;
 
-  anchors.forEach(function (a) {
+  anchors.forEach((a) => {
     const href = a.getAttribute('href');
     const target = a.getAttribute('target');
 
     if (!href) return;
 
     // 外部リンクかどうかを判定
-    const isExternal = /^https?:\/\//.test(href) && href.indexOf(currentHost) === -1;
+    const isExternal = /^https?:\/\//.test(href) && href.indexOf(window.location.hostname) === -1;
 
     // target="_blank" または 外部リンクのいずれかに該当する場合
     if (isExternal || target === '_blank') {

@@ -44,17 +44,6 @@ module.exports = {
         },
       },
       {
-        test: /\.vue$/,
-        include: /src\/js/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax', // <style lang="sass">
-          },
-        },
-      },
-      {
         test: /\.(scss|css)$/,
         use: [
           {

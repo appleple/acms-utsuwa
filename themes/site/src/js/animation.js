@@ -1,4 +1,3 @@
-import 'intersection-observer';
 import domContentLoaded from 'dom-content-loaded';
 
 export default () => {
