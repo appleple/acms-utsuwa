@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="ja" scroll-behavior="smooth">
+<html class="no-js" lang="ja">
   <head>
     @include("/include/head/meta.html")
     @include("/include/head/link.html")
@@ -29,13 +29,13 @@
 <div class="acms-container">
   <main class="main">
     <div class="container-md">
-      
+
       <!-- BEGIN_IF [%{KEYWORD}/nem]-->
       <div aria-labelledby="search-form-heading" class="search-result-heading">
         @include("/include/parts/search-general.html")
       </div>
       <!-- END_IF -->
-      
+
       @include("/include/tag/filter.html",{"module_id": "tag_filter"})
 
       <!-- サマリー：記事一覧 -->
@@ -60,4 +60,3 @@
     @include("/include/body-end.html")
   </body>
 </html>
-

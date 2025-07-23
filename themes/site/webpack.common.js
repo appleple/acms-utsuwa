@@ -1,4 +1,3 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -8,7 +7,6 @@ const sass = require('sass');
 
 module.exports = {
   cache: true,
-  target: ['web', 'es5'],
   entry: {
     // bundle: `${__dirname}/src/js/index.js`,
     bundle: `${__dirname}/src/scss/site.scss`,
@@ -25,13 +23,6 @@ module.exports = {
     splitChunks: {
       name: 'vendor',
       chunks: 'initial',
-    },
-  },
-  resolve: {
-    extensions: ['.vue', '.js', '.ts', '.tsx'],
-    alias: {
-      '@': path.resolve(__dirname, './src/js'),
-      vue$: 'vue/dist/vue.runtime.esm-bundler.js',
     },
   },
   module: {
