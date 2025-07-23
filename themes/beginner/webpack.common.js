@@ -1,6 +1,4 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const autoprefixer = require('autoprefixer');
@@ -8,9 +6,7 @@ const sass = require('sass');
 
 module.exports = {
   cache: true,
-  target: ['web', 'es5'],
   entry: {
-    // bundle: `${__dirname}/src/js/index.js`,
     bundle: `${__dirname}/src/scss/site.scss`,
     editor: `${__dirname}/src/scss/site-editor.scss`,
   },
@@ -27,33 +23,8 @@ module.exports = {
       chunks: 'initial',
     },
   },
-  resolve: {
-    extensions: ['.vue', '.js', '.ts', '.tsx'],
-    alias: {
-      '@': path.resolve(__dirname, './src/js'),
-      vue$: 'vue/dist/vue.runtime.esm-bundler.js',
-    },
-  },
   module: {
     rules: [
-      {
-        test: /\.(js|ts|tsx)$/,
-        include: /src\/js/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.vue$/,
-        include: /src\/js/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax', // <style lang="sass">
-          },
-        },
-      },
       {
         test: /\.(scss|css)$/,
         use: [
@@ -108,16 +79,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // ESLint
-    new ESLintPlugin({
-      context: './src',
-      extensions: ['js', 'ts', 'tsx', 'jsx', 'vue'],
-      exclude: ['/node_modules/'],
-      emitError: true,
-      emitWarning: true,
-      failOnError: true,
-      fix: true,
-    }),
     // StyleLint
     new StylelintPlugin({
       configFile: '.stylelintrc',
