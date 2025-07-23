@@ -26,34 +26,6 @@
 </div>
 <!-- END unit#custom_message -->
 
-<!-- BEGIN unit#custom_pricing -->
-<ul class="pricing-group not-editor-style"><!-- BEGIN group_pricing:loop -->
-  <li class="pricing-item<!-- BEGIN_IF [{pricing_reccommend}/eq/true] --> is-reccomend<!-- END_IF -->">
-    <div class="pricing-inner">
-      <div class="pricing-header"><!-- BEGIN_IF [{pricing_reccommend}/eq/true] -->
-        <div class="pricing-label-wrap">
-          <p class="pricing-label">おすすめ</p>
-        </div><!-- END_IF --><!-- BEGIN pricing_title:veil -->
-        <h3 class="pricing-title">{pricing_title}</h3><!-- END pricing_title:veil --><!-- BEGIN pricing_desc:veil -->
-        <p class="pricing-desc">{pricing_desc}[nl2br]</p><!-- END pricing_desc:veil -->
-      </div>
-      <div class="pricing-body"><!-- BEGIN_IF [{pricing_price}/nem] -->
-        <p class="pricing-price">{pricing_price}<span class="pricing-unit">{pricing_price_unit}</span></p>
-        <!-- END_IF --><!-- BEGIN pricing_check_list:veil -->
-        <ul class="pricing-check-group">
-          {pricing_check_list}[list]
-        </ul><!-- WND pricing_check_list:veil -->
-      </div>
-      <div class="pricing-footer"><!-- BEGIN pricing_btn-url:veil -->
-        <a href="{pricing_btn-url}" class="button pricing-button">詳しく見る</a><!-- END pricing_btn-url:veil -->
-        <!-- BEGIN pricing_micro_copy:veil -->
-        <p class="text-info pricing-text-info">{pricing_micro_copy}</p><!-- END pricing_micro_copy:veil -->
-      </div>
-    </div>
-  </li><!-- END group_pricing:loop -->
-</ul>
-<!-- END unit#custom_pricing -->
-
 <!-- BEGIN unit#osmap_mapbox -->
 
 <!-- Mapbox の CSS と JS を読み込む -->
