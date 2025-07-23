@@ -42,24 +42,35 @@ a {
   color: var(--color-gray60) !important;
 }
 
-/* コンテナー */
+/* コンテナー
+----------------------------- */
 .acms-container {
   max-width: var(--container);
-  padding-right: calc(var(--col-gutter) / 2);
-  padding-left: calc(var(--col-gutter) / 2);
+  padding-right: var(--gutter-sm);
+  padding-left: var(--gutter-sm);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
-    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
+    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-sm-min) {
+    padding-right: var(--gutter-md);
+    padding-left: var(--gutter-md);
+
+    @if global.$enable-iphonex == true {
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
+    }
   }
 
   @media screen and (min-width: acms.$breakpoint-lg-min) {
-    padding-right: calc(var(--col-gutter) * 1.5);
-    padding-left: calc(var(--col-gutter) * 1.5);
+    padding-right: var(--gutter-lg);
+    padding-left: var(--gutter-lg);
 
     @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
-      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
     }
   }
 
@@ -72,21 +83,31 @@ a {
   box-sizing: border-box;
   max-width: var(--container-md);
   margin: 0 auto;
-  padding-right: calc(var(--col-gutter) / 2);
-  padding-left: calc(var(--col-gutter) / 2);
+  padding-right: var(--gutter-sm);
+  padding-left: var(--gutter-sm);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
-    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
+    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-sm-min) {
+    padding-right: var(--gutter-md);
+    padding-left: var(--gutter-md);
+
+    @if global.$enable-iphonex == true {
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
+    }
   }
 
   @media screen and (min-width: acms.$breakpoint-lg-min) {
-    padding-right: calc(var(--col-gutter) * 1.5);
-    padding-left: calc(var(--col-gutter) * 1.5);
+    padding-right: var(--gutter-lg);
+    padding-left: var(--gutter-lg);
 
     @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
-      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
     }
   }
 
@@ -101,25 +122,37 @@ a {
   box-sizing: border-box;
   max-width: var(--container-sm);
   margin: 0 auto;
-  padding-right: calc(var(--col-gutter) / 2);
-  padding-left: calc(var(--col-gutter) / 2);
+  padding-right: var(--gutter-sm);
+  padding-left: var(--gutter-sm);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) / 2));
-    padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) / 2));
+    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
+    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
+  }
+
+  @media screen and (min-width: acms.$breakpoint-sm-min) {
+    padding-right: var(--gutter-md);
+    padding-left: var(--gutter-md);
+
+    @if global.$enable-iphonex == true {
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
+    }
   }
 
   @media screen and (min-width: acms.$breakpoint-lg-min) {
-    padding-right: calc(var(--col-gutter) * 1.5);
-    padding-left: calc(var(--col-gutter) * 1.5);
+    padding-right: var(--gutter-lg);
+    padding-left: var(--gutter-lg);
 
     @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + (var(--col-gutter) * 1.5));
-      padding-left: calc(env(safe-area-inset-left) + (var(--col-gutter) * 1.5));
+      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
+      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
     }
   }
 }
 
+/* レイアウト
+----------------------------- */
 .content-wrapper {
   padding: var(--page-title-margin-bottom) 0 0;
 
@@ -140,7 +173,6 @@ a {
 }
 
 /* 2カラム */
-
 .side-container {
   padding-top: 1rem;
 }
@@ -187,11 +219,9 @@ a {
   }
 }
 
-/* モジュール */
-
-
+/* a11y
+----------------------------- */
 /* スクリーンリーダー */
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -204,8 +234,8 @@ a {
   clip: rect(0, 0, 0, 0);
 }
 
-/* その他上書き */
-
+/* その他上書き
+----------------------------- */
 .js-open-street-map {
   z-index: 0;
 }
