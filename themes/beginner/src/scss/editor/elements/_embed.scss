@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../global/acms-common" as acms;
+@use "../../global/common" as global;
+
+/* 埋め込みユニット
+------------------------------ */
+[class*="column-embed-"] {
+  margin-block: 0 var(--entry-el-margin-md);
+
+  a.acms-embed-link {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--color-text);
+    text-decoration: none;
+    border: var(--border-width-sm) solid var(--color-gray30);
+    border-radius: var(--border-radius-lg);
+
+    &:hover {
+      background: var(--color-hover-bg);
+    }
+  }
+
+  .acms-embed-link-image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .acms-embed-link-content {
+    margin: 0; /* リセット */
+    padding: 1rem;
+  }
+
+  .acms-embed-link-site-name {
+    margin: 0;
+    color: var(--color-text);
+    font-size: map.get(global.$font-scales, body-ss);
+  }
+
+  .acms-embed-link-title {
+    margin: 0 0 0.5rem;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: var(--line-height-sm);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .acms-embed-link-description {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: map.get(global.$font-scales, body-s);
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    a.acms-embed-link {
+      flex-direction: row;
+    }
+
+    .acms-embed-link-image-container {
+      flex: 1 0 auto;
+      box-sizing: border-box;
+      width: math.div(100%, 3);
+      padding: 0;
+    }
+
+    .acms-embed-link-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .acms-embed-link-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      box-sizing: border-box;
+      width: math.div(2, 3);
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .acms-embed-link-title {
+      margin: 0;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: map.get(global.$font-scales, heading-ss);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

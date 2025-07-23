@@ -2,7 +2,7 @@
 
 @section(file-unit)
 <!-- ファイル -->
-<div class="column-file-{align}">
+<div class="column-file-{align} align-{align}">
   <a href="%{HTTP_ROOT}{path}">
     <img
       <!-- BEGIN_IF [{anker}/nem] -->
@@ -22,39 +22,10 @@
 </div>
 @endsection
 
-@section(quote-unit)
-<!-- 引用 -->
-<div class="column-quote-{align}" {display_size}[raw]><!-- BEGIN html:veil -->
-  {quote_html}[raw]<!-- END html:veil --><!-- BEGIN_IF [{quote_title}/nem/] -->
-  <blockquote class="quote">
-    <a class="quote-link" <!-- BEGIN_IF [{anker}/nem] --> id="{anker}"<!-- END_IF --> href="{quote_url}" target="_blank" rel="noopener noreferrer">
-      <!-- BEGIN image:veil -->
-      <div class="quote-img-wrap">
-        <img
-          src="{quote_image}"
-           class="quote-img acms-img-responsive"
-          width="{x}"
-          height="{y}"
-          loading="lazy"
-          decoding="async"
-          alt="{quote_title}"
-        >
-      </div>
-      <!-- END image:veil -->
-      <div class="quote-info">
-        <!-- BEGIN site_name:veil -->
-        <p class="quote-site-name">{quote_site_name}</p><!-- END site_name:veil -->
-        <p class="quote-title">{quote_title}</p><!-- BEGIN description:veil -->
-        <p class="quote-description">{quote_description}[raw|trim(180, '...')]</p><!-- END description:veil -->
-      </div>
-    </a>
-  </blockquote><!-- END_IF -->
-</div>
-@endsection
-
 @section(media-unit)
 <!-- media -->
-<div class="column-media-{align}{display_size_class}"{display_size}[raw]>
+<div class="column-media-{align} align-{align}">
+  <div class="{display_size_class}" {display_size}[raw]>
   <!-- BEGIN type#image -->
   <!-- BEGIN link#front -->
   <a href="{url}" {viewer}[raw] data-group="{link_eid}">
@@ -127,7 +98,13 @@
       <!-- BEGIN_IF [{caption}[delnl]/nem] -->
       <p class="caption">{caption}[raw|nl2br]</p>
       <!-- END_IF -->
-      <img src="/images/icon-arrow-down-to-line.svg" alt="ダウンロード" class="column-pdf-image-download-icon" loading="lazy" decoding="async">
+      <img
+        src="/images/icon-arrow-down-to-line.svg"
+        alt="ダウンロード"
+        class="column-pdf-image-download-icon"
+        loading="lazy"
+        decoding="async"
+      >
     </div>
   </a>
   <!-- ELSE -->
@@ -147,5 +124,6 @@
   </a>
   <!-- END_IF -->
   <!-- END type#file -->
+  </div>
 </div>
 @endsection

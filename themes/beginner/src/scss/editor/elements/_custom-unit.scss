@@ -9,11 +9,6 @@
 /* カード
 ------------------------------ */
 .#{acms.$entry-class} {
-  .card-item,
-  .card-bordered-item {
-    padding-inline: calc(var(--unit-gutter-var) / 2);
-  }
-
   @include acms.media-breakpoint-up(md) {
     .card-bordered-item {
       margin-bottom: 1rem;
@@ -24,7 +19,7 @@
 /* 罫線ユニット
 ------------------------------ */
 .unit-separator {
-  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  margin: 0 0 var(--entry-el-margin-md);
   border: 0;
   border-top: var(--border-width-sm) solid var(--color-gray40);
 }
@@ -33,7 +28,7 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   .entry-outline {
-    margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-lg);
+    margin: 0 0 var(--entry-el-margin-lg);
     padding: 1rem;
     border: var(--border-width-lg) solid var(--color-gray30);
   }
@@ -122,7 +117,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+    margin: 0 0 var(--entry-el-margin-md);
     background: var(--color-gray10);
   }
 
@@ -219,7 +214,7 @@
     justify-content: center;
     margin: 1.5rem 0;
     padding: 4rem 0 2rem;
-    padding: 0 (var(--unit-gutter-var) / 2);
+    padding: 0;
 
     &:has(.is-reccomend) {
       padding-top: 16px;
@@ -351,11 +346,8 @@
     .pricing-group {
       flex-flow: row wrap;
       gap: var(--col-gutter);
-      margin: 0 calc(var(--unit-gutter-var) / 2);
+      margin: 0;
       padding: 6rem 0 4rem;
-
-
-
     }
 
     .pricing-item {

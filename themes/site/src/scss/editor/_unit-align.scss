@@ -1,0 +1,28 @@
+@use "../global/acms-common" as acms;
+
+/* ------------------------------
+ ユニット配置
+------------------------------ */
+@each $alignment in acms.$alignments {
+  .align-#{$alignment} {
+    display: flex;
+
+    @if $alignment == left {
+      & {
+        justify-content: flex-start;
+      }
+    }
+
+    @if $alignment == right {
+      & {
+        justify-content: flex-end;
+      }
+    }
+
+    @if $alignment == center {
+      & {
+        justify-content: center;
+      }
+    }
+  }
+}

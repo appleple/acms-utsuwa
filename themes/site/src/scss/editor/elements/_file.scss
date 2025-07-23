@@ -26,10 +26,12 @@
 [class*="column-media"] a[href*="storage"],
 [class*="column-file"] a {
   display: inline-flex;
+  width: 100%;
   gap: 1rem;
   align-items: center;
   padding: 1rem 1.5rem;
   color: var(--color-text);
+  box-sizing: border-box;
   text-decoration: none; /* リセット用 */
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray40);

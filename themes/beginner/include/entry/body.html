@@ -57,13 +57,12 @@
 
     <!-- BEGIN entry:veil -->
     <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
-      <div class="entry-style-grid">
+      <div>
         <!-- カスタムフィールドの読み込み -->
         @include("/include/entry/field.html")
 
         <!-- BEGIN unit:veil -->
         @include("/include/unit.html")
-        <hr class="clearHidden" />
         <!-- END unit:veil -->
         <!-- 続きを読む -->
         @include("/include/parts/continue.html")
@@ -78,17 +77,16 @@
 
     <!-- BEGIN formBody -->
     @include("/include/form/unit.html")
-    <hr class="clearHidden" />
     <!-- END formBody -->
 
     @include("/admin/entry/edit-%{IS_ADMIN}.html")
 
-<!-- BEGIN_MODULE Touch_Login -->
-<div class="acms-form-group">
-  @include("/admin/entry/revision-info.html")
-  @include("/admin/entry/action.html")
-</div><!-- END_MODULE Touch_Login -->
-
+    <!-- BEGIN_MODULE Touch_Login -->
+    <div class="acms-form-group">
+      @include("/admin/entry/revision-info.html")
+      @include("/admin/entry/action.html")
+    </div>
+    <!-- END_MODULE Touch_Login -->
   </div>
 
 </article>

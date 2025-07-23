@@ -9,9 +9,20 @@
 // ブロックエディターのレイアウト（編集画面と共通）
 @use "./editor/block-editor-layout";
 
+// ユニットのグルーピング（閲覧画面のみで使用）
+@use "./editor/group";
+
+// ユニット配置（編集画面と共通）
+@use "./editor/unit-align";
+
 // ユニットパーツ（編集画面と共通）
 @use "./editor/elements/blockquote";
 @use "./editor/elements/button";
+@use "./editor/elements/custom-unit";
+@use "./editor/elements/embed";
 @use "./editor/elements/file";
 @use "./editor/elements/image";
+@use "./editor/elements/map";
+@use "./editor/elements/module-unit";
 @use "./editor/elements/table";
+@use "./editor/elements/video";

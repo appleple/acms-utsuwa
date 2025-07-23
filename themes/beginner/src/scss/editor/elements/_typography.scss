@@ -6,17 +6,6 @@
  テキスト
 ------------------------------ */
 
-/* テキストユニット（閲覧側）の左右グリッド調整 */
-@each $tag in acms.$unit-text-tags {
-  @include acms.editor-style(
-    ($tag),
-    $exclude-classes: ("not-editor-style", "column-block-editor"),
-    $extension-contexts: (),
-  ) {
-    margin-inline: calc(var(--unit-gutter-var) / 2);
-  }
-}
-
 /* リンク
 ----------------------------- */
 @mixin _text-link-common {

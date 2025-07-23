@@ -6,7 +6,7 @@
 ------------------------------ */
 
 /* 価格表ユニットのユニットグループアイテムの境界線 */
-.acms-admin-table-admin-edit {
+[data-unit-type="custom_pricing"] .acms-admin-table-admin-edit {
   border-collapse: collapse;
 
   .sortable-item {

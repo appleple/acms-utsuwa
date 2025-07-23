@@ -134,14 +134,6 @@
   vertical-align: bottom;
 }
 
-.entry-header-visual-box {
-  position: relative;
-  box-sizing: border-box;
-  padding: 2rem 1rem;
-  color: var(--color-white);
-  background: rgb(0 0 0 / 70%);
-}
-
 .entry-header-visual-title {
   margin: 0 0 1.5rem;
   font-size: map.get(global.$font-scales, heading-s);
@@ -173,13 +165,6 @@
 
   .entry-header-visual {
     padding: 2rem 0;
-  }
-
-  .entry-header-visual-box {
-    width: 50%;
-    max-width: 35rem;
-    margin: 0 calc(var(--unit-gutter-var) / 2);
-    padding: 2.5rem 2.5rem 2rem;
   }
 
   .entry-header-visual-img {

@@ -36,8 +36,6 @@
   .ug-bg-primary {
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-    border-right: calc(var(--unit-gutter-var) / 2) solid var(--color-white);
-    border-left: calc(var(--unit-gutter-var) / 2) solid var(--color-white);
 
     &>*:not(.entry-reset):last-child>* {
       margin-bottom: 0;
@@ -64,8 +62,6 @@
     position: relative;
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-    border-right: calc(var(--unit-gutter-var) / 2) solid var(--color-white);
-    border-left: calc(var(--unit-gutter-var) / 2) solid var(--color-white);
 
     &::before {
       position: absolute;
