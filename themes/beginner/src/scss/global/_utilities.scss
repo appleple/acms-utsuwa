@@ -535,7 +535,7 @@
 // ---------------
 // ユーティリティ スマートフォン用
 // ---------------
-@media (max-width: global.$breakpoint-md-max) {
+@include global.media-breakpoint-down(md) {
   .acms-clear-sp {
     clear: both;
   }
@@ -657,7 +657,7 @@
 }
 
 // 大きいスマートフォン以下のとき
-@media (max-width: global.$breakpoint-md-max) {
+@include global.media-breakpoint-down(md) {
   // ブロック
   .acms-show-sp {
     display: block !important;
@@ -674,7 +674,7 @@
   }
 }
 
-@media (min-width: global.$breakpoint-md-min) {
+@include global.media-breakpoint-up(md) {
   // タブレット以上のときは表示にします
   .acms-show-tablet {
     display: block !important;
@@ -686,7 +686,7 @@
   }
 }
 
-@media (min-width: global.$breakpoint-lg-min) {
+@include global.media-breakpoint-up(lg) {
   // PCのときは表示にします
   .acms-show-pc {
     display: block !important;
@@ -699,7 +699,7 @@
 }
 
 // global.$breakpoint-sm-max 以下
-@media (max-width: global.$breakpoint-sm-max) {
+@include global.media-breakpoint-down(sm) {
   // ブロック
   .acms-block-xs {
     display: block !important;
@@ -727,7 +727,7 @@
 }
 
 // global.$breakpoint-sm-max 以上 global.$breakpoint-md-max以下
-@media (min-width: global.$breakpoint-sm-min) and (max-width: global.$breakpoint-md-max) {
+@include global.media-breakpoint-between(sm, md) {
   // ブロック
   .acms-block-sm {
     display: block !important;
@@ -755,7 +755,7 @@
 }
 
 // global.$breakpoint-md-min 以上 global.$breakpoint-lg-max以下
-@media (min-width: global.$breakpoint-md-min) and (max-width: global.$breakpoint-lg-max) {
+@include global.media-breakpoint-between(md, lg) {
   // ブロック
   .acms-block-md {
     display: block !important;
@@ -783,7 +783,7 @@
 }
 
 // global.$breakpoint-lg-min 以上 global.$breakpoint-xl-max以下
-@media (min-width: global.$breakpoint-lg-min) and (max-width: global.$breakpoint-xl-max) {
+@include global.media-breakpoint-between(lg, xl) {
   // ブロック
   .acms-block-lg {
     display: block !important;
@@ -811,7 +811,7 @@
 }
 
 // global.$breakpoint-xl-min以下
-@media (min-width: global.$breakpoint-xl-min) {
+@include global.media-breakpoint-up(xl) {
   // ブロック
   .acms-block-xl {
     display: block !important;
@@ -844,31 +844,31 @@
   @include global.hide-visually;
 }
 
-@media (max-width: global.$breakpoint-sm-max) {
+@include global.media-breakpoint-down(sm) {
   .acms-hide-visually-xs {
     @include global.hide-visually;
   }
 }
 
-@media (min-width: global.$breakpoint-sm-min) and (max-width: global.$breakpoint-md-max) {
+@include global.media-breakpoint-between(sm, md) {
   .acms-hide-visually-sm {
     @include global.hide-visually;
   }
 }
 
-@media (min-width: global.$breakpoint-md-min) and (max-width: global.$breakpoint-lg-max) {
+@include global.media-breakpoint-between(md, lg) {
   .acms-hide-visually-md {
     @include global.hide-visually;
   }
 }
 
-@media (min-width: global.$breakpoint-lg-min) and (max-width: global.$breakpoint-xl-max) {
+@include global.media-breakpoint-between(lg, xl) {
   .acms-hide-visually-lg {
     @include global.hide-visually;
   }
 }
 
-@media (min-width: global.$breakpoint-xl-min) {
+@include global.media-breakpoint-up(xl) {
   .acms-hide-visually-xl {
     @include global.hide-visually;
   }

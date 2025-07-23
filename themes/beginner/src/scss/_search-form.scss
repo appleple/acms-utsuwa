@@ -58,7 +58,7 @@
     padding: 0.75rem 2rem;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     .form-search-button {
       padding: 0.75rem 2rem;
     }
@@ -73,7 +73,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .search-result-heading {
     .form-search-action {
       max-width: 50%;

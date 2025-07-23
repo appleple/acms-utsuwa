@@ -50,7 +50,7 @@
   text-align: center;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .not-found-content {
     margin: 0 0 7.5rem;
   }

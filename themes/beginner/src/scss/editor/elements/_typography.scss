@@ -172,7 +172,7 @@
   font-size: map.get(global.$font-scales, heading-s);
   line-height: var(--line-height-base);
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
   }
 }
@@ -181,7 +181,7 @@
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: var(--line-height-base);
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
   }
 }
@@ -190,7 +190,7 @@
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }
@@ -221,7 +221,7 @@
     font-size: map.get(global.$font-scales, heading-s);
     line-height: var(--line-height-base);
 
-    @media screen and (min-width: acms.$breakpoint-md-min) {
+    @include acms.media-breakpoint-up(md) {
       margin-bottom: 3rem;
       font-size: map.get(global.$font-scales, heading-l);
 
@@ -242,7 +242,7 @@
       margin-bottom: var(--entry-el-margin-xxs);
     }
 
-    @media screen and (min-width: acms.$breakpoint-md-min) {
+    @include acms.media-breakpoint-up(md) {
       margin-bottom: 3rem;
       font-size: map.get(global.$font-scales, heading-m);
 
@@ -440,7 +440,7 @@ p + p.text-danger,
       padding-inline: var(--entry-el-padding-sm);
     }
 
-    @media screen and (min-width: acms.$breakpoint-md-min) {
+    @include acms.media-breakpoint-up(md) {
       dt {
         padding-top: var(--entry-el-padding-md);
         padding-inline: var(--entry-el-padding-md);
@@ -480,7 +480,7 @@ p + p.text-danger,
     box-shadow: none;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     padding: var(--entry-el-padding-md);
   }
 }
@@ -495,7 +495,7 @@ p + p.text-danger,
   border: 0 solid var(--color-gray70);
   border-top-width: var(--border-width-sm);
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin-bottom: var(--entry-el-margin-lg);
   }
 }
@@ -508,7 +508,7 @@ p + p.text-danger,
     margin-block: 0;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin-block: var(--entry-el-margin-md);
 
     hr {

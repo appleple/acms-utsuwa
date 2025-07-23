@@ -130,7 +130,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-sm-min) {
+@include acms.media-breakpoint-up(sm) {
   .media-list {
     display: block;
     margin: -1rem calc(acms.$unit-gutter / -2) 0;
@@ -181,7 +181,7 @@
 
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .media-link {
     grid-template-columns: 1fr 280px;
     gap: 0 2rem;

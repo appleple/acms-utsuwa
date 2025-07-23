@@ -32,7 +32,7 @@
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin-bottom: var(--entry-el-margin-sm);
     font-size: map.get(global.$font-scales, heading-m);
 
@@ -57,7 +57,7 @@
     border-bottom: var(--border-width-md) solid var(--color-gray100);
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin: 0 0 var(--entry-el-margin-md) 0;
     font-size: map.get(global.$font-scales, heading-s);
 
@@ -77,7 +77,7 @@
     border-bottom: var(--border-width-md) solid var(--color-gray100);
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, heading-ss);
   }
@@ -93,7 +93,7 @@
     border-bottom: var(--border-width-md) solid var(--color-gray100);
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, body-m);
   }
@@ -112,7 +112,7 @@
   margin: 0 0 var(--entry-el-margin-md) 0;
   line-height: var(--line-height-lg);
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin: 0 0 var(--entry-el-margin-lg) 0;
   }
 

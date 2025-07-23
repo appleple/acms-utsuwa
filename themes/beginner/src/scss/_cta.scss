@@ -19,7 +19,7 @@
 }
 
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .cta {
     padding: 4.5rem 0 6.5rem;
 
@@ -80,7 +80,7 @@
 }
 
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .cta-general {
     margin-top: 1rem;
     padding: 5rem 2rem;
@@ -199,7 +199,7 @@
   color: var(--color-white);
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .cta-visual {
     margin-top: 0;
     padding: 5rem 0;

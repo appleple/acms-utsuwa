@@ -220,7 +220,7 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .serial-nav-list {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr auto 1fr;
@@ -247,4 +247,3 @@
     display: none;
   }
 }
-

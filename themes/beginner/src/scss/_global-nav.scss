@@ -10,7 +10,7 @@
   box-sizing: border-box;
   height: 100%;
 
-  @media (max-width: acms.$breakpoint-lg-max) {
+  @include acms.media-breakpoint-down(lg) {
     display: none;
   }
 }
@@ -191,7 +191,7 @@
     margin-right: auto;
     margin-left: auto;
 
-    @media screen and (min-width: acms.$breakpoint-lg-min) {
+    @include acms.media-breakpoint-up(lg) {
       padding: calc(var(--col-gutter) * 0.75) var(--col-gutter) 1.5rem;
     }
   }
@@ -225,7 +225,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .nav-bottom,
   .logo-center {
     .global-nav {

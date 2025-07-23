@@ -97,7 +97,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .entry-header {
     margin: 0 0 3rem;
   }
@@ -161,7 +161,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .entry-header-visual {
     overflow: hidden;
   }
@@ -207,7 +207,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .entry-header-visual-title {
     font-size: map.get(global.$font-scales, heading-m);
   }
@@ -229,7 +229,7 @@
 
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .entry-footer {
     padding: 2rem 0;
 
@@ -268,7 +268,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .sns-share-wrapper {
     flex-direction: row;
     align-items: center;
@@ -334,7 +334,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .entry-faq-body-icon {
     font-size: map.get(global.$font-scales, heading-m);
 
@@ -557,7 +557,7 @@
   }
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .bubble-item {
     position: relative;
     gap: 0 2rem;
@@ -626,7 +626,7 @@
   padding: var(--entry-el-padding-md) 0 0;
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .summary-entry-bottom {
     padding: var(--entry-el-padding-md) 2rem 0;
   }

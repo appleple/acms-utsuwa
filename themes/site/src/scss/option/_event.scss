@@ -52,7 +52,7 @@
   }
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .event-detail {
     dt {
       width: 8rem;

@@ -68,7 +68,7 @@
     background: transparent;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin-bottom: var(--entry-el-margin-lg);
     padding: var(--entry-el-padding-md);
   }
@@ -128,7 +128,7 @@
     line-clamp: 2;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     .quote-link {
       flex-direction: row;
     }

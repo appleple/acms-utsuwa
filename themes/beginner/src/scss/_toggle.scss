@@ -39,7 +39,7 @@
   display: none;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .toggle-icon {
     img {
       width: 2rem;
@@ -47,4 +47,3 @@
     }
   }
 }
-

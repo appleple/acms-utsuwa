@@ -63,7 +63,7 @@
   margin: 0;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .footer {
     margin: var(--footer-margin-top-lg) 0 0 0;
 
@@ -202,7 +202,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .footer-item-nav {
     gap: 2rem;
   }
@@ -216,7 +216,7 @@
 
 .footer-item {
   .form-search {
-    @media screen and (min-width: acms.$breakpoint-md-min) {
+    @include acms.media-breakpoint-up(md) {
       display: flex;
     }
 
@@ -224,7 +224,7 @@
       display: block;
       font-weight: bold;
 
-      @media screen and (max-width: acms.$breakpoint-md-max) {
+      @include acms.media-breakpoint-down(md) {
         margin-bottom: 0.5rem;
         line-height: initial;
       }

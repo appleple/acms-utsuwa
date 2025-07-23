@@ -85,20 +85,20 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-sm-min) {
+@include acms.media-breakpoint-up(sm) {
   .video-modal-thumbnail {
     margin: 0 0 2rem;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .video-modal {
     justify-content: flex-end;
     padding: 0 10% 0 0;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .video-modal {
     margin: 0 0 0 auto;
   }
@@ -126,7 +126,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max) {
+@include acms.media-breakpoint-down(md) {
   .modal-video-inner {
     padding: 0 1.25rem;
   }

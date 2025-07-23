@@ -14,7 +14,7 @@
     padding-inline: calc(var(--unit-gutter-var) / 2);
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     .card-bordered-item {
       margin-bottom: 1rem;
     }
@@ -101,7 +101,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .#{acms.$entry-class} {
     .entry-outline {
       padding: 2rem;
@@ -169,7 +169,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .#{acms.$entry-class} {
     .message {
       flex-direction: row;
@@ -346,7 +346,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .#{acms.$entry-class} {
     .pricing-group {
       flex-flow: row wrap;

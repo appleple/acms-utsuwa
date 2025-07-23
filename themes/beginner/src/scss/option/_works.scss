@@ -63,7 +63,7 @@
   text-align: center;
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .works-search-panel {
     margin-bottom: 3rem;
     padding: 3rem;

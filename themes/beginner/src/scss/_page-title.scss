@@ -82,7 +82,7 @@
 
 
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .page-title-wrapper {
     height: var(--page-title-height-md);
 

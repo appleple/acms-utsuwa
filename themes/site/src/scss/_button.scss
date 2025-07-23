@@ -90,7 +90,7 @@
     border-radius: var(--border-radius-round);
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     &.is-xl {
       width: initial;
       min-width: 18rem;

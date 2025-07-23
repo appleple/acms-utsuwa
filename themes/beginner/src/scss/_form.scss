@@ -56,7 +56,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .form-step {
     padding: 1rem 1rem 1rem 0;
   }
@@ -79,7 +79,7 @@
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max) {
+@include acms.media-breakpoint-down(md) {
   .form-step {
     justify-content: center;
   }
@@ -150,9 +150,11 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .form-label {
     vertical-align: top;
+    width: 30%;
+    margin: 0 2rem 0 0;
   }
 }
 
@@ -163,9 +165,10 @@
   justify-content: center;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .form-button-group {
     flex-direction: row;
+    gap: 1rem;
   }
 
   .form-button:not(:last-child) {
@@ -173,7 +176,7 @@
   }
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max) {
+@include acms.media-breakpoint-down(md) {
   .form-button {
     width: 100%;
     margin: 0 0 1rem;
@@ -215,7 +218,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .label-optional {
     margin: 0 0 0 1rem;
 
@@ -425,7 +428,7 @@ input::placeholder {
 
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .form-group {
     input[type="text"],
     input[type="password"],
@@ -510,6 +513,7 @@ input::placeholder {
   .acms-entry & {
     margin: 1rem 0;
   }
+
 }
 
 /* バリデーター
@@ -609,7 +613,7 @@ input::placeholder {
 
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .entry-form-wrapper {
     margin: 2rem 0;
     padding: 4rem 5rem;

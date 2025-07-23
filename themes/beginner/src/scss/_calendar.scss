@@ -48,7 +48,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .calendar-label {
     width: 3.5rem;
     padding: 0 0 0.75rem;
@@ -105,7 +105,7 @@
   padding: 0 0 0.5rem;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .calendar-group {
     grid-template-columns: 1fr 1fr;
   }
@@ -115,7 +115,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .calendar-group {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -198,7 +198,7 @@
   margin: 0;
 }
 
-// @media screen and (min-width: acms.$breakpoint-md-min) {}
+// @include acms.media-breakpoint-up(md) {}
 
 /* 　カレンダー ヘッダー
 ------------------------------ */
@@ -280,7 +280,7 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .calendar-pagination {
     display: inline-flex;
     padding: 0 4.5rem;

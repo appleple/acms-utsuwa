@@ -9,7 +9,7 @@
   [class*="ug-"] {
     overflow: hidden;
 
-    @media screen and (min-width: acms.$breakpoint-md-min) {
+    @include acms.media-breakpoint-up(md) {
       .pricing-group {
         margin-right: 0;
         margin-left: 0;
@@ -49,7 +49,7 @@
     padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
     border: 0;
 
-    @media screen and (min-width: acms.$breakpoint-lg-min) {
+    @include acms.media-breakpoint-up(lg) {
       .pricing-group {
         padding: 0;
       }
@@ -86,7 +86,7 @@
     margin-left: auto;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     .ug-bg-gray,
     .ug-bg-primary,
     .ug-border {

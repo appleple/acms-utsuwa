@@ -56,7 +56,7 @@
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     th,
     td {
       padding: var(--entry-el-padding-sm);

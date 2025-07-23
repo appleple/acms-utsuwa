@@ -13,7 +13,7 @@
   margin-bottom: var(--col-gutter);
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .section-side-col {
     width: auto;
     padding-right: calc(var(--unit-gutter-var) / 4);

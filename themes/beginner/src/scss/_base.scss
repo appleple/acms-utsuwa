@@ -19,7 +19,7 @@ html {
   background: var(--color-white);
   scroll-behavior: smooth;
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     scroll-padding-top: var(--header-height-fixed);
 
     &:has(.nav-bottom.sticky) {
@@ -54,7 +54,7 @@ a {
     padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
   }
 
-  @media screen and (min-width: acms.$breakpoint-sm-min) {
+  @include acms.media-breakpoint-up(sm) {
     padding-right: var(--gutter-md);
     padding-left: var(--gutter-md);
 
@@ -64,7 +64,7 @@ a {
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
+  @include acms.media-breakpoint-up(lg) {
     padding-right: var(--gutter-lg);
     padding-left: var(--gutter-lg);
 
@@ -91,7 +91,7 @@ a {
     padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
   }
 
-  @media screen and (min-width: acms.$breakpoint-sm-min) {
+  @include acms.media-breakpoint-up(sm) {
     padding-right: var(--gutter-md);
     padding-left: var(--gutter-md);
 
@@ -101,7 +101,7 @@ a {
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
+  @include acms.media-breakpoint-up(lg) {
     padding-right: var(--gutter-lg);
     padding-left: var(--gutter-lg);
 
@@ -130,7 +130,7 @@ a {
     padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
   }
 
-  @media screen and (min-width: acms.$breakpoint-sm-min) {
+  @include acms.media-breakpoint-up(sm) {
     padding-right: var(--gutter-md);
     padding-left: var(--gutter-md);
 
@@ -140,7 +140,7 @@ a {
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
+  @include acms.media-breakpoint-up(lg) {
     padding-right: var(--gutter-lg);
     padding-left: var(--gutter-lg);
 
@@ -161,7 +161,7 @@ a {
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .content-wrapper {
     padding: var(--page-title-margin-bottom-md) 0 0;
 
@@ -177,7 +177,7 @@ a {
   padding-top: 1rem;
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .main-container {
     width: var(--width-main-container);
     padding-top: 1rem;

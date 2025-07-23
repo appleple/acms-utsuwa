@@ -10,7 +10,7 @@
 .map-wrapper {
   min-height: 300px;
 
-  @media (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     min-height: 400px;
   }
 }
@@ -21,7 +21,7 @@
   padding-bottom: 3rem;
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .map-search {
     padding-top: 1.5rem;
     padding-bottom: 4rem;
@@ -131,13 +131,13 @@
   }
 }
 
-@media (max-width: acms.$breakpoint-md-max) {
+@include acms.media-breakpoint-down(md) {
   .realestate-search-select-connector {
     rotate: 90deg;
   }
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .realestate-search-panel {
     margin-bottom: 3rem;
     padding: 3rem;
@@ -205,7 +205,7 @@
   }
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .search-conditions {
     flex-direction: row;
     gap: var(--col-gutter);
@@ -268,7 +268,7 @@
   }
 }
 
-@media (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .realestate-detail,
   .realestate-detail-group {
     flex-direction: row;

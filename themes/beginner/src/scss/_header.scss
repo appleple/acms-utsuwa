@@ -50,7 +50,7 @@
   max-height: 2rem;
 }
 
-@media (max-width: acms.$breakpoint-lg-max) {
+@include acms.media-breakpoint-down(lg) {
   .header {
     position: fixed;
     box-sizing: border-box;
@@ -106,7 +106,7 @@
     height: var(--header-height-fixed);
     box-shadow: var(--box-shadow);
 
-    @media screen and (min-width: acms.$breakpoint-lg-min) {
+    @include acms.media-breakpoint-up(lg) {
       height: var(--header-height-fixed);
     }
   }
@@ -217,7 +217,7 @@
 
 
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .nav-bottom {
     .header-item-wrap {
       padding: 1rem calc(var(--col-gutter) * 1.5) 0;
@@ -298,7 +298,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .logo-center {
     .header {
       display: block;
@@ -384,7 +384,7 @@
     white-space: nowrap;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     input.header-search-input {
       font-size: map.get(global.$font-scales, heading-ss);
     }
@@ -407,7 +407,7 @@
   transition-duration: 0.3s;
   transition-property: all;
 
-  @media screen and (min-width: acms.$breakpoint-lg-min) {
+  @include acms.media-breakpoint-up(lg) {
     top: initial;
   }
 
@@ -452,7 +452,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .header-search {
     top: initial;
   }

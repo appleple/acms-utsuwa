@@ -14,13 +14,13 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .section {
     padding: 5rem 0;
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .section {
     padding: 6.5rem 0;
 
@@ -87,7 +87,7 @@
   margin: 2.5rem 0 0;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .section-horizontal-heading {
     font-size: map.get(global.$font-scales, headling-l);
   }
@@ -98,7 +98,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .section-horizontal {
     display: flex;
     gap: 3.5rem;
@@ -196,7 +196,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .section-vertical-heading {
     font-size: map.get(global.$font-scales, heading-l);
   }
@@ -206,7 +206,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .section-vertical-header {
     margin: 0 0 4.5rem;
 
@@ -223,6 +223,7 @@
   .section-vertical-text {
     font-size: map.get(global.$font-scales, body-m);
   }
+
 }
 
 /* 背景あり */
@@ -252,7 +253,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .section-animation-bg {
     padding: 3rem 0;
 

@@ -30,7 +30,7 @@
     padding: 2rem 1rem;
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     &.toggle-button {
       padding: 2rem;
     }
@@ -46,7 +46,7 @@
   text-align: center;
   line-height: 1;
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     min-width: 2rem;
     font-size: map.get(global.$font-scales, heading-m);
   }
@@ -74,7 +74,7 @@
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }
@@ -104,7 +104,7 @@
     }
   }
 
-  @media screen and (min-width: acms.$breakpoint-md-min) {
+  @include acms.media-breakpoint-up(md) {
     margin: 0 2rem;
   }
 }

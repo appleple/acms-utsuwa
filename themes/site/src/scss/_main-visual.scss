@@ -136,7 +136,7 @@
 
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .main-visual {
     height: var(--mv-height-pc, 48rem);
 
@@ -358,7 +358,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .main-visual-extend01 {
     height: var(--mv-height-pc, 48rem);
 
@@ -572,7 +572,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .main-visual-extend02 {
     height: var(--mv-height-pc, 48rem);
 

@@ -272,7 +272,7 @@
   background-color: var(--color-primary);
 }
 
-@media screen and (max-width: acms.$breakpoint-md-max) {
+@include acms.media-breakpoint-down(md) {
   .card-carousel {
     margin-right: -1rem;
     overflow-x: auto;
@@ -292,7 +292,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .card-img-wrap {
     margin: 0 0 1rem;
 
@@ -328,7 +328,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .card-list {
     margin-bottom: 2rem;
 
@@ -466,7 +466,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .card-bordered-text-inline {
     display: flex;
     padding: 1.5rem;
@@ -493,7 +493,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .card-bordered-text-inline {
     padding: 2rem;
   }

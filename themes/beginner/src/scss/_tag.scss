@@ -100,7 +100,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .tag-wrapper {
     display: flex;
     gap: 0.75rem;

@@ -106,7 +106,7 @@
   vertical-align: text-top;
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .headline-link {
     padding: 2rem;
   }
@@ -116,7 +116,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-lg-min) {
+@include acms.media-breakpoint-up(lg) {
   .headline-text {
     font-size: map.get(global.$font-scales, heading-ss);
   }

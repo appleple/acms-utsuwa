@@ -103,7 +103,7 @@
   }
 }
 
-@media screen and (min-width: acms.$breakpoint-md-min) {
+@include acms.media-breakpoint-up(md) {
   .profile {
     position: relative;
     padding: 2rem;
