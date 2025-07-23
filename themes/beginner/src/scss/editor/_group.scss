@@ -9,14 +9,6 @@
   [class*="ug-"] {
     overflow: hidden;
 
-    @include acms.media-breakpoint-up(md) {
-      .pricing-group {
-        margin-right: 0;
-        margin-left: 0;
-        padding: 4rem 0 2rem;
-      }
-    }
-
     >  h2,
     >  h3,
     >  h4 {
@@ -46,12 +38,6 @@
     margin: var(--entry-el-margin-md) calc(50% - 50vw);
     padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
     border: 0;
-
-    @include acms.media-breakpoint-up(lg) {
-      .pricing-group {
-        padding: 0;
-      }
-    }
   }
 
   .ug-text-center {
