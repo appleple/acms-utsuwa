@@ -27,8 +27,7 @@
 
 .local-nav-inner {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto hidden;
   scroll-behavior: smooth;
   white-space: nowrap;
 }
