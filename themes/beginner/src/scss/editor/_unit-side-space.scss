@@ -23,16 +23,6 @@
   margin-inline: calc(var(--unit-gutter-var) / 2);
 }
 
-/* ユニットグループ
------------------------------- */
-
-/* 段組時は左右余白を中のコンテンツで担保 */
-.#{acms.$entry-class} {
-  [class*=#{acms.$grid-column-name}] {
-    padding: 0;
-  }
-}
-
 /* column-** ユニット 余白
 ------------------------------ */
 
