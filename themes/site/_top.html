@@ -41,12 +41,12 @@
 <!-- トップ用メッセージ -->
 @include("/include/parts/message-top.html", {"module_id": "mf_message_top"})
 
-<hr class="section-separator">
+<!-- <hr class="section-separator"> -->
 
 <!-- エントリーサマリー：事業内容 -->
 @include("/include/entry/summary-service-top.html", {"module_id": "summary_service_top"})
 
-<hr class="section-separator">
+<!-- <hr class="section-separator"> -->
 
 <!-- エントリーサマリー：採用情報 -->
 @include("/include/entry/summary-recruit-top.html", {"module_id": "summary_recruit_top"})
@@ -57,7 +57,7 @@
 <!-- エントリーサマリー&バナー：最新情報 -->
 @include("/include/entry/summary-news-top.html", {"module_id": "summary_news_top"})
 
-@include("/include/parts/banner-slide.html", {"module_id": "banner_slide_top"})
+
 
 <!-- エントリーサマリー：スタッフブログ -->
 @include("/include/entry/summary-blog-top.html", {"module_id": "summary_blog_top"})
@@ -65,9 +65,11 @@
 
 <!-- 動画 -->
 @include("/include/parts/video-top.html", {"module_id": "mf_video_top"})
+<!-- @include("/include/parts/banner-slide.html", {"module_id": "banner_slide_top"}) -->
 
 <!-- バナーモジュール -->
 @include("/include/parts/banner.html", {"module_id": "banner_top"})
+
 @endsection
 @endsection
 
