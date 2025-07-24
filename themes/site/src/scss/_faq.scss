@@ -96,6 +96,12 @@
     margin-bottom: calc(var(--entry-el-margin-md) * -1);
   }
 
+  .acms-admin-btn-action-group {
+    /* .entry-style に負の margin-bottom を指定しているため、
+      ログイン時に表示されるエントリー編集ボックスが、ユニットと密着しないように間隔を追加 */
+    margin-top: calc(var(--entry-el-margin-md) + 1rem);
+  }
+
   @media (hover: hover) {
     transition: border-top-color var(--hover-speed) ease;
 
