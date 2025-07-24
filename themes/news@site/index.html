@@ -2,18 +2,18 @@
 
 @section("main")
 <!-- タグフィルター -->
-@include("/include/tag/filter.html")
+@include("/include/tag/filter.html",{"module_id": "tag_filter"})
 
 <!-- サマリー：記事一覧 -->
-@include("/include/entry/summary-news.html",{"module_id": "summary_index_date"})
+@include("/include/entry/summary-news.html",{"module_id": "summary_date"})
 @endsection
 
 @section("side")
 <!-- カテゴリー：リスト表示 -->
-@include("/include/category/list_side.html", {"module_id": "category_list_side"})
+@include("/include/category/list-side.html", {"module_id": "category_list"})
 
 <!-- アーカイブリスト：月表示 -->
-@include("/include/entry/archive-list.html", {"module_id": ""})
+@include("/include/entry/archive-list.html", {"module_id": "archive_list"})
 
 <!-- エントリーサマリー：サイドバー用 -->
 @include("/include/entry/summary-side.html", {"module_id": "summary_side"})
