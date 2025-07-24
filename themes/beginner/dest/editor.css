@@ -1,8 +1,13 @@
 @charset "UTF-8";
-/** ------------------------------
- * @media screen 対応
- * ユーティリティで使用しています。
- ------------------------------ */
+/**
+ * グリッドシステム（非推奨）
+ */
+/**
+ * グリッドシステム（非推奨）
+ */
+/**
+ * グリッドシステム（非推奨）
+ */
 /* ------------------------------
   Popover
 ------------------------------- */
@@ -12,56 +17,19 @@
 　フィールドスタイル調整
 ------------------------------ */
 /* 価格表ユニットのユニットグループアイテムの境界線 */
-.acms-admin-table-admin-edit {
+[data-unit-type=custom_pricing] .acms-admin-table-admin-edit {
   border-collapse: collapse;
 }
-.acms-admin-table-admin-edit .sortable-item {
+[data-unit-type=custom_pricing] .acms-admin-table-admin-edit .sortable-item {
   border-top: 1px solid #ccc;
 }
-.acms-admin-table-admin-edit .sortable-item:first-child {
+[data-unit-type=custom_pricing] .acms-admin-table-admin-edit .sortable-item:first-child {
   border: 0;
 }
 
 /* ------------------------------
  テキスト
 ------------------------------ */
-/* テキストユニット（閲覧側）の左右グリッド調整 */
-.entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
-.entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
-}
-
 /* リンク
 ----------------------------- */
 .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
@@ -947,7 +915,7 @@
   font-size: 1.5625rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
     font-size: 1.953125rem;
   }
@@ -957,7 +925,7 @@
   font-size: 1.5625rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body h2 {
     font-size: 1.953125rem;
   }
@@ -967,7 +935,7 @@
   font-size: 1.25rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
     font-size: 1.5625rem;
   }
@@ -977,7 +945,7 @@
   font-size: 1.25rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body h3 {
     font-size: 1.5625rem;
   }
@@ -987,7 +955,7 @@
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
     font-size: 1.25rem;
   }
@@ -997,7 +965,7 @@
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body h4 {
     font-size: 1.25rem;
   }
@@ -1029,7 +997,7 @@
   font-size: 1.5625rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-primary {
     margin-bottom: 3rem;
     font-size: 2.44140625rem;
@@ -1047,7 +1015,7 @@
 .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info.is-margin-small {
   margin-bottom: var(--entry-el-margin-xxs);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).text-lead-info {
     margin-bottom: 3rem;
     font-size: 1.953125rem;
@@ -1120,7 +1088,7 @@
   font-size: 1.5625rem;
   line-height: var(--line-height-base);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body p.text-lead-primary {
     margin-bottom: 3rem;
     font-size: 2.44140625rem;
@@ -1138,7 +1106,7 @@
 .acms-admin-block-editor-body p.text-lead-info.is-margin-small {
   margin-bottom: var(--entry-el-margin-xxs);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body p.text-lead-info {
     margin-bottom: 3rem;
     font-size: 1.953125rem;
@@ -1376,7 +1344,7 @@ p + p.text-danger,
   padding-bottom: var(--entry-el-padding-sm);
   padding-inline: var(--entry-el-padding-sm);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dt {
     padding-top: var(--entry-el-padding-md);
     padding-inline: var(--entry-el-padding-md);
@@ -1424,7 +1392,7 @@ p + p.text-danger,
   padding-bottom: var(--entry-el-padding-sm);
   padding-inline: var(--entry-el-padding-sm);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body dl.box-bordered dt {
     padding-top: var(--entry-el-padding-md);
     padding-inline: var(--entry-el-padding-md);
@@ -1461,7 +1429,7 @@ p + p.text-danger,
   border: none;
   box-shadow: none;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body pre,
   .code-highlight {
     padding: var(--entry-el-padding-md);
@@ -1475,7 +1443,7 @@ p + p.text-danger,
   border: 0 solid var(--color-gray70);
   border-top-width: var(--border-width-sm);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style hr:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=clearHidden], [class~=clearHidden] *)) {
     margin-bottom: var(--entry-el-margin-lg);
   }
@@ -1486,7 +1454,7 @@ p + p.text-danger,
   border: 0 solid var(--color-gray70);
   border-top-width: var(--border-width-sm);
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body hr {
     margin-bottom: var(--entry-el-margin-lg);
   }
@@ -1499,7 +1467,7 @@ p + p.text-danger,
 [data-type=horizontalRule] hr {
   margin-block: 0;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   [data-type=horizontalRule] {
     margin-block: var(--entry-el-margin-md);
   }
@@ -1620,13 +1588,115 @@ p + p.text-danger,
 }
 
 /* ------------------------------
- 引用
+ ユニットグループ
 ------------------------------ */
-/* 閲覧側の左右グリッド調整 */
-.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=column-block-editor], [class~=column-block-editor] *)) {
-  margin-inline: calc(var(--unit-gutter-var) / 2);
+.entry-style {
+  /* 全てのユニットグループ */
+}
+.entry-style [class*=ug-] {
+  overflow: hidden;
+}
+.entry-style [class*=ug-] > h2,
+.entry-style [class*=ug-] > h3,
+.entry-style [class*=ug-] > h4 {
+  padding-top: 0;
+}
+.entry-style .ug-bg-gray {
+  background: var(--color-gray10);
+}
+.entry-style .ug-bg-primary {
+  background: var(--color-primary-light);
+}
+.entry-style .ug-bg-gray,
+.entry-style .ug-bg-primary {
+  margin: 0 0 var(--entry-el-margin-md) 0;
+  padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
+}
+.entry-style .ug-bg-gray > *:not(.entry-reset):last-child > *,
+.entry-style .ug-bg-primary > *:not(.entry-reset):last-child > * {
+  margin-bottom: 0;
+}
+.entry-style .ug-cover {
+  margin: var(--entry-el-margin-md) calc(50% - 50vw);
+  padding: var(--entry-el-padding-md) calc(50vw - 50% + var(--unit-gutter-var) / 2);
+  border: 0;
+}
+.entry-style .ug-text-center {
+  text-align: center;
+}
+.entry-style .ug-border {
+  position: relative;
+  margin: 0 0 var(--entry-el-margin-md) 0;
+  padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
+}
+.entry-style .ug-border::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: var(--border-width-sm) solid var(--color-gray40);
+  content: "";
+}
+.entry-style .ug-border > *:not(.entry-reset):last-child > * {
+  margin-bottom: 0;
+}
+.entry-style .ug-center {
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 48rem) {
+  .entry-style .ug-bg-gray,
+  .entry-style .ug-bg-primary,
+  .entry-style .ug-border {
+    margin: 0 0 var(--entry-el-margin-md) 0;
+    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
+  }
+  .entry-style .ug-bg-gray > *:not(.entry-reset):last-child > *,
+  .entry-style .ug-bg-primary > *:not(.entry-reset):last-child > *,
+  .entry-style .ug-border > *:not(.entry-reset):last-child > * {
+    margin-bottom: 0;
+  }
+  .entry-style .ug-cover {
+    position: relative;
+    top: var(--entry-el-margin-md);
+    margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
+    padding: calc(var(--entry-el-margin-md) * 3) calc(50vw - 50% + var(--unit-gutter-var) / 2) calc(var(--entry-el-margin-md) * 2);
+  }
 }
 
+/* ギャラリー
+------------------------------ */
+.unit-gallery {
+  margin-bottom: var(--unit-gutter-var);
+}
+
+/* ------------------------------
+ ユニット配置
+------------------------------ */
+.align-left {
+  display: flex;
+}
+.align-left {
+  justify-content: flex-start;
+}
+
+.align-right {
+  display: flex;
+}
+.align-right {
+  justify-content: flex-end;
+}
+
+.align-center {
+  display: flex;
+}
+.align-center {
+  justify-content: center;
+}
+
+/* ------------------------------
+ 引用
+------------------------------ */
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   padding: var(--entry-el-padding-sm);
   font-size: 1rem;
@@ -1671,7 +1741,7 @@ p + p.text-danger,
   /* リセット用 */
   background: transparent;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
     margin-bottom: var(--entry-el-margin-lg);
     padding: var(--entry-el-padding-md);
@@ -1722,90 +1792,10 @@ p + p.text-danger,
   /* リセット用 */
   background: transparent;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .acms-admin-block-editor-body blockquote {
     margin-bottom: var(--entry-el-margin-lg);
     padding: var(--entry-el-padding-md);
-  }
-}
-
-/* 引用URLユニット
------------------------------- */
-[class*=column-quote-] .quote {
-  padding: 0;
-  border: 0;
-}
-[class*=column-quote-] .quote-link {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  color: var(--color-text);
-  text-decoration: none;
-  border: var(--border-width-sm) solid var(--color-gray30);
-  border-radius: var(--border-radius-lg);
-}
-[class*=column-quote-] .quote-link:hover {
-  background: var(--color-hover-bg);
-}
-[class*=column-quote-] .quote-info {
-  margin: 0; /* リセット */
-  padding: 1rem;
-}
-[class*=column-quote-] .quote-site-name {
-  margin: 0;
-  color: var(--color-text);
-}
-[class*=column-quote-] .quote-title {
-  margin: 0 0 0.5rem;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: var(--line-height-sm);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-[class*=column-quote-] .quote-description {
-  display: -webkit-box;
-  margin: 0;
-  overflow: hidden;
-  font-size: 0.8rem;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-}
-@media screen and (min-width: 48rem) {
-  [class*=column-quote-] .quote-link {
-    flex-direction: row;
-  }
-  [class*=column-quote-] .quote-img-wrap {
-    flex: 1 0 auto;
-    box-sizing: border-box;
-    width: 33.3333333333%;
-    padding: 0;
-  }
-  [class*=column-quote-] .quote-img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  [class*=column-quote-] .quote-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    box-sizing: border-box;
-    width: 0.6666666667;
-    padding: 1rem;
-    overflow: hidden;
-  }
-  [class*=column-quote-] .quote-title {
-    margin: 0;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 1.25rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }
 
@@ -1858,6 +1848,249 @@ p + p.text-danger,
 }
 
 /* ------------------------------
+ カスタムユニット
+------------------------------ */
+/* カード
+------------------------------ */
+@media (min-width: 48rem) {
+  .entry-style .card-bordered-item {
+    margin-bottom: 1rem;
+  }
+}
+
+/* 罫線ユニット
+------------------------------ */
+.unit-separator {
+  margin: 0 0 var(--entry-el-margin-md);
+  border: 0;
+  border-top: var(--border-width-sm) solid var(--color-gray40);
+}
+
+/* 目次ユニット
+------------------------------ */
+.entry-style .entry-outline {
+  margin: 0 0 var(--entry-el-margin-lg);
+  padding: 1rem;
+  border: var(--border-width-lg) solid var(--color-gray30);
+}
+.entry-style .entry-outline-title {
+  margin: 0 0 1rem;
+  padding: 0 0 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--color-gray30);
+}
+.entry-style .entry-outline-list-wrap .outline-list {
+  margin: 0;
+  padding: 0 0 0 var(--entry-el-margin-sm);
+  counter-reset: a;
+}
+.entry-style .entry-outline-list-wrap .outline-list.level-1 {
+  padding: 0;
+}
+.entry-style .entry-outline-list-wrap .outline-item strong,
+.entry-style .entry-outline-list-wrap .outline-item em {
+  font-weight: normal;
+  font-style: normal;
+  background: none;
+}
+.entry-style .entry-outline-list-wrap .outline-item > strong {
+  display: inline-block;
+  margin: 0 0 1rem 0.25rem;
+}
+.entry-style .entry-outline-list-wrap .outline-item::marker {
+  content: none;
+}
+.entry-style .entry-outline-list-wrap .outline-item a {
+  display: block;
+  margin: 0 0 1rem 0.25rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.entry-style .entry-outline-list-wrap .outline-item a:hover {
+  text-decoration: underline;
+}
+.entry-style .entry-outline-list-wrap .outline-item a::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: var(--color-gray90);
+  font-weight: 700;
+  white-space: nowrap;
+  content: counters(a, "-") ". ";
+  counter-increment: a;
+}
+
+@media (min-width: 48rem) {
+  .entry-style .entry-outline {
+    padding: 2rem;
+  }
+  .entry-style .entry-outline-title {
+    margin: 0 0 1.5rem;
+    padding: 0 0 1rem;
+    font-size: 1.25rem;
+  }
+}
+/* メッセージユニット
+------------------------------ */
+.entry-style .message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 var(--entry-el-margin-md);
+  background: var(--color-gray10);
+}
+.entry-style .message-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+.entry-style .message-image {
+  height: 15rem;
+  overflow: hidden;
+}
+.entry-style .message-image img {
+  width: 100%;
+  height: auto;
+}
+.entry-style .message-lead {
+  position: relative;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5625rem;
+}
+.entry-style .message-content {
+  margin: 0;
+}
+.entry-style .message-source {
+  margin: 0;
+}
+.entry-style .message-source::before {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  margin: 0 1rem 0 0;
+  vertical-align: middle;
+  background: var(--color-gray30);
+  content: "";
+}
+
+@media (min-width: 48rem) {
+  .entry-style .message {
+    flex-direction: row;
+  }
+  .entry-style .message-wrap {
+    position: relative;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 6rem 3rem;
+  }
+  .entry-style .message-image {
+    order: 1;
+    width: 50%;
+    height: initial;
+  }
+  .entry-style .message-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .entry-style .message-lead {
+    height: auto;
+    font-size: 1.5625rem;
+  }
+  .entry-style .message-content {
+    margin: 0;
+  }
+}
+/* 埋め込みユニット
+------------------------------ */
+[class*=column-embed-] {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+[class*=column-embed-] a.acms-embed-link {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--color-text);
+  text-decoration: none;
+  border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
+}
+[class*=column-embed-] a.acms-embed-link:hover {
+  background: var(--color-hover-bg);
+}
+[class*=column-embed-] .acms-embed-link-image-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+[class*=column-embed-] .acms-embed-link-content {
+  margin: 0; /* リセット */
+  padding: 1rem;
+}
+[class*=column-embed-] .acms-embed-link-site-name {
+  margin: 0;
+  color: var(--color-text);
+}
+[class*=column-embed-] .acms-embed-link-title {
+  margin: 0 0 0.5rem;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-sm);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+[class*=column-embed-] .acms-embed-link-description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+@media (min-width: 48rem) {
+  [class*=column-embed-] a.acms-embed-link {
+    flex-direction: row;
+  }
+  [class*=column-embed-] .acms-embed-link-image-container {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    width: 33.3333333333%;
+    padding: 0;
+  }
+  [class*=column-embed-] .acms-embed-link-image-container img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  [class*=column-embed-] .acms-embed-link-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-sizing: border-box;
+    width: 0.6666666667;
+    padding: 1rem;
+    overflow: hidden;
+  }
+  [class*=column-embed-] .acms-embed-link-title {
+    margin: 0;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+/* ------------------------------
  - ブロックエディタのファイル（縦積み、ボタン型）
  - メディアファイル
  - ファイル
@@ -1882,6 +2115,8 @@ p + p.text-danger,
   display: inline-flex;
   gap: 1rem;
   align-items: center;
+  box-sizing: border-box;
+  width: 100%;
   padding: 1rem 1.5rem;
   color: var(--color-text);
   text-decoration: none; /* リセット用 */
@@ -2104,6 +2339,26 @@ p + p.text-danger,
 }
 
 /* ------------------------------
+ 地図
+------------------------------ */
+[class*=column-map],
+[class*=street-view] {
+  margin-block: 0 var(--entry-el-margin-md);
+}
+
+/* ------------------------------
+ モジュールユニット
+------------------------------ */
+[class*=column-module] {
+  margin-block: 0 var(--entry-el-margin-sm);
+}
+
+@media (min-width: 48rem) {
+  .entry-style [class*=column-module]:first-child {
+    margin-top: 1rem;
+  }
+}
+/* ------------------------------
  テーブル
 ------------------------------ */
 /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
@@ -2113,7 +2368,7 @@ p + p.text-danger,
 }
 
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
-  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  margin: 0 0 var(--entry-el-margin-md);
   background-color: var(--color-white);
   border: 0; /* リセット用 */
   border-collapse: collapse;
@@ -2145,7 +2400,7 @@ p + p.text-danger,
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:hover {
   border-color: transparent;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th,
   .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
     padding: var(--entry-el-padding-sm);
@@ -2154,7 +2409,7 @@ p + p.text-danger,
 }
 
 .tableWrapper table {
-  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  margin: 0 0 var(--entry-el-margin-md);
   background-color: var(--color-white);
   border: 0; /* リセット用 */
   border-collapse: collapse;
@@ -2186,7 +2441,7 @@ p + p.text-danger,
 .tableWrapper table a:hover {
   border-color: transparent;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   .tableWrapper table th,
   .tableWrapper table td {
     padding: var(--entry-el-padding-sm);
@@ -2195,7 +2450,7 @@ p + p.text-danger,
 }
 
 [class*=column-table] table {
-  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-md);
+  margin: 0 0 var(--entry-el-margin-md);
   background-color: var(--color-white);
   border: 0; /* リセット用 */
   border-collapse: collapse;
@@ -2227,7 +2482,7 @@ p + p.text-danger,
 [class*=column-table] table a:hover {
   border-color: transparent;
 }
-@media screen and (min-width: 48rem) {
+@media (min-width: 48rem) {
   [class*=column-table] table th,
   [class*=column-table] table td {
     padding: var(--entry-el-padding-sm);
@@ -2271,4 +2526,12 @@ p + p.text-danger,
 .tableWrapper .js-table-unit-scroll-hint td {
   white-space: nowrap;
   word-break: keep-all;
+}
+
+/* ------------------------------
+ 動画ユニット
+------------------------------ */
+[class*=column-youtube],
+[class*=column-video] {
+  margin-block: 0 var(--entry-el-margin-md);
 }

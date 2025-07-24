@@ -45,6 +45,8 @@
   font-size: map.get(global.$font-scales, heading-s);
   line-height: 1;
   text-align: center;
+  text-box-trim: trim-both;
+  text-box-edge: text;
 
   @include acms.media-breakpoint-up(md) {
     min-width: 2rem;
@@ -94,6 +96,12 @@
 
   .entry-style {
     margin-bottom: calc(var(--entry-el-margin-md) * -1);
+  }
+
+  .acms-admin-btn-action-group {
+    /* .entry-style に負の margin-bottom を指定しているため、
+      ログイン時に表示されるエントリー編集ボックスが、ユニットと密着しないように間隔を追加 */
+    margin-top: calc(var(--entry-el-margin-md) + 1rem);
   }
 
   @media (hover: hover) {

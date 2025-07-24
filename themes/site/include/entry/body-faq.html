@@ -41,7 +41,7 @@
         <!-- BEGIN category:veil --><!-- BEGIN category:loop -->
         <a href="{url}" class="entry-header-category js-viewing-indelible">{name}</a><!-- BEGIN glue --> &lt;
         <!-- END glue --><!-- END category:loop --><!-- END category:veil --></div>
-      <!-- BEGIN_MODULE Touch_Entry --><h1 class="entry-header-title entry-faq-title entryTitle"><span class="entry-faq-title-icon">Q</span><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
+      <!-- BEGIN_MODULE Touch_Entry --><h1 class="entry-header-title entry-faq-title entryTitle"><span class="entry-faq-title-icon">Q</span>{title}</h1><!-- END_MODULE Touch_Entry -->
     </header>
     <!-- END title:veil --><!-- END_IF -->
 
@@ -49,21 +49,12 @@
     <div class="acms-entry entry-style entry-faq-body">
       <p class="entry-faq-body-icon">A</p>
       <div class="entry-style-grid">
-        <!-- カスタムフィールドの読み込み -->
-        @include("/include/entry/field.html")
-
         <!-- BEGIN unit:veil -->
         @include("/include/unit.html")
         <hr class="clearHidden"/>
         <!-- END unit:veil -->
         <!-- 続きを読む -->
         @include("/include/parts/continue.html")
-
-        <!-- BEGIN_MODULE Touch_Entry -->
-        <!-- カスタムフィールドの読み込み -->
-        @include("/include/entry/field_foot.html")
-        <!-- END_MODULE Touch_Entry -->
-
       </div>
     </div>
     <!-- END entry:veil -->
