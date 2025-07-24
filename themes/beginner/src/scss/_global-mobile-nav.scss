@@ -5,7 +5,6 @@
 /* ------------------------------
   モバイルメニュー
 ------------------------------ */
-
 .global-nav-mobile-menu-btn {
   display: flex;
   flex-direction: column;
@@ -121,8 +120,14 @@
   }
 }
 
+.global-nav-mobile-menu-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--zindex-mobile-nav);
+}
 
-/* モバイルメニュー開いた時
+/* モバイルメニュー内メインナビゲーション
 ------------------------------ */
 .global-nav-mobile-inner {
   display: flex;
@@ -133,20 +138,14 @@
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
 
-  @include acms.media-breakpoint-up(sm) {
+  @include acms.media-breakpoint-up(md) {
     max-width: 44rem;
     margin: 2rem auto;
     padding: 2rem;
   }
 }
 
-.global-nav-mobile-menu-btn {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: var(--zindex-mobile-nav);
-}
-
+/* メニュー内レイアウト */
 .global-nav-mobile-navbar {
   display: flex;
   flex-direction: column;
@@ -155,101 +154,84 @@
   width: 100%;
 }
 
+/* ナビリスト */
 .global-nav-mobile-group {
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  .global-nav-mobile-navbar>& {
+  .global-nav-mobile-navbar > & {
     border-top: var(--border-width-sm) solid var(--color-gray30);
+  }
+
+  /* 下層リスト */
+  .global-nav-mobile-item & {
+    display: none;
+    padding: 0 0 0 1rem;
+  }
+
+  /* 下層リスト最後のリスト下に余白をつける */
+  .global-nav-mobile-item.level-1 > &:last-child {
+    padding-bottom: 1rem;
   }
 }
 
+.global-nav-mobile-link.is-cta + .global-nav-mobile-group {
+  /* ボタン型アイテムの下層メニューの場合の余白 */
+  padding-top: 0.5rem;
+}
+
+/* ナビリストアイテム */
 .global-nav-mobile-item {
-  position: relative;
+  color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
 
+  /* 第一階層のアイテム */
   &.level-1 {
     border-bottom: var(--border-width-sm) solid var(--color-gray30);
   }
 
-
-  &:has(.global-nav-mobile-group) {
-    position: relative;
-
-    .icon-expand {
-      position: absolute;
-      top: calc(50% - 12px);
-      display: inline-block;
-      width: 1.5rem;
-      height: 1.5rem;
-      background: url("#{global.$root-theme-img}icon-chevron-right.svg");
-      transform: rotate(90deg);
-      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      transition-duration: 0.3s;
-      transition-property: all;
-      content: '';
-
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    .icon-expand.is-close {
-      transform: rotate(-90deg);
-    }
-  }
-
-  .global-nav-mobile-group {
-    display: none;
-    padding: 0.5rem 0 1rem;
-  }
-
+  /* 下階層アイテム */
   .global-nav-mobile-item {
+    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
-
-    .icon-expand {
-      display: none;
-
-      &::before,
-      &::after {
-        content: none;
-      }
-    }
-
-    .global-nav-mobile-link {
-      padding: 0.75rem 0 0.75rem 1rem;
-      border-bottom: 0;
-
-      &:link,
-      &:visited,
-      &:hover,
-      &:active,
-      &:focus {
-        color: var(--color-text-2nd);
-      }
-    }
   }
 }
 
+/* 開閉トグル */
+.icon-expand {
+  display: none;
+}
+
+:where(.global-nav-mobile-item.level-1:has(.global-nav-mobile-group)) > .global-nav-mobile-link .icon-expand {
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 0;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentcolor;
+  mask-image: url("#{global.$root-theme-img}icon-chevron-right.svg");
+  mask-size: contain;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+
+  &.is-close {
+    transform: rotate(-90deg);
+  }
+}
+
+/* ナビリストアイテムリンク */
 .global-nav-mobile-link {
   position: relative;
   display: block;
   padding: 1rem 0;
-  color: var(--color-text);
+  color: inherit;
+  text-decoration: none;
 
-  &:link,
-  &:visited,
-  &:hover,
-  &:active,
-  &:focus {
-    color: var(--color-text);
-    text-decoration: none;
-  }
-
+  /* ボタン */
   &.is-cta {
     margin: 1rem 0 0;
     padding: var(--btn-padding-y) var(--btn-padding-x);
@@ -259,51 +241,43 @@
     border-radius: var(--border-radius-lg);
 
     .icon-expand {
-      right: 2rem;
-
-      &::before {
-        border-color: var(--color-text-inverse);
-      }
+      right: 1rem;
+      background-color: var(--color-white);
     }
   }
 
-  .global-nav-mobile-item:has(.global-nav-mobile-group) .global-nav-mobile-item &::before {
-    position: absolute;
-    top: calc(50% - 0.5rem);
-    left: 0;
-    display: inline-block;
-    width: 0.75rem;
-    height: 0.75rem;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgNi42MDI3OEw0IDEwLjEwMjhMNCAzLjEwMjc4TDEwIDYuNjAyNzhaIiBmaWxsPSIjQ0FDQUNBIi8+PC9zdmc+");
-    content: "";
-  }
-}
+  /* 下階層アイテムリンク */
+  .global-nav-mobile-item .global-nav-mobile-item & {
+    padding: 0.75rem 0 0.75rem 1rem;
 
-.global-nav-mobile {
-  .icon-expand {
-    position: absolute;
-    top: 1px;
-    right: 0;
-    display: none;
-    justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
-
-    &:hover {
-      background-color: var(--color-hover-bg);
+    &::before {
+      position: absolute;
+      top: calc(50% - 0.5rem);
+      left: 0;
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgNi42MDI3OEw0IDEwLjEwMjhMNCAzLjEwMjc4TDEwIDYuNjAyNzhaIiBmaWxsPSIjQ0FDQUNBIi8+PC9zdmc+");
+      content: "";
     }
   }
-
-  .form-search {
-    width: 100%;
-  }
 }
 
+/* モバイルメニュー内キーワード検索
+------------------------------ */
+.global-nav-mobile .form-search {
+  width: 100%;
+}
+
+/* モバイルメニュー内電話番号
+------------------------------ */
 .global-nav-mobile-tel {
   width: 100%;
   text-align: center;
 }
 
+/* モバイルメニュー内リンク集
+------------------------------ */
 .global-nav-mobile-side-group {
   width: 100%;
   padding: 0;
