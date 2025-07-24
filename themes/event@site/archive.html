@@ -3,7 +3,7 @@
 @section("main")
 <div class="acms-container">
   <!-- タグフィルター -->
-  @include("/include/tag/filter.html")
+  @include("/include/tag/filter.html", {"module_id": "tag_filter"})
 
   <!-- ローカルナビ -->
   @include("/include/parts/local-nav.html"", {"module_id": "event-nav-local", "direction": "is-right"})
