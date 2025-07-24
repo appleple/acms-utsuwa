@@ -235,54 +235,8 @@
       >.global-nav-list {
         .global-nav-item {
           border-right: var(--border-width-sm) solid var(--color-gray30);
-
         }
       }
     }
-
   }
-
-  .logo-center {
-    .global-nav-item:hover {
-      &:has(ul) {
-        position: static;
-
-        .global-nav-list {
-          display: grid;
-          grid-gap: 0.5rem;
-          grid-template-rows: repeat(2, 1fr);
-          grid-template-columns: repeat(3, 1fr);
-          box-sizing: border-box;
-          max-width: var(--container);
-          margin: auto;
-          padding: 3rem;
-          overflow: initial;
-          border: 0;
-          box-shadow: none;
-
-
-          &::after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            display: inline-block;
-            width: 200vw;
-            height: 100%;
-            margin: 0 -50vw;
-            background-color: var(--color-gray30);
-            content: '';
-          }
-
-          .global-nav-item {
-            box-sizing: border-box;
-            border: 0;
-          }
-        }
-      }
-
-    }
-
-  }
-
 }

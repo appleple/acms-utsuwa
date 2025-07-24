@@ -1523,8 +1523,7 @@ a:hover .icon-button svg {
   background-color: var(--color-white);
   transform: translateX(-50%);
   content: "";
-  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-          clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
 .cta-visual-title {
@@ -1782,38 +1781,6 @@ a:hover .icon-button svg {
   .nav-bottom .global-nav > .global-nav-list .global-nav-item,
   .logo-center .global-nav > .global-nav-list .global-nav-item {
     border-right: var(--border-width-sm) solid var(--color-gray30);
-  }
-  .logo-center .global-nav-item:hover:has(ul) {
-    position: static;
-  }
-  .logo-center .global-nav-item:hover:has(ul) .global-nav-list {
-    display: grid;
-    grid-gap: 0.5rem;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    box-sizing: border-box;
-    max-width: var(--container);
-    margin: auto;
-    padding: 3rem;
-    overflow: initial;
-    border: 0;
-    box-shadow: none;
-  }
-  .logo-center .global-nav-item:hover:has(ul) .global-nav-list::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display: inline-block;
-    width: 200vw;
-    height: 100%;
-    margin: 0 -50vw;
-    background-color: var(--color-gray30);
-    content: "";
-  }
-  .logo-center .global-nav-item:hover:has(ul) .global-nav-list .global-nav-item {
-    box-sizing: border-box;
-    border: 0;
   }
 }
 /* ------------------------------
@@ -2199,119 +2166,6 @@ a:hover .icon-button svg {
     font-size: 1.25rem;
   }
 }
-/* ------------------------------
-　　よくあるご質問
------------------------------- */
-.faq {
-  --hover-speed: 0.3s;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow);
-}
-@media (hover: hover) {
-  .faq {
-    transition: box-shadow var(--hover-speed) ease;
-  }
-  .faq:hover {
-    box-shadow: var(--box-shadow-hover);
-  }
-}
-
-.faq-question-button {
-  position: relative;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-.faq-question-button.toggle-button {
-  padding: 2rem 1rem;
-}
-@media (min-width: 48rem) {
-  .faq-question-button.toggle-button {
-    padding: 2rem;
-  }
-}
-
-.faq-icon {
-  flex: 0 0 auto;
-  min-width: 1.5rem;
-  margin: 0;
-  font-weight: bold;
-  font-size: 1.5625rem;
-  line-height: 1;
-  text-align: center;
-}
-@media (min-width: 48rem) {
-  .faq-icon {
-    min-width: 2rem;
-    font-size: 1.953125rem;
-  }
-}
-
-.faq-question {
-  margin: 0;
-  font-size: 1rem;
-}
-.faq-question .faq-icon {
-  color: var(--color-primary);
-}
-.faq-question .faq-title {
-  margin: 0;
-  font-weight: bold;
-  line-height: var(--line-height-base);
-}
-@media (hover: hover) {
-  .faq-question {
-    transition: background-color var(--hover-speed) ease;
-  }
-  .faq:hover .faq-question {
-    background-color: var(--color-hover-bg-2nd);
-  }
-}
-@media (min-width: 48rem) {
-  .faq-question {
-    font-size: 1.25rem;
-  }
-}
-
-.faq-answer {
-  position: relative;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  margin: 0 1rem;
-  padding: 2rem 0;
-  border-top: 1px solid var(--color-gray30);
-}
-.faq-answer .faq-icon {
-  color: var(--color-gray90);
-}
-.faq-answer .entry-style {
-  margin-bottom: calc(var(--entry-el-margin-md) * -1);
-}
-@media (hover: hover) {
-  .faq-answer {
-    transition: border-top-color var(--hover-speed) ease;
-  }
-  .faq:hover .faq-answer {
-    border-top-color: transparent;
-  }
-}
-@media (min-width: 48rem) {
-  .faq-answer {
-    margin: 0 2rem;
-  }
-}
-
-/* 質問リスト */
-.faq-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.faq-list li {
-  margin-bottom: var(--entry-el-margin-md);
-}
-
 /* ------------------------------
 　　お問い合わせ
 ------------------------------ */
@@ -5143,45 +4997,6 @@ input::placeholder {
 }
 
 /*
-　FAQ
------------------------------- */
-.entry-faq-title {
-  display: flex;
-  align-items: flex-start;
-}
-
-.entry-faq-title-icon {
-  flex: 0 0 auto;
-  margin-right: 1rem;
-  color: var(--color-primary);
-}
-
-.entry-faq-body {
-  display: flex;
-  align-items: flex-start;
-}
-
-.entry-faq-body-icon {
-  flex: 0 0 auto;
-  color: var(--color-gray90);
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-.entry-style .entry-faq-body-icon {
-  margin-right: 1rem;
-  margin-left: 0;
-  line-height: var(--line-height-sm);
-}
-
-@media (min-width: 48rem) {
-  .entry-faq-body-icon {
-    font-size: 1.953125rem;
-  }
-  .entry-style .entry-faq-body-icon {
-    line-height: var(--line-height-ss);
-  }
-}
-/*
 　採用情報
 ------------------------------ */
 .recruit-footer-bar {
@@ -5242,8 +5057,7 @@ input::placeholder {
   height: 10px;
   background-color: var(--color-gray10);
   content: "";
-  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
-          clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 .bubble-name {
@@ -5281,8 +5095,7 @@ input::placeholder {
     height: 12px;
     background-color: var(--color-gray10);
     content: "";
-    -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
-            clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
   }
   .bubble-heading br {
     display: none;
@@ -6066,7 +5879,6 @@ input::placeholder {
   background-color: var(--color-white);
 }
 .header-wrap.sticky {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
