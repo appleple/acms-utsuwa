@@ -316,11 +316,6 @@
   }
 }
 
-.entry-faq-title {
-  /* タイトルとの垂直方向配置調整用 */
-  line-height: 1.1;
-}
-
 /* 上書きのため詳細度上げています */
 .entry-style .entry-faq-title-icon,
 .entry-style .entry-faq-body-icon,
@@ -333,6 +328,8 @@
   font-size: map.get(global.$font-scales, heading-s);
   line-height: 1;
   text-align: center;
+  text-box-trim: trim-both;
+  text-box-edge: text;
 
   @include acms.media-breakpoint-up(md) {
     min-width: 2rem;
