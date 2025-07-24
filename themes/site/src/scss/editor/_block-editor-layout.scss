@@ -53,28 +53,6 @@
   }
 }
 
-/* 配置
-/* メディア・ファイル・リンクボタン
------------------------------ */
-:where(.media-image-block),
-:where(.media-file-block),
-:where(.link-button-block) {
-  &.media-align-center {
-    display: flex;
-    justify-content: center;
-  }
-
-  &.media-align-left {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  &.media-align-right {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
 /* メディアサイズ
 ----------------------------- */
 :where(.media-image-block) {
