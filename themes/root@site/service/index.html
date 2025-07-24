@@ -3,11 +3,11 @@
 @section("main")
 <div class="acms-container">
   <!-- エントリーサマリー：サムネイル表示 -->
-    @include("/include/entry/thumbnail.html", {"module_id":"summary_index"})
+    @include("/include/entry/summary-service.html", {"module_id":"summary_index"})
 </div>
 @endsection
 
 @section("footer-cta")
 <!-- Call to Action -->
-@include("/include/parts/cta.html", {"module_id": "cta_request"})
+@include("/include/parts/cta.html", {"module_id": "mf_cta_request"})
 @endsection
