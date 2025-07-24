@@ -2,11 +2,11 @@
 @use "../global/common" as global;
 
 /* ------------------------------
- ユニットグループ
+ グループ・ユニット
 ------------------------------ */
 .#{acms.$entry-class} {
-  /* 全てのユニットグループ */
-  [class*="ug-"] {
+  /* 全てのグループ・ユニット */
+  [class*="gu-"] {
     overflow: hidden;
 
     @include acms.media-breakpoint-up(md) {
@@ -24,25 +24,25 @@
     }
   }
 
-  .ug-bg-gray {
+  .gu-bg-gray {
     background: var(--color-gray10);
   }
 
-  .ug-bg-primary {
+  .gu-bg-primary {
     background: var(--color-primary-light);
   }
 
-  .ug-bg-gray,
-  .ug-bg-primary {
+  .gu-bg-gray,
+  .gu-bg-primary {
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
 
-    &>*:not(.entry-reset):last-child>* {
+    > *:not(.entry-reset):last-child {
       margin-bottom: 0;
     }
   }
 
-  .ug-cover {
+  .gu-cover {
     margin: var(--entry-el-margin-md) calc(50% - 50vw);
     padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
     border: 0;
@@ -54,11 +54,7 @@
     }
   }
 
-  .ug-text-center {
-    text-align: center;
-  }
-
-  .ug-border {
+  .gu-border {
     position: relative;
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
@@ -71,40 +67,33 @@
       content: "";
     }
 
-    & > *:not(.entry-reset):last-child > * {
+    > *:not(.entry-reset):last-child {
       margin-bottom: 0;
     }
   }
 
-  .ug-center {
-    float: none;
+  .gu-center {
     margin-right: auto;
     margin-left: auto;
   }
 
   @include acms.media-breakpoint-up(md) {
-    .ug-bg-gray,
-    .ug-bg-primary,
-    .ug-border {
+    .gu-bg-gray,
+    .gu-bg-primary,
+    .gu-border {
       margin: 0 0 var(--entry-el-margin-md) 0;
       padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
 
-      & > *:not(.entry-reset):last-child > * {
+      > *:not(.entry-reset):last-child {
         margin-bottom: 0;
       }
     }
 
-    .ug-cover {
+    .gu-cover {
       position: relative;
       top: var(--entry-el-margin-md);
       margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
       padding: calc(var(--entry-el-margin-md) * 3) calc(50vw - 50% + (var(--unit-gutter-var) / 2)) calc(var(--entry-el-margin-md) * 2);
     }
   }
-}
-
-/* ギャラリー
------------------------------- */
-.unit-gallery {
-  margin-bottom: var(--unit-gutter-var);
 }
