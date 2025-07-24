@@ -28,7 +28,7 @@
               <!-- BEGIN_IF [{image@path}/nem] -->
               <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
               <!-- ELSE -->
-              <img src="{fieldUserIcon}" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+              <img src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
               <!-- END_IF -->
             </p>
             <!-- END userField -->
