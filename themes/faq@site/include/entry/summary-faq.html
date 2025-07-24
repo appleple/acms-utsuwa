@@ -1,9 +1,9 @@
-<!-- BEGIN_MODULE Entry_List id="{{module_id}}" -->
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <ul class="faq-list">
-  <!-- BEGIN entry:loop -->
+  <!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
   <li class="toggle faq js-toggle">
     <h3 class="faq-question">
-      <button type="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq-answer.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
+      <button type="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
         <span class="faq-icon">Q</span>
         <span class="faq-title">{title}</span>
         <span class="toggle-icon" aria-hidden="false">
@@ -26,6 +26,6 @@
       </div>
     </div>
   </li>
-  <!-- END entry:loop -->
+  <!-- END entry:loop --><!-- END unit:loop -->
 </ul>
-<!-- END_MODULE Entry_List -->
+<!-- END_MODULE Entry_Summary -->
