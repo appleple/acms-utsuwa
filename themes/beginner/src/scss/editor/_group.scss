@@ -6,7 +6,7 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   /* 全てのユニットグループ */
-  [class*="ug-"] {
+  [class*="gu-"] {
     overflow: hidden;
 
     >  h2,
@@ -16,81 +16,24 @@
     }
   }
 
-  .ug-bg-gray {
+  .gu-bg-gray {
+    margin: 0 0 var(--entry-el-margin-md) 0;
+    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
     background: var(--color-gray10);
-  }
 
-  .ug-bg-primary {
-    background: var(--color-primary-light);
-  }
-
-  .ug-bg-gray,
-  .ug-bg-primary {
-    margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-
-    &>*:not(.entry-reset):last-child>* {
+    & > *:not(.entry-reset):last-child {
       margin-bottom: 0;
     }
-  }
-
-  .ug-cover {
-    margin: var(--entry-el-margin-md) calc(50% - 50vw);
-    padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
-    border: 0;
-  }
-
-  .ug-text-center {
-    text-align: center;
-  }
-
-  .ug-border {
-    position: relative;
-    margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      border: var(--border-width-sm) solid var(--color-gray40);
-      content: "";
-    }
-
-    & > *:not(.entry-reset):last-child > * {
-      margin-bottom: 0;
-    }
-  }
-
-  .ug-center {
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   @include acms.media-breakpoint-up(md) {
-    .ug-bg-gray,
-    .ug-bg-primary,
-    .ug-border {
+    .gu-bg-gray {
       margin: 0 0 var(--entry-el-margin-md) 0;
       padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
 
-      & > *:not(.entry-reset):last-child > * {
+      & > *:not(.entry-reset):last-child {
         margin-bottom: 0;
       }
     }
-
-    .ug-cover {
-      position: relative;
-      top: var(--entry-el-margin-md);
-      margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
-      padding: calc(var(--entry-el-margin-md) * 3) calc(50vw - 50% + (var(--unit-gutter-var) / 2)) calc(var(--entry-el-margin-md) * 2);
-    }
   }
-}
-
-/* ギャラリー
------------------------------- */
-.unit-gallery {
-  margin-bottom: var(--unit-gutter-var);
 }
