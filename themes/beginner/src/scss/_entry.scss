@@ -286,49 +286,6 @@
   margin-bottom: 0.75rem;
 }
 
-
-/*
-　FAQ
------------------------------- */
-.entry-faq-title {
-  display: flex;
-  align-items: flex-start;
-}
-
-.entry-faq-title-icon {
-  flex: 0 0 auto;
-  margin-right: 1rem;
-  color: var(--color-primary);
-}
-
-.entry-faq-body {
-  display: flex;
-  align-items: flex-start;
-}
-
-.entry-faq-body-icon {
-  flex: 0 0 auto;
-  color: var(--color-gray90);
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, heading-ss);
-
-  .entry-style & {
-    margin-right: 1rem;
-    margin-left: 0;
-    line-height: var(--line-height-sm);
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .entry-faq-body-icon {
-    font-size: map.get(global.$font-scales, heading-m);
-
-    .entry-style & {
-      line-height: var(--line-height-ss);
-    }
-  }
-}
-
 /*
 　採用情報
 ------------------------------ */
