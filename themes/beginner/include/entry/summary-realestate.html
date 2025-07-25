@@ -2,13 +2,13 @@
 <div>
   @include("/include/edit/module-custom.html")
 
-  
-  <p class="media-item-amount">%{CATEGORY_NAME} %{KEYWORD} %{TAG} <!-- BEGIN_MODULE Field_Search -->{station} 
+
+  <p class="media-item-amount">%{CATEGORY_NAME} %{KEYWORD} %{TAG} <!-- BEGIN_MODULE Field_Search -->{station}
     <!-- BEGIN price0:veil -->{price[0]}[number_format]円以上 <!-- END price0:veil -->
     <!-- BEGIN price1:veil -->{price[1]}[number_format]円以下<!-- END price1:veil --><!-- END_MODULE Field_Search -->
     <!-- BEGIN_IF [{itemsAmount}/nem] -->の検索結果 {itemsAmount} 件<!-- ELSE -->
     に一致する物件は見つかりませんでした。<!-- END_IF --></p>
-  
+
 
   <ul class="card-list"><!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
@@ -30,12 +30,12 @@
           <div class="card-text-wrap">
             <h2 class="card-title">{title} <!-- BEGIN moduleField -->
               <!-- BEGIN_IF [{new_label_type}/eq/general] -->
-              <span class="label">NEW</span>
+              <span class="label">New</span>
               <!-- END_IF --> <!-- END moduleField -->
             </h2>
             <p class="card-text">
               <!-- BEGIN categoryField --><span class="label">{fieldCategoryName}</span><!-- END categoryField -->
-              <span class="label">{station}</span> 
+              <span class="label">{station}</span>
               <span class="label">{madori}</span>
             </p>
             <!-- BEGIN tag:veil -->

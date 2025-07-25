@@ -150,14 +150,6 @@
   }
 }
 
-@include acms.media-breakpoint-up(md) {
-  .form-label {
-    width: 30%;
-    margin: 0 2rem 0 0;
-    vertical-align: top;
-  }
-}
-
 .form-button-group {
   display: flex;
   flex-direction: column;

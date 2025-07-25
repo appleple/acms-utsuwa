@@ -150,12 +150,6 @@
   }
 }
 
-@include acms.media-breakpoint-up(md) {
-  .form-label {
-    vertical-align: top;
-  }
-}
-
 .form-button-group {
   display: flex;
   flex-direction: column;
@@ -588,10 +582,16 @@ input::placeholder {
   box-sizing: border-box;
   height: 20rem;
   margin: 0 0 1rem;
-  padding: 1rem 0;
+  padding: .75rem 1rem;
   overflow-y: auto;
+  color: var(--color-gray80);
+  line-height: var(--line-height-base);
   background: var(--color-gray10);
   border-radius: var(--border-radius-lg);
+
+  p {
+    margin-block: 0;
+  }
 }
 
 /* 動的フォーム

@@ -24,7 +24,7 @@
     padding-block: 2px;
     color: var(--color-link);
     text-decoration: none;
-    border-bottom: var(--color-text);
+    border-bottom: 1px dotted currentcolor;
 
     &:hover {
       border-color: transparent;

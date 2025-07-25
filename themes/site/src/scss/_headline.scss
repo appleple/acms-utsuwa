@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 
   .js &.js-animation-row {
