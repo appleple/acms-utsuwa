@@ -526,10 +526,6 @@ input::placeholder {
     box-shadow: var(--box-shadow-error), acms.$acms-form-box-shadow;
   }
 
-  [class*="acms-col"] {
-    margin-bottom: 1.5rem;
-  }
-
   .form-error-text {
     display: flex;
     flex-wrap: wrap;

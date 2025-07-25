@@ -6,20 +6,13 @@
 　　カード
 ------------------------------ */
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -1rem calc(acms.$unit-gutter / -2) 2rem;
+  margin: -1rem 0 2rem;
   padding: 0;
   list-style: none;
 }
 
 .card-item {
   display: flex;
-
-  &[class*="acms-col"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 .card-item-inner {

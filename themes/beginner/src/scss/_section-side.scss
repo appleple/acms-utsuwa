@@ -15,13 +15,6 @@
 @include acms.media-breakpoint-up(lg) {
   .section-side-col {
     width: auto;
-    padding-right: calc(var(--unit-gutter-var) / 4);
-    padding-left: calc(var(--unit-gutter-var) / 4);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + (var(--unit-gutter-var) / 4));
-      padding-left: calc(env(safe-area-inset-left) + (var(--unit-gutter-var) / 4));
-    }
 
     &.is-fix {
       flex: 0 1 auto;
@@ -100,7 +93,7 @@
 .summary-side-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 calc(acms.$unit-gutter / -4) 1.5rem;
+  margin: 0 0 1.5rem;
   padding: 0.5rem 0 0;
   list-style: none;
 }
@@ -110,11 +103,6 @@
   gap: 0.5rem;
   width: 100%;
   margin: 0;
-
-  &[class*="acms-col"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 .summary-side-link {
@@ -123,7 +111,7 @@
   grid-template-rows: 1fr;
   grid-template-columns: 6rem 1fr;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   text-decoration: none;
   transition: background-color 0.2s ease;
 

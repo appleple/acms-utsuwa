@@ -1428,7 +1428,7 @@ config:
     - { config_key: entry_summary_sub_category, config_value: 'off', config_sort: 10, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_secret, config_value: 'off', config_sort: 11, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_unit, config_value: '4', config_sort: 12, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
-    - { config_key: entry_summary_loop_class, config_value: 'acms-col-sm-6 acms-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
+    - { config_key: entry_summary_loop_class, config_value: 'acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
     - { config_key: mo_entry_summary_notfound, config_value: 'on', config_sort: 14, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_notfound_status_404, config_value: 'off', config_sort: 15, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_base_date, config_value: 'on', config_sort: 16, config_rule_id: null, config_module_id: 12, config_set_id: null, config_blog_id: 1 }
@@ -1520,7 +1520,7 @@ config:
     - { config_key: entry_summary_sub_category, config_value: 'off', config_sort: 10, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_secret, config_value: 'off', config_sort: 11, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_unit, config_value: '6', config_sort: 12, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
-    - { config_key: entry_summary_loop_class, config_value: 'acms-col-sm-6 acms-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
+    - { config_key: entry_summary_loop_class, config_value: 'acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
     - { config_key: mo_entry_summary_notfound, config_value: 'on', config_sort: 14, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_notfound_status_404, config_value: 'off', config_sort: 15, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_base_date, config_value: 'on', config_sort: 16, config_rule_id: null, config_module_id: 15, config_set_id: null, config_blog_id: 1 }
@@ -1560,7 +1560,7 @@ config:
     - { config_key: '@linkgroup', config_value: links_label, config_sort: 4, config_rule_id: null, config_module_id: 11, config_set_id: null, config_blog_id: 1 }
     - { config_key: media_banner_order, config_value: sort-asc, config_sort: 1, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
     - { config_key: media_banner_limit, config_value: '', config_sort: 2, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
-    - { config_key: media_banner_loop_class, config_value: 'acms-col-sm-6 acms-col-md-4', config_sort: 3, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
+    - { config_key: media_banner_loop_class, config_value: 'acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-4', config_sort: 3, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
     - { config_key: media_banner_source, config_value: '', config_sort: 4, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
     - { config_key: media_banner_source, config_value: '', config_sort: 5, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
     - { config_key: media_banner_source, config_value: '', config_sort: 6, config_rule_id: null, config_module_id: 4, config_set_id: null, config_blog_id: 1 }
@@ -2135,7 +2135,7 @@ config:
     - { config_key: entry_summary_sub_category, config_value: 'off', config_sort: 10, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_secret, config_value: 'off', config_sort: 11, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_unit, config_value: '12', config_sort: 12, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
-    - { config_key: entry_summary_loop_class, config_value: 'acms-col-sm-6 acms-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
+    - { config_key: entry_summary_loop_class, config_value: 'acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
     - { config_key: mo_entry_summary_notfound, config_value: 'on', config_sort: 14, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_notfound_status_404, config_value: 'off', config_sort: 15, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_base_date, config_value: 'off', config_sort: 16, config_rule_id: null, config_module_id: 16, config_set_id: null, config_blog_id: 1 }
@@ -2181,7 +2181,7 @@ config:
     - { config_key: entry_summary_sub_category, config_value: 'off', config_sort: 10, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_secret, config_value: 'off', config_sort: 11, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_unit, config_value: '12', config_sort: 12, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
-    - { config_key: entry_summary_loop_class, config_value: 'acms-col-sm-6 acms-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
+    - { config_key: entry_summary_loop_class, config_value: 'acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-4', config_sort: 13, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
     - { config_key: mo_entry_summary_notfound, config_value: 'on', config_sort: 14, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_notfound_status_404, config_value: 'off', config_sort: 15, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
     - { config_key: entry_summary_base_date, config_value: 'off', config_sort: 16, config_rule_id: null, config_module_id: 14, config_set_id: null, config_blog_id: 1 }
@@ -3455,8 +3455,8 @@ field:
     - { field_key: module-heading-small, field_value: お知らせ, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 13, field_unit_id: null, field_blog_id: 1 }
     - { field_key: module-heading, field_value: 'Real Estate', field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
     - { field_key: module-heading-small, field_value: 物件情報, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
-    - { field_key: col-sm, field_value: acms-col-sm-6, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
-    - { field_key: col-md, field_value: acms-col-md-4, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
+    - { field_key: col-sm, field_value: acms-g-col-sm-6, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
+    - { field_key: col-md, field_value: acms-g-col-md-4, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 15, field_unit_id: null, field_blog_id: 1 }
     - { field_key: module-heading, field_value: 'Related Sites', field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 4, field_unit_id: null, field_blog_id: 1 }
     - { field_key: module-heading-small, field_value: 関連サイト, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 4, field_unit_id: null, field_blog_id: 1 }
     - { field_key: main-visual-slider-type, field_value: fade, field_type: null, field_sort: 1, field_search: 'on', field_eid: null, field_cid: null, field_uid: null, field_bid: null, field_mid: 9, field_unit_id: null, field_blog_id: 1 }
