@@ -57,8 +57,12 @@
 .faq-question {
   margin: 0;
   font-size: map.get(global.$font-scales, body-m);
-  border-top-left-radius: var(--border-radius-lg);
-  border-top-right-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-lg);
+
+  &:has(+ [aria-hidden="false"]) {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
   .faq-icon {
     color: var(--color-primary);
