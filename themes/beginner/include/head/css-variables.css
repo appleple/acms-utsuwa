@@ -41,7 +41,7 @@
   --color-form-bg: var(--color-gray10);
   --color-form-border: var(--color-gray40);
 
-  --color-link: #0061D1;
+  --color-link: var(--color-gray100);
   --color-focus: var(-color-link);
   --color-page-title-bg: var(--color-gray10);
   --color-hover-bg: var(--color-gray10);
