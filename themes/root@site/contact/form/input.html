@@ -217,24 +217,20 @@
   <div class="form-label">
     <label for="privacy">プライバシーポリシー</label><span class="label-required">必須</span>
   </div>
-  <!-- プライバシーポリシーの読み込み -->
-  <!-- BEGIN_MODULE Entry_Body id="body_privacy" -->
-  <!-- BEGIN notFound -->
-  <!-- END notFound -->
   <fieldset class="form-group">
-    <div class="form-privacy-body entry-style">
+    <!-- プライバシーポリシーの読み込み -->
+    <!-- BEGIN_MODULE Entry_Body id="body_privacy" -->
+    <!-- BEGIN notFound --><!-- END notFound -->
+    <!-- BEGIN entry:loop -->
+    <div class="form-privacy-body">
       @include("/admin/entry/title.html")
       <!-- BEGIN unit:veil -->
       @include("/include/unit.html")
       <!-- END unit:veil -->
-      <!-- BEGIN continueLink:veil -->
-      <p><a href="{continueUrl}">「{continueName}」の続きを読む</a></p>
-      <!-- END continueLink:veil -->
 
       @include("/admin/entry/edit-%{IS_ADMIN}.html")
       @include("/admin/entry/action.html")
     </div>
-
     <!-- END entry:loop -->
     <!-- END_MODULE Entry_Body -->
 
