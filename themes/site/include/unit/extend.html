@@ -108,21 +108,22 @@
 <div class="entry-container">
   <div class="bubble-item not-editor-style">
     <div class="bubble-image-wrap">
-      <!-- BEGIN_IF [{bubble-image@path}/nem] -->
-
-      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{bubble-image@path}" alt="" />
+      <!-- BEGIN_IF [{speech-bubble-image@path}/nem] -->
+      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{speech-bubble-image@path}" alt="" />
       <!-- ELSE -->
       <img src="/images/noimage.png" alt="" class="acms-img-responsive">
       <!-- END_IF -->
     </div>
     <div class="bubble-heading-wrap">
-      <!-- BEGIN bubble-heading:veil -->
-      <p class="bubble-heading">{bubble-heading1}<!-- END bubble-heading1:veil --><!-- BEGIN bubble-heading2:veil --><br>{bubble-heading2}<!-- END bubble-heading2:veil -->
+      <!-- BEGIN speech-bubble-heading:veil -->
+      <p class="bubble-heading">{speech-bubble-heading1}<!-- BEGIN speech-bubble-heading2:veil --><br>{speech-bubble-heading2}<!-- END speech-bubble-heading2:veil -->
       </p>
-      <!-- END bubble-heading:veil -->
-      <p class="bubble-name">{bubble-name}</p>
+      <!-- END speech-bubble-heading:veil -->
+      <!-- BEGIN speech-bubble-name:veil -->
+      <p class="speech-bubble-name">{speech-bubble-name}</p>
+      <!-- END speech-bubble-name:veil -->
     </div>
-    <div class="bubble-text">{bubble-text}</div>
+    <div class="bubble-text">{speech-bubble-text}</div>
   </div>
 </div>
 <!-- END unit#custom_bubble -->
