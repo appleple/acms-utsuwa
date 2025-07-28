@@ -5,15 +5,9 @@
 /* ------------------------------
 　　ヘッダー
 ------------------------------ */
-
-.header {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  background: var(--color-white);
-}
-
 .header-wrap {
+  --global-nav-mobile-menu-btn-width: 3.5rem;
+
   position: relative;
   z-index: var(--zindex-header);
 
@@ -23,17 +17,17 @@
   }
 }
 
-.header-item-wrap {
-  flex: 1;
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-white);
 }
 
 .header-title {
   margin: 0;
-  padding: 0 1rem;
   font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
   line-height: 1;
-
 }
 
 .header-logo {
@@ -46,13 +40,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     max-width: 100%;
     height: var(--header-height-fixed);
-    padding: 0 3.5rem 0 0;
   }
 
   .header-wrap {
+    flex: 1;
     height: var(--header-height-fixed);
   }
 
@@ -94,19 +87,21 @@
 /* 検索窓なし
 ------------------------------ */
 .nav-default {
+  .header-wrap {
+    height: var(--header-height);
+  }
+
   .header {
     display: flex;
+    gap: 1rem;
     align-items: center;
     height: var(--header-height-fixed);
     box-shadow: var(--box-shadow);
-
-    @include acms.media-breakpoint-up(lg) {
-      height: var(--header-height-fixed);
-    }
   }
 
-  .header-wrap {
-    height: var(--header-height);
+  .header-item-wrap {
+    flex: 1;
+    padding-left: var(--gutter-sm);
   }
 
   .header-title {
@@ -139,21 +134,17 @@
 /* 対応テンプレート：/include/header/header-nav-bottom.html
 ------------------------------ */
 .nav-bottom {
-  .header {
-    padding-right: 3.5rem;
-    padding-left: 1rem;
-  }
-
   .header-title {
     padding: 0;
   }
 
   .header-logo {
-    max-height: 3.5rem;
+    max-height: var(--global-nav-mobile-menu-btn-width);
   }
 
   .header-item-wrap {
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
@@ -164,7 +155,6 @@
 
   .header-item-nav {
     flex: 1 0 auto;
-    padding-left: 2rem;
   }
 
   .form-search {
@@ -176,27 +166,34 @@
   }
 }
 
-@include acms.media-breakpoint-up(md) {
+@include acms.media-breakpoint-down(lg) {
   .nav-bottom {
-    .header-item-wrap {
-      padding: 1rem calc(var(--col-gutter) * 1.5) 0;
+    .header {
+      display: flex;
+      align-items: center;
+      max-width: 100%;
     }
 
-    .header-nav-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 8px 0;
+    .header-item-wrap {
+      flex: 1;
+      padding-left: var(--gutter-sm);
+    }
+  }
+}
 
-      .form-search {
-        display: flex;
-        flex: 1 0 auto;
-      }
+@include acms.media-breakpoint-up(sm) {
+  .nav-bottom {
+    .header-item-wrap {
+      padding-left: var(--gutter-md);
+    }
+  }
+}
 
-      .button {
-        min-width: initial;
-        white-space: nowrap;
-      }
-
+@include acms.media-breakpoint-up(lg) {
+  .nav-bottom {
+    .header-item-wrap {
+      margin-right: auto;
+      padding: 1rem var(--gutter-lg) 0;
     }
   }
 }
@@ -212,8 +209,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 3.5rem;
-    padding-left: 3.5rem;
     box-shadow: var(--box-shadow);
   }
 
@@ -222,7 +217,7 @@
   }
 
   .header-logo {
-    max-height: 3.5rem;
+    max-height: var(--global-nav-mobile-menu-btn-width);
   }
 
   .header-item-wrap {
@@ -260,8 +255,8 @@
     top: 0;
     right: 0;
     z-index: var(--zindex-mobile-nav);
-    width: 3.5rem;
-    height: 3.5rem;
+    width: var(--global-nav-mobile-menu-btn-width);
+    height: var(--global-nav-mobile-menu-btn-width);
     background-color: #FFF;
     border: none;
 
@@ -276,7 +271,6 @@
   .logo-center {
     .header {
       display: block;
-      padding: 0;
     }
 
     .header-item-wrap {
@@ -285,7 +279,7 @@
       grid-template:
         ".. title search" 1fr / 1fr 240px 1fr;
       align-items: center;
-      padding: 1.5rem calc(var(--col-gutter) * 1.5) 0;
+      padding: 1.5rem var(--gutter-lg) 0;
       text-align: initial;
     }
 
