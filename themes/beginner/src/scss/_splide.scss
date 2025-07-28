@@ -18,8 +18,11 @@
   .splide__controls {
     display: flex;
     gap: 8px 24px;
+    align-items: center;
     justify-content: center;
-    padding: 1.5rem 1rem;
+    height: 5.125rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .splide__pagination {
@@ -66,6 +69,7 @@
     }
 
     &.is-active {
+      background-color: transparent;
       transform: none;
 
       &::after {
