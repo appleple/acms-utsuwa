@@ -5195,7 +5195,6 @@ input::placeholder {
 　　ヘッダー
 ------------------------------ */
 .header-wrap {
-  --global-nav-mobile-menu-btn-width: 3.5rem;
   position: relative;
   z-index: var(--zindex-header);
 }
@@ -5211,7 +5210,7 @@ input::placeholder {
   max-width: var(--container);
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--global-nav-mobile-menu-btn-width);
+  padding-right: var(--header-height-fixed);
   padding-left: var(--gutter-sm);
 }
 
@@ -5223,7 +5222,7 @@ input::placeholder {
 }
 
 .header-logo {
-  max-height: var(--global-nav-mobile-menu-btn-width);
+  max-height: var(--header-height-fixed);
 }
 
 @media (max-width: 63.98rem) {
