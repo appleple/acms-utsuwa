@@ -5,7 +5,6 @@
 /* ------------------------------
 　　ヘッダー
 ------------------------------ */
-
 .header {
   box-sizing: border-box;
   width: 100%;
@@ -17,7 +16,6 @@
 .header-wrap {
   position: relative;
   z-index: var(--zindex-header);
-  background-color: var(--color-white);
 }
 
 .header-item-wrap {
