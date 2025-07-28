@@ -31,12 +31,6 @@
   flex: 1;
 }
 
-.header-item-title {
-  display: flex;
-  align-items: center;
-  margin: 0 0.5rem;
-}
-
 .header-title {
   margin: 0;
   padding: 0 1rem;
@@ -136,11 +130,6 @@
     margin-left: auto;
     font-size: map.get(global.$font-scales, body-m);
   }
-
-  .header-nav-tel {
-    text-align: right;
-  }
-
 }
 
 /* ロゴ中央・グローバルナビ（下）
@@ -163,41 +152,14 @@
     max-width: var(--container);
     margin-right: auto;
     margin-left: auto;
-
-  }
-
-  .header-nav-tel {
-    line-height: 1.5;
-  }
-
-  .header-nav-tel-no {
-    color: var(--color-primary);
-    font-weight: bold;
-
-    a {
-      color: var(--color-primary);
-      font-weight: bold;
-    }
-  }
-
-  .header-nav-tel-time {
-    font-size: map.get(global.$font-scales, body-s);
-
   }
 }
 
 /* グローバルナビ（下）
 ------------------------------ */
-
-
 .nav-bottom {
   .header-item-wrap {
     display: flex;
-
-  }
-
-  .header-nav-tel {
-    text-align: right;
   }
 
   .header-item-nav {
@@ -213,9 +175,6 @@
     max-width: 35rem;
   }
 }
-
-
-
 
 @include acms.media-breakpoint-up(md) {
   .nav-bottom {
@@ -319,11 +278,6 @@
     .header-title {
       grid-area: 1 / 2 / 2 / 3;
       text-align: center;
-    }
-
-
-    .header-nav-tel {
-      grid-area: 1 / 1 / 2 / 2;
     }
 
     .header-nav-wrap {

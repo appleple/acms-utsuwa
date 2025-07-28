@@ -1,6 +1,5 @@
 <!-- BEGIN_MODULE Blog_Field id="root" -->
 <div class="header-wrap nav-bottom {header_sticky}">
-
 <header class="header">
   <div class="header-item-wrap">
     @include("/include/edit/blog-custom.html",{"label":"ブログ情報を編集する"})
@@ -13,18 +12,8 @@
     </h1><!-- ELSE --></p><!-- END_IF -->
     <div class="header-item-nav">
       <div class="header-nav-wrap">
-        <div class="header-nav-tel">
-          <!-- BEGIN_IF [{header-tel}/eq/true/_and_/{tel}/nem] -->
-          <span class="header-nav-tel-no">TEL： <a href="tel:{tel}">{tel}</a></span> <span class="header-nav-tel-time">{tel-time}</span>
-          <!-- END_IF -->
-        </div>
         <div class="header-sub-navi">
-          <!-- BEGIN_IF [{search-button}/eq/true] -->
-          @include("/include/parts/search-general.html")
-          <!-- END_IF -->
-          <!-- BEGIN_IF [{contact-button}/eq/true] -->
-          <div class="header-nav-button"><a href="%{BASE_URL}{contact-button-url}" class="button is-shadow">{contact-button-text}</a></div>
-          <!-- END_IF -->
+          <div><button type="button" class="header-search-open-button global-nav-search-open-btn button is-inverse">@include("/themes/site/images/icon-search.svg")サイト内検索</button></div>
         </div>
       </div>
     </div>
@@ -32,10 +21,13 @@
   @include("/include/parts/global-nav.html")
 </header>
 
+  <div id="header-search" class="header-search" aria-hidden="true" hidden>
+    @include("/include/parts/search-general.html", {"search-id":"header-lg"})
+    <button type="button" class="header-search-close-btn">@include("/themes/site/images/icon-close.svg")閉じる</button>
+  </div>
 
   <div class="global-nav-mobile-menu">
     <a id="nav-open-btn" href="#mobile-nav" data-target="#global-nav-mobile" class="global-nav-mobile-menu-btn js-mobile-nav-btn" tabindex="-1" aria-expanded="false"><span class="global-nav-mobile-icon-toggle-menu"></span><span class="global-nav-mobile-menu-text">MENU</span></a>
-
   </div>
   <div id="global-nav-mobile" class="js-mobile-nav global-nav-mobile">
     <div class="global-nav-mobile-inner">

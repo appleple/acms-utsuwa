@@ -8,25 +8,45 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
+  max-width: var(--container);
   height: 100%;
+  margin-right: auto;
+  margin-left: auto;
 
   @include acms.media-breakpoint-down(lg) {
     display: none;
+  }
+
+  @include acms.media-breakpoint-up(lg) {
+    padding: calc(var(--col-gutter) * 0.75) calc(var(--col-gutter) * 1.5) 1.5rem;
   }
 }
 
 .global-nav-list {
   display: flex;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-weight: bold;
   list-style: none;
+  border-left: 1px solid var(--color-gray30);
+}
 
+.global-nav-item > .global-nav-list {
+  left: 0;
+  min-width: initial;
 }
 
 .global-nav-item {
   position: relative;
   display: flex;
+  justify-content: center;
+  width: 100%;
+  border-right: var(--border-width-sm) solid var(--color-gray30);
+}
+
+.global-nav > .global-nav-list .global-nav-item {
+  border-right: var(--border-width-sm) solid var(--color-gray30);
 }
 
 .global-nav-link {
@@ -34,15 +54,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--header-height);
+  height: 3rem;
   margin: 0 1.5rem;
-  color: var(--color-text);
   text-decoration: none;
 
-  &:visited,
-  &:active,
-  &:hover,
-  &:focus {
+  &,
+  &:link,
+  &:visited {
     color: var(--color-text);
   }
 
@@ -85,17 +103,18 @@
 
 
   // 現在位置
-  .global-nav-item.stay>&::after {
+  .global-nav-item.stay > &::after {
     transform: scaleX(1);
   }
 
   // CTA用のスタイル
   &.is-cta {
-    height: var(--header-height);
+    width: 100%;
+    margin: 0;
     padding: 0 2rem;
     color: var(--color-white);
     background: var(--color-primary);
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 
     &::after {
       content: none;
@@ -115,7 +134,7 @@
   }
 }
 
-.global-nav-item>.global-nav-list {
+.global-nav-item > .global-nav-list {
   position: absolute;
   top: 100%;
   right: 0;
@@ -179,64 +198,4 @@
 .global-nav-item:last-child .global-nav-link.is-cta+.global-nav-list {
   right: 0;
   left: inherit;
-}
-
-/* ロゴ中央・グローバルナビが下
------------------------------- */
-
-.nav-bottom,
-.logo-center {
-  .global-nav {
-    max-width: var(--container);
-    margin-right: auto;
-    margin-left: auto;
-
-    @include acms.media-breakpoint-up(lg) {
-      padding: calc(var(--col-gutter) * 0.75) var(--col-gutter) 1.5rem;
-    }
-  }
-
-  .global-nav-list {
-    width: 100%;
-    border-left: 1px solid var(--color-gray30);
-
-  }
-
-  .global-nav-item {
-    justify-content: center;
-    width: 100%;
-    border-right: var(--border-width-sm) solid var(--color-gray30);
-
-    >.global-nav-list {
-      left: 0;
-      min-width: initial;
-
-    }
-  }
-
-  .global-nav-link {
-    height: 3rem;
-
-    &.is-cta {
-      width: 100%;
-      height: 3rem;
-      margin: 0;
-    }
-  }
-}
-
-@include acms.media-breakpoint-up(lg) {
-  .nav-bottom,
-  .logo-center {
-    .global-nav {
-      padding-right: calc(var(--col-gutter) * 1.5);
-      padding-left: calc(var(--col-gutter) * 1.5);
-
-      >.global-nav-list {
-        .global-nav-item {
-          border-right: var(--border-width-sm) solid var(--color-gray30);
-        }
-      }
-    }
-  }
 }

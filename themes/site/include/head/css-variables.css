@@ -199,15 +199,4 @@
 
   /* ユニット マージン */
   --unit-margin-md: 2rem;
-
-  /* ------------------------------
-  メインビジュアル
-  ------------------------------- */
-
-  --mv-height-sp: 36.5rem;
-  --mv-extend-height-sp: calc(100vh - var(--header-height-fixed));
-  --mv-height-pc: 48rem;
-  --mv-logo-center-height-pc: calc(100vh - 10rem);
-  --mv-nav-bottom-height-pc: calc(100vh - 12rem);
-
 }

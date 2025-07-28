@@ -93,31 +93,6 @@ $(() => {
     $(this).find('.icon-expand').toggleClass('is-close');
   });
 
-  // 固定CTA
-  function fixElement() {
-    const $fixArea = $('.js-sticky-area');
-    const $fix = $('.js-sticky');
-
-    if ($fixArea.length && $fix.length) {
-      const fixTop = $fixArea.offset().top;
-      const fixEnd = $fixArea.height() + $fixArea.offset().top;
-      const winScroll = $(window).scrollTop();
-      const winheight = $(window).height();
-
-      if (winScroll < fixTop - winheight) {
-        $fix.delayRemoveClass('is-show', 1).delayRemoveClass('is-active', 20);
-      } else if (winScroll > fixEnd - winheight) {
-        $fix.delayRemoveClass('is-show', 1).delayRemoveClass('is-active', 20);
-      } else {
-        $fix.delayAddClass('is-active', 1).delayAddClass('is-show', 10);
-      }
-    }
-  }
-  $(window).on('load scroll', () => {
-    fixElement();
-  });
-
-
   // アコーディオン
   $('.js-toggle-button').on('click', (e) => {
     const $self = $(e.currentTarget);
@@ -129,72 +104,6 @@ $(() => {
     $body.slideToggle().attr('aria-hidden', ariaHidden);
   });
 
-  // ロゴセンター時の検索フォーム
-  const openBtns = document.querySelectorAll('.header-search-open-button');
-  const closeBtn = document.querySelector('.header-search-close-btn');
-  const searchArea = document.getElementById('header-search');
-  const searchInput = document.getElementById('search-header-lg');
-
-  function openSearch(clickedBtn) {
-    openBtns.forEach(btn => btn.setAttribute('aria-expanded', 'true'));
-    searchArea.setAttribute('aria-hidden', 'false');
-    searchArea.removeAttribute('hidden');
-    searchInput.focus();
-    document.body.classList.add('search-open');
-  }
-
-  function closeSearch() {
-    openBtns.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
-    searchArea.setAttribute('aria-hidden', 'true');
-    setTimeout(() => {
-      if (searchArea.getAttribute('aria-hidden') === 'true') {
-        searchArea.setAttribute('hidden', '');
-      }
-    }, 300);
-    openBtns[0]?.focus();
-    document.body.classList.remove('search-open');
-  }
-
-  /* 開閉ボタン */
-  if (searchArea && searchInput) {
-    openBtns.forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        if (!isExpanded) {
-          openSearch(btn);
-        } else {
-          closeSearch();
-        }
-      });
-    });
-  }
-
-  /* 閉じるボタン */
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      closeSearch();
-    });
-  }
-
-  /* ESCキーで閉じる */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && searchArea.getAttribute('aria-hidden') === 'false') {
-      closeSearch();
-    }
-  });
-
-  /* 検索エリア外クリックで閉じる */
-  document.addEventListener('click', function (e) {
-    if (
-      document.body.classList.contains('search-open') &&
-      !searchArea.contains(e.target) &&
-      !Array.from(openBtns).some(btn => btn.contains(e.target))
-    ) {
-      closeSearch();
-    }
-  });
   /* 外部リンクボタンにアイコンを付ける */
   const anchors = document.querySelectorAll('.text-btn a');
   const currentHost = location.hostname;

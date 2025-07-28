@@ -6,10 +6,12 @@
 // グローバルメンバーファイル テーマ専用
 @forward "global/common";
 
-
 // ベース
 @use "base";
 @use "override-js";
+
+// ライブラリ
+@use "splide";
 
 // パーツ
 @use "animation";
@@ -19,7 +21,6 @@
 @use "content-loading";
 @use "calendar";
 @use "card";
-@use "related-site";
 @use "cta";
 @use "global-nav";
 @use "global-mobile-nav";
@@ -33,7 +34,6 @@
 @use "pager";
 @use "profile";
 @use "search-form";
-@use "splide";
 @use "tag";
 @use "toggle";
 @use "topicpath";

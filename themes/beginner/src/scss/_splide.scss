@@ -5,55 +5,80 @@
 /* ------------------------------
 　　splide.cssの上書き
 ------------------------------ */
-
-.main-visual-slider,
-.news-banner-carousel {
+.main-visual-slider {
   position: relative;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
 
-
   .splide__slide {
     overflow: hidden;
   }
 
-  .splide__pagination__page {
-    box-sizing: border-box;
-    width: 12px;
-    height: 12px;
-    border: 1px solid var(--color-white);
+  .splide__controls {
+    display: flex;
+    gap: 8px 24px;
+    justify-content: center;
+    padding: 1.5rem 1rem;
   }
 
   .splide__pagination {
-    bottom: 0;
-
-    >li {
-      box-sizing: border-box;
-    }
+    position: static;
+    display: flex;
+    gap: 8px;
+    padding: 0;
   }
 
   .splide__pagination__page {
+    display: grid;
+    box-sizing: border-box;
+    width: 1.75rem;
+    height: 1.75rem;
     margin: 0;
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    opacity: 1;
+    padding: 0;
+    background-color: transparent;
+    place-items: center;
+    border: 0;
 
+    &,
     &:hover {
+      opacity: 1; /* リセット */
+    }
+
+    &::after {
+      box-sizing: border-box;
+      width: 0.875rem;
+      height: 0.875rem;
       background-color: var(--color-primary);
+      border: 1px solid var(--color-white);
+      border-radius: 50%;
+      content: "";
+
+      @media (hover: hover) {
+        transition: background-color 0.25s ease;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover::after {
+        background-color: var(--color-primary-hover);
+      }
     }
 
     &.is-active {
-      background-color: var(--color-white);
-      border: 1px solid var(--color-primary);
       transform: none;
-    }
-  }
 
-  .splide__controls {
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem 0;
+      &::after {
+        background-color: var(--color-white);
+        border-color: var(--color-primary);
+      }
+
+      @media (hover: hover) {
+        &:hover::after {
+          background-color: var(--color-gray10);
+        }
+      }
+    }
   }
 
   .splide__arrow {
@@ -106,11 +131,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 2.125rem;
+    height: 2.125rem;
     padding: 0;
     background-color: var(--color-primary);
-    border: none;
+    border: 1px solid var(--color-white);
     border-radius: 50%;
 
     .splide__toggle__play,
@@ -125,7 +150,6 @@
       }
     }
 
-
     .splide__toggle__play {
       background: url("#{global.$root-theme-img}icon-triangle.svg") no-repeat center center;
       background-size: 1rem;
@@ -134,7 +158,14 @@
     .splide__toggle__pause {
       background: url("#{global.$root-theme-img}icon-stop.svg") no-repeat center center;
       background-size: 1rem;
+    }
 
+    @media (hover: hover) {
+      transition: background-color 0.25s ease;
+
+      &:hover {
+        background-color: var(--color-primary-hover);
+      }
     }
   }
 }

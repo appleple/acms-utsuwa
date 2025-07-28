@@ -15,15 +15,6 @@
 <!-- END navigation:loop -->
 <!-- END_MODULE Navigation -->
 
-<!-- BEGIN_MODULE Blog_Field ctx="bid/1" -->
-<!-- BEGIN_IF [{global-nav}/eq/logo-center/_and_/{tel}/nem] -->
-<div class="global-nav-mobile-tel">
-  <span class="header-nav-tel-time">{tel-time}</span>
-  <a href="tel:{tel}" class="button is-block">TEL: {tel}</a>
-</div>
-<!-- END_IF -->
-<!-- END_MODULE Blog_Field -->
-
 <!-- BEGIN_MODULE Links id="links_global_sp" -->
 <ul class="global-nav-mobile-side-group">
   <!-- BEGIN loop -->
@@ -31,7 +22,3 @@
   <!-- END loop -->
 </ul>
 <!-- END_MODULE Links -->
-
-<!-- BEGIN_IF [{global-nav}/eq/logo-center/_and_/{search-button}/eq/true] -->
-@include("/include/parts/search-general.html", {"search-id":"mobile-nav-search"})
-<!-- END_IF -->

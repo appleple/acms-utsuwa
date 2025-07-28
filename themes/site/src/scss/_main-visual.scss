@@ -7,7 +7,7 @@
 ------------------------------ */
 .main-visual {
   position: relative;
-  height: var(--mv-height-sp, calc(100svh - 3.5rem));
+  height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
   min-height: 20rem;
   margin-bottom: 5rem;
 
@@ -17,8 +17,6 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, #000 100%);
-
-
   }
 
   .main-visual-bg {
@@ -121,19 +119,6 @@
       content: "";
     }
   }
-
-  .splide__pagination {
-    position: static;
-
-    >li {
-      box-sizing: border-box;
-      width: 1.75rem;
-      height: 1.75rem;
-      padding: 0.5rem;
-    }
-
-  }
-
 }
 
 @include acms.media-breakpoint-up(md) {
@@ -192,11 +177,11 @@
 }
 
 /* ------------------------------
-　　メインビジュアル（top-main-visual-ex01.html）
+　　メインビジュアル（main-visual-ex01.html）
 ------------------------------ */
 .main-visual-extend01 {
   position: relative;
-  height: var(--mv-extend-height-sp);
+  height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
   min-height: 20rem;
   overflow: hidden;
 
@@ -289,7 +274,6 @@
           stroke: var(--color-white);
         }
       }
-
     }
   }
 
@@ -299,30 +283,57 @@
 
   .splide__controls {
     position: absolute;
-    right: auto;
-    bottom: 0;
-    left: 1rem;
+    inset: auto auto 0 0;
     z-index: 10;
-    gap: 0;
-    padding: 1.5rem 0;
-
-  }
-
-  .splide__pagination {
-    position: relative;
-    bottom: 0;
-    padding-left: 0;
   }
 
   .pagination-page-extend01 {
+    display: grid;
     box-sizing: border-box;
-    width: 40px;
-    height: 20px;
-    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDI0IDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PG1hc2sgaWQ9InBhdGgtMS1pbnNpZGUtMV85MTE4XzE0OCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0wIDBIMjRWNEgwVjBaIi8+PC9tYXNrPjxwYXRoIGQ9Ik0wIDBWLTFILTFWMEgwWk0yNCAwSDI1Vi0xSDI0VjBaTTI0IDRWNUgyNVY0SDI0Wk0wIDRILTFWNUgwVjRaTTAgMUgyNFYtMUgwVjFaTTIzIDBWNEgyNVYwSDIzWk0yNCAzSDBWNUgyNFYzWk0xIDRWMEgtMVY0SDFaIiBmaWxsPSJ3aGl0ZSIgbWFzaz0idXJsKCNwYXRoLTEtaW5zaWRlLTFfOTExOF8xNDgpIi8+PC9zdmc+") center no-repeat;
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    place-items: center;
     border: 0;
 
+    &,
+    &:hover {
+      opacity: 1; /* リセット */
+    }
+
+    &::after {
+      box-sizing: border-box;
+      width: 1.5rem;
+      height: 0.25rem;
+      background-color: transparent;
+      border: 1px solid var(--color-white);
+      content: "";
+
+      @media (hover: hover) {
+        transition: background-color 0.25s ease;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover::after {
+        background-color: var(--color-gray20);
+      }
+    }
+
     &.is-active {
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iNCIgdmlld0JveD0iMCAwIDI0IDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjQiIGZpbGw9IndoaXRlIi8+PC9zdmc+");
+      transform: none;
+
+      &::after {
+        background-color: var(--color-white);
+      }
+
+      @media (hover: hover) {
+        &:hover::after {
+          background-color: var(--color-gray20);
+        }
+      }
     }
   }
 
@@ -361,14 +372,6 @@
 @include acms.media-breakpoint-up(md) {
   .main-visual-extend01 {
     height: var(--mv-height-pc, 48rem);
-
-    &.logo-center {
-      height: var(--mv-logo-center-height-pc);
-    }
-
-    &.nav-bottom {
-      height: var(--mv-nav-bottom-height-pc);
-    }
 
     .main-visual-box {
       box-sizing: border-box;
@@ -433,8 +436,7 @@
 
 
     .splide__controls {
-      left: 5rem;
-
+      left: 4rem;
     }
 
     .main-visual-scroll {
@@ -454,14 +456,13 @@
 }
 
 /* ------------------------------
-　　メインビジュアル（top-main-visual-ex02.html）
+　　メインビジュアル（main-visual-ex02.html）
 ------------------------------ */
 
 .main-visual-extend02 {
   position: relative;
-  height: var(--mv-height-sp, calc(100svh - 3.5rem));
+  height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
   min-height: 20rem;
-  overflow: hidden;
 
   .main-visual-bg {
     width: 100%;
@@ -557,19 +558,6 @@
 
     }
   }
-
-  .splide__pagination {
-    position: relative;
-    bottom: 0;
-
-    >li {
-      box-sizing: border-box;
-      width: 1.75rem;
-      height: 1.75rem;
-      padding: 0.5rem;
-    }
-
-  }
 }
 
 @include acms.media-breakpoint-up(md) {
@@ -615,7 +603,6 @@
 
     .main-visual-catch-sub {
       font-size: map.get(global.$font-scales, heading-ss);
-
     }
 
     .main-visual-links {
@@ -667,11 +654,8 @@
 
     .splide__controls {
       position: absolute;
-      bottom: 0;
-      left: 5rem;
+      inset: auto auto 0 5rem;
       z-index: 10;
     }
   }
-
-
 }

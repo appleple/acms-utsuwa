@@ -21,16 +21,7 @@ html {
 
   @include acms.media-breakpoint-up(md) {
     scroll-padding-top: var(--header-height-fixed);
-
-    &:has(.nav-bottom.sticky) {
-      scroll-padding-top: 12rem;
-    }
-
-    &:has(.logo-center.sticky) {
-      scroll-padding-top: 10rem;
-    }
   }
-
 }
 
 /* リンクの設定 */
@@ -191,37 +182,6 @@ a {
 
   .side-container {
     width: var(--width-side-container);
-  }
-}
-
-/* 固定コンテンツ */
-.sticky-contents {
-  position: fixed;
-  bottom: 0;
-  z-index: var(--zindex-fixed-contents);
-  display: none;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 1rem 0;
-  transform: translateY(40px);
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.2s;
-
-  &.is-centered {
-    text-align: center;
-  }
-
-  &.is-show {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  &.is-active {
-    display: block;
-  }
-
-  &.is-bg {
-    background-color: var(--color-footer-sticky);
   }
 }
 
