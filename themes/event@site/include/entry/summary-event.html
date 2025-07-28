@@ -5,16 +5,34 @@
   <!-- END_SetRendered -->
   @include("/include/edit/module-custom.html")
 
-  <ul class="card-list"><!-- BEGIN unit:loop -->
+  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--acms-gap: 0;">
+    <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
-    <li class="{entry:loop.class} card-item">
+    <li class="card-item">
       <div class="card">
         <a href="{url}" class="card-link">
           <div class="card-img-wrap">
             <!-- BEGIN_IF [{main-image@path}/nem] -->
-            <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- ELSE -->
-            <img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256">
-            <!-- END_IF --><!-- BEGIN category:veil -->
+            <img
+              src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]"
+              alt="{main-image@alt}"
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            ><!-- ELSE -->
+            <img
+              src="/images/noimage.png"
+              alt="noimage画像"
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END_IF -->
+            <!-- BEGIN category:veil -->
             <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->">
               <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
               <!-- ELSE_IF [{event-status}/eq/open] -->募集中

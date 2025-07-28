@@ -1,13 +1,34 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id|default("summary_index_date")}}" -->
 <div>
   @include("/include/edit/module-custom.html")
-  <ul class="card-list"><!-- BEGIN unit:loop -->
+  <ul class="card-list acms-cssgrid"><!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
-    <li class="{entry:loop.class} card-item">
+    <li class="<!-- BEGIN_IF [{entry:loop.class}/nem] -->{entry:loop.class}<!-- ELSE -->acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-3<!-- END_IF --> card-item">
       <div class="card">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap"><!-- BEGIN image:veil -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
+          <div class="card-img-wrap">
+            <!-- BEGIN image:veil -->
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+              alt="{alt}"
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END image:veil -->
+            <!-- BEGIN noimage -->
+            <img
+              src="/images/noimage.png"
+              alt="noimage画像"
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END noimage -->
           </div>
           <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
           <h2 class="card-title">{title}</h2>
@@ -20,11 +41,27 @@
           <!-- BEGIN userField -->
           <p class="card-author">
             <!-- BEGIN_IF [{image@path}/nem] -->
-            <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+            <img
+              src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]"
+              alt="{image@alt}"
+              width="30"
+              height="30"
+              class="card-author-img"
+              loading="lazy"
+              decoding="async"
+            >{fieldUserName}
             <!-- ELSE -->
-            <img src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+            <img
+              src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]"
+              alt="{fieldUserIcon@alt}"
+              width="30"
+              height="30"
+              class="card-author-img"
+              loading="lazy"
+              decoding="async"
+            >{fieldUserName}
+            <!-- END_IF -->
           </p>
-          <!-- END_IF -->
           <!-- END userField -->
         </a>
       </div>

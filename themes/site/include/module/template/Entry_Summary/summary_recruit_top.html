@@ -7,13 +7,22 @@
       <p class="section-vertical-text">{module-heading-small}</p>
     </header><!-- END moduleField -->
     <div class="section-vertical-main">
-      <ul class="card-bordered-list"><!-- BEGIN unit:loop -->
+      <ul class="card-bordered-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->">
+        <!-- BEGIN unit:loop -->
         <!-- BEGIN entry:loop -->
-        <li class="card-bordered-item js-animation-row {entry:loop.class}">
+        <li class="card-bordered-item js-animation-row">
           <div class="card-bordered">
             <a href="{url}" class="card-bordered-link">
               <div class="card-bordered-img-wrap">
-                <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,220)]" alt="" width="580" height="220" class="acms-img-responsive card-bordered-img">
+                <img
+                  src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,220)]"
+                  alt="{thumbnail-image@alt}"
+                  width="580"
+                  height="220"
+                  class="acms-img-responsive card-bordered-img"
+                  loading="lazy"
+                  decoding="async"
+                >
               </div>
               <div class="card-bordered-text-inline">
                 <h3 class="card-bordered-title">{title}</h3>

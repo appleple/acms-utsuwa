@@ -1,34 +1,31 @@
 @extends("/admin/_layouts/action.html")
-
-
-	@section("user-status")
-	<div id="loginUserStatus">
-		<img src="%{ARCHIVES_DIR}{icon}" width="20" height="20" alt="" class="acms-admin-user acms-admin-margin-right-mini" />{name}
-		<a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- BEGIN approval -->
-		<div class="acms-admin-label-approval-group"><a href="{url}"><!--T-->承認通知<!--/T--></a>&nbsp;<span class="acms-admin-badge acms-admin-badge-approval">{badge}</span></div><!-- END approval -->
+  @section("user-status")
+  <div id="loginUserStatus">
+    <img src="%{ARCHIVES_DIR}{icon}" width="20" height="20" alt="" class="acms-admin-user acms-admin-margin-right-mini" />{name}
+    <a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- BEGIN approval -->
+    <div class="acms-admin-label-approval-group"><a href="{url}"><!--T-->承認通知<!--/T--></a>&nbsp;<span class="acms-admin-badge acms-admin-badge-approval">{badge}</span></div><!-- END approval -->
      <!-- BEGIN_MODULE Touch_Debug -->
-		&nbsp;<a href="/bid/%{SBID}/admin/checklist/" class="acms-admin-label acms-admin-label-danger"><!--T-->デバッグモード<!--/T--></a><!-- BEGIN_MODULE Touch_Benchmark -->
+    &nbsp;<a href="/bid/%{SBID}/admin/checklist/" class="acms-admin-label acms-admin-label-danger"><!--T-->デバッグモード<!--/T--></a><!-- BEGIN_MODULE Touch_Benchmark -->
     &nbsp;<a href="/bid/%{SBID}/admin/checklist/" class="acms-admin-label acms-admin-label-warning"><!--T-->ベンチマークモード<!--/T--></a><!-- END_MODULE Touch_Benchmark -->
     <!-- END_MODULE Touch_Debug -->
     <!-- BEGIN_IF [%{IS_DEVELOPMENT}/eq/on] -->
-		/ <a href="https://mypage.a-blogcms.jp" target="_blank"><strong><!--T-->ライセンス未購入<!--/T--></strong></a>
+    / <a href="https://mypage.a-blogcms.jp" target="_blank"><strong><!--T-->ライセンス未購入<!--/T--></strong></a>
     <!-- END_IF -->
     <!-- BEGIN status#TOO_MANY_USERS -->
-		/ <strong><!--T-->登録されているユーザー数が上限を超えているため、ラインセンスが無効になっています。<!--/T--></strong>
+    / <strong><!--T-->登録されているユーザー数が上限を超えているため、ラインセンスが無効になっています。<!--/T--></strong>
     <!-- END status#TOO_MANY_USERS -->
     <!-- BEGIN status#MISMATCHED_DOMAIN -->
-		/ <strong><!--T-->ライセンスのドメインと違うため、ライセンスが無効になっています。<!--/T--></strong>
+    / <strong><!--T-->ライセンスのドメインと違うため、ライセンスが無効になっています。<!--/T--></strong>
     <!-- END status#MISMATCHED_DOMAIN -->
     <!-- BEGIN status#EXPIRED -->
-		/ <strong><!--T-->ライセンスの有効期限切れのため、ライセンスが無効になっています。<!--/T--></strong>
+    / <strong><!--T-->ライセンスの有効期限切れのため、ライセンスが無効になっています。<!--/T--></strong>
     <!-- END status#EXPIRED -->
-	</div>
-	@endsection
+  </div>
+  @endsection
 
 @section("extra")
-
    <!-- BEGIN_MODULE Touch_Debug -->
-		&nbsp;<span class="acms-admin-label"><!--T-->テンプレート<!--/T-->：%{ROOT_TPL}</span>
+    &nbsp;<span class="acms-admin-label"><!--T-->テンプレート<!--/T-->：%{ROOT_TPL}</span>
     <!-- BEGIN_IF [%{CONFIG_SET_NAME}/nem] -->
     &nbsp;&nbsp;<span class="acms-admin-label"><!--T-->コンフィグセット<!--/T-->：%{CONFIG_SET_NAME}</span>
     <!-- END_IF -->
@@ -41,17 +38,5 @@
     <!-- BEGIN_IF [%{RID}/nem] -->
     &nbsp;&nbsp;<!--T-->ルール<!--/T-->：%{RULE_NAME}（RID:%{RID}）
     <!-- END_IF -->
-		<!-- END_MODULE Touch_Debug -->
-
-<!-- <form action="" method="post">
-<input type="hidden" name="target[]" value="page" />
-<input type="hidden" name="target[]" value="template" />
-<input type="hidden" name="target[]" value="config" />
-<input type="hidden" name="target[]" value="field" />
-<input type="hidden" name="target[]" value="module" />
-<input type="hidden" name="target[]" value="temp" />
-<input type="hidden" name="field[]" value="target" />
-<input type="submit" name="ACMS_POST_Cache" value="キャッシュをクリア" class="acms-admin-btn-admin"/>
-<input type="hidden" name="forcing" value="true" />
-</form> -->
+    <!-- END_MODULE Touch_Debug -->
 @endsection

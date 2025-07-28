@@ -13,7 +13,7 @@
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
 </div><!-- END_MODULE Touch_Login -->
-<article class="entry clearfix {entry:loop.class}">
+<article class="entry {entry:loop.class}">
   @include("/admin/entry/title.html")
   <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
 
@@ -21,13 +21,12 @@
   <!-- BEGIN entry:veil -->
   <div class="js-sticky-area">
     <div class="acms-entry entry-style">
-      <div class="acms-grid entry-style-grid">
+      <div>
         <!-- カスタムフィールドの読み込み -->
         @include("/include/entry/field.html")
 
         <!-- BEGIN unit:veil -->
         @include("/include/unit.html")
-        <hr class="clearHidden" />
         <!-- END unit:veil -->
         <!-- 続きを読む -->
         @include("/include/parts/continue.html")
@@ -48,7 +47,6 @@
   "form_message_step":"弊社にご興味を持ってくださり、ありがとうございます！<br>以下のフォームにあなたの情報をご記入ください。",
   "form_message_result":"弊社へご応募ありがとうございます。以下の内容で送信しました。<br>この後、詳細な面接日程を担当者よりご案内いたしますので、今しばらくお待ちください。"
   })
-  <hr class="clearHidden" />
   <!-- END formBody -->
 
   @include("/admin/entry/edit-%{IS_ADMIN}.html")

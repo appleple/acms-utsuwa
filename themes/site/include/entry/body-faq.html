@@ -26,7 +26,7 @@
   @include("/admin/entry/revision-info.html")
 </div><!-- END_MODULE Touch_Login -->
 
-<article class="entry entry-faq clearfix {entry:loop.class}">
+<article class="entry entry-faq {entry:loop.class}">
   @include("/admin/entry/title.html")
 
   <div class="js-sticky-area">
@@ -48,10 +48,9 @@
     <!-- BEGIN entry:veil -->
     <div class="acms-entry entry-style entry-faq-body">
       <p class="entry-faq-body-icon">A</p>
-      <div class="entry-style-grid">
+      <div>
         <!-- BEGIN unit:veil -->
         @include("/include/unit.html")
-        <hr class="clearHidden"/>
         <!-- END unit:veil -->
         <!-- 続きを読む -->
         @include("/include/parts/continue.html")
@@ -61,7 +60,6 @@
 
     <!-- BEGIN formBody -->
     @include("/include/form/unit.html")
-    <hr class="clearHidden"/>
     <!-- END formBody -->
 
     @include("/admin/entry/edit-%{IS_ADMIN}.html")

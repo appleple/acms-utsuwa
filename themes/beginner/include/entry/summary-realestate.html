@@ -10,16 +10,33 @@
     に一致する物件は見つかりませんでした。<!-- END_IF --></p>
 
 
-  <ul class="card-list acms-cssgrid" style="--acms-gap: 0;">
+  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--acms-gap: 0;">
     <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
-    <li class="card-item {entry:loop.class}">
+    <li class="card-item">
       <div class="card">
         <a href="{url}" class="card-link">
           <div class="card-img-wrap">
             <!-- BEGIN_IF [{path}/nem] -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(455,256)]" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- ELSE -->
-            <img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256">
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+              alt=""
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- ELSE -->
+            <img
+              src="/images/noimage.png"
+              alt=""
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
             <!-- END_IF -->
             <!-- BEGIN new -->
             <!-- BEGIN moduleField -->

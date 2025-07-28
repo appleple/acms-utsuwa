@@ -1,5 +1,5 @@
 <!-- BEGIN_MODULE Entry_TagRelational id="{{module_id}}" -->
-<section class="tag-relational clearfix">
+<section class="tag-relational">
   <!-- BEGIN_SetRendered id="new-label-position" -->
   <!-- BEGIN moduleField --> {new-label-position}<!-- END moduleField -->
   <!-- END_SetRendered -->
@@ -12,13 +12,31 @@
     <ul class="list-inline"><!-- GET_Rendered id="tag" --></ul>
     から関連する記事を表示しています。
   </div>
-  <ul class="card-list">
+  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-4<!-- END_IF -->" style="--acms-gap: 0;">
     <!-- BEGIN entry:loop -->
-    <li class="card-item <!-- BEGIN_IF [{entry:loop.class}/nem/] -->{entry:loop.class}<!-- ELSE -->acms-col-12 acms-col-sm-6 acms-col-md-3<!-- END_IF -->">
+    <li class="card-item">
       <div class="card-item-inner">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap"><!-- BEGIN image:veil -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(447,252)]" width="447" height="252" alt="" class="acms-img-responsive card-img"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/default/noimage.gif" alt="" class="acms-img-responsive card-img"><!-- END noimage -->
+          <div class="card-img-wrap">
+            <!-- BEGIN image:veil -->
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(447,252)]"
+              width="447"
+              height="252"
+              alt="{alt}"
+              class="acms-img-responsive card-img"
+              loading="lazy" decoding="async"
+            >
+            <!-- END image:veil -->
+            <!-- BEGIN noimage -->
+            <img
+              src="/images/default/noimage.gif"
+              alt="noimage画像"
+              class="acms-img-responsive card-img"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END noimage -->
             <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->"><!-- BEGIN category:veil --><!-- BEGIN categoryField -->{fieldCategoryName}<!-- END categoryField --><!-- END category:veil --></span>
           </div>
           <div class="card-text-wrap">

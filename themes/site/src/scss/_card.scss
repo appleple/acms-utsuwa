@@ -7,20 +7,13 @@
 　　カード
 ------------------------------ */
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -1rem calc(acms.$unit-gutter / -2) 2rem;
+  margin: -1rem 0 2rem;
   padding: 0;
   list-style: none;
 }
 
 .card-item {
   display: flex;
-
-  &[class*="acms-col"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
 }
 
 .card-item-inner {
@@ -30,13 +23,6 @@
 .card {
   display: flex;
   width: 100%;
-}
-
-@media all and (-ms-high-contrast: none) {
-  *::-ms-backdrop,
-  .card {
-    display: block;
-  }
 }
 
 .card-link {
@@ -214,7 +200,6 @@
 
 .card-tag {
   margin: 0 0.5rem 0 0;
-
 }
 
 .card-action {
@@ -278,6 +263,7 @@
     overflow-x: auto;
 
     .card-list {
+      display: flex; // カルーセル時はflexにする
       flex-wrap: nowrap;
       margin-bottom: 0;
     }
@@ -331,26 +317,14 @@
 @include acms.media-breakpoint-up(lg) {
   .card-list {
     margin-bottom: 2rem;
-
-    .blog1-top & {
-      justify-content: center;
-    }
   }
 }
 
 /* ボーダー付きカード */
 .card-bordered-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 0;
-  margin: 0 calc(acms.$unit-gutter / -2);
+  margin: 0;
   padding: 0;
   list-style: none;
-
-  .blog1-top & {
-    justify-content: center;
-  }
-
 }
 
 .card-bordered-item {
@@ -365,6 +339,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);

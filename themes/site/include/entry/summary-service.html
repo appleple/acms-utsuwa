@@ -1,14 +1,34 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <div>
   @include("/include/edit/module-custom-box2.html")
-  <ul class="card-list entry-reset"><!-- BEGIN unit:loop -->
+  <ul class="card-list acms-cssgrid entry-reset<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2<!-- END_IF -->">
+    <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
-    <li class="card-item acms-col-sm-6">
+    <li class="card-item">
       <div class="card is-lg">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap"><!-- BEGIN_IF [{thumbnail-image@path}/nem] -->
-            <img src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,345)]" width="580" height="345" alt="" class="acms-img-responsive card-img"><!--  ELSE_IF [{path}/nem] -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(580,345)]" width="580" height="345" alt="" class="acms-img-responsive card-img"><!-- END_IF -->
+          <div class="card-img-wrap">
+            <!-- BEGIN_IF [{thumbnail-image@path}/nem] -->
+            <img
+              src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,345)]"
+              alt="{thumbnail-image@alt}"
+              width="580"
+              height="345"
+              class="acms-img-responsive card-img"
+              loading="lazy"
+              decoding="async"
+            >
+            <!--  ELSE_IF [{path}/nem] -->
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(580,345)]"
+              alt="{alt}"
+              width="580"
+              height="345"
+              class="acms-img-responsive card-img"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END_IF -->
           </div>
           <div class="card-text-wrap">
             <h3 class="card-title">{title}</h3>

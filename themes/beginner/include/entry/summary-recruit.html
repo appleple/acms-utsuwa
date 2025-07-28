@@ -1,14 +1,35 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <div>
   @include("/include/edit/module-custom.html")
-  <ul class="card-list acms-cssgrid" style="--acms-gap: 0;">
+  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--acms-gap: 0;">
     <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
-    <li class="{entry:loop.class} card-item">
+    <li class="card-item">
       <div class="card">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap"><!-- BEGIN image:veil -->
-            <img src="%{ROOT_DIR}{path}[resizeImg(455,455)]" alt="" class="acms-img-responsive card-img" width="455" height="455"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="acms-img-responsive card-img" width="455" height="256"><!-- END noimage -->
+          <div class="card-img-wrap">
+            <!-- BEGIN image:veil -->
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(455,455)]"
+              alt=""
+              class="acms-img-responsive card-img"
+              width="455"
+              height="455"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END image:veil -->
+            <!-- BEGIN noimage -->
+            <img
+              src="/images/noimage.png"
+              alt=""
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END noimage -->
           </div>
           <div class="card-text-wrap">
             <!-- BEGIN date:veil -->
@@ -28,9 +49,25 @@
             <!-- BEGIN userField -->
             <p class="card-author">
               <!-- BEGIN_IF [{image@path}/nem] -->
-              <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+              <img
+                src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]"
+                width="30"
+                height="30"
+                class="card-author-img"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              >{fieldUserName}
               <!-- ELSE -->
-              <img src="{fieldUserIcon}" width="30" height="30" class="card-author-img" alt="">{fieldUserName}
+              <img
+                src="{fieldUserIcon}"
+                width="30"
+                height="30"
+                class="card-author-img"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              >{fieldUserName}
               <!-- END_IF -->
             </p>
             <!-- END userField -->

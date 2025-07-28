@@ -5,10 +5,10 @@
             <div class="acms-admin-col-md-3">
                 <label for="col-base" class="acms-admin-margin-bottom-mini">ベースカラム数</label>
                 <select id="col-base" name="col-base" class="acms-admin-form-width-full">
-                    <option value="acms-col-12" {col-base:selected#acms-col-12}>1カラム</option>
-                    <option value="acms-col-6" {col-base:selected#acms-col-6}>2カラム</option>
-                    <option value="acms-col-4" {col-base:selected#acms-col-4}>3カラム</option>
-                    <option value="acms-col-3" {col-base:selected#acms-col-3}>4カラム</option>
+                    <option value="acms-g-cols-1" {col-base:selected#acms-g-cols-1}>1カラム</option>
+                    <option value="acms-g-cols-2" {col-base:selected#acms-g-cols-2}>2カラム</option>
+                    <option value="acms-g-cols-3" {col-base:selected#acms-g-cols-3}>3カラム</option>
+                    <option value="acms-g-cols-4" {col-base:selected#acms-g-cols-4}>4カラム</option>
                 </select>
             </div>
             <div class="acms-admin-col-md-3">
@@ -16,10 +16,10 @@
                 <input type="hidden" name="field[]" value="col-base" />
                 <select id="col-sm" name="col-sm" class="acms-admin-form-width-full">
                     <option value="" {col-sm:selected#}>未設定</option>
-                    <option value="acms-col-sm-12" {col-sm:selected#acms-col-sm-12}>1カラム</option>
-                    <option value="acms-col-sm-6" {col-sm:selected#acms-col-sm-6}>2カラム</option>
-                    <option value="acms-col-sm-4" {col-sm:selected#acms-col-sm-4}>3カラム</option>
-                    <option value="acms-col-sm-3" {col-sm:selected#acms-col-sm-3}>4カラム</option>
+                    <option value="acms-g-cols-sm-1" {col-sm:selected#acms-g-cols-sm-1}>1カラム</option>
+                    <option value="acms-g-cols-sm-2" {col-sm:selected#acms-g-cols-sm-2}>2カラム</option>
+                    <option value="acms-g-cols-sm-3" {col-sm:selected#acms-g-cols-sm-3}>3カラム</option>
+                    <option value="acms-g-cols-sm-4" {col-sm:selected#acms-g-cols-sm-4}>4カラム</option>
                 </select>
 
                 <input type="hidden" name="field[]" value="col-sm" />
@@ -29,10 +29,10 @@
 
                 <select name="col-md" class="acms-admin-form-width-full">
                     <option value="" {col-md:selected#}>未設定</option>
-                    <option value="acms-col-md-12" {col-md:selected#acms-col-md-12}>1カラム</option>
-                    <option value="acms-col-md-6" {col-md:selected#acms-col-md-6}>2カラム</option>
-                    <option value="acms-col-md-4" {col-md:selected#acms-col-md-4}>3カラム</option>
-                    <option value="acms-col-md-3" {col-md:selected#acms-col-md-3}>4カラム</option>
+                    <option value="acms-g-cols-md-1" {col-md:selected#acms-g-cols-md-1}>1カラム</option>
+                    <option value="acms-g-cols-md-2" {col-md:selected#acms-g-cols-md-2}>2カラム</option>
+                    <option value="acms-g-cols-md-3" {col-md:selected#acms-g-cols-md-3}>3カラム</option>
+                    <option value="acms-g-cols-md-4" {col-md:selected#acms-g-cols-md-4}>4カラム</option>
                 </select>
                 <input type="hidden" name="field[]" value="col-md" />
             </div>
@@ -40,10 +40,10 @@
                 <label for="col-lg" class="acms-admin-margin-bottom-mini">1024px以上</label>
                 <select id="col-lg" name="col-lg" class="acms-admin-form-width-full">
                     <option value="" {col-lg:selected#}>未設定</option>
-                    <option value="acms-col-lg-12" {col-lg:selected#acms-col-lg-12}>1カラム</option>
-                    <option value="acms-col-lg-6" {col-lg:selected#acms-col-lg-6}>2カラム</option>
-                    <option value="acms-col-lg-4" {col-lg:selected#acms-col-lg-4}>3カラム</option>
-                    <option value="acms-col-lg-3" {col-lg:selected#acms-col-lg-3}>4カラム</option>
+                    <option value="acms-g-cols-lg-1" {col-lg:selected#acms-g-cols-lg-1}>1カラム</option>
+                    <option value="acms-g-cols-lg-2" {col-lg:selected#acms-g-cols-lg-2}>2カラム</option>
+                    <option value="acms-g-cols-lg-3" {col-lg:selected#acms-g-cols-lg-3}>3カラム</option>
+                    <option value="acms-g-cols-lg-4" {col-lg:selected#acms-g-cols-lg-4}>4カラム</option>
                 </select>
                 <input type="hidden" name="field[]" value="col-lg" />
 
@@ -85,13 +85,13 @@
                     let extraValues = [];
 
                     values.forEach(val => {
-                        if (/^acms-col-sm-\d+$/.test(val)) {
+                        if (/^acms-g-cols-sm-\d+$/.test(val)) {
                             smValue = val;
-                        } else if (/^acms-col-md-\d+$/.test(val)) {
+                        } else if (/^acms-g-cols-md-\d+$/.test(val)) {
                             mdValue = val;
-                        } else if (/^acms-col-lg-\d+$/.test(val)) {
+                        } else if (/^acms-g-cols-lg-\d+$/.test(val)) {
                             lgValue = val;
-                        } else if (/^acms-col-\d+$/.test(val)) {
+                        } else if (/^acms-g-cols-\d+$/.test(val)) {
                             baseValue = val;
                         } else {
                             extraValues.push(val);

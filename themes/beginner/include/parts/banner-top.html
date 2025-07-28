@@ -7,9 +7,22 @@
       <p class="section-vertical-text">{module-heading-small}</p>
     </header><!-- END moduleField -->
     <div>
-      <ul class="acms-grid banner-list"><!-- BEGIN banner:loop -->
-        <li class="banner-item {banner:loop.class}"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img -->
-          <a href="{url}" target="{target}" class="banner-link"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive banner-img"></a><!-- END banner#img -->
+      <ul class="acms-cssgrid banner-list<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-3<!-- END_IF -->">
+        <!-- BEGIN banner:loop -->
+        <li class="banner-item">
+          <!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img -->
+          <a href="{url}" target="{target}" class="banner-link">
+            <img
+              src="%{MEDIA_ARCHIVES_DIR}{img}"
+              width="{x}"
+              height="{y}"
+              alt="{alt}"
+              class="acms-img-responsive banner-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <!-- END banner#img -->
         </li><!-- END banner:loop -->
       </ul>
     </div>

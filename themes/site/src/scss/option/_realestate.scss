@@ -219,17 +219,16 @@
 .realestate-map-entry {
   position: relative;
   z-index: 0;
-  margin: 0 calc(var(--unit-gutter-var) / 2) var(--entry-el-margin-sm);
+  margin: 0 0 var(--entry-el-margin-sm);
 }
 
 .realestate-main-image,
 .realestate-sub-images {
-  padding: 0 calc(var(--unit-gutter-var) / 2) 2rem;
+  padding: 0 0 2rem;
 }
 
 .realestate-description {
-  padding: 0 calc(var(--unit-gutter-var) / 2) 2rem;
-
+  padding: 0 0 2rem;
 }
 
 

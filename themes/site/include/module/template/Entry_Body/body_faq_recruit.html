@@ -18,14 +18,13 @@
           <div class="acms-box-medium">
             @include("/admin/entry/revision-info.html")
           </div>
-          <section class="clearfix {entry:loop.class}">
+          <section class="{entry:loop.class}">
             @include("/admin/entry/title.html")
             <!-- BEGIN entry-column:veil -->
             <div class="acms-entry entry-style">
-              <div class="acms-grid entry-style-grid">
+              <div>
                 <!-- BEGIN unit:veil -->
                 @include("/include/unit.html")
-                <hr class="clearHidden" />
                 <!-- END unit:veil -->
                 <!-- 続きを読む -->
                 @include("/include/parts/continue.html")

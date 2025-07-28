@@ -478,7 +478,7 @@ p + p.text-danger,
 ----------------------------- */
 @include acms.editor-style(
   ("hr"),
-  $exclude-classes: ("not-editor-style", "clearHidden"),
+  $exclude-classes: ("not-editor-style"),
 ) {
   margin-bottom: var(--entry-el-margin-md);
   border: 0 solid var(--color-gray70);

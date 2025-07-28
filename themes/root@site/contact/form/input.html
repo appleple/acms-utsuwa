@@ -106,9 +106,9 @@
       <div class="form-control">
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
         <input type="hidden" class="p-country-name" value="Japan">
-        <div class="acms-form-group acms-grid">
-          <div class="acms-col-md-6">
-            <div class="acms-margin-right-mini">
+        <div class="acms-cssgrid" style="--acms-gap: 1.5rem var(--gutter-sm);">
+          <div class="acms-g-col-12 acms-g-col-md-6">
+            <div>
               <label for="postal-code" class="acms-hide-visually">郵便番号</label>
               <input type="text" inputmode="numeric" name="postal-code" autocomplete="postal-code" value="{postal-code}" id="postal-code" class="js-insert-hyphen p-postal-code acms-form-width-full" size="9" maxlength="8" placeholder="例）0123456" data-validator="postal-code">
               <input type="hidden" name="field[]" value="postal-code">
@@ -121,7 +121,7 @@
             </div>
 
           </div>
-          <div class="acms-col-md-6">
+          <div class="acms-g-col-12 acms-g-col-md-6">
             <label for="address-level1" class="acms-hide-visually">都道府県</label>
             <select class="p-region form-select" name="address-level1" autocomplete="address-level1" id="address-level1" data-validator="address-level1">
               <option value="" <!-- BEGIN_IF [{address-level1}/em] --> selected="selected"<!-- END_IF -->>都道府県</option>
@@ -185,7 +185,7 @@
               </div>
             </div>
           </div>
-          <div class="acms-col-12">
+          <div class="acms-g-col-12">
             <label for="address1" class="acms-hide-visually">市区町村、番地</label>
             <input id="address1" type="text" name="address1" autocomplete="address-level2 address-line1" value="{address1}" size="12" class="p-locality p-street-address p-extended-address acms-form-width-full" placeholder="例）〇〇〇市〇〇区〇丁目〇〇-〇" data-validator="address1">
             <input type="hidden" name="field[]" value="address1">
@@ -193,11 +193,10 @@
               <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>市区町村、番地を入力してください。</p>
             </div>
           </div>
-          <div class="acms-col-12">
+          <div class="acms-g-col-12">
             <label for="address2" class="acms-hide-visually">建物名</label>
             <input id="address2" type="text" name="address2" autocomplete="address-line2" value="{address2}" size="12" class="acms-form-width-full" placeholder="例）〇〇〇〇ビル〇F">
             <input type="hidden" name="field[]" value="address2">
-
           </div>
         </div>
         <input type="hidden" name="postal-code:v#required" id="postal-code-v-required">

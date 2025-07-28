@@ -13,13 +13,12 @@
 
     <form action="?step=reapply" method="post" class="js-unload_alert js-validator h-adr acms-form" enctype="multipart/form-data">
       @include("/contact/form/input.html")
-      <div class="form-button-group clearfix">
+      <div class="form-button-group">
         <input type="hidden" name="step" value="confirm" />
         <input type="hidden" name="error" value="reapply" />
 
         <input type="hidden" name="id" value="contactForm" />
         <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg" />
-        <hr class="clearHidden" />
       </div>
     </form>
   </section><!-- END_MODULE Touch_NotEdit -->
@@ -34,12 +33,11 @@
   <p class="form-message">内容をご確認ください</p>
   <form action="?step=reapply" method="post" class="js-unload_alert js-validator h-adr acms-form" enctype="multipart/form-data">
     @include("/contact/form/input.html")
-    <div class="form-button-group clearfix">
+    <div class="form-button-group">
       <input type="hidden" name="step" value="confirm" />
       <input type="hidden" name="error" value="reapply" />
       <input type="hidden" name="id" value="contactForm" />
       <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg" />
-      <hr class="clearHidden" />
     </div>
   </form>
 </div>
@@ -53,7 +51,7 @@
   @include("/contact/form/step.html")
   <p class="form-message">内容をご確認ください。</p>
   @include("/contact/form/confirm.html")
-  <div class="form-button-group clearfix">
+  <div class="form-button-group">
     <form action="" method="post" class="js-unload_alert form-button form-button-return">
       <input type="hidden" name="step" value="reapply" />
       <input type="hidden" name="takeover" value="{takeover}" />
@@ -83,7 +81,7 @@
 
   @include("/contact/form/confirm.html")
 
-  <div class="form-button-group clearfix">
+  <div class="form-button-group">
     <p class="form-message-back"><a href="%{BASE_URL}" class="button is-lg is-width-lg is-bordered">トップページに戻る</a></p>
   </div>
 </div>
@@ -95,7 +93,7 @@
     <h2 class="heading-lg">不正なアクセスです。</h2>
     <div class="form-message-group">
       <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
-      <div class="form-button-group clearfix">
+      <div class="form-button-group">
         <p class="form-message-back"><a href="%{BASE_URL}contact/" class="button is-lg is-width-lg is-bordered">お問い合わせフォームに戻る</a></p>
       </div>
     </div>

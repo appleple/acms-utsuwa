@@ -65,11 +65,6 @@
   }
 }
 
-/* tableの左右marginが.entry-containerのpaddingと干渉しないようリセット */
-.entry-container table {
-  margin-inline: 0;
-}
-
 /* ブロックエディター内のテーブル */
 .tableWrapper {
   margin-bottom: var(--entry-el-margin-md);
@@ -83,8 +78,9 @@
 
 /* テーブルユニット */
 [class*="column-table"] {
-  .entry-container {
-    clear: both;
+  min-width: 0;
+
+  > div {
     margin-block-end: var(--entry-el-margin-md);
     overflow-x: auto;
   }

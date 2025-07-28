@@ -7,8 +7,6 @@
 .#{acms.$entry-class} {
   /* 全てのグループ・ユニット */
   [class*="gu-"] {
-    overflow: hidden;
-
     @include acms.media-breakpoint-up(md) {
       .pricing-group {
         margin-right: 0;
@@ -42,7 +40,7 @@
     }
   }
 
-  .gu-cover {
+  .gu-cover > [class*="gu-"] {
     margin: var(--entry-el-margin-md) calc(50% - 50vw);
     padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
     border: 0;
@@ -90,7 +88,7 @@
       }
     }
 
-    .gu-cover {
+    .gu-cover > [class*="gu-"] {
       position: relative;
       top: var(--entry-el-margin-md);
       margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
