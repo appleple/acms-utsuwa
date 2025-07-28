@@ -118,11 +118,10 @@
   --footer-margin-top-lg: 4.5rem;
 
   /* 　z-index */
-  --zindex-fixed-contents: 9000;
-  --zindex-header: 10000;
-  --zindex-mobile-nav: 10001;
-  --zindex-mobile-nav-btn: 10002;
-
+  --zindex-fixed-contents: 50;
+  --zindex-header: 60;
+  --zindex-mobile-nav: 61;
+  --zindex-mobile-nav-btn: 62;
 
   /* ------------------------------
   余白
