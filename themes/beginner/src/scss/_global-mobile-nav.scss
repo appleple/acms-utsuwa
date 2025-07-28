@@ -261,32 +261,3 @@
     }
   }
 }
-
-/* モバイルメニュー内リンク集
------------------------------- */
-.global-nav-mobile-side-group {
-  width: 100%;
-  padding: 0;
-  font-weight: bold;
-  list-style: none;
-
-  .global-nav-mobile-side-group {
-    margin: 0 0 1.25rem;
-  }
-}
-
-.global-nav-mobile-side-item {
-  font-size: map.get(global.$font-scales, body-s);
-}
-
-.global-nav-mobile-side-link {
-  position: relative;
-  display: block;
-  padding: 0.5rem 0;
-  color: currentcolor;
-  text-decoration: none;
-
-  &:hover {
-    color: inherit;
-  }
-}

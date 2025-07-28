@@ -35,6 +35,9 @@
         <!-- グローバルナビ（モバイル端末用） -->
         @include("/include/header/header-nav-mobile.html")
 
+        <!-- サイト内検索 -->
+        @include("/include/parts/search-general.html", {"search-id":"mobile-nav-search"})
+
         <div class="global-nav-mobile-navbar-footer">
           <!-- SNSアカウント一覧 -->
           @include("/include/parts/sns-accounts.html")
