@@ -6,8 +6,6 @@
 　　ヘッダー
 ------------------------------ */
 .header-wrap {
-  --global-nav-mobile-menu-btn-width: 3.5rem;
-
   position: relative;
   z-index: var(--zindex-header);
 }
@@ -23,7 +21,7 @@
   max-width: var(--container);
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--global-nav-mobile-menu-btn-width);
+  padding-right: var(--header-height-fixed);
   padding-left: var(--gutter-sm);
 }
 
@@ -35,7 +33,7 @@
 }
 
 .header-logo {
-  max-height: var(--global-nav-mobile-menu-btn-width);
+  max-height: var(--header-height-fixed);
 }
 
 // SP時レイアウト：ヘッダーを画面上部に固定、ロゴを中央に配置し、オフキャンバスボタンを右端に配置

@@ -6,8 +6,6 @@
 　　ヘッダー
 ------------------------------ */
 .header-wrap {
-  --global-nav-mobile-menu-btn-width: 3.5rem;
-
   position: relative;
   z-index: var(--zindex-header);
 
@@ -139,7 +137,7 @@
   }
 
   .header-logo {
-    max-height: var(--global-nav-mobile-menu-btn-width);
+    max-height: var(--header-height-fixed);
   }
 
   .header-item-wrap {
@@ -217,7 +215,7 @@
   }
 
   .header-logo {
-    max-height: var(--global-nav-mobile-menu-btn-width);
+    max-height: var(--header-height-fixed);
   }
 
   .header-item-wrap {
@@ -255,8 +253,8 @@
     top: 0;
     right: 0;
     z-index: var(--zindex-mobile-nav);
-    width: var(--global-nav-mobile-menu-btn-width);
-    height: var(--global-nav-mobile-menu-btn-width);
+    width: var(--header-height-fixed);
+    height: var(--header-height-fixed);
     background-color: #FFF;
     border: none;
 
