@@ -195,6 +195,7 @@ $(() => {
       closeSearch();
     }
   });
+
   /* 外部リンクボタンにアイコンを付ける */
   const anchors = document.querySelectorAll('.text-btn a');
 
