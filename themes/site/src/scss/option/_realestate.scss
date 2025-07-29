@@ -173,13 +173,15 @@
 }
 
 /* 検索結果 */
-
 .search-results {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 0 0 2rem;
 
+  &:empty {
+    display: none;
+  }
 }
 
 .search-amount {

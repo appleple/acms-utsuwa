@@ -7,7 +7,7 @@
 ------------------------------ */
 .local-nav-wrap {
   position: relative;
-  padding: 0 0 2rem;
+  margin-bottom: 2rem;
 
   &::after {
     position: absolute;
@@ -63,6 +63,6 @@
 
 @include acms.media-breakpoint-up(md) {
   .local-nav-wrap {
-    padding: 0 0 3rem;
+    margin-bottom: 3rem;
   }
 }

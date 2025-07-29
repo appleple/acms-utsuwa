@@ -6,37 +6,26 @@
 /* ------------------------------
 　　CTA（コール・トゥ・アクション）
 ------------------------------ */
-
 .cta {
-  padding: 1.5rem 0;
+  margin-bottom: 3rem;
+  padding-top: 3rem;
   text-align: center;
-
-  &.is-bg {
-    margin: 0;
-    padding: 1.5rem 0;
-    background: var(--color-primary);
-  }
 }
-
 
 @include acms.media-breakpoint-up(md) {
   .cta {
-    padding: 4.5rem 0 6.5rem;
-
-    /* bodyでつけているクラス：blog%{BID}-%{VIEW} */
-    .blog1-top & {
-      padding: 6.5rem 0;
-    }
+    margin-bottom: 6.5rem;
+    padding-top: 6.5rem;
   }
 }
 
-/* シンプルなCTA */
+/* シンプルなCTA
+------------------------------ */
 .cta-general {
   padding: 3rem 1rem;
   line-height: var(--line-height-base);
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
-
 }
 
 .cta-general-title {
@@ -83,7 +72,6 @@
 
 @include acms.media-breakpoint-up(md) {
   .cta-general {
-    margin-top: 1rem;
     padding: 5rem 2rem;
     border-radius: var(--border-radius-xxl);
   }
@@ -98,11 +86,11 @@
   }
 }
 
-/* 背景画像付きのCTA */
+/* 背景画像付きのCTA
+------------------------------ */
 .cta-visual {
   position: relative;
   z-index: 1;
-  margin-top: 1rem;
   padding: 4rem 0 3rem;
   color: var(--color-white);
   text-align: center;
@@ -202,7 +190,6 @@
 
 @include acms.media-breakpoint-up(md) {
   .cta-visual {
-    margin-top: 0;
     padding: 5rem 0;
 
     &:has(+ .footer) {

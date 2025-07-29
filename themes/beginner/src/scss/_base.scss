@@ -157,6 +157,7 @@ a {
 @include acms.media-breakpoint-up(lg) {
   .content-wrapper {
     padding-top: 6.5rem;
+
     &.two-columns {
       display: flex;
       justify-content: space-between;

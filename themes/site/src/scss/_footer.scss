@@ -11,14 +11,14 @@
   margin: var(--footer-margin-top-md) 0 0 0;
   border-top: var(--border-width-sm) solid var(--color-gray20);
 
-  .cta-visual+&,
-  .cta+& {
-    margin-top: 0;
-  }
-
   .form-search-button {
     min-width: initial;
   }
+}
+
+.cta + .footer,
+.cta-visual + .footer {
+  margin-top: 0;
 }
 
 .footer-group {
@@ -66,11 +66,11 @@
 @include acms.media-breakpoint-up(md) {
   .footer {
     margin: var(--footer-margin-top-lg) 0 0 0;
+  }
 
-    .cta-visual &,
-    .cta & {
-      margin-top: 0;
-    }
+  .cta + .footer,
+  .cta-visual + .footer {
+    margin-top: 0;
   }
 
   .footer-group {
