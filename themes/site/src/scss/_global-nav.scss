@@ -88,34 +88,28 @@
   .global-nav-item.stay>&::after {
     transform: scaleX(1);
   }
+}
 
-  // CTA用のスタイル
-  &.is-cta {
-    height: var(--header-height);
-    padding: 0 2rem;
-    color: var(--color-white);
-    background: var(--color-primary);
-    transition: background-color 0.2s;
+// CTA用のスタイル
+.global-nav-link.is-cta {
+  height: var(--header-height);
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0 2rem;
+  color: var(--color-white);
+  background: var(--color-primary);
+  transition: background-color 0.2s;
 
-    &::after {
-      content: none;
-    }
-
-    &:hover {
-      background: var(--color-primary-hover);
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+  &::after {
+    content: none;
   }
 
-  .global-nav-item:last-child &.is-cta {
-    margin-right: 0;
+  &:hover {
+    background: var(--color-primary-hover);
   }
 }
 
-.global-nav-item>.global-nav-list {
+.global-nav-item > .global-nav-list {
   position: absolute;
   top: 100%;
   right: 0;
@@ -171,8 +165,8 @@
   }
 }
 
-.global-nav-item:hover>.global-nav-list,
-.global-nav-item:focus-within>.global-nav-list {
+.global-nav-item:hover > .global-nav-list,
+.global-nav-item:focus-within > .global-nav-list {
   display: flex;
 }
 
@@ -183,7 +177,6 @@
 
 /* ロゴ中央・グローバルナビが下
 ------------------------------ */
-
 .nav-bottom,
 .logo-center {
   .global-nav {
@@ -192,7 +185,7 @@
     margin-left: auto;
 
     @include acms.media-breakpoint-up(lg) {
-      padding: calc(var(--col-gutter) * 0.75) var(--col-gutter) 1.5rem;
+      padding: 1.5rem var(--col-gutter);
     }
   }
 
@@ -216,12 +209,16 @@
 
   .global-nav-link {
     height: 3rem;
+  }
 
-    &.is-cta {
-      width: 100%;
-      height: 3rem;
-      margin: 0;
-    }
+  .global-nav-link.is-cta {
+    width: 100%;
+    height: 3rem;
+    margin: 0 1.5rem;
+  }
+
+  .global-nav-item:last-child .global-nav-link.is-cta {
+    margin-right: 0;
   }
 }
 
@@ -229,10 +226,10 @@
   .nav-bottom,
   .logo-center {
     .global-nav {
-      padding-right: calc(var(--col-gutter) * 1.5);
-      padding-left: calc(var(--col-gutter) * 1.5);
+      padding-right: var(--gutter-lg);
+      padding-left: var(--gutter-lg);
 
-      >.global-nav-list {
+      > .global-nav-list {
         .global-nav-item {
           border-right: var(--border-width-sm) solid var(--color-gray30);
 
@@ -280,9 +277,6 @@
           }
         }
       }
-
     }
-
   }
-
 }

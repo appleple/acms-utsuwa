@@ -5,27 +5,24 @@
 /* ------------------------------
 　　ヘッダー
 ------------------------------ */
-.header {
-  box-sizing: border-box;
-  width: 100%;
-  padding-right: 3.5rem;
-  padding-left: 1rem;
-  background: var(--color-white);
-}
-
 .header-wrap {
   position: relative;
   z-index: var(--zindex-header);
 }
 
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--color-white);
+}
+
 .header-item-wrap {
-  flex: 1;
-  align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
   max-width: var(--container);
   margin-right: auto;
   margin-left: auto;
+  padding-right: var(--header-height-fixed);
+  padding-left: var(--gutter-sm);
 }
 
 .header-title {
@@ -36,13 +33,13 @@
 }
 
 .header-logo {
-  max-height: 3.5rem;
+  max-height: var(--header-height-fixed);
 }
 
 // SP時レイアウト：ヘッダーを画面上部に固定、ロゴを中央に配置し、オフキャンバスボタンを右端に配置
 @include acms.media-breakpoint-down(lg) {
   .header-wrap {
-    height: var(--header-height-fixed);
+    height: var(--header-height);
   }
 
   .header {
@@ -51,13 +48,18 @@
     align-items: center;
     justify-content: center;
     max-width: 100%;
-    height: var(--header-height-fixed);
+    height: var(--header-height);
+    box-shadow: var(--box-shadow);
+  }
+
+  .header-item-wrap {
+    flex: 1;
   }
 }
 
-@include acms.media-breakpoint-up(md) {
-  .header {
-    padding-left: 3.5rem;
+@include acms.media-breakpoint-up(sm) {
+  .header-item-wrap {
+    padding-left: var(--gutter-md);
   }
 }
 
@@ -69,7 +71,7 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 240px 1fr;
     align-items: center;
-    padding: 1.5rem calc(var(--col-gutter) * 1.5) 0;
+    padding: 1.5rem var(--gutter-lg) 0;
     text-align: center;
   }
 
