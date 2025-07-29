@@ -474,10 +474,6 @@ a {
 /* ------------------------------
 　　バナー
 ------------------------------ */
-.banner-list {
-  padding: 0;
-  list-style: none;
-}
 .js .js-animation .banner-list {
   opacity: 0;
   will-change: transform, opacity;
@@ -981,13 +977,6 @@ a:hover .icon-button svg {
 /* ------------------------------
 　　カード
 ------------------------------ */
-.card-list {
-  --card-space-y: 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .card-item {
   display: flex;
 }
@@ -997,6 +986,7 @@ a:hover .icon-button svg {
 }
 
 .card {
+  --card-space-y: 1rem;
   position: relative;
   display: flex;
   width: 100%;
@@ -1240,14 +1230,6 @@ a:hover .icon-button svg {
     font-weight: bold;
   }
 }
-@media (min-width: 64rem) {
-  .card-list {
-    /* blog%{BID}-%{VIEW} */
-  }
-  .blog1-top .card-list {
-    justify-content: center;
-  }
-}
 .label-triangle {
   position: absolute;
   top: 0;
@@ -1294,6 +1276,7 @@ a:hover .icon-button svg {
 @media (min-width: 48rem) {
   .cta {
     padding: 4.5rem 0 6.5rem;
+    /* bodyでつけているクラス：blog%{BID}-%{VIEW} */
   }
   .blog1-top .cta {
     padding: 6.5rem 0;
@@ -2970,7 +2953,7 @@ input::placeholder {
 @media (min-width: 30rem) {
   .media-list {
     display: block;
-    margin: -1rem calc(var(--unit-gap-x, 1.25rem) / -2) 0;
+    margin: -1rem 0 0;
   }
   .media-link {
     position: relative;
