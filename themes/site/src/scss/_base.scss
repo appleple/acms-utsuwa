@@ -89,17 +89,13 @@ a {
 /* レイアウト
 ----------------------------- */
 .content-wrapper {
-  padding-top: 4rem;
+  padding-top: var(--page-title-space-bottom);
 }
 
 @include acms.media-breakpoint-up(lg) {
-  .content-wrapper {
-    padding-top: 6.5rem;
-
-    &.two-columns {
-      display: flex;
-      justify-content: space-between;
-    }
+  .content-wrapper.two-columns {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

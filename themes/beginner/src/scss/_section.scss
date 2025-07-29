@@ -6,7 +6,7 @@
 　　セクション
 ------------------------------ */
 .section {
-  padding: 3rem 0;
+  padding-block: var(--section-space-y);
   overflow-x: hidden;
 
   &.is-bg {
@@ -14,24 +14,13 @@
   }
 }
 
-@include acms.media-breakpoint-up(md) {
-  .section {
-    padding: 5rem 0;
-  }
-}
-
 @include acms.media-breakpoint-up(lg) {
-  .section {
-    padding: 6.5rem 0;
+  .section.news-banner {
+    padding-block-end: 7.75rem;
+  }
 
-    &.news-banner {
-      padding: 6.5rem 0 7.75rem;
-
-    }
-
-    &.banner {
-      padding: 6.5rem 0 4.5rem;
-    }
+  .section.banner {
+    padding-block-end: 4.5rem;
   }
 }
 

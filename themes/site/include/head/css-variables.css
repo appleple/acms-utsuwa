@@ -101,6 +101,19 @@
 
   /* ページタイトル */
   --page-title-filter: rgba(0, 0, 0, 0.5);
+  --page-title-space-bottom: 4rem;
+  @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
+    --page-title-space-bottom: 6.5rem;
+  }
+
+  /* セクション上下余白 */
+  --section-space-y: 3rem;
+  @media (min-width: 48rem) { /* _acms-common.scss : $breakpoint-md-min */
+    --section-space-y: 5rem;
+  }
+  @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
+    --section-space-y: 6.5rem;
+  }
 
   /* ヘッダー */
   --header-height: 3.5rem;
