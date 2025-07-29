@@ -1,0 +1,33 @@
+@use "../global/acms-common" as acms;
+
+/* ------------------------------
+ ベーススタイル
+------------------------------ */
+
+.#{acms.$entry-class} {
+  // グリッドのカラム間余白を設定
+  .acms-cssgrid {
+    --acms-gap: var(--unit-gap-x);
+  }
+
+  // スタックの余白を設定
+  .acms-stack,
+  .acms-vstack,
+  .acms-hstack {
+    --acms-stack-spacing: var(--unit-gap-x);
+  }
+}
+
+// ユニット全体のレイアウト
+.#{acms.$entry-class} {
+  /* コンテンツの初めの要素には上余白をつけない */
+  & > *:first-child,
+  & > *:first-child.js-edit_inplace > *:first-child, //ダイレクト編集時
+  & > *:first-child.js-edit_inplace-hovering + .js-edit_inplace > *:first-child, //ダイレクト編集時にホバー
+  .acms-entry-unit-full > *:first-child, //ユニットグループ
+  .acms-entry-unit-full > *:first-child.js-edit_inplace > *:first-child, //ユニットグループ＆ダイレクト編集時
+  .acms-entry-unit-full > *:first-child.js-edit_inplace-hovering + .js-edit_inplace > *:first-child {
+    //ユニットグループ＆ダイレクト編集時にホバー
+    margin-block-start: 0;
+  }
+}

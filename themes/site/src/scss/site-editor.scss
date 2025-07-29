@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+// ベーススタイル
+@use "./editor/base";
+
 // 編集画面設定
 @use "./editor/field";
 
