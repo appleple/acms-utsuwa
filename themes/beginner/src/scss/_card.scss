@@ -6,7 +6,9 @@
 　　カード
 ------------------------------ */
 .card-list {
-  margin: -1rem 0 2rem;
+  --card-space-y: 1rem;
+
+  margin: calc(var(--card-space-y) * -1) 0 2rem;
   padding: 0;
   list-style: none;
 }
@@ -37,7 +39,7 @@
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
-  padding: 1rem;
+  padding: var(--card-space-y);
   text-decoration: none;
 
   @include global.link-card(var(--color-text));
