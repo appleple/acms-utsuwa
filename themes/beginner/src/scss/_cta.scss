@@ -23,6 +23,7 @@
   .cta {
     padding: 4.5rem 0 6.5rem;
 
+    /* bodyでつけているクラス：blog%{BID}-%{VIEW} */
     .blog1-top & {
       padding: 6.5rem 0;
     }
