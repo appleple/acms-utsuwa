@@ -86,11 +86,11 @@
   ------------------------------- */
 
   /* 1120px */
-  --container: calc(70rem + var(--gutter-lg) * 2);
+  --container: calc(70rem + var(--container-space-x) * 2);
   /* 928px */
-  --container-md: calc(58rem + var(--gutter-lg) * 2);
+  --container-md: calc(58rem + var(--container-space-x) * 2);
   /* 720px */
-  --container-sm: calc(45rem + var(--gutter-lg) * 2);
+  --container-sm: calc(45rem + var(--container-space-x) * 2);
 
   /* 2カラム */
   --width-main-container: calc(100% - var(--width-side-container) - var(--gutter-md) * 1.5);
@@ -124,6 +124,15 @@
   --gutter-sm: 1rem;
   --gutter-md: 2rem;
   --gutter-lg: 3rem;
+
+  /* コンテナー左右余白 */
+  --container-space-x: 1rem;
+  @media (min-width: 30rem) { /* _acms-common.scss : $breakpoint-sm-min */
+    --container-space-x: 2rem;
+  }
+  @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
+    --container-space-x: 3rem;
+  }
 
   /* グリッドの間隔 */
   --col-gutter: var(--gutter-md);
