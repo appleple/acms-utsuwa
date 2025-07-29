@@ -6,7 +6,7 @@
 <section>
   <h3 class="heading-md">%{CATEGORY_NAME}のイベント</h3>
   @include("/admin/module/setting.html")
-  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--acms-gap: 0;">
+  <ul class="acms-m-0 acms-p-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--acms-gap: 0;">
     <!-- BEGIN entry:loop -->
     <li class="card-item">
       <div class="card">
