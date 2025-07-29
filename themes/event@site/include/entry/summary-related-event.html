@@ -11,33 +11,35 @@
     <li class="card-item">
       <div class="card">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap">
-            <!-- BEGIN_IF [{main-image@path}/nem] -->
-            <img
-              src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]"
-              alt="{main-image@alt}"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            ><!-- ELSE -->
-            <img
-              src="/images/noimage.png"
-              alt="noimage画像"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy" decoding="async"
-            >
-            <!-- END_IF -->
-            <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->"> <!-- BEGIN category:veil --><!-- BEGIN categoryField -->{fieldCategoryName}<!-- END categoryField --><!-- END category:veil --></span>
-          </div>
-          <div class="card-text-wrap">
-            <h2 class="card-title">{title}</h2>
-            <!-- BEGIN summary:veil -->
-            <p class="card-text"><time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <span class="event-time">{event-time}</span><!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
-            </p>
+          <div class="card-link-inner">
+            <div class="card-img-wrap">
+              <!-- BEGIN_IF [{main-image@path}/nem] -->
+              <img
+                src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(455,256)]"
+                alt="{main-image@alt}"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              ><!-- ELSE -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy" decoding="async"
+              >
+              <!-- END_IF -->
+              <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->"> <!-- BEGIN category:veil --><!-- BEGIN categoryField -->{fieldCategoryName}<!-- END categoryField --><!-- END category:veil --></span>
+            </div>
+            <div class="card-text-wrap">
+              <h2 class="card-title">{title}</h2>
+              <!-- BEGIN summary:veil -->
+              <p class="card-text"><time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <span class="event-time">{event-time}</span><!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+              </p>
+            </div>
           </div>
         </a>
       </div>

@@ -6,63 +6,65 @@
     <li class="<!-- BEGIN_IF [{entry:loop.class}/nem] -->{entry:loop.class}<!-- ELSE -->acms-g-col-12 acms-g-col-sm-6 acms-g-col-md-3<!-- END_IF --> card-item">
       <div class="card">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap">
-            <!-- BEGIN image:veil -->
-            <img
-              src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
-              alt="{alt}"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            >
-            <!-- END image:veil -->
-            <!-- BEGIN noimage -->
-            <img
-              src="/images/noimage.png"
-              alt="noimage画像"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            >
-            <!-- END noimage -->
+          <div class="card-link-inner">
+            <div class="card-img-wrap">
+              <!-- BEGIN image:veil -->
+              <img
+                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+                alt="{alt}"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END image:veil -->
+              <!-- BEGIN noimage -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END noimage -->
+            </div>
+            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+            <h2 class="card-title">{title}</h2>
+            <!-- BEGIN summary:veil -->
+            <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
+            <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+            <p class="card-text">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+            <!-- BEGIN tag:veil -->
+            <p class="card-text"><!-- BEGIN tag:loop -->#{name}<!-- BEGIN tagGlue --> / <!-- END tagGlue --><!-- END tag:loop --></p><!-- BEGIN tag:veil -->
+            <!-- BEGIN userField -->
+            <p class="card-author">
+              <!-- BEGIN_IF [{image@path}/nem] -->
+              <img
+                src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]"
+                alt="{image@alt}"
+                width="30"
+                height="30"
+                class="card-author-img"
+                loading="lazy"
+                decoding="async"
+              >{fieldUserName}
+              <!-- ELSE -->
+              <img
+                src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]"
+                alt="{fieldUserIcon@alt}"
+                width="30"
+                height="30"
+                class="card-author-img"
+                loading="lazy"
+                decoding="async"
+              >{fieldUserName}
+              <!-- END_IF -->
+            </p>
+            <!-- END userField -->
           </div>
-          <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
-          <h2 class="card-title">{title}</h2>
-          <!-- BEGIN summary:veil -->
-          <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
-          <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-          <p class="card-text">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
-          <!-- BEGIN tag:veil -->
-          <p class="card-text"><!-- BEGIN tag:loop -->#{name}<!-- BEGIN tagGlue --> / <!-- END tagGlue --><!-- END tag:loop --></p><!-- BEGIN tag:veil -->
-          <!-- BEGIN userField -->
-          <p class="card-author">
-            <!-- BEGIN_IF [{image@path}/nem] -->
-            <img
-              src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]"
-              alt="{image@alt}"
-              width="30"
-              height="30"
-              class="card-author-img"
-              loading="lazy"
-              decoding="async"
-            >{fieldUserName}
-            <!-- ELSE -->
-            <img
-              src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(30,30)]"
-              alt="{fieldUserIcon@alt}"
-              width="30"
-              height="30"
-              class="card-author-img"
-              loading="lazy"
-              decoding="async"
-            >{fieldUserName}
-            <!-- END_IF -->
-          </p>
-          <!-- END userField -->
         </a>
       </div>
     </li><!-- END entry:loop -->

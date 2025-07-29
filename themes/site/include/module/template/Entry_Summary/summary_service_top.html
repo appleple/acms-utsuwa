@@ -17,22 +17,24 @@
         <li class="js-animation-row card-item">
           <div class="card is-lg">
             <a href="{url}" class="card-link">
-              <div class="card-img-wrap">
-                <img
-                  src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,345)]"
-                  width="580"
-                  height="345"
-                  alt="{thumbnail-image@alt}"
-                  class="acms-img-responsive card-img"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </div>
-              <div class="card-text-wrap">
-                <h3 class="card-title">{title}</h3>
-                <p class="card-text">{page-description}</p>
-                <div class="card-action">
-                  <p class="card-read-more">詳しく知る <span class="icon-button">@include("/images/icon-button.svg")</span></p>
+              <div class="card-link-inner">
+                <div class="card-img-wrap">
+                  <img
+                    src="%{MEDIA_ARCHIVES_DIR}{thumbnail-image@path}[resizeImg(580,345)]"
+                    width="580"
+                    height="345"
+                    alt="{thumbnail-image@alt}"
+                    class="acms-img-responsive card-img"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                </div>
+                <div class="card-text-wrap">
+                  <h3 class="card-title">{title}</h3>
+                  <p class="card-text">{page-description}</p>
+                  <div class="card-action">
+                    <p class="card-read-more">詳しく知る <span class="icon-button">@include("/images/icon-button.svg")</span></p>
+                  </div>
                 </div>
               </div>
             </a>

@@ -14,70 +14,72 @@
     <li class="card-item">
       <div class="card">
         <a href="{url}" class="card-link">
-          <div class="card-img-wrap">
-            <!-- BEGIN_IF [{main-img@path}/nem] -->
-            <img
-              src="%{MEDIA_ARCHIVES_DIR}{main-img@path}[resizeImg(455,256)]"
-              alt="{main-img@alt}"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            >
-            <!-- ELSE -->
-            <!-- BEGIN image:veil -->
-            <img
-              src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
-              alt="{alt}"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            >
-            <!-- END image:veil -->
-            <!-- BEGIN noimage -->
-            <img
-              src="/images/noimage.png"
-              alt="noimage画像"
-              class="acms-img-responsive card-img"
-              width="455"
-              height="256"
-              loading="lazy"
-              decoding="async"
-            >
-            <!-- END noimage -->
-            <!-- END_IF -->
-            <!-- BEGIN new -->
-            <!-- BEGIN moduleField -->
-            <span class="label-triangle {new-label-position}">@include("/images/label-new-triangle.svg")</span>
-            <!-- END moduleField -->
-            <!-- END new -->
-          </div>
-          <div class="card-text-wrap">
-            <!-- BEGIN_IF [{works-copy}/nem] -->
-            <h2 class="card-title">{works-copy}</h2>
-            <p class="card-text is-bold">{title}</p>
-            <!-- ELSE -->
-            <h2 class="card-title">{title}</h2>
-            <!-- END_IF -->
-            <ul class="tag-list"><!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-              <li class="label">
-                {fieldCategoryName}</li><!-- END categoryField --><!-- BEGIN category:veil -->
-              <!-- BEGIN industry:veil -->
-              <li class="label">
-              <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
-              <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
-              <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
-              <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
-              <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
-              <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
-              <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
-              <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
-              <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
-              </li><!-- END industry:veil -->
-            </ul>
+          <div class="card-link-inner">
+            <div class="card-img-wrap">
+              <!-- BEGIN_IF [{main-img@path}/nem] -->
+              <img
+                src="%{MEDIA_ARCHIVES_DIR}{main-img@path}[resizeImg(455,256)]"
+                alt="{main-img@alt}"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- ELSE -->
+              <!-- BEGIN image:veil -->
+              <img
+                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+                alt="{alt}"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END image:veil -->
+              <!-- BEGIN noimage -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END noimage -->
+              <!-- END_IF -->
+              <!-- BEGIN new -->
+              <!-- BEGIN moduleField -->
+              <span class="label-triangle {new-label-position}">@include("/images/label-new-triangle.svg")</span>
+              <!-- END moduleField -->
+              <!-- END new -->
+            </div>
+            <div class="card-text-wrap">
+              <!-- BEGIN_IF [{works-copy}/nem] -->
+              <h2 class="card-title">{works-copy}</h2>
+              <p class="card-text is-bold">{title}</p>
+              <!-- ELSE -->
+              <h2 class="card-title">{title}</h2>
+              <!-- END_IF -->
+              <ul class="tag-list"><!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+                <li class="label">
+                  {fieldCategoryName}</li><!-- END categoryField --><!-- BEGIN category:veil -->
+                <!-- BEGIN industry:veil -->
+                <li class="label">
+                <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
+                <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
+                <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
+                <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
+                <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
+                <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
+                <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
+                <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
+                <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
+                </li><!-- END industry:veil -->
+              </ul>
+            </div>
           </div>
         </a>
       </div>
