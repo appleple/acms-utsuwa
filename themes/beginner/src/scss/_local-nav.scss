@@ -19,10 +19,6 @@
     background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
     content: "";
   }
-
-  .page-title-wrapper+& {
-    margin-top: -(var(--page-title-margin-bottom));
-  }
 }
 
 .local-nav-inner {
@@ -68,10 +64,5 @@
 @include acms.media-breakpoint-up(md) {
   .local-nav-wrap {
     padding: 0 0 3rem;
-
-    .page-title-wrapper+& {
-      margin-top: -(var(--page-title-margin-bottom-md));
-    }
   }
-
 }

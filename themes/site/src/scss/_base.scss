@@ -160,17 +160,12 @@ a {
 /* レイアウト
 ----------------------------- */
 .content-wrapper {
-  padding: var(--page-title-margin-bottom) 0 0;
-
-  &.is-_top {
-    padding: 0;
-  }
+  padding-top: 4rem;
 }
 
 @include acms.media-breakpoint-up(lg) {
   .content-wrapper {
-    padding: var(--page-title-margin-bottom-md) 0 0;
-
+    padding-top: 6.5rem;
     &.two-columns {
       display: flex;
       justify-content: space-between;

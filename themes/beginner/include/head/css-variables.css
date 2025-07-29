@@ -99,13 +99,6 @@
   --width-side-container: 19rem;
 
   /* ページタイトル */
-  --page-title-height: 7.5rem;
-  --page-title-height-image: 10rem;
-  --page-title-margin-bottom: 3rem;
-  --page-title-height-md: 17.5rem;
-  --page-title-height-image-md: 19rem;
-  --page-title-margin-bottom-md: 5.5rem;
-
   --page-title-filter: rgba(0, 0, 0, 0.5);
 
   /* ヘッダー */
