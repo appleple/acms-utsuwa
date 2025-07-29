@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "../../global/acms-common" as acms;
 @use "../../global/common" as global;
 
 /* ------------------------------
@@ -12,7 +13,7 @@
 
 /* 上下余白 */
 :where(.media-image-block),
-:where(.acms-admin-block-editor-body) .node-imageBlock,
+:where(.#{acms.$entry-class}) .node-imageBlock,
 [class*="column-image"],
 [class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])),
 [class*="column-eximage"] {

@@ -7,7 +7,6 @@
 ------------------------------ */
 
 /* レイアウト */
-:where(.acms-admin-block-editor-body) :where([data-type="columns"]),
 :where(.#{acms.$entry-class}) :where([data-type="columns"]) {
   display: grid;
   grid-auto-flow: column;
@@ -26,8 +25,8 @@
 }
 
 /* 管理画面側 */
-:where(.acms-admin-block-editor-body) :where([data-type="columns"]) {
-  gap: 1rem; // 管理画面では余白が広くなりすぎないよう固定値を指定
+:where(.acms-admin-block-editor) :where([data-type="columns"]) {
+  gap: 1rem !important; // 管理画面では余白が広くなりすぎないよう固定値を指定
 }
 
 /* 閲覧画面側 */
@@ -40,7 +39,6 @@
 /* 子要素の最初と最後の上下マージンをリセット
 /* 上書きのため詳細度高め（0,0,2,0）
 ----------------------------- */
-:where(.acms-admin-block-editor-body),
 :where(.#{acms.$entry-class}) {
   [data-type="column"] > * {
     &:first-child {

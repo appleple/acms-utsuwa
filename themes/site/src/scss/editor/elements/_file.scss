@@ -8,7 +8,7 @@
  - ファイル
  ※ media-downloadは動的、storageは静的書き出しに対応
 ------------------------------ */
-:where(.acms-admin-block-editor-body) .node-fileBlock,
+:where(.#{acms.$entry-class}) .node-fileBlock,
 .media-file-block,
 [class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]),
 [class*="column-file"] {

@@ -7,17 +7,14 @@
 ------------------------------ */
 
 /* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
-:where(.acms-admin-block-editor-body) .tableWrapper {
+:where(.acms-admin-block-editor) .tableWrapper {
   th,
   td {
-    min-width: 100px; /* 入力しやすいよう最小幅を確保 */
+    min-width: 100px; /* 管理画面では入力しやすいよう最小幅を確保 */
   }
 }
 
-@include acms.editor-style(
-  ("table"),
-  $extension-contexts: (".tableWrapper", '[class*="column-table"]'),
-) {
+@include acms.editor-style(("table")) {
   margin: 0 0 var(--entry-el-margin-md);
   background-color: var(--color-white);
   border: 0; /* リセット用 */

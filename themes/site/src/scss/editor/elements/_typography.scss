@@ -8,7 +8,10 @@
 
 /* リンク
 ----------------------------- */
-@mixin _text-link-common {
+@include acms.editor-style(
+  ("a"),
+  $exclude-classes: ("not-editor-style", "media-image-block", "column-image", "column-media", "column-eximage")
+) {
   color: var(--color-link);
   text-decoration: none;
   border-bottom: var(--border-width-sm) dotted var(--color-link);
@@ -37,30 +40,10 @@
   }
 }
 
-@each $tag in acms.$unit-text-tags {
-  @include acms.editor-style($tag) {
-    a {
-      @include _text-link-common;
-    }
-  }
-}
-
-:where(.entryFormLiteEditor) {
-  a {
-    @include _text-link-common;
-
-    /* acms-system.css スタイルの上書き */
-    &:hover {
-      color: var(--color-link);
-    }
-  }
-}
-
 /* em
 ----------------------------- */
 @include acms.editor-style(
   ("em"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   font-style: normal;
   background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
@@ -70,7 +53,6 @@
 ----------------------------- */
 @include acms.editor-style(
   ("strong"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   font-weight: bold;
 }
@@ -87,7 +69,6 @@
 
 @include acms.editor-style(
   ("mark"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   color: inherit;
   background-color: var(--color-highlight);
@@ -101,7 +82,6 @@
 @include acms.editor-style(
   ("code"),
   $exclude-classes: ("not-editor-style", "code-highlight"),
-  $extension-contexts: (".acms-admin-block-editor-body", ".entryFormLiteEditor")
 ) {
   margin-inline: 0.25rem;
   padding: 0.0.25rem;
@@ -110,22 +90,6 @@
   background-color: var(--color-white);
   border: var(--border-width-sm) solid currentcolor;
   border-radius: var(--border-radius-sm);
-}
-
-/* 単語区切り
------------------------------ */
-
-/* LiteEditor内での表示用 */
-:where(.entryFormLiteEditor) {
-  .text-word-break {
-    display: inline-block;
-
-    &::after {
-      margin: 0 2px;
-      color: var(--color-gray40);
-      content: "|";
-    }
-  }
 }
 
 /* 見出し
@@ -445,8 +409,9 @@ p + p.text-danger,
 
 /* ソースコード
 ----------------------------- */
-.acms-admin-block-editor-body pre,
-.code-highlight {
+@include acms.editor-style(
+  ("pre"),
+) {
   max-width: 100%;
   padding: var(--entry-el-padding-sm);
   overflow: auto;
@@ -478,7 +443,6 @@ p + p.text-danger,
 ----------------------------- */
 @include acms.editor-style(
   ("hr"),
-  $exclude-classes: ("not-editor-style"),
 ) {
   margin-bottom: var(--entry-el-margin-md);
   border: 0 solid var(--color-gray70);

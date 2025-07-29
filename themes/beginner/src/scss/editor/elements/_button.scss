@@ -7,7 +7,7 @@
 ------------------------------ */
 
 /* 上下余白 */
-:where(.acms-admin-block-editor-body) .node-linkButton,
+:where(.#{acms.$entry-class}) .node-linkButton,
 .link-button-block {
   margin-block: 0 var(--entry-el-margin-md);
 }
