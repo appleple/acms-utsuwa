@@ -1,10 +1,10 @@
 <!-- BEGIN_MODULE Media_Banner id="{{module_id}}" -->
  <section class="section-side">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
-      <ul class="banner-list"><!-- BEGIN banner:loop -->
-        <li class="banner-item"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img -->
-          <a href="{url}" target="{target}" class="banner-link"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive banner-img"></a><!-- END banner#img -->
-        </li><!-- END banner:loop -->
-      </ul>
+    <ul class="banner-list acms-m-0 acms-p-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3 acms-g-cols-lg-1<!-- END_IF -->"><!-- BEGIN banner:loop -->
+      <li class="banner-item"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img -->
+        <a href="{url}" target="{target}" class="banner-link"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive banner-img"></a><!-- END banner#img -->
+      </li><!-- END banner:loop -->
+    </ul>
   </section>
 <!-- END_MODULE Media_Banner -->

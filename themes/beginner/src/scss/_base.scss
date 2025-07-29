@@ -35,111 +35,38 @@ a {
 
 /* コンテナー
 ----------------------------- */
-.acms-container {
-  max-width: var(--container);
-  padding-right: var(--gutter-sm);
-  padding-left: var(--gutter-sm);
+.acms-container,
+.container-md,
+.container-sm {
+  box-sizing: border-box;
+  padding-right: var(--container-space-x);
+  padding-left: var(--container-space-x);
 
   @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
-    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
+    padding-right: calc(env(safe-area-inset-right) + var(--container-space-x));
+    padding-left: calc(env(safe-area-inset-left) + var(--container-space-x));
   }
 
-  @include acms.media-breakpoint-up(sm) {
-    padding-right: var(--gutter-md);
-    padding-left: var(--gutter-md);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
-    }
-  }
-
-  @include acms.media-breakpoint-up(lg) {
-    padding-right: var(--gutter-lg);
-    padding-left: var(--gutter-lg);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
-    }
-  }
-
-  .acms-container {
-    padding: 0;
+  .acms-container,
+  .container-md,
+  .container-sm {
+    padding-right:0;
+    padding-left:0;
   }
 }
 
+.acms-container {
+  max-width: var(--container);
+}
+
 .container-md {
-  box-sizing: border-box;
   max-width: var(--container-md);
-  margin: 0 auto;
-  padding-right: var(--gutter-sm);
-  padding-left: var(--gutter-sm);
-
-  @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
-    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
-  }
-
-  @include acms.media-breakpoint-up(sm) {
-    padding-right: var(--gutter-md);
-    padding-left: var(--gutter-md);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
-    }
-  }
-
-  @include acms.media-breakpoint-up(lg) {
-    padding-right: var(--gutter-lg);
-    padding-left: var(--gutter-lg);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
-    }
-  }
-
-  .container-md {
-    padding: 0;
-  }
 }
 
 .container-sm {
   --gutter: var(--gutter-sm);
 
-  box-sizing: border-box;
   max-width: var(--container-sm);
-  margin: 0 auto;
-  padding-right: var(--gutter-sm);
-  padding-left: var(--gutter-sm);
-
-  @if global.$enable-iphonex == true {
-    padding-right: calc(env(safe-area-inset-right) + var(--gutter-sm));
-    padding-left: calc(env(safe-area-inset-left) + var(--gutter-sm));
-  }
-
-  @include acms.media-breakpoint-up(sm) {
-    padding-right: var(--gutter-md);
-    padding-left: var(--gutter-md);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-md));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-md));
-    }
-  }
-
-  @include acms.media-breakpoint-up(lg) {
-    padding-right: var(--gutter-lg);
-    padding-left: var(--gutter-lg);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + var(--gutter-lg));
-      padding-left: calc(env(safe-area-inset-left) + var(--gutter-lg));
-    }
-  }
 }
 
 /* グリッドシステム
@@ -151,21 +78,13 @@ a {
 /* レイアウト
 ----------------------------- */
 .content-wrapper {
-  padding: var(--page-title-margin-bottom) 0 0;
-
-  &.is-_top {
-    padding: 0;
-  }
+  padding-top: var(--page-title-space-bottom);
 }
 
 @include acms.media-breakpoint-up(lg) {
-  .content-wrapper {
-    padding: var(--page-title-margin-bottom-md) 0 0;
-
-    &.two-columns {
-      display: flex;
-      justify-content: space-between;
-    }
+  .content-wrapper.two-columns {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

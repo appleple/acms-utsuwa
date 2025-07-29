@@ -9,7 +9,7 @@
   position: relative;
   display: table;
   width: 100%;
-  height: var(--page-title-height);
+  height: 7.5rem;
   color: var(--color-text);
   background: var(--color-page-title-bg);
   background-position: center;
@@ -84,19 +84,12 @@
 
 @include acms.media-breakpoint-up(md) {
   .page-title-wrapper {
-    height: var(--page-title-height-md);
-
-    // &[style] {
-    //   height: var(--page-title-height-image)-md;
-    // }
+    height: 17.5rem;
   }
-
-
 
   .page-title {
     font-size: map.get(global.$font-scales, heading-m);
   }
-
 
   .page-title-en {
     font-size: map.get(global.$font-scales, heading-ss);

@@ -155,3 +155,28 @@
     }
   }
 }
+
+/* タグリレーショナル「この記事のハッシュタグ」 */
+.tag-relational-paragraph {
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-lg);
+  margin-block: 0 2rem;
+
+  a {
+    text-decoration: none;
+    border-bottom: var(--border-width-sm) dotted currentcolor;
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    @media (hover: hover) {
+      &:any-link:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}

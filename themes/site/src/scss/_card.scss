@@ -5,6 +5,12 @@
 /* ------------------------------
 　　カード
 ------------------------------ */
+.card-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 .card-item {
   display: flex;
 }
@@ -14,8 +20,6 @@
 }
 
 .card {
-  --card-space-y: 1rem;
-
   position: relative;
   display: flex;
   width: 100%;
@@ -23,7 +27,7 @@
 
   &::before {
     position: absolute;
-    inset: var(--card-space-y);
+    inset: var(--card-bg-space);
     content: "";
   }
 }
@@ -46,7 +50,7 @@
     background-color: transparent;
     border-radius: var(--border-radius-lg);
     content: "";
-    inset: calc(var(--card-space-y) * -1);
+    inset: calc(var(--card-bg-space) * -1);
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
