@@ -110,7 +110,6 @@
   --page-title-filter: rgba(0, 0, 0, 0.5);
 
   /* ヘッダー */
-
   --header-height: 3.5rem;
   --header-height-fixed: 3.5rem;
 
@@ -118,7 +117,7 @@
   --footer-margin-top-md: 1rem;
   --footer-margin-top-lg: 4.5rem;
 
-  /* 　z-index */
+  /* z-index */
   --zindex-fixed-contents: 50;
   --zindex-header: 60;
   --zindex-mobile-nav: 61;
@@ -136,6 +135,9 @@
   /* グリッドの間隔 */
   --col-gutter: var(--gutter-md);
   --unit-gutter-var: var(--gutter-md);
+
+  /* カードレイアウト用のはみ出し背景余白 */
+  --card-bg-space: 1rem;
 
   /* 余白ユニット */
   --unit-space-sm: 2rem;
