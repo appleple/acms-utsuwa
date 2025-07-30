@@ -9,19 +9,43 @@
   <!-- BEGIN notFound -->
   <p class="paragraph">ただいまページを準備しております。もうしばらくお待ちください。</p>
   <!-- END notFound -->
-  <ul class="summary-side-list"><!-- BEGIN unit:loop -->
+
+  <ul class="summary-side-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem;">
+    <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
     <li class="summary-side-item">
       <a href="{url}" class="summary-side-link">
-        <div class="summary-side-img-wrap"><!-- BEGIN image:veil -->
-          <img src="%{ROOT_DIR}{path}[resizeImg(192,192)]" alt="" class="acms-img-responsive summary-side-img" width="455" height="256"><!-- END image:veil --><!-- BEGIN noimage --><img src="/images/noimage.png" alt="" class="noimage summary-side-img" width="192" height="192"><!-- END noimage -->
+        <div class="summary-side-img-wrap">
+          <!-- BEGIN image:veil -->
+          <img
+            src="%{ROOT_DIR}{path}[resizeImg(192,192)]"
+            alt="{alt}"
+            class="summary-side-img"
+            width="192"
+            height="192"
+            loading="lazy"
+            decoding="async"
+          >
+          <!-- END image:veil -->
+          <!-- BEGIN noimage -->
+          <img
+            src="/images/noimage.png"
+            alt="noimage画像"
+            class="summary-side-img"
+            width="192"
+            height="192"
+            loading="lazy"
+            decoding="async"
+          >
+          <!-- END noimage -->
         </div>
         <div class="summary-side-text-wrap">
           <h3 class="summary-side-title">{title}</h3>
           <time class="summary-side-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
         </div>
       </a>
-    </li><!-- END entry:loop -->
+    </li>
+    <!-- END entry:loop -->
     <!-- END unit:loop -->
   </ul>
 </section>
