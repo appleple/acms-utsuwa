@@ -1,1 +1,116 @@
-/* siteテーマのを貼り付ける */
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　サイドセクション
+------------------------------ */
+.section-side-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-side-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-side-title {
+  margin-block: 0;
+  font-size: map.get(global.$font-scales, heading-ss);
+}
+
+.summary-side-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.summary-side-item {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0;
+}
+
+.summary-side-link {
+  position: relative;
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6rem 1fr;
+  width: 100%;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &,
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: 1;
+    background-color: transparent;
+    border-radius: var(--border-radius-lg);
+    content: "";
+    inset: -0.5rem;
+
+    @media (hover: hover) {
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .summary-side-link:any-link:hover {
+    &::after {
+      background-color: var(--color-hover-bg-2nd);
+    }
+
+    .summary-side-img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.summary-side-img-wrap {
+  display: flex;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-content: center;
+  width: 6rem;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  aspect-ratio: 1 / 1;
+}
+
+.summary-side-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s 0.2s ease-out;
+  will-change: transform;
+}
+
+.summary-side-title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-black);
+  font-size: map.get(global.$font-scales, body-m);
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.summary-side-date {
+  display: inline-block;
+  margin: 0;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+}
