@@ -261,8 +261,8 @@ p + p.text-danger,
 p + p.text-info,
 p + p.text-danger,
 // ブロックエディタ用（管理画面 / 閲覧画面）
-.tableWrapper + p.text-info,
-.tableWrapper + p.text-danger,
+div:has(> table) + p.text-info,
+div:has(> table) + p.text-danger,
 // テーブルユニット用（閲覧画面）
 [class*="column-table-"] + p.text-info,
 [class*="column-table-"] + p.text-danger {
