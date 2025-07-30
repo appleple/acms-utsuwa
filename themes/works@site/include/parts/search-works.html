@@ -1,12 +1,12 @@
 <!-- BEGIN_MODULE Field_Search -->
-<div id="works-search">
+<div class="section-panel" id="works-search">
   <h2 class="heading-md">条件から検索する</h2>
-  <div class="works-search-panel">
+  <div class="search-panel">
     <form action="/" method="post" class="acms-form" role="search" aria-label="検索フォーム">
-      <div class="work-search-group form-input-wrap">
-        <div class="work-search-item">
-          <label for="kubun" class="work-search-label">サイト種別</label>
-          <div class="work-search-input form-group">
+      <div class="search-panel-group form-input-wrap">
+        <div class="search-panel-item">
+          <label for="kubun" class="search-panel-label">サイト種別</label>
+          <div class="search-panel-input form-group">
             <select name="cid">
               <option>選択してください</option>
               <!-- BEGIN_MODULE Category_List -->
@@ -19,9 +19,9 @@
             </select>
           </div>
         </div>
-        <div class="work-search-item">
-          <label for="station" class="work-search-label">業種</label>
-          <div class="work-search-input form-group">
+        <div class="search-panel-item">
+          <label for="station" class="search-panel-label">業種</label>
+          <div class="search-panel-input form-group">
             <div class="form-checkbox">
               <label for="input-checkbox-work-industry-製造業">
                 <input type="checkbox" name="work-industry[]" {work-industry:checked#industry1} id="input-checkbox-work-industry-製造業" value="industry1" />
@@ -70,9 +70,9 @@
             <input type="hidden" name="field[]" value="work-industry" />
           </div>
         </div>
-        <div class="work-search-item">
-          <label for="work-tag" class="work-search-label">目的</label>
-          <div class="work-search-input form-group">
+        <div class="search-panel-item">
+          <label for="work-tag" class="search-panel-label">目的</label>
+          <div class="search-panel-input form-group">
             <div class="form-checkbox">
               <label for="input-checkbox-work-goal-goal1">
                 <input type="checkbox" name="work-goal[]" {work-goal:checked#goal1} id="input-checkbox-work-goal-goal1" value="goal1" />
@@ -102,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="work-search-footer form-button-group">
+      <div class="search-panel-footer form-button-group">
         <input type="hidden" name="bid" value="%{BID}" />
         <input type="submit" name="ACMS_POST_2GET" value="検索する" class="button is-lg is-width-lg" />
       </div>

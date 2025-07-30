@@ -1,12 +1,12 @@
 <!-- BEGIN_MODULE Field_Search -->
-<div id="realestate-search">
+<div class="section-panel" id="realestate-search">
   <h2 class="heading-md">条件から検索する</h2>
-  <div class="works-search-panel">
+  <div class="search-panel">
     <form action="/" method="post" class="acms-form" role="search" aria-label="検索フォーム">
-      <div class="work-search-group form-input-wrap">
-        <div class="work-search-item">
-          <label for="kubun" class="work-search-label">区分</label>
-          <div class="work-search-input form-group">
+      <div class="search-panel-group form-input-wrap">
+        <div class="search-panel-item">
+          <label for="kubun" class="search-panel-label">区分</label>
+          <div class="search-panel-input form-group">
           <select name="cid">
               <option value="%{RCID}">選択してください</option>
              <!-- BEGIN_MODULE Category_List id="category_realestate" -->
@@ -19,9 +19,9 @@
           </select>
           </div>
         </div>
-        <div class="work-search-item">
-          <label for="station" class="work-search-label">最寄り駅</label>
-          <div class="work-search-input form-group">
+        <div class="search-panel-item">
+          <label for="station" class="search-panel-label">最寄り駅</label>
+          <div class="search-panel-input form-group">
             <div class="form-checkbox">
               <label for="input-checkbox-station-名古屋駅">
                 <input type="checkbox" name="station[]" {station:checked#名古屋駅} id="input-checkbox-station-名古屋駅" value="名古屋駅" />
@@ -40,9 +40,9 @@
             <input type="hidden" name="field[]" value="station" />
           </div>
         </div>
-        <div class="work-search-item">
-          <label for="work-tag" class="work-search-label">家賃</label>
-          <div class="work-search-input form-group">
+        <div class="search-panel-item">
+          <label for="work-tag" class="search-panel-label">家賃</label>
+          <div class="search-panel-input form-group">
           <select name="price[]" id="price">
             <option value="">下限無し</option>
             <option value="30000" {price[0]:selected#30000}>30,000円以上</option>
@@ -63,15 +63,15 @@
 
           </div>
         </div>
-        <div class="work-search-item">
-          <label for="kubun" class="work-search-label">キーワード</label>
-          <div class="work-search-input form-group">
+        <div class="search-panel-item">
+          <label for="kubun" class="search-panel-label">キーワード</label>
+          <div class="search-panel-input form-group">
 					<input type="search" name="keyword" value="%{KEYWORD}" id="keyword" class="acms-form-width-full" />
 
           </div>
         </div>
       </div>
-      <div class="work-search-footer form-button-group">
+      <div class="search-panel-footer form-button-group">
         <input type="hidden" name="bid" value="%{BID}" />
         <input type="submit" name="ACMS_POST_2GET" value="検索する" class="button is-lg is-width-lg" />
       </div>
