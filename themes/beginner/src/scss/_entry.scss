@@ -235,10 +235,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--col-gutter);
-  padding-block-start: 1rem;
+  margin-block-start: 3rem;
 
   @include acms.media-breakpoint-up(md) {
-    padding-block-start: 2rem;
+    margin-block-start: 4rem;
   }
 }
 
