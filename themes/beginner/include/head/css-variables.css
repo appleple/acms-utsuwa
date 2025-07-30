@@ -119,8 +119,10 @@
   --header-height-fixed: 3.5rem;
 
   /* フッター */
-  --footer-margin-top-md: 1rem;
-  --footer-margin-top-lg: 4.5rem;
+  --footer-margin-top: 4rem;
+  @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
+    --footer-margin-top: 6.5rem;
+  }
 
   /* z-index */
   --zindex-fixed-contents: 50;

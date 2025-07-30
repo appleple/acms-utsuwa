@@ -6,7 +6,7 @@
 　　フッター
 ------------------------------ */
 .footer {
-  margin: var(--footer-margin-top-md) 0 0 0;
+  margin-block-start: var(--footer-margin-top);
   border-top: var(--border-width-sm) solid var(--color-gray20);
 
   .form-search-button {
@@ -14,10 +14,13 @@
   }
 }
 
+/* フッター上にCTAコンテンツが来た場合は余白を詰める */
 .cta-visual + .footer {
   margin-top: 0;
 }
 
+/* フッターメインコンテンツレイアウト
+----------------------------- */
 .footer-group {
   display: flex;
   flex-direction: column;
@@ -32,12 +35,12 @@
   box-sizing: border-box;
 
   &.-navigation {
-    // display: none;
     gap: 1.5rem;
   }
 }
 
-/* 企業情報 */
+/* サイト情報
+----------------------------- */
 .footer-item-title {
   display: flex;
   flex-direction: column;
@@ -61,14 +64,6 @@
 }
 
 @include acms.media-breakpoint-up(md) {
-  .footer {
-    margin: var(--footer-margin-top-lg) 0 0 0;
-  }
-
-  .cta-visual + .footer {
-    margin-top: 0;
-  }
-
   .footer-group {
     flex-direction: row;
     gap: 3.5rem;
@@ -113,11 +108,10 @@
   }
 }
 
-/* ナビゲーション */
+/* ナビゲーション
+----------------------------- */
 .footer-item-nav {
   display: flex;
-
-  // flex-direction: column;
   flex-wrap: wrap;
   gap: 0 1rem;
   justify-content: space-between;
@@ -208,40 +202,48 @@
   }
 }
 
-/* 検索フォーム */
+/* 検索フォーム
+----------------------------- */
+.footer-item .form-search {
+  @include acms.media-breakpoint-up(md) {
+    display: flex;
+  }
 
-.footer-item {
-  .form-search {
-    @include acms.media-breakpoint-up(md) {
-      display: flex;
-    }
+  .form-search-label {
+    display: block;
+    font-weight: bold;
 
-    .form-search-label {
-      display: block;
-      font-weight: bold;
-
-      @include acms.media-breakpoint-down(md) {
-        margin-bottom: 0.5rem;
-        line-height: initial;
-      }
-
+    @include acms.media-breakpoint-down(md) {
+      margin-bottom: 0.5rem;
+      line-height: initial;
     }
   }
 }
 
+/* コピーライト・SNS
+----------------------------- */
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
 
 /* コピーライト */
 .footer-copyright-text {
-  margin: 0 0 0.5rem;
+  margin: 0;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
 }
 
 /* SNS */
+.footer-bottom-sns {
+  display: block;
+  margin-left: auto;
+}
+
 .footer-sns-group {
   display: flex;
   gap: 1.5rem;
-  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -264,20 +266,4 @@
 .footer-sns-link {
   display: inline-block;
   vertical-align: top;
-}
-
-.footer-bottom-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 1.5rem;
-}
-
-.footer-copyright-text {
-  margin: 0;
-}
-
-.footer-bottom-sns {
-  display: block;
-  margin-left: auto;
 }
