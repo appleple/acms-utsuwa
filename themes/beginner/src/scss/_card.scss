@@ -67,8 +67,15 @@
 
 @media (hover: hover) {
   .card-link:hover {
-    &::after {
-      background-color: var(--color-hover-bg-2nd);
+    @include acms.media-breakpoint-up(sm) {
+     /*
+      * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
+      * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
+      * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
+      */
+      &::after {
+        background-color: var(--color-hover-bg-2nd);
+      }
     }
 
     .card-img {
