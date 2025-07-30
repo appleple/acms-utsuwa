@@ -6,6 +6,17 @@
 　　お問い合わせ
 ------------------------------ */
 
+/* Entry_Bodyとフォーム間mp余白をつけるためのスタイル */
+.form-initial-step-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include acms.media-breakpoint-up(md) {
+    gap: 4rem;
+  }
+}
+
 /* ステップ
 ------------------------------ */
 .form-step {
