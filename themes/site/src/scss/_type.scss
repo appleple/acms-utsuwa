@@ -5,9 +5,11 @@
 /* ------------------------------
 　　タイポグラフィ
 ------------------------------ */
+
+/* 見出し
+------------------------------ */
 .heading-lg {
-  margin: 2rem 0 var(--entry-el-margin-sm) 0;
-  padding-top: 2rem;
+  margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, heading-s);
   line-height: var(--line-height-sm);
 
@@ -18,11 +20,11 @@
 
   &.heading-primary {
     position: relative;
-    margin-bottom: calc(var(--entry-el-margin-xxs) + 0.25rem + var(--entry-el-margin-sm));
+    margin-bottom: calc(var(--entry-el-margin-xs) + 0.25rem + var(--entry-el-margin-sm));
 
     &::before {
       position: absolute;
-      bottom: -1rem;
+      bottom: calc(var(--entry-el-margin-xs) * -1);
       left: 0;
       display: block;
       width: 3.5rem;
@@ -33,22 +35,12 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin-bottom: var(--entry-el-margin-sm);
     font-size: map.get(global.$font-scales, heading-m);
-
-    &.heading-primary {
-      margin-bottom: calc(var(--entry-el-margin-md) + 0.25rem + var(--entry-el-margin-sm));
-
-      &::before {
-        bottom: -1.5rem;
-      }
-    }
   }
 }
 
 .heading-md {
-  margin: 0 0 var(--entry-el-margin-sm) 0;
-  padding-top: 2rem;
+  margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: var(--line-height-sm);
 
@@ -58,18 +50,12 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-md) 0;
     font-size: map.get(global.$font-scales, heading-s);
-
-    &.heading-line {
-      margin: 0 0 (var(--entry-el-margin-sm) + 0.5rem);
-    }
   }
 }
 
 .heading-sm {
-  margin: 0 0 var(--entry-el-margin-sm) 0;
-  padding-top: 2rem;
+  margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
@@ -78,14 +64,12 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
 .heading-ss {
-  margin: 0 0 var(--entry-el-margin-sm) 0;
-  padding-top: 2rem;
+  margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, body-m);
 
   &.heading-line {
@@ -94,7 +78,6 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, body-m);
   }
 }
@@ -108,30 +91,40 @@
   }
 }
 
+/* 本文
+------------------------------ */
 .paragraph {
-  margin: 0 0 var(--entry-el-margin-md) 0;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
-
-  @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-lg) 0;
-  }
+  margin-block: 0 var(--entry-el-margin-md);
 
   a {
-    color: var(--color-text);
     text-decoration: none;
-    border-bottom: var(--border-width-sm) dotted var(--color-text);
+    border-bottom: var(--border-width-sm) dotted currentcolor;
 
-    &:hover {
-    border-bottom: 0;
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
 
+    @media (hover: hover) {
+      &:any-link:hover {
+        border-bottom-color: transparent;
+      }
     }
   }
 }
 
+/* インラインスタイル
+------------------------------ */
 .text-word-break {
   display: inline-block;
 }
 
+/* リスト
+------------------------------ */
 .unordered-list {
   margin: 0 0 var(--entry-el-margin-md) 0;
   padding: 0 0 0 2rem;
@@ -152,31 +145,6 @@
       background: var(--color-secondary);
       border-radius: 50%;
       content: "";
-    }
-  }
-}
-
-/* タグリレーショナル「この記事のハッシュタグ」 */
-.tag-relational-paragraph {
-  color: var(--color-text);
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
-  margin-block: 0 2rem;
-
-  a {
-    text-decoration: none;
-    border-bottom: var(--border-width-sm) dotted currentcolor;
-
-    &,
-    &:link,
-    &:visited {
-      color: inherit;
-    }
-
-    @media (hover: hover) {
-      &:any-link:hover {
-        border-bottom-color: transparent;
-      }
     }
   }
 }
