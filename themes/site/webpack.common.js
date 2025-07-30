@@ -56,9 +56,7 @@ module.exports = {
             options: {
               postcssOptions: {
                 plugins: [
-                  autoprefixer({
-                    grid: 'no-autoplace',
-                  }),
+                  autoprefixer(),
                 ],
               },
               sourceMap: true,
