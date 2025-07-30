@@ -1,11 +1,4 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
- <!-- BEGIN_IF [%{PAGE}/gte/5] -->
-
- <!-- ELSE_IF [%{PAGE}/eq/4] -->
-
- <!-- ELSE -->
-
- <!-- END_IF -->
 <section class="summary-entry-bottom js-animation">
   <div class="container-md">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
@@ -19,7 +12,7 @@
             <div class="card-bordered-img-wrap">
               <img
                 src="%{ROOT_DIR}{path}[resizeImg(580,220)]"
-                alt="{thumbnail-image@alt}"
+                alt="{path@alt}"
                 width="580"
                 height="220"
                 class="acms-img-responsive card-bordered-img"
