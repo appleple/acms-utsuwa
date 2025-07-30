@@ -66,10 +66,29 @@
   line-height: var(--line-height-base);
 }
 
-.section-horizontal-text p {
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: 1.7;
+.section-horizontal-text {
+  p {
+    color: var(--color-text-2nd);
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: 1.7;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: var(--border-width-sm) dotted currentcolor;
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    @media (hover: hover) {
+      &:any-link:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
 }
 
 .section-horizontal-footer {
