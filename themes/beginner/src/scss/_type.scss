@@ -58,7 +58,6 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-md) 0;
     font-size: map.get(global.$font-scales, heading-s);
 
     &.heading-line {
@@ -78,7 +77,6 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }
@@ -94,7 +92,6 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin: 0 0 var(--entry-el-margin-sm) 0;
     font-size: map.get(global.$font-scales, body-m);
   }
 }
