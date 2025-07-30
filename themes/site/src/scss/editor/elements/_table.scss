@@ -6,14 +6,6 @@
  テーブル
 ------------------------------ */
 
-/* ブロックエディターは ".tableWrapper" 内にあるテーブルを対象にする */
-:where(.acms-admin-block-editor) .tableWrapper {
-  th,
-  td {
-    min-width: 100px; /* 入力しやすいよう最小幅を確保 */
-  }
-}
-
 @include acms.editor-style(("table")) {
   margin: 0 0 var(--entry-el-margin-md);
   background-color: var(--color-white);
@@ -62,8 +54,8 @@
   }
 }
 
-/* ブロックエディター内のテーブル */
-.tableWrapper {
+// div直下にテーブルがある場合
+@include acms.editor-style(("div:has(> table)")) {
   margin-bottom: var(--entry-el-margin-md);
   overflow-x: auto; // 横スクロールする時用
 
@@ -73,25 +65,9 @@
   }
 }
 
-/* テーブルユニット */
-[class*="column-table"] {
-  min-width: 0;
-
-  > div {
-    margin-block-end: var(--entry-el-margin-md);
-    overflow-x: auto;
-  }
-
-  table {
-    width: 100%;
-    margin-block: 0;
-  }
-}
-
 /* スクロールするテーブル */
 .acms-table-scrollable,
-.js-table-unit-scroll-hint,
-.tableWrapper .js-table-unit-scroll-hint {
+.js-table-unit-scroll-hint {
   th,
   td {
     white-space: nowrap;
