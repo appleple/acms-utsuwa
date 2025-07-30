@@ -7,7 +7,6 @@
 ------------------------------ */
 .section {
   padding-block: var(--section-space-y);
-  overflow-x: hidden;
 
   &.is-bg {
     background: var(--color-gray10);
@@ -285,4 +284,13 @@
   margin: 0 auto;
   border: 0;
   border-top: var(--border-width-sm) solid var(--color-gray30);
+}
+
+/* 一覧下のコンテンツ */
+.section-panel {
+  margin-block-start: 3rem;
+
+  @include acms.media-breakpoint-up(md) {
+    margin-block-start: 4rem;
+  }
 }

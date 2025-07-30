@@ -6,10 +6,15 @@
 /* ------------------------------
 　　CTA（コール・トゥ・アクション）
 ------------------------------ */
+.cta-section-mt {
+  margin-block-start: var(--section-space-y);
+}
+
+/* 背景画像付きのCTA
+------------------------------ */
 .cta-visual {
   position: relative;
   z-index: 1;
-  margin-top: 1rem;
   padding: 4rem 0 3rem;
   color: var(--color-white);
   text-align: center;
@@ -109,12 +114,7 @@
 
 @include acms.media-breakpoint-up(md) {
   .cta-visual {
-    margin-top: 0;
     padding: 5rem 0;
-
-    &:has(+ .footer) {
-      margin-top: 4.5rem;
-    }
   }
 
   .cta-visual-title {

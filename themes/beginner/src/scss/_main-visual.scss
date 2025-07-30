@@ -7,9 +7,14 @@
 ------------------------------ */
 .main-visual {
   position: relative;
+  box-sizing: content-box; /* スライダーページネーション用のpaddingを含めない */
   height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
   min-height: 20rem;
-  margin-bottom: 5.125rem;
+
+  &:has(.splide__controls) {
+    /* スライダーページネーションの高さを確保 */
+    padding-bottom: 5.125rem;
+  }
 
   .main-visual-filter {
     position: absolute;
@@ -20,8 +25,10 @@
   }
 
   .main-visual-bg {
+    display: block;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 
     .is-alone {
       animation: zoom 3s 0.3s 1 both;

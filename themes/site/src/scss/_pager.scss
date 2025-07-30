@@ -83,9 +83,14 @@
   float: left;
 }
 
-/* 前後リンク */
+/* 前後リンク
+----------------------------- */
 .serial-nav {
   margin-block-start: 3rem;
+
+  @include acms.media-breakpoint-up(md) {
+    margin-block-start: 4rem;
+  }
 }
 
 .serial-nav-list {

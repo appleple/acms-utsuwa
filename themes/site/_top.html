@@ -55,7 +55,7 @@
 @include("/include/entry/summary-recruit-top.html", {"module_id": "summary_recruit_top"})
 
 <!-- 採用情報 -->
-@include("/include/parts/cta-visual.html", {"module_id": "mf_cta_visual"})
+@include("/include/parts/cta-visual.html", {"module_id": "mf_cta_visual", "cta-section-mt": ""})
 
 <!-- エントリーサマリー&バナー：最新情報 -->
 @include("/include/entry/summary-news-top.html", {"module_id": "summary_news_top"})
@@ -79,5 +79,5 @@
 @section("footer-cta")
 <hr class="section-separator">
 <!-- CTA：お問い合わせ -->
-@include("/include/parts/cta.html", {"module_id":"mf_cta_contact"})
+@include("/include/parts/cta.html", {"module_id":"mf_cta_contact", "cta-section-mt": "true"})
 @endsection

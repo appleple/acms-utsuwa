@@ -100,7 +100,10 @@
 
   /* ページタイトル */
   --page-title-filter: rgba(0, 0, 0, 0.5);
-  --page-title-space-bottom: 4rem;
+  --page-title-space-bottom: 3rem;
+  @media (min-width: 48rem) { /* _acms-common.scss : $breakpoint-md-min */
+    --page-title-space-bottom: 5rem;
+  }
   @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
     --page-title-space-bottom: 6.5rem;
   }
@@ -119,7 +122,10 @@
   --header-height-fixed: 3.5rem;
 
   /* フッター */
-  --footer-margin-top: 4rem;
+  --footer-margin-top: 3rem;
+  @media (min-width: 48rem) { /* _acms-common.scss : $breakpoint-md-min */
+    --footer-margin-top: 5rem;
+  }
   @media (min-width: 64rem) { /* _acms-common.scss : $breakpoint-lg-min */
     --footer-margin-top: 6.5rem;
   }
