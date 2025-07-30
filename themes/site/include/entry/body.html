@@ -8,11 +8,13 @@
 
 <!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
+
 <!-- BEGIN_SetRendered id="twitter-creator" -->
 <!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
 <meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
 <!-- END userField -->
 <!-- END_SetRendered -->
+
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
@@ -23,7 +25,7 @@
 
   <div class="js-sticky-area">
     <!-- BEGIN_IF [%{ECD}/nem]-->
-    <!-- エントリーのタイトル　開始▼▼ --><!-- BEGIN title:veil -->
+    <!-- BEGIN title:veil -->
     <header class="entry-header">
       <!-- BEGIN_MODULE Touch_Entry -->
       <h1 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
@@ -45,15 +47,16 @@
       </div>
 
       <!-- BEGIN tag:veil -->
-      <ul class="tag-list">
+      <ul class="entry-tag-list">
         <!-- BEGIN tag:loop -->
-        <li class="tag-item"><a href="{url}" class="tag-link">#{name}</a></li>
+        <li class="entry-tag-item"><a href="{url}">#{name}</a></li>
         <!-- END tag:loop -->
       </ul>
       <!-- END tag:veil -->
 
     </header>
-    <!-- END title:veil --><!-- END_IF -->
+    <!-- END title:veil -->
+    <!-- END_IF -->
 
     <!-- BEGIN entry:veil -->
     <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
@@ -85,12 +88,10 @@
     </div>
   </div>
   <!-- BEGIN_MODULE Touch_Entry -->
-  <!-- BEGIN_IF [{{sns}}/eq/on] -->
   <footer class="entry-footer">
     <!-- SNSシェアボタン -->
     @include("/include/parts/sns-share.html")
   </footer>
-  <!-- END_IF -->
   <!-- END_MODULE Touch_Entry -->
 </article>
 <!-- END entry:loop -->

@@ -4,25 +4,8 @@
 /* ------------------------------
 　　リスト
 ------------------------------ */
-.list-inline {
-  display: inline-block;
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
-}
 
-.list-inline-item {
-  display: inline-block;
-  margin: 0 1rem;
-
-}
-
-.list-inline-item:not(:last-child) {
-  margin-right: 0.25rem;
-}
-
-/* ------------------------------
-　　リストグループ
+/* アーカイブリスト、カテゴリーリスト
 ------------------------------ */
 .list-group {
   margin: 0 calc(var(--unit-gutter-var) / -4);

@@ -13,15 +13,6 @@
 .entry-header {
   margin: 0 0 var(--entry-el-margin-md);
   line-height: 1.5;
-
-  .tag-list {
-    margin: 0.5rem 0 0;
-  }
-
-  .tag-link {
-    font-size: map.get(global.$font-scales, body-s);
-    border-bottom: 1px dotted var(--color-text);
-  }
 }
 
 .entry-header-info {
@@ -115,6 +106,40 @@
 
   }
 }
+
+/* タグリスト */
+.entry-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  margin-block: 0.5rem 0;
+  padding-inline-start: 0;
+}
+
+.entry-tag-item {
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-s);
+
+  a {
+    &:any-link {
+      text-decoration: underline dotted;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    @media (hover: hover) {
+      &:any-link:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 
 /*
 　エントリーヘッダービジュアルあり
@@ -617,17 +642,18 @@
 }
 
 /*
-　エントリー下部のサマリー
+　エントリー下部の追加コンテンツ
 ------------------------------ */
+.entry-aside-section {
+  margin-block-start: 3rem;
 
-
-.summary-entry-bottom {
-  padding: var(--entry-el-padding-md) 0 0;
+  &:empty {
+    display: none;
+  }
 }
 
 @include acms.media-breakpoint-up(md) {
-  .summary-entry-bottom {
-    padding: var(--entry-el-padding-md) 2rem 0;
+  .entry-aside-section {
+    margin-block-start: 4rem;
   }
-
 }
