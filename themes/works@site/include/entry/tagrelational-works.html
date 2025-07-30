@@ -5,8 +5,9 @@
   <!-- BEGIN notFound -->
   <div class="paragraph">この記事のハッシュタグに関連する記事が見つかりませんでした。</div><!-- END notFound -->
   <!-- BEGIN_IF [<!-- BEGIN notFound -->notFound<!-- END notFound -->/em] -->
-  <div class="paragraph">この記事のハッシュタグ
-    <ul class="list-inline"><!-- GET_Rendered id="tag" --></ul>
+  <div class="paragraph">
+    <span class="acms-me-4">この記事のハッシュタグ</span>
+    <ul class="tag-list-relational"><!-- GET_Rendered id="tag" --></ul>
     から関連する記事を表示しています。
   </div>
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-3<!-- END_IF -->">
@@ -18,7 +19,7 @@
             <div class="card-img-wrap">
               <!-- BEGIN_IF [{main-img@path}/nem] -->
               <img
-                src="%{MEDIA_ARCHIVES_DIR}{main-img@path}[resizeImg(455,256)]"
+                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
                 alt="{main-img@alt}"
                 class="acms-img-responsive card-img"
                 width="455"

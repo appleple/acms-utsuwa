@@ -1,7 +1,7 @@
 <!-- エントリーのスタイルを適用しています。not-editor-style クラスをつけないでください。 -->
 
 <!-- BEGIN main-image:veil -->
-<div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{main-image@path}" width="928" height="{main-image@ratio}[getHeightFromRatio(928)]" alt="{main-image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
+<div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}" width="928" height="{entry_main_image@ratio}[getHeightFromRatio(928)]" alt="{entry_main_image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
 
 <dl class="detail-panel is-works">
   <div class="detail-panel-group">
@@ -43,7 +43,7 @@
          <!-- ELSE_IF [{work-goal}/eq/goal2] -->ユーザー体験 (UX) 改善
          <!-- ELSE_IF [{work-goal}/eq/goal3] -->業務効率化 / コスト削減
          <!-- ELSE_IF [{work-goal}/eq/goal4] -->顧客獲得 / 集客強化
-         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --> 
+         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF -->
       <!-- END work-goal:loop -->
     </dd>
   </div>

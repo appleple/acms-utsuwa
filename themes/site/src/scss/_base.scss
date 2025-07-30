@@ -92,22 +92,21 @@ a {
   padding-top: var(--page-title-space-bottom);
 }
 
-@include acms.media-breakpoint-up(lg) {
-  .content-wrapper.two-columns {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
 /* 2カラム */
-.side-container {
-  padding-top: 1rem;
+.content-wrapper.two-columns {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem 3rem;
+  justify-content: space-between;
+
+  @include acms.media-breakpoint-up(lg) {
+    flex-direction: row;
+  }
 }
 
 @include acms.media-breakpoint-up(lg) {
   .main-container {
     width: var(--width-main-container);
-    padding-top: 1rem;
   }
 
   .side-container {

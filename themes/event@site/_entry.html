@@ -27,10 +27,7 @@
   <!-- エントリー本文 -->
   @include("/include/entry/body-event.html", {"module_id": "body_event"})
 
-  <h3 class="heading-md">開催予定のイベント</h3>
-
-  @include("/include/entry/summary-event.html", {"module_id": "summary_event_relational"})
-
+  <section class="entry-aside-section"><h2 class="heading-md">開催予定のイベント</h2>@include("/include/entry/summary-event.html", {"module_id": "summary_event_relational"})</section>
 </div>
 @endsection
 

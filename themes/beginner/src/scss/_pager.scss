@@ -10,9 +10,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  padding-top: 3rem;
+  margin-block: 3rem 0;
   padding-left: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   list-style: none;
@@ -87,8 +85,7 @@
 
 /* 前後リンク */
 .serial-nav {
-  margin: 0 0 2rem;
-  padding: 2rem 0 0;
+  margin-block-start: 3rem;
 }
 
 .serial-nav-list {
@@ -223,6 +220,10 @@
 }
 
 @include acms.media-breakpoint-up(md) {
+  .serial-nav {
+    margin-block-start: 4rem;
+  }
+
   .serial-nav-list {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr auto 1fr;

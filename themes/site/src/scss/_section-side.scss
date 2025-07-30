@@ -1,108 +1,33 @@
 @use "sass:map";
-@use "sass:math";
 @use "global/acms-common" as acms;
 @use "global/common" as global;
 
 /* ------------------------------
 　　サイドセクション
 ------------------------------ */
-
-.section-side-col {
-  box-sizing: border-box;
-  width: 100%;
-  margin-bottom: var(--col-gutter);
-}
-
-@include acms.media-breakpoint-up(lg) {
-  .section-side-col {
-    width: auto;
-    padding-right: calc(var(--unit-gutter-var) / 4);
-    padding-left: calc(var(--unit-gutter-var) / 4);
-
-    @if global.$enable-iphonex == true {
-      padding-right: calc(env(safe-area-inset-right) + (var(--unit-gutter-var) / 4));
-      padding-left: calc(env(safe-area-inset-left) + (var(--unit-gutter-var) / 4));
-    }
-
-    &.is-fix {
-      flex: 0 1 auto;
-    }
-
-    &.is-full {
-      flex: 1 1 auto;
-    }
-
-    &.is-fix+.section-side-col.is-full {
-      flex-basis: min-content;
-      min-width: 30%;
-    }
-  }
-}
-
-.section-side {
-  line-height: 1.5;
-
-  .tag-list {
-    margin: 0.75rem calc(var(--unit-gutter-var) / -4);
-
-    .tag-link {
-      padding: 0.25rem 0.5rem;
-
-      &:hover {
-        background: var(--color-hover-bg-2nd);
-      }
-    }
-  }
+.section-side-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .section-side-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  &.-calendar {
-    margin: 0 0 0.5rem;
-  }
-
-  .calendar-next-prev-button {
-    display: flex;
-    gap: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 
 .section-side-title {
-  margin: 0;
-  padding-bottom: 0.25rem;
+  margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
-
-}
-
-
-.section-side-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-left: auto;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
-  text-decoration: none;
-
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  .icon-button {
-    margin: 0 0 0 0.5rem;
-  }
 }
 
 .summary-side-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 1.5rem;
-  padding: 0.5rem 0 0;
+  margin-block: 0;
+  padding-inline-start: 0;
   list-style: none;
 }
 
@@ -126,7 +51,6 @@
   &:hover {
     background: var(--color-hover-bg-2nd);
   }
-
 }
 
 .summary-side-img-wrap {
@@ -160,5 +84,4 @@
   margin: 0;
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
-
 }

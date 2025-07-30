@@ -58,23 +58,22 @@
     width: 3.5rem;
     height: 3.5rem;
     padding: 0;
+  }
 
-    .section-side & {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
+  .section-side .calendar-day {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .calendar-day-has {
     width: 2rem;
     height: 2rem;
     padding: 0;
+  }
 
-    .section-side & {
-      width: 1.75rem;
-      height: 1.75rem;
-    }
-
+  .section-side .calendar-day-has {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 }
 
@@ -291,5 +290,28 @@
     &.is-return {
       transform: translateY(0);
     }
+  }
+}
+
+/* サイドカラムのカレンダー月送りボタン */
+.calendar-next-prev-button {
+  display: flex;
+  gap: 1rem;
+}
+
+/* サイドカラムの「年間カレンダーで見る」リンク */
+.section-side-link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-s);
+  text-decoration: none;
+  padding-block: 0.25rem;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

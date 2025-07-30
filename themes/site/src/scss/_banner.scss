@@ -5,6 +5,8 @@
 　　バナー
 ------------------------------ */
 .banner-list {
+  list-style: none;
+
   .js .js-animation & {
     opacity: 0;
     will-change: transform, opacity;

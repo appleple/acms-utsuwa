@@ -3,22 +3,20 @@
 <!-- ELSE -->
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th>サムネイル画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一覧で使用するサムネイル画像を登録します。推奨サイズ：580px x 345px"></i></th>
+    <th>メイン画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一覧で使用するサムネイル画像を登録します。推奨サイズ：580px x 345px"></i></th>
     <td class="js-media-field">
-      <div class="js-droparea" data-thumbnail="{thumbnail-image@thumbnail}" data-type="image" style="width:200px"></div>
+      <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" style="width:200px"></div>
       <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
       <div class="acms-admin-margin-top-mini">
         <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
       </div>
-      <input type="hidden" name="thumbnail-image" value="{thumbnail-image}" class="js-value" />
-      <input type="hidden" name="field[]" value="thumbnail-image" />
-      <input type="hidden" name="thumbnail-image:extension" value="media" />
+      <input type="hidden" name="entry_main_image" value="{entry_main_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="entry_main_image" />
+      <input type="hidden" name="entry_main_image:extension" value="media" />
     </td>
   </tr>
-</table>
-<table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ページ上部で使用する背景画像を登録します。推奨サイズ：1320px x 565px"></i></th>
+    <th>ヘッダー画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="詳細ページのページ上部で使用する背景画像を登録します。推奨サイズ：1320px x 565px"></i></th>
     <td class="js-media-field">
       <div class="js-droparea" data-thumbnail="{bg-image@thumbnail}" data-type="image" style="width:200px"></div>
       <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -38,14 +36,14 @@
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-btn-text">応募ボタンの文言</label></th>
+    <th><label for="input-text-btn-text">応募ボタンの文言</label><i data-acms-tooltip="ボタンを表示する際に設定ください。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
       <input type="text" name="btn-text" value="{btn-text}" id="input-text-btn-text" class="acms-admin-form-width-3quarters">
       <input type="hidden" name="field[]" value="btn-text">
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-btn-url">応募ページへのURL</label></th>
+    <th><label for="input-text-btn-url">応募ページへのURL</label><i data-acms-tooltip="動的フォーム機能を利用の際には #form と記述し、それ以外の URL を設定しリンクボタンとして利用も可能です。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
       <input type="text" name="btn-url" value="{btn-url}" id="input-text-btn-url" class="acms-admin-form-width-3quarters">
       <input type="hidden" name="field[]" value="btn-url">
@@ -53,3 +51,12 @@
   </tr>
 </table>
 <!-- END_IF -->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const element = document.getElementById('seo-entry_main_image');
+  if (element) {
+    element.remove();
+  }
+});
+</script>

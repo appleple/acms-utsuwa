@@ -9,16 +9,12 @@
 <!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
 
-<!-- BEGIN_SetRendered id="tag" -->
-<!-- BEGIN tag:loop -->
-<li class="list-inline-item"><a href="{url}" class="entry-tag-label">#{name}</a></li>
-<!-- END tag:loop -->
-<!-- END_SetRendered -->
 <!-- BEGIN_SetRendered id="twitter-creator" -->
 <!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
 <meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
 <!-- END userField -->
 <!-- END_SetRendered -->
+
 <!-- BEGIN_SetRendered id="user_entrylist" -->
 <p class="profile-author-link"><a href="%{BLOG_URL}uid/{entry:loop.uid}/">この人が書いた記事一覧 <span class="icon-button">@include("/images/arrow-border-white.svg")</span></a></p>
 <!-- END_SetRendered -->
@@ -33,7 +29,7 @@
 
   <div class="js-sticky-area">
     <!-- BEGIN_IF [%{ECD}/nem]-->
-    <!-- エントリーのタイトル　開始▼▼ --><!-- BEGIN title:veil -->
+    <!-- BEGIN title:veil -->
     <header class="entry-header">
       <!-- BEGIN_MODULE Touch_Entry -->
       <h1 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
@@ -57,17 +53,16 @@
           <!-- BEGIN new --><span class="label is-md">New</span><!-- END new -->
         </div><!-- END category:veil -->
       </div>
-      <!-- BEGIN_IF [{{tag}}/eq/on] -->
       <!-- BEGIN tag:veil -->
-      <ul class="tag-list">
+      <ul class="entry-tag-list">
         <!-- BEGIN tag:loop -->
-        <li class="tag-item"><a href="{url}" class="tag-link">#{name}</a></li>
+        <li class="entry-tag-item"><a href="{url}">#{name}</a></li>
         <!-- END tag:loop -->
       </ul>
       <!-- END tag:veil -->
-      <!-- END_IF -->
     </header>
-    <!-- END title:veil --><!-- END_IF -->
+    <!-- END title:veil -->
+    <!-- END_IF -->
 
     <!-- BEGIN entry:veil -->
     <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
@@ -98,10 +93,9 @@
     </div>
   </div>
   <!-- BEGIN_MODULE Touch_Entry -->
-  <footer class="entry-footer"><!-- BEGIN_IF [{{sns}}/eq/on] -->
+  <footer class="entry-footer">
     <!-- SNSシェアボタン -->
     @include("/include/parts/sns-share.html")
-    <!-- END_IF -->
   </footer>
   <!-- END_MODULE Touch_Entry -->
 </article>
