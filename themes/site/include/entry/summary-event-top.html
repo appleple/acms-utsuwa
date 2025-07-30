@@ -1,0 +1,75 @@
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<section id="message" class="section js-animation {section-class}">
+  <div class="acms-container">
+    <div class="section-horizontal">
+      @include("/include/edit/module-custom.html")
+      <!-- BEGIN moduleField -->
+      <header class="section-horizontal-header">
+        <div class="section-horizontal-header-inner"><!-- BEGIN module-heading:veil -->
+          <h2 class="section-horizontal-heading">{module-heading}</h2><!-- END module-heading:veil -->
+          <!-- BEGIN module-heading-small:veil -->
+          <p class="section-horizontal-heading-side">{module-heading-small}[raw]</p>
+          <!-- END module-heading-small:veil -->
+        </div>
+      </header><!-- END moduleField -->
+      <div class="section-horizontal-main">
+        
+  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
+    <!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="card-item">
+      <div class="card">
+        <a href="{url}" class="card-link">
+          <div class="card-link-inner">
+            <div class="card-img-wrap">
+              <!-- BEGIN_IF [{path}/nem] -->
+              <img
+                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+                alt="{path@alt}"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              ><!-- ELSE -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
+                class="acms-img-responsive card-img"
+                width="455"
+                height="256"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END_IF -->
+              <!-- BEGIN category:veil -->
+              <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->">
+                <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
+                <!-- ELSE_IF [{event-status}/eq/open] -->募集中
+                <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
+                <!-- ELSE_IF [{event-status}/eq/closed] -->終了
+                <!-- END_IF -->
+              </span><!-- END category:veil -->
+            </div>
+            <div class="card-text-wrap">
+              <h2 class="card-title">{title}</h2>
+              <!-- BEGIN summary:veil -->
+              <p class="card-text"><time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <span class="label">{event-pref}</span></time>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+
+
+      </div>
+    </div>
+  <p class="section-button is-right"><a href="http://localhost/news/" class="button-read-more">イベント情報の一覧を見る <span class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="4.711" height="7.986" viewBox="0 0 4.711 7.986">
+<path d="M1688.5,3560.381l3.639,3.4-3.639,3.882" transform="translate(-1688.135 -3560.016)" fill="none" stroke="#fff" stroke-width="1"></path>
+</svg>
+</span></a></p>
+  </div>
+</section><!-- END_MODULE Entry_Summary -->
