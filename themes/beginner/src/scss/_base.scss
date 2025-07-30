@@ -39,6 +39,8 @@ a {
 .container-md,
 .container-sm {
   box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: var(--container-space-x);
   padding-left: var(--container-space-x);
 
