@@ -68,7 +68,7 @@ module.exports = {
               implementation: sass,
               sourceMap: true,
               sassOptions: {
-                outputStyle: 'expanded',
+                style: 'expanded',
               },
             },
           },
