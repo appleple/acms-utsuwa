@@ -1,4 +1,5 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+
 <section id="message" class="section js-animation {section-class}">
   <div class="acms-container">
     <div class="section-horizontal">
@@ -43,7 +44,7 @@
               >
               <!-- END_IF -->
               <!-- BEGIN category:veil -->
-              <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->">
+              <span class="card-category-label left-top">
                 <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
                 <!-- ELSE_IF [{event-status}/eq/open] -->募集中
                 <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
@@ -52,7 +53,7 @@
               </span><!-- END category:veil -->
             </div>
             <div class="card-text-wrap">
-              <h2 class="card-title">{title}</h2>
+              <h2 class="card-title">{title}:{event-status}</h2>
               <!-- BEGIN summary:veil -->
               <p class="card-text"><time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <span class="label">{event-pref}</span></time>
               </p>
@@ -67,7 +68,7 @@
 
       </div>
     </div>
-  <p class="section-button is-right"><a href="http://localhost/news/" class="button-read-more">イベント情報の一覧を見る <span class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="4.711" height="7.986" viewBox="0 0 4.711 7.986">
+  <p class="section-button is-right"><a href="%{HOME_URL}event/" class="button-read-more">イベント情報の一覧を見る <span class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="4.711" height="7.986" viewBox="0 0 4.711 7.986">
 <path d="M1688.5,3560.381l3.639,3.4-3.639,3.882" transform="translate(-1688.135 -3560.016)" fill="none" stroke="#fff" stroke-width="1"></path>
 </svg>
 </span></a></p>
