@@ -41,6 +41,7 @@
 
 .label {
   display: inline-block;
+  margin-block: 0;
   padding: 0 0.5rem;
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
@@ -50,12 +51,10 @@
 
   &.is-md {
     padding: 0.25rem 0.5rem;
-
   }
 
   &.is-white {
     background: var(--color-white);
-
   }
 
   &.is-gray {
@@ -66,7 +65,6 @@
   &.is-dark {
     color: var(--color-white);
     background: var(--color-gray80);
-
   }
 
   &.is-required {

@@ -52,11 +52,19 @@
                 <span class="label">New</span>
                 <!-- END_IF --> <!-- END moduleField -->
               </h2>
-              <p class="card-text">
-                <!-- BEGIN categoryField --><span class="label">{fieldCategoryName}</span><!-- END categoryField -->
+              <!-- BEGIN label_box:veil -->
+              <p class="card-label-box acms-row-gap-2">
+                <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+                <span class="label">{fieldCategoryName}</span>
+                <!-- END categoryField --><!-- END category:veil -->
+                <!-- BEGIN station:veil -->
                 <span class="label">{station}</span>
+                <!-- END station:veil -->
+                <!-- BEGIN madori:veil -->
                 <span class="label">{madori}</span>
+                <!-- END madori:veil -->
               </p>
+              <!-- END label_box:veil -->
               <!-- BEGIN tag:veil -->
               <ul class="tag-sm-list">
                 <!-- BEGIN tag:loop -->

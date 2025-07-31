@@ -31,7 +31,9 @@
               >
               <!-- END noimage -->
             </div>
-            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+            <!-- BEGIN date:veil -->
+            <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日（{date#week}）<!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+            <!-- END date:veil -->
             <h2 class="card-title">{title}</h2>
             <!-- BEGIN summary:veil -->
             <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->

@@ -33,9 +33,15 @@
               <!-- END noimage -->
             </div>
             <div class="card-text-wrap">
-              <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日 ({date#week}) <!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
-              <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-              <p class="card-category">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+              <!-- BEGIN label_box:veil -->
+              <div class="card-label-box">
+                <!-- BEGIN date:veil -->
+                <time class="card-date" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日（{date#week}）<!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
+                <!-- END date:veil -->
+                <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+                <p class="card-category acms-w-100">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+              </div>
+              <!-- END label_box:veil -->
               <h2 class="card-title">{title}</h2>
               <!-- BEGIN summary:veil -->
               <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
