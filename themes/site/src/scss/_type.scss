@@ -37,6 +37,11 @@
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
   }
+
+  a {
+    color: currentcolor;
+    text-decoration: none;
+  }
 }
 
 .heading-md {

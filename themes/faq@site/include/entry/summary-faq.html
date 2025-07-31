@@ -6,13 +6,13 @@
   <!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
   <li class="toggle faq js-toggle">
     <h3 class="faq-question">
-      <button type="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
+      <a href="{url}" role="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
         <span class="faq-icon">Q</span>
         <span class="faq-title">{title}</span>
         <span class="toggle-icon" aria-hidden="false">
           <img src="/images/icon-chevron-down.svg" alt="">
         </span>
-      </button>
+      </a>
     </h3>
     <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
       <div class="faq-answer">

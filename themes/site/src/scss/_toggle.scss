@@ -6,11 +6,13 @@
 　　アコーディオン
 ------------------------------ */
 .toggle-button {
+  box-sizing: border-box;
   width: 100%;
   padding: 0;
   color: var(--color-text);
   font-family: inherit;
   text-align: left;
+  text-decoration: none;;
   background: none;
   border: 0;
 

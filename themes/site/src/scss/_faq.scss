@@ -52,6 +52,11 @@
     min-width: 2rem;
     font-size: map.get(global.$font-scales, heading-m);
   }
+
+  a {
+    color: currentcolor;
+    text-decoration: none;
+  }
 }
 
 .faq-question {
