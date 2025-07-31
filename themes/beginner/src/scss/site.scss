@@ -8,7 +8,6 @@
 
 // ベース
 @use "base";
-@use "override-js";
 
 // ライブラリ
 @use "splide";
@@ -37,7 +36,6 @@
 @use "toggle";
 @use "topicpath";
 @use "type";
-@use "video-modal";
 
 // コンテンツ
 @use "entry";
