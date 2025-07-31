@@ -27,6 +27,7 @@
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style: none;
 }
 
 .summary-side-item {
@@ -38,13 +39,9 @@
 
 .summary-side-link {
   position: relative;
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-template-rows: 1fr;
-  grid-template-columns: 6rem 1fr;
+  display: block;
   width: 100%;
   text-decoration: none;
-  transition: background-color 0.2s ease;
 
   &,
   &:link,
@@ -64,6 +61,15 @@
       transition: background-color 0.3s ease;
     }
   }
+}
+
+.summary-side-link-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6rem 1fr;
 }
 
 @media (hover: hover) {
