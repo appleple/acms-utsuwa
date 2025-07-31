@@ -235,6 +235,7 @@
 .section-animation-bg {
   position: relative;
   overflow: hidden;
+  padding-block: var(--section-space-y);
 
   &::before {
     position: absolute;
@@ -255,13 +256,6 @@
 
   .js &.js-animation.is-show::before {
     transform: translateX(0);
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .section-animation-bg {
-    padding: 3rem 0;
-
   }
 }
 

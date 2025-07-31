@@ -26,7 +26,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   position: relative;
   display: block;
   max-width: $_video-thumbnail-size;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
@@ -85,27 +85,15 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   }
 }
 
-@include acms.media-breakpoint-up(sm) {
-  .video-modal-thumbnail {
-    margin: 0 0 2rem;
-  }
-}
-
 @include acms.media-breakpoint-up(md) {
   .video-modal {
     justify-content: flex-end;
-    padding: 0 10% 0 0;
   }
 }
 
 @include acms.media-breakpoint-up(lg) {
-  .video-modal {
-    margin: 0 0 0 auto;
-  }
-
   .video-modal-thumbnail {
     max-width: $_video-thumbnail-size-lg;
-    margin: 3rem auto;
   }
 
   .video-modal-play-icon-wrap {
