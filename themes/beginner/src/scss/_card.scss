@@ -186,20 +186,14 @@
   margin: 0;
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
 }
 
 .card-category {
   margin: 0;
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
-
-}
-
-.card-badge-news {
-  margin: 0 0 0 0.5rem;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-ss);
+  line-height: var(--line-height-base);
 }
 
 .card-text,
