@@ -17,32 +17,36 @@
 
   <!-- BEGIN media-list-wrap:veil -->
   <div class="media-list-wrap">
-    <ul class="media-list"><!-- BEGIN unit:loop -->
+    <ul class="media-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1<!-- END_IF -->"><!-- BEGIN unit:loop -->
       <!-- BEGIN entry:loop -->
       <li class="media-item">
-        <a href="{url}" class="media-link<!-- BEGIN_IF [{path}/em] --> is-noimage<!-- END_IF -->">
-          <!-- BEGIN image:veil -->
-          <div class="media-item-img">
-            <div class="media-img-wrap">
-              <img src="%{ROOT_DIR}{path}[resizeImg('480','270')]" alt="" width="480" height="270" class="acms-img-responsive media-img">
+        <a href="{url}" class="media-link">
+          <div class="media-link-inner">
+            <!-- BEGIN image:veil -->
+            <div class="media-item-img">
+              <img src="%{ROOT_DIR}{path}[resizeImg('480','270')]" alt="{alt}" width="480" height="270" class="media-img">
+            </div><!-- END image:veil -->
+            <div class="media-item-text-box">
+              <div class="media-item-header">
+                <!-- BEGIN_IF [<!-- BEGIN new -->1<!-- END new -->{date#}/nem] -->
+                <p class="media-time-label-box">
+                  <time class="media-time" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time><!-- BEGIN new --><span class="label">New</span><!-- END new -->
+                </p>
+                <!-- END_IF -->
+                <!-- BEGIN categoryField --><span class="media-category">{fieldCategoryName}</span><!-- END categoryField -->
+                <h2 class="media-title">{title}</h2>
+              </div>
+              <p class="media-text">{summary}[trim(280, '...')]</p>
+              <!-- BEGIN tag:veil -->
+              <div class="media-tag-wrap">
+                <ul class="tag-sm-list" aria-label="関連タグ">
+                  <!-- BEGIN tag:loop -->
+                  <li class="tag-sm-item">#{name}</li>
+                  <!-- END tag:loop -->
+                </ul>
+              </div><!-- END tag:veil -->
+              <p class="media-read-more">詳しく見る <span class="icon-button">@include("/images/icon-button.svg")</span></p>
             </div>
-          </div><!-- END image:veil -->
-          <div class="media-item-text">
-            <div class="media-item-header">
-              <time class="media-time" datetime="{date#Y}-{date#n}-{date#j}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time><!-- BEGIN new --><span class="label">New</span><!-- END new -->
-              <!-- BEGIN categoryField --><span class="media-category">{fieldCategoryName}</span><!-- END categoryField -->
-              <h2 class="media-title">{title}</h2>
-            </div>
-            <p class="media-text">{summary}[trim(280, '...')]</p>
-            <!-- BEGIN tag:veil -->
-            <div class="media-tag-wrap">
-              <ul class="tag-sm-list" aria-label="関連タグ">
-                <!-- BEGIN tag:loop -->
-                <li class="tag-sm-item">#{name}</li>
-                <!-- END tag:loop -->
-              </ul>
-            </div><!-- END tag:veil -->
-            <p class="media-read-more">詳しく見る <span class="icon-button">@include("/images/icon-button.svg")</span></p>
           </div>
         </a>
       </li><!-- END entry:loop -->
