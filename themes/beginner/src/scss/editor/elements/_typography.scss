@@ -256,16 +256,18 @@
 
 /* 注釈や注意文が、隣り合った時、テーブルの下に来た時は上余白を詰めてまとまり感を出す */
 // 注釈や注意文が 隣り合った時（閲覧画面、ブロックエディタの閲覧画面）
-p + p.text-info,
-p + p.text-danger,
-p + p.text-info,
-p + p.text-danger,
-// ブロックエディタ用（管理画面 / 閲覧画面）
-div:has(> table) + p.text-info,
-div:has(> table) + p.text-danger,
-// テーブルユニット用（閲覧画面）
-[class*="column-table-"] + p.text-info,
-[class*="column-table-"] + p.text-danger {
+@include acms.editor-style(
+  (
+    "p + p.text-info",
+    "p + p.text-danger",
+    // ブロックエディタ用（管理画面 / 閲覧画面）
+    "div:has(> table) + p.text-info",
+    "div:has(> table) + p.text-danger",
+    // テーブルユニット用（閲覧画面）
+    "[class*="column-table"] + p.text-info",
+    "[class*="column-table"] + p.text-danger",
+  )
+) {
   margin-top: -1rem;
 }
 
