@@ -231,40 +231,6 @@
 
 }
 
-/* 背景あり */
-.section-animation-bg {
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 50%;
-    background: var(--color-gray10);
-    content: "";
-  }
-
-  .js &.js-animation::before {
-    transform: translateX(100%);
-    transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
-    will-change: transform;
-  }
-
-  .js &.js-animation.is-show::before {
-    transform: translateX(0);
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .section-animation-bg {
-    padding: 3rem 0;
-
-  }
-}
-
 /* セクション内で使用するボタンのレイアウト */
 .section-button {
   margin-block: 0;
