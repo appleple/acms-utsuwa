@@ -41,10 +41,10 @@
         <a href="{url}" class="card-link">
           <div class="card-link-inner">
             <div class="card-img-wrap">
-              <!-- BEGIN_IF [{main-img@path}/nem] -->
+              <!-- BEGIN_IF [{entry_main_image@path}/nem] -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
-                alt="{main-img@alt}"
+                src="%{MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(455,256)]"
+                alt="{entry_main_image@alt}"
                 class="acms-img-responsive card-img"
                 width="455"
                 height="256"
@@ -54,14 +54,26 @@
               <!-- ELSE -->
               <!-- BEGIN image:veil -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
-                alt="{alt}"
+              src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+              alt="{alt}"
+              class="acms-img-responsive card-img"
+              width="455"
+              height="256"
+              loading="lazy"
+              decoding="async"
+              >
+              <!-- END image:veil -->
+              <!-- BEGIN noimage -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
                 class="acms-img-responsive card-img"
                 width="455"
                 height="256"
                 loading="lazy"
                 decoding="async"
               >
+              <!-- END noimage -->
               <!-- END_IF -->
               <!-- BEGIN new -->
               <!-- BEGIN moduleField -->
