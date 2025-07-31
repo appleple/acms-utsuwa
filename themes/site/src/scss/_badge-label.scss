@@ -44,6 +44,7 @@
   padding: 0 0.5rem;
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   background: var(--color-gray10);
   border-radius: var(--border-radius-md);
 
