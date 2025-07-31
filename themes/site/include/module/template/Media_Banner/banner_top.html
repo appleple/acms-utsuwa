@@ -1,11 +1,15 @@
 <!-- BEGIN_MODULE Media_Banner id="{{module_id}}" --><!-- BEGIN moduleField -->
-<section class="section-pt section-mb js-animation not-editor-style">
+<section class="section-pt<!-- BEGIN_IF [{section-class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
   <div class="acms-container">
     @include("/include/edit/module-custom-box2.html",{"hash":"#acms_box3"})
+    <!-- BEGIN module-heading:veil -->
     <header class="section-vertical-header">
       <h2 class="section-vertical-heading">{module-heading}</h2>
+      <!-- BEGIN module-heading-small:veil -->
       <p class="section-vertical-text">{module-heading-small}</p>
-    </header><!-- END moduleField -->
+      <!-- END module-heading-small:veil -->
+    </header>
+    <!-- END module-heading:veil --><!-- END moduleField -->
     <div>
       <ul class="banner-list acms-m-0 acms-p-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-3<!-- END_IF -->">
         <!-- BEGIN banner:loop -->
