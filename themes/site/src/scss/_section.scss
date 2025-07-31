@@ -5,22 +5,20 @@
 /* ------------------------------
 　　セクション
 ------------------------------ */
-.section {
-  padding-block: var(--section-space-y);
-
-  &.is-bg {
-    background: var(--color-gray10);
-  }
+.section-pt {
+  padding-top: var(--section-space-y);
 }
 
-@include acms.media-breakpoint-up(lg) {
-  .section.news-banner {
-    padding-block-end: 7.75rem;
-  }
+.section-pb {
+  padding-bottom: var(--section-space-y);
+}
 
-  .section.banner {
-    padding-block-end: 4.5rem;
-  }
+.section-mb {
+  margin-bottom: var(--section-space-y);
+}
+
+.section-bg-color {
+  background-color: var(--color-gray10);
 }
 
 /* 水平方向の見出し */
