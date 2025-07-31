@@ -12,10 +12,6 @@
   width: 100%;
   height: 100%;
 
-  .splide__slide {
-    overflow: hidden;
-  }
-
   .splide__controls {
     display: flex;
     gap: 8px 24px;
@@ -172,5 +168,11 @@
         background-color: var(--color-primary-hover);
       }
     }
+  }
+}
+
+.main-visual-slider {
+  .splide__slide {
+    overflow: hidden;
   }
 }

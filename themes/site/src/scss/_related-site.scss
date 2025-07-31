@@ -5,42 +5,35 @@
 /* ------------------------------
 　　関連サイト
 ------------------------------ */
-
-
 .news-banner-carousel {
-  padding: 0 1rem;
+  padding-inline: 1rem;
 
-  &.splide {
-    .splide__slide {
-      overflow: hidden;
-      border-radius: var(--border-radius-lg);
+  .splide__track {
+    /* box-shadow分の余白を確保 */
+    margin: -0.5rem !important;
+    padding: 0.5rem !important; 
+  }
 
-      img {
-        box-shadow: var(--box-shadow);
-      }
+  .splide__pagination {
+    bottom: -1rem;
+    transform: translateY(100%);
+
+    > li {
+      box-sizing: border-box;
+      width: 1.75rem;
+      height: 1.75rem;
+      padding: 0.5rem;
     }
+  }
 
-    .splide__pagination {
-      bottom: -1rem;
-      transform: translateY(100%);
-
-      >li {
-        box-sizing: border-box;
-        width: 1.75rem;
-        height: 1.75rem;
-        padding: 0.5rem;
-      }
-    }
-
-    .splide__arrow--prev {
-      left: -0.5rem
-    }
+  .splide__arrow--prev {
+    left: -0.5rem
   }
 }
 
 @include acms.media-breakpoint-up(md) {
   .news-banner-carousel {
-    padding: 0;
+    padding-inline: 0;
 
     .splide__pagination {
       bottom: -2.75rem;

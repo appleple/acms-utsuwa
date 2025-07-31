@@ -5,6 +5,8 @@
 　　バナー
 ------------------------------ */
 .banner-list {
+  margin-block: 0;
+  padding-left: 0;
   list-style: none;
 
   .js .js-animation & {
@@ -23,17 +25,25 @@
 
 .banner-link {
   display: block;
-  transition: 0.2s;
+  text-decoration: none;
 
+  @media (hover: hover) {
+    &:any-link:hover {
+      .banner-img {
+        box-shadow: var(--box-shadow-hover);
+      }
+    }
+  }
 }
 
 .banner-img {
   display: block;
   width: 100%;
+  height: auto;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 
-  &:hover {
-    box-shadow: var(--box-shadow-hover);
+  @media (hover: hover) {
+    transition: box-shadow 0.3s ease;
   }
 }
