@@ -17,7 +17,7 @@
               <!-- END category:loop -->
               <!-- END_MODULE Category_List -->
             </select>
-          </div>
+          </div>  
         </div>
         <div class="search-panel-item">
           <label for="station" class="search-panel-label">業種</label>
@@ -101,7 +101,13 @@
             <input type="hidden" name="field[]" value="work-goal" />
           </div>
         </div>
-      </div>
+        <div class="search-panel-item">
+          <label for="kubun" class="search-panel-label">キーワード</label>
+          <div class="search-panel-input form-group">
+            <input type="search" name="keyword" value="%{KEYWORD}" id="keyword" class="acms-form-width-full" />
+          </div>
+        </div>
+        </div>
       <div class="search-panel-footer form-button-group">
         <input type="hidden" name="bid" value="%{BID}" />
         <input type="submit" name="ACMS_POST_2GET" value="検索する" class="button is-lg is-width-lg" />
