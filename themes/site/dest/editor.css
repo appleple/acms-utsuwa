@@ -1096,8 +1096,16 @@
   margin: 0 0 var(--entry-el-margin-md) 0;
   padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
 }
+.entry-style .gu-bg-gray > *:not(.entry-reset):first-child,
+.entry-style .gu-bg-gray > *:first-child.column-block-editor > *:first-child,
+.entry-style .gu-bg-primary > *:not(.entry-reset):first-child,
+.entry-style .gu-bg-primary > *:first-child.column-block-editor > *:first-child {
+  margin-top: 0;
+}
 .entry-style .gu-bg-gray > *:not(.entry-reset):last-child,
-.entry-style .gu-bg-primary > *:not(.entry-reset):last-child {
+.entry-style .gu-bg-gray > *:last-child.column-block-editor > *:last-child,
+.entry-style .gu-bg-primary > *:not(.entry-reset):last-child,
+.entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child {
   margin-bottom: 0;
 }
 .entry-style .gu-cover > [class*=gu-] {
@@ -1122,7 +1130,12 @@
   border: var(--border-width-sm) solid var(--color-gray40);
   content: "";
 }
-.entry-style .gu-border > *:not(.entry-reset):last-child {
+.entry-style .gu-border > *:not(.entry-reset):first-child,
+.entry-style .gu-border > *:first-child.column-block-editor > *:first-child {
+  margin-top: 0;
+}
+.entry-style .gu-border > *:not(.entry-reset):last-child,
+.entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
   margin-bottom: 0;
 }
 .entry-style .gu-narrow {
@@ -1137,9 +1150,20 @@
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
   }
+  .entry-style .gu-bg-gray > *:not(.entry-reset):first-child,
+  .entry-style .gu-bg-gray > *:first-child.column-block-editor > *:first-child,
+  .entry-style .gu-bg-primary > *:not(.entry-reset):first-child,
+  .entry-style .gu-bg-primary > *:first-child.column-block-editor > *:first-child,
+  .entry-style .gu-border > *:not(.entry-reset):first-child,
+  .entry-style .gu-border > *:first-child.column-block-editor > *:first-child {
+    margin-top: 0;
+  }
   .entry-style .gu-bg-gray > *:not(.entry-reset):last-child,
+  .entry-style .gu-bg-gray > *:last-child.column-block-editor > *:last-child,
   .entry-style .gu-bg-primary > *:not(.entry-reset):last-child,
-  .entry-style .gu-border > *:not(.entry-reset):last-child {
+  .entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child,
+  .entry-style .gu-border > *:not(.entry-reset):last-child,
+  .entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
     margin-bottom: 0;
   }
   .entry-style .gu-cover > [class*=gu-] {
@@ -1355,11 +1379,12 @@
 }
 .entry-style .entry-outline {
   margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
-  padding: 1rem;
+  padding-block: 1.5rem;
+  padding-inline: 1rem;
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
 }
-@media (min-width: 48rem) {
+@media (min-width: 30rem) {
   .entry-style .entry-outline {
     padding: 2rem;
   }
