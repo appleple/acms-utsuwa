@@ -58,12 +58,30 @@ $(() => {
     observerRow.observe(box);
   });
 
+  // PC表示時のナビゲーション追従
+  const $globalNav = document.querySelector('.js-sticky-nav');
+  if ($globalNav) {
+    const $header = $globalNav.closest('.header');
+    const $navWrap = $globalNav.closest('.global-nav');
+    const navOffsetTop = $navWrap.offsetTop;
+    const navHeight = $globalNav.offsetHeight;
+    $header.style.setProperty('--nav-height', `${navHeight}px`);
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      if (scrollTop > navOffsetTop) {
+        $globalNav.classList.add('is-sticky');
+      } else {
+        $globalNav.classList.remove('is-sticky');
+      }
+    });
+  }
+
   // モバイル時のナビゲーション
   const $mobileNavTrigger = $('.js-mobile-nav-btn');
   const $mobileNavContents = $('.js-mobile-nav');
   const $menuText = $('.global-nav-mobile-menu-text'); // 追加：テキスト要素を取得
 
-  $mobileNavTrigger.click(() => {
+  $mobileNavTrigger.on('click', () => {
     $('body').toggleClass('is-locked');
     const isExpanded = $mobileNavTrigger.attr('aria-expanded') === 'true';
 
