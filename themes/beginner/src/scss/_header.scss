@@ -14,10 +14,6 @@
   box-sizing: border-box;
   width: 100%;
   background: var(--color-white);
-
-  &:has(.js-sticky-nav) {
-    padding-bottom: var(--nav-height);
-  }
 }
 
 .header-item-wrap {
@@ -54,6 +50,10 @@
     max-width: 100%;
     height: var(--header-height);
     box-shadow: var(--box-shadow);
+
+    &:has(.js-sticky-nav) {
+      padding-bottom: var(--nav-height, 80px);
+    }
   }
 
   .header-item-wrap {
