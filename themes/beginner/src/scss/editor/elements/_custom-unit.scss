@@ -19,11 +19,12 @@
 .#{acms.$entry-class} {
   .entry-outline {
     margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
-    padding: 1rem;
+    padding-block: 1.5rem;
+    padding-inline: 1rem;
     background-color: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
 
-    @include acms.media-breakpoint-up(md) {
+    @include acms.media-breakpoint-up(sm) {
       padding: 2rem;
     }
   }
