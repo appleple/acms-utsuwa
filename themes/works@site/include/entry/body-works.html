@@ -79,22 +79,19 @@
 
     <!-- BEGIN entry:veil -->
     <div class="acms-entry entry-style js-outline" data-target=".js-outline-yield" data-link="true" data-listType="ol" data-listClassName="outline-list" data-itemClassName="outline-item" data-linkClassName="css-scroll" data-anchorName="heading-$1" data-levelLimit="3" data-exceptClass="js-except">
-      <div>
-        <!-- カスタムフィールドの読み込み -->
-        @include("/include/entry/field.html")
+      <!-- カスタムフィールドの読み込み -->
+      @include("/include/entry/field.html")
 
-        <!-- BEGIN unit:veil -->
-        @include("/include/unit.html")
-        <!-- END unit:veil -->
-        <!-- 続きを読む -->
-        @include("/include/parts/continue.html")
+      <!-- BEGIN unit:veil -->
+      @include("/include/unit.html")
+      <!-- END unit:veil -->
+      <!-- 続きを読む -->
+      @include("/include/parts/continue.html")
 
-        <!-- BEGIN_MODULE Touch_Entry -->
-        <!-- カスタムフィールドの読み込み -->
-        @include("/include/entry/field_foot.html")
-        <!-- END_MODULE Touch_Entry -->
-
-      </div>
+      <!-- BEGIN_MODULE Touch_Entry -->
+      <!-- カスタムフィールドの読み込み -->
+      @include("/include/entry/field_foot.html")
+      <!-- END_MODULE Touch_Entry -->
     </div>
     <!-- END entry:veil -->
 
