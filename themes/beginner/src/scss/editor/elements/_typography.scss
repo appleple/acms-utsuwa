@@ -274,22 +274,25 @@
 /* リスト
 ----------------------------- */
 @include acms.editor-style("ul") {
+  --list-space-y: 0.5rem; /* アイテム間の縦余白 */
+
+  display: grid;
+  gap: var(--list-space-y);
   margin-block: 0 var(--entry-el-margin-md);
-  padding-left: 1.875rem;
+  padding-left: calc(1lh + 0.375rem);
 
   li {
     position: relative;
-    margin-bottom: 0.5rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-lg);
+    line-height: var(--line-height-base);
     list-style: none;
 
     &::before {
       position: absolute;
-      top: 0.5rem;
-      left: -1.5rem;
-      width: 0.5rem;
-      height: 0.5rem;
+      top: calc(0.5lh - 0.1875rem);
+      left: calc((0.5lh + 0.1875rem) * -1);
+      width: 0.375rem;
+      height: 0.375rem;
       background: var(--color-secondary);
       border-radius: 50%;
       content: "";
@@ -305,48 +308,55 @@
     }
 
     ul {
-      margin-top: 0.5rem;
+      margin-top: var(--list-space-y);
     }
   }
 }
 
 /* 番号付きリスト */
 @include acms.editor-style("ol") {
+  --order-list-space-y: 0.5rem; /* アイテム間の縦余白 */
+
+  display: grid;
   margin-block: 0 var(--entry-el-margin-md);
-  padding-left: var(--entry-el-padding-md);
+  padding-inline-start: 0;
+  grid-template-columns: minmax(1lh, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */ /* ulの1階層目テキストはじまりと揃えるために minmax(1lh, auto) で最小値を設定 */
+  gap: var(--order-list-space-y) 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
   counter-reset: order-list;
 
   li {
-    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
+    grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
     clear: both;
-    margin-bottom: 0.5rem;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-lg);
-    list-style: none;
+    line-height: var(--line-height-base);
+
+    &::marker {
+      content: none;
+    }
 
     &::before {
-      position: absolute;
-      top: 2px;
-      left: -1.5rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      margin: 0 1rem 0 0;
+      grid-column: 1;
+      padding-top: 1.4px; /* 番号位置の微調整 */
       color: var(--color-text-2nd);
-      font-weight: bold;
-      border-radius: 50%;
-      content: counter(order-list) '.';
+      font-weight: 700;
+      white-space: nowrap;
+      word-break: keep-all;
+      content: counters(order-list, "-") ". ";
       counter-increment: order-list;
     }
 
-    &:last-child {
+    & > * {
+      /* ブロックエディタ：リセット用 */
       margin-bottom: 0;
     }
 
     ol {
-      margin-top: 0.5rem;
+      grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
+      margin-top: var(--order-list-space-y);
+      padding-left: 1rem;
     }
   }
 }
@@ -362,14 +372,14 @@
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-sm);
+    line-height: var(--line-height-md);
   }
 
   dd {
     margin-bottom: 1rem;
     margin-left: 0; /* リセット用 */
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-lg);
+    line-height: var(--line-height-md);
   }
 
   dd + dt {
