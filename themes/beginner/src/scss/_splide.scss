@@ -85,38 +85,6 @@
     }
   }
 
-  .splide__arrow {
-    top: 50%;
-    width: 3rem;
-    height: 3rem;
-    background: var(--color-white);
-    box-shadow: var(--box-shadow);
-    transform: translateY(-1.5rem);
-    opacity: 1;
-
-    &.splide__arrow--prev {
-      left: -1.5rem;
-    }
-
-    &.splide__arrow--next {
-      right: -1.5rem;
-    }
-
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-
-      path {
-        fill: transparent;
-        stroke: var(--color-gray80);
-      }
-
-      .splide__arrow--prev & {
-        transform-origin: top;
-      }
-    }
-  }
-
   .splide__track,
   .splide__list,
   .splide__slide,
