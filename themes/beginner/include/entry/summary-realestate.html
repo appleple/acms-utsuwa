@@ -20,11 +20,11 @@
             <div class="card-img-wrap">
               <!-- BEGIN_IF [{path}/nem] -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+                src="%{ROOT_DIR}{path}[resizeImg(800)]"
                 alt=""
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
+                width="{800}"
+                height="{path}[imageRatioSizeH(800)]"
                 loading="lazy"
                 decoding="async"
               >
@@ -33,8 +33,8 @@
                 src="/images/noimage.png"
                 alt=""
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
+                width="800"
+                height="450"
                 loading="lazy"
                 decoding="async"
               >
@@ -72,10 +72,10 @@
                 <!-- END tag:loop -->
               </ul>
               <!-- END tag:veil -->
-
             </div>
           </div>
         </a>
+      </div>
     </li>
     <!-- END entry:loop -->
   </ul>
