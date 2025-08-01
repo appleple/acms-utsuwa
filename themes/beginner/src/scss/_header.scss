@@ -50,10 +50,6 @@
     max-width: 100%;
     height: var(--header-height);
     box-shadow: var(--box-shadow);
-
-    &:has(.js-sticky-nav) {
-      padding-bottom: var(--nav-height, 80px);
-    }
   }
 
   .header-item-wrap {
@@ -69,6 +65,10 @@
 
 // PC時レイアウト：ロゴとグローバルナビを縦積みに左右中央揃え
 @include acms.media-breakpoint-up(lg) {
+  .header:has(.js-sticky-nav) {
+    padding-bottom: var(--nav-height);
+  }
+
   .header-item-wrap {
     display: grid;
     grid-gap: 0 var(--col-gutter);
