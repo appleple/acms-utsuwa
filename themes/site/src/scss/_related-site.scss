@@ -6,40 +6,72 @@
 　　関連サイト
 ------------------------------ */
 .news-banner-carousel {
-  padding-inline: 1rem;
+  padding-inline: 1rem; /* スライダー送り矢印ボタンが画面から見切れないよう余白を確保 */
 
   .splide__track {
     /* box-shadow分の余白を確保 */
     margin: -0.5rem !important;
-    padding: 0.5rem !important; 
+    padding: 0.5rem !important;
   }
 
-  .splide__pagination {
-    bottom: -1rem;
-    transform: translateY(100%);
+  .splide__arrow {
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-2rem);
+    opacity: 1;
 
-    > li {
-      box-sizing: border-box;
-      width: 1.75rem;
-      height: 1.75rem;
-      padding: 0.5rem;
+    &.splide__arrow--prev {
+      left: 0;
+    }
+
+    &.splide__arrow--next {
+      right: 0;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+
+      path {
+        fill: transparent;
+        stroke: var(--color-gray80);
+      }
+
+      .splide__arrow--prev & {
+        transform-origin: top;
+      }
     }
   }
 
-  .splide__arrow--prev {
-    left: -0.5rem
+  .splide__pagination {
+    margin-top: 1rem;
   }
 }
 
-@include acms.media-breakpoint-up(md) {
+@include acms.media-breakpoint-up(lg) {
   .news-banner-carousel {
     padding-inline: 0;
 
-    .splide__pagination {
-      bottom: -2.75rem;
-      gap: 0.25rem;
-      padding: 1rem 0 0;
-      transform: translateY(0);
+    .splide__arrow {
+      width: 3rem;
+      height: 3rem;
+      transform: translateY(-1.5rem);
+
+      &.splide__arrow--prev {
+        left: -1.5rem;
+      }
+
+      &.splide__arrow--next {
+        right: -1.5rem;
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 }
