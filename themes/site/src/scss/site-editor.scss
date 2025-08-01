@@ -6,19 +6,19 @@
 // 編集画面設定
 @use "./editor/field";
 
-// エディター共通タイポグラフィー（編集画面と共通）
+// エディター共通タイポグラフィー
 @use "./editor/elements/typography";
 
-// ブロックエディターのレイアウト（編集画面と共通）
+// ブロックエディターのレイアウト
 @use "./editor/block-editor-layout";
 
 // ユニットのグルーピング（閲覧画面のみで使用）
 @use "./editor/group";
 
-// ユニット配置（編集画面と共通）
+// ユニット配置
 @use "./editor/unit-align";
 
-// ユニットパーツ（編集画面と共通）
+// ユニットパーツ
 @use "./editor/elements/blockquote";
 @use "./editor/elements/button";
 @use "./editor/elements/custom-unit";
