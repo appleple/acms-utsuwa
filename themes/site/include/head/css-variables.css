@@ -87,10 +87,10 @@
 
   /* 1120px */
   --container: calc(70rem + var(--container-space-x) * 2);
-  /* 928px */
-  --container-md: calc(58rem + var(--container-space-x) * 2);
-  /* 720px */
-  --container-sm: calc(45rem + var(--container-space-x) * 2);
+  /* 960px */
+  --container-md: calc(56rem + var(--container-space-x) * 2);
+  /* 768px */
+  --container-sm: calc(44rem + var(--container-space-x) * 2);
 
   /* 2カラム */
   --width-main-container: calc(100% - var(--width-side-container) - var(--gutter-md) * 1.5);
