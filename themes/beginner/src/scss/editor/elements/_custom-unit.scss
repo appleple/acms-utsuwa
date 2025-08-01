@@ -19,7 +19,6 @@
 .#{acms.$entry-class} {
   .entry-outline {
     margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
-    margin: 0 0 var(--entry-el-margin-lg);
     padding: 1rem;
     background-color: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
@@ -99,8 +98,10 @@
     }
 
     @media (hover: hover) {
+      transition: color 0.25s ease;
+
       &:any-link:hover {
-        font-weight: 600;
+        color: var(--color-primary);
         cursor: pointer;
       }
     }
