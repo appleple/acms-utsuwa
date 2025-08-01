@@ -17,24 +17,24 @@
         <a href="{url}" class="card-link">
           <div class="card-link-inner">
             <div class="card-img-wrap">
-              <!-- BEGIN_IF [{main-img@path}/nem] -->
+              <!-- BEGIN_IF [{entry_main_image@path}/nem] -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
-                alt="{main-img@alt}"
+                src="%{MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(800)]"
+                alt="{entry_main_image@alt}"
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
+                width="800"
+                height="{entry_main_image@ratio}[getHeightFromRatio(800)]"
                 loading="lazy"
                 decoding="async"
               >
               <!-- ELSE -->
               <!-- BEGIN image:veil -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(455,256)]"
+                src="%{ROOT_DIR}{path}[resizeImg(800)]"
                 alt="{alt}"
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
+                width="800"
+                height="{path}[imageRatioSizeH(800)]"
                 loading="lazy"
                 decoding="async"
               >
@@ -44,8 +44,8 @@
                 src="/images/noimage.png"
                 alt="noimage画像"
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
+                width="800"
+                height="450"
                 loading="lazy"
                 decoding="async"
               >

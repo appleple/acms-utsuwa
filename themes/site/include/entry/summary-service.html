@@ -9,27 +9,28 @@
         <a href="{url}" class="card-link">
           <div class="card-link-inner">
             <div class="card-img-wrap">
-              <!-- BEGIN_IF [{path}/nem] -->
+              <!-- BEGIN image:veil -->
               <img
-                src="%{ROOT_DIR}{path}[resizeImg(580,345)]"
-                alt="{path@alt}"
-                width="580"
-                height="345"
-                class="acms-img-responsive card-img"
-                loading="lazy"
-                decoding="async"
-              >
-              <!--  ELSE_IF [{path}/nem] -->
-              <img
-                src="%{ROOT_DIR}{path}[resizeImg(580,345)]"
+                src="%{ROOT_DIR}{path}[resizeImg(800)]"
                 alt="{alt}"
-                width="580"
-                height="345"
                 class="acms-img-responsive card-img"
+                width="800"
+                height="{path}[imageRatioSizeH(800)]"
                 loading="lazy"
                 decoding="async"
               >
-              <!-- END_IF -->
+              <!-- END image:veil -->
+              <!-- BEGIN noimage -->
+              <img
+                src="/images/noimage.png"
+                alt="noimage画像"
+                class="acms-img-responsive card-img"
+                width="800"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END noimage -->
             </div>
             <div class="card-text-wrap">
               <h3 class="card-title">{title}</h3>
