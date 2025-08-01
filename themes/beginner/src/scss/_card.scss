@@ -101,7 +101,7 @@
 
   img {
     width: 100%;
-    aspect-ratio: var(--card-img-aspect-ratio, 455 / 256);
+    aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
     object-fit: cover;
   }
 
