@@ -160,10 +160,10 @@
     margin: 0;
     padding-bottom: 0;
     background-color: #fff;
+  }
 
-    & + & {
-      border-top: var(--border-width-sm) solid var(--color-gray20);
-    }
+  .global-nav-item + .global-nav-item {
+    border-top: var(--border-width-sm) solid var(--color-gray20);
   }
 
   .global-nav-link {
