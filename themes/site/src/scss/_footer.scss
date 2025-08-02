@@ -14,6 +14,11 @@
   }
 }
 
+/* 背景色付きCTAがフッター上にある時は上余白を詰める */
+.cta-visual-section + .footer {
+  margin-block-start: 0;
+}
+
 /* フッターメインコンテンツレイアウト
 ----------------------------- */
 .footer-group {
