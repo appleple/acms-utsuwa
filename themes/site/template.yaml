@@ -1,4 +1,4 @@
-tpl_index  : index.html
+tpl_top    : index.html
 tpl_index  : index.html
 tpl_detail : _entry.html
 tpl_404    : 404.html
