@@ -29,3 +29,6 @@
 @use "./editor/elements/module-unit";
 @use "./editor/elements/table";
 @use "./editor/elements/video";
+
+// モジュールユニットと共通
+@use "card-bordered";

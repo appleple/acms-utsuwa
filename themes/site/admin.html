@@ -1,6 +1,11 @@
 @extends("/_layouts/admin.html")
 
 @section("editor-css")
+<!-- BEGIN_MODULE Touch_Edit -->
+<!-- モジュールユニットのレイアウトでacms.cssを使用しているため、エントリー編集画面でレイアウト適用できるようにCSSを読み込み -->
+<link rel="stylesheet" href="/css/acms-layout.min.css">
+<!-- END_MODULE Touch_Edit -->
+
 <!-- テーマ用のCSSカスタムプロパティを読み込み -->
 <link rel="stylesheet" href="/include/head/css-variables.css" />
 <!-- 編集画面とエディタ内要素のスタイル（編集・閲覧画面両方に適用）を読み込み -->
