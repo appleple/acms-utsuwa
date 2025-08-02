@@ -61,10 +61,13 @@
     font-size: map.get(global.$font-scales, body-m);
     line-height: 1.5;
 
+    span,
     strong,
     em {
-      font-weight: normal;
-      font-style: normal;
+      display: contents;
+      font-weight: inherit;
+      font-size: inherit;
+      font-style: inherit;
       background: none;
     }
 
