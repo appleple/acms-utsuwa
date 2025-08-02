@@ -36,6 +36,18 @@
         transform-origin: top;
       }
     }
+
+    &:hover:not(:disabled) {
+      opacity: 1; /* リセット */
+    }
+
+    @media (hover: hover) {
+      transition: box-shadow 0.3s ease;
+
+      &:hover:not(:disabled) {
+        box-shadow: var(--box-shadow-hover);
+      }
+    }
   }
 
   .splide__arrow--prev {
