@@ -1475,20 +1475,20 @@ a:hover .icon-button svg {
 　　関連サイト
 ------------------------------ */
 .news-banner-carousel {
-  padding-inline: 1rem; /* スライダー送り矢印ボタンが画面から見切れないよう余白を確保 */
+  padding-inline: 1rem; /* スライダー送り矢印ボタンが画面端から見切れないよう余白を確保 */
 }
 .news-banner-carousel .splide__track {
-  /* box-shadow分の余白を確保 */
-  margin: -0.5rem !important;
-  padding: 0.5rem !important;
+  position: relative; /* スライダー送り矢印の位置基準 */
+  margin: -0.5rem !important; /* box-shadow分の余白を確保 */
+  padding: 0.5rem !important; /* box-shadow分の余白を確保 */
 }
 .news-banner-carousel .splide__arrow {
-  top: calc(50% - 2rem);
+  top: 50%;
   width: 2rem;
   height: 2rem;
   background: var(--color-white);
   box-shadow: var(--box-shadow);
-  transform: none; /* リセット */
+  transform: translateY(-50%);
 }
 .news-banner-carousel .splide__arrow svg {
   width: 1rem;
@@ -1518,8 +1518,14 @@ a:hover .icon-button svg {
 .news-banner-carousel .splide__arrow--next {
   right: 0;
 }
+.news-banner-carousel.splide.is-overflow {
+  margin-bottom: 2.75rem; /* スライダーのドットナビゲーションの高さを確保 */
+}
 .news-banner-carousel .splide__pagination {
-  margin-top: 1rem;
+  position: absolute;
+  bottom: -2.75rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 30rem) {
@@ -1533,14 +1539,8 @@ a:hover .icon-button svg {
     right: -1rem;
   }
 }
-@media (min-width: 48rem) {
-  .news-banner-carousel .splide__arrow {
-    top: calc(50% - 1rem);
-  }
-}
 @media (min-width: 64rem) {
   .news-banner-carousel .splide__arrow {
-    top: calc(50% - 1.5rem);
     width: 3rem;
     height: 3rem;
   }
