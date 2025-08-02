@@ -257,38 +257,6 @@ a {
     background-color: var(--color-gray10);
   }
 }
-.main-visual-slider .splide__arrow,
-.news-banner-carousel .splide__arrow {
-  top: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: var(--color-white);
-  box-shadow: var(--box-shadow);
-  transform: translateY(-1.5rem);
-  opacity: 1;
-}
-.main-visual-slider .splide__arrow.splide__arrow--prev,
-.news-banner-carousel .splide__arrow.splide__arrow--prev {
-  left: -1.5rem;
-}
-.main-visual-slider .splide__arrow.splide__arrow--next,
-.news-banner-carousel .splide__arrow.splide__arrow--next {
-  right: -1.5rem;
-}
-.main-visual-slider .splide__arrow svg,
-.news-banner-carousel .splide__arrow svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.main-visual-slider .splide__arrow svg path,
-.news-banner-carousel .splide__arrow svg path {
-  fill: transparent;
-  stroke: var(--color-gray80);
-}
-.splide__arrow--prev .main-visual-slider .splide__arrow svg,
-.splide__arrow--prev .news-banner-carousel .splide__arrow svg {
-  transform-origin: top;
-}
 .main-visual-slider .splide__track,
 .main-visual-slider .splide__list,
 .main-visual-slider .splide__slide,
@@ -1507,36 +1475,80 @@ a:hover .icon-button svg {
 　　関連サイト
 ------------------------------ */
 .news-banner-carousel {
-  padding-inline: 1rem;
+  padding-inline: 1rem; /* スライダー送り矢印ボタンが画面から見切れないよう余白を確保 */
 }
 .news-banner-carousel .splide__track {
   /* box-shadow分の余白を確保 */
   margin: -0.5rem !important;
   padding: 0.5rem !important;
 }
-.news-banner-carousel .splide__pagination {
-  bottom: -1rem;
-  transform: translateY(100%);
+.news-banner-carousel .splide__arrow {
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
+  transform: translateY(-2rem);
+  opacity: 1;
 }
-.news-banner-carousel .splide__pagination > li {
-  box-sizing: border-box;
-  width: 1.75rem;
-  height: 1.75rem;
-  padding: 0.5rem;
+.news-banner-carousel .splide__arrow svg {
+  width: 1rem;
+  height: 1rem;
+}
+.news-banner-carousel .splide__arrow svg path {
+  fill: transparent;
+  stroke: var(--color-gray80);
+}
+.splide__arrow--prev .news-banner-carousel .splide__arrow svg {
+  transform-origin: top;
+}
+.news-banner-carousel .splide__arrow:hover:not(:disabled) {
+  opacity: 1; /* リセット */
+}
+@media (hover: hover) {
+  .news-banner-carousel .splide__arrow {
+    transition: box-shadow 0.3s ease;
+  }
+  .news-banner-carousel .splide__arrow:hover:not(:disabled) {
+    box-shadow: var(--box-shadow-hover);
+  }
 }
 .news-banner-carousel .splide__arrow--prev {
-  left: -0.5rem;
+  left: 0;
+}
+.news-banner-carousel .splide__arrow--next {
+  right: 0;
+}
+.news-banner-carousel .splide__pagination {
+  margin-top: 1rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 30rem) {
   .news-banner-carousel {
     padding-inline: 0;
   }
-  .news-banner-carousel .splide__pagination {
-    bottom: -2.75rem;
-    gap: 0.25rem;
-    padding: 1rem 0 0;
-    transform: translateY(0);
+  .news-banner-carousel .splide__arrow--prev {
+    left: -1rem;
+  }
+  .news-banner-carousel .splide__arrow--next {
+    right: -1rem;
+  }
+}
+@media (min-width: 48rem) {
+  .news-banner-carousel .splide__arrow {
+    width: 3rem;
+    height: 3rem;
+    transform: translateY(-1.5rem);
+  }
+  .news-banner-carousel .splide__arrow svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .news-banner-carousel .splide__arrow--prev {
+    left: -1.5rem;
+  }
+  .news-banner-carousel .splide__arrow--next {
+    right: -1.5rem;
   }
 }
 /* ------------------------------
