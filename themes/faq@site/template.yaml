@@ -1,0 +1,6 @@
+tpl_top    : _top.html
+tpl_index  : index.html
+tpl_detail : _entry.html
+tpl_404    : 404.html
+tpl_admin  : admin.html
+tpl_login  : _member-admin/login.html
