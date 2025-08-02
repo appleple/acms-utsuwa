@@ -43,6 +43,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
       box-shadow: var(--box-shadow-hover);
 
       .video-modal-play-icon {
+        background-color: var(--color-primary-hover);
         box-shadow: var(--box-shadow-hover);
         transform: scale(1);
       }
@@ -72,7 +73,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   display: block;
   width: $_video-play-btn-size;
   height: $_video-play-btn-size;
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   border-radius: 50%;
   box-shadow: var(--box-shadow);
 
@@ -92,6 +93,7 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   @media (hover: hover) {
     transition:
       transform 0.3s ease,
+      background-color 0.3s ease,
       box-shadow 0.3s ease;
   }
 }
