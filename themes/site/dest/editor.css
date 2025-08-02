@@ -362,7 +362,9 @@
   position: relative;
   font-size: 1rem;
   line-height: var(--line-height-base);
-  list-style: none;
+}
+.entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li::marker {
+  content: none;
 }
 .entry-style ul:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) li::before {
   position: absolute;

@@ -285,7 +285,10 @@
     position: relative;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
-    list-style: none;
+
+    &::marker {
+      content: none;
+    }
 
     &::before {
       position: absolute;
