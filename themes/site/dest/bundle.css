@@ -4937,16 +4937,22 @@ input::placeholder {
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.2s;
 }
 .video-modal-thumbnail .video-modal-play-icon {
   transform: scale(0.9);
 }
-.video-modal-thumbnail:hover {
-  box-shadow: var(--box-shadow-hover);
-}
-.video-modal-thumbnail:hover .video-modal-play-icon {
-  transform: scale(1);
+@media (hover: hover) {
+  .video-modal-thumbnail {
+    transition: box-shadow 0.3s ease;
+  }
+  .video-modal-thumbnail:hover {
+    box-shadow: var(--box-shadow-hover);
+  }
+  .video-modal-thumbnail:hover .video-modal-play-icon {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--box-shadow-hover);
+    transform: scale(1);
+  }
 }
 
 .video-modal-play-icon-wrap {
@@ -4969,10 +4975,9 @@ input::placeholder {
   display: block;
   width: 4rem;
   height: 4rem;
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   border-radius: 50%;
   box-shadow: var(--box-shadow);
-  transition: transform 0.2s ease;
 }
 .video-modal-play-icon::before {
   position: absolute;
@@ -4984,6 +4989,11 @@ input::placeholder {
   border: 0.75rem solid transparent;
   border-left: 1rem solid #fff;
   content: "";
+}
+@media (hover: hover) {
+  .video-modal-play-icon {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
 }
 
 @media (min-width: 48rem) {
