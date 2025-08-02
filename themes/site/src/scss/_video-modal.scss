@@ -30,17 +30,22 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.2s;
+  
 
   .video-modal-play-icon {
     transform: scale(0.9);
   }
 
-  &:hover {
-    box-shadow: var(--box-shadow-hover);
+  @media (hover: hover) {
+    transition: box-shadow 0.3s ease;
 
-    .video-modal-play-icon {
-      transform: scale(1);
+    &:hover {
+      box-shadow: var(--box-shadow-hover);
+
+      .video-modal-play-icon {
+        box-shadow: var(--box-shadow-hover);
+        transform: scale(1);
+      }
     }
   }
 }
@@ -70,7 +75,6 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
   background: var(--color-primary);
   border-radius: 50%;
   box-shadow: var(--box-shadow);
-  transition: transform 0.2s ease;
 
   &::before {
     position: absolute;
@@ -82,6 +86,13 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
     border: calc($_video-play-btn-arrow-height / 2) solid transparent;
     border-left: $_video-play-btn-arrow-width solid $_video-play-btn-arrow-color;
     content: "";
+  }
+
+
+  @media (hover: hover) {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
 }
 
