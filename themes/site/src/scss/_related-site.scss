@@ -15,13 +15,12 @@
   }
 
   .splide__arrow {
-    top: 50%;
+    top: calc(50% - 2rem);
     width: 2rem;
     height: 2rem;
     background: var(--color-white);
     box-shadow: var(--box-shadow);
-    transform: translateY(-2rem);
-    opacity: 1;
+    transform: none; /* リセット */
 
     svg {
       width: 1rem;
@@ -37,6 +36,7 @@
       }
     }
 
+    &,
     &:hover:not(:disabled) {
       opacity: 1; /* リセット */
     }
@@ -80,9 +80,17 @@
 @include acms.media-breakpoint-up(md) {
   .news-banner-carousel {
     .splide__arrow {
+      top: calc(50% - 1rem);
+    }
+  }
+}
+
+@include acms.media-breakpoint-up(lg) {
+  .news-banner-carousel {
+    .splide__arrow {
+      top: calc(50% - 1.5rem);
       width: 3rem;
       height: 3rem;
-      transform: translateY(-1.5rem);
 
       svg {
         width: 1.5rem;
