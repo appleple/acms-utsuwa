@@ -41,15 +41,11 @@
 <!-- トップ用メッセージ -->
 @include("/include/parts/message-top.html", {"module_id": "mf_message_top"})
 
-<!-- <hr class="section-separator"> -->
-
 <!-- エントリーサマリー：事業内容 -->
 @include("/include/entry/summary-service-top.html", {"module_id": "summary_service_top"})
 
 <!-- エントリーサマリー：採用情報 -->
 @include("/include/entry/summary-event-top.html", {"module_id": "summary_event_top"})
-
-<!-- <hr class="section-separator"> -->
 
 <!-- エントリーサマリー：採用情報 -->
 @include("/include/entry/summary-recruit-top.html", {"module_id": "summary_recruit_top"})
@@ -74,7 +70,7 @@
 @endsection
 
 @section("footer-cta")
-<hr class="section-separator">
+<div class="section-separator"></div>
 <!-- CTA：お問い合わせ -->
 @include("/include/parts/cta.html", {"module_id":"mf_cta_contact", "cta-section-mt": "true"})
 @endsection
