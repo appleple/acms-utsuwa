@@ -46,18 +46,6 @@
     }
   }
 
-  .gu-cover > [class*="gu-"] {
-    margin: var(--entry-el-margin-md) calc(50% - 50vw);
-    padding: var(--entry-el-padding-md) calc(50vw - 50% + (var(--unit-gutter-var) / 2));
-    border: 0;
-
-    @include acms.media-breakpoint-up(lg) {
-      .pricing-group {
-        padding: 0;
-      }
-    }
-  }
-
   .gu-border {
     position: relative;
     margin: 0 0 var(--entry-el-margin-md) 0;
@@ -82,12 +70,6 @@
     }
   }
 
-  .gu-narrow {
-    max-width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   @include acms.media-breakpoint-up(md) {
     .gu-bg-gray,
     .gu-bg-primary,
@@ -105,12 +87,11 @@
         margin-bottom: 0;
       }
     }
+  }
 
-    .gu-cover > [class*="gu-"] {
-      position: relative;
-      top: var(--entry-el-margin-md);
-      margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
-      padding: calc(var(--entry-el-margin-md) * 3) calc(50vw - 50% + (var(--unit-gutter-var) / 2)) calc(var(--entry-el-margin-md) * 2);
-    }
+  .gu-narrow {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
