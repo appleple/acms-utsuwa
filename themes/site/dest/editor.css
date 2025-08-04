@@ -556,7 +556,7 @@
 
 /* 閲覧画面側 */
 :where(.entry-style) :where([data-type=columns]) {
-  gap: calc(var(--unit-gutter-var) / 2);
+  gap: var(--unit-gutter-var);
 }
 
 /* カラム上下余白
@@ -655,16 +655,6 @@
 .entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child {
   margin-bottom: 0;
 }
-.entry-style .gu-cover > [class*=gu-] {
-  margin: var(--entry-el-margin-md) calc(50% - 50vw);
-  padding: var(--entry-el-padding-md) calc(50vw - 50% + var(--unit-gutter-var) / 2);
-  border: 0;
-}
-@media (min-width: 64rem) {
-  .entry-style .gu-cover > [class*=gu-] .pricing-group {
-    padding: 0;
-  }
-}
 .entry-style .gu-border {
   position: relative;
   margin: 0 0 var(--entry-el-margin-md) 0;
@@ -684,11 +674,6 @@
 .entry-style .gu-border > *:not(.entry-reset):last-child,
 .entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
   margin-bottom: 0;
-}
-.entry-style .gu-narrow {
-  max-width: 80%;
-  margin-right: auto;
-  margin-left: auto;
 }
 @media (min-width: 48rem) {
   .entry-style .gu-bg-gray,
@@ -713,12 +698,11 @@
   .entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
     margin-bottom: 0;
   }
-  .entry-style .gu-cover > [class*=gu-] {
-    position: relative;
-    top: var(--entry-el-margin-md);
-    margin: calc(var(--entry-el-margin-md) * 2) calc(50% - 50vw);
-    padding: calc(var(--entry-el-margin-md) * 3) calc(50vw - 50% + var(--unit-gutter-var) / 2) calc(var(--entry-el-margin-md) * 2);
-  }
+}
+.entry-style .gu-narrow {
+  max-width: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* ------------------------------
