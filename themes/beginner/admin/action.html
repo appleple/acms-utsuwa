@@ -23,9 +23,30 @@
   </div>
   @endsection
 
+@section("goto-admin")
+
+  <!-- BEGIN_MODULE Touch_SessionWithContribution -->
+    <!-- BEGIN_MODULE Touch_NotAdmin -->
+    <form action="" method="post" id="action-goto-admin-not-admin" class="acms-admin-inline-btn">
+      <input type="submit" name="ACMS_POST_2GET" value="<!--T-->管理ページ<!--/T-->" class="acms-admin-btn" />
+      <input type="hidden" name="admin" value="top" />
+      <input type="hidden" name="bid" value="%{BID}" />
+    </form>
+    <!-- END_MODULE Touch_NotAdmin -->
+
+    <!-- BEGIN_MODULE Touch_Edit -->
+    <form action="" method="post" id="action-goto-admin-edit" class="acms-admin-inline-btn">
+      <input type="submit" name="ACMS_POST_2GET" value="<!--T-->管理ページ<!--/T-->" class="acms-admin-btn" />
+      <input type="hidden" name="admin" value="top" />
+      <input type="hidden" name="bid" value="%{BID}" />
+    </form>
+    <!-- END_MODULE Touch_Edit -->
+    <!-- END_MODULE Touch_SessionWithContribution -->
+@endsection
+
 @section("extra")
    <!-- BEGIN_MODULE Touch_Debug -->
-    &nbsp;<span class="acms-admin-label"><!--T-->テンプレート<!--/T-->：%{ROOT_TPL}</span>
+    <!--T-->テンプレート<!--/T-->：%{ROOT_TPL}
     <!-- BEGIN_IF [%{CONFIG_SET_NAME}/nem] -->
     &nbsp;&nbsp;<span class="acms-admin-label"><!--T-->コンフィグセット<!--/T-->：%{CONFIG_SET_NAME}</span>
     <!-- END_IF -->
