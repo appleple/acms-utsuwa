@@ -25,6 +25,9 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  width: 100%; /* エントリー編集画面でのリセット用 */
+  background: transparent; /* エントリー編集画面でのリセット用 */
+  border: 0; /* エントリー編集画面でのリセット用 */
 
   &.toggle-button {
     padding: 2rem 1rem;
@@ -74,9 +77,11 @@
   }
 
   .faq-title {
+    flex: 1;
     margin: 0;
     font-weight: bold;
     line-height: var(--line-height-base);
+    text-align: left;
   }
 
   @media (hover: hover) {
