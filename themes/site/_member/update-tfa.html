@@ -1,0 +1,225 @@
+@extends("/_layouts/base.html")
+
+@section("head-title")
+<title>2段階認証設定 | %{BLOG_NAME}</title>
+@endsection
+
+@section("page-title")
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <div class="page-title-text-wrap left">
+        <h1 class="page-title">2段階認証設定</h1>
+        <p class="page-title-en">tfa update</p>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section("admin-part")
+@endsection
+
+@section(topicpath)
+<!-- BEGIN_MODULE Topicpath id="topicpath" -->
+<nav class="topicpath" aria-label="現在位置">
+  <div class="acms-container sp-container">
+    <ol class="topicpath-list">
+      <!-- BEGIN blog:loop -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{name}</a>
+      </li>
+      <!-- END blog:loop -->
+      <li class="topicpath-item">
+        <a href="%{HOME_URL}mypage/update-profile/" class="topicpath-link">プロフィール</a>
+      </li>
+      <li class="topicpath-item">
+        <a href="%{HOME_URL}mypage/update-tfa/" class="topicpath-link">2段階認証設定</a>
+      </li>
+    </ol>
+  </div>
+</nav>
+<!-- END_MODULE Topicpath -->
+@endsection
+
+@section("admin-part")
+@endsection
+
+@section("main")
+<!-- BEGIN_MODULE Member_Update_Tfa -->
+<div class="acms-container">
+  <div class="container-sm">
+  <form action="" method="post" enctype="multipart/form-data">
+ 
+
+    <div class="acms-member-main-box">
+
+      <!-- BEGIN step#unregistered -->
+      <div class="acms-form">
+        <!-- BEGIN success -->
+        <div class="acms-alert acms-alert-info">
+          <!--T-->2段階認証を解除しました。<!--/T-->
+        </div>
+        <!-- END success -->
+
+        <!-- BEGIN_IF [{code:validator#required}/eq/0] -->
+        <div class="acms-alert acms-alert-danger">
+          <!--T-->コードが入力されていません<!--/T-->
+        </div>
+        <!-- ELSE_IF [{code:validator#disagreement}/eq/0] -->
+        <div class="acms-alert acms-alert-danger">
+          <!--T-->認証に失敗しました。<!--/T-->
+        </div>
+        <!-- END_IF -->
+        <!-- BEGIN_IF [{secret:validator#required}/eq/0] -->
+        <div class="acms-alert acms-alert-danger">
+          <!--T-->シークレットキーがありません。<!--/T-->
+        </div>
+        <!-- END_IF -->
+        <!-- BEGIN_IF [{tfa:validator#isOperable}/eq/0] -->
+        <div class="acms-alert acms-alert-danger">
+          <!--T-->不正な操作です<!--/T-->
+        </div>
+        <!-- END_IF -->
+
+        <p class="acms-member-notice-text">
+          <!--T-->認証コード生成用のアプリにシークレットキーを設定します。<!--/T--><br>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=ja"
+            class="acms-member-text-link acms-inline-block acms-margin-top-small"
+          >（Google Authenticator for Android）</a>
+          <a
+            href="https://apps.apple.com/jp/app/google-authenticator/id388497605"
+            class="acms-member-text-link acms-inline-block acms-margin-top-small"
+          >（Google Authenticator for iOS）</a>
+        </p>
+        <p class="acms-member-notice-text">
+          <!--T-->アプリで以下のQRコードを読み取るか、手動でシークレットキーを設定してください。<!--/T-->
+        </p>
+
+        <div class="acms-margin-bottom-medium acms-text-center">
+          <img src="{qr-image}[allow_dangerous_scheme]">
+        </div>
+        <div
+          class="acms-form-action acms-form-width-large acms-margin-bottom-medium"
+        >
+          <span class="acms-form-side"><i class="acms-icon-config_authorize"></i></span>
+          <input
+            type="text"
+            class="acms-form-large acms-form-block"
+            value="{secret-txt}"
+            readonly
+          />
+        </div>
+        <p class="acms-member-notice-text">
+          <!--T-->認証コード生成アプリに表示されているコードを入力して、認証ボタンを押して認証します。<!--/T-->
+          <br>
+          <!--T-->認証コードは短い時間で変わりますので、すばやく入力してください。<!--/T-->
+        </p>
+
+        <label for="input-text-code" class="acms-member-form-label">
+          <!--T-->認証コード<!--/T-->
+        </label>
+        <input
+          type="text"
+          name="code"
+          value=""
+          id="input-text-code"
+          class="acms-form-large acms-form-block acms-form-width-full validator-result-{code:validator#required}"
+        />
+        <input type="hidden" name="tfa[]" value="code" />
+
+        <input type="hidden" name="secret" value="{secret}" />
+        <input type="hidden" name="tfa[]" value="secret" />
+
+        <div class="read-more-pager">
+          <button
+            type="submit"
+            class="button is-lg is-width-lg"
+            name="ACMS_POST_Member_Tfa_Register"
+          >
+            <!--T-->認証<!--/T-->
+          </button>
+        </div>
+      </div>
+      <!-- END step#unregistered-->
+
+      <!-- BEGIN step#registered-->
+      <div class="acms-form">
+        <!-- BEGIN success -->
+        <div class="acms-alert acms-alert-info">
+          <!--T-->認証に成功しました。<!--/T-->
+        </div>
+        <p
+          class="acms-alert acms-alert-danger"
+        >
+          <!--T-->リカバリーコードは、一度しか表示されません。必ずここでメモして保管してください。<!--/T-->
+        </p>
+        <p class="acms-member-notice-text">
+          <!--T-->認証コードを発行できなくなった場合に、最終手段として以下の「リカバリーコード」を使用して２段階認証を無効にします。<!--/T-->
+        </p>
+        <label for="input-text-recoveryCode" class="acms-member-form-label">
+          <!--T-->リカバリーコード<!--/T-->
+        </label>
+        <div
+          class="acms-form-action acms-form-width-large acms-margin-bottom-medium"
+        >
+          <span class="acms-form-side">
+            <i class="acms-icon-config_authorize"></i>
+          </span>
+          <input
+            type="text"
+            class="acms-form-large acms-form-block"
+            value="{recoveryCode}"
+            id="input-text-recoveryCode"
+            readonly
+          />
+        </div>
+        <!-- END success -->
+        <!-- BEGIN_IF [{tfa:validator#isOperable}/eq/0] -->
+        <div class="acms-alert acms-alert-danger">
+          <!--T-->不正な操作です<!--/T-->
+        </div>
+        <!-- END_IF -->
+        <div class="read-more-pager">
+          <button
+            type="submit"
+            class="button is-lg is-width-lg"
+            name="ACMS_POST_Member_Tfa_Unregister"
+          >
+            <!--T-->２段階認証を解除<!--/T-->
+          </button>
+        </div>
+      </div>
+      <!-- END step#registered-->
+    </div>
+    <!--
+    <div class="acms-member-main-box-bottom">
+      <div class="acms-cssgrid">
+        <p class="acms-g-col-6 acms-m-0">
+          <a
+            href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}/"
+            class="acms-btn-flat acms-btn-block"
+          >
+            <!--T-->プロフィール変更に戻る<!--/T-->
+          </a>
+        </p>
+        <p class="acms-g-col-6 acms-m-0">
+          <a
+            href="%{BLOG_URL}"
+            class="acms-btn-flat acms-btn-block"
+          >
+            <!--T-->サイトに戻る<!--/T-->
+          </a>
+        </p>
+      </div>
+    </div>
+    -->
+  </form>
+  </div>
+</div>
+<!-- END_MODULE Member_Update_Tfa -->
+@endsection

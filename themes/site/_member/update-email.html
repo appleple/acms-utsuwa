@@ -1,0 +1,126 @@
+@extends("/_layouts/base.html")
+
+@section("head-title")
+<title>メールアドレス変更 | %{BLOG_NAME}</title>
+@endsection
+
+@section("page-title")
+<div class="page-title-wrapper">
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <div class="page-title-text-wrap left">
+        <h1 class="page-title">メールアドレス変更</h1>
+        <p class="page-title-en">mailaddress update</p>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section(topicpath)
+<!-- BEGIN_MODULE Topicpath id="topicpath" -->
+<nav class="topicpath" aria-label="現在位置">
+  <div class="acms-container sp-container">
+    <ol class="topicpath-list">
+      <!-- BEGIN blog:loop -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{name}</a>
+      </li>
+      <!-- END blog:loop -->
+      <li class="topicpath-item">
+        <a href="%{HOME_URL}mypage/update-profile/" class="topicpath-link">プロフィール</a>
+      </li>
+      <li class="topicpath-item">
+        <a href="%{HOME_URL}mypage/update-email/" class="topicpath-link">メールアドレス変更</a>
+      </li>
+    </ol>
+  </div>
+</nav>
+<!-- END_MODULE Topicpath -->
+@endsection
+
+@section("admin-part")
+@endsection
+
+@section("main")
+
+<!-- BEGIN_MODULE Member_Update_Email -->
+<div class="acms-container">
+  <div class="container-sm">
+  <form action="" method="post" enctype="multipart/form-data">
+
+    <div class="acms-member-main-box">
+
+      <div class="acms-form">
+        <!-- BEGIN beforeSend -->
+        <div class="acms-alert acms-alert-info"><!--T-->メールアドレス変更を認証するためのメールを送信します。<!--/T--></div>
+        <!-- END beforeSend -->
+
+        <!-- BEGIN successUpdate -->
+        <div class="acms-alert acms-alert-info"><!--T-->メールアドレスを変更しました。<!--/T--></div>
+        <!-- END successUpdate-->
+
+        <!-- BEGIN successSent -->
+        <div class="acms-alert acms-alert-info">
+          <!--T-->ご記入いただいたメールアドレスに認証メールをお送りしました。<br> メールに記載されているURLをクリックして メールアドレス変更を完了してください。<!--/T-->
+        </div>
+        <!-- END successSent -->
+
+        @include("/_member/parts/error.html")
+
+        <!-- BEGIN badRequest -->
+        <div class="acms-alert acms-alert-danger"><!--T-->不正なアクセスです。<!--/T--></div>
+        <!-- END badRequest -->
+
+        <!-- BEGIN expired -->
+        <div class="acms-alert acms-alert-danger"><!--T-->有効期限切れのURLです。再度申請ください。<!--/T--></div>
+        <!-- END expired -->
+
+        <!-- BEGIN_IF [{mail:validator#required}/eq/0] -->
+        <div class="acms-alert acms-alert-danger"><!--T-->メールアドレスが入力されていません。<!--/T--></div>
+        <!-- END_IF -->
+
+        <!-- BEGIN_IF [{mail:validator#email}/eq/0] -->
+        <div class="acms-alert acms-alert-danger"><!--T-->不正なメールアドレスです。<!--/T--></div>
+        <!-- END_IF -->
+
+        <!-- BEGIN_IF [{mail:validator#doubleMail}/eq/0] -->
+        <div class="acms-alert acms-alert-danger"><!--T-->すでに登録されているメールアドレスです。<!--/T--></div>
+        <!-- END_IF -->
+
+        <!-- BEGIN_IF [{mail:validator#send}/eq/0] -->
+        <div class="acms-alert acms-alert-danger"><!--T-->メールの送信に失敗しました。システムの設定に問題があります。システムの管理者にお問い合わせください。<!--/T--></div>
+        <!-- END_IF -->
+
+        <!-- BEGIN form -->
+        <label for="input-text-mail" class="acms-member-form-label"><!--T-->新しいメールアドレス<!--/T--></label>
+        <input type="text" name="mail" value="{mail}" id="input-text-mail" class="acms-form-large acms-form-block acms-form-width-full validator-result-{mail:validator#required} validator-result-{mail:validator#email} validator-result-{mail:validator#doubleMail} validator-result-{mail:validator#send}" placeholder="" />
+        <input type="hidden" name="user[]" value="mail" />
+        <input type="hidden" name="mail:validator#required" />
+        <input type="hidden" name="mail:validator#email" />
+
+ 
+        <div class="read-more-pager">
+          <button type="submit" class="button is-lg is-width-lg" name="ACMS_POST_Member_Update_Email"><!--T-->確認メールを送信<!--/T--></button>
+        </div>
+
+        <!-- END form -->
+      </div>
+    </div>
+    <!--
+    <div class="acms-member-main-box-bottom">
+      <div class="acms-grid">
+        <p class="acms-col-6 acms-margin-none"><a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}/" class="acms-btn-flat acms-btn-block"><!--T-->プロフィール変更に戻る<!--/T--></a></p>
+        <p class="acms-col-6 acms-margin-none"><a href="%{BLOG_URL}" class="acms-btn-flat acms-btn-block"><!--T-->サイトに戻る<!--/T--></a></p>
+      </div>
+    </div>
+    -->
+  </form>
+  </div>
+</div>
+<!-- END_MODULE Member_Update_Email -->
+@endsection
+
