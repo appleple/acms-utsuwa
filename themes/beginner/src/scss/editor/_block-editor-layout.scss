@@ -31,7 +31,7 @@
 
 /* 閲覧画面側 */
 :where(.#{acms.$entry-class}) :where([data-type="columns"]) {
-  gap: calc(var(--unit-gutter-var) / 2);
+  gap: var(--unit-gutter-var);
 }
 
 /* カラム上下余白
