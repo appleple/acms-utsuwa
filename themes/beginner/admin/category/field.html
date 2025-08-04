@@ -1,10 +1,27 @@
+<h3 class="acms-admin-admin-title2">ページタイトル設定</h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{page-image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="page-image" value="{page-image}" class="js-value" />
+      <input type="hidden" name="field[]" value="page-image" />
+      <input type="hidden" name="page-image:extension" value="media" />
+    </td>
+  </tr>
+</table>
+
+<!-- URLコンテキスト別 -->
+@include("/admin/category/ccd/%{CCD}.html")
+@include("/admin/category/rccd/%{RCCD}.html")
+@include("/admin/category/bcd/%{BCD}.html")
+
 <!-- SEOの設定 -->
 @include("/admin/category/field-seo.html")
 
-<!-- 共通項目 -->
-@include("/admin/category/field-common.html")
-
-<!-- URLコンテキスト別 -->
-@include("/admin/category/bcd/%{BCD}.html")
-@include("/admin/category/rccd/%{RCCD}.html")
-@include("/admin/category/ccd/%{CCD}.html")
+<!-- OGPの設定 -->
+@include("/admin/category/field-ogp.html")

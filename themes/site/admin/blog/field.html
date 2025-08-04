@@ -1,9 +1,21 @@
+<!-- URLコンテキスト別 -->
+@include("/admin/blog/bcd/%{BCD}.html")
+
 <!-- BEGIN_MODULE Touch_RootBlog -->
 <!-- サイト設定 基本 -->
 @include("/admin/blog/field-base.html")
-<!-- ヘッダーとページタイトルのレイアウト設定 -->
+
+<!-- 会社情報 -->
+@include("/admin/blog/field-info.html")
+
+<!-- ヘッダーナビと下層ページタイトルのレイアウト設定 -->
 @include("/admin/blog/field-layout.html")
 <!-- END_MODULE Touch_RootBlog -->
+
+<!-- BEGIN_MODULE Touch_NotRootBlog -->
+<!-- ページタイトル設定 -->
+@include("/admin/parts/page-title.html")
+<!-- END_MODULE Touch_NotRootBlog -->
 
 <!-- SEOの設定 -->
 @include("/admin/blog/field-seo.html")
@@ -11,18 +23,13 @@
 <!-- OGPの設定 -->
 @include("/admin/blog/field-ogp.html")
 
-<!-- 会社情報 -->
-@include("/admin/blog/field-info.html")
-
-<!-- script要素の設定 -->
-@include("/admin/blog/field-script.html")
-
+<!-- BEGIN_MODULE Touch_RootBlog -->
 <!-- アナリティクスの設定 -->
 @include("/admin/blog/field-analytics.html")
 
 <!-- Search Consoleの設定 -->
 @include("/admin/blog/field-search-console.html")
+<!-- END_MODULE Touch_RootBlog -->
 
-<!-- URLコンテキスト別 -->
-@include("/admin/blog/bcd/%{BCD}.html")
-
+<!-- script要素の設定 -->
+@include("/admin/blog/field-script.html")
