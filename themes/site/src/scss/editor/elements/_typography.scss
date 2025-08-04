@@ -45,8 +45,7 @@
 @include acms.editor-style(
   ("em"),
 ) {
-  font-style: normal;
-  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+  font-style: italic;
 }
 
 /* strong
@@ -59,22 +58,11 @@
 
 /* mark
 ----------------------------- */
-@mixin _text-mark-common {
-  color: inherit;
-  background-color: var(--color-highlight);
-  border-radius: 0.125rem; /* 2px */
-  box-decoration-break: clone;
-  padding-block: 0.125rem;
-}
-
 @include acms.editor-style(
   ("mark"),
 ) {
   color: inherit;
   background-color: var(--color-highlight);
-  border-radius: 0.125rem; /* 2px */
-  box-decoration-break: clone;
-  padding-block: 0.125rem;
 }
 
 /* code

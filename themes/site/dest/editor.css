@@ -85,8 +85,7 @@
 /* em
 ----------------------------- */
 .entry-style em:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
-  font-style: normal;
-  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+  font-style: italic;
 }
 
 /* strong
@@ -100,10 +99,6 @@
 .entry-style mark:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   color: inherit;
   background-color: var(--color-highlight);
-  border-radius: 0.125rem; /* 2px */
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
-  padding-block: 0.125rem;
 }
 
 /* code
@@ -480,7 +475,7 @@
 
 /* ソースコード
 ----------------------------- */
-.entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+.entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=code-highlight], [class~=code-highlight] *)) {
   max-width: 100%;
   padding: var(--entry-el-padding-sm);
   overflow: auto;
@@ -492,7 +487,7 @@
   border-radius: var(--border-radius-lg);
   margin-block: 0 var(--entry-el-margin-md);
 }
-.entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) code {
+.entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=code-highlight], [class~=code-highlight] *)) code {
   /* リセット用 */
   margin: 0;
   padding: 0;
@@ -503,7 +498,7 @@
   box-shadow: none;
 }
 @media (min-width: 48rem) {
-  .entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  .entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=code-highlight], [class~=code-highlight] *)) {
     padding: var(--entry-el-padding-md);
   }
 }
