@@ -2122,8 +2122,8 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  background: transparent; /* エントリー編集画面でのリセット用 */
   width: 100%; /* エントリー編集画面でのリセット用 */
+  background: transparent; /* エントリー編集画面でのリセット用 */
   border: 0; /* エントリー編集画面でのリセット用 */
 }
 .faq-question-button.toggle-button {
@@ -2171,10 +2171,10 @@
 }
 .faq-question .faq-title {
   flex: 1;
-  text-align: left;
   margin: 0;
   font-weight: bold;
   line-height: var(--line-height-base);
+  text-align: left;
 }
 @media (hover: hover) {
   .faq-question {

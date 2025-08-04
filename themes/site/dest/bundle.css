@@ -1034,6 +1034,9 @@ a:hover .icon-button svg {
     box-shadow: var(--box-shadow-hover);
   }
 }
+.news-banner-carousel.splide:not(.is-overflow) .splide__arrows {
+  display: none; /* スライドアイテムが全表示されている時はスライドする必要がないため矢印を非表示 */
+}
 .news-banner-carousel .splide__arrow--prev {
   left: 0;
 }
@@ -1041,7 +1044,7 @@ a:hover .icon-button svg {
   right: 0;
 }
 .news-banner-carousel.splide.is-overflow {
-  margin-bottom: 2.75rem; /* スライダーのドットナビゲーションの高さを確保 */
+  margin-bottom: 2.75rem; /* ドットページネーションの表示領域を確保 */
 }
 .news-banner-carousel .splide__pagination {
   position: absolute;
