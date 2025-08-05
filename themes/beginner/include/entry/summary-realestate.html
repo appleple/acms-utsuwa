@@ -40,18 +40,12 @@
               >
               <!-- END_IF -->
               <!-- BEGIN new -->
-              <!-- BEGIN moduleField -->
-              <span class="label-triangle {new-label-position}">@include("/images/label-new-triangle.svg")</span>
-              <!-- END moduleField -->
+              <span class="label-triangle left-top">@include("/images/label-new-triangle.svg")</span>
               <!-- END new -->
               <span class="card-category-label right-bottom">{price}[number_format]円/月</span>
             </div>
             <div class="card-text-wrap">
-              <h2 class="card-title">{title} <!-- BEGIN moduleField -->
-                <!-- BEGIN_IF [{new_label_type}/eq/general] -->
-                <span class="label">New</span>
-                <!-- END_IF --> <!-- END moduleField -->
-              </h2>
+              <h2 class="card-title">{title}</h2>
               <!-- BEGIN label_box:veil -->
               <p class="card-label-box acms-row-gap-2">
                 <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
