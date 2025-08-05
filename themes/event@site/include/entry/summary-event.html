@@ -1,8 +1,5 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <div>
-  <!-- BEGIN_SetRendered id="new-label-position" -->
-  <!-- BEGIN moduleField --> {new-label-position}<!-- END moduleField -->
-  <!-- END_SetRendered -->
   @include("/include/edit/module-custom.html")
 
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
@@ -34,7 +31,7 @@
               >
               <!-- END_IF -->
               <!-- BEGIN category:veil -->
-              <span class="card-category-label<!-- GET_Rendered id=" new-label-position" -->">
+              <span class="card-category-label left-top">
                 <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
                 <!-- ELSE_IF [{event-status}/eq/open] -->募集中
                 <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
