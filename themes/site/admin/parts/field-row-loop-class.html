@@ -1,10 +1,13 @@
 <tr>
-    <th>カラム数</th>
+    <th>カラム数
+        <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カラム数を変更するとモジュール設定内の「表示設定」>「ループ親クラス」にカラム設定用のクラスが入ります。"></i>
+    </th>
     <td>
         <div class="acms-acmin-grid">
             <div class="acms-admin-col-md-3">
                 <label for="col-base" class="acms-admin-margin-bottom-mini">ベースカラム数</label>
                 <select id="col-base" name="col-base" class="acms-admin-form-width-full">
+                    <option value="" {col-base:selected#}>未設定</option>
                     <option value="acms-g-cols-1" {col-base:selected#acms-g-cols-1}>1カラム</option>
                     <option value="acms-g-cols-2" {col-base:selected#acms-g-cols-2}>2カラム</option>
                     <option value="acms-g-cols-3" {col-base:selected#acms-g-cols-3}>3カラム</option>
