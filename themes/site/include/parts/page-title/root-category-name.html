@@ -1,19 +1,18 @@
-<!-- BEGIN_MODULE Category_Field id="bid/%{BID}/cid/%{RCID}" -->
+<!-- BEGIN_MODULE Category_Field id="page_title_category" -->
 <div class="page-title-wrapper"<!-- BEGIN page-image:veil --> style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
-  <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
-  <p class="acms-admin-module-edit"><a href="/bid/%{BID}/cid/{id}/admin/category_edit/?edit=update#acms_custom" class="js-dialog-btn js-link_no_rewrite">カテゴリー情報の編集</a></p><!-- END_MODULE Touch_SessionWithAdministration -->
   <div class="page-title-filter"></div>
   <div class="page-title-inner">
     <div class="acms-container">
+      @include("/include/edit/category-custom.html")
       <!-- title-position：left, center, right -->
       <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field id="root" --> {title-position}<!-- END_MODULE Blog_Field -->">
         <!-- BEGIN_MODULE Touch_Entry -->
-        <p class="page-title">%{CATEGORY_NAME}</p>
+        <p class="page-title">%{ROOT_CATEGORY_NAME}</p>
         <!-- END_MODULE Touch_Entry -->
         <!-- BEGIN_MODULE Touch_NotEntry -->
-        <h1 class="page-title">%{CATEGORY_NAME}</h1>
+        <h1 class="page-title">%{ROOT_CATEGORY_NAME}</h1>
         <!-- END_MODULE Touch_NotEntry -->
-        <p class="page-title-en">%{CCD}</p>
+        <p class="page-title-en">%{RCCD}</p>
       </div>
     </div>
   </div>
