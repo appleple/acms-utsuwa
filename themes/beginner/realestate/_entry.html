@@ -14,16 +14,13 @@
       @include("/include/header/header.html")
 
       @include("/include/parts/page-title.html")
+
       @include("/include/parts/topicpath.html")
 
+      <!-- BEGIN_MODULE Touch_Login -->
       <!-- ※管理用パーツ -->
-      <!-- BEGIN_MODULE Touch_SessionWithContribution -->
       <div class="acms-container">
         @include("/admin/action.html")
-      </div>
-      <!-- END_MODULE Touch_SessionWithContribution -->
-      <!-- BEGIN_MODULE Touch_Login -->
-      <div class="acms-container">
         @include("/admin/switch-user.html")
       </div>
       <!-- END_MODULE Touch_Login -->
@@ -32,29 +29,25 @@
         <div class="content-wrapper two-columns">
           <div class="main-container">
             <main>
-
-<!-- エントリー本文 -->
-@include("/include/entry/body.html", {"module_id": "body_date"})
-
+              <!-- エントリー本文 -->
+              @include("/include/entry/body.html", {"module_id": "body_date"})
             </main>
           </div>
           <div class="side-container">
             <div class="js-pretty-scroll">
-                <div class="section-side-layout">
+              <div class="section-side-layout">
+                <!-- カテゴリー：リスト表示 -->
+                @include("/include/category/list.html", {"module_id": "category_realestate"})
 
-<!-- カテゴリー：リスト表示 -->
-@include("/include/category/list.html", {"module_id": "category_realestate"})
+                <!-- エントリーサマリー：サイドバー用 -->
+                @include("/include/entry/summary-side.html", {"module_title": "新着物件"})
 
-<!-- エントリーサマリー：サイドバー用 -->
-@include("/include/entry/summary-side.html", {"module_title": "新着物件"})
+                <!-- タグ：リスト表示 -->
+                @include("/include/tag/cloud.html")
 
-<!-- タグ：リスト表示 -->
-@include("/include/tag/cloud.html")
-
-@include("/include/parts/banner-side.html")
+                @include("/include/parts/banner-side.html")
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -71,7 +64,6 @@
       @include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": "true"})
       <!-- END_MODULE Touch_NotEdit -->
 
-      <!-- フッター -->
       @include("/include/footer/footer.html")
     </div>
 

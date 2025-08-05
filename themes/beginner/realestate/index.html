@@ -15,38 +15,37 @@
 
     @include("/include/parts/topicpath.html")
 
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- ※管理用パーツ -->
     <div class="acms-container">
-      <!-- ※管理用パーツ -->
       @include("/admin/action.html")
       @include("/admin/switch-user.html")
     </div>
+    <!-- END_MODULE Touch_Login -->
 
     <div class="content-wrapper">
+      <div class="acms-container">
+        @include("/include/parts/local-nav.html", {"module_id": "nav_realestate"})
 
-<div class="acms-container">
-@include("/include/parts/local-nav.html", {"module_id": "nav_realestate"})
+        @include("/include/tag/filter.html")
 
-<!-- タグフィルター -->
-@include("/include/tag/filter.html")
+        <!-- サマリー：記事一覧 -->
+        @include("/include/entry/summary-realestate.html")
 
-<!-- サマリー：記事一覧 -->
-@include("/include/entry/summary-realestate.html")
-
-@include("/include/parts/search-realestate.html")
-</div>
-
+        @include("/include/parts/search-realestate.html")
+      </div>
     </div>
 
-    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
     <!-- meta情報確認 -->
     <div class="acms-margin-top-large">
       @include("/include/check-seo.html")
-    </div><!-- END_MODULE Touch_Login -->
+    </div>
+    <!-- END_MODULE Touch_SessionWithAdministration -->
 
     <!-- Call to Action -->
     @include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": "true"})
 
-    <!-- フッター -->
     @include("/include/footer/footer.html")
 
     @include("/include/body-end.html")

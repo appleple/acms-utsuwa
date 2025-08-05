@@ -2,7 +2,6 @@
 
 @section("main")
 <div class="acms-container">
-  <!-- タグフィルター -->
   @include("/include/tag/filter.html")
 
   <!-- ローカルナビ -->
@@ -13,8 +12,4 @@
   <!-- サマリー：記事一覧 -->
   @include("/include/entry/summary-event.html", {"module_id": "summary_event_archive"})
 </div>
-@endsection
-
-@section("side")
-
 @endsection

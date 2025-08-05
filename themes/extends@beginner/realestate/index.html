@@ -2,18 +2,13 @@
 
 @section("main")
 <div class="acms-container">
-@include("/include/parts/local-nav.html", {"module_id": "nav_realestate"})
+  @include("/include/parts/local-nav.html", {"module_id": "nav_realestate"})
 
-<!-- タグフィルター -->
-@include("/include/tag/filter.html")
+  @include("/include/tag/filter.html")
 
-<!-- サマリー：記事一覧 -->
-@include("/include/entry/summary-realestate.html")
+  <!-- サマリー：記事一覧 -->
+  @include("/include/entry/summary-realestate.html")
 
-@include("/include/parts/search-realestate.html")
+  @include("/include/parts/search-realestate.html")
 </div>
-@endsection
-
-@section("side")
-
 @endsection

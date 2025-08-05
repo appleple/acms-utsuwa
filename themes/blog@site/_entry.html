@@ -4,13 +4,8 @@
 <!-- エントリー本文 -->
 @include("/include/entry/body-blog.html", {"module_id": "body_blog"})
 
-<!-- BEGIN_MODULE Touch_Entry -->
-<div class="acms-container">
-  <!-- 関連エントリー -->
-  @include("/include/entry/tagrelational.html", {"module_id": "tag_relational_blog"})
-</div>
-<!-- END_MODULE Touch_Entry -->
-
+<!-- 関連エントリー -->
+@include("/include/entry/tagrelational.html", {"module_id": "tag_relational_blog"})
 @endsection
 
 @section("side")
@@ -25,5 +20,4 @@
 
 <!-- エントリーサマリー：サイドバー用 -->
 @include("/include/entry/summary-side.html")
-
 @endsection

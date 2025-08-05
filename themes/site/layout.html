@@ -39,42 +39,32 @@
 @endsection
 
 @section("page-title")
+<!-- トップ用メインビジュアル -->
+@include("/include/header/main-visual.html", {"module_id": "mf_main_visual"})
 @endsection
 
 @section("topicpath")
 @endsection
 
-@section("admin-part")
-@endsection
-
 @section("content-wrapper")
 @section("main")
-<!-- トップ用メインビジュアル -->
-@include("/include/header/main-visual.html", {"module_id": "mf_main_visual"})
-
+<!-- ※レイアウトモジュール用　管理用パーツ -->
 <div class="acms-container">
-  <!-- ※管理用パーツ -->
-  @include("/admin/action.html")
-  @include("/admin/switch-user.html")
+  @include("/admin/layout/action.html")
 </div>
 
-	<!-- ※レイアウトモジュール用　管理用パーツ -->
-	<div class="acms-container">
-		@include("/admin/layout/action.html")
-	</div>
+<!-- レイアウトモジュール -->
+<!-- BEGIN_MODULE Layout id="layout_top" -->
+<!-- BEGIN display -->
+@include("/include/layout.html")
+<!-- END display -->
 
-	<!-- レイアウトモジュール -->
-	<!-- BEGIN_MODULE Layout id="layout_top" -->
-		<!-- BEGIN display -->
-		@include("/include/layout.html")
-		<!-- END display -->
-		<!-- BEGIN edit -->
-		<div class="acms-container">
-			@include("/admin/layout/edit.html")
-		</div>
-		<!-- END edit -->
-	<!-- END_MODULE Layout -->
-
+<!-- BEGIN edit -->
+<div class="acms-container">
+  @include("/admin/layout/edit.html")
+</div>
+<!-- END edit -->
+<!-- END_MODULE Layout -->
 @endsection
 @endsection
 

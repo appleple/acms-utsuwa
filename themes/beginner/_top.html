@@ -14,40 +14,38 @@
 
     @include("/include/header/header.html")
 
-
-
-
-<!-- トップ用メインビジュアル -->
-@include("/include/header/main-visual.html")
-
-<div class="acms-container">
-  <!-- ※管理用パーツ -->
-  @include("/admin/action.html")
-  @include("/admin/switch-user.html")
-</div>
-
-<!-- エントリーサマリー：お知らせ -->
-@include("/include/entry/summary-news-top.html")
-
-<div class="section-separator"></div>
-
-<!-- エントリーサマリー：物件情報 -->
-@include("/include/entry/summary-realestate-top.html")
-
-<!-- 採用情報 -->
-@include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": ""})
-
-<!-- バナーモジュール -->
-@include("/include/parts/banner-top.html")
-
+    <!-- トップ用メインビジュアル -->
+    @include("/include/header/main-visual.html")
 
     <!-- BEGIN_MODULE Touch_Login -->
+    <!-- ※管理用パーツ -->
+    <div class="acms-container">
+      @include("/admin/action.html")
+      @include("/admin/switch-user.html")
+    </div>
+    <!-- END_MODULE Touch_Login -->
+
+    <!-- エントリーサマリー：お知らせ -->
+    @include("/include/entry/summary-news-top.html")
+
+    <div class="section-separator"></div>
+
+    <!-- エントリーサマリー：物件情報 -->
+    @include("/include/entry/summary-realestate-top.html")
+
+    <!-- 採用情報 -->
+    @include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": ""})
+
+    <!-- バナーモジュール -->
+    @include("/include/parts/banner-top.html")
+
+    <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
     <!-- meta情報確認 -->
     <div class="acms-margin-top-large">
       @include("/include/check-seo.html")
-    </div><!-- END_MODULE Touch_Login -->
+    </div>
+    <!-- END_MODULE Touch_SessionWithAdministration -->
 
-    <!-- フッター -->
     @include("/include/footer/footer.html")
 
     @include("/include/body-end.html")

@@ -5,27 +5,18 @@
   <main class="main">
     <div>
       <div class="container-md">
-
         <!-- BEGIN_IF [%{KEYWORD}/nem]-->
         <div aria-labelledby="search-form-heading" class="search-result-heading">
           @include("/include/parts/search-general.html")
         </div>
         <!-- END_IF -->
 
-        <!-- タグフィルター -->
         @include("/include/tag/filter.html")
-
 
         <!-- サマリー：記事一覧 -->
         @include("/include/entry/summary-list.html",{"module_id": "summary_date"})
-
       </div>
     </div>
   </main>
 </div>
-@endsection
-
-
-@section("side")
-
 @endsection

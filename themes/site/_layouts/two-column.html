@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ja">
-
   <head>
     @section("head-meta")
     @include("/include/head/meta.html")
@@ -36,14 +35,10 @@
       @endsection
 
       @section("admin-part")
+      <!-- BEGIN_MODULE Touch_Login -->
       <!-- ※管理用パーツ -->
-      <!-- BEGIN_MODULE Touch_SessionWithContribution -->
       <div class="acms-container">
         @include("/admin/action.html")
-      </div>
-      <!-- END_MODULE Touch_SessionWithContribution -->
-      <!-- BEGIN_MODULE Touch_Login -->
-      <div class="acms-container">
         @include("/admin/switch-user.html")
       </div>
       <!-- END_MODULE Touch_Login -->
@@ -65,10 +60,10 @@
                 @endsection
               </div>
             </div>
-
           </div>
         </div>
       </div>
+
       @section("check-seo")
       <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
       <!-- meta情報確認 -->
@@ -85,9 +80,7 @@
       <!-- END_MODULE Touch_NotEdit -->
       @endsection
 
-
       @section("footer")
-      <!-- フッター -->
       @include("/include/footer/footer.html")
       @endsection
     </div>
@@ -96,5 +89,4 @@
     @include("/include/body-end.html")
     @endsection
   </body>
-
 </html>

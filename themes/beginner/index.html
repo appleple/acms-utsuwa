@@ -15,43 +15,44 @@
 
     @include("/include/parts/topicpath.html")
 
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- ※管理用パーツ -->
     <div class="acms-container">
-      <!-- ※管理用パーツ -->
       @include("/admin/action.html")
       @include("/admin/switch-user.html")
     </div>
+    <!-- END_MODULE Touch_Login -->
 
     <div class="content-wrapper">
+      <div class="acms-container">
+        <main class="main">
+          <div class="container-md">
 
-<div class="acms-container">
-  <main class="main">
-    <div class="container-md">
+            <!-- BEGIN_IF [%{KEYWORD}/nem]-->
+            <div aria-labelledby="search-form-heading" class="search-result-heading">
+              @include("/include/parts/search-general.html")
+            </div>
+            <!-- END_IF -->
 
-      <!-- BEGIN_IF [%{KEYWORD}/nem]-->
-      <div aria-labelledby="search-form-heading" class="search-result-heading">
-        @include("/include/parts/search-general.html")
+            @include("/include/tag/filter.html")
+
+            <!-- サマリー：記事一覧 -->
+            @include("/include/entry/summary.html",{"module_id": "summary_date"})
+          </div>
+        </main>
       </div>
-      <!-- END_IF -->
-
-      @include("/include/tag/filter.html")
-
-      <!-- サマリー：記事一覧 -->
-      @include("/include/entry/summary.html",{"module_id": "summary_date"})
-    </div>
-  </main>
-</div>
     </div>
 
-    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
     <!-- meta情報確認 -->
     <div class="acms-margin-top-large">
       @include("/include/check-seo.html")
-    </div><!-- END_MODULE Touch_Login -->
+    </div>
+    <!-- END_MODULE Touch_SessionWithAdministration -->
 
     <!-- Call to Action -->
     @include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": "true"})
 
-    <!-- フッター -->
     @include("/include/footer/footer.html")
 
     @include("/include/body-end.html")

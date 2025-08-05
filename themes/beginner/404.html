@@ -15,42 +15,40 @@
 
     @include("/include/parts/topicpath.html")
 
+    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- ※管理用パーツ -->
     <div class="acms-container">
-      <!-- ※管理用パーツ -->
       @include("/admin/action.html")
       @include("/admin/switch-user.html")
     </div>
+    <!-- END_MODULE Touch_Login -->
 
     <div class="content-wrapper">
+      <div class="container-md">
+        <section class="not-found-content">
+          <h1 class="not-found-title">お探しのページは見つかりませんでした。</h1>
+          <p class="not-found-paragraph">アクセスしていただいたページは一時的にアクセスができない状況にあるか、削除もしくは移動した可能性があります。<br>大変お手数ですが、アドレス（URL）をご確認いただくか、 キーワード検索またはホームへ戻るボタンから再度お探しください。</p>
+          <p class="not-found-paragraph">
+            リンク切れなどのご連絡につきましては、大変お手数ですが、<a href="%{BASE_URL}contact/">お問い合わせページ</a>からお願いいたします。</p>
+          <div class="not-found-search">
+            @include("/include/parts/search-general.html", {"search-id":"404"})
+          </div>
 
-<div class="container-md">
-
-  <section class="not-found-content">
-    <h1 class="not-found-title">お探しのページは見つかりませんでした。</h1>
-    <p class="not-found-paragraph">アクセスしていただいたページは一時的にアクセスができない状況にあるか、削除もしくは移動した可能性があります。<br>大変お手数ですが、アドレス（URL）をご確認いただくか、 キーワード検索またはホームへ戻るボタンから再度お探しください。</p>
-    <p class="not-found-paragraph">
-      リンク切れなどのご連絡につきましては、大変お手数ですが、<a href="%{BASE_URL}contact/">お問い合わせページ</a>からお願いいたします。</p>
-    <div class="not-found-search">
-      @include("/include/parts/search-general.html", {"search-id":"404"})
+          <p class="not-found-button"><a href="%{BASE_URL}" class="button is-bordered is-lg">ホームに戻る</a></p>
+        </section>
+      </div>
     </div>
 
-    <p class="not-found-button"><a href="%{BASE_URL}" class="button is-bordered is-lg">ホームに戻る</a></p>
-  </section>
-
-</div>
-
-    </div>
-
-    <!-- BEGIN_MODULE Touch_Login -->
+    <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
     <!-- meta情報確認 -->
     <div class="acms-margin-top-large">
       @include("/include/check-seo.html")
-    </div><!-- END_MODULE Touch_Login -->
+    </div>
+    <!-- END_MODULE Touch_SessionWithAdministration -->
 
     <!-- Call to Action -->
     @include("/include/parts/cta.html", {"module_id": "mf_cta", "cta-section-mt": "true"})
 
-    <!-- フッター -->
     @include("/include/footer/footer.html")
 
     @include("/include/body-end.html")
