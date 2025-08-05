@@ -1,5 +1,14 @@
 @extends("/_layouts/base.html")
 
+@section("page-title")
+<!-- BEGIN_MODULE Touch_RootBlog -->
+@include("/include/parts/page-title/root-category-name.html")
+<!-- END_MODULE Touch_RootBlog -->
+<!-- BEGIN_MODULE Touch_NotRootBlog -->
+@include("/include/parts/page-title/blog-name.html")
+<!-- END_MODULE Touch_NotRootBlog -->
+@endsection
+
 @section("main")
 <div class="acms-container">
   <div class="container-md">

@@ -1,0 +1,19 @@
+<!-- BEGIN_MODULE Blog_Field -->
+<div class="page-title-wrapper"<!-- BEGIN page-image:veil --> style="background-image: url(%{MEDIA_ARCHIVES_DIR}{page-image@path});"<!-- END page-image:veil -->>
+  <div class="page-title-filter"></div>
+  <div class="page-title-inner">
+    <div class="acms-container">
+      <!-- title-position：left, center, right -->
+      <div class="page-title-text-wrap<!-- BEGIN_MODULE Blog_Field id="root" --> {title-position}<!-- END_MODULE Blog_Field -->">
+        <!-- BEGIN_MODULE Touch_Entry -->
+        <p class="page-title">%{BLOG_NAME}</p>
+        <!-- END_MODULE Touch_Entry -->
+        <!-- BEGIN_MODULE Touch_NotEntry -->
+        <h1 class="page-title">%{BLOG_NAME}</h1>
+        <!-- END_MODULE Touch_NotEntry -->
+        <p class="page-title-en">%{BCD}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END_MODULE Blog_Field -->

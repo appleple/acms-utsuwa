@@ -11,7 +11,7 @@
 
     @include("/include/header/header.html")
 
-    @include("/include/parts/page-title.html")
+    @include("/include/parts/page-title/404.html")
 
     @include("/include/parts/topicpath.html")
 
@@ -27,14 +27,21 @@
       <div class="container-md">
         <section class="not-found-content">
           <h1 class="not-found-title">お探しのページは見つかりませんでした。</h1>
-          <p class="not-found-paragraph">アクセスしていただいたページは一時的にアクセスができない状況にあるか、削除もしくは移動した可能性があります。<br>大変お手数ですが、アドレス（URL）をご確認いただくか、 キーワード検索またはホームへ戻るボタンから再度お探しください。</p>
+
+          <p class="not-found-paragraph">アクセスしていただいたページは一時的にアクセスができない状況にあるか、削除もしくは移動した可能性があります。<br>大変お手数ですが、アドレス（URL）をご確認いただくか、 キーワード検索またはホームへ戻るボタンから再度お探しください。
+          </p>
+
           <p class="not-found-paragraph">
-            リンク切れなどのご連絡につきましては、大変お手数ですが、<a href="%{BASE_URL}contact/">お問い合わせページ</a>からお願いいたします。</p>
+            リンク切れなどのご連絡につきましては、大変お手数ですが、<a href="%{BASE_URL}contact/">お問い合わせページ</a>からお願いいたします。
+          </p>
+
           <div class="not-found-search">
             @include("/include/parts/search-general.html", {"search-id":"404"})
           </div>
 
-          <p class="not-found-button"><a href="%{BASE_URL}" class="button is-bordered is-lg">ホームに戻る</a></p>
+          <p class="not-found-button">
+            <a href="%{BASE_URL}" class="button is-bordered is-lg">ホームに戻る</a>
+          </p>
         </section>
       </div>
     </div>
