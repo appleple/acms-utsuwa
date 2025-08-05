@@ -615,7 +615,7 @@
 }
 
 /* ------------------------------
- グループ・ユニット
+ グループユニット
 ------------------------------ */
 .entry-style {
   /* 全てのグループ・ユニット */
@@ -627,11 +627,6 @@
     padding: 4rem 0 2rem;
   }
 }
-.entry-style [class*=gu-] > h2,
-.entry-style [class*=gu-] > h3,
-.entry-style [class*=gu-] > h4 {
-  padding-top: 0;
-}
 .entry-style .gu-bg-gray {
   background: var(--color-gray10);
 }
@@ -639,26 +634,29 @@
   background: var(--color-primary-light);
 }
 .entry-style .gu-bg-gray,
-.entry-style .gu-bg-primary {
+.entry-style .gu-bg-primary,
+.entry-style .gu-border {
   margin: 0 0 var(--entry-el-margin-md) 0;
-  padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
+  padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
 }
-.entry-style .gu-bg-gray > *:not(.entry-reset):first-child,
+.entry-style .gu-bg-gray > *:not(.not-editor-style):first-child,
 .entry-style .gu-bg-gray > *:first-child.column-block-editor > *:first-child,
-.entry-style .gu-bg-primary > *:not(.entry-reset):first-child,
-.entry-style .gu-bg-primary > *:first-child.column-block-editor > *:first-child {
+.entry-style .gu-bg-primary > *:not(.not-editor-style):first-child,
+.entry-style .gu-bg-primary > *:first-child.column-block-editor > *:first-child,
+.entry-style .gu-border > *:not(.not-editor-style):first-child,
+.entry-style .gu-border > *:first-child.column-block-editor > *:first-child {
   margin-top: 0;
 }
-.entry-style .gu-bg-gray > *:not(.entry-reset):last-child,
+.entry-style .gu-bg-gray > *:not(.not-editor-style):last-child,
 .entry-style .gu-bg-gray > *:last-child.column-block-editor > *:last-child,
-.entry-style .gu-bg-primary > *:not(.entry-reset):last-child,
-.entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child {
+.entry-style .gu-bg-primary > *:not(.not-editor-style):last-child,
+.entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child,
+.entry-style .gu-border > *:not(.not-editor-style):last-child,
+.entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
   margin-bottom: 0;
 }
 .entry-style .gu-border {
   position: relative;
-  margin: 0 0 var(--entry-el-margin-md) 0;
-  padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
 }
 .entry-style .gu-border::before {
   position: absolute;
@@ -666,38 +664,6 @@
   z-index: -1;
   border: var(--border-width-sm) solid var(--color-gray40);
   content: "";
-}
-.entry-style .gu-border > *:not(.entry-reset):first-child,
-.entry-style .gu-border > *:first-child.column-block-editor > *:first-child {
-  margin-top: 0;
-}
-.entry-style .gu-border > *:not(.entry-reset):last-child,
-.entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
-  margin-bottom: 0;
-}
-@media (min-width: 48rem) {
-  .entry-style .gu-bg-gray,
-  .entry-style .gu-bg-primary,
-  .entry-style .gu-border {
-    margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - var(--unit-gutter-var) / 2);
-  }
-  .entry-style .gu-bg-gray > *:not(.entry-reset):first-child,
-  .entry-style .gu-bg-gray > *:first-child.column-block-editor > *:first-child,
-  .entry-style .gu-bg-primary > *:not(.entry-reset):first-child,
-  .entry-style .gu-bg-primary > *:first-child.column-block-editor > *:first-child,
-  .entry-style .gu-border > *:not(.entry-reset):first-child,
-  .entry-style .gu-border > *:first-child.column-block-editor > *:first-child {
-    margin-top: 0;
-  }
-  .entry-style .gu-bg-gray > *:not(.entry-reset):last-child,
-  .entry-style .gu-bg-gray > *:last-child.column-block-editor > *:last-child,
-  .entry-style .gu-bg-primary > *:not(.entry-reset):last-child,
-  .entry-style .gu-bg-primary > *:last-child.column-block-editor > *:last-child,
-  .entry-style .gu-border > *:not(.entry-reset):last-child,
-  .entry-style .gu-border > *:last-child.column-block-editor > *:last-child {
-    margin-bottom: 0;
-  }
 }
 .entry-style .gu-narrow {
   max-width: 80%;

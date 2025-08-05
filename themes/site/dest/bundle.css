@@ -5978,28 +5978,6 @@ input::placeholder {
     grid-area: search;
   }
 }
-
-@media (min-width: 64rem){
-  .logo-center .header-title {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .logo-center .header-nav-wrap {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
-  }
-}
-
-@media (min-width: 64rem){
-  .logo-center .header-title {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .logo-center .header-nav-wrap {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
-  }
-}
 /* 検索フォーム（ヘッダー）
 ------------------------------ */
 .header-search {
