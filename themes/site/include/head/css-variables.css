@@ -220,7 +220,4 @@
   --entry-el-padding-xs: 1rem;  /*  16px */
   --entry-el-padding-sm: 1.5rem;  /*  24px */
   --entry-el-padding-md: 2rem;  /*  32px */
-
-  /* ユニット マージン */
-  --unit-margin-md: 2rem;
 }
