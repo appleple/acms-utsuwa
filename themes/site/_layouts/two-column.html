@@ -22,15 +22,16 @@
 
     <div class="page-wrapper">
       @section("header")
-      <!-- ヘッダー -->
       @include("/include/header/header.html")
       <!-- @include("/include/header/header-logo-center.html") -->
       <!-- @include("/include/header/header-nav-bottom.html") -->
       @endsection
 
       @section("page-title")
-      <!-- ページタイトル -->
       @include("/include/parts/page-title.html")
+      @endsection
+
+      @section("topicpath")
       @include("/include/parts/topicpath.html")
       @endsection
 
@@ -70,7 +71,7 @@
       </div>
       @section("check-seo")
       <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
-      <!-- 確認用テンプレート -->
+      <!-- meta情報確認 -->
       <div class="acms-margin-top-large">
         @include("/include/check-seo.html")
       </div>
