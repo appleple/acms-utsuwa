@@ -29,10 +29,16 @@
         <div class="event-calendar-item"><!-- BEGIN url#front --><a href="{url}" class="event-calendar-item-link"><!-- END url#front -->
             <div class="calendar-item-text-wrap">
               <h3 class="calendar-item-title">{title}</h3>
-              <!-- BEGIN event-time:veil -->
-              <p class="calendar-item-text"><span class="event-time">{event-time}</span> <!-- END event-time:veil -->
-                <span class="event-category">\{カテゴリー名\}</span>
+              <!-- BEGIN event_label_box:veil -->
+              <p class="calendar-item-text">
+                <!-- BEGIN event-time:veil -->
+                <span class="acms-d-inline-block">{event-time}</span>
+                <!-- END event-time:veil -->
+                <!-- BEGIN event-pref:veil -->
+                <span class="acms-d-inline-block">{event-pref}</span>
+                <!-- END event-pref:veil -->
               </p>
+              <!-- END event_label_box:veil -->
             </div>
             <!-- BEGIN main-image@path:veil -->
             <div class="calendar-item-img-wrap">
