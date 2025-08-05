@@ -2,7 +2,7 @@
 @use "../global/common" as global;
 
 /* ------------------------------
- グループ・ユニット
+ グループユニット
 ------------------------------ */
 .#{acms.$entry-class} {
   /* 全てのグループ・ユニット */
@@ -13,12 +13,6 @@
         margin-left: 0;
         padding: 4rem 0 2rem;
       }
-    }
-
-    >  h2,
-    >  h3,
-    >  h4 {
-      padding-top: 0;
     }
   }
 
@@ -31,16 +25,17 @@
   }
 
   .gu-bg-gray,
-  .gu-bg-primary {
+  .gu-bg-primary,
+  .gu-border {
     margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
+    padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
 
-    > *:not(.entry-reset):first-child,
+    > *:not(.not-editor-style):first-child,
     > *:first-child.column-block-editor > *:first-child {
       margin-top: 0;
     }
 
-    > *:not(.entry-reset):last-child,
+    > *:not(.not-editor-style):last-child,
     > *:last-child.column-block-editor > *:last-child {
       margin-bottom: 0;
     }
@@ -48,8 +43,6 @@
 
   .gu-border {
     position: relative;
-    margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
 
     &::before {
       position: absolute;
@@ -57,35 +50,6 @@
       z-index: -1;
       border: var(--border-width-sm) solid var(--color-gray40);
       content: "";
-    }
-
-    > *:not(.entry-reset):first-child,
-    > *:first-child.column-block-editor > *:first-child {
-      margin-top: 0;
-    }
-
-    > *:not(.entry-reset):last-child,
-    > *:last-child.column-block-editor > *:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  @include acms.media-breakpoint-up(md) {
-    .gu-bg-gray,
-    .gu-bg-primary,
-    .gu-border {
-      margin: 0 0 var(--entry-el-margin-md) 0;
-      padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-
-      > *:not(.entry-reset):first-child,
-      > *:first-child.column-block-editor > *:first-child {
-        margin-top: 0;
-      }
-
-      > *:not(.entry-reset):last-child,
-      > *:last-child.column-block-editor > *:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 

@@ -5,47 +5,40 @@
  グループユニット
 ------------------------------ */
 .#{acms.$entry-class} {
-  /* 全てのグループユニット */
-  [class*="gu-"] {
-    overflow: hidden;
-
-    >  h2,
-    >  h3,
-    >  h4 {
-      padding-top: 0;
-    }
+  .gu-bg-gray {
+    background: var(--color-gray10);
   }
 
-  .gu-bg-gray {
-    margin: 0 0 var(--entry-el-margin-md) 0;
-    padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
-    background: var(--color-gray10);
+  .gu-bg-primary {
+    background: var(--color-primary-light);
+  }
 
-    > *:not(.entry-reset):first-child,
+  .gu-bg-gray,
+  .gu-bg-primary,
+  .gu-border {
+    margin: 0 0 var(--entry-el-margin-md) 0;
+    padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
+
+    > *:not(.not-editor-style):first-child,
     > *:first-child.column-block-editor > *:first-child {
       margin-top: 0;
     }
 
-    > *:not(.entry-reset):last-child,
+    > *:not(.not-editor-style):last-child,
     > *:last-child.column-block-editor > *:last-child {
       margin-bottom: 0;
     }
   }
 
-  @include acms.media-breakpoint-up(md) {
-    .gu-bg-gray {
-      margin: 0 0 var(--entry-el-margin-md) 0;
-      padding: var(--entry-el-padding-md) calc(var(--entry-el-padding-md) - (var(--unit-gutter-var) / 2));
+  .gu-border {
+    position: relative;
 
-      > *:not(.entry-reset):first-child,
-      > *:first-child.column-block-editor > *:first-child {
-        margin-top: 0;
-      }
-
-      > *:not(.entry-reset):last-child,
-      > *:last-child.column-block-editor > *:last-child {
-        margin-bottom: 0;
-      }
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border: var(--border-width-sm) solid var(--color-gray40);
+      content: "";
     }
   }
 
