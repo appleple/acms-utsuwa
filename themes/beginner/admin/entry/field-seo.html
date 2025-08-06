@@ -4,7 +4,7 @@
     <span class="acms-admin-icon-arrow-small-down acms-admin-margin-left-mini" aria-hidden="true"></span>
   </summary>
   <div class="acms-admin-accordion-panel">
-    <table class="entryFormTable acms-admin-table-entry">
+    <table class="adminTable acms-admin-table-admin-edit">
       <tr id="seo-entry_meta_title">
         <th>タイトル - <small>title</small><i data-acms-tooltip="エントリーの titleタグを設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i>
           <div>
@@ -67,10 +67,9 @@
           <input type="hidden" name="field[]" value="entry_meta_rss" />
         </td>
       </tr>
-      <!-- BEGIN_IF [%{RCCD}/neq/realestate] -->
       <tr id="seo-entry_main_image">
         <th>メイン画像 - <small>main_image</small><i class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip" data-acms-tooltip="一覧表示で利用する画像や、SNS等で利用するOGP画像を設定します。"></i></th>
-        <td class="js-media-field">
+        <td class="js-media-field seo-entry_main_image-droparea">
           <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" style="width:200px"></div>
           <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
           <div class="acms-admin-margin-top-mini">
@@ -81,7 +80,6 @@
           <input type="hidden" name="entry_main_image:extension" value="media" />
         </td>
       </tr>
-      <!-- END_IF -->
     </table>
   </div>
 </details>
