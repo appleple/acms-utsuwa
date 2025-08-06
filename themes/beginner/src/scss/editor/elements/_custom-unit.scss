@@ -6,104 +6,6 @@
  カスタムユニット
 ------------------------------ */
 
-/* 目次ユニット
------------------------------- */
-.#{acms.$entry-class} {
-  .entry-outline {
-    margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
-    padding-block: 1.5rem;
-    padding-inline: 1rem;
-    background-color: var(--color-white);
-    border: var(--border-width-sm) solid var(--color-gray30);
-
-    @include acms.media-breakpoint-up(sm) {
-      padding: 2rem;
-    }
-  }
-
-  /* 「目次」見出し */
-  .entry-outline-title {
-    margin: 0 0 1rem;
-    font-weight: 600;
-    font-size: map.get(global.$font-scales, heading-ss);
-    line-height: 1.5;
-  }
-
-  /* リスト */
-  .entry-outline-list-wrap .outline-list {
-    display: grid;
-    grid-template-columns: minmax(1.5rem, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */
-    gap: 0.75rem 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
-    counter-reset: outline-list;
-    margin-block: 0;
-    padding-inline-start: 0;
-  }
-
-  /* 下階層リストレイアウト */
-  .entry-outline-list-wrap .outline-item .outline-list {
-    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
-    padding-left: 1rem;
-  }
-
-  /* アイテム */
-  .entry-outline-list-wrap .outline-item {
-    display: contents; /* li要素自体はグリッドレイアウトに影響させない */
-    color: var(--color-text);
-    font-weight: 300;
-    font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.5;
-
-    span,
-    strong,
-    em {
-      display: contents;
-      font-weight: inherit;
-      font-size: inherit;
-      font-style: inherit;
-      background: none;
-    }
-
-    &::marker {
-      content: none;
-    }
-  }
-
-  /* アイテムリンク */
-  .entry-outline-list-wrap .outline-item a {
-    display: grid;
-    grid-auto-flow: column;
-    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
-    grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
-    text-decoration: none;
-
-    &,
-    &:link,
-    &:visited {
-      color: inherit;
-    }
-
-    /* 番号を生成 */
-    &::before {
-      grid-column: 1;
-      color: var(--color-text-2nd);
-      font-weight: 700;
-      white-space: nowrap;
-      word-break: keep-all;
-      content: counters(outline-list, "-") ". ";
-      counter-increment: outline-list;
-    }
-
-    @media (hover: hover) {
-      transition: color 0.25s ease;
-
-      &:any-link:hover {
-        color: var(--color-primary);
-        cursor: pointer;
-      }
-    }
-  }
-}
-
 /* メッセージユニット
 ------------------------------ */
 .#{acms.$entry-class} {
@@ -163,7 +65,6 @@
     .message {
       flex-direction: row;
     }
-
 
     .message-wrap {
       position: relative;

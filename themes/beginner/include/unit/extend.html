@@ -1,10 +1,12 @@
-<!-- BEGIN unit#custom_unit_space -->
-<div class="not-editor-style" style="padding-bottom: var(--unit-space-{unit_space})"></div>
-<!-- END unit#custom_unit_space -->
-
-<!-- BEGIN unit#custom_outline -->
-<nav class="entry-outline not-editor-style">
-  <h2 class="entry-outline-title js-except">目次</h2>
-  <div class="js-outline-yield entry-outline-list-wrap"></div>
-</nav>
-<!-- END unit#custom_outline -->
+<!-- BEGIN unit#custom_message -->
+<div class="message not-editor-style">
+  <div class="message-image"><img src="%{MEDIA_ARCHIVES_DIR}{message_image@path}" class="acms-img-responsive" alt=""></div>
+  <div class="message-wrap"><!-- BEGIN message_lead:veil -->
+    <h3 class="message-lead">{message_lead}[nl2br]</h3><!-- END message_lead:veil -->
+    <!-- BEGIN message_content:veil -->
+    <p class="message-content">{message_content}[nl2br]</p><!-- END message_content:veil -->
+    <!-- BEGIN message_source:veil -->
+    <p class="message-source">{message_source}</p><!-- END message_source:veil -->
+  </div>
+</div>
+<!-- END unit#custom_message -->

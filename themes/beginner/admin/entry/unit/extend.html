@@ -1,29 +1,39 @@
-<!-- BEGIN custom_unit_space -->
+<!-- BEGIN custom_message -->
 <table class="acms-admin-table-admin-edit">
   <tr>
-    <th>余白</th>
+    <th>画像</th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{message_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="message_image{id}" value="{message_image}" class="js-value" />
+      <input type="hidden" name="unit{id}[]" value="message_image{id}" />
+      <input type="hidden" name="message_image{id}:extension" value="media" />
+    </td>
+  </tr>
+
+  <tr>
+    <th>リード文</th>
     <td>
-      <div class="acms-admin-form-radio">
-        <input type="radio" name="unit_space{id}" value="lg" {unit_space:checked#lg} id="input-radio-unit_space-lg-{id}" />
-        <label for="input-radio-unit_space-lg-{id}">
-          <i class="acms-admin-ico-radio"></i>大</label>
-      </div>
-      <div class="acms-admin-form-radio">
-        <input type="radio" name="unit_space{id}" value="md" {unit_space:checked#md}<!-- BEGIN_IF [{unit_space}/em] -->checked="checked"<!-- END_IF --> id="input-radio-unit_space-md-{id}" />
-        <label for="input-radio-unit_space-md-{id}">
-          <i class="acms-admin-ico-radio"></i>中</label>
-      </div>
-      <div class="acms-admin-form-radio">
-        <input type="radio" name="unit_space{id}" value="sm" {unit_space:checked#sm} id="input-radio-unit_space-sm-{id}" />
-        <label for="input-radio-unit_space-sm-{id}">
-          <i class="acms-admin-ico-radio"></i>小</label>
-      </div>
-      <input type="hidden" name="unit{id}[]" value="unit_space{id}" />
+      <textarea name="message_lead{id}" class="acms-admin-form-width-large">{message_lead}</textarea>
+      <input type="hidden" name="unit{id}[]" value="message_lead{id}">
+    </td>
+  </tr>
+  <tr>
+    <th>メッセージ内容</th>
+    <td>
+      <textarea name="message_content{id}" class="acms-admin-form-width-large" rows="5">{message_content}</textarea>
+      <input type="hidden" name="unit{id}[]" value="message_content{id}">
+    </td>
+  </tr>
+  <tr>
+    <th>発言元</th>
+    <td>
+      <input type="text" name="message_source{id}" value="{message_source}" class="acms-admin-form-width-large">
+      <input type="hidden" name="unit{id}[]" value="message_source{id}">
     </td>
   </tr>
 </table>
-<!-- END custom_unit_space -->
-
-<!-- BEGIN custom_outline -->
-<p>ここに目次（アウトライン）が表示されます</p>
-<!-- END custom_outline -->
+<!-- END custom_message -->
