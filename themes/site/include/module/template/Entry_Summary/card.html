@@ -1,6 +1,11 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <div class="not-editor-style">
   @include("/include/edit/module-custom-box2.html")
+
+  <!-- BEGIN notFound -->
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+  <!-- END notFound -->
+
   <ul class="card-bordered-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--acms-gap: var(--col-gutter);">
     <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->

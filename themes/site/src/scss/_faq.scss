@@ -135,11 +135,15 @@
 
 /* 質問リスト */
 .faq-list {
+  display: grid;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
+}
 
-  li {
-    margin-bottom: var(--entry-el-margin-md);
-  }
+/* 質問セクションリスト */
+.faq-section-list {
+  display: grid;
+  gap: 3rem;
 }

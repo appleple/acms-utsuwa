@@ -78,6 +78,7 @@
   .main-visual-links {
     display: grid;
     gap: 1rem;
+    word-break: keep-all;
 
     .button.is-bordered:not(:hover) {
       background: var(--color-white);

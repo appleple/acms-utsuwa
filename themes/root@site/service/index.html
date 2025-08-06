@@ -6,8 +6,18 @@
 
 @section("main")
 <div class="acms-container">
+  <!-- タグ検索非対応 -->
+
+  <!-- BEGIN_IF [%{PCID}/nem] -->
+  <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+  <!-- END_IF -->
+
+  <!-- 日付検索非対応 -->
+
+  <!-- ブログ毎のキーワード検索非対応 -->
+
   <!-- エントリーサマリー：サムネイル表示 -->
-    @include("/include/entry/summary-service.html", {"module_id":"summary_no_date"})
+  @include("/include/entry/summary-service.html", {"module_id":"summary_no_date"})
 </div>
 @endsection
 

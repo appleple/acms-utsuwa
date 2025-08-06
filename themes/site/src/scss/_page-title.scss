@@ -104,9 +104,10 @@
   margin: 0 0 2rem;
   color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-m);
+  line-height: var(--line-height-base);
 
-}
-
-.category-header {
-  margin-bottom: 3rem;
+  a {
+    color: currentcolor;
+    text-decoration: none;
+  }
 }

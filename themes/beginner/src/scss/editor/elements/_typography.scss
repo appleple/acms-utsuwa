@@ -363,14 +363,14 @@
     margin-bottom: 0.5rem;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-md);
+    line-height: var(--line-height-base);
   }
 
   dd {
     margin-bottom: 1rem;
     margin-left: 0; /* リセット用 */
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-md);
+    line-height: var(--line-height-base);
   }
 
   dd + dt {

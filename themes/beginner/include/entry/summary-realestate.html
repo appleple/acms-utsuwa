@@ -2,14 +2,9 @@
 <div>
   @include("/include/edit/module-custom.html")
 
+  <p class="media-item-amount"><!-- BEGIN_IF [%{DATE}/nem] -->「<!-- BEGIN_IF [%{DATE_YEAR}/nem] -->%{DATE_YEAR}年<!-- END_IF --><!-- BEGIN_IF [%{DATE_MONTH}/nem] -->%{DATE_MONTH}月<!-- END_IF --><!-- BEGIN_IF [%{DATE_DAY}/nem] -->%{DATE_DAY}日<!-- END_IF -->」<!-- END_IF --><!-- BEGIN_IF [%{PCID}/nem] -->「%{CATEGORY_NAME}」<!-- END_IF --><!-- BEGIN_IF [%{KEYWORD}/nem] -->「%{KEYWORD}」<!-- END_IF --><!-- BEGIN_IF [%{TAG}/nem] -->「%{TAG}」<!-- END_IF --><!-- BEGIN_MODULE Field_Search --><!-- BEGIN station:veil -->「{station}」<!-- END station:veil --><!-- BEGIN price:veil -->「<!-- BEGIN price0:veil -->{price[0]}[number_format]円以上 <!-- END price0:veil --><!-- BEGIN price1:veil -->{price[1]}[number_format]円以下<!-- END price1:veil -->」<!-- END price:veil --><!-- END_MODULE Field_Search --><!-- BEGIN_IF [{itemsAmount}/nem] -->の検索結果 {itemsAmount} 件<!-- ELSE -->に一致する物件は見つかりませんでした。<!-- END_IF --></p>
 
-  <p class="media-item-amount">%{CATEGORY_NAME} %{KEYWORD} %{TAG} <!-- BEGIN_MODULE Field_Search -->{station}
-    <!-- BEGIN price0:veil -->{price[0]}[number_format]円以上 <!-- END price0:veil -->
-    <!-- BEGIN price1:veil -->{price[1]}[number_format]円以下<!-- END price1:veil --><!-- END_MODULE Field_Search -->
-    <!-- BEGIN_IF [{itemsAmount}/nem] -->の検索結果 {itemsAmount} 件<!-- ELSE -->
-    に一致する物件は見つかりませんでした。<!-- END_IF --></p>
-
-
+  <!-- BEGIN entry_list:veil -->
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
     <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->
@@ -72,8 +67,10 @@
       </div>
     </li>
     <!-- END entry:loop -->
+    <!-- END unit:loop -->
   </ul>
-  <!-- END unit:loop -->
+  <!-- END entry_list:veil -->
+
   @include("/include/parts/pager.html")
 </div>
 <!-- END_MODULE Entry_Summary -->

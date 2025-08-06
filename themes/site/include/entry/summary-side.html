@@ -1,13 +1,13 @@
-<!-- BEGIN_MODULE Entry_Summary id="summary_side" -->  
+<!-- BEGIN_MODULE Entry_Summary id="summary_side" -->
 <section class="section-side">
+  @include("/include/edit/module-custom.html")
+
   <header class="section-side-header">
     <h2 class="section-side-title">新着記事</h2>
   </header>
 
-  @include("/include/edit/module-custom.html")
-
   <!-- BEGIN notFound -->
-  <p class="paragraph">ただいまページを準備しております。もうしばらくお待ちください。</p>
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
   <!-- END notFound -->
 
   <ul class="summary-side-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem;">

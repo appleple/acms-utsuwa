@@ -2,7 +2,7 @@
 <!-- BEGIN notFound -->
 <section class="acms-entry entry">
   <h2 class="not-found-title">Not Found</h2>
-  <p>ただいまページを準備しております。もうしばらくお待ちください。</p>
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
 </section>
 <!-- END notFound -->
 
@@ -27,14 +27,18 @@
     <!-- BEGIN_IF [%{ECD}/nem]-->
     <!-- BEGIN title:veil -->
     <header class="entry-header">
+      <!-- BEGIN entry-header-info:veil -->
       <div class="entry-header-info">
         <!-- BEGIN date:veil -->
-        <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-time">
-          {date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）
-        </time><!-- END date:veil -->
+        <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-time">{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</time>
+        <!-- END date:veil -->
+
         <!-- BEGIN category:veil --><!-- BEGIN category:loop -->
         <a href="{url}" class="entry-header-category js-viewing-indelible">{name}</a><!-- BEGIN glue --> &lt;
-        <!-- END glue --><!-- END category:loop --><!-- END category:veil --></div>
+        <!-- END glue --><!-- END category:loop --><!-- END category:veil -->
+      </div>
+      <!-- END entry-header-info:veil -->
+
       <!-- BEGIN_MODULE Touch_Entry --><h1 class="entry-header-title entry-faq-title entryTitle"><span class="entry-faq-title-icon">Q</span>{title}</h1><!-- END_MODULE Touch_Entry -->
     </header>
     <!-- END title:veil -->

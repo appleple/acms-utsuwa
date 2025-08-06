@@ -1,35 +1,39 @@
 <!-- BEGIN_MODULE Entry_Summary id="summary_faq" -->
 <section id="%{CCD}">
   @include("/admin/module/setting.html")
-<h2 class="heading-lg">%{CATEGORY_NAME}</h2>
-<ul class="faq-list">
-  <!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
-  <li class="toggle faq js-toggle">
-    <h3 class="faq-question">
-      <a href="{url}" role="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
-        <span class="faq-icon">Q</span>
-        <span class="faq-title">{title}</span>
-        <span class="toggle-icon" aria-hidden="false">
-          <img src="/images/icon-chevron-down.svg" alt="">
-        </span>
-      </a>
-    </h3>
-    <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
-      <div class="faq-answer">
-        <p class="faq-icon">A</p>
-        <div class="faq-body">
-          <div id="jsIncludeTo{eid}">
-            <div class="content-loading">
-              <span class="content-loading-icon"></span>
-              <span class="content-loading-icon"></span>
-              <span class="content-loading-icon"></span>
+
+  <!-- BEGIN notFound -->
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+  <!-- END notFound -->
+
+  <ul class="faq-list">
+    <!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+    <li class="toggle faq js-toggle">
+      <h3 class="faq-question">
+        <a href="{url}" role="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}" hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}" hx-swap="innerHTML">
+          <span class="faq-icon">Q</span>
+          <span class="faq-title">{title}</span>
+          <span class="toggle-icon" aria-hidden="false">
+            <img src="/images/icon-chevron-down.svg" alt="">
+          </span>
+        </a>
+      </h3>
+      <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
+        <div class="faq-answer">
+          <p class="faq-icon">A</p>
+          <div class="faq-body">
+            <div id="jsIncludeTo{eid}">
+              <div class="content-loading">
+                <span class="content-loading-icon"></span>
+                <span class="content-loading-icon"></span>
+                <span class="content-loading-icon"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </li>
-  <!-- END entry:loop --><!-- END unit:loop -->
-</ul>
+    </li>
+    <!-- END entry:loop --><!-- END unit:loop -->
+  </ul>
 </section>
 <!-- END_MODULE Entry_Summary -->

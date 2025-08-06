@@ -26,8 +26,9 @@
   @include("/include/entry/body-event.html", {"module_id": "body_event"})
 
   <section class="entry-aside-section">
-    <h2 class="heading-md">開催予定のイベント</h2>
-    @include("/include/entry/summary-event.html", {"module_id": "summary_event_relational"})
+    <!-- サマリー：開催予定のイベント一覧 -->
+    @include("/include/entry/summary-event.html", {"module_id": "summary_event_relational", "module_title_md": "開催予定のイベント
+"})
   </section>
 </div>
 @endsection

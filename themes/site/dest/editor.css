@@ -435,13 +435,13 @@
   margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 1rem;
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-base);
 }
 .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) dd {
   margin-bottom: 1rem;
   margin-left: 0; /* リセット用 */
   font-size: 1rem;
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-base);
 }
 .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) dd + dt {
   margin-top: 0; /* リセット用 */
@@ -1332,7 +1332,7 @@
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   color: var(--color-text);
   font-size: 1rem;
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-base);
 }
 
 .acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)),
@@ -1457,14 +1457,9 @@
  モジュールユニット
 ------------------------------ */
 [class*=column-module] {
-  margin-block: 0 var(--entry-el-margin-sm);
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 }
 
-@media (min-width: 48rem) {
-  .entry-style [class*=column-module]:first-child {
-    margin-top: 1rem;
-  }
-}
 /* ------------------------------
  テーブル
 ------------------------------ */
@@ -2171,10 +2166,15 @@
 
 /* 質問リスト */
 .faq-list {
+  display: grid;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.faq-list li {
-  margin-bottom: var(--entry-el-margin-md);
+
+/* 質問セクションリスト */
+.faq-section-list {
+  display: grid;
+  gap: 3rem;
 }

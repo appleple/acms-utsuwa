@@ -7,7 +7,16 @@
   @include("/include/parts/local-nav.html"", {"module_id": "nav_event"})
 
   <h2 class="heading-lg acms-mb-8">開催中・開催予定のイベント</h2>
+
+  <!-- BEGIN_IF [%{CID}/nem] -->
+  <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+  <!-- END_IF -->
+
+  <!-- 日付検索非対応（代替として別テンプレートでのカレンダー検索に対応） -->
+
+  <!-- ブログ毎のキーワード検索非対応 -->
+
   <!-- サマリー：記事一覧 -->
-  @include("/include/entry/summary-event.html", {"module_id": "summary_event"})
+  @include("/include/entry/summary-event.html", {"module_id": "summary_event", "module_title_md": ""})
 </div>
 @endsection

@@ -1,49 +1,46 @@
-<!-- BEGIN_MODULE Entry_Summary id="summary_news" -->
-<section class="section-pt section-pb section-bg-color js-animation">
-  <div class="acms-container">
-    <div class="section-horizontal">
-      @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
-      <!-- BEGIN moduleField -->
-      <!-- BEGIN module-heading:veil -->
-      <header class="section-horizontal-header">
-        <div class="section-horizontal-header-inner">
-          <h2 class="section-horizontal-heading">{module-heading}</h2>
-          <!-- BEGIN module-heading-small:veil -->
-          <p class="section-horizontal-heading-side">{module-heading-small}</p>
-          <!-- END module-heading-small:veil -->
+<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<div>
+  @include("/include/edit/module-custom.html",{"hash":"#acms_box2"})
+
+  <!-- BEGIN notFound -->
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+  <!-- END notFound -->
+
+  <ul class="media-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1<!-- END_IF -->"><!-- BEGIN unit:loop -->
+    <!-- BEGIN entry:loop -->
+    <li class="media-item">
+      <a href="{url}" class="media-link">
+        <div class="media-link-inner">
+          <!-- BEGIN image:veil -->
+          <div class="media-item-img">
+            <img src="%{ROOT_DIR}{path}[resizeImg(800)]" alt="{alt}" width="800" height="{path}[imageRatioSizeH(800)]" class="media-img">
+          </div><!-- END image:veil -->
+          <div class="media-item-text-box">
+            <div class="media-item-header">
+              <!-- BEGIN_IF [<!-- BEGIN new -->1<!-- END new -->{date#}/nem] -->
+              <p class="media-time-label-box">
+                <time class="media-time" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time><!-- BEGIN new --><span class="label">New</span><!-- END new -->
+              </p>
+              <!-- END_IF -->
+              <!-- BEGIN categoryField --><span class="media-category">{fieldCategoryName}</span><!-- END categoryField -->
+              <h2 class="media-title">{title}</h2>
+            </div>
+            <p class="media-text">{summary}[trim(280, '...')]</p>
+            <!-- BEGIN tag:veil -->
+            <div class="media-tag-wrap">
+              <ul class="tag-sm-list" aria-label="関連タグ">
+                <!-- BEGIN tag:loop -->
+                <li class="tag-sm-item">#{name}</li>
+                <!-- END tag:loop -->
+              </ul>
+            </div><!-- END tag:veil -->
+            <p class="media-read-more">詳しく見る <span class="icon-button">@include("/images/arrow-border-white.svg")</span></p>
+          </div>
         </div>
-      </header>
-      <!-- END module-heading:veil -->
-      <!-- END moduleField -->
-      <div class="section-horizontal-main">
-        <ul class="headline js-animation-row"><!-- BEGIN unit:loop -->
-          <!-- BEGIN entry:loop -->
-          <li class="headline-item">
-            <a href="{url}" class="headline-link">
-            <div class="headline-info">
-              <time class="headline-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日( {date#week} )</time><!-- BEGIN categoryField -->
-              <span class="headline-category">{fieldCategoryName}</span><!-- END categoryField --><!-- BEGIN new -->
-              <span class="badge headline-badge-news">New</span><!-- END new -->
-            </div><span class="headline-text">{title}</span>
-            </a>
-          </li>
-          <!-- END entry:loop -->
-          <!-- END unit:loop -->
-        </ul>
-        <p class="section-button is-right"><a href="{indexUrl}" class="button-read-more"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧へ</a></p>
-      </div>
-    </div>
-    <div class="section-horizontal-footer splide-wrap">
-      <!-- BEGIN_MODULE Media_Banner id="top_banner_slide" -->
-      <div id="news-banner-carousel" class="splide" aria-label="最新情報のバナー">
-        @include("/include/edit/module-custom.html", {"hash":"#acms_box2"})
-        <div class="splide__track">
-          <ul class="splide__list"><!-- BEGIN banner:loop -->
-            <li class="splide__slide"><!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src --><!-- BEGIN banner#img --><a href="{url}" target="{target}"><img src="%{MEDIA_ARCHIVES_DIR}{img}" width="{x}" height="{y}" alt="{alt}" class="acms-img-responsive"></a><!-- END banner#img -->
-            </li><!-- END banner:loop -->
-          </ul>
-        </div>
-      </div><!-- END_MODULE Media_Banner -->
-    </div>
-  </div>
-</section><!-- END_MODULE Entry_Summary -->
+      </a>
+    </li><!-- END entry:loop -->
+    <!-- END unit:loop -->
+  </ul>
+</div>
+@include("/include/parts/pager-read-more.html")
+<!-- END_MODULE Entry_Summary -->

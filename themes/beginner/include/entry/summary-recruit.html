@@ -1,6 +1,11 @@
 <!-- BEGIN_MODULE Entry_Summary id="summary_recruit" -->
 <div>
   @include("/include/edit/module-custom.html")
+
+  <!-- BEGIN notFound -->
+  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+  <!-- END notFound -->
+
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--card-img-aspect-ratio: 1 / 1;">
     <!-- BEGIN unit:loop -->
     <!-- BEGIN entry:loop -->

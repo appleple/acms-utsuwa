@@ -5,13 +5,5 @@
  モジュールユニット
 ------------------------------ */
 [class*="column-module"] {
-  margin-block: 0 var(--entry-el-margin-sm);
-}
-
-@include acms.media-breakpoint-up(md) {
-  .#{acms.$entry-class} {
-    [class*="column-module"]:first-child {
-      margin-top: 1rem;
-    }
-  }
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 }

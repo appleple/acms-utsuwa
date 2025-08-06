@@ -2647,6 +2647,7 @@ input::placeholder {
 .main-visual .main-visual-links {
   display: grid;
   gap: 1rem;
+  word-break: keep-all;
 }
 .main-visual .main-visual-links .button.is-bordered:not(:hover) {
   background: var(--color-white);
@@ -3147,6 +3148,10 @@ input::placeholder {
 
 /* メディアリスト
 ------------------------------ */
+.media-list-section + .media-list-section {
+  margin-top: var(--col-gutter); /* 「もっと見る」ボタンでリストを追加表示したときの余白確保 */
+}
+
 .media-list {
   margin-top: 0;
   margin-bottom: 0;
@@ -3450,10 +3455,11 @@ input::placeholder {
   margin: 0 0 2rem;
   color: var(--color-text);
   font-size: 1.953125rem;
+  line-height: var(--line-height-base);
 }
-
-.category-header {
-  margin-bottom: 3rem;
+.page-sub-title a {
+  color: currentcolor;
+  text-decoration: none;
 }
 
 /* ------------------------------
@@ -3853,6 +3859,9 @@ input::placeholder {
 }
 
 /* 検索結果 */
+.search-result-heading {
+  margin-bottom: 1.5rem;
+}
 .search-result-heading .form-search-label {
   display: none;
 }
@@ -3866,8 +3875,11 @@ input::placeholder {
   }
 }
 .result-text {
+  margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
 }
 
 .result-button {
@@ -4444,6 +4456,9 @@ input::placeholder {
   font-size: 0.8rem;
 }
 
+.entry-header-date {
+  margin-block: 0;
+}
 .entry-header-date.-event {
   font-size: 1rem;
 }
@@ -4456,6 +4471,7 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-block: 0;
 }
 .entry-header-category a:link,
 .entry-header-category a:visited,

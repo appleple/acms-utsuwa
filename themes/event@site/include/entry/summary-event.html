@@ -1,6 +1,12 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<!-- 「module_title_md」が指定されていた場合に、記事件数が0件でもdivが表示されてしまうためIF文を追加 -->
+<!-- BEGIN_IF [<!-- BEGIN notFound -->1<!-- END notFound -->/em] -->
 <div>
   @include("/include/edit/module-custom.html")
+
+  <!-- BEGIN_IF [{{module_title_md}}/nem/_and_/<!-- BEGIN notFound -->1<!-- END notFound -->/em] -->
+  <h2 class="heading-md">{{module_title_md}}</h2>
+  <!-- END_IF -->
 
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
     <!-- BEGIN unit:loop -->
@@ -63,4 +69,5 @@
   </ul>
   @include("/include/parts/pager.html")
 </div>
+<!-- END_IF -->
 <!-- END_MODULE Entry_Summary -->

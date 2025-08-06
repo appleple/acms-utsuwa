@@ -5,6 +5,20 @@
   <main class="main">
     <div>
       <div class="container-md">
+        <!-- ローカルナビゲーション -->
+        @include("/include/category/local-nav.html", {"module_id": "nav_faq"})
+
+        <!-- タグ検索非対応 -->
+
+        <!-- BEGIN_IF [%{CID}/nem] -->
+        <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+        <!-- END_IF -->
+
+        <!-- 日付検索非対応 -->
+
+        <!-- ブログ毎のキーワード検索非対応 -->
+
+        <!-- サマリー：よくある質問一覧 -->
         @include("/include/entry/summary-faq.html")
       </div>
     </div>

@@ -2,14 +2,18 @@
 <div>
   @include("/include/edit/module-custom.html")
 
+  <!-- .search-results:empty を有効にするため検索条件がないときに空白や改行が入らないよう詰めて記述ください -->
   <div class="search-results"><!-- BEGIN notFound -->
-    <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p><!-- END notFound --><!-- BEGIN pager:veil --><!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] -->
-    <p class="search-amount">検索結果　{itemsAmount}件</p><!-- END_IF --><!-- END pager:veil --><!-- BEGIN_MODULE Field_Search --><!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] -->
+    <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p>
+    <!-- END notFound --><!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] --><!-- BEGIN itemsAmount:veil -->
+    <p class="search-amount">検索結果　{itemsAmount}件</p><!-- END itemsAmount:veil --><!-- END_IF --><!-- BEGIN_MODULE Field_Search --><!-- BEGIN_IF [%{CATEGORY_NAME}%{KEYWORD}{work-industry}{work-goal}/nem] -->
     <dl class="search-conditions">
       <dt>検索条件</dt>
+
       <!-- BEGIN_IF [%{CATEGORY_NAME}/nem] -->
       <dd>サイト種別：%{CATEGORY_NAME}</dd>
       <!-- END_IF -->
+
       <!-- BEGIN industry:veil -->
       <dd>業種： <!-- BEGIN work-industry:loop --><!-- BEGIN work-industry:glue -->, <!-- END work-industry:glue -->
        <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
@@ -21,7 +25,8 @@
        <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
        <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
        <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF --><!-- END work-industry:loop -->
-        <!-- END industry:veil -->
+      <!-- END industry:veil -->
+
       <!-- BEGIN industry:veil -->
        <dd>目的： <!-- BEGIN work-goal:loop --><!-- BEGIN work-goal:glue -->, <!-- END work-goal:glue -->
         <!-- BEGIN_IF [{work-goal}/eq/goal1] -->売上向上 / コンバージョン改善
@@ -31,6 +36,10 @@
          <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --><!-- END work-goal:loop -->
       </dd>
       <!-- END industry:veil -->
+
+      <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+      <dd>キーワード： %{KEYWORD}</dd>
+      <!-- END_IF -->
     </dl><!-- END_IF --><!-- END_MODULE Field_Search --></div>
 
   <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">

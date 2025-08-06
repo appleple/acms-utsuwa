@@ -5,7 +5,15 @@
   <main class="main">
     <div>
       <div class="container-md">
-        @include("/include/tag/filter.html")
+        <!-- タグ検索非対応 -->
+
+        <!-- BEGIN_IF [%{PCID}/nem] -->
+        <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+        <!-- END_IF -->
+
+        <!-- 日付検索非対応 -->
+
+        <!-- カテゴリー毎のキーワード検索非対応 -->
 
         <!-- サマリー：記事一覧 -->
         @include("/include/entry/summary-recruit.html")

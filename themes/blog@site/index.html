@@ -5,10 +5,14 @@
   @include("/include/tag/filter.html")
 
   <!-- BEGIN_IF [%{CID}/nem] -->
-  <header class="category-header">
-    <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
-  </header>
+  <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
   <!-- END_IF -->
+
+  <!-- BEGIN_IF [%{DATE}/nem] -->
+  <h2 class="page-sub-title"><!-- BEGIN_IF [%{DATE_YEAR}/nem] -->%{DATE_YEAR}年<!-- END_IF --><!-- BEGIN_IF [%{DATE_MONTH}/nem] -->%{DATE_MONTH}月<!-- END_IF --><!-- BEGIN_IF [%{DATE_DAY}/nem] -->%{DATE_DAY}日<!-- END_IF --></h2>
+  <!-- END_IF -->
+
+  <!-- ブログ毎のキーワード検索非対応 -->
 
   <!-- サマリー：記事一覧 -->
   @include("/include/entry/summary-blog.html", {"module_id": "summary_blog"})

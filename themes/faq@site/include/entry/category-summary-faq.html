@@ -1,41 +1,43 @@
 <!-- BEGIN_MODULE Category_EntrySummary id="category_summary_faq" -->
 <div>
-@include("/admin/module/setting.html")
-<!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
-<!-- END categoryUl#front --><!-- BEGIN category:loop -->
-<section id="{categoryCode}">
-<h2 class="heading-lg"><a href="{categoryUrl}">{categoryName}</a></h2>
-  <!-- BEGIN entry:veil --><ul class="faq-list"><!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
-    <li class="toggle faq js-toggle">
-      <h3 class="faq-question">
-        <a href="{url}" role="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}cat" 
-          hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}cat" hx-swap="innerHTML">
-          <span class="faq-icon">Q</span>
-          <span class="faq-title">{title}</span>
-          <span class="toggle-icon" aria-hidden="false">
-          <img src="/images/icon-chevron-down.svg" alt="">
-          </span>
-        </a>
-      </h3>
-      <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
-        <div class="faq-answer">
-          <p class="faq-icon">A</p>
-          <div class="faq-body">
-            <div id="jsIncludeTo{eid}cat">
-              <div class="content-loading">
-                <span class="content-loading-icon"></span>
-                <span class="content-loading-icon"></span>
-                <span class="content-loading-icon"></span>
+  @include("/admin/module/setting.html")
+  <div class="faq-section-list">
+    <!-- BEGIN categoryEntryList:loop --><!-- BEGIN categoryUl#front -->
+    <!-- END categoryUl#front --><!-- BEGIN category:loop -->
+    <section id="{categoryCode}">
+      <h2 class="page-sub-title"><a href="{categoryUrl}">{categoryName}</a></h2><!-- BEGIN entry:veil -->
+      <ul class="faq-list"><!-- BEGIN unit:loop --><!-- BEGIN entry:loop -->
+        <li class="toggle faq js-toggle">
+          <h3 class="faq-question">
+            <a href="{url}" role="button" class="toggle-button faq-question-button js-toggle-button" aria-expanded="false" aria-controls="answer{eid}cat"
+              hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}cat" hx-swap="innerHTML">
+              <span class="faq-icon">Q</span>
+              <span class="faq-title">{title}</span>
+              <span class="toggle-icon" aria-hidden="false">
+              <img src="/images/icon-chevron-down.svg" alt="">
+              </span>
+            </a>
+          </h3>
+          <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">
+            <div class="faq-answer">
+              <p class="faq-icon">A</p>
+              <div class="faq-body">
+                <div id="jsIncludeTo{eid}cat">
+                  <div class="content-loading">
+                    <span class="content-loading-icon"></span>
+                    <span class="content-loading-icon"></span>
+                    <span class="content-loading-icon"></span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </li>
-    <!-- END entry:loop --><!-- END unit:loop -->
-  </ul><!-- END entry:veil -->
-</section><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
-<!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
-<!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+        </li>
+        <!-- END entry:loop --><!-- END unit:loop -->
+      </ul><!-- END entry:veil -->
+    </section><!-- END category:loop --><!-- BEGIN categoryLi#rear -->
+    <!-- END categoryLi#rear --><!-- BEGIN categoryUl#rear -->
+    <!-- END categoryUl#rear --><!-- END categoryEntryList:loop -->
+  </div>
 </div>
 <!-- END_MODULE Category_EntrySummary -->

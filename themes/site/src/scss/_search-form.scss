@@ -68,6 +68,8 @@
 /* 検索結果 */
 
 .search-result-heading {
+  margin-bottom: 1.5rem;
+
   .form-search-label {
     display: none;
   }
@@ -86,8 +88,11 @@
 }
 
 .result-text {
+  margin-top: 0;
   margin-bottom: 1.5rem;
   font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
 }
 
 .result-button {
@@ -95,5 +100,4 @@
   gap: 0.5rem;
   justify-content: center;
   padding: 1rem 1rem 2rem;
-
 }

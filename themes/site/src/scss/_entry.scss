@@ -24,6 +24,8 @@
 }
 
 .entry-header-date {
+  margin-block: 0;
+
   &.-event {
     font-size: map.get(global.$font-scales, body-m);
 
@@ -38,6 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-block: 0;
 
   a:link,
   a:visited,

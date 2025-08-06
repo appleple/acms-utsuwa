@@ -142,7 +142,7 @@
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-base);
 }
 
 .acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)),

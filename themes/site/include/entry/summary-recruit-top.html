@@ -2,6 +2,7 @@
 <section class="section-pt<!-- BEGIN_IF [{section-class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation">
   <div class="acms-container">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
+
     <!-- BEGIN module-heading:veil -->
     <header class="section-vertical-header">
       <h2 class="section-vertical-heading">{module-heading}</h2>
@@ -10,6 +11,11 @@
       <!-- END module-heading-small:veil -->
     </header>
     <!-- END module-heading:veil --><!-- END moduleField -->
+
+    <!-- BEGIN notFound -->
+    <p class="result-text">お探しの記事は見つかりませんでした。</p>
+    <!-- END notFound -->
+
     <div class="section-main">
       <ul class="card-bordered-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2">
         <!-- BEGIN unit:loop -->
