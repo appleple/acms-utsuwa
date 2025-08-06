@@ -6,24 +6,6 @@
  カスタムユニット
 ------------------------------ */
 
-/* カード
------------------------------- */
-.#{acms.$entry-class} {
-  @include acms.media-breakpoint-up(md) {
-    .card-bordered-item {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-/* 罫線ユニット
------------------------------- */
-.unit-separator {
-  margin: 0 0 var(--entry-el-margin-md);
-  border: 0;
-  border-top: var(--border-width-sm) solid var(--color-gray40);
-}
-
 /* 目次ユニット
 ------------------------------ */
 .#{acms.$entry-class} {

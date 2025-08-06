@@ -6,14 +6,6 @@
  カスタムユニット
 ------------------------------ */
 
-/* 罫線ユニット
------------------------------- */
-.unit-separator {
-  margin: 0 0 var(--entry-el-margin-md);
-  border: 0;
-  border-top: var(--border-width-sm) solid var(--color-gray40);
-}
-
 /* 目次ユニット
 ------------------------------ */
 .#{acms.$entry-class} {

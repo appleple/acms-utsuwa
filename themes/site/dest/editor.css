@@ -662,7 +662,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  border: var(--border-width-sm) solid var(--color-gray40);
+  border: var(--border-width-sm) solid var(--color-gray30);
   content: "";
 }
 .entry-style .gu-narrow {
@@ -799,22 +799,6 @@
 /* ------------------------------
  カスタムユニット
 ------------------------------ */
-/* カード
------------------------------- */
-@media (min-width: 48rem) {
-  .entry-style .card-bordered-item {
-    margin-bottom: 1rem;
-  }
-}
-
-/* 罫線ユニット
------------------------------- */
-.unit-separator {
-  margin: 0 0 var(--entry-el-margin-md);
-  border: 0;
-  border-top: var(--border-width-sm) solid var(--color-gray40);
-}
-
 /* 目次ユニット
 ------------------------------ */
 .entry-style {
