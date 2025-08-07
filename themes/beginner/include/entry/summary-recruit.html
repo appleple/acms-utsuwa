@@ -14,7 +14,7 @@
         <a href="{url}" class="card-link">
           <div class="card-link-inner">
             <div class="card-img-wrap">
-              <!-- BEGIN image:veil -->
+              <!-- BEGIN_IF [{path}/nem] -->
               <img
                 src="%{ROOT_DIR}{path}[resizeImg(800,800)]"
                 alt="{alt}"
@@ -24,19 +24,17 @@
                 loading="lazy"
                 decoding="async"
               >
-              <!-- END image:veil -->
-              <!-- BEGIN noimage -->
+              <!-- ELSE -->
               <img
                 src="/images/noimage.png"
                 alt="noimage画像"
                 class="acms-img-responsive card-img"
-                width="455"
-                height="256"
-                style="--card-img-aspect-ratio: 1 / 1;"
+                width="800"
+                height="450"
                 loading="lazy"
                 decoding="async"
               >
-              <!-- END noimage -->
+              <!-- END_IF -->
             </div>
             <div class="card-text-wrap">
               <!-- BEGIN label_box:veil -->

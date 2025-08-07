@@ -17,7 +17,7 @@
       <a href="{url}" class="summary-side-link">
         <div class="summary-side-link-inner">
           <div class="summary-side-img-wrap">
-            <!-- BEGIN image:veil -->
+            <!-- BEGIN_IF [{path}/nem] -->
             <img
               src="%{ROOT_DIR}{path}[resizeImg(192,192)]"
               alt="{alt}"
@@ -27,8 +27,7 @@
               loading="lazy"
               decoding="async"
             >
-            <!-- END image:veil -->
-            <!-- BEGIN noimage -->
+            <!-- ELSE -->
             <img
               src="/images/noimage.png"
               alt="noimage画像"
@@ -38,7 +37,7 @@
               loading="lazy"
               decoding="async"
             >
-            <!-- END noimage -->
+            <!-- END_IF -->
           </div>
           <div class="summary-side-text-wrap">
             <h3 class="summary-side-title">{title}</h3>
