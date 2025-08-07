@@ -18,7 +18,7 @@
         <div class="card-bordered">
           <a href="{url}" class="card-bordered-link">
             <div class="card-bordered-img-wrap">
-              <!-- BEGIN image:veil -->
+              <!-- BEGIN_IF [{path}/nem] -->
               <img
                 src="%{ROOT_DIR}{path}[resizeImg(800)]"
                 alt="{alt}"
@@ -28,18 +28,17 @@
                 loading="lazy"
                 decoding="async"
               >
-              <!-- END image:veil -->
-              <!-- BEGIN noimage -->
+              <!-- ELSE -->
               <img
                 src="/images/noimage.png"
                 alt="noimage画像"
-                width="800"
-                height="320"
                 class="acms-img-responsive card-bordered-img"
+                width="800"
+                height="450"
                 loading="lazy"
                 decoding="async"
               >
-              <!-- END noimage -->
+              <!-- END_IF -->
             </div>
             <div class="card-bordered-text-wrap">
               <div class="card-bordered-text-inline">
