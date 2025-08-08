@@ -4,7 +4,13 @@
 /* ------------------------------
  地図
 ------------------------------ */
-[class*="column-map"],
-[class*="street-view"] {
-  margin-block: 0 var(--entry-el-margin-md);
+.column-map,
+.column-street-view {
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+}
+
+:where(.column-map .js-open-street-map),
+:where(.column-map .js-s2d-ready),
+:where(.column-street-view .js-street-view) {
+  aspect-ratio: 16 / 9; /* デフォルトのアスペクト比 */
 }

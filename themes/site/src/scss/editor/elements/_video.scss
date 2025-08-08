@@ -4,7 +4,14 @@
 /* ------------------------------
  動画ユニット
 ------------------------------ */
-[class*="column-youtube"],
-[class*="column-video"] {
-  margin-block: 0 var(--entry-el-margin-md);
+.column-youtube,
+.column-video {
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+}
+
+:where(.column-iframe iframe) {
+  display: block; /* Descender space 対策 */
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* デフォルトのアスペクト比 */
 }
