@@ -13,19 +13,18 @@
   padding: 2rem 1rem;
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
-
-  .form-checkbox {
-    width: 50%;
-  }
 }
 
 .search-panel-group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .search-panel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -37,14 +36,9 @@
 
 .search-panel-input {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 0;
-  align-items: center;
-
-  &.price {
-    flex-direction: column;
-    width: 100%;
-  }
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
 }
 
 .search-panel-keyword {
@@ -71,22 +65,16 @@
     }
 
     .search-panel-item {
-      display: flex;
+      flex-direction: row;
       gap: var(--col-gutter);
       align-items: center;
     }
 
     .search-panel-input {
       flex: 1;
-      gap: 1.5rem;
-
-      &.price {
-        flex-direction: row;
-
-        select {
-          flex: 1;
-        }
-      }
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
     }
   }
 }
