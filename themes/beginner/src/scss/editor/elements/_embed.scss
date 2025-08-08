@@ -24,6 +24,12 @@
     }
   }
 
+  .acms-embed-link-image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
   .acms-embed-link-content {
     margin: 0; /* リセット */
     padding: 1rem;
