@@ -48,12 +48,6 @@
     text-decoration: none;
     border-bottom: var(--border-width-sm) dotted var(--color-text);
 
-
-    .text-btn & {
-      color: var(--color-white);
-    }
-
-
     &:hover {
       text-decoration: none;
       border: 0;

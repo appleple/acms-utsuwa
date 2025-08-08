@@ -121,19 +121,6 @@ $(() => {
     $self.toggleClass('is-active').attr('aria-expanded', ariaExpanded);
     $body.slideToggle().attr('aria-hidden', ariaHidden);
   });
-
-  /* 外部リンクボタンにアイコンを付ける */
-  const anchors = document.querySelectorAll('.text-btn a');
-  const currentHost = location.hostname;
-
-  anchors.forEach(function (anchor) {
-    const href = anchor.getAttribute('href');
-
-    // http:// または https:// で始まり、かつ現在のドメインと異なる場合
-    if (href && href.match(/^https?:\/\//) && !href.includes(currentHost)) {
-      anchor.classList.add('outer-link');
-    }
-  });
 });
 
 

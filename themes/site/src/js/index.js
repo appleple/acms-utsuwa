@@ -61,25 +61,3 @@ domContentLoaded(() => {
     fixElement();
   });
 });
-
-/**
- * 外部リンクアイコンの追加
- */
-document.addEventListener('DOMContentLoaded', () => {
-  const anchors = document.querySelectorAll('.text-btn a');
-
-  anchors.forEach((a) => {
-    const href = a.getAttribute('href');
-    const target = a.getAttribute('target');
-
-    if (!href) return;
-
-    // 外部リンクかどうかを判定
-    const isExternal = /^https?:\/\//.test(href) && href.indexOf(window.location.hostname) === -1;
-
-    // target="_blank" または 外部リンクのいずれかに該当する場合
-    if (isExternal || target === '_blank') {
-      a.classList.add('outer-link');
-    }
-  });
-});

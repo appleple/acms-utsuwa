@@ -142,54 +142,6 @@
   font-size: map.get(global.$font-scales, body-m);
   margin-block: 0 var(--entry-el-margin-md);
   line-height: var(--line-height-lg);
-
-  /* ボタン */
-  &.text-btn a {
-    display: inline-block;
-    padding: var(--btn-padding-y) var(--btn-padding-x);
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: map.get(global.$font-scales, body-m);
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--color-primary);
-    border-bottom: 0; // リセット用
-    border-radius: var(--border-radius-md);
-    transition: background-color 0.2s ease;
-
-    &,
-    &:link,
-    &:visited {
-      color: var(--color-white);
-    }
-
-    &:hover {
-      background-color: var(--color-primary-hover);
-      opacity: 1;
-    }
-
-    &.outer-link {
-      &::after {
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        margin-left: 0.5rem;
-        vertical-align: baseline;
-        background-color: var(--color-text-inverse);
-        content: '';
-        mask-image: url("#{global.$root-theme-img}icon-target_blank.svg");
-        mask-size: contain;
-      }
-    }
-
-    &[href^="tel:"] {
-      color: var(--color-white);
-
-      &:hover {
-        border-color: transparent;
-      }
-    }
-  }
 }
 
 /* リスト
