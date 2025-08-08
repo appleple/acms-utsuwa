@@ -330,10 +330,10 @@
 
   .pricing-text-info {
     margin: 0;
-    text-align: center;
     color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-base);
+    text-align: center;
   }
 }
 
