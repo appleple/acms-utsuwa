@@ -143,56 +143,6 @@
   margin-block: 0 var(--entry-el-margin-md);
   line-height: var(--line-height-lg);
 
-  /* 注釈 */
-  &.text-info {
-    color: var(--color-text-2nd);
-    font-size: map.get(global.$font-scales, body-s);
-  }
-
-  /* 注意文 */
-  &.text-danger {
-    color: var(--color-error);
-    font-size: map.get(global.$font-scales, body-s);
-  }
-
-  /* リード文1 */
-  &.text-lead-primary {
-    color: var(--color-primary);
-    font-weight: bold;
-    font-size: map.get(global.$font-scales, heading-s);
-    line-height: var(--line-height-base);
-
-    @include acms.media-breakpoint-up(md) {
-      margin-bottom: 3rem;
-      font-size: map.get(global.$font-scales, heading-l);
-
-      &.is-margin-small {
-        margin-bottom: var(--entry-el-margin-xxs);
-      }
-    }
-  }
-
-  /* リード文2 */
-  &.text-lead-info {
-    color: var(--color-text-2nd);
-    font-weight: bold;
-    font-size: map.get(global.$font-scales, heading-s);
-    line-height: var(--line-height-base);
-
-    &.is-margin-small {
-      margin-bottom: var(--entry-el-margin-xxs);
-    }
-
-    @include acms.media-breakpoint-up(md) {
-      margin-bottom: 3rem;
-      font-size: map.get(global.$font-scales, heading-m);
-
-      &.is-margin-small {
-        margin-bottom: var(--entry-el-margin-xxs);
-      }
-    }
-  }
-
   /* ボタン */
   &.text-btn a {
     display: inline-block;
@@ -240,23 +190,6 @@
       }
     }
   }
-}
-
-/* 注釈や注意文が、隣り合った時、テーブルの下に来た時は上余白を詰めてまとまり感を出す */
-// 注釈や注意文が 隣り合った時（閲覧画面、ブロックエディタの閲覧画面）
-@include acms.editor-style(
-  (
-    "p + p.text-info",
-    "p + p.text-danger",
-    // ブロックエディタ用（管理画面 / 閲覧画面）
-    "div:has(> table) + p.text-info",
-    "div:has(> table) + p.text-danger",
-    // テーブルユニット用（閲覧画面）
-    "[class*="column-table"] + p.text-info",
-    "[class*="column-table"] + p.text-danger",
-  )
-) {
-  margin-top: -1rem;
 }
 
 /* リスト
