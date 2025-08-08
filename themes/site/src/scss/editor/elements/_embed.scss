@@ -8,6 +8,8 @@
 ------------------------------ */
 
 [class*="column-embed-"] {
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+
   a.acms-embed-link {
     display: flex;
     flex-direction: column;

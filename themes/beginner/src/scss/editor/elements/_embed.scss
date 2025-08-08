@@ -3,10 +3,12 @@
 @use "../../global/acms-common" as acms;
 @use "../../global/common" as global;
 
-/* 埋め込みユニット
+/* ------------------------------
+ 埋め込みユニット
 ------------------------------ */
+
 [class*="column-embed-"] {
-  margin-block: 0 var(--entry-el-margin-md);
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 
   a.acms-embed-link {
     display: flex;
@@ -20,12 +22,6 @@
     &:hover {
       background: var(--color-hover-bg);
     }
-  }
-
-  .acms-embed-link-image-container img {
-    display: block;
-    max-width: 100%;
-    height: auto;
   }
 
   .acms-embed-link-content {
