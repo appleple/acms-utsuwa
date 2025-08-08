@@ -22,10 +22,13 @@
 .search-panel-group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .search-panel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -71,14 +74,14 @@
     }
 
     .search-panel-item {
-      display: flex;
+      flex-direction: row;
       gap: var(--col-gutter);
       align-items: center;
     }
 
     .search-panel-input {
       flex: 1;
-      gap: 1.5rem;
+      gap: 1rem;
 
       &.price {
         flex-direction: row;

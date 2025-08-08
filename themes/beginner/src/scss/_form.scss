@@ -233,10 +233,6 @@
 
 /* フォーム要素
 ------------------------------ */
-input::placeholder {
-  color: red;
-}
-
 .form-group {
   display: block;
   border: 0;
@@ -289,7 +285,6 @@ input::placeholder {
     &[required]:valid {
       background-color: var(--color-white);
     }
-
 
     &:focus {
       background-color: var(--color-white);

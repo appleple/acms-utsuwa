@@ -7,16 +7,16 @@
         <div class="search-panel-item">
           <label for="kubun" class="search-panel-label">区分</label>
           <div class="search-panel-input form-group">
-          <select name="cid">
+            <select name="cid">
               <option value="%{RCID}">選択してください</option>
-             <!-- BEGIN_MODULE Category_List id="category_realestate" -->
+              <!-- BEGIN_MODULE Category_List id="category_realestate" -->
               <!-- BEGIN category:loop -->
               <!-- BEGIN category:veil -->
               <option value="{cid}" <!-- BEGIN_IF [%{CID}/eq/{cid}] --> selected="selected"<!-- END_IF --></option>{name}</option>
               <!-- END category:veil -->
               <!-- END category:loop -->
               <!-- END_MODULE Category_List -->
-          </select>
+            </select>
           </div>
         </div>
         <div class="search-panel-item">
@@ -49,7 +49,7 @@
             <option value="60000" {price[0]:selected#60000}>60,000円以上</option>
             <option value="80000" {price[0]:selected#80000}>80,000円以上</option>
           </select>
-          
+
           〜
           <select name="price[]" id="price2">
             <option value="">上限無し</option>
@@ -64,9 +64,9 @@
           </div>
         </div>
         <div class="search-panel-item">
-          <label for="kubun" class="search-panel-label">キーワード</label>
+          <label for="keyword" class="search-panel-label">キーワード</label>
           <div class="search-panel-input form-group">
-          <input type="search" name="keyword" value="%{KEYWORD}" id="keyword" class="acms-form-width-full" placeholder="キーワードを入力">
+          <input type="search" name="keyword" value="%{KEYWORD}" id="keyword" class="acms-form-width-full" placeholder="キーワードを入力してください">
           </div>
         </div>
       </div>
