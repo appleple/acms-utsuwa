@@ -592,28 +592,14 @@
     }
 
     .main-visual-box {
+      left: 0;
       box-sizing: border-box;
       width: auto;
       min-width: 434px;
       max-width: 100%;
       padding: 5.5rem 6.5rem;
-
-      &.is-left {
-        left: 0;
-        text-align: left;
-        transform: translate(0, -50%);
-      }
-
-      &.is-center {
-        text-align: center;
-      }
-
-      &.is-right {
-        right: 0;
-        left: auto;
-        text-align: right;
-        transform: translate(0, -50%);
-      }
+      text-align: left;
+      transform: translate(0, -50%);
     }
 
     .main-visual-catch {
@@ -627,6 +613,7 @@
     .main-visual-links {
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      justify-content: flex-start;
       max-width: 434px;
 
       .main-visual-ex-button {
@@ -660,14 +647,6 @@
             }
           }
         }
-      }
-
-      .main-visual-box.is-left & {
-        justify-content: flex-start;
-      }
-
-      .main-visual-box.is-right & {
-        justify-content: flex-end;
       }
     }
 
