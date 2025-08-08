@@ -41,12 +41,14 @@
 .media-file-block[data-display-type="button"] a,
 [class*="column-media"] a[href*="media-download"],
 [class*="column-media"] a[href*="storage"],
-[class*="column-file"] a {
+[class*="column-file"] a,
+.entry-style [class*="column-file"] a { /* hover動作上書きのため詳細度高めて指定 */
   @media (hover: hover) {
     transition: background-color 0.2s ease;
 
     &:where(:any-link):hover {
       background-color: var(--color-gray20);
+      border-color: var(--color-gray40); /* hover動作上書きのため */
     }
   }
 }
