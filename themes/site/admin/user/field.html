@@ -1,7 +1,7 @@
 <h3 class="acms-admin-admin-title2">プロフィール</h3>
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th><label for="input-text-user-title">肩書き</label><i data-acms-tooltip="ユーザーの肩書きです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th><label for="input-text-user-title">所属・肩書き</label><i data-acms-tooltip="ユーザーの所属・肩書きです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
       <input type="text" name="user-title" value="{user-title}" size="30" id="input-text-user-title" />
       <input type="hidden" name="field[]" value="user-title" />
@@ -15,38 +15,23 @@
     </td>
   </tr>
   <tr>
-    <th>画像
-      <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="ユーザーの画像です。"></i>
-    </th>
-    <td class="js-media-field">
-      <div class="js-droparea" data-thumbnail="{image@thumbnail}" data-type="image" style="width:200px"></div>
-      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
-      <div class="acms-admin-margin-top-mini">
-        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
-      </div>
-      <input type="hidden" name="image" value="{image}" class="js-value" />
-      <input type="hidden" name="field[]" value="image" />
-      <input type="hidden" name="image:extension" value="media" />
-    </td>
-  </tr>
-  <tr>
     <th><label for="input-text-twitter-creator">X（旧Twitter）</label><i data-acms-tooltip="ライターのX（旧Twitter）アカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
-        <input type="text" name="twitter-creator" value="{twitter-creator}" size="20" id="input-text-twitter-creator" placeholder="testAccount" class="acms-admin-form-width-small" />
+        <input type="text" name="twitter-creator" value="{twitter-creator}" size="20" id="input-text-twitter-creator" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
       <input type="hidden" name="field[]" value="twitter-creator" />
     </td>
   </tr>
   <tr>
     <th><label for="input-text-facebook-creator">Facebook</label><i data-acms-tooltip="ライターのFacebookアカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
-        <input type="text" name="facebook-creator" value="{facebook-creator}" size="20" id="input-text-facebook-creator" placeholder="testAccount" class="acms-admin-form-width-small" />
+        <input type="text" name="facebook-creator" value="{facebook-creator}" size="20" id="input-text-facebook-creator" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
       <input type="hidden" name="field[]" value="facebook-creator" />
     </td>
   </tr>
   <tr>
     <th><label for="input-text-instagram-creator">Instagram</label><i data-acms-tooltip="ライターのInstagramアカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
     <td>
-        <input type="text" name="instagram-creator" value="{instagram-creator}" size="20" id="input-text-instagram-creator" placeholder="testAccount" class="acms-admin-form-width-small" />
+        <input type="text" name="instagram-creator" value="{instagram-creator}" size="20" id="input-text-instagram-creator" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
       <input type="hidden" name="field[]" value="instagram-creator" />
     </td>
   </tr>

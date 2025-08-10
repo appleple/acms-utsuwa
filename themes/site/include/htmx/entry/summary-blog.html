@@ -48,17 +48,6 @@
             <p class="card-text"><!-- BEGIN tag:loop -->#{name}<!-- BEGIN tagGlue --> / <!-- END tagGlue --><!-- END tag:loop --></p><!-- BEGIN tag:veil -->
             <!-- BEGIN userField -->
             <p class="card-author">
-              <!-- BEGIN_IF [{image@path}/nem] -->
-              <img
-                src="%{HTTP_MEDIA_ARCHIVES_DIR}{image@path}[resizeImg(30,30)]"
-                alt="{image@alt}"
-                width="30"
-                height="30"
-                class="card-author-img"
-                loading="lazy"
-                decoding="async"
-              >{fieldUserName}
-              <!-- ELSE -->
               <img
                 src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(60,60)]"
                 alt="{fieldUserIcon@alt}"
@@ -68,7 +57,6 @@
                 loading="lazy"
                 decoding="async"
               >{fieldUserName}
-              <!-- END_IF -->
             </p>
             <!-- END userField -->
           </div>
