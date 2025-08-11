@@ -50,55 +50,6 @@
 </ul>
 <!-- END unit#custom_pricing -->
 
-<!-- BEGIN unit#osmap_mapbox -->
-
-<!-- Mapbox の CSS と JS を読み込む -->
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.9.3/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.9.3/mapbox-gl.js"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    mapboxgl.accessToken = 'pk.eyJ1Ijoia2F6dW1pY2giLCJhIjoiY202YzlyNnFvMDdjNDJtc2I3M2lieThjdyJ9.zHb9SkiAIuJhAJjLWriDig';
-
-    document.querySelectorAll(".js-mapbox-map").forEach(mapElement => {
-      const lat = parseFloat(mapElement.dataset.lat);
-      const lng = parseFloat(mapElement.dataset.lng);
-      let zoomRaw = mapElement.dataset.zoom;
-
-      // `data-zoom` の値を数値に変換し、無効ならデフォルト値を適用
-      let zoom = Number(zoomRaw);
-      if (isNaN(zoom)) {
-        zoom = 15; // デフォルトのズーム値
-      }
-
-      let adjustedZoom = Math.max(0, zoom - 1);
-
-      if (mapElement.offsetWidth === 0 || mapElement.offsetHeight === 0) {
-        return; // コンテナのサイズが 0 の場合はスキップ
-      }
-
-      const map = new mapboxgl.Map({
-        container: mapElement,
-        style: 'mapbox://styles/kazumich/clpqtq2i100dg01ope9em2wo5',
-        center: [lng, lat],
-        zoom: adjustedZoom
-      });
-
-      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-
-      new mapboxgl.Marker()
-        .setLngLat([lng, lat])
-        .setPopup(new mapboxgl.Popup({ offset: 25 }).setText(mapElement.dataset.msg || "ここにマーカーがあります"))
-        .addTo(map);
-    });
-  });
-</script>
-
-<div class="column-map-{align}{display_size_class} not-editor-style" {display_size}[raw]>
-  <div class="js-mapbox-map" data-lat="{lat}" data-lng="{lng}" data-zoom="{zoom}" data-msg="{msgRaw}" style="width: {x}px; height: {y}px;"></div>
-</div>
-<!-- END unit#osmap_mapbox -->
-
 <!-- BEGIN unit#custom_bubble -->
 <div class="entry-container">
   <div class="bubble-item not-editor-style">
