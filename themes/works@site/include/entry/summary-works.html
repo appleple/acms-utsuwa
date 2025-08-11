@@ -5,8 +5,8 @@
   <!-- .search-results:empty を有効にするため検索条件がないときに空白や改行が入らないよう詰めて記述ください -->
   <div class="search-results"><!-- BEGIN notFound -->
     <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p>
-    <!-- END notFound --><!-- BEGIN_IF [%{CATEGORY_NAME}{work-industry}{work-goal}/nem] --><!-- BEGIN itemsAmount:veil -->
-    <p class="search-amount">検索結果　{itemsAmount}件</p><!-- END itemsAmount:veil --><!-- END_IF --><!-- BEGIN_MODULE Field_Search --><!-- BEGIN_IF [%{CATEGORY_NAME}%{KEYWORD}{work-industry}{work-goal}/nem] -->
+    <!-- END notFound --><!-- BEGIN_IF [%{CATEGORY_NAME}{work_industry}{work_goal}/nem] --><!-- BEGIN itemsAmount:veil -->
+    <p class="search-amount">検索結果　{itemsAmount}件</p><!-- END itemsAmount:veil --><!-- END_IF --><!-- BEGIN_MODULE Field_Search --><!-- BEGIN_IF [%{CATEGORY_NAME}%{KEYWORD}{work_industry}{work_goal}/nem] -->
     <dl class="search-conditions">
       <dt>検索条件</dt>
 
@@ -15,25 +15,25 @@
       <!-- END_IF -->
 
       <!-- BEGIN industry:veil -->
-      <dd>業種： <!-- BEGIN work-industry:loop --><!-- BEGIN work-industry:glue -->, <!-- END work-industry:glue -->
-       <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
-       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
-       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
-       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
-       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
-       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
-       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
-       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
-       <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF --><!-- END work-industry:loop -->
+      <dd>業種： <!-- BEGIN work_industry:loop --><!-- BEGIN work_industry:glue -->, <!-- END work_industry:glue -->
+       <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF --><!-- END work_industry:loop -->
       <!-- END industry:veil -->
 
       <!-- BEGIN industry:veil -->
-       <dd>目的： <!-- BEGIN work-goal:loop --><!-- BEGIN work-goal:glue -->, <!-- END work-goal:glue -->
-        <!-- BEGIN_IF [{work-goal}/eq/goal1] -->売上向上 / コンバージョン改善
-         <!-- ELSE_IF [{work-goal}/eq/goal2] -->ユーザー体験 (UX) 改善
-         <!-- ELSE_IF [{work-goal}/eq/goal3] -->業務効率化 / コスト削減
-         <!-- ELSE_IF [{work-goal}/eq/goal4] -->顧客獲得 / 集客強化
-         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --><!-- END work-goal:loop -->
+       <dd>目的： <!-- BEGIN work_goal:loop --><!-- BEGIN work_goal:glue -->, <!-- END work_goal:glue -->
+        <!-- BEGIN_IF [{work_goal}/eq/goal1] -->売上向上 / コンバージョン改善
+         <!-- ELSE_IF [{work_goal}/eq/goal2] -->ユーザー体験 (UX) 改善
+         <!-- ELSE_IF [{work_goal}/eq/goal3] -->業務効率化 / コスト削減
+         <!-- ELSE_IF [{work_goal}/eq/goal4] -->顧客獲得 / 集客強化
+         <!-- ELSE_IF [{work_goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --><!-- END work_goal:loop -->
       </dd>
       <!-- END industry:veil -->
 
@@ -76,8 +76,8 @@
               <!-- END new -->
             </div>
             <div class="card-text-wrap">
-              <!-- BEGIN_IF [{work-copy}/nem] -->
-              <h2 class="card-title">{work-copy}</h2>
+              <!-- BEGIN_IF [{work_copy}/nem] -->
+              <h2 class="card-title">{work_copy}</h2>
               <p class="card-text is-bold">{title}</p>
               <!-- ELSE -->
               <h2 class="card-title">{title}</h2>
@@ -87,15 +87,15 @@
                   {fieldCategoryName}</li><!-- END categoryField --><!-- BEGIN category:veil -->
                 <!-- BEGIN industry:veil -->
                 <li class="label">
-                <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
-                <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
-                <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
-                <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
-                <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
-                <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
-                <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
-                <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
-                <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
+                <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+                <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+                <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+                <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+                <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+                <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+                <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+                <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+                <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF -->
                 </li><!-- END industry:veil -->
               </ul>
             </div>

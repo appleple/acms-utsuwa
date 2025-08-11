@@ -6176,16 +6176,16 @@ input::placeholder {
   gap: 0.5rem;
 }
 
-.event-googlemap {
+.event_googlemap {
   position: relative;
 }
-.event-googlemap svg {
+.event_googlemap svg {
   position: absolute;
   right: -2rem;
   margin-left: 0.5rem;
   vertical-align: text-bottom;
 }
-.event-googlemap svg path {
+.event_googlemap svg path {
   fill: var(--color-gray100);
 }
 

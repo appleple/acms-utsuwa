@@ -1,5 +1,5 @@
 <!-- BEGIN userField -->
-<!-- BEGIN_IF [{position}{user-title}{profile}{image@thumbnail}/nem] -->
+<!-- BEGIN_IF [{position}{user_title}{profile}{image@thumbnail}/nem] -->
 <div class="entry-writer">
   <h4 class="heading-sm">この記事を書いたスタッフ</h4>
   <div class="profile">
@@ -10,21 +10,21 @@
       </div><!-- END image_thumbnail:veil -->
       <div class="profile-item-info">
         <p class="profile-name"><!-- BEGIN profile-position:veil -->
-          <span class="profile-position">{user-title}</span>
+          <span class="profile-position">{user_title}</span>
           <!-- END profile-position:veil -->
           {fieldUserName}
         </p><!-- END position_title:veil -->
         <p class="profile-text acms-hide acms-block-lg acms-block-xl">{profile}[raw|nl2br]</p>
         <!-- END profile:veil -->
         <ul class="profile-sns">
-          <!-- BEGIN_IF [{facebook-creator}/nem/] -->
-          <li class="profile-sns-item"><a href="https://www.facebook.com/{facebook-creator}" target="_blank" class="profile-sns-item-facebook"><img src="/images/icon-color-facebook.svg" alt="{fieldUserName}のFacebookアカウント" role="img" class="acms-img-responsive"></a></li>
+          <!-- BEGIN_IF [{user-facebook}/nem/] -->
+          <li class="profile-sns-item"><a href="https://www.facebook.com/{user-facebook}" target="_blank" class="profile-sns-item-facebook"><img src="/images/icon-color-facebook.svg" alt="{fieldUserName}のFacebookアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
-          <!-- BEGIN_IF [{twitter-creator}/nem/] -->
-          <li class="profile-sns-item"><a href="https://x.com/{twitter-creator}" target="_blank" class="profile-sns-item-twitter"><img src="/images/icon-color-x.svg" alt="{fieldUserName}のXアカウント" role="img" class="acms-img-responsive"></a></li>
+          <!-- BEGIN_IF [{user-twitter}/nem/] -->
+          <li class="profile-sns-item"><a href="https://x.com/{user-twitter}" target="_blank" class="profile-sns-item-twitter"><img src="/images/icon-color-x.svg" alt="{fieldUserName}のXアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
-          <!-- BEGIN_IF [{instagram-creator}/nem/] -->
-          <li class="profile-sns-item"><a href="https://www.instagram.com/{instagram-creator}" target="_blank" class="profile-sns-item-instagram"><img src="/images/icon-color-instagram.png" alt="{fieldUserName}のInstagramアカウント" role="img" class="acms-img-responsive"></a></li>
+          <!-- BEGIN_IF [{user-instagram}/nem/] -->
+          <li class="profile-sns-item"><a href="https://www.instagram.com/{user-instagram}" target="_blank" class="profile-sns-item-instagram"><img src="/images/icon-color-instagram.png" alt="{fieldUserName}のInstagramアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
         </ul>
       </div>

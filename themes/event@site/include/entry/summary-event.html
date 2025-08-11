@@ -39,10 +39,10 @@
               <!-- END_IF -->
               <!-- BEGIN category:veil -->
               <span class="card-category-label left-top">
-                <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
-                <!-- ELSE_IF [{event-status}/eq/open] -->募集中
-                <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
-                <!-- ELSE_IF [{event-status}/eq/closed] -->終了
+                <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
+                <!-- ELSE_IF [{event_status}/eq/open] -->募集中
+                <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
+                <!-- ELSE_IF [{event_status}/eq/closed] -->終了
                 <!-- END_IF -->
               </span><!-- END category:veil -->
             </div>
@@ -53,9 +53,9 @@
                 <!-- BEGIN date:veil -->
                 <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                 <!-- END date:veil -->
-                <!-- BEGIN event-pref:veil -->
-                <p class="label">{event-pref}</p>
-                <!-- END event-pref:veil -->
+                <!-- BEGIN event_pref:veil -->
+                <p class="label">{event_pref}</p>
+                <!-- END event_pref:veil -->
               </div>
               <!-- END label_box:veil -->
               <!-- BEGIN summary:veil -->

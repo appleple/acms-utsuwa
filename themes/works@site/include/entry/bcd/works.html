@@ -8,68 +8,68 @@
     <dt>クライアント</dt>
     <dd>{title}</dd>
   </div>
-  <!-- BEGIN work-industry:veil -->
+  <!-- BEGIN work_industry:veil -->
   <div class="detail-panel-group">
     <dt>業種</dt>
     <dd>
-      <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
-       <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
-       <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
-       <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
-       <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
-       <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
-       <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
-       <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
-       <!-- ELSE_IF [{work-industry}/eq/industry9] -->その他<!-- END_IF -->
+      <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+       <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+       <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+       <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+       <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+       <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+       <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+       <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+       <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF -->
     </dd>
   </div>
-  <!-- END work-industry:veil -->
-  <!-- BEGIN work-scale:veil -->
+  <!-- END work_industry:veil -->
+  <!-- BEGIN work_scale:veil -->
   <div class="detail-panel-group">
     <dt>規模</dt>
     <dd>
-      <!-- BEGIN_IF [{work-scale}/eq/scale1] -->1-10名
-       <!-- ELSE_IF [{work-scale}/eq/scale2] -->11-100名
-       <!-- ELSE_IF [{work-scale}/eq/scale3] -->100名以上<!-- END_IF -->
+      <!-- BEGIN_IF [{work_scale}/eq/scale1] -->1-10名
+       <!-- ELSE_IF [{work_scale}/eq/scale2] -->11-100名
+       <!-- ELSE_IF [{work_scale}/eq/scale3] -->100名以上<!-- END_IF -->
     </dd>
   </div>
-  <!-- END work-scale:veil -->
-  <!-- BEGIN work-goal:veil -->
+  <!-- END work_scale:veil -->
+  <!-- BEGIN work_goal:veil -->
   <div class="detail-panel-group">
     <dt>目的</dt>
     <dd>
-      <!-- BEGIN work-goal:loop --><!-- BEGIN glue --> , <!-- END glue -->
-        <!-- BEGIN_IF [{work-goal}/eq/goal1] -->売上向上 / コンバージョン改善
-         <!-- ELSE_IF [{work-goal}/eq/goal2] -->ユーザー体験 (UX) 改善
-         <!-- ELSE_IF [{work-goal}/eq/goal3] -->業務効率化 / コスト削減
-         <!-- ELSE_IF [{work-goal}/eq/goal4] -->顧客獲得 / 集客強化
-         <!-- ELSE_IF [{work-goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF -->
-      <!-- END work-goal:loop -->
+      <!-- BEGIN work_goal:loop --><!-- BEGIN glue --> , <!-- END glue -->
+        <!-- BEGIN_IF [{work_goal}/eq/goal1] -->売上向上 / コンバージョン改善
+         <!-- ELSE_IF [{work_goal}/eq/goal2] -->ユーザー体験 (UX) 改善
+         <!-- ELSE_IF [{work_goal}/eq/goal3] -->業務効率化 / コスト削減
+         <!-- ELSE_IF [{work_goal}/eq/goal4] -->顧客獲得 / 集客強化
+         <!-- ELSE_IF [{work_goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF -->
+      <!-- END work_goal:loop -->
     </dd>
   </div>
-  <!-- END work-goal:veil -->
-  <!-- BEGIN work-period:veil -->
+  <!-- END work_goal:veil -->
+  <!-- BEGIN work_period:veil -->
   <div class="detail-panel-group">
     <dt>期間</dt>
     <dd>
-      <!-- BEGIN_IF [{work-period}/eq/short] -->短期（1〜3カ月）
-       <!-- ELSE_IF [{work-period}/eq/mid] -->中期（3〜6カ月）
-       <!-- ELSE_IF [{work-period}/eq/long] -->長期（6〜9カ月）
-       <!-- ELSE_IF [{work-period}/eq/large] -->大規模（9〜12カ月）<!-- END_IF -->
+      <!-- BEGIN_IF [{work_period}/eq/short] -->短期（1〜3カ月）
+       <!-- ELSE_IF [{work_period}/eq/mid] -->中期（3〜6カ月）
+       <!-- ELSE_IF [{work_period}/eq/long] -->長期（6〜9カ月）
+       <!-- ELSE_IF [{work_period}/eq/large] -->大規模（9〜12カ月）<!-- END_IF -->
     </dd>
   </div>
-  <!-- END work-period:veil -->
-  <!-- BEGIN work-period:veil -->
+  <!-- END work_period:veil -->
+  <!-- BEGIN work_period:veil -->
   <div class="detail-panel-group">
     <dt>ウェブサイト</dt>
     <dd>
-      <a href="{work-url}" class="link-url">{work-url}</a>
+      <a href="{work_url}" class="link-url">{work_url}</a>
     </dd>
   </div>
-  <!-- END work-period:veil -->
+  <!-- END work_period:veil -->
 </dl>
-<!-- BEGIN introduction:veil -->
-<div class="introduction">
-  {introduction}[markdown]
+<!-- BEGIN work_introduction:veil -->
+<div class="work_introduction">
+  {work_introduction}[markdown]
 </div>
-<!-- END introduction:veil -->
+<!-- END work_introduction:veil -->

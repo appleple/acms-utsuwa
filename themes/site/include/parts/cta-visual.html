@@ -1,16 +1,16 @@
 <!-- BEGIN_MODULE Module_Field id="mf_cta_visual" -->
 <section class="cta-visual-section<!-- BEGIN_IF [{{cta-section-mt}}/eq/true] --> cta-section-mt<!-- END_IF -->">
-  <div class="cta-visual js-animation<!-- BEGIN cta_size:veil --> is-{cta_size}<!-- END cta_size:veil --><!-- BEGIN_IF [{{enable_margin_top}}/eq/true] --> is-cta-margin-top<!-- END_IF -->" <!-- BEGIN cta-bg-image:veil --> style="background-image: url(%{MEDIA_ARCHIVES_DIR}{cta-bg-image@path});"<!-- END cta-bg-image:veil  -->>
+  <div class="cta-visual js-animation<!-- BEGIN cta_size:veil --> is-{cta_size}<!-- END cta_size:veil --><!-- BEGIN_IF [{{enable_margin_top}}/eq/true] --> is-cta-margin-top<!-- END_IF -->" <!-- BEGIN cta_bg_image:veil --> style="background-image: url(%{MEDIA_ARCHIVES_DIR}{cta_bg_image@path});"<!-- END cta_bg_image:veil  -->>
     <div class="acms-container">
       @include("/include/edit/module-custom.html")
-      <!-- BEGIN cta-comment:veil  -->
-      <p class="cta-visual-comment">{cta-comment}</p><!-- END cta-comment:veil  --><!-- BEGIN cta-lead:veil  -->
-      <h2 class="cta-visual-title">{cta-lead}[nl2br]</h2><!-- END cta-lead:veil  --><!-- BEGIN cta-desc:veil  -->
-      <p class="cta-visual-text">{cta-desc}[nl2br]</p><!-- END cta-desc:veil  -->
-      <!-- BEGIN_IF [{btn-text}/nem/_and_/{btn-url}/nem] -->
-      <p class="cta-visual-read-more"><a href="{btn-url}[buildGlobalVars]" class="button is-lg is-width-lg is-shadow js-viewing-indelible">{btn-text}</a></p><!-- END_IF -->
-      <!-- BEGIN cta-micro-copy:veil -->
-      <p class="cta-visual-micro-copy">{cta-micro-copy}[raw]</p><!-- END cta-micro-copy:veil -->
+      <!-- BEGIN cta_comment:veil  -->
+      <p class="cta-visual-comment">{cta_comment}</p><!-- END cta_comment:veil  --><!-- BEGIN cta_lead:veil  -->
+      <h2 class="cta-visual-title">{cta_lead}[nl2br]</h2><!-- END cta_lead:veil  --><!-- BEGIN cta_description:veil  -->
+      <p class="cta-visual-text">{cta_description}[nl2br]</p><!-- END cta_description:veil  -->
+      <!-- BEGIN_IF [{btn_text}/nem/_and_/{btn_url}/nem] -->
+      <p class="cta-visual-read-more"><a href="{btn_url}[buildGlobalVars]" class="button is-lg is-width-lg is-shadow js-viewing-indelible">{btn_text}</a></p><!-- END_IF -->
+      <!-- BEGIN cta_micro_copy:veil -->
+      <p class="cta-visual-micro-copy">{cta_micro_copy}[raw]</p><!-- END cta_micro_copy:veil -->
     </div>
   </div>
 </section>

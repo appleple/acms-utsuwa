@@ -15,9 +15,9 @@
 <!-- END tag:loop -->
 <!-- END_SetRendered -->
 
-<!-- BEGIN_SetRendered id="twitter-creator" -->
-<!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
-<meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
+<!-- BEGIN_SetRendered id="user-twitter" -->
+<!-- BEGIN userField --><!-- BEGIN_IF [{user-twitter}/nem/] -->
+<meta name="twitter:creator" content="@{user-twitter}"><!-- END_IF -->
 <!-- END userField -->
 <!-- END_SetRendered -->
 
@@ -33,7 +33,7 @@
     <!-- BEGIN title:veil -->
     <header class="entry-header">
       <h1 class="entry-header-title entryTitle">
-        <a href="{titleUrl}" class="entry-header-title-link"><!-- BEGIN_IF [{work-copy}/nem] -->{work-copy} <span>{title}</span><!-- ELSE -->{title}<!-- END_IF --></a>
+        <a href="{titleUrl}" class="entry-header-title-link"><!-- BEGIN_IF [{work_copy}/nem] -->{work_copy} <span>{title}</span><!-- ELSE -->{title}<!-- END_IF --></a>
       </h1>
 
       <!-- BEGIN entry-header-info:veil -->
@@ -53,16 +53,16 @@
           <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue --><!-- END glue --><!-- END category:loop -->
 
           <!-- BEGIN works-industry:veil -->
-          <a href="%{BLOG_URL}field/work-industry/{work-industry}" class="entry-header-category-item is-bordered js-viewing-indelible">
-            <!-- BEGIN_IF [{work-industry}/eq/industry1] -->製造業
-            <!-- ELSE_IF [{work-industry}/eq/industry2] -->建設・建築
-            <!-- ELSE_IF [{work-industry}/eq/industry3] -->卸売・小売
-            <!-- ELSE_IF [{work-industry}/eq/industry4] -->医療・福祉
-            <!-- ELSE_IF [{work-industry}/eq/industry5] -->人材紹介・派遣
-            <!-- ELSE_IF [{work-industry}/eq/industry6] -->不動産
-            <!-- ELSE_IF [{work-industry}/eq/industry7] -->自治体・官公庁
-            <!-- ELSE_IF [{work-industry}/eq/industry8] -->IT・システム開発
-            <!-- ELSE_IF [{work-industry}/eq/industry9] -->ウェブサービス・デザイン<!-- END_IF -->
+          <a href="%{BLOG_URL}field/work_industry/{work_industry}" class="entry-header-category-item is-bordered js-viewing-indelible">
+            <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+            <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+            <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+            <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+            <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+            <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+            <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+            <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+            <!-- ELSE_IF [{work_industry}/eq/industry9] -->ウェブサービス・デザイン<!-- END_IF -->
           </a>
           <!-- END works-indutry:veil -->
         </p>

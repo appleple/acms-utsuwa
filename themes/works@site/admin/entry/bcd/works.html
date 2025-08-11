@@ -18,40 +18,40 @@
       <tr>
         <th>業種</th>
         <td>
-          <select name="work-industry">
+          <select name="work_industry">
             <option value=""></option>
-            <option value="industry1" {work-industry:selected#industry1}>製造業</option>
-            <option value="industry2" {work-industry:selected#industry2}>建設・建築</option>
-            <option value="industry3" {work-industry:selected#industry3}>卸売・小売</option>
-            <option value="industry4" {work-industry:selected#industry4}>医療・福祉</option>
-            <option value="industry5" {work-industry:selected#industry5}>人材紹介・派遣</option>
-            <option value="industry6" {work-industry:selected#industry6}>不動産</option>
-            <option value="industry7" {work-industry:selected#industry7}>自治体・官公庁</option>
-            <option value="industry8" {work-industry:selected#industry8}>IT・システム開発</option>
-            <option value="industry9" {work-industry:selected#industry9}>ウェブサービス・デザイン</option>
+            <option value="industry1" {work_industry:selected#industry1}>製造業</option>
+            <option value="industry2" {work_industry:selected#industry2}>建設・建築</option>
+            <option value="industry3" {work_industry:selected#industry3}>卸売・小売</option>
+            <option value="industry4" {work_industry:selected#industry4}>医療・福祉</option>
+            <option value="industry5" {work_industry:selected#industry5}>人材紹介・派遣</option>
+            <option value="industry6" {work_industry:selected#industry6}>不動産</option>
+            <option value="industry7" {work_industry:selected#industry7}>自治体・官公庁</option>
+            <option value="industry8" {work_industry:selected#industry8}>IT・システム開発</option>
+            <option value="industry9" {work_industry:selected#industry9}>ウェブサービス・デザイン</option>
           </select>
-          <input type="hidden" name="field[]" value="work-industry" />
+          <input type="hidden" name="field[]" value="work_industry" />
         </td>
       </tr>
       <tr>
         <th>規模</th>
         <td>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-scale" {work-scale:checked#scale1} id="input-radio-work-scale-scale1" value="scale1" />
-            <label for="input-radio-work-scale-scale1">
+            <input type="radio" name="work_scale" {work_scale:checked#scale1} id="input-radio-work_scale-scale1" value="scale1" />
+            <label for="input-radio-work_scale-scale1">
               <i class="acms-admin-ico-radio"></i>1-10名</label>
           </div>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-scale" {work-scale:checked#scale2} id="input-radio-work-scale-scale2" value="scale2" />
-            <label for="input-radio-work-scale-scale2">
+            <input type="radio" name="work_scale" {work_scale:checked#scale2} id="input-radio-work_scale-scale2" value="scale2" />
+            <label for="input-radio-work_scale-scale2">
               <i class="acms-admin-ico-radio"></i>10-50名</label>
           </div>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-scale" {work-scale:checked#scale3} id="input-radio-work-scale-scale3" value="scale3" />
-            <label for="input-radio-work-scale-scale3">
+            <input type="radio" name="work_scale" {work_scale:checked#scale3} id="input-radio-work_scale-scale3" value="scale3" />
+            <label for="input-radio-work_scale-scale3">
               <i class="acms-admin-ico-radio"></i>50名以上</label>
           </div>
-          <input type="hidden" name="field[]" value="work-scale" />
+          <input type="hidden" name="field[]" value="work_scale" />
         </td>
       </tr>
 
@@ -59,80 +59,80 @@
         <th>目的</th>
         <td>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal1} id="input-checkbox-work-goal-goal1" value="goal1" />
-            <label for="input-checkbox-work-goal-goal1">
+            <input type="checkbox" name="work_goal[]" {work_goal:checked#goal1} id="input-checkbox-work_goal-goal1" value="goal1" />
+            <label for="input-checkbox-work_goal-goal1">
               <i class="acms-admin-ico-checkbox"></i>コンバージョン改善</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal2} id="input-checkbox-work-goal-goal2" value="goal2" />
-            <label for="input-checkbox-work-goal-goal2">
+            <input type="checkbox" name="work_goal[]" {work_goal:checked#goal2} id="input-checkbox-work_goal-goal2" value="goal2" />
+            <label for="input-checkbox-work_goal-goal2">
               <i class="acms-admin-ico-checkbox"></i>ユーザー体験(UX)改善</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal3} id="input-checkbox-work-goal-goal3" value="goal3" />
-            <label for="input-checkbox-work-goal-goal3">
+            <input type="checkbox" name="work_goal[]" {work_goal:checked#goal3} id="input-checkbox-work_goal-goal3" value="goal3" />
+            <label for="input-checkbox-work_goal-goal3">
               <i class="acms-admin-ico-checkbox"></i>業務効率化</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal4} id="input-checkbox-work-goal-goal4" value="goal4" />
-            <label for="input-checkbox-work-goal-goal4">
+            <input type="checkbox" name="work_goal[]" {work_goal:checked#goal4} id="input-checkbox-work_goal-goal4" value="goal4" />
+            <label for="input-checkbox-work_goal-goal4">
               <i class="acms-admin-ico-checkbox"></i>集客強化</label>
           </div><br>
           <div class="acms-admin-form-checkbox">
-            <input type="checkbox" name="work-goal[]" {work-goal:checked#goal5} id="input-checkbox-work-goal-goal5" value="goal5" />
-            <label for="input-checkbox-work-goal-goal5">
+            <input type="checkbox" name="work_goal[]" {work_goal:checked#goal5} id="input-checkbox-work_goal-goal5" value="goal5" />
+            <label for="input-checkbox-work_goal-goal5">
               <i class="acms-admin-ico-checkbox"></i>ブランドイメージ向上</label>
           </div>
-          <input type="hidden" name="field[]" value="work-goal" />
+          <input type="hidden" name="field[]" value="work_goal" />
         </td>
       </tr>
       <tr>
         <th>期間</th>
         <td>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-period" {work-period:checked#short} id="input-radio-work-period-short" value="short" />
-            <label for="input-radio-work-period-short">
+            <input type="radio" name="work_period" {work_period:checked#short} id="input-radio-work_period-short" value="short" />
+            <label for="input-radio-work_period-short">
               <i class="acms-admin-ico-radio"></i>短期（1〜3カ月）</label>
           </div>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-period" {work-period:checked#mid} id="input-radio-work-period-mid" value="mid" />
-            <label for="input-radio-work-period-mid">
+            <input type="radio" name="work_period" {work_period:checked#mid} id="input-radio-work_period-mid" value="mid" />
+            <label for="input-radio-work_period-mid">
               <i class="acms-admin-ico-radio"></i>中期（3〜6カ月）</label>
           </div>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-period" {work-period:checked#long} id="input-radio-work-period-long" value="long" />
-            <label for="input-radio-work-period-long">
+            <input type="radio" name="work_period" {work_period:checked#long} id="input-radio-work_period-long" value="long" />
+            <label for="input-radio-work_period-long">
               <i class="acms-admin-ico-radio"></i>長期（6〜12カ月）</label>
           </div>
           <div class="acms-admin-form-radio">
-            <input type="radio" name="work-period" {work-period:checked#large} id="input-radio-work-period-large" value="large" />
-            <label for="input-radio-work-period-large">
+            <input type="radio" name="work_period" {work_period:checked#large} id="input-radio-work_period-large" value="large" />
+            <label for="input-radio-work_period-large">
               <i class="acms-admin-ico-radio"></i>大規模（1年以上）</label>
           </div>
-          <input type="hidden" name="field[]" value="work-period" />
+          <input type="hidden" name="field[]" value="work_period" />
         </td>
       </tr>
       <tr>
         <th>コピー</th>
         <td>
-          <input type="text" name="work-copy" class="acms-admin-form-width-full" value="{work-copy}" />
-          <input type="hidden" name="field[]" value="work-copy" />
+          <input type="text" name="work_copy" class="acms-admin-form-width-full" value="{work_copy}" />
+          <input type="hidden" name="field[]" value="work_copy" />
         </td>
       </tr>
       <tr>
         <th>紹介文</th>
         <td>
           <div class="field-lite-editor-wrap">
-            <textarea name="introduction" class="js-lite-editor-field acms-admin-form-width-full">{introduction}</textarea>
-            <input type="hidden" name="field[]" value="introduction" />
+            <textarea name="work_introduction" class="js-lite-editor-field acms-admin-form-width-full">{work_introduction}</textarea>
+            <input type="hidden" name="field[]" value="work_introduction" />
           </div>
         </td>
       </tr>
       <tr>
         <th>サイトURL</th>
         <td>
-          <input type="text" name="work-url" class="acms-admin-form-width-full" value="{work-url}" />
-          <input type="hidden" name="field[]" value="work-url" />
+          <input type="text" name="work_url" class="acms-admin-form-width-full" value="{work_url}" />
+          <input type="hidden" name="field[]" value="work_url" />
         </td>
       </tr>
     </tbody>

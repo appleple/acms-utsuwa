@@ -9,9 +9,9 @@
 <!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
 
-<!-- BEGIN_SetRendered id="twitter-creator" -->
-<!-- BEGIN userField --><!-- BEGIN_IF [{twitter-creator}/nem/] -->
-<meta name="twitter:creator" content="@{twitter-creator}"><!-- END_IF -->
+<!-- BEGIN_SetRendered id="user-twitter" -->
+<!-- BEGIN userField --><!-- BEGIN_IF [{user-twitter}/nem/] -->
+<meta name="twitter:creator" content="@{user-twitter}"><!-- END_IF -->
 <!-- END userField -->
 <!-- END_SetRendered -->
 
@@ -53,9 +53,9 @@
           <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue --><!-- END glue -->
           <!-- END category:loop -->
           <!-- END category:veil -->
-          <!-- BEGIN event-pref:veil -->
-          <a href="%{BLOG_URL}field/pref/{event-pref}" class="entry-header-category-item is-bordered js-viewing-indelible">{event-pref}</a>
-          <!-- END event-pref:veil -->
+          <!-- BEGIN event_pref:veil -->
+          <a href="%{BLOG_URL}field/pref/{event_pref}" class="entry-header-category-item is-bordered js-viewing-indelible">{event_pref}</a>
+          <!-- END event_pref:veil -->
           <!-- BEGIN new --><span class="label is-md">New</span><!-- END new -->
         </p>
         <!-- END entry_labels:veil -->

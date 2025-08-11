@@ -1,18 +1,18 @@
 <!-- BEGIN main-image:veil -->
 <div class="event-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}" width="928" height="{entry_main_image@ratio}[getHeightFromRatio(928)]" alt="{entry_main_image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
-<div class="event-description">
-  {event-description}[markdown]
+<div class="event_description">
+  {event_description}[markdown]
 </div>
-<!-- BEGIN event-recommend:veil -->
-<div class="event-recommend">
+<!-- BEGIN event_recommend:veil -->
+<div class="event_recommend">
   <h2 class="heading-md">こんな方におすすめ</h2>
   <div class="entry-text-unit">
     <ul>
-      {event-recommend}[list]
+      {event_recommend}[list]
     </ul>
   </div>
 </div>
-<!-- END event-recommend:veil -->
+<!-- END event_recommend:veil -->
 <!-- BEGIN detail-panel:veil -->
 <div class="not-editor-style detail-panel-wrap">
   <dl class="detail-panel is-event">
@@ -20,31 +20,31 @@
       <dt>開催日</dt>
       <dd>{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</dd>
     </div>
-    <!-- BEGIN event-time:veil -->
+    <!-- BEGIN event_time:veil -->
     <div class="detail-panel-group">
       <dt>開催時間</dt>
-      <dd>{event-time}</dd>
+      <dd>{event_time}</dd>
     </div>
-    <!-- END event-time:veil -->
-    <!-- BEGIN event-fee:veil -->
+    <!-- END event_time:veil -->
+    <!-- BEGIN event_fee:veil -->
     <div class="detail-panel-group">
       <dt>参加費</dt>
-      <dd>{event-fee}[number_format]</dd>
+      <dd>{event_fee}[number_format]</dd>
     </div>
-    <!-- END event-fee:veil -->
-    <!-- BEGIN event-location:veil -->
+    <!-- END event_fee:veil -->
+    <!-- BEGIN event_location:veil -->
     <div class="detail-panel-group">
       <dt>会場</dt>
-      <dd>{event-location}<!-- BEGIN event-address:veil --><br>{event-address}<!-- END event-address:veil -->
-      <!-- BEGIN event-googlemap:veil --><br><a href="{event-googlemap}" class="event-googlemap">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event-googlemap:veil --></dd>
+      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}<!-- END event_address:veil -->
+      <!-- BEGIN event_googlemap:veil --><br><a href="{event_googlemap}" class="event_googlemap">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event_googlemap:veil --></dd>
     </div>
-    <!-- END event-location:veil -->
-    <!-- BEGIN event-entry:veil -->
+    <!-- END event_location:veil -->
+    <!-- BEGIN event_entry:veil -->
     <div class="detail-panel-group">
       <dt>申し込み方法</dt>
-      <dd>{event-entry}[raw|nl2br]</dd>
+      <dd>{event_entry}[raw|nl2br]</dd>
     </div>
-    <!-- END event-entry:veil -->
+    <!-- END event_entry:veil -->
   </dl>
   <!-- END detail-panel:veil -->
 </div>

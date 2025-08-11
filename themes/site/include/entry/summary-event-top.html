@@ -1,19 +1,19 @@
 <!-- BEGIN_MODULE Entry_Summary id="summary_event_top" --><!-- BEGIN moduleField -->
-<section id="message" class="section-pt<!-- BEGIN_IF [{section-class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation">
+<section id="message" class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation">
   <div class="acms-container">
     <div class="section-horizontal">
       @include("/include/edit/module-custom.html")
 
-      <!-- BEGIN module-heading:veil -->
+      <!-- BEGIN module_heading:veil -->
       <header class="section-horizontal-header">
         <div class="section-horizontal-header-inner">
-          <h2 class="section-horizontal-heading">{module-heading}</h2>
-          <!-- BEGIN module-heading-small:veil -->
-          <p class="section-horizontal-heading-side">{module-heading-small}[raw]</p>
-          <!-- END module-heading-small:veil -->
+          <h2 class="section-horizontal-heading">{module_heading}</h2>
+          <!-- BEGIN module_heading_small:veil -->
+          <p class="section-horizontal-heading-side">{module_heading_small}[raw]</p>
+          <!-- END module_heading_small:veil -->
         </div>
       </header>
-      <!-- END module-heading:veil --><!-- END moduleField -->
+      <!-- END module_heading:veil --><!-- END moduleField -->
 
       <!-- BEGIN notFound -->
       <p class="result-text">お探しの記事は見つかりませんでした。</p>
@@ -51,10 +51,10 @@
                     <!-- END_IF -->
                     <!-- BEGIN category:veil -->
                     <span class="card-category-label left-top">
-                      <!-- BEGIN_IF [{event-status}/eq/pre]-->募集前
-                      <!-- ELSE_IF [{event-status}/eq/open] -->募集中
-                      <!-- ELSE_IF [{event-status}/eq/full] -->満員御礼
-                      <!-- ELSE_IF [{event-status}/eq/closed] -->終了
+                      <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
+                      <!-- ELSE_IF [{event_status}/eq/open] -->募集中
+                      <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
+                      <!-- ELSE_IF [{event_status}/eq/closed] -->終了
                       <!-- END_IF -->
                     </span><!-- END category:veil -->
                   </div>
@@ -65,9 +65,9 @@
                       <!-- BEGIN date:veil -->
                       <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                       <!-- END date:veil -->
-                      <!-- BEGIN event-pref:veil -->
-                      <p class="label">{event-pref}</p>
-                      <!-- END event-pref:veil -->
+                      <!-- BEGIN event_pref:veil -->
+                      <p class="label">{event_pref}</p>
+                      <!-- END event_pref:veil -->
                     </div>
                     <!-- END label_box:veil -->
                     <!-- BEGIN summary:veil -->

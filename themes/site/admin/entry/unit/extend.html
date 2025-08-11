@@ -110,7 +110,7 @@
           <tr>
             <th>ボタンURL</th>
             <td>
-              <input type="text" name="pricing_btn-url{id}[]" value="{pricing_btn-url}" class="acms-admin-form-width-full" placeholder="例）https://" />
+              <input type="text" name="pricing_btn_url{id}[]" value="{pricing_btn_url}" class="acms-admin-form-width-full" placeholder="例）https://" />
             </td>
           </tr>
           <tr>
@@ -171,7 +171,7 @@
           <tr>
             <th>ボタンURL</th>
             <td>
-              <input type="text" name="pricing_btn-url{id}[]" value="" class="acms-admin-form-width-full" placeholder="例）https://" />
+              <input type="text" name="pricing_btn_url{id}[]" value="" class="acms-admin-form-width-full" placeholder="例）https://" />
             </td>
           </tr>
           <tr>
@@ -221,8 +221,8 @@
 <input type="hidden" name="unit{id}[]" value="pricing_price_unit{id}" />
 <input type="hidden" name="@group_pricing{id}[]" value="pricing_btn_label{id}" />
 <input type="hidden" name="unit{id}[]" value="pricing_btn_label{id}" />
-<input type="hidden" name="@group_pricing{id}[]" value="pricing_btn-url{id}" />
-<input type="hidden" name="unit{id}[]" value="pricing_btn-url{id}" />
+<input type="hidden" name="@group_pricing{id}[]" value="pricing_btn_url{id}" />
+<input type="hidden" name="unit{id}[]" value="pricing_btn_url{id}" />
 <input type="hidden" name="@group_pricing{id}[]" value="pricing_micro_copy{id}" />
 <input type="hidden" name="unit{id}[]" value="pricing_micro_copy{id}" />
 <input type="hidden" name="@group_pricing{id}[]" value="pricing_check_list{id}" />
@@ -247,12 +247,12 @@
         <tr class="textM detail-column-body detail-column-body--{id}">
           <td>
             <dl class="acms-admin-m-0">
-              <dt><label for="mapbox-lat-{id}">緯度</label></dt>
-              <dd><input type="text" name="map_lat_{id}" value="{lat}" size="9" id="mapbox-lat-{id}" class="acms-admin-form-width-mini js-osm-lat"></dd>
-              <dt><label for="mapbox-lng-{id}">経度</label></dt>
-              <dd><input type="text" name="map_lng_{id}" value="{lng}" size="10" id="mapbox-lng-{id}" class="acms-admin-form-width-mini js-osm-lng"></dd>
-              <dt><label for="mapbox-zoom-{id}">ズーム</label></dt>
-              <dd><input type="number" name="map_zoom_{id}" value="{zoom}" size="2" id="mapbox-zoom-{id}" class="acms-admin-form-width-mini js-osm-zoom"></dd>
+              <dt><label for="mapbox_lat_{id}">緯度</label></dt>
+              <dd><input type="text" name="map_lat_{id}" value="{lat}" size="9" id="mapbox_lat_{id}" class="acms-admin-form-width-mini js-osm-lat"></dd>
+              <dt><label for="mapbox_lng_{id}">経度</label></dt>
+              <dd><input type="text" name="map_lng_{id}" value="{lng}" size="10" id="mapbox_lng_{id}" class="acms-admin-form-width-mini js-osm-lng"></dd>
+              <dt><label for="mapbox_zoom_{id}">ズーム</label></dt>
+              <dd><input type="number" name="map_zoom_{id}" value="{zoom}" size="2" id="mapbox_zoom_{id}" class="acms-admin-form-width-mini js-osm-zoom"></dd>
             </dl>
           </td>
         </tr>
@@ -341,42 +341,42 @@
     <tr>
       <th>アイコン画像</th>
       <td class="js-media-field">
-        <div class="js-droparea" data-thumbnail="{speech-bubble-image@thumbnail}" data-type="image" data-thumbnail-type="{speech-bubble-image@type}" data-width="200px" data-height="200px"></div>
+        <div class="js-droparea" data-thumbnail="{speech_bubble_image@thumbnail}" data-type="image" data-thumbnail-type="{speech_bubble_image@type}" data-width="200px" data-height="200px"></div>
         <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
         <div class="acms-admin-margin-top-mini">
           <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
         </div>
-        <input type="hidden" name="speech-bubble-image{id}" class="js-value" value="{speech-bubble-image}" />
-        <input type="hidden" name="unit{id}[]" value="speech-bubble-image{id}" />
-        <input type="hidden" name="speech-bubble-image{id}:extension" value="media" />
+        <input type="hidden" name="speech_bubble_image{id}" class="js-value" value="{speech_bubble_image}" />
+        <input type="hidden" name="unit{id}[]" value="speech_bubble_image{id}" />
+        <input type="hidden" name="speech_bubble_image{id}:extension" value="media" />
       </td>
     </tr>
     <tr>
       <th>肩書き1（会社名）</th>
       <td>
-        <input type="text" name="speech-bubble-heading1{id}" class="acms-admin-form-width-half" value="{speech-bubble-heading1}" />
-        <input type="hidden" name="unit{id}[]" value="speech-bubble-heading1{id}" />
+        <input type="text" name="speech_bubble_heading1{id}" class="acms-admin-form-width-half" value="{speech_bubble_heading1}" />
+        <input type="hidden" name="unit{id}[]" value="speech_bubble_heading1{id}" />
       </td>
     </tr>
     <tr>
       <th>肩書き2（部署名）</th>
       <td>
-        <input type="text" name="speech-bubble-heading2{id}" class="acms-admin-form-width-half" value="{speech-bubble-heading2}" />
-        <input type="hidden" name="unit{id}[]" value="speech-bubble-heading2{id}" />
+        <input type="text" name="speech_bubble_heading2{id}" class="acms-admin-form-width-half" value="{speech_bubble_heading2}" />
+        <input type="hidden" name="unit{id}[]" value="speech_bubble_heading2{id}" />
       </td>
     </tr>
     <tr>
       <th>名前</th>
       <td>
-        <input type="text" name="speech-bubble-name{id}" class="acms-admin-form-width-half" value="{speech-bubble-name}" />
-        <input type="hidden" name="unit{id}[]" value="speech-bubble-name{id}" />
+        <input type="text" name="speech_bubble_name{id}" class="acms-admin-form-width-half" value="{speech_bubble_name}" />
+        <input type="hidden" name="unit{id}[]" value="speech_bubble_name{id}" />
       </td>
     </tr>
     <tr>
       <th>本文</th>
       <td>
-        <textarea name="speech-bubble-text{id}" class="acms-admin-form-width-full">{speech-bubble-text}</textarea>
-        <input type="hidden" name="unit{id}[]" value="speech-bubble-text{id}" />
+        <textarea name="speech_bubble_text{id}" class="acms-admin-form-width-full">{speech_bubble_text}</textarea>
+        <input type="hidden" name="unit{id}[]" value="speech_bubble_text{id}" />
       </td>
     </tr>
   </tbody>

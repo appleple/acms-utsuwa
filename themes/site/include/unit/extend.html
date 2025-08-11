@@ -40,8 +40,8 @@
           {pricing_check_list}[list]
         </ul><!-- WND pricing_check_list:veil -->
       </div>
-      <div class="pricing-footer"><!-- BEGIN pricing_btn-url:veil -->
-        <a href="{pricing_btn-url}" class="button pricing-button">詳しく見る</a><!-- END pricing_btn-url:veil -->
+      <div class="pricing-footer"><!-- BEGIN pricing_btn_url:veil -->
+        <a href="{pricing_btn_url}" class="button pricing-button">詳しく見る</a><!-- END pricing_btn_url:veil -->
         <!-- BEGIN pricing_micro_copy:veil -->
         <p class="pricing-text-info">{pricing_micro_copy}</p><!-- END pricing_micro_copy:veil -->
       </div>
@@ -103,22 +103,22 @@
 <div class="entry-container">
   <div class="bubble-item not-editor-style">
     <div class="bubble-image-wrap">
-      <!-- BEGIN_IF [{speech-bubble-image@path}/nem] -->
-      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{speech-bubble-image@path}" alt="" />
+      <!-- BEGIN_IF [{speech_bubble_image@path}/nem] -->
+      <img src="%{HTTP_MEDIA_ARCHIVES_DIR}{speech_bubble_image@path}" alt="" />
       <!-- ELSE -->
       <img src="/images/noimage.png" alt="" class="acms-img-responsive">
       <!-- END_IF -->
     </div>
     <div class="bubble-heading-wrap">
-      <!-- BEGIN speech-bubble-heading:veil -->
-      <p class="bubble-heading">{speech-bubble-heading1}<!-- BEGIN speech-bubble-heading2:veil --><br>{speech-bubble-heading2}<!-- END speech-bubble-heading2:veil -->
+      <!-- BEGIN speech_bubble_heading:veil -->
+      <p class="bubble-heading">{speech_bubble_heading1}<!-- BEGIN speech_bubble_heading2:veil --><br>{speech_bubble_heading2}<!-- END speech_bubble_heading2:veil -->
       </p>
-      <!-- END speech-bubble-heading:veil -->
-      <!-- BEGIN speech-bubble-name:veil -->
-      <p class="speech-bubble-name">{speech-bubble-name}</p>
-      <!-- END speech-bubble-name:veil -->
+      <!-- END speech_bubble_heading:veil -->
+      <!-- BEGIN speech_bubble_name:veil -->
+      <p class="speech_bubble_name">{speech_bubble_name}</p>
+      <!-- END speech_bubble_name:veil -->
     </div>
-    <div class="bubble-text">{speech-bubble-text}</div>
+    <div class="bubble-text">{speech_bubble_text}</div>
   </div>
 </div>
 <!-- END unit#custom_bubble -->
