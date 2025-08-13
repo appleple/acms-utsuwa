@@ -14,9 +14,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#news-banner-carousel');
+    if (!carousel) return;
 
-    // 最新情報バナーのカルーセル
-    new Splide('#news-banner-carousel', {
+    new Splide(carousel, {
       type: 'loop',
       gap: '2rem',
       padding: '1.5rem',

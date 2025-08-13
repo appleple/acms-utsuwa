@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // 最新情報バナーのカルーセル
-  new Splide('#news-banner-carousel', {
+  const carousel = document.querySelector('#news-banner-carousel');
+  if (!carousel) return;
+
+  new Splide(carousel, {
     type: 'loop',
     gap: '2rem',
     arrows: true,
