@@ -8,13 +8,100 @@
 <!-- 会社情報 -->
 @include("/admin/blog/field-info.html")
 
+<h3 class="acms-admin-admin-title2">無所属ページヘッダー設定 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="下層ブログとカテゴリーに所属していないページで表示する設定です。"></i></h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{page_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="page_image" value="{page_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="page_image" />
+      <input type="hidden" name="page_image:extension" value="media" />
+    </td>
+  </tr>
+</table>
+
+<h3 class="acms-admin-admin-title2">ページヘッダーレイアウト設定 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="下層ページ含むサイト全体の共通設定です。"></i></h3>
+<table class="acms-admin-table-admin-edit">
+  <tr>
+    <th>テキストの配置（PC時用）</th>
+    <td>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="title_position" {title_position:checked#left} id="input-radio-title_position-left" value="left" />
+        <label for="input-radio-title_position-left">
+          <i class="acms-admin-ico-radio"></i>左寄せ</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="title_position" {title_position:checked#center} id="input-radio-title_position-center" value="center" />
+        <label for="input-radio-title_position-center">
+          <i class="acms-admin-ico-radio"></i>中央寄せ</label>
+      </div>
+      <div class="acms-admin-form-radio">
+        <input type="radio" name="title_position" {title_position:checked#right} id="input-radio-title_position-right" value="right" />
+        <label for="input-radio-title_position-right">
+          <i class="acms-admin-ico-radio"></i>右寄せ</label>
+      </div>
+      <input type="hidden" name="field[]" value="title_position" />
+    </td>
+  </tr>
+</table>
+
 <!-- ヘッダーナビと下層ページタイトルのレイアウト設定 -->
-@include("/admin/blog/field-layout.html")
+<h3 class="acms-admin-admin-title2">グローバルナビゲーションレイアウト設定</h3>
+<table class="acms-admin-table-admin-edit">
+  <tbody>
+    <tr>
+      <th>ヘッダーの固定（PC時用）</th>
+      <td>
+        <div class="acms-admin-form-checkbox">
+          <input type="checkbox" name="header_sticky[]" {header_sticky:checked#sticky} id="input-checkbox-header_sticky-sticky" value="sticky" />
+          <label for="input-checkbox-header_sticky-sticky">
+            <i class="acms-admin-ico-checkbox"></i>固定する</label>
+        </div>
+        <input type="hidden" name="field[]" value="header_sticky" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 <!-- END_MODULE Touch_RootBlog -->
 
 <!-- BEGIN_MODULE Touch_NotRootBlog -->
-<!-- ページタイトル設定 -->
-@include("/admin/parts/field-page-title.html")
+<h3 class="acms-admin-admin-title2">ブログ別ページヘッダー設定 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このブログに所属するページで表示する設定です。"></i></h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{page_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="page_image" value="{page_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="page_image" />
+      <input type="hidden" name="page_image:extension" value="media" />
+    </td>
+  </tr>
+  <tr>
+    <th>ページタイトル</th>
+    <td>
+      ページタイトルは「基本設定」タブで設定してください
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <span>タイトル説明 / サブタイトル</span>
+      <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="ページタイトル下にサブタイトルや説明文を設定できます。"></i>
+    </th>
+    <td>
+      <textarea id="title_description" name="title_description" class="acms-admin-form-width-full">{title_description}</textarea>
+      <input type="hidden" name="field[]" value="title_description" />
+    </td>
+  </tr>
+</table>
 <!-- END_MODULE Touch_NotRootBlog -->
 
 <!-- SEOの設定 -->

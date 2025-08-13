@@ -2,8 +2,17 @@
 
 @section("page-title")
 <!-- BEGIN_MODULE Touch_RootBlog -->
+<!-- BEGIN_MODULE Touch_NotCategory -->
+<!-- BEGIN_MODULE Touch_Keyword -->
+@include("/include/parts/page-title/global-search-results.html")
+<!-- END_MODULE Touch_Keyword -->
+<!-- END_MODULE Touch_NotCategory -->
+
+<!-- BEGIN_MODULE Touch_Category -->
 @include("/include/parts/page-title/root-category-name.html")
+<!-- END_MODULE Touch_Category -->
 <!-- END_MODULE Touch_RootBlog -->
+
 <!-- BEGIN_MODULE Touch_NotRootBlog -->
 @include("/include/parts/page-title/blog-name.html")
 <!-- END_MODULE Touch_NotRootBlog -->

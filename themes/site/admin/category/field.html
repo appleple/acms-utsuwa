@@ -1,7 +1,37 @@
 <!-- BEGIN_MODULE Touch_RootBlog -->
 <!-- BEGIN_IF [%{PCID}/em] -->
-<!-- ページタイトル設定 -->
-@include("/admin/parts/field-page-title.html")
+<h3 class="acms-admin-admin-title2">カテゴリー別ページヘッダー設定 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="このカテゴリーに所属するページで使用します（ルートブログのルートカテゴリーでのみ設定可）。"></i></h3>
+<table class="adminTable acms-admin-table-admin-edit">
+  <tr>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <td class="js-media-field">
+      <div class="js-droparea" data-thumbnail="{page_image@thumbnail}" data-type="image" style="width:200px"></div>
+      <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
+      <div class="acms-admin-margin-top-mini">
+        <button type="button" class="js-insert acms-admin-btn" data-type="image">メディアを選択</button>
+      </div>
+      <input type="hidden" name="page_image" value="{page_image}" class="js-value" />
+      <input type="hidden" name="field[]" value="page_image" />
+      <input type="hidden" name="page_image:extension" value="media" />
+    </td>
+  </tr>
+  <tr>
+    <th>ページタイトル</th>
+    <td>
+      ページタイトルは「基本設定」タブで設定してください
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <span>タイトル説明 / サブタイトル</span>
+      <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="ページタイトル下にサブタイトルや説明文を設定できます。"></i>
+    </th>
+    <td>
+      <textarea id="title_description" name="title_description" class="acms-admin-form-width-full">{title_description}</textarea>
+      <input type="hidden" name="field[]" value="title_description" />
+    </td>
+  </tr>
+</table>
 <!-- END_IF -->
 <!-- END_MODULE Touch_RootBlog -->
 

@@ -1,0 +1,21 @@
+<nav class="topicpath" aria-label="現在位置">
+  <div class="acms-container sp-container">
+    <ol class="topicpath-list">
+      <!-- BEGIN_MODULE Topicpath id="topicpath" -->
+      <!-- BEGIN blog:loop -->
+      <li class="topicpath-item">
+        <!-- BEGIN glue -->
+        <!-- END glue -->
+        <a href="{url}" class="topicpath-link">{name}</a>
+      </li>
+      <!-- END blog:loop -->
+      <!-- END_MODULE Topicpath -->
+      <li class="topicpath-item">
+        <a href="%{HOME_URL}mypage/update-profile/" class="topicpath-link">マイページ</a>
+      </li>
+      <li class="topicpath-item">
+        <a href="%{CURRENT_URL}" class="topicpath-link">{{page_name}}</a>
+      </li>
+    </ol>
+  </div>
+</nav>
