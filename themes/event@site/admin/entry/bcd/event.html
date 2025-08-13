@@ -60,23 +60,30 @@
     <tr>
       <th>開催日</th>
       <td>
-        {date}[date('Y年n月d日')]
+        記事編集ページ上部の「日時 > 日付」欄で設定できます。
       </td>
     </tr>
     <tr>
       <th>開催時間</th>
       <td>
-        <input type="text" name="event_time" class="acms-admin-form-width-full" value="{event_time}" />
+        <input type="text" name="event_time" class="acms-admin-form-width-full" value="{event_time}" placeholder="例）10:00〜12:30" />
         <input type="hidden" name="field[]" value="event_time" />
+        <p class="acms-admin-m-0 acms-admin-mt-1 field-info-text">※記事編集ページ上部の「日時 > 時刻」欄は開催日時として使用していません。開催時間の設定は上記入力欄をご利用ください。</p>
       </td>
     </tr>
     <tr>
       <th>参加費</th>
       <td>
-        <input type="text" name="event_fee" class="acms-admin-form-width-full" value="{event_fee}" />
+        <input type="text" name="event_fee" class="acms-admin-form-width-full" value="{event_fee}" placeholder="例）無料" />
         <input type="hidden" name="field[]" value="event_fee" />
       </td>
     </tr>
+  </tbody>
+</table>
+
+<h3 class="acms-admin-admin-title2 acms-admin-mt-4">会場情報</h3>
+<table class="acms-admin-table-admin-edit">
+  <tbody>
     <tr>
       <th>会場名</th>
       <td>
@@ -142,48 +149,111 @@
       </td>
     </tr>
     <tr>
-      <th>会場住所</th>
+      <th>住所</th>
       <td>
-        <input type="text" name="event_address" class="acms-admin-form-width-full" value="{event_address}" />
+        <textarea style="min-height: 2lh;" name="event_address" class="acms-admin-form-width-full acms-admin-form-auto-size" placeholder="例）〒000-0000 〇〇市〇〇町〇番地 〇〇ビル〇F">{event_address}</textarea>
         <input type="hidden" name="field[]" value="event_address" />
       </td>
     </tr>
     <tr>
-      <th>会場地図HTML</th>
+      <th>Googleマップの埋め込み</th>
       <td>
-        <textarea name="event_googlemap_iframe" class="acms-admin-form-width-full">{event_googlemap_iframe}</textarea>
+        <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※<a href="https://www.google.co.jp/maps/" target="_blank" rel="noopener noreferrer">Googleマップ</a> で会場を検索し、「共有 > 地図を埋め込む」から取得したHTMLコードを貼り付けてください。</p>
+        <textarea style="min-height: 3lh;" name="event_googlemap_iframe" class="acms-admin-form-width-full acms-admin-form-auto-size" placeholder='例）&lt;iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;'>{event_googlemap_iframe}</textarea>
         <input type="hidden" name="field[]" value="event_googlemap_iframe" />
       </td>
     </tr>
     <tr>
-      <th>会場地図リンク</th>
+      <th>Googleマップへのリンク</th>
       <td>
-        <input type="text" name="event_googlemap" class="acms-admin-form-width-full" value="{event_googlemap}" />
+        <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※<a href="https://www.google.co.jp/maps/" target="_blank" rel="noopener noreferrer">Googleマップ</a> で会場を検索し、「共有 > リンクを送信」から取得したURLを貼り付けてください。</p>
+        <input type="text" name="event_googlemap" class="acms-admin-form-width-full" value="{event_googlemap}" placeholder="例）https://maps.app.goo.gl/..." />
         <input type="hidden" name="field[]" value="event_googlemap" />
       </td>
     </tr>
+  </tbody>
+</table>
+
+<h3 class="acms-admin-admin-title2 acms-admin-mt-4">申し込みボタン設定</h3>
+<table class="acms-admin-table-admin-edit">
+  <tbody>
     <tr>
-      <th>申し込み方法</th>
-      <td>
-        <textarea name="event_entry" class="acms-admin-form-width-full">{event_entry}</textarea>
+      <th>申し込みボタン誘導文</th>
+      <td class="field-lite-editor-wrap">
+        <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">例）下記の「申し込みはこちら」ボタン、またはお電話でお申し込みください。</p>
+        <textarea style="min-height: 2lh;" name="event_entry" class="acms-admin-form-width-full acms-admin-form-auto-size js-lite-editor-field">{event_entry}</textarea>
         <input type="hidden" name="field[]" value="event_entry" />
       </td>
     </tr>
     <tr>
-      <th>申し込みURL</th>
+      <th>ボタンURL</th>
       <td>
-        <input type="text" name="event_url" class="acms-admin-form-width-full" value="{event_url}" />
+        <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※「イベントステータス」が「募集中」で、「申し込みURL」に入力がある場合、ページ下部に『申し込みはこちら』ボタンを表示します。</p>
+        <input type="text" name="event_url" class="acms-admin-form-width-full" value="{event_url}" placeholder="例）https://..." />
         <input type="hidden" name="field[]" value="event_url" />
       </td>
     </tr>
   </tbody>
 </table>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const element = document.getElementById('seo-entry_main_image');
-  if (element) {
-    element.remove();
+<style>
+  /* js-lite-editor-field の親要素に field-lite-editor-wrap クラスを付けてください。field-lite-editor-wrap は適当に付けたクラス名なので、他のクラス名に変えてもOKです。 */
+  .field-lite-editor-wrap .lite-editor-toolbox {
+    margin-top: 4px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
   }
-});
+  .field-lite-editor-wrap .lite-editor-btn-group-wrap {
+    padding-left: 0;
+  }
+  .field-lite-editor-wrap .acms-admin-btn-group {
+    display: inline-block;
+  }
+  .field-lite-editor-wrap .lite-editor-font-link {
+    color: inherit;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const element = document.getElementById('seo-entry_main_image');
+    if (element) {
+      element.remove();
+    }
+  });
+
+  ACMS.Ready(function () {
+    // Custom Field LiteEditor
+    ACMS.Config.LiteEditorFieldConf.nl2br = false;
+    ACMS.Config.LiteEditorFieldConf.btnPosition = 'bottom';
+    ACMS.Config.LiteEditorFieldConf.classNames = {
+      LiteEditor: 'entryFormLiteEditor',
+      LiteEditorBtnGroup: 'acms-admin-btn-group acms-admin-btn-group-inline',
+      LiteEditorBtn: 'acms-admin-btn',
+      LiteEditorBtnActive: 'acms-admin-btn acms-admin-btn-active',
+      LiteEditorBtnClose: '',
+      LiteEditorTooltipInput: 'acms-admin-form-width-full',
+    };
+    ACMS.Config.LiteEditorFieldConf.message = {
+      addLinkTitle: ACMS.i18n('lite_editor.add_link_title'),
+      updateLinkTitle: ACMS.i18n('lite_editor.update_link_title'),
+      addLink: ACMS.i18n('lite_editor.add_link'),
+      updateLink: ACMS.i18n('lite_editor.update_link'),
+      removeLink: ACMS.i18n('lite_editor.remove_link'),
+      linkUrl: ACMS.i18n('lite_editor.link_url'),
+      linkLabel: ACMS.i18n('lite_editor.link_label'),
+      targetBlank: ACMS.i18n('lite_editor.target'),
+      targetBlankLabel: ACMS.i18n('lite_editor.target_label'),
+    };
+    ACMS.Config.LiteEditorFieldConf.btnOptions = [
+      {
+        label: '<span class="lite-editor-font-link">' + ACMS.i18n('lite_editor.link') + '</span>',
+        tag: 'a',
+        className: '',
+        sampleText: ACMS.i18n('lite_editor.link_sample_txt'),
+      }
+    ];
+  });
 </script>

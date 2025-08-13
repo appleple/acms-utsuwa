@@ -38,23 +38,26 @@
       <!-- END_MODULE Touch_NotEntry -->
 
       <!-- BEGIN entry-header-info:veil -->
-      <div class="entry-header-info">
+      <div class="event-entry-header-info">
         <!-- BEGIN date:veil -->
-        <p class="entry-header-date -event">
-          <span class="entry-header-date-label">開催日時</span>
-          <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-time">{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</time>
+        <p class="acms-my-0">
+          <span class="event-entry-header-date-label">開催日時</span>
+          <time datetime="{date#Y}-{date#m}-{date#d}" class="event-entry-header-datetime">{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</time>
+          <!-- BEGIN event_time:veil -->
+          <span class="event-entry-header-datetime">{event_time}</span>
+          <!-- END event_time:veil -->
         </p>
         <!-- END date:veil -->
 
         <!-- BEGIN entry_labels:veil -->
-        <p class="entry-header-category">
+        <p class="entry-header-category-list">
           <!-- BEGIN category:veil -->
           <!-- BEGIN category:loop -->
-          <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue --><!-- END glue -->
+          <a href="{url}" class="entry-header-category-label">{name}</a><!-- BEGIN glue --><!-- END glue -->
           <!-- END category:loop -->
           <!-- END category:veil -->
           <!-- BEGIN event_pref:veil -->
-          <a href="%{BLOG_URL}field/pref/{event_pref}" class="entry-header-category-item is-bordered js-viewing-indelible">{event_pref}</a>
+          <a href="%{BLOG_URL}field/pref/{event_pref}" class="entry-header-category-label">{event_pref}</a>
           <!-- END event_pref:veil -->
           <!-- BEGIN new --><span class="label is-md">New</span><!-- END new -->
         </p>

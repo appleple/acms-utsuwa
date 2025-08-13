@@ -45,9 +45,9 @@
       <!-- BEGIN entry-header-info:veil -->
       <div class="entry-header-info">
         <!-- BEGIN entry-header-date:veil -->
-        <p class="entry-header-date">
+        <p class="acms-my-0">
           <!-- BEGIN date:veil -->
-          <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-time">{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）
+          <time datetime="{date#Y}-{date#m}-{date#d}" class="entry-header-date">{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）
           </time>
           <!-- END date:veil -->
           <!-- BEGIN new --><span class="label is-md">New</span><!-- END new -->
@@ -55,8 +55,8 @@
         <!-- END entry-header-date:veil -->
 
         <!-- BEGIN category:veil -->
-        <p class="entry-header-category"><!-- BEGIN category:loop -->
-          <a href="{url}" class="entry-header-category-item is-bordered js-viewing-indelible">{name}</a><!-- BEGIN glue -->
+        <p class="entry-header-category-list"><!-- BEGIN category:loop -->
+          <a href="{url}" class="entry-header-category-label">{name}</a><!-- BEGIN glue -->
           <!-- END glue --><!-- END category:loop -->
         </p>
         <!-- END category:veil -->

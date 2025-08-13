@@ -4432,47 +4432,42 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  color: var(--color-text-2nd);
-  font-size: 0.8rem;
+  align-items: center;
 }
 
 .entry-header-date {
-  margin-block: 0;
-}
-.entry-header-date.-event {
-  font-size: 1rem;
-}
-.entry-header-date.-event .entry-header-date-label {
-  color: var(--color-primary);
-  font-weight: bold;
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+  line-height: var(--line-height-base);
 }
 
-.entry-header-category {
+.entry-header-category-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-block: 0;
+  align-items: center;
 }
-.entry-header-category a:link,
-.entry-header-category a:visited,
-.entry-header-category a:active,
-.entry-header-category a:focus {
+
+.entry-header-category-label {
   padding: 0.25rem 0.5rem;
-  color: var(--color-text-2nd);
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: var(--line-height-base);
   text-decoration: none;
-}
-.entry-header-category a:link:hover,
-.entry-header-category a:visited:hover,
-.entry-header-category a:active:hover,
-.entry-header-category a:focus:hover {
-  background-color: var(--color-hover-bg-2nd);
-}
-.entry-header-category .is-bordered {
   border: 1px solid var(--color-gray30);
   border-radius: var(--border-radius-md);
 }
-.entry-header-category .entry-header-category-item {
-  font-weight: bold;
+.entry-header-category-label, .entry-header-category-label:link, .entry-header-category-label:visited {
+  color: var(--color-text);
+}
+@media (hover: hover) {
+  .entry-header-category-label:-moz-any-link:hover {
+    background-color: var(--color-hover-bg-2nd);
+  }
+  .entry-header-category-label:any-link:hover {
+    background-color: var(--color-hover-bg-2nd);
+  }
 }
 
 .entry-header-title {
@@ -6146,63 +6141,50 @@ input::placeholder {
 /* ------------------------------
 　　イベント詳細
 ------------------------------ */
+/* 開催日時・都道府県ラベル・Newラベル全体のレイアウト設定 */
+.event-entry-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--color-text-2nd);
+  font-size: 1rem;
+}
+@media (min-width: 48rem) {
+  .event-entry-header-info {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.event-entry-header-date-label {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  margin-right: 0.5rem;
+}
+
+.event-entry-header-datetime {
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+/* メイン画像 */
 .event-main-image {
   margin: 0 0 2rem;
 }
 
-.event-detail-wrap {
-  padding-bottom: 2rem;
-}
-
-.event-detail {
-  display: flex;
-  flex-flow: column wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  border: 1px solid var(--color-gray30);
-  border-radius: var(--border-radius-md);
-}
-.event-detail dt {
-  font-weight: bold;
-}
-.event-detail dd {
-  margin: 0;
-}
-
-.event-detail-group {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.event_googlemap {
+/* 「Googleマップで見る」リンク */
+.event-googlemap-link {
   position: relative;
 }
-.event_googlemap svg {
+.event-googlemap-link svg {
   position: absolute;
   right: -2rem;
   margin-left: 0.5rem;
   vertical-align: text-bottom;
 }
-.event_googlemap svg path {
+.event-googlemap-link svg path {
   fill: var(--color-gray100);
-}
-
-@media (min-width: 48rem) {
-  .event-detail dt {
-    width: 8rem;
-  }
-  .event-detail dd {
-    flex: 1;
-  }
-  .event-detail-group {
-    flex-direction: row;
-    gap: 1rem 2rem;
-    width: 100%;
-  }
-}
-.event-footer {
-  margin-top: 2rem;
-  text-align: center;
 }

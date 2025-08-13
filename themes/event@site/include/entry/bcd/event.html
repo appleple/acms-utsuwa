@@ -35,13 +35,13 @@
     <!-- BEGIN event_location:veil -->
     <div class="detail-panel-group">
       <dt>会場</dt>
-      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}<!-- END event_address:veil -->
-      <!-- BEGIN event_googlemap:veil --><br><a href="{event_googlemap}" class="event_googlemap">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event_googlemap:veil --></dd>
+      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}[nl2br]<!-- END event_address:veil -->
+      <!-- BEGIN event_googlemap:veil --><br><a href="{event_googlemap}" class="event-googlemap-link">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event_googlemap:veil --></dd>
     </div>
     <!-- END event_location:veil -->
     <!-- BEGIN event_entry:veil -->
     <div class="detail-panel-group">
-      <dt>申し込み方法</dt>
+      <dt>申し込み方</dt>
       <dd>{event_entry}[raw|nl2br]</dd>
     </div>
     <!-- END event_entry:veil -->
