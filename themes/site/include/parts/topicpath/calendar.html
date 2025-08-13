@@ -23,14 +23,12 @@
         <a href="{url}" class="topicpath-link">{title}</a>
       </li>
       <!-- END entry -->
+      <li class="topicpath-item">
+        <a href="%{BLOG_URL}calendar.html" class="topicpath-link">カレンダー</a>
+      </li>
       <!-- BEGIN_IF [%{DATE}/nem] -->
       <li class="topicpath-item">
-        <a href="%{INHERLINK}" class="topicpath-link"><!-- BEGIN_IF [%{DATE_YEAR}/nem] -->%{DATE_YEAR}年<!-- END_IF --><!-- BEGIN_IF [%{DATE_MONTH}/nem] -->%{DATE_MONTH}月<!-- END_IF --><!-- BEGIN_IF [%{DATE_DAY}/nem] -->%{DATE_DAY}日<!-- END_IF --></a>
-      </li>
-      <!-- END_IF -->
-      <!-- BEGIN_IF [%{KEYWORD}%{TAG}%{FIELD}/nem] -->
-      <li class="topicpath-item">
-        <a href="%{INHERLINK}" class="topicpath-link">検索結果</a>
+        <a href="%{INHERLINK}" class="topicpath-link">%{DATE}</a>
       </li>
       <!-- END_IF -->
       <!-- BEGIN_IF [%{ROOT_TPL_NAME}/eq/404] -->
