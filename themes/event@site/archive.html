@@ -2,9 +2,9 @@
 
 @section("main")
 <div class="acms-container">
-  @include("/include/tag/filter.html")
+  @include("/include/parts/local-nav.html", {"module_id": "nav_event", "direction": ""})
 
-  @include("/include/parts/local-nav.html"", {"module_id": "nav_event"})
+  @include("/include/tag/filter.html")
 
   <h2 class="heading-lg acms-mb-8">過去のイベント</h2>
 
