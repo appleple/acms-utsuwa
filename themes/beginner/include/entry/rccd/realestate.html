@@ -1,6 +1,6 @@
 <!-- BEGIN images:veil -->
 <div class="acms-cssgrid acms-g-cols-1 acms-mb-8 acms-gap-3 acms-gap-sm-4">
-  <!-- BEGIN_IF [{entry_main_image@path}/nem] -->
+  <!-- BEGIN entry_main_image:veil -->
   <div>
     <img
       src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(1000)]"
@@ -11,7 +11,8 @@
       fetchpriority="high"
     />
   </div>
-  <!-- END_IF -->
+  <!-- END entry_main_image:veil -->
+
   <!-- BEGIN sub_image:veil -->
   <div class="acms-cssgrid acms-g-cols-3 acms-gap-3 acms-gap-sm-4">
     <!-- BEGIN_IF [{sub_image1@path}/nem] -->

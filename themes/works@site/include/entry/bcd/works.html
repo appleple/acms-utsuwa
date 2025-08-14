@@ -1,7 +1,6 @@
-<!-- エントリーのスタイルを適用しています。not-editor-style クラスをつけないでください。 -->
-
-<!-- BEGIN main-image:veil -->
-<div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}" width="928" height="{entry_main_image@ratio}[getHeightFromRatio(928)]" alt="{entry_main_image@alt}" class="acms-img-responsive" /></div><!-- END main-image:veil -->
+<!-- BEGIN entry_main_image:veil -->
+<div class="works-main-image"><img src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(1000)]" width="1000" height="{entry_main_image@ratio}[getHeightFromRatio(1000)]" alt="{entry_main_image@alt}" class="acms-img-responsive" /></div>
+<!-- END entry_main_image:veil -->
 
 <dl class="not-editor-style detail-panel is-works">
   <div class="detail-panel-group">
@@ -68,6 +67,7 @@
   </div>
   <!-- END work_period:veil -->
 </dl>
+
 <!-- BEGIN work_introduction:veil -->
 <div class="work_introduction">
   {work_introduction}[markdown]
