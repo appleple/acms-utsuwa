@@ -6145,7 +6145,6 @@ input::placeholder {
 ------------------------------ */
 .event-card-label-box {
   display: grid;
-  grid-auto-rows: auto;
   gap: 0.75rem;
 }
 
