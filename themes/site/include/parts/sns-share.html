@@ -60,30 +60,51 @@
 </div>
 
 <script>
+  function handleSuccessFeedback(buttonElement, originalHtml) {
+    // ボタンのテキストを一時的に変更するなどのUIフィードバック
+    buttonElement.innerHTML = '<span>コピーしました</span>';
+    buttonElement.disabled = true;
+
+    setTimeout(() => {
+      // ボタンを元の状態に戻す
+      buttonElement.innerHTML = originalHtml;
+      buttonElement.disabled = false;
+    }, 3000);
+  }
+
   function copyToClipboard(inputId, buttonId) {
     // コピー対象
     const inputElement = document.getElementById(inputId);
     // コピー実行ボタン
     const buttonElement = document.getElementById(buttonId);
+
     if (!inputElement || !buttonElement) {
       console.error('指定されたIDの要素が見つかりません。');
       return;
     }
 
-    navigator.clipboard.writeText(inputElement.value).then(() => {
-      // ボタンのテキストを変更
-      const originalText = buttonElement.innerHTML;
-      buttonElement.innerHTML = '<span>コピーしました</span>';
-      buttonElement.disabled = true;
-
-      setTimeout(() => {
-        // ボタンを元の状態に戻す
-        buttonElement.innerHTML = originalText;
-        buttonElement.disabled = false;
-      }, 3000);
-
-    }).catch(err => {
-      console.error('コピーに失敗しました', err);
-    });
+    const originalHtml = buttonElement.innerHTML;
+    if (navigator.clipboard && window.isSecureContext) {
+      // 現代的なブラウザ（SSL環境下）での処理
+      navigator.clipboard.writeText(inputElement.value).then(() => {
+        handleSuccessFeedback(buttonElement, originalHtml);
+      }).catch(err => {
+        console.error('コピーに失敗しました', err);
+      });
+    } else {
+      // 非SSL環境や古いブラウザでのフォールバック処理
+      try {
+        inputElement.focus();
+        inputElement.select();
+        const success = document.execCommand('copy');
+        if (success) {
+          handleSuccessFeedback(buttonElement, originalHtml);
+        } else {
+          console.error('コピーに失敗しました (execCommand)');
+        }
+      } catch (err) {
+        console.error('コピーに失敗しました', err);
+      }
+    }
   }
 </script>
