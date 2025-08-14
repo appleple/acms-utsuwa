@@ -27,11 +27,10 @@
     <!-- BEGIN_IF [%{ECD}/nem]-->
     <!-- BEGIN title:veil -->
     <header class="entry-header">
-      <!-- BEGIN_MODULE Touch_Entry -->
-      <h1 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h1><!-- END_MODULE Touch_Entry -->
-      <!-- BEGIN_MODULE Touch_NotEntry -->
-      <h2 class="entry-header-title"><a href="{titleUrl}" class="entry-header-title-link">{title}</a></h2>
-      <!-- END_MODULE Touch_NotEntry -->
+      <!-- BEGIN_IF [%{CID}/nem/_or_/%{BID}/neq/%{RBID}] -->
+      <h1 class="entry-header-title">{title}</h1>
+      <!-- END_IF -->
+      <!-- ※カテゴリーと子ブログに所属していないエントリーの場合はページヘッダーにエントリータイトルを表示 -->
 
       <!-- BEGIN entry-header-info:veil -->
       <div class="entry-header-info">
@@ -61,7 +60,6 @@
         <!-- END tag:loop -->
       </ul>
       <!-- END tag:veil -->
-
     </header>
     <!-- END title:veil -->
     <!-- END_IF -->

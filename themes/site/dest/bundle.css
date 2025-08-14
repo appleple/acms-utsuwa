@@ -4433,6 +4433,9 @@ input::placeholder {
   margin: 0 0 var(--entry-el-margin-md);
   line-height: 1.5;
 }
+.entry-header:not(:has(*)) {
+  display: none;
+}
 
 .entry-header-info {
   display: flex;

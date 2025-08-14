@@ -13,6 +13,11 @@
 .entry-header {
   margin: 0 0 var(--entry-el-margin-md);
   line-height: 1.5;
+
+  // エントリータイトル非表示時に要素ごと非表示
+  &:not(:has(*)) {
+    display: none;
+  }
 }
 
 .entry-header-info {
