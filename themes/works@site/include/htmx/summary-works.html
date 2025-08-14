@@ -108,3 +108,13 @@
   @include("/include/parts/pager.html")
 </div>
 <!-- END_MODULE Entry_Summary -->
+
+<!-- BEGIN_IF [{{multi_swap}}/neq/off] -->
+
+@include("/include/htmx/topicpath.html")
+
+<!-- BEGIN_MODULE Ogp id="ogp" -->
+<title>{title}</title>
+<!-- END_MODULE Ogp -->
+
+<!-- END_IF -->
