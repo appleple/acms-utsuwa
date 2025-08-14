@@ -33,6 +33,12 @@ html {
 
 }
 
+body {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
 /* リンクの設定 */
 a {
   border: none;

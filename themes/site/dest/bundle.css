@@ -39,6 +39,12 @@ html {
   }
 }
 
+body {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
 /* リンクの設定 */
 a {
   border: none;
@@ -4432,7 +4438,6 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  align-items: center;
 }
 
 .entry-header-date {
