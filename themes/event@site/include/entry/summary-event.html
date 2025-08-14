@@ -47,17 +47,30 @@
               </span><!-- END category:veil -->
             </div>
             <div class="card-text-wrap">
-              <h2 class="card-title">{title}</h2>
               <!-- BEGIN label_box:veil -->
-              <div class="card-label-box">
-                <!-- BEGIN date:veil -->
-                <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
-                <!-- END date:veil -->
-                <!-- BEGIN event_pref:veil -->
-                <p class="label">{event_pref}</p>
-                <!-- END event_pref:veil -->
+              <div class="event-card-label-box">
+                <!-- BEGIN datetime:veil -->
+                <p class="acms-my-0 acms-lh-1">
+                  <!-- BEGIN date:veil -->
+                  <time class="event-card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                  <!-- END date:veil -->
+                  <!-- BEGIN event_time:veil -->
+                  <span class="event-card-time">{event_time}</span>
+                  <!-- END event_time:veil -->
+                </p>
+                <!-- END datetime:veil -->
+                <!-- BEGIN event_pref_category:veil -->
+                <div class="card-label-box">
+                  <!-- BEGIN event_pref:veil -->
+                  <p class="label">{event_pref}</p>
+                  <!-- END event_pref:veil -->
+                  <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
+                  <p class="label">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+                </div>
+                <!-- END event_pref_category:veil -->
               </div>
               <!-- END label_box:veil -->
+              <h2 class="card-title">{title}</h2>
               <!-- BEGIN summary:veil -->
               <p class="card-text">{summary}[trim(60, '...')]</p>
               <!-- END summary:veil -->

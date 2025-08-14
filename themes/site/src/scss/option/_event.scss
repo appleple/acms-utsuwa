@@ -3,7 +3,29 @@
 @use "../global/common" as global;
 
 /* ------------------------------
-　　イベント詳細
+　　イベント
+------------------------------ */
+
+/* イベント一覧
+------------------------------ */
+.event-card-label-box {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.event-card-date {
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+}
+
+.event-card-time {
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+}
+
+/* イベント詳細
 ------------------------------ */
 
 /* 開催日時・都道府県ラベル・Newラベル全体のレイアウト設定 */

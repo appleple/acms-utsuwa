@@ -6139,7 +6139,29 @@ input::placeholder {
   }
 }
 /* ------------------------------
-　　イベント詳細
+　　イベント
+------------------------------ */
+/* イベント一覧
+------------------------------ */
+.event-card-label-box {
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 0.75rem;
+}
+
+.event-card-date {
+  color: var(--color-text-2nd);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+.event-card-time {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+/* イベント詳細
 ------------------------------ */
 /* 開催日時・都道府県ラベル・Newラベル全体のレイアウト設定 */
 .event-entry-header-info {
@@ -6158,11 +6180,11 @@ input::placeholder {
 }
 
 .event-entry-header-date-label {
+  margin-right: 0.5rem;
   color: var(--color-primary);
   font-weight: bold;
   font-size: 1rem;
   line-height: var(--line-height-base);
-  margin-right: 0.5rem;
 }
 
 .event-entry-header-datetime {
