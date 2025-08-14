@@ -1,48 +1,59 @@
-<!-- BEGIN main-image:veil -->
-<div class="realestate-main-image">
-  <img
-    src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}"
-    width="928"
-    height="{entry_main_image@ratio}[getHeightFromRatio(928)]"
-    alt="{entry_main_image@alt}"
-    class="acms-img-responsive"
-    fetchpriority="high"
-  />
+<!-- BEGIN images:veil -->
+<div class="acms-cssgrid acms-g-cols-1 acms-mb-8 acms-gap-3 acms-gap-sm-4">
+  <!-- BEGIN_IF [{entry_main_image@path}/nem] -->
+  <div>
+    <img
+      src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(1000)]"
+      width="1000"
+      height="{entry_main_image@ratio}[getHeightFromRatio(1000)]"
+      alt="{entry_main_image@alt}"
+      class="acms-img-responsive"
+      fetchpriority="high"
+    />
+  </div>
+  <!-- END_IF -->
+  <!-- BEGIN sub_image:veil -->
+  <div class="acms-cssgrid acms-g-cols-3 acms-gap-3 acms-gap-sm-4">
+    <!-- BEGIN_IF [{sub_image1@path}/nem] -->
+    <div>
+      <img
+        src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image1@path}[resizeImg(400)]"
+        width="400"
+        height="{sub_image1@ratio}[getHeightFromRatio(400)]"
+        alt="{sub_image1@alt}"
+        class="acms-img-responsive"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <!-- END_IF -->
+    <!-- BEGIN_IF [{sub_image2@path}/nem] -->
+    <div>
+      <img
+        src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image2@path}[resizeImg(400)]"
+        width="400"
+        height="{sub_image2@ratio}[getHeightFromRatio(400)]"
+        alt="{sub_image1@alt}"
+        class="acms-img-responsive"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <!-- END_IF -->
+    <!-- BEGIN_IF [{sub_image3@path}/nem] -->
+    <div>
+      <img
+        src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image3@path}[resizeImg(400)]"
+        width="400"
+        height="{sub_image3@ratio}[getHeightFromRatio(400)]"
+        alt="{sub_image1@alt}"
+        class="acms-img-responsive"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <!-- END_IF -->
+  </div>
+  <!-- END sub_image:veil -->
 </div>
-<!-- END main-image:veil -->
-
-<div class="acms-cssgrid acms-g-cols-3 acms-mb-4" style="--acms-gap: 10px">
-  <div>
-    <img
-      src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image1@path}"
-      width="928"
-      height="{sub_image1@ratio}[getHeightFromRatio(928)]"
-      alt="{sub_image1@alt}"
-      class="acms-img-responsive"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <div>
-    <img
-      src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image2@path}"
-      width="928"
-      height="{sub_image2@ratio}[getHeightFromRatio(928)]"
-      alt="{sub_image1@alt}"
-      class="acms-img-responsive"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-  <div>
-    <img
-      src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image3@path}"
-      width="928"
-      height="{sub_image3@ratio}[getHeightFromRatio(928)]"
-      alt="{sub_image1@alt}"
-      class="acms-img-responsive"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-</div>
+<!-- END images:veil -->
