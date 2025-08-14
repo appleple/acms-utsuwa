@@ -658,14 +658,7 @@
   border-radius: var(--border-radius-md);
 
   a {
-    padding-block: 2px;
-    color: var(--color-text);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--color-text);
-
-    &:hover {
-      border-color: transparent;
-    }
+    @include global.link-text;
   }
 }
 

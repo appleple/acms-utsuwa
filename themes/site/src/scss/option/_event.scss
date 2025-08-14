@@ -67,12 +67,11 @@
 
   svg {
     position: absolute;
-    right: -2rem;
-    margin-left: 0.5rem;
+    right: -28px;
     vertical-align: text-bottom;
 
     path {
-      fill: var(--color-gray100);
+      fill: currentcolor;
     }
   }
 }

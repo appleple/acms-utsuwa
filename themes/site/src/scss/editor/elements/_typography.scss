@@ -12,31 +12,12 @@
   ("a"),
   $exclude-classes: ("not-editor-style", "media-image-block", "column-image", "column-media", "column-eximage")
 ) {
-  color: var(--color-link);
-  text-decoration: none;
-  border-bottom: var(--border-width-sm) dotted var(--color-link);
-  padding-block: 2px;
+  @include global.link-text;
+}
 
-  &[target="_blank"] {
-    margin-right: 2px;
-
-    &::after {
-      display: inline-block;
-      width: 0.875em;
-      height: 0.875em;
-      margin-left: 4px;
-      vertical-align: baseline;
-      background-color: currentcolor;
-      content: '';
-      mask-image: url("#{global.$root-theme-img}icon-target_blank.svg");
-      mask-size: contain;
-    }
-  }
-
-  @media (hover: hover) {
-    &:any-link:hover {
-      border-color: transparent;
-    }
+.entryFormLiteEditor {
+  a {
+    @include global.link-text;
   }
 }
 

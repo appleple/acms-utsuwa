@@ -331,14 +331,7 @@
   }
 
   a {
-    padding-block: 2px;
-    color: var(--color-text);
-    text-decoration: none;
-    border-bottom: var(--color-text);
-
-    &:hover {
-      border-color: transparent;
-    }
+    @include global.link-text;
   }
 }
 
