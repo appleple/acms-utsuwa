@@ -3,7 +3,7 @@
   <table class="acms-admin-table-admin-edit">
     <tbody>
       <tr>
-        <th>アイコン画像</th>
+        <th>アイコン画像 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="お客様の写真を設定してください。"></i></th>
         <td class="js-media-field">
           <div class="js-droparea" data-thumbnail="{person_image@thumbnail}" data-type="image" data-thumbnail-type="{person_image@type}" data-width="200px" data-height="200px"></div>
           <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -16,21 +16,21 @@
         </td>
       </tr>
       <tr>
-        <th>所属</th>
+        <th>所属 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="お客様の所属を設定してください。"></i></th>
         <td>
           <input type="text" name="person_department" class="acms-admin-form-width-full" value="{person_department}" />
           <input type="hidden" name="field[]" value="person_department" />
         </td>
       </tr>
       <tr>
-        <th>担当者名</th>
+        <th>担当者名 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="お客様のお名前を設定してください。"></i></th>
         <td>
           <input type="text" name="person_in_charge" class="acms-admin-form-width-half" value="{person_in_charge}" />
           <input type="hidden" name="field[]" value="person_in_charge" />
         </td>
       </tr>
       <tr>
-        <th>担当者の声</th>
+        <th>担当者の声 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="お客様のメッセージを設定してください。"></i></th>
         <td>
           <textarea name="person_voice" class="acms-admin-form-width-full" rows="5">{person_voice}</textarea>
           <input type="hidden" name="field[]" value="person_voice" />

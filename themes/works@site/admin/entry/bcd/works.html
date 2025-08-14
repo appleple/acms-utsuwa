@@ -3,7 +3,7 @@
   <table class="acms-admin-table-admin-edit">
     <tbody>
       <tr>
-        <th>メインイメージ</th>
+        <th>メインイメージ <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="記事一覧や詳細ページで利用する画像です。"></i></th>
         <td class="js-media-field">
           <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" data-thumbnail-type="{entry_main_image@type}" data-width="300px" data-height="200px"></div>
           <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -16,7 +16,7 @@
         </td>
       </tr>
       <tr>
-        <th>業種</th>
+        <th>業種 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="業種を選択してください。"></i></th>
         <td>
           <select name="work_industry">
             <option value=""></option>
@@ -34,7 +34,7 @@
         </td>
       </tr>
       <tr>
-        <th>規模</th>
+        <th>規模 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="規模を選択してください。"></i></th>
         <td>
           <div class="acms-admin-form-radio">
             <input type="radio" name="work_scale" {work_scale:checked#scale1} id="input-radio-work_scale-scale1" value="scale1" />
@@ -56,7 +56,7 @@
       </tr>
 
       <tr>
-        <th>目的</th>
+        <th>目的 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="目的を選択してください。"></i></th>
         <td>
           <div class="acms-admin-form-checkbox">
             <input type="checkbox" name="work_goal[]" {work_goal:checked#goal1} id="input-checkbox-work_goal-goal1" value="goal1" />
@@ -87,7 +87,7 @@
         </td>
       </tr>
       <tr>
-        <th>期間</th>
+        <th>期間 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="機関を選択してください。"></i></th>
         <td>
           <div class="acms-admin-form-radio">
             <input type="radio" name="work_period" {work_period:checked#short} id="input-radio-work_period-short" value="short" />
@@ -120,22 +120,13 @@
         </td>
       </tr>
       <tr>
-        <th>事例名</th>
+        <th>事例名 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="タイトルに事例名を設定してください。"></i><</th>
         <td>
           記事編集ページ上部の「タイトル」欄で設定できます。
         </td>
       </tr>
       <tr>
-        <th>紹介文</th>
-        <td>
-          <div class="field-lite-editor-wrap">
-            <textarea name="work_introduction" class="js-lite-editor-field acms-admin-form-width-full">{work_introduction}</textarea>
-            <input type="hidden" name="field[]" value="work_introduction" />
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <th>サイトURL</th>
+        <th>サイトURL <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="実際のウェブサイトのURLを設定してください。"></i></th>
         <td>
           <input type="text" name="work_url" class="acms-admin-form-width-full" value="{work_url}" />
           <input type="hidden" name="field[]" value="work_url" />
