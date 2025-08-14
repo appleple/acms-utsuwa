@@ -1,3 +1,40 @@
+
+<!-- BEGIN detail-panel:veil -->
+<div class="not-editor-style detail-panel-wrap">
+  <dl class="detail-panel is-event">
+    <div class="detail-panel-group">
+      <dt>開催日</dt>
+      <dd>{date#Y}年{date#n}月{date#j}日（{date#l}[weekEN2JP]）</dd>
+    </div>
+    <!-- BEGIN event_time:veil -->
+    <div class="detail-panel-group">
+      <dt>開催時間</dt>
+      <dd>{event_time}</dd>
+    </div>
+    <!-- END event_time:veil -->
+    <!-- BEGIN event_fee:veil -->
+    <div class="detail-panel-group">
+      <dt>参加費</dt>
+      <dd>{event_fee}[number_format]</dd>
+    </div>
+    <!-- END event_fee:veil -->
+    <!-- BEGIN event_location:veil -->
+    <div class="detail-panel-group">
+      <dt>会場</dt>
+      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}[nl2br]<!-- END event_address:veil -->
+      <!-- BEGIN event_googlemap:veil --><br><a href="{event_googlemap}" class="event-googlemap-link">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event_googlemap:veil --></dd>
+    </div>
+    <!-- END event_location:veil -->
+    <!-- BEGIN event_entry:veil -->
+    <div class="detail-panel-group">
+      <dt>申し込み方</dt>
+      <dd class="entry-style">{event_entry}[raw|nl2br]</dd>
+    </div>
+    <!-- END event_entry:veil -->
+  </dl>
+</div>
+<!-- END detail-panel:veil -->
+
 {event_googlemap_iframe}[raw|allow_dangerous_tag]
 
 <!-- BEGIN_IF [{event_status}/eq/open] -->
