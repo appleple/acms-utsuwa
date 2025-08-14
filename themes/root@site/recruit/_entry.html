@@ -15,14 +15,14 @@
         <h1 class="entry-header-visual-title entryTitle">{title}</h1>
 
         <!-- BEGIN page_description:veil -->
-        <p class="entry-header-visual-desc">{page_description}</p>
+        <p class="entry-header-visual-desc">{page_description}[nl2br]</p>
         <!-- END page_description:veil -->
 
-        <!-- BEGIN btn:veil -->
+        <!-- BEGIN_IF [{btn_url}/nem/_and_/{btn_text}/nem] -->
         <p class="entry-header-visual-btn-wrap">
           <a href="{btn_url}" class="button is-inverse">{btn_text}</a>
         </p>
-        <!-- END btn:veil -->
+        <!-- END_IF -->
       </div>
     </div>
   </div>

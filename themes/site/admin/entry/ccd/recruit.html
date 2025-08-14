@@ -1,6 +1,5 @@
 <!-- 固定ページ以外は以下のカスタムフィールドを表示する -->
-<!-- BEGIN_IF [%{EID}/nem/_and_/%{ECD}/em] -->
-<!-- ELSE -->
+<!-- BEGIN_IF [%{EID}/em/_or_/%{ECD}/nem] -->
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
     <th>メイン画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="一覧で使用するサムネイル画像を登録します。推奨サイズ：580px x 345px"></i></th>
@@ -29,23 +28,36 @@
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-page_description">説明文</label><i data-acms-tooltip="ページ上部で使用する説明文を設定します。推奨文字数：120文字前後" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-page_description">タイトル下説明文</label>
+      <i data-acms-tooltip="ページ上部の記事タイトル下に表示します。※meta情報のdescriptionには反映されません。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i>
+      <div>
+        <span class="acms-admin-label"><span class="page_description-countup"></span> 文字</span>
+      </div>
+    </th>
     <td>
-      <textarea name="page_description" rows="5" id="input-text-page_description" style="width:80%;">{page_description}</textarea>
+      <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※推奨文字数：120文字前後</p>
+      <textarea style="min-height: 2lh;" name="page_description" id="input-text-page_description"  class="js-countup acms-admin-form-width-full acms-admin-form-auto-size" data-max="99999" data-label-target=".page_description-countup">{page_description}</textarea>
       <input type="hidden" name="field[]" value="page_description" />
     </td>
   </tr>
+</table>
+
+<h3 class="acms-admin-admin-title2 acms-admin-mt-4">応募ボタン設定</h3>
+<p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※「ボタンテキスト」と「ボタンURL」の両方を設定するとページ上部と下部に応募ボタンを表示します。</p>
+<table class="acms-admin-table-admin-edit">
   <tr>
-    <th><label for="input-text-btn_text">応募ボタンの文言</label><i data-acms-tooltip="ボタンを表示する際に設定ください。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th><label for="input-text-btn_text">ボタンテキスト</label></th>
     <td>
-      <input type="text" name="btn_text" value="{btn_text}" id="input-text-btn_text" class="acms-admin-form-width-3quarters">
+      <input type="text" name="btn_text" value="{btn_text}" id="input-text-btn_text" class="acms-admin-form-width-mini" placeholder="例）応募する">
       <input type="hidden" name="field[]" value="btn_text">
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-btn_url">応募ページへのURL</label><i data-acms-tooltip="動的フォーム機能を利用の際には #form と記述し、それ以外の URL を設定しリンクボタンとして利用も可能です。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th><label for="input-text-btn_url">ボタンURL</label></th>
     <td>
-      <input type="text" name="btn_url" value="{btn_url}" id="input-text-btn_url" class="acms-admin-form-width-3quarters">
+      <p class="acms-admin-m-0 acms-admin-mb-1 field-info-text">※動的フォーム機能を利用の際には #form と記述します。</p>
+      <input type="text" name="btn_url" value="{btn_url}" id="input-text-btn_url" class="acms-admin-form-width-full" placeholder="例）#form" />
       <input type="hidden" name="field[]" value="btn_url">
     </td>
   </tr>
