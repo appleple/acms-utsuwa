@@ -5,7 +5,7 @@
   <!-- END_IF -->
   <div class="form-search-action">
     <input type="search" id="search-{{search-id}}" name="keyword" value="%{KEYWORD}" size="15" class="form-search-input" placeholder="キーワードを入力"
-           hx-get="/include/htmx/entry/summary-list.html" hx-trigger="keyup changed delay:500ms" hx-target="#summary_list" hx-push-url="true">
+           hx-get="/include/htmx/entry/summary-list.html" hx-trigger="keyup changed delay:500ms" hx-target="#summary_list">
     <span class="form-search-side-button"><button type="submit" name="ACMS_POST_2GET_Ajax" class="button form-search-button">検索</button></span>
     <input type="hidden" name="bid" value="1">
     <input type="hidden" name="tpl" value="/include/htmx/entry/summary-list.html">
