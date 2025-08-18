@@ -3,3 +3,39 @@
 /* ------------------------------
 　編集画面用カスタムCSSを記述
 ------------------------------ */
+/* カスタムフィールド用注意文 */
+.admin-field-info-text {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+}
+
+/* カスタムフィールドのLiteEditor
+------------------------------ */
+.admin-field-lite-editor-wrap .lite-editor-toolbox {
+  padding: 0;
+  margin-top: 6px;
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.admin-field-lite-editor-wrap .lite-editor-btn-group-wrap {
+  padding-left: 0;
+}
+
+.admin-field-lite-editor-wrap .acms-admin-btn-group {
+  display: inline-block;
+}
+
+/* リンク追加モーダル */
+.admin-field-lite-editor-wrap .lite-editor-btn-close-label {
+  vertical-align: middle;
+}
+
+.admin-field-lite-editor-wrap .lite-editor-tooltip-table tr:first-child th,
+.admin-field-lite-editor-wrap .lite-editor-tooltip-table tr:first-child td,
+.admin-field-lite-editor-wrap .lite-editor-tooltip-table tr:last-child th,
+.admin-field-lite-editor-wrap .lite-editor-tooltip-table tr:last-child td {
+  padding: 5px;
+}

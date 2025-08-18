@@ -1,5 +1,5 @@
 @forward "../../../../system/src/scss/global/variables" with (
-  $entry-class : entry-style,
+  $entry-class : entry-style, // クラス名を変更する時は /include/edit/custom.js も変更すること
   $breakpoint-sm-min    : 30rem,
   $breakpoint-md-min    : 48rem,
   $breakpoint-lg-min    : 64rem,
