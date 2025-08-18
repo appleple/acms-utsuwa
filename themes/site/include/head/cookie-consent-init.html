@@ -1,0 +1,154 @@
+<!-- BEGIN_MODULE Blog_Field id="root" -->
+<!-- BEGIN_IF [{cookie_consent}/eq/true] -->
+@verbatim
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+<style>
+  #cc-main {
+    --cc-font-family: inherit;
+    --cc-modal-border-radius: .5rem;
+    --cc-btn-border-radius: .4rem;
+    --cc-modal-transition-duration: .25s;
+    --cc-modal-margin: 1rem;
+    --cc-z-index: 2147483647;
+    --cc-btn-primary-bg: var(--color-primary);
+    --cc-btn-primary-border-color: var(--color-primary);
+    --cc-btn-primary-hover-bg: var(--color-primary-hover);
+    --cc-btn-primary-hover-border-color: var(--color-primary-hover);
+    --cc-btn-border-radius: var(--border-radius-md);
+
+    --cc-footer-bg: var(--cc-btn-secondary-bg);
+    --cc-footer-color: var(--color-text);
+  }
+
+  /* クッキーモーダルの幅調整 */
+  #cc-main .cm {
+    max-width: 25rem; /* 見出しが1行に収まる幅 */
+  }
+
+  /* 却下ボタン */
+  #cc-main .cm--inline .cm__btn + .cm__btn {
+    background: var(--cc-btn-secondary-bg);
+    border-color: var(--cc-btn-secondary-border-color);
+    color: var(--cc-btn-secondary-color);
+
+    &:hover {
+      background: var(--cc-btn-secondary-hover-bg);
+      border-color: var(--cc-btn-secondary-hover-border-color);
+      color: var(--cc-btn-secondary-hover-color);
+    }
+  }
+
+  /* 詳細設定モーダル */
+  #cc-main .pm__section:not(:first-child):hover {
+    background: transparent;
+    border-color: var(--cc-separator-border-color);
+  }
+</style>
+
+<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+
+@endverbatim
+
+<script>
+  @verbatim
+  // CookieConsentの初期化
+  CookieConsent.run({
+    disablePageInteraction: false,
+
+    cookie: {
+      name: 'cc_site_theme_cookie',
+    },
+
+    guiOptions: {
+      consentModal: {
+        layout: 'box inline',
+        position: 'bottom right',
+        flipButtons: false,
+        equalWeightButtons: true
+      },
+      preferencesModal: {
+        layout: 'box',
+        position: 'left',
+        flipButtons: false,
+        equalWeightButtons: true
+      }
+    },
+
+    categories: {
+      necessary: {
+        readOnly: true,
+        enabled: true
+      },
+      analytics: {
+        autoClear: {
+          cookies: [
+            {
+              name: /^(_ga|_gid)/
+            }
+          ]
+        }
+      },
+    },
+
+    language: {
+      default: 'ja',
+
+      translations: {
+        ja: {
+          consentModal: {
+            title: 'このウェブサイトはクッキーを使用しています',
+            description: '利用状況の分析とサービス向上のためクッキーを使用しています。お客様の個人情報は、<a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> に基づいて適切に取り扱われます。クッキーの利用にご同意いただける場合は「すべて同意する」を選択してください。<br>クッキーの設定は、いつでも <button data-cc="show-preferencesModal" class="cc__link">設定を管理</button> から変更できます。',
+            revisionMessage: "<br> 規約を変更いたしました。お手数ですが、再度ご確認いただきクッキーの取得と利用に同意をお願いいたします。",
+            acceptAllBtn: 'すべて同意する',
+            acceptNecessaryBtn: 'すべて却下する',
+            footer: `
+              <a href="%{HOME_URL}privacy.html">プライバシーポリシー</a>
+            `
+          },
+          preferencesModal: {
+            title: 'クッキーの設定',
+            acceptAllBtn: 'すべて同意する',
+            acceptNecessaryBtn: 'すべて却下する',
+            savePreferencesBtn: '設定を保存',
+            closeIconLabel: '閉じる',
+            sections: [
+              {
+                title: 'クッキーの使用について',
+                description: 'このウェブサイトでは、お客様の利便性向上とサービス改善、利用状況の分析のためクッキーを使用しています。お客様はクッキーのカテゴリごとに同意または却下を選択できます。クッキーや個人情報の取り扱いについては <a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> をご確認ください。'
+              },
+              {
+                title: '動作のために必要なクッキー',
+                description: 'このWebサイトが適切に動作するために必要なCookieです。ウェブサイトの動作に不可欠なため、拒否できません。',
+                linkedCategory: 'necessary'
+              },
+              {
+                title: 'パフォーマンスと分析のクッキー',
+                description: '当ウェブサイトの利用状況を収集しています。収集したデータはサイトやサービス改善のためにのみ使用します。',
+                linkedCategory: 'analytics'
+              },
+              {
+                title: '個人情報お取り扱いについて',
+                description: '個人情報お取り扱いについての詳細は <a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> をご覧ください。',
+              }
+            ]
+          }
+        }
+      }
+    }
+  });
+  @endverbatim
+</script>
+
+<!-- BEGIN_IF [{gtm_enable}/eq/true] -->
+<script>
+  @verbatim
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+  @endverbatim
+</script>
+<!-- END_IF -->
+<!-- END_MODULE Blog_Field -->

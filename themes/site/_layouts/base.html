@@ -9,6 +9,33 @@
     @include("/include/head/link.html")
     @endsection
 
+    @section('head-service')
+    <!-- BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Touch_NotPreview -->
+    <!-- Cookie利用同意ポップアップ初期化 -->
+    @include("/include/head/cookie-consent-init.html")
+
+    <!-- BEGIN_MODULE Blog_Field id="root" -->
+    <!-- BEGIN_IF [{gtm_enable}/eq/true] -->
+    {google_tag_manager}[raw|allow_dangerous_tag]
+    <!-- ELSE -->
+    {google_analytics}[raw|allow_dangerous_tag]
+    <!-- END_IF -->
+    <!-- END_MODULE Blog_Field -->
+
+    <!-- BEGIN_MODULE Blog_Field id="root" -->
+    <!-- BEGIN_IF [{cookie_consent}/eq/true/_and_/{gtm_enable}/eq/true] -->
+    @verbatim
+    <script type="text/plain" data-category="analytics">
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    </script>
+    @endverbatim
+    <!-- END_IF -->
+    <!-- END_MODULE Blog_Field -->
+    <!-- END_MODULE Touch_NotPreview --><!-- END_MODULE Touch_Unlogin -->
+    @endsection
+
     @section("head-js")
     @include("/include/head/js.html")
     @endsection

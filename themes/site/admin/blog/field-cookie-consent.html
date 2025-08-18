@@ -1,0 +1,20 @@
+<h3 class="acms-admin-admin-title2">EU向けCookie利用の同意ポップアップ設定</h3>
+<table class="acms-admin-table-admin-edit">
+  <tbody>
+    <tr>
+      <th>
+        同意ポップアップ表示
+        <i data-acms-tooltip="EUからアクセスしたユーザーに、Cookieを利用してアクセス解析などを行うことに同意してもらうポップアップを表示します（GDPR対応）" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i>
+      </th>
+      <td>
+        <div class="acms-admin-form-checkbox">
+          <input type="checkbox" name="cookie_consent[]" {cookie_consent:checked#true} id="input-checkbox-cookie_consent-true" value="true" />
+          <label for="input-checkbox-cookie_consent-true">
+            <i class="acms-admin-ico-checkbox"></i>表示する</label>
+        </div>
+        <input type="hidden" name="field[]" value="cookie_consent" />
+        <p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text" style="line-height: 1.7;">※Cookie利用の同意ポップアップを使用する際は、Google Analytics の script 要素に<code class="acms-admin-code">type=&quot;text/plain&quot;</code>と<code class="acms-admin-code">data-cookiecategory=&quot;analytics&quot;</code>という2つの属性を追記してください。</p>
+      </td>
+    </tr>
+  </tbody>
+</table>

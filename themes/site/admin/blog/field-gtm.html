@@ -1,0 +1,38 @@
+<h3 class="acms-admin-admin-title2">Google Tag Manager 設定</h3>
+<table class="adminTable acms-admin-table-admin-edit acms-admin-margin-bottom-small">
+  <tr>
+    <th>有効化設定</th>
+    <td>
+      <div class="acms-admin-form-checkbox">
+        <input id="gtm_enable-true" type="checkbox" name="gtm_enable[]" {gtm_enable:checked#gtm_true} value="gtm_true" />
+        <label for="gtm_enable-true">
+          <i class="acms-admin-ico-checkbox"></i>「Google Analytics」設定を無効にして「Google Tag Manager 設定」を有効化</label>
+      </div>
+      <input type="hidden" name="field[]" value="gtm_enable" />
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <label class="acms-admin-grid-edit-table-heading" for="google_tag_manager">
+        <span>headタグ内コード</span>
+      </label>
+      <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="Google Tag Manager headタグ内コード設定します。"></i>
+    </th>
+    <td>
+      <textarea style="min-height: 2lh;" class="acms-admin-form-width-full acms-admin-form-auto-size" id="google_tag_manager" name="google_tag_manager" rows="8">{google_tag_manager}</textarea>
+      <input type="hidden" name="field[]" value="google_tag_manager" />
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <label class="acms-admin-grid-edit-table-heading" for="google_tag_manager_body">
+        <span>bodyタグ内コード</span>
+      </label>
+      <i class="acms-admin-icon-tooltip js-acms-tooltip-hover" data-acms-tooltip="Google Tag Manager headタグ内コード設定します。"></i>
+    </th>
+    <td>
+      <textarea style="min-height: 2lh;" class="acms-admin-form-width-full acms-admin-form-auto-size" id="google_tag_manager_body" name="google_tag_manager_body" rows="8">{google_tag_manager_body}</textarea>
+      <input type="hidden" name="field[]" value="google_tag_manager_body" />
+    </td>
+  </tr>
+</table>
