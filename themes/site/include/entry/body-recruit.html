@@ -12,10 +12,10 @@
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
+  @include("/admin/entry/action.html")
 </div><!-- END_MODULE Touch_Login -->
 <article class="entry {entry:loop.class}">
-  @include("/admin/entry/title.html")
-  <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
+    <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
 
 
   <!-- BEGIN entry:veil -->
@@ -47,7 +47,6 @@
   })
   <!-- END formBody -->
 
-  @include("/admin/entry/edit-%{IS_ADMIN}.html")
 
   <div class="acms-box-medium">
     @include("/admin/entry/action.html")

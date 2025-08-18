@@ -24,9 +24,9 @@
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
   @include("/admin/entry/revision-info.html")
+  @include("/admin/entry/action.html")
 </div><!-- END_MODULE Touch_Login -->
 <article class="entry {entry:loop.class}">
-  @include("/admin/entry/title.html")
 
   <div class="js-sticky-area">
     <!-- BEGIN_IF [%{ECD}/nem]-->
@@ -102,9 +102,6 @@
     <!-- BEGIN formBody -->
     @include("/include/form/unit.html")
     <!-- END formBody -->
-
-    @include("/admin/entry/edit-%{IS_ADMIN}.html")
-
 
     <div class="acms-box-medium">
       @include("/admin/entry/action.html")
