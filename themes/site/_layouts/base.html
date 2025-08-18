@@ -11,20 +11,32 @@
 
     @section('head-service')
     <!-- BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Touch_NotPreview -->
+
     <!-- Cookie利用同意ポップアップ初期化 -->
     @include("/include/head/cookie-consent-init.html")
 
     <!-- BEGIN_MODULE Blog_Field id="root" -->
     <!-- BEGIN_IF [{gtm_enable}/eq/true] -->
+    <!-- BEGIN_IF [{cookie_consent}/eq/true] -->
+    @verbatim
+    <!-- GTM用：Cookie利用によるデータ収集をデフォルト無効化 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+    </script>
+    @endverbatim
+    <!-- END_IF -->
     {google_tag_manager}[raw|allow_dangerous_tag]
     <!-- ELSE -->
     {google_analytics}[raw|allow_dangerous_tag]
     <!-- END_IF -->
-    <!-- END_MODULE Blog_Field -->
 
-    <!-- BEGIN_MODULE Blog_Field id="root" -->
     <!-- BEGIN_IF [{cookie_consent}/eq/true/_and_/{gtm_enable}/eq/true] -->
     @verbatim
+    <!-- GTM用：Cookie利用同意後のデータ収集有効化 -->
     <script type="text/plain" data-category="analytics">
       gtag('consent', 'update', {
         'analytics_storage': 'granted'
@@ -33,6 +45,7 @@
     @endverbatim
     <!-- END_IF -->
     <!-- END_MODULE Blog_Field -->
+
     <!-- END_MODULE Touch_NotPreview --><!-- END_MODULE Touch_Unlogin -->
     @endsection
 
