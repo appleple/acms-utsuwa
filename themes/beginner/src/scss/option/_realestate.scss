@@ -99,5 +99,9 @@
 .realestate-map-entry {
   position: relative;
   z-index: 0;
-  margin: 0 0 var(--entry-el-margin-sm);
+  margin: 0 0 var(--entry-el-margin-md);
+
+  .js-open-street-map {
+    height: 320px;
+  }
 }
