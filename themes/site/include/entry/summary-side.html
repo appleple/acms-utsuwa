@@ -10,46 +10,66 @@
   <p class="result-text">お探しの記事は見つかりませんでした。</p>
   <!-- END notFound -->
 
-  <ul class="summary-side-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem;">
-    <!-- BEGIN unit:loop -->
+  <div class="summary-side-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem; --summary-side-img-aspect-ratio: 1 / 1;">
     <!-- BEGIN entry:loop -->
-    <li class="summary-side-item">
+    <article class="summary-side-item" aria-labelledby="summary-side-eid{eid}">
       <a href="{url}" class="summary-side-link">
         <div class="summary-side-link-inner">
           <div class="summary-side-img-wrap">
             <!-- BEGIN_IF [{path}/nem] -->
             <img
-              src="%{ROOT_DIR}{path}[resizeImg(192,192)]"
+              src="%{ROOT_DIR}{path}[resizeImg(200)]"
               alt="{alt}"
               class="summary-side-img"
-              width="192"
-              height="192"
+              width="200"
+              height="{path}[imageRatioSizeH(200)]"
               loading="lazy"
               decoding="async"
             >
             <!-- ELSE -->
             <img
               src="/images/noimage.png"
-              alt="noimage画像"
+              alt=""
               class="summary-side-img"
-              width="192"
-              height="192"
+              width="1200"
+              height="675"
               loading="lazy"
               decoding="async"
             >
             <!-- END_IF -->
           </div>
-          <div class="summary-side-text-wrap">
+          <div>
+            <!-- BEGIN labels:veil -->
+            <dl class="summary-side-labels-layout acms-lh-1 acms-mt-0">
+              <!-- BEGIN_IF [{date#}/nem] -->
+              <div class="acms-inline-block">
+                <dt class="acms-hide-visually">投稿日</dt>
+                <dd class="summary-side-date-layout acms-ms-0">
+                  <time class="summary-side-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                  <!-- BEGIN new -->
+                  <span class="label">New</span>
+                  <!-- END new -->
+                </dd>
+              </div>
+              <!-- END_IF -->
+              <!-- BEGIN categoryField:veil -->
+              <!-- BEGIN categoryField -->
+              <div class="acms-inline-block">
+                <dt class="acms-hide-visually">カテゴリー</dt>
+                <dd class="acms-ms-0">
+                  <span class="label">{fieldCategoryName}</span>
+                </dd>
+              </div>
+              <!-- END categoryField -->
+              <!-- END categoryField:veil -->
+            </dl>
+            <!-- END labels:veil -->
             <h3 class="summary-side-title">{title}</h3>
-            <!-- BEGIN date:veil -->
-            <time class="summary-side-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）<!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
-            <!-- END date:veil -->
           </div>
         </div>
       </a>
-    </li>
+    </article>
     <!-- END entry:loop -->
-    <!-- END unit:loop -->
-  </ul>
+  </div>
 </section>
 <!-- END_MODULE Entry_Summary -->
