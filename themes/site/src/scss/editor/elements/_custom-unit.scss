@@ -24,7 +24,7 @@
   /* 「目次」見出し */
   .entry-outline-title {
     margin: 0 0 1rem;
-    font-weight: 600;
+    font-weight: bold;
     font-size: map.get(global.$font-scales, heading-ss);
     line-height: 1.5;
   }
@@ -49,7 +49,6 @@
   .entry-outline-list-wrap .outline-item {
     display: contents; /* li要素自体はグリッドレイアウトに影響させない */
     color: var(--color-text);
-    font-weight: 300;
     font-size: map.get(global.$font-scales, body-m);
     line-height: 1.5;
 
@@ -86,7 +85,7 @@
     &::before {
       grid-column: 1;
       color: var(--color-text-2nd);
-      font-weight: 700;
+      font-weight: bold;
       white-space: nowrap;
       word-break: keep-all;
       content: counters(outline-list, "-") ". ";

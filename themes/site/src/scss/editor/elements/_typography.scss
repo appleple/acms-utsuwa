@@ -198,7 +198,7 @@
       grid-column: 1;
       padding-top: 1.4px; /* 番号位置の微調整 */
       color: var(--color-text-2nd);
-      font-weight: 700;
+      font-weight: bold;
       white-space: nowrap;
       word-break: keep-all;
       content: counters(order-list, "-") ". ";
