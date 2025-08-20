@@ -1,119 +1,93 @@
 
-<h3 class="acms-admin-mb-2">物件情報</h3>
-<div class="acms-admin-cssgrid acms-admin-p-4" style="border: 1px solid #999; border-radius: 3px;">
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>区分　</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="区分を設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
+<fieldset>
+  <legend class="acms-admin-mb-3 acms-admin-fs-3 acms-admin-px-2 acms-admin-fw-bold">物件情報</legend>
+
+  <div class="acms-admin-cssgrid acms-admin-g-cols-1 acms-admin-g-cols-md-2">
+    <dl class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center acms-admin-my-0">
+      <dt class="acms-admin-text-nowrap">区分</dt>
+      <dd class="acms-admin-ms-0">
         <!-- BEGIN_IF [%{RCCD}/eq/%{CCD}] -->
-        <a href="#labelCategory">設定してください</a>
+        <a href="#labelCategory">カテゴリーを設定してください</a>
         <!-- ELSE -->
         %{CATEGORY_NAME}
         <!-- END_IF -->
-      </div>
-    </div>
-  </div>
+      </dd>
+    </dl>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>賃料　</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="賃料を設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-        <input type="text" name="price" value="{price}" id="input-text-price" style="width: 8ch;"> 円
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-text-price">賃料</label>
+      <div>
+        <input type="text" name="price" value="{price}" id="input-text-price" style="width: 4rem;">&ensp;円&ensp;/&ensp;月
         <input type="hidden" name="field[]" value="price">
         <input type="hidden" name="price:c" value="a">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>間取り</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="間取りを設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-      <select name="madori" id="input-select-madori">
-        <option value=""></option>
-        <option value="1K"{madori:selected#1K}>1K</option>
-        <option value="1DK"{madori:selected#1DK}>1DK</option>
-        <option value="1LDK"{madori:selected#1LDK}>1LDK</option>
-        <option value="2DK"{madori:selected#2DK}>2DK</option>
-        <option value="2LDK"{madori:selected#2LDK}>2LDK</option>
-        <option value="3DK"{madori:selected#3DK}>3DK</option>
-        <option value="3LDK"{madori:selected#3LDK}>3LDK</option>
-        <option value="4LDK"{madori:selected#4LDK}>4LDK</option>
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-select-madori">間取り</label>
+      <div>
+        <select name="madori" id="input-select-madori">
+          <option value="">選択してください</option>
+          <option value="1K"{madori:selected#1K}>1K</option>
+          <option value="1DK"{madori:selected#1DK}>1DK</option>
+          <option value="1LDK"{madori:selected#1LDK}>1LDK</option>
+          <option value="2DK"{madori:selected#2DK}>2DK</option>
+          <option value="2LDK"{madori:selected#2LDK}>2LDK</option>
+          <option value="3DK"{madori:selected#3DK}>3DK</option>
+          <option value="3LDK"{madori:selected#3LDK}>3LDK</option>
+          <option value="4LDK"{madori:selected#4LDK}>4LDK</option>
         </select>
         <input type="hidden" name="field[]" value="madori">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>面積　</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="面積を設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-        <input type="text" name="menseki" value="{menseki}" id="input-text-menseki" style="width: 8ch;"> <span class="acms-admin-form-side-btn">m<sup>2</sup></span>
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-text-menseki">面積</label>
+      <div class="acms-admin-flex-fill">
+        <input type="text" name="menseki" value="{menseki}" id="input-text-menseki" style="width: 4rem;"> <span class="acms-admin-form-side-btn">m<sup>2</sup></span>
         <input type="hidden" name="field[]" value="menseki">
         <input type="hidden" name="menseki:c" value="a">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
       <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>築年数</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="築年数を設定してください。"></i>
+        <label class="acms-admin-text-nowrap" for="input-text-chikunen">築年数</label>
       </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-        <input type="text" name="chikunen" value="{chikunen}" id="input-text-chikunen" style="width: 5ch;"> 年
+      <div class="acms-admin-flex-fill">
+        <input type="text" name="chikunen" value="{chikunen}" id="input-text-chikunen" style="width: 4rem;">&ensp;年
         <input type="hidden" name="field[]" value="chikunen">
         <input type="hidden" name="chikunen:c" value="a">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>階数　</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="物件自身階数と建物全体の階数を設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-      <input type="text" name="floor-no" value="{floor-no}" id="input-text-floor-no" style="width: 4ch;"> 階
-      <input type="hidden" name="field[]" value="floor-no">
-      <input type="hidden" name="floor-no:c" value="a">
-      /
-      <input type="text" name="total-floors" value="{total-floors}" id="input-text-total-floors" style="width: 5ch;"> 階建
-      <input type="hidden" name="field[]" value="total-floors">
-      <input type="hidden" name="total-floors:c" value="a">
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-text-floor-no">階数</label>
+      <div class="acms-admin-flex-fill acms-admin-d-flex acms-admin-align-items-center">
+        <input type="text" name="floor-no" value="{floor-no}" id="input-text-floor-no" style="width: 4rem;">&ensp;階
+        <input type="hidden" name="field[]" value="floor-no">
+        <input type="hidden" name="floor-no:c" value="a">
+        &ensp;/&ensp;
+        <input type="text" name="total-floors" value="{total-floors}" id="input-text-total-floors" style="width: 4rem;">&ensp;階建
+        <input type="hidden" name="field[]" value="total-floors">
+        <input type="hidden" name="total-floors:c" value="a">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>住所　</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="住所を設定してください。<br>番地までは必要ありません"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
-        <input type="text" name="address" value="{address}" id="input-text-address" style="width: 20ch;">
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-text-address">住所</label>
+      <div class="acms-admin-flex-fill">
+        <p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text">※番地不要</p>
+        <input type="text" name="address" value="{address}" id="input-text-address" class="acms-admin-form-width-full">
         <input type="hidden" name="field[]" value="address">
       </div>
     </div>
-  </div>
 
-  <div class="acms-admin-g-col-12 acms-admin-g-col-md-6">
-    <div class="acms-admin-cssgrid">
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-4">
-        <strong>最寄駅</strong> <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="最寄駅と徒歩何分かを設定してください。"></i>
-      </div>
-      <div class="acms-admin-g-col-12 acms-admin-g-col-md-8">
+    <div class="acms-admin-d-flex acms-admin-gap-4 acms-admin-align-items-center">
+      <label class="acms-admin-text-nowrap" for="input-text-station">アクセス</label>
+      <div class="acms-admin-flex-fill acms-admin-d-flex acms-admin-align-items-center">
         <select name="station" id="input-text-station">
-          <option value="">未設定</option>
+          <option value="">選択してください</option>
           <option value="あの駅"{station:selected#あの駅}>あの駅</option>
           <option value="この駅"{station:selected#この駅}>この駅</option>
           <option value="その駅"{station:selected#その駅}>その駅</option>
@@ -121,38 +95,37 @@
           <option value="伏見駅"{station:selected#伏見駅}>伏見駅</option>
           <option value="栄駅"{station:selected#栄駅}>栄駅</option>
         </select>
-        <input type="hidden" name="field[]" value="station"> 徒歩
-        <input type="text" name="toho" value="{toho}" id="input-text-toho" style="width: 5ch;"> 分
+        <input type="hidden" name="field[]" value="station">&ensp;徒歩&ensp;
+        <input type="text" name="toho" value="{toho}" id="input-text-toho" style="width: 60px;">&ensp;分
         <input type="hidden" name="field[]" value="toho">
         <input type="hidden" name="toho:c" value="a">
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 
-<div style="margin: 10px;">
+<fieldset class="acms-admin-mt-8">
+  <legend class="acms-admin-mb-3 acms-admin-fs-3 acms-admin-px-2 acms-admin-fw-bold">物件地図</legend>
 
-<div class="realestate-map realestate-map-entry js-open-street-map-editable" style="margin: 10px;">
-	<h3 class="acms-admin-margin-bottom-mini">物件地図</h3>
-	<div class="acms-admin-margin-bottom-mini acms-admin-osm-container">
-		<div class="acms-admin-gmap-container js-open-street-map-picker"></div>
-	</div>
-	<div class="acms-admin-margin-bottom-small">
+  <div class="js-open-street-map-editable">
+    <div class="acms-admin-mb-3">
+      <div class="acms-admin-osm-container">
+        <div class="acms-admin-gmap-container js-open-street-map-picker"></div>
+      </div>
+    </div>
+
     <!-- BEGIN_IF [{map_lat}/nem] -->
-		<label for="input-text-map_lat"><strong>緯度</strong></label> <input type="text" name="map_lat" value="{map_lat}" size="20" id="input-text-map_lat" class="js-osm-lat">
-		<label for="input-text-map_lng"><strong>経度</strong></label> <input type="text" name="map_lng" value="{map_lng}" size="20" id="input-text-map_lng" class="js-osm-lng">
-		<label for="input-text-map_zoom"><strong>ズーム</strong></label> <input type="text" name="map_zoom" value="{map_zoom}" size="5" id="input-text-map_zoom" class="js-osm-zoom">
+    <label for="input-text-map_lat">緯度</label>&ensp;<input type="text" name="map_lat" value="{map_lat}" size="20" id="input-text-map_lat" class="js-osm-lat">&emsp;
+    <label for="input-text-map_lng">経度</label>&ensp;<input type="text" name="map_lng" value="{map_lng}" size="20" id="input-text-map_lng" class="js-osm-lng">&emsp;
+    <label for="input-text-map_zoom">ズーム</label>&ensp;<input type="text" name="map_zoom" value="{map_zoom}" size="5" id="input-text-map_zoom" class="js-osm-zoom">
     <!-- ELSE -->
-		<label for="input-text-map_lat">緯度</label> <input type="text" name="map_lat" value="35.172782255170084" size="20" id="input-text-map_lat" class="js-osm-lat">
-		<label for="input-text-map_lng">経度</label> <input type="text" name="map_lng" value="136.88741683959964" size="20" id="input-text-map_lng" class="js-osm-lng">
-		<label for="input-text-map_zoom">ズーム</label> <input type="text" name="map_zoom" value="8" size="5" id="input-text-map_zoom" class="js-osm-zoom">
+    <label for="input-text-map_lat">緯度</label>&ensp;<input type="text" name="map_lat" value="35.172782255170084" size="20" id="input-text-map_lat" class="js-osm-lat">&emsp;
+    <label for="input-text-map_lng">経度</label>&ensp;<input type="text" name="map_lng" value="136.88741683959964" size="20" id="input-text-map_lng" class="js-osm-lng">&emsp;
+    <label for="input-text-map_zoom">ズーム</label>&ensp;<input type="text" name="map_zoom" value="8" size="5" id="input-text-map_zoom" class="js-osm-zoom">
     <!-- END_IF -->
     <input type="hidden" name="field[]" value="map_lat">
-		<input type="hidden" name="field[]" value="map_lng">
-		<input type="hidden" name="field[]" value="map_zoom">
-		<input type="hidden" class="js-osm-msg">
-	</div>
-
-</div>
-
-</div>
+    <input type="hidden" name="field[]" value="map_lng">
+    <input type="hidden" name="field[]" value="map_zoom">
+    <input type="hidden" class="js-osm-msg">
+  </div>
+</fieldset>

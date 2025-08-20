@@ -6,7 +6,7 @@
   </div>
   <div class="detail-panel-group">
     <dt>賃料</dt>
-    <dd><!-- BEGIN price:veil -->{price}[number_format]円<!-- END price:veil --></dd>
+    <dd><!-- BEGIN price:veil -->{price}[number_format]円/月<!-- END price:veil --></dd>
   </div>
   <div class="detail-panel-group">
     <dt>間取り</dt>
@@ -32,13 +32,13 @@
   </div>
   <div class="detail-panel-group">
     <dt>アクセス</dt>
-    <dd>{station}より徒歩{toho}分</dd>
+    <dd>{station}<!-- BEGIN_IF [{station}/nem/_and_/{toho}/nem] -->より徒歩{toho}分<!-- END_IF --></dd>
   </div>
 </dl>
 <!-- END realestate-detail:veil -->
 
 <!-- BEGIN map:veil -->
-<div class="realestate-map realestate-map-entry" style="margin-bottom:20px">
+<div class="realestate-map-entry" style="margin-bottom:20px">
   <div class="js-open-street-map" data-lat="{map_lat}" data-lng="{map_lng}" data-zoom="{map_zoom}" style="height: 300px;"></div>
 </div>
 <!-- END map:veil -->
