@@ -1,17 +1,18 @@
-<!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
+<!-- BEGIN_MODULE Module_Field -->
 <section id="message" class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
   <div class="acms-container">
     <div class="section-horizontal">
       @include("/include/edit/module-custom-box2.html",{"hash": "#acms_box3"})
-      <!-- BEGIN module_heading:veil -->
+
       <header class="section-horizontal-header">
         <div class="section-horizontal-header-inner">
-          <h2 class="section-horizontal-heading">{module_heading}</h2>
+          <h2 id="mf_message_top" class="section-horizontal-heading">{module_heading}</h2>
           <!-- BEGIN module_heading_small:veil -->
           <p class="section-horizontal-heading-side">{module_heading_small}[raw]</p>
           <!-- END module_heading_small:veil -->
         </div>
       </header>
+
       <!-- END module_heading:veil -->
       <div class="section-horizontal-main">
         <!-- BEGIN content-lead:veil -->
