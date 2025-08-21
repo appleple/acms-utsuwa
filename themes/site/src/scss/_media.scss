@@ -181,10 +181,6 @@
     transition: transform 0.3s ease;
     content: "";
   }
-
-  .icon-button {
-    margin: 0 0 0 0.5rem;
-  }
 }
 
 @include acms.media-breakpoint-up(sm) {

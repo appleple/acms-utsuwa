@@ -34,18 +34,18 @@
       <div class="local-nav">
         <ul class="local-nav-list">
           <li class="local-nav-item">
-            <a href="%{BLOG_URL}%{EMAIL_UPDATE_SEGMENT}" class="local-nav-link">メールアドレス変更<span class="icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
+            <a href="%{BLOG_URL}%{EMAIL_UPDATE_SEGMENT}" class="local-nav-link">メールアドレス変更<span class="acms-ms-2 icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
           </li>
           <li class="local-nav-item">
-            <a href="%{BLOG_URL}%{PASSWORD_UPDATE_SEGMENT}" class="local-nav-link">パスワード変更<span class="icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
+            <a href="%{BLOG_URL}%{PASSWORD_UPDATE_SEGMENT}" class="local-nav-link">パスワード変更<span class="acms-ms-2 icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
           </li>
           <!-- BEGIN_MODULE Member_Tfa_Check -->
           <li class="local-nav-item">
             <!-- BEGIN_IF [{step}/eq/unregistered] -->
-            <a href="%{BLOG_URL}%{TFA_UPDATE_SEGMENT}" class="local-nav-link">2段階認証設定する<span class="icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
+            <a href="%{BLOG_URL}%{TFA_UPDATE_SEGMENT}" class="local-nav-link">2段階認証設定する<span class="acms-ms-2 icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
             <!-- END_IF -->
             <!-- BEGIN_IF [{step}/eq/registered] -->
-            <a href="%{BLOG_URL}%{TFA_UPDATE_SEGMENT}" class="local-nav-link">2段階認証編集（設定済み）<span class="icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
+            <a href="%{BLOG_URL}%{TFA_UPDATE_SEGMENT}" class="local-nav-link">2段階認証編集（設定済み）<span class="acms-ms-2 icon-button">@include("/themes/site/images/icon-button.svg")</span></a>
             <!-- END_IF -->
           </li>
           <!-- END_MODULE Member_Tfa_Check -->
