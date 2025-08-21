@@ -2,14 +2,15 @@
 <section class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
   <div class="acms-container">
     @include("/include/edit/module-custom-box2.html",{"hash":"#acms_box3"})
-    <!-- BEGIN module_heading:veil -->
+
     <header class="section-vertical-header">
-      <h2 class="section-vertical-heading">{module_heading}</h2>
+      <h2 id="{{module_id}}" class="section-vertical-heading">{module_heading}</h2>
       <!-- BEGIN module_heading_small:veil -->
       <p class="section-vertical-text">{module_heading_small}</p>
       <!-- END module_heading_small:veil -->
     </header>
-    <!-- END module_heading:veil --><!-- END moduleField -->
+    <!-- END moduleField -->
+
     <div>
       <ul class="banner-list acms-m-0 acms-p-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-3<!-- END_IF -->" style="--acms-gap: var(--col-gutter);">
         <!-- BEGIN banner:loop -->

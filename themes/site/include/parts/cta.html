@@ -2,11 +2,15 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
 <section<!-- BEGIN_IF [{{cta-section-mt}}/eq/true] --> class="cta-section-mt"<!-- END_IF -->>
   <div class="acms-container js-animation">
-    <header class="section-vertical-header">
-      <h2 id="summary_blog" class="section-vertical-heading">{module_heading}</h2>
-      <p class="section-vertical-text">{module_heading_small}</p>
-    </header>
     @include("/include/edit/module-custom-box2.html")
+
+    <header class="section-vertical-header">
+      <h2 id="{{module_id}}" class="section-vertical-heading">{module_heading}</h2>
+      <!-- BEGIN module_heading_small:veil -->
+      <p class="section-vertical-text">{module_heading_small}</p>
+      <!-- END module_heading_small:veil -->
+    </header>
+
     <div class="cta-general"><!-- BEGIN cta_lead:veil -->
       <h2 class="cta-general-title">{cta_lead}[raw|nl2br]</h2><!-- END cta_lead:veil -->
       <!-- BEGIN_IF [{btn_text}/nem/_and_/{btn_url}/nem] -->
