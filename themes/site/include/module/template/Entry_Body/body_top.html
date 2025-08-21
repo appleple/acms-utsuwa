@@ -1,15 +1,8 @@
 <!-- BEGIN_MODULE Entry_Body id="{{module_id}}" --><!-- BEGIN moduleField -->
-<section class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
+<div class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
   <div class="{container_type}">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
-    <!-- BEGIN module_heading:veil -->
-    <header class="section-vertical-header">
-      <h2 class="section-vertical-heading">{module_heading}</h2>
-      <!-- BEGIN module_heading_small:veil -->
-      <p class="section-vertical-text">{module_heading_small}</p>
-      <!-- END module_heading_small:veil -->
-    </header>
-    <!-- END module_heading:veil --><!-- END moduleField -->
+
     <!-- BEGIN entry:loop -->
     <article class="entry {entry:loop.class}">
       @include("/admin/entry/title.html")
@@ -27,5 +20,5 @@
     </article>
     <!-- END entry:loop -->
   </div>
-</section>
+</div>
 <!-- END_MODULE Entry_Body -->
