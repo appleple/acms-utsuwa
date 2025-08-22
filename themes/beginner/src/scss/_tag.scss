@@ -8,24 +8,6 @@
 .tag-sm-label {
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
-
-  a {
-    &:any-link {
-      text-decoration: underline dotted;
-    }
-
-    &,
-    &:link,
-    &:visited {
-      color: inherit;
-    }
-
-    @media (hover: hover) {
-      &:any-link:hover {
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 /* Tag_Cloud
@@ -174,7 +156,8 @@
 
   a {
     &:any-link {
-      text-decoration: underline dotted;
+      text-decoration: underline dotted 1px;
+      text-underline-offset: 3px;
     }
 
     &,
@@ -210,7 +193,8 @@
 
   a {
     &:any-link {
-      text-decoration: underline dotted;
+      text-decoration: underline dotted 1px;
+      text-underline-offset: 3px;
     }
 
     &,

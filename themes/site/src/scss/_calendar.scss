@@ -207,15 +207,19 @@
 .calendar-header-title {
   margin: 0;
   padding: 0.5rem;
+  color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, heading-ss);
 
   a {
-    color: var(--color-text);
+    color: inherit;
     text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
+    @media (hover: hover) {
+      &:any-link:hover {
+        text-decoration: underline dotted 1px;
+        text-underline-offset: 3px;
+      }
     }
   }
 }
@@ -294,16 +298,47 @@
 /* サイドカラムの「年間カレンダーで見る」リンク */
 .section-side-link {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   align-items: center;
   justify-content: flex-end;
+  padding-block: 0.25rem;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    &:any-link:hover {
+      .section-side-link-icon {
+        background-color: var(--color-icon-bg-hover);
+      }
+    }
+  }
+}
+
+.section-side-link-text {
   color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
-  text-decoration: none;
-  padding-block: 0.25rem;
+  line-height: var(--line-height-base);
+}
 
-  &:hover {
-    text-decoration: underline;
+.section-side-link-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: contain;
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
   }
 }

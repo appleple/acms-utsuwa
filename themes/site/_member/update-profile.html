@@ -4,13 +4,21 @@
 <title>プロフィール変更 | %{BLOG_NAME}</title>
 @endsection
 
-@section(head-link)
+@section("head-link")
 @parent
+<!-- 編集画面用カスタムCSSを読み込み -->
+<link rel="stylesheet" href="/include/edit/custom.css">
 <style>
   input.validator-result- {
     display: block;
   }
 </style>
+@endsection
+
+@section("head-js")
+@parent
+<!-- カスタムJSを記述 -->
+<script src="/include/edit/custom.js" charset="UTF-8"></script>
 @endsection
 
 @section("page-title")

@@ -1,38 +1,52 @@
 <h3 class="acms-admin-admin-title2">プロフィール</h3>
+<p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text">※「ブログ」ブログでの「この記事を書いたスタッフ」に使用しています。</p>
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th><label for="input-text-user_title">所属・肩書き</label><i data-acms-tooltip="ユーザーの所属・肩書きです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-user_title">所属・肩書き</label>
+    </th>
     <td>
       <input type="text" name="user_title" value="{user_title}" size="30" id="input-text-user_title" />
       <input type="hidden" name="field[]" value="user_title" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-profile">自己紹介文</label><i data-acms-tooltip="ユーザーの詳細プロフィールです。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-profile">自己紹介文</label>
+    </th>
     <td>
-      <textarea name="profile" rows="5" cols="50" id="input-text-profile">{profile}</textarea>
+      <textarea style="min-height: 2lh;" class="acms-admin-form-width-full acms-admin-form-auto-size" name="profile" id="input-text-profile">{profile}</textarea>
       <input type="hidden" name="field[]" value="profile" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-user-twitter">X（旧Twitter）</label><i data-acms-tooltip="ライターのX（旧Twitter）アカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-user_account_x">X</label>
+    </th>
     <td>
-        <input type="text" name="user-twitter" value="{user-twitter}" size="20" id="input-text-user-twitter" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
-      <input type="hidden" name="field[]" value="user-twitter" />
+      <span class="acms-admin-align-middle">@</span>
+      <input type="text" name="user_account_x" value="{user_account_x}" id="input-text-user_account_x" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
+      <input type="hidden" name="field[]" value="user_account_x" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-user-facebook">Facebook</label><i data-acms-tooltip="ライターのFacebookアカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-user_account_facebook">Facebook ID</label>
+    </th>
     <td>
-        <input type="text" name="user-facebook" value="{user-facebook}" size="20" id="input-text-user-facebook" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
-      <input type="hidden" name="field[]" value="user-facebook" />
+      <span class="acms-admin-align-middle">https://www.facebook.com/</span>
+      <input type="text" name="user_account_facebook" value="{user_account_facebook}" id="input-text-user_account_facebook" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
+      <input type="hidden" name="field[]" value="user_account_facebook" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-text-user-instagram">Instagram</label><i data-acms-tooltip="ライターのInstagramアカウントを設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th>
+      <label for="input-text-user_account_instagram">Instagram</label>
+    </th>
     <td>
-        <input type="text" name="user-instagram" value="{user-instagram}" size="20" id="input-text-user-instagram" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
-      <input type="hidden" name="field[]" value="user-instagram" />
+      <span class="acms-admin-align-middle">https://www.instagram.com/</span>
+      <input type="text" name="user_account_instagram" value="{user_account_instagram}" id="input-text-user_account_instagram" placeholder="例）ablogcms" class="acms-admin-form-width-small" />
+      <input type="hidden" name="field[]" value="user_account_instagram" />
     </td>
   </tr>
 </table>

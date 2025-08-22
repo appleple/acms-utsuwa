@@ -101,104 +101,18 @@
   font-size: map.get(global.$font-scales, body-s);
 
   a {
-    color: var(--color-text-2nd);
-    text-decoration: none;
-    border-bottom: 1px dotted var(--color-gray80);
+    color: inherit;
 
-  }
-}
-
-/* ナビゲーション
------------------------------ */
-.footer-item-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1rem;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.footer-nav {
-  flex: 1 0 calc(50% - 1rem);
-  margin: 0;
-  font-size: map.get(global.$font-scales, body-s);
-}
-
-.footer-nav-group {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.footer-nav-item {
-  margin: 0 0 1rem;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
-
-  .footer-nav-item {
-    position: relative;
-    margin: 0;
-    font-weight: normal;
-
-    .footer-nav-link {
-      padding: 0.5rem 0 0.5rem 1rem;
-      color: var(--color-text-2nd);
-
-      &::before {
-        position: absolute;
-        top: calc(50% - 0.5rem);
-        left: 0;
-        display: inline-block;
-        width: 0.75rem;
-        height: 0.75rem;
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgNi42MDI3OEw0IDEwLjEwMjhMNCAzLjEwMjc4TDEwIDYuNjAyNzhaIiBmaWxsPSIjQ0FDQUNBIi8+PC9zdmc+");
-        content: "";
-      }
+    &:any-link {
+      text-decoration: underline dotted 1px;
+      text-underline-offset: 3px;
     }
-  }
-}
 
-.footer-nav-link {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  color: var(--color-text);
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  .footer-nav-item {
-    margin-top: 0.5rem;
-
-    .footer-nav-item & {
-      margin: 0 0 0.5rem;
-      padding: 0.5rem 0;
-      color: var(--color-text-2nd);
-
+    @media (hover: hover) {
       &:hover {
-        color: var(--color-text);
+        text-decoration: none;
       }
     }
-  }
-
-  &+.footer-nav-group {
-    margin-top: 0.5rem;
-
-    .footer-nav-group {
-      margin-top: 0;
-    }
-  }
-}
-
-@include acms.media-breakpoint-up(lg) {
-  .footer-item-nav {
-    gap: 2rem;
-  }
-
-  .footer-nav {
-    flex: 1 0 calc(25% - 2rem);
   }
 }
 

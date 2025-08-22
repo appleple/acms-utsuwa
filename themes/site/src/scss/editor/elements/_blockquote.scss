@@ -28,24 +28,18 @@
   }
 
   a {
-    color: var(--color-link);
-    text-decoration: none;
-    border-bottom: var(--border-width-sm) dotted var(--color-link);
-    padding-block: 2px;
-
-    &:hover {
-      border-color: transparent;
-    }
+    @include global.link-text;
 
     /* 中に画像が入っているリンクの時 */
     &:has(img) {
       display: inline-block;
-      border-bottom: 0; /* リセット用 */
+      text-decoration: none;
       transition: opacity 0.2s ease;
-      padding-block: 0; /* リセット用 */
 
-      &:hover {
-        opacity: 0.7;
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }

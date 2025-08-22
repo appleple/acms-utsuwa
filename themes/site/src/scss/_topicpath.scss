@@ -32,6 +32,8 @@
 
 .topicpath-item {
   display: inline-block;
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-s);
 }
 
 .topicpath-item:not(:last-child) {
@@ -47,17 +49,13 @@
 }
 
 .topicpath-link {
-  color: var(--color-text);
-  font-size: map.get(global.$font-scales, body-s);
+  color: inherit;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+  @media (hover: hover) {
+    &:any-link:hover {
+      text-decoration: underline dotted 1px;
+      text-underline-offset: 3px;
+    }
   }
 }
-
-
-
-
-
-

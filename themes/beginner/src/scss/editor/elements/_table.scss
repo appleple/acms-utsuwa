@@ -35,14 +35,7 @@
   }
 
   a {
-    color: var(--color-link);
-    text-decoration: none;
-    border-bottom: var(--border-width-sm) dotted var(--color-link);
-    padding-block: 2px;
-
-    &:hover {
-      border-color: transparent;
-    }
+    @include global.link-text;
   }
 
   @include acms.media-breakpoint-up(md) {

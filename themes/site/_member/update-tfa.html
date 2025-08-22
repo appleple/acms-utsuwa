@@ -4,11 +4,20 @@
 <title>2段階認証設定 | %{BLOG_NAME}</title>
 @endsection
 
-@section("page-title")
-@include("/include/parts/page-title/mypage.html")
+@section("head-link")
+@parent
+<!-- 編集画面用カスタムCSSを読み込み -->
+<link rel="stylesheet" href="/include/edit/custom.css">
 @endsection
 
-@section("admin-part")
+@section("head-js")
+@parent
+<!-- カスタムJSを記述 -->
+<script src="/include/edit/custom.js" charset="UTF-8"></script>
+@endsection
+
+@section("page-title")
+@include("/include/parts/page-title/mypage.html")
 @endsection
 
 @section(topicpath)

@@ -14,13 +14,21 @@
 <!-- END tag:loop -->
 <!-- END_SetRendered -->
 
-<!-- BEGIN_SetRendered id="user-twitter" -->
-<!-- BEGIN userField --><!-- BEGIN_IF [{user-twitter}/nem/] -->
-<meta name="twitter:creator" content="@{user-twitter}"><!-- END_IF -->
+<!-- BEGIN_SetRendered id="meta_twitter_creator" -->
+<!-- BEGIN userField -->
+<!-- BEGIN user_account_x:veil -->
+<meta name="twitter:creator" content="@{user_account_x}">
+<!-- END user_account_x:veil -->
 <!-- END userField -->
 <!-- END_SetRendered -->
+
 <!-- BEGIN_SetRendered id="user_entrylist" -->
-<p class="profile-author-link"><a href="%{BLOG_URL}uid/{entry:loop.uid}/">この人が書いた記事一覧<span class="acms-ms-2 icon-button is-sm">@include("/images/icon-button.svg")</span></a></p>
+<p class="profile-author">
+  <a class="profile-author-link" href="%{BLOG_URL}uid/{entry:loop.uid}/">
+    <span class="profile-author-link-text">この人が書いた記事一覧</span>
+    <span class="profile-author-link-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+  </a>
+</p>
 <!-- END_SetRendered -->
 
 <!-- BEGIN_MODULE Touch_Login -->

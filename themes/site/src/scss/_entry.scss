@@ -123,7 +123,8 @@
 
   a {
     &:any-link {
-      text-decoration: underline dotted;
+      text-decoration: underline dotted 1px;
+      text-underline-offset: 3px;
     }
 
     &,
