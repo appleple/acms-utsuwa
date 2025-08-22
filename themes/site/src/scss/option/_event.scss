@@ -8,22 +8,28 @@
 
 /* イベント一覧
 ------------------------------ */
-.event-card-label-box {
-  display: grid;
+
+/* 日時 と 背景付きラベルの縦積みレイアウト */
+.event-card-labels-layout {
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
 }
 
+/* イベント一覧用日付 */
 .event-card-date {
   color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
 }
 
+/* イベント一覧用時間 */
 .event-card-time {
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
 }
+
 
 /* イベント詳細
 ------------------------------ */

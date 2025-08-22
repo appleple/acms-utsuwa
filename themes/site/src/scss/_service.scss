@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　事業紹介
+------------------------------ */
+
+/* 事業一覧
+------------------------------ */
+
+/* 事業一覧用見出し */
+.service-card-title,
+.#{acms.$entry-class} .service-card-title {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
+  line-height: var(--line-height-base);
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-s);
+  }
+}
+
+/* 事例一覧用サービス名ラベル */
+.service-card-work-name,
+.#{acms.$entry-class} .service-card-work-name {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-lg);
+}

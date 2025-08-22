@@ -1,12 +1,11 @@
 <!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
 <!-- BEGIN notFound -->
-<section class="acms-entry entry">
-  <h2 class="not-found-title">Not Found</h2>
-  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+<section class="acms-entry entry-style">
+  <h2>Not Found</h2>
+  <p>お探しの記事は見つかりませんでした。</p>
 </section>
 <!-- END notFound -->
 
-<!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
 
 <!-- BEGIN_SetRendered id="user-twitter" -->
@@ -17,9 +16,12 @@
 
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
+  <!-- バージョン管理 -->
   @include("/admin/entry/revision-info.html")
+  <!-- 編集ボックス -->
   @include("/admin/entry/action.html")
-</div><!-- END_MODULE Touch_Login -->
+</div>
+<!-- END_MODULE Touch_Login -->
 
 <article class="entry entry-faq {entry:loop.class}">
 
@@ -64,15 +66,12 @@
     @include("/include/form/unit.html")
     <!-- END formBody -->
 
-
-    <div class="acms-box-medium">
-      @include("/admin/entry/action.html")
-    </div>
+    <!-- 編集ボックス -->
+    @include("/admin/entry/action.html")
   </div>
-
 </article>
+
 <!-- END entry:loop -->
-<!-- 1記事▲▲ -->
 
 <!-- ページャー -->
 @include("/include/parts/pager.html")

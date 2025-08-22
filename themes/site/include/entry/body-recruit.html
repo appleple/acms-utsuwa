@@ -1,23 +1,24 @@
 <!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
 <!-- BEGIN notFound -->
-<section class="acms-entry entry">
-  <h2 class="not-found-title">Not Found</h2>
-  <p class="result-text">お探しの記事は見つかりませんでした。</p>
+<section class="acms-entry entry-style">
+  <h2>Not Found</h2>
+  <p>お探しの記事は見つかりませんでした。</p>
 </section>
 <!-- END notFound -->
 
-<!-- 1記事▼▼ -->
 <!-- BEGIN entry:loop -->
 
 <!-- BEGIN_MODULE Touch_Login -->
 <div class="acms-form-group">
+  <!-- バージョン管理 -->
   @include("/admin/entry/revision-info.html")
+  <!-- 編集ボックス -->
   @include("/admin/entry/action.html")
-</div><!-- END_MODULE Touch_Login -->
+</div>
+<!-- END_MODULE Touch_Login -->
+
 <article class="entry {entry:loop.class}">
-    <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
-
-
+  <!-- BEGIN_IF [%{QUERY}/nlk/step/_and_/%{ROOT_TPL_NAME}/nlk/thanks] -->
   <!-- BEGIN entry:veil -->
   <div class="js-sticky-area">
     <div class="acms-entry entry-style">
@@ -47,18 +48,12 @@
   })
   <!-- END formBody -->
 
-
-  <div class="acms-box-medium">
-    @include("/admin/entry/action.html")
-  </div>
-
-
-
+  <!-- 編集ボックス -->
+  @include("/admin/entry/action.html")
 </article>
+
 <!-- END entry:loop -->
-<!-- 1記事▲▲ -->
 
 <!-- ページャー -->
 @include("/include/parts/pager.html")
-
 <!-- END_MODULE Entry_Body -->

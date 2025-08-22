@@ -3,59 +3,56 @@
   <div class="acms-container">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
 
-    <!-- BEGIN module_heading:veil -->
     <header class="section-vertical-header">
-      <h2 class="section-vertical-heading">{module_heading}</h2>
+      <h2 id="summary_recruit_top" class="section-vertical-heading">{module_heading}</h2>
       <!-- BEGIN module_heading_small:veil -->
       <p class="section-vertical-text">{module_heading_small}</p>
       <!-- END module_heading_small:veil -->
     </header>
-    <!-- END module_heading:veil --><!-- END moduleField -->
+    <!-- END moduleField -->
 
     <!-- BEGIN notFound -->
-    <p class="result-text">お探しの記事は見つかりませんでした。</p>
+    <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
     <!-- END notFound -->
 
+    <!-- BEGIN entry_list:veil -->
     <div class="section-main">
-      <ul class="card-bordered-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2">
-        <!-- BEGIN unit:loop -->
+      <ul class="acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2; list-style-type: '';">
         <!-- BEGIN entry:loop -->
-        <li class="card-bordered-item js-animation-row">
-          <div class="card-bordered">
-            <a href="{url}" class="card-bordered-link">
+        <li class="js-animation-row">
+          <a href="{url}" class="card-bordered-link">
+            <div class="card-bordered">
               <div class="card-bordered-img-wrap">
                 <!-- BEGIN_IF [{path}/nem] -->
                 <img
                   src="%{ROOT_DIR}{path}[resizeImg(800)]"
-                  alt="{alt}"
-                  class="acms-img-responsive card-bordered-img"
                   width="800"
                   height="{path}[imageRatioSizeH(800)]"
+                  alt="{path@alt}"
+                  class="card-bordered-img"
                   loading="lazy"
                   decoding="async"
                 >
                 <!-- ELSE -->
                 <img
                   src="/images/noimage.png"
-                  alt="noimage画像"
-                  class="acms-img-responsive card-bordered-img"
-                  width="800"
-                  height="450"
+                  alt=""
+                  width="1200"
+                  height="675"
+                  class="card-bordered-img"
                   loading="lazy"
                   decoding="async"
-                >
-                <!-- END_IF -->
+                ><!-- END_IF -->
               </div>
-              <div class="card-bordered-text-wrap">
-                <div class="card-bordered-text-inline">
-                  <h3 class="card-bordered-title">{title}</h3>
-                </div>
+              <div class="card-bordered-text-layout">
+                <h3 class="card-bordered-title">{title}</h3>
               </div>
-            </a>
-          </div>
-        </li><!-- END entry:loop -->
-        <!-- END unit:loop -->
+            </div>
+          </a>
+        </li>
+        <!-- END entry:loop -->
       </ul>
     </div>
+    <!-- END entry_list:veil -->
   </div>
 </section><!-- END_MODULE Entry_Summary -->

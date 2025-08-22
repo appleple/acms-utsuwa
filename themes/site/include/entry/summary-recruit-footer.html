@@ -1,56 +1,51 @@
-<!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
+<!-- BEGIN_MODULE Entry_Summary id="summary_recruit" -->
 <section class="entry-aside-section js-animation">
   <div class="container-md">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
 
-    <!-- BEGIN_IF [{{module_heading}}/nem] -->
-    <h2 class="heading-md">{{module_heading}}</h2>
-    <!-- END_IF -->
+    <h2 class="heading-md">募集中の他職種</h2>
 
     <!-- BEGIN notFound -->
-    <p class="result-text">お探しの記事は見つかりませんでした。</p>
+    <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
     <!-- END notFound -->
 
-    <ul class="card-bordered-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2">
-      <!-- BEGIN unit:loop -->
+    <!-- BEGIN entry_list:veil -->
+    <ul class="acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2; list-style-type: '';">
       <!-- BEGIN entry:loop -->
-      <li class="card-bordered-item js-animation-row">
-        <div class="card-bordered">
-          <a href="{url}" class="card-bordered-link">
+      <li class="js-animation-row">
+        <a href="{url}" class="card-bordered-link">
+          <div class="card-bordered">
             <div class="card-bordered-img-wrap">
               <!-- BEGIN_IF [{path}/nem] -->
               <img
                 src="%{ROOT_DIR}{path}[resizeImg(800)]"
-                alt="{alt}"
-                class="acms-img-responsive card-bordered-img"
                 width="800"
                 height="{path}[imageRatioSizeH(800)]"
+                alt="{path@alt}"
+                class="card-bordered-img"
                 loading="lazy"
                 decoding="async"
               >
               <!-- ELSE -->
               <img
                 src="/images/noimage.png"
-                alt="noimage画像"
-                class="acms-img-responsive card-bordered-img"
-                width="800"
-                height="450"
+                alt=""
+                width="1200"
+                height="675"
+                class="card-bordered-img"
                 loading="lazy"
                 decoding="async"
-              >
-              <!-- END_IF -->
+              ><!-- END_IF -->
             </div>
-            <div class="card-bordered-text-wrap">
-              <div class="card-bordered-text-inline">
-                <h3 class="card-bordered-title">{title}</h3>
-                <!-- <p class="card-bordered-read-more"><span class="acms-hide-visually-xs acms-hide-visually-sm acms-hide-visually-md">詳しく知る</span></p> -->
-              </div>
+            <div class="card-bordered-text-layout">
+              <h3 class="card-bordered-title">{title}</h3>
             </div>
-          </a>
-        </div>
-      </li><!-- END entry:loop -->
-      <!-- END unit:loop -->
+          </div>
+        </a>
+      </li>
+      <!-- END entry:loop -->
     </ul>
+    <!-- END entry_list:veil -->
   </div>
 </section>
 <!-- END_MODULE Entry_Summary -->

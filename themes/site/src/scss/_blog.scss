@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ブログ
+------------------------------ */
+
+/* ブログ一覧
+------------------------------ */
+
+/* ブログ一覧用見出し */
+.blog-card-title,
+.#{acms.$entry-class} .blog-card-title {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-3s);
+  line-height: var(--line-height-base);
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
+}
+
+/* ブログ一覧用概要文 */
+.blog-card-description {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-lg);
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}

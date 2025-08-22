@@ -1,0 +1,128 @@
+<div class="search-results">
+  <!-- BEGIN notFound -->
+  <p class="search-amount">検索条件に一致する記事は見つかりませんでした</p>
+  <!-- END notFound -->
+
+  <!-- BEGIN_MODULE Field_Search -->
+  <!-- BEGIN_IF [%{CATEGORY_NAME}{work_industry}{work_goal}/nem] -->
+  <!-- BEGIN\ itemsAmount:veil -->
+  <p class="search-amount">検索結果　\{itemsAmount\}件</p>
+  <!-- END\ itemsAmount:veil -->
+  <!-- END_IF -->
+
+  <!-- BEGIN_IF [%{CATEGORY_NAME}%{KEYWORD}{work_industry}{work_goal}/nem] -->
+  <dl class="search-conditions">
+    <dt>検索条件</dt>
+
+    <!-- BEGIN_IF [%{CATEGORY_NAME}/nem] -->
+    <dd>サイト種別：%{CATEGORY_NAME}</dd>
+    <!-- END_IF -->
+
+    <!-- BEGIN industry:veil -->
+    <dd>業種： <!-- BEGIN work_industry:loop --><!-- BEGIN work_industry:glue -->, <!-- END work_industry:glue -->
+      <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+      <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+      <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+      <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+      <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+      <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+      <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+      <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+      <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF --><!-- END work_industry:loop -->
+    </dd>
+    <!-- END industry:veil -->
+
+    <!-- BEGIN work_goal:veil -->
+    <dd>目的： <!-- BEGIN work_goal:loop --><!-- BEGIN work_goal:glue -->, <!-- END work_goal:glue -->
+      <!-- BEGIN_IF [{work_goal}/eq/goal1] -->売上向上 / コンバージョン改善
+      <!-- ELSE_IF [{work_goal}/eq/goal2] -->ユーザー体験 (UX) 改善
+      <!-- ELSE_IF [{work_goal}/eq/goal3] -->業務効率化 / コスト削減
+      <!-- ELSE_IF [{work_goal}/eq/goal4] -->顧客獲得 / 集客強化
+      <!-- ELSE_IF [{work_goal}/eq/goal5] -->信頼感 / ブランドイメージ向上<!-- END_IF --><!-- END work_goal:loop -->
+    </dd>
+    <!-- END work_goal:veil -->
+
+    <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+    <dd>キーワード： %{KEYWORD}</dd>
+    <!-- END_IF -->
+  </dl>
+  <!-- END_IF -->
+  <!-- END_MODULE Field_Search -->
+</div>
+
+<div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9;">
+  <!-- BEGIN entry:loop -->
+  <article aria-labelledby="card-entry{eid}">
+    <a href="{url}" class="card-link">
+      <div class="card-link-inner">
+        <div class="card">
+          <div class="card-img-wrap">
+            <!-- BEGIN_IF [{path}/nem] -->
+            <img
+              src="%{ROOT_DIR}{path}[resizeImg(800)]"
+              alt="{alt}"
+              class="card-img"
+              width="800"
+              height="{path}[imageRatioSizeH(800)]"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- ELSE -->
+            <img
+              src="/images/noimage.png"
+              alt=""
+              class="card-img"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+            >
+            <!-- END_IF -->
+            <!-- BEGIN new -->
+            <span class="label-triangle left-top" role="img" aria-label="New">@include("/images/label-new-triangle.svg")</span>
+            <!-- END new -->
+          </div>
+          <div class="card-texts-layout">
+            <!-- BEGIN labels:veil -->
+            <dl class="card-labels-layout acms-lh-1 acms-my-0">
+              <!-- BEGIN categoryField:veil -->
+              <!-- BEGIN categoryField -->
+              <div class="acms-inline-block">
+                <dt class="acms-hide-visually">カテゴリー</dt>
+                <dd class="acms-ms-0">
+                  <span class="label">{fieldCategoryName}</span>
+                </dd>
+              </div>
+              <!-- END categoryField -->
+              <!-- END categoryField:veil -->
+              <!-- BEGIN work_industry:veil -->
+              <div class="acms-inline-block">
+                <dt class="acms-hide-visually">業種</dt>
+                <dd class="acms-ms-0">
+                  <span class="label"><!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業<!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築<!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売<!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉<!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣<!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産<!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁<!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発<!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF --></span>
+                </dd>
+              </div>
+              <!-- END work_industry:veil -->
+            </dl>
+            <!-- END labels:veil -->
+            <!-- BEGIN_IF [{work_copy}/nem] -->
+            <h3 id="card-entry{eid}" class="card-title">{work_copy}</h3>
+            <p class="service-card-work-name">{title}</p>
+            <!-- ELSE -->
+            <h3 id="card-entry{eid}" class="card-title">{title}</h3>
+            <!-- END_IF -->
+            <!-- BEGIN tag_list:veil -->
+            <dl class="card-tag-list acms-lh-1 acms-my-0">
+              <dt class="acms-hide-visually">タグ</dt>
+              <!-- BEGIN tag:loop -->
+              <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
+              <!-- END tag:loop -->
+            </dl>
+            <!-- END tag_list:veil -->
+          </div>
+        </div>
+      </div>
+    </a>
+  </article>
+  <!-- END entry:loop -->
+</div>

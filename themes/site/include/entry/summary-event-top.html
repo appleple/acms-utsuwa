@@ -4,35 +4,34 @@
     <div class="section-horizontal">
       @include("/include/edit/module-custom.html")
 
-      <!-- BEGIN module_heading:veil -->
       <header class="section-horizontal-header">
         <div class="section-horizontal-header-inner">
-          <h2 class="section-horizontal-heading">{module_heading}</h2>
+          <h2 id="summary_event_top" class="section-horizontal-heading">{module_heading}</h2>
           <!-- BEGIN module_heading_small:veil -->
           <p class="section-horizontal-heading-side">{module_heading_small}[raw]</p>
           <!-- END module_heading_small:veil -->
         </div>
       </header>
-      <!-- END module_heading:veil --><!-- END moduleField -->
+      <!-- END moduleField -->
 
       <!-- BEGIN notFound -->
-      <p class="result-text">お探しの記事は見つかりませんでした。</p>
+      <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
       <!-- END notFound -->
 
+      <!-- BEGIN entry_list:veil -->
       <div class="section-horizontal-main">
-        <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
-          <!-- BEGIN unit:loop -->
+        <div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
           <!-- BEGIN entry:loop -->
-          <li class="card-item">
-            <div class="card">
-              <a href="{url}" class="card-link">
-                <div class="card-link-inner">
+          <article aria-labelledby="card-entry{eid}">
+            <a href="{url}" class="card-link">
+              <div class="card-link-inner">
+                <div class="card">
                   <div class="card-img-wrap">
                     <!-- BEGIN_IF [{path}/nem] -->
                     <img
                       src="%{ROOT_DIR}{path}[resizeImg(800)]"
                       alt="{alt}"
-                      class="acms-img-responsive card-img"
+                      class="card-img"
                       width="800"
                       height="{path}[imageRatioSizeH(800)]"
                       loading="lazy"
@@ -41,10 +40,10 @@
                     <!-- ELSE -->
                     <img
                       src="/images/noimage.png"
-                      alt="noimage画像"
-                      class="acms-img-responsive card-img"
-                      width="800"
-                      height="450"
+                      alt=""
+                      class="card-img"
+                      width="1200"
+                      height="675"
                       loading="lazy"
                       decoding="async"
                     >
@@ -56,32 +55,65 @@
                       <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
                       <!-- ELSE_IF [{event_status}/eq/closed] -->終了
                       <!-- END_IF -->
-                    </span><!-- END category:veil -->
+                    </span>
+                    <!-- END category:veil -->
                   </div>
-                  <div class="card-text-wrap">
-                    <h2 class="card-title">{title}</h2>
-                    <!-- BEGIN label_box:veil -->
-                    <div class="card-label-box">
-                      <!-- BEGIN date:veil -->
-                      <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
-                      <!-- END date:veil -->
-                      <!-- BEGIN event_pref:veil -->
-                      <p class="label">{event_pref}</p>
-                      <!-- END event_pref:veil -->
+                  <div class="card-texts-layout">
+                    <!-- BEGIN event_labels:veil -->
+                    <div class="event-card-labels-layout">
+                      <!-- BEGIN_IF [{date#}/nem] -->
+                      <dl class="acms-lh-1 acms-my-0">
+                        <dt class="acms-hide-visually">開催日時</dt>
+                        <dd class="card-date-layout acms-ms-0">
+                          <time class="event-card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                          <!-- BEGIN event_time:veil -->
+                          <span class="event-card-time">{event_time}</span>
+                          <!-- END event_time:veil -->
+                        </dd>
+                      </dl>
+                      <!-- END_IF -->
+                      <!-- BEGIN labels:veil -->
+                      <div class="card-labels-layout">
+                        <!-- BEGIN new -->
+                        <p class="label">New</p>
+                        <!-- END new -->
+                        <!-- BEGIN event_pref:veil -->
+                        <p class="label">{event_pref}</p>
+                        <!-- END event_pref:veil -->
+                        <!-- BEGIN categoryField:veil -->
+                        <!-- BEGIN categoryField -->
+                        <dl class="acms-lh-1 acms-my-0">
+                          <dt class="acms-hide-visually">カテゴリー</dt>
+                          <dd class="acms-ms-0">
+                            <span class="label">{fieldCategoryName}</span>
+                          </dd>
+                        </dl>
+                        <!-- END categoryField -->
+                        <!-- END categoryField:veil -->
+                      </div>
+                      <!-- END labels:veil -->
                     </div>
-                    <!-- END label_box:veil -->
+                    <!-- END event_labels:veil -->
+                    <h3 id="card-entry{eid}" class="card-title">{title}</h3>
                     <!-- BEGIN summary:veil -->
-                    <p class="card-text">{summary}[trim(60, '...')]</p>
+                    <p class="card-description">{summary}</p>
                     <!-- END summary:veil -->
                   </div>
                 </div>
-              </a>
-            </div>
-          </li><!-- END entry:loop -->
-          <!-- END unit:loop -->
-        </ul>
+              </div>
+            </a>
+          </article>
+          <!-- END entry:loop -->
+        </div>
       </div>
+      <!-- END entry_list:veil -->
     </div>
-    <p class="section-button is-right"><a href="%{HOME_URL}event/" class="button-read-more">イベント情報の一覧を見る <span class="icon-button"><svg xmlns="http://www.w3.org/2000/svg" width="4.711" height="7.986" viewBox="0 0 4.711 7.986"><path d="M1688.5,3560.381l3.639,3.4-3.639,3.882" transform="translate(-1688.135 -3560.016)" fill="none" stroke="#fff" stroke-width="1"></path></svg></span></a></p>
+
+    <p class="acms-mt-6 acms-mt-sm-8 acms-mt-md-12 acms-mb-0 acms-text-right">
+      <a href="%{HOME_URL}event/" class="button-read-more">
+        <span class="button-read-more-text">イベント情報の一覧を見る</span>
+        <span class="button-read-more-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+      </a>
+    </p>
   </div>
 </section><!-- END_MODULE Entry_Summary -->

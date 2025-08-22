@@ -1,20 +1,19 @@
 <!-- BEGIN_MODULE Entry_Body id="{{module_id}}" -->
 <div>
   <!-- BEGIN notFound -->
-  <section class="acms-entry entry-column">
-    <h1 class="not-found-title">Not found</h1>
+  <section class="acms-entry entry-style">
+    <h2>Not found</h2>
     <p>お探しの記事は見つかりませんでした。</p>
   </section>
   <!-- END notFound -->
 
-  <!-- 1記事▼▼ -->
   <!-- BEGIN entry:loop -->
-  <div class="acms-box-medium">
-    @include("/admin/entry/revision-info.html")
+  <!-- バージョン管理 -->
+  @include("/admin/entry/revision-info.html")
+  <!-- 編集ボックス -->
   @include("/admin/entry/action.html")
-  </div>
-  <section class="{entry:loop.class}">
 
+  <section class="{entry:loop.class}">
     <!-- BEGIN entry-column:veil -->
     <div class="acms-entry entry-style">
       <!-- BEGIN unit:veil -->
@@ -29,14 +28,9 @@
     @include("/include/form/unit.html")
     <!-- END formBody -->
 
-
-    <!-- BEGIN_MODULE Touch_Login -->
-    <div class="acms-box-medium">
-      @include("/admin/entry/action.html")
-    </div>
-    <!-- END_MODULE Touch_Login -->
+    <!-- 編集ボックス -->
+    @include("/admin/entry/action.html")
   </section>
   <!-- END entry:loop -->
-  <!-- 1記事▲▲ -->
 </div>
 <!-- END_MODULE Entry_Body -->

@@ -120,13 +120,14 @@
   }
 }
 
+/* 一覧下のもっと見るボタン */
 .button-read-more {
-  position: relative;
   display: inline-flex;
+  gap: 0.5rem;
   align-items: center;
-  color: currentcolor;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
+  height: 1.75rem;
+  margin: 0;
+  line-height: 1;
   text-decoration: none;
 
   .js .js-animation & {
@@ -138,6 +139,40 @@
     animation: fade-in 0.2s 1.2s 1 both;
   }
 
+  @media (hover: hover) {
+    &:any-link:hover {
+      .button-read-more-icon {
+        background-color: var(--color-icon-bg-hover);
+      }
+    }
+  }
+}
+
+.button-read-more-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+}
+
+.button-read-more-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+
+  img {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: contain;
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+  }
 }
 
 /* ------------------------------

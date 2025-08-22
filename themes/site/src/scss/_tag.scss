@@ -5,17 +5,8 @@
 /* ------------------------------
 　　タグ
 ------------------------------ */
-.tag-sm-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  margin-block: 0;
-  padding-inline-start: 0;
-  list-style-type: none;
-}
-
-.tag-sm-item {
-  color: var(--color-text);
+.tag-sm-label {
+  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
 
   a {

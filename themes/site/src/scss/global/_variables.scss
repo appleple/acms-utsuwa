@@ -24,6 +24,7 @@ $font-scales: (
   heading-m: $font-size * $font-scale * $font-scale * $font-scale,
   heading-s: $font-size * $font-scale * $font-scale,
   heading-ss: $font-size * $font-scale,
+  heading-3s: $font-size,
   body-m: $font-size,
   body-s: calc($font-size / $font-scale)) !default;
 /* stylelint-enable max-line-length */

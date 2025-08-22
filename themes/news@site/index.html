@@ -14,7 +14,19 @@
 <!-- ブログ毎のキーワード検索非対応 -->
 
 <!-- サマリー：記事一覧 -->
-@include("/include/entry/summary-news.html",{"module_id": "summary_date"})
+<!-- BEGIN_MODULE Entry_Summary id="summary_date" -->
+<div>
+  @include("/include/edit/module-custom.html",{"hash":"#acms_box2"})
+
+  <!-- BEGIN notFound -->
+  <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
+  <!-- END notFound -->
+
+  @include("/include/parts/media-list/list-section.html")
+
+  @include("/include/parts/media-list/pager-read-more.html")
+</div>
+<!-- END_MODULE Entry_Summary -->
 @endsection
 
 @section("side")

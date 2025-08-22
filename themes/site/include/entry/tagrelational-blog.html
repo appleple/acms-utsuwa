@@ -1,4 +1,4 @@
-<!-- BEGIN_MODULE Entry_TagRelational id="tag_relational_works" -->
+<!-- BEGIN_MODULE Entry_TagRelational id="tag_relational_blog" -->
 <section class="entry-aside-section">
   @include("/admin/module/setting.html")
 
@@ -48,6 +48,14 @@
             <div class="card-texts-layout">
               <!-- BEGIN labels:veil -->
               <dl class="card-labels-layout acms-lh-1 acms-my-0">
+                <!-- BEGIN_IF [{date#}/nem] -->
+                <div class="acms-inline-block">
+                  <dt class="acms-hide-visually">投稿日</dt>
+                  <dd class="card-date-layout acms-ms-0">
+                    <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                  </dd>
+                </div>
+                <!-- END_IF -->
                 <!-- BEGIN categoryField:veil -->
                 <!-- BEGIN categoryField -->
                 <div class="acms-inline-block">
@@ -58,40 +66,27 @@
                 </div>
                 <!-- END categoryField -->
                 <!-- END categoryField:veil -->
-                <!-- BEGIN work_industry:veil -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">業種</dt>
-                  <dd class="acms-ms-0">
-                    <span class="label">
-                      <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
-                      <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
-                      <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
-                      <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
-                      <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
-                      <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
-                      <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
-                      <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
-                      <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF -->
-                    </span>
-                  </dd>
-                </div>
-                <!-- END work_industry:veil -->
               </dl>
               <!-- END labels:veil -->
-              <!-- BEGIN_IF [{work_copy}/nem] -->
-              <h3 id="card-entry{eid}-relational" class="card-title">{work_copy}</h3>
-              <p class="service-card-work-name">{title}</p>
-              <!-- ELSE -->
-              <h3 id="card-entry{eid}-relational" class="card-title">{title}</h3>
-              <!-- END_IF -->
-              <!-- BEGIN tag_list:veil -->
-              <dl class="card-tag-list acms-lh-1 acms-my-0">
-                <dt class="acms-hide-visually">タグ</dt>
-                <!-- BEGIN tag:loop -->
-                <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
-                <!-- END tag:loop -->
-              </dl>
-              <!-- END tag_list:veil -->
+              <h3 id="card-entry{eid}-relational" class="blog-card-title">{title}</h3>
+              <!-- BEGIN summary:veil -->
+              <p class="blog-card-description">{summary}</p>
+              <!-- END summary:veil -->
+              <!-- BEGIN userField:veil -->
+              <!-- BEGIN userField -->
+              <p class="card-author">
+                <img
+                  src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(80)]"
+                  width="80"
+                  height="{fieldUserIcon}[imageRatioSizeH(80)]"
+                  class="card-author-img"
+                  alt="{fieldUserName}のアイコン"
+                  loading="lazy"
+                  decoding="async"
+                ><span>{fieldUserName}</span>
+              </p>
+              <!-- END userField -->
+              <!-- END userField:veil -->
             </div>
           </div>
         </div>

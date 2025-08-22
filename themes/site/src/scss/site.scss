@@ -51,6 +51,8 @@
 @use "header";
 
 // 追加コンテンツ
+@use "blog";
 @use "recruit";
 @use "option/works";
 @use "option/event";
+@use "service";

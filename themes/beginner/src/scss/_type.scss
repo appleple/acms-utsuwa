@@ -114,28 +114,20 @@
   display: inline-block;
 }
 
-/* リスト
+/* 記事が notFound の時のメッセージ
 ------------------------------ */
-.unordered-list {
-  margin: 0 0 var(--entry-el-margin-md) 0;
-  padding: 0 0 0 2rem;
+.text-result-amount {
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+  margin-block: 0 2rem;
+}
 
-  li {
-    position: relative;
-    clear: both;
-    margin: 0 0 0.5rem;
-    line-height: var(--line-height-base);
-    list-style: none;
-
-    &::before {
-      position: absolute;
-      top: 0.5rem;
-      left: -1.5rem;
-      width: 0.5rem;
-      height: 0.5rem;
-      background: var(--color-secondary);
-      border-radius: 50%;
-      content: "";
-    }
-  }
+/* 記事が notFound の時のメッセージ
+------------------------------ */
+.text-notfound-article {
+  margin-block: 0 1.5rem;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
 }

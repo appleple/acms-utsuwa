@@ -5,10 +5,10 @@
 /* ------------------------------
 　　ヘッドライン
 ------------------------------ */
-.headline {
+.headline-list {
   margin: 0;
   padding: 0;
-  list-style: none;
+  overflow: hidden;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 
@@ -22,103 +22,72 @@
   }
 }
 
-.headline-item {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  line-height: var(--line-height-base);
-
-  &:first-child {
-    .headline-link {
-      border-top-left-radius: var(--border-radius-lg);
-      border-top-right-radius: var(--border-radius-lg);
-    }
-  }
-
-  &:last-child {
-    border: 0;
-
-    .headline-link {
-      border-bottom-right-radius: var(--border-radius-lg);
-      border-bottom-left-radius: var(--border-radius-lg);
-    }
-  }
+.headline-list-item {
+  background-color: var(--color-white);
+  border-bottom: var(--border-width-sm) solid var(--color-gray10);
 }
 
 .headline-link {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  color: var(--color-text);
+  display: block;
   text-decoration: none;
-  background: var(--color-white);
-  border-bottom: var(--border-width-sm) solid var(--color-gray10);
 
-  .headline-item:last-child & {
-    border: 0;
-  }
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
 
-  &:hover,
-  &:visited,
-  &:active,
-  &:focus {
-    color: var(--color-text);
-  }
-
-  &:hover {
-    position: relative;
-    background: var(--color-hover-bg-2nd);
-    box-shadow: var(--box-shadow-hover);
+    &:any-link:hover {
+      background-color: var(--color-hover-bg-2nd);
+    }
   }
 }
 
-.headline-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0 0 0.75rem;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-sm);
-}
+/* 1記事 */
+.headline {
+  padding: 1rem;
 
-.headline-date {
-  margin-right: 0.5rem;
-  color: var(--color-text-2nd);
-}
-
-.headline-category {
-  margin-right: 0.75rem;
-  padding-left: 0.75rem;
-}
-
-.headline-text {
-  position: relative;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
-}
-
-.headline-badge-news {
-  display: inline-block;
-  margin: 0.25rem 0.5rem 0 0;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-ss);
-  vertical-align: text-top;
-}
-
-@include acms.media-breakpoint-up(md) {
-  .headline-link {
+  @include acms.media-breakpoint-up(md) {
     padding: 2rem;
   }
-
-  .headline-text {
-    font-size: map.get(global.$font-scales, body-m);
-  }
 }
 
-@include acms.media-breakpoint-up(lg) {
-  .headline-text {
+/* テキスト類全体の縦積みレイアウト */
+.headline-texts-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ラベルの横並びレイアウト */
+.headline-labels-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+
+/* 日付とNewラベル配置 */
+.headline-date-layout {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+/* 日付 */
+.headline-date {
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
+}
+
+/* 見出し */
+.headline-title {
+  margin-block: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-3s);
+  line-height: var(--line-height-base);
+
+  @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
   }
 }

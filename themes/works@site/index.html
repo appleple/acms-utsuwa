@@ -9,7 +9,16 @@
   <!-- 日付検索非対応 -->
 
   <!-- サマリー：事例紹介一覧、検索条件ボックス -->
-  @include("/include/entry/summary-works.html")
+  <!-- BEGIN_MODULE Entry_Summary id="summary_works" -->
+  <section>
+    @include("/include/edit/module-custom.html")
+
+    <h2 class="acms-hide-visually">事例一覧</h2>
+    @include("/include/parts/summary-works-contents.html")
+
+    @include("/include/parts/pager.html")
+  </section>
+  <!-- END_MODULE Entry_Summary -->
 
   <!-- 条件から検索する -->
   @include("/include/parts/search-works.html")

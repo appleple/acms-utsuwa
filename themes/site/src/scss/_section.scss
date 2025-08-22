@@ -259,17 +259,6 @@
   }
 }
 
-/* セクション内で使用するボタンのレイアウト */
-.section-button {
-  margin-block: 0;
-  padding-block-start: 3rem;
-  text-align: center;
-
-  &.is-right {
-    text-align: right;
-  }
-}
-
 /* 視覚的なセパレーター */
 .section-separator {
   max-width: calc(var(--container) - var(--gutter-md) * 3);

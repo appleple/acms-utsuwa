@@ -4,14 +4,12 @@
 
 /* 検索フォーム（大）
 ------------------------------ */
-
 .form-search {
   .form-search-action {
     display: flex;
     gap: 0.5rem;
     width: 100%;
     text-align: center;
-
   }
 
   .form-search-label {
@@ -66,7 +64,6 @@
 }
 
 /* 検索結果 */
-
 .search-result-heading {
   margin-bottom: 1.5rem;
 
@@ -87,15 +84,7 @@
   }
 }
 
-.result-text {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-base);
-}
-
-.result-button {
+.search-back-button-wrap {
   display: flex;
   gap: 0.5rem;
   justify-content: center;

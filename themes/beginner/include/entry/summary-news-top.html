@@ -5,11 +5,10 @@
       @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
 
       <!-- BEGIN notFound -->
-      <p class="result-text">お探しの記事は見つかりませんでした。</p>
+      <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
       <!-- END notFound -->
 
       <!-- BEGIN moduleField -->
-      <!-- BEGIN module_heading:veil -->
       <header class="section-horizontal-header">
         <div class="section-horizontal-header-inner">
           <h2 class="section-horizontal-heading">{module_heading}</h2>
@@ -18,26 +17,55 @@
           <!-- END module_heading_small:veil -->
         </div>
       </header>
-      <!-- END module_heading:veil -->
       <!-- END moduleField -->
+
+      <!-- BEGIN entry_list:veil -->
       <div class="section-horizontal-main">
-        <ul class="headline js-animation-row"><!-- BEGIN unit:loop -->
+        <ul class="headline-list js-animation-row" style="list-style-type: '';">
           <!-- BEGIN entry:loop -->
-          <li class="headline-item">
+          <li class="headline-list-item">
             <a href="{url}" class="headline-link">
-              <div class="headline-info">
-                <time class="headline-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日( {date#week} )</time><!-- BEGIN categoryField -->
-                <!-- BEGIN new --><span class="label">New</span><!-- END new -->
-                <span class="headline-category">{fieldCategoryName}</span><!-- END categoryField -->
+              <div class="headline">
+                <div class="headline-texts-layout">
+                  <dl class="headline-labels-layout acms-lh-1 acms-my-0">
+                    <!-- BEGIN_IF [{date#}/nem] -->
+                    <div class="acms-inline-block">
+                      <dt class="acms-hide-visually">投稿日</dt>
+                      <dd class="headline-date-layout acms-ms-0">
+                        <time class="headline-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                        <!-- BEGIN new -->
+                        <span class="label">New</span>
+                        <!-- END new -->
+                      </dd>
+                    </div>
+                    <!-- END_IF -->
+                    <!-- BEGIN categoryField:veil -->
+                    <!-- BEGIN categoryField -->
+                    <div class="acms-inline-block">
+                      <dt class="acms-hide-visually">カテゴリー</dt>
+                      <dd class="acms-ms-0">
+                        <span class="label">{fieldCategoryName}</span>
+                      </dd>
+                    </div>
+                    <!-- END categoryField -->
+                    <!-- END categoryField:veil -->
+                  </dl>
+                  <h3 class="headline-title">{title}</h3>
+                </div>
               </div>
-              <span class="headline-text">{title}</span>
             </a>
           </li>
           <!-- END entry:loop -->
-          <!-- END unit:loop -->
         </ul>
-        <p class="section-button is-right"><a href="{indexUrl}" class="button-read-more"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る <span class="icon-button">@include("/images/icon-button.svg")</span></a></p>
+
+        <p class="acms-mt-6 acms-mt-md-8 acms-mb-0 acms-text-right">
+          <a href="{indexUrl}" class="button-read-more">
+            <span class="button-read-more-text"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る</span>
+            <span class="button-read-more-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+          </a>
+        </p>
       </div>
+      <!-- END entry_list:veil -->
     </div>
   </div>
 </section>

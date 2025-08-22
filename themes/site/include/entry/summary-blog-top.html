@@ -3,96 +3,114 @@
   <div class="acms-container">
     @include("/include/edit/module-custom.html",{"hash":"#acms_box3"})
 
-    <!-- BEGIN module_heading:veil -->
     <header class="section-vertical-header">
-      <h2 id="summary_blog" class="section-vertical-heading">{module_heading}</h2>
+      <h2 id="summary_blog_top" class="section-vertical-heading">{module_heading}</h2>
       <!-- BEGIN module_heading_small:veil -->
       <p class="section-vertical-text">{module_heading_small}</p>
       <!-- END module_heading_small:veil -->
     </header>
-    <!-- END module_heading:veil --><!-- END moduleField -->
+    <!-- END moduleField -->
 
     <!-- BEGIN notFound -->
-    <p class="result-text">お探しの記事は見つかりませんでした。</p>
+    <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
     <!-- END notFound -->
 
-    <div>
-      <div class="card-carousel">
-        <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-4<!-- END_IF -->">
-          <!-- BEGIN unit:loop -->
-          <!-- BEGIN entry:loop -->
-          <li class="js-animation-row card-item">
-            <div class="card">
-              <a href="{url}" class="card-link">
-                <div class="card-link-inner">
-                  <div class="card-img-wrap">
-                    <!-- BEGIN_IF [{path}/nem] -->
-                    <img
-                      src="%{ROOT_DIR}{path}[resizeImg(800)]"
-                      alt="{alt}"
-                      class="acms-img-responsive card-img"
-                      width="800"
-                      height="{path}[imageRatioSizeH(800)]"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <!-- ELSE -->
-                    <img
-                      src="/images/noimage.png"
-                      alt="noimage画像"
-                      class="acms-img-responsive card-img"
-                      width="800"
-                      height="450"
-                      loading="lazy"
-                      decoding="async"
-                    >
-                    <!-- END_IF -->
-                  </div>
-                  <div class="card-text-wrap">
-                    <!-- BEGIN label_box:veil -->
-                    <div class="card-label-box">
-                      <!-- BEGIN date:veil -->
-                      <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）<!-- BEGIN new --><span class="label">New</span><!-- END new --></time>
-                      <!-- END date:veil -->
-                      <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-                      <p class="card-category acms-w-100">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
-                    </div>
-                    <!-- END label_box:veil -->
-                    <h2 class="card-title">{title}</h2>
-                    <!-- BEGIN summary:veil -->
-                    <p class="card-text">{summary}[trim(60, '...')]</p><!-- END summary:veil -->
-                    <!-- BEGIN tag:veil -->
-                    <!-- BEGIN tag:veil -->
-                    <ul class="tag-sm-list">
-                      <!-- BEGIN tag:loop -->
-                      <li class="tag-sm-item">#{name}</li>
-                      <!-- END tag:loop -->
-                    </ul>
-                    <!-- END tag:veil -->
-                    <!-- BEGIN userField -->
-                    <p class="card-author">
-                      <img
-                        src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(60,60)]"
-                        width="30"
-                        height="30"
-                        class="card-author-img"
-                        alt="{fieldUserName}のアイコン"
-                        loading="lazy"
-                        decoding="async"
-                      >{fieldUserName}
-                    </p>
-                    <!-- END userField -->
-                  </div>
+    <!-- BEGIN entry_list:veil -->
+    <div class="card-carousel">
+      <div class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-4<!-- END_IF -->">
+        <!-- BEGIN entry:loop -->
+        <article class="js-animation-row" aria-labelledby="card-entry{eid}">
+          <a href="{url}" class="card-link">
+            <div class="card-link-inner">
+              <div class="card">
+                <div class="card-img-wrap">
+                  <!-- BEGIN_IF [{path}/nem] -->
+                  <img
+                    src="%{ROOT_DIR}{path}[resizeImg(800)]"
+                    alt="{alt}"
+                    class="card-img"
+                    width="800"
+                    height="{path}[imageRatioSizeH(800)]"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <!-- ELSE -->
+                  <img
+                    src="/images/noimage.png"
+                    alt=""
+                    class="card-img"
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                  <!-- END_IF -->
                 </div>
-              </a>
+                <div class="card-texts-layout">
+                  <!-- BEGIN labels:veil -->
+                  <dl class="card-labels-layout acms-lh-1 acms-my-0">
+                    <!-- BEGIN_IF [{date#}/nem] -->
+                    <div class="acms-inline-block">
+                      <dt class="acms-hide-visually">投稿日</dt>
+                      <dd class="card-date-layout acms-ms-0">
+                        <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                        <!-- BEGIN new -->
+                        <span class="label">New</span>
+                        <!-- END new -->
+                      </dd>
+                    </div>
+                    <!-- END_IF -->
+                    <!-- BEGIN categoryField:veil -->
+                    <!-- BEGIN categoryField -->
+                    <div class="acms-inline-block">
+                      <dt class="acms-hide-visually">カテゴリー</dt>
+                      <dd class="acms-ms-0">
+                        <span class="label">{fieldCategoryName}</span>
+                      </dd>
+                    </div>
+                    <!-- END categoryField -->
+                    <!-- END categoryField:veil -->
+                  </dl>
+                  <!-- END labels:veil -->
+                  <h3 id="card-entry{eid}" class="blog-card-title">{title}</h3>
+                  <!-- BEGIN summary:veil -->
+                  <p class="blog-card-description">{summary}</p>
+                  <!-- END summary:veil -->
+                  <!-- BEGIN tag_list:veil -->
+                  <dl class="card-tag-list acms-lh-1 acms-my-0">
+                    <dt class="acms-hide-visually">タグ</dt>
+                    <!-- BEGIN tag:loop -->
+                    <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
+                    <!-- END tag:loop -->
+                  </dl>
+                  <!-- END tag_list:veil -->
+                  <!-- BEGIN userField:veil -->
+                  <!-- BEGIN userField -->
+                  <p class="card-author">
+                    <img
+                      src="%{HTTP_ARCHIVES_DIR}{fieldUserIcon}[resizeImg(80)]"
+                      width="80"
+                      height="{fieldUserIcon}[imageRatioSizeH(80)]"
+                      class="card-author-img"
+                      alt="{fieldUserName}のアイコン"
+                      loading="lazy"
+                      decoding="async"
+                    ><span>{fieldUserName}</span>
+                  </p>
+                  <!-- END userField -->
+                  <!-- END userField:veil -->
+                </div>
+              </div>
             </div>
-          </li><!-- END entry:loop -->
-          <!-- END unit:loop -->
-        </ul>
+          </a>
+        </article>
+        <!-- END entry:loop -->
       </div>
     </div>
+    <!-- END entry_list:veil -->
 
-    <p class="section-button"><a href="{indexUrl}" class="button is-width-lg is-bordered"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る</a></p>
-
+    <p class="acms-mt-8 acms-mt-md-12 acms-mb-0 acms-text-center">
+      <a href="{indexUrl}" class="button is-width-lg is-bordered"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る</a>
+    </p>
   </div>
 </section><!-- END_MODULE Entry_Summary -->

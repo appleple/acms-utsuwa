@@ -1,0 +1,72 @@
+<!-- BEGIN entry_list:veil -->
+<div class="media-list-section">
+  <div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9;">
+    <!-- BEGIN entry:loop -->
+    <article aria-labelledby="media-item-entry{eid}">
+      <a href="{url}" class="media-item-link">
+        <div class="media-item-link-inner">
+          <div class="media-item">
+            <!-- BEGIN_IF [{path}/nem] -->
+            <div class="media-item-img-warp">
+              <img
+                src="%{ROOT_DIR}{path}[resizeImg(800)]"
+                alt="{alt}"
+                class="media-item-img"
+                width="800"
+                height="{path}[imageRatioSizeH(800)]"
+                loading="lazy"
+                decoding="async"
+              >
+            </div>
+            <!-- END_IF -->
+            <div class="media-item-texts-layout">
+              <!-- BEGIN labels:veil -->
+              <dl class="card-labels-layout acms-lh-1 acms-my-0">
+                <!-- BEGIN_IF [{date#}/nem] -->
+                <div class="acms-inline-block">
+                  <dt class="acms-hide-visually">投稿日</dt>
+                  <dd class="media-item-date-layout acms-ms-0">
+                    <time class="media-item-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                    <!-- BEGIN new -->
+                    <span class="label">New</span>
+                    <!-- END new -->
+                  </dd>
+                </div>
+                <!-- END_IF -->
+                <!-- BEGIN categoryField:veil -->
+                <!-- BEGIN categoryField -->
+                <div class="acms-inline-block">
+                  <dt class="acms-hide-visually">カテゴリー</dt>
+                  <dd class="acms-ms-0">
+                    <span class="label">{fieldCategoryName}</span>
+                  </dd>
+                </div>
+                <!-- END categoryField -->
+                <!-- END categoryField:veil -->
+              </dl>
+              <!-- END labels:veil -->
+              <h3 id="media-item-entry{eid}" class="media-item-title">{title}</h3>
+              <!-- BEGIN summary:veil -->
+              <p class="media-item-description">{summary}</p>
+              <!-- END summary:veil -->
+              <!-- BEGIN tag_list:veil -->
+              <dl class="media-item-tag-list acms-lh-1 acms-my-0">
+                <dt class="acms-hide-visually">タグ</dt>
+                <!-- BEGIN tag:loop -->
+                <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
+                <!-- END tag:loop -->
+              </dl>
+              <!-- END tag_list:veil -->
+              <p class="media-item-read-more">
+                <span class="media-item-read-more-text">詳しく見る</span>
+                <span class="media-item-read-more-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </article>
+    <!-- END entry:loop -->
+  </div>
+</div>
+<!-- END entry_list:veil -->

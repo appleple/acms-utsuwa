@@ -23,31 +23,13 @@
   font-size: map.get(global.$font-scales, heading-ss);
 }
 
-.summary-side-list {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.summary-side-item {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin: 0;
-}
-
+/* サイドセクションのエントリー一覧
+----------------------------- */
 .summary-side-link {
   position: relative;
   display: block;
   width: 100%;
   text-decoration: none;
-
-  &,
-  &:link,
-  &:visited {
-    color: inherit;
-  }
 
   &::after {
     position: absolute;
@@ -66,10 +48,6 @@
 .summary-side-link-inner {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-template-rows: 1fr;
-  grid-template-columns: 6rem 1fr;
 }
 
 @media (hover: hover) {
@@ -84,42 +62,49 @@
   }
 }
 
+.summary-side {
+  display: grid;
+  grid-column-gap: 0.5rem;
+  grid-template-rows: 1fr;
+  grid-template-columns: 6rem 1fr;
+}
+
 .summary-side-img-wrap {
-  display: flex;
   grid-area: 1 / 1 / 2 / 2;
-  justify-content: center;
   width: 6rem;
   overflow: hidden;
+  aspect-ratio: var(--summary-side-img-aspect-ratio, 1 / 1);
   border-radius: var(--border-radius-md);
 }
 
 .summary-side-img {
+  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.4s 0.2s ease-out;
   will-change: transform;
-  aspect-ratio: var(--summary-side-img-aspect-ratio, 1 / 1);
 }
 
 .summary-side-title {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  color: var(--color-black);
+  color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
 }
 
 .summary-side-labels-layout {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
+  align-items: center;
   margin-bottom: 0.25rem;
 }
 

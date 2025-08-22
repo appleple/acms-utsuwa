@@ -52,7 +52,34 @@
             <!-- END_IF -->
 
             <!-- サマリー：記事一覧、キーワードの検索テキスト表示 -->
-            @include("/include/entry/summary.html",{"module_id": "summary_date"})
+            <!-- BEGIN_MODULE Entry_Summary id="summary_date" -->
+            <div>
+              @include("/include/edit/module-custom.html")
+
+              <h2 class="acms-hide-visually">記事一覧</h2>
+
+              <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+              <!-- BEGIN_IF [{itemsAmount}/nem/_and_/{itemsAmount}/neq/0] -->
+              <p class="text-result-amount">「%{KEYWORD}」の検索結果　{itemsAmount}件</p>
+              <!-- END_IF -->
+              <!-- END_IF -->
+
+              <!-- BEGIN notFound -->
+              <!-- BEGIN_IF [%{KEYWORD}/nem] -->
+              <p class="text-notfound-article">「%{KEYWORD}」に一致する記事は見つかりませんでした。</p>
+              <!-- ELSE -->
+              <p class="text-notfound-article">お探しの記事は見つかりませんでした。</p>
+              <!-- END_IF -->
+              <div class="search-back-button-wrap">
+                <a href="%{ROOT_BLOG_URL}" class="button is-lg is-bordered">ホームへ戻る</a>
+              </div>
+              <!-- END notFound -->
+
+              @include("/include/parts/media-list/list-section.html")
+
+              @include("/include/parts/media-list/pager-read-more.html")
+            </div>
+            <!-- END_MODULE Entry_Summary -->
           </div>
         </main>
       </div>

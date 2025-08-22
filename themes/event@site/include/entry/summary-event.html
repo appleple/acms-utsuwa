@@ -1,26 +1,26 @@
 <!-- BEGIN_MODULE Entry_Summary id="{{module_id}}" -->
 <!-- 「module_title_md」が指定されていた場合に、記事件数が0件でもdivが表示されてしまうためIF文を追加 -->
 <!-- BEGIN_IF [<!-- BEGIN notFound -->1<!-- END notFound -->/em] -->
-<div>
+<section>
   @include("/include/edit/module-custom.html")
 
-  <!-- BEGIN_IF [{{module_title_md}}/nem/_and_/<!-- BEGIN notFound -->1<!-- END notFound -->/em] -->
+  <!-- BEGIN_IF [{{module_title_md}}/nem] -->
   <h2 class="heading-md">{{module_title_md}}</h2>
   <!-- END_IF -->
 
-  <ul class="card-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
-    <!-- BEGIN unit:loop -->
+  <!-- BEGIN entry_list:veil -->
+  <div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9;">
     <!-- BEGIN entry:loop -->
-    <li class="card-item">
-      <div class="card">
-        <a href="{url}" class="card-link">
-          <div class="card-link-inner">
+    <article aria-labelledby="card-entry{eid}">
+      <a href="{url}" class="card-link">
+        <div class="card-link-inner">
+          <div class="card">
             <div class="card-img-wrap">
               <!-- BEGIN_IF [{path}/nem] -->
               <img
                 src="%{ROOT_DIR}{path}[resizeImg(800)]"
                 alt="{alt}"
-                class="acms-img-responsive card-img"
+                class="card-img"
                 width="800"
                 height="{path}[imageRatioSizeH(800)]"
                 loading="lazy"
@@ -29,10 +29,10 @@
               <!-- ELSE -->
               <img
                 src="/images/noimage.png"
-                alt="noimage画像"
-                class="acms-img-responsive card-img"
-                width="800"
-                height="450"
+                alt=""
+                class="card-img"
+                width="1200"
+                height="675"
                 loading="lazy"
                 decoding="async"
               >
@@ -44,43 +44,58 @@
                 <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
                 <!-- ELSE_IF [{event_status}/eq/closed] -->終了
                 <!-- END_IF -->
-              </span><!-- END category:veil -->
+              </span>
+              <!-- END category:veil -->
             </div>
-            <div class="card-text-wrap">
-              <!-- BEGIN label_box:veil -->
-              <div class="event-card-label-box">
-                <!-- BEGIN datetime:veil -->
-                <p class="acms-my-0 acms-lh-1">
-                  <!-- BEGIN date:veil -->
-                  <time class="event-card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
-                  <!-- END date:veil -->
-                  <!-- BEGIN event_time:veil -->
-                  <span class="event-card-time">{event_time}</span>
-                  <!-- END event_time:veil -->
-                </p>
-                <!-- END datetime:veil -->
-                <!-- BEGIN event_pref_category:veil -->
-                <div class="card-label-box">
+            <div class="card-texts-layout">
+              <!-- BEGIN event_labels:veil -->
+              <div class="event-card-labels-layout">
+                <!-- BEGIN_IF [{date#}/nem] -->
+                <dl class="acms-lh-1 acms-my-0">
+                  <dt class="acms-hide-visually">開催日時</dt>
+                  <dd class="card-date-layout acms-ms-0">
+                    <time class="event-card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
+                    <!-- BEGIN event_time:veil -->
+                    <span class="event-card-time">{event_time}</span>
+                    <!-- END event_time:veil -->
+                  </dd>
+                </dl>
+                <!-- END_IF -->
+                <!-- BEGIN labels:veil -->
+                <div class="card-labels-layout">
+                  <!-- BEGIN new -->
+                  <p class="label">New</p>
+                  <!-- END new -->
                   <!-- BEGIN event_pref:veil -->
                   <p class="label">{event_pref}</p>
                   <!-- END event_pref:veil -->
-                  <!-- BEGIN category:veil --><!-- BEGIN categoryField -->
-                  <p class="label">{fieldCategoryName}</p><!-- END categoryField --><!-- END category:veil -->
+                  <!-- BEGIN categoryField:veil -->
+                  <!-- BEGIN categoryField -->
+                  <dl class="acms-lh-1 acms-my-0">
+                    <dt class="acms-hide-visually">カテゴリー</dt>
+                    <dd class="acms-ms-0">
+                      <span class="label">{fieldCategoryName}</span>
+                    </dd>
+                  </dl>
+                  <!-- END categoryField -->
+                  <!-- END categoryField:veil -->
                 </div>
-                <!-- END event_pref_category:veil -->
+                <!-- END labels:veil -->
               </div>
-              <!-- END label_box:veil -->
-              <h2 class="card-title">{title}</h2>
+              <!-- END event_labels:veil -->
+              <h3 id="card-entry{eid}" class="card-title">{title}</h3>
               <!-- BEGIN summary:veil -->
-              <p class="card-text">{summary}[trim(60, '...')]</p>
+              <p class="card-description">{summary}</p>
               <!-- END summary:veil -->
             </div>
           </div>
-        </a>
-      </div>
-    </li><!-- END entry:loop -->
-    <!-- END unit:loop -->
-  </ul>
+        </div>
+      </a>
+    </article>
+    <!-- END entry:loop -->
+  </div>
+  <!-- END entry_list:veil -->
+
   @include("/include/parts/pager.html")
 </div>
 <!-- END_IF -->
