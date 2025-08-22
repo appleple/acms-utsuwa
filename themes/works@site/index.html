@@ -20,8 +20,20 @@
   </section>
   <!-- END_MODULE Entry_Summary -->
 
-  <!-- 条件から検索する -->
-  @include("/include/parts/search-works.html")
+  <!-- BEGIN_MODULE Field_Search -->
+  <div class="section-panel" id="works-search">
+    <h2 class="heading-md">条件から検索する</h2>
+    <div class="search-panel">
+      <form action="/" method="post" class="acms-form" role="search" aria-label="検索フォーム">
+        @include("/include/parts/search-panel-group.html")
+        <div class="search-panel-footer form-button-group">
+          <input type="hidden" name="bid" value="%{BID}" />
+          <input type="submit" name="ACMS_POST_2GET" value="検索する" class="button is-lg is-width-lg" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- END_MODULE Field_Search -->
 </div>
 @endsection
 
