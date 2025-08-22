@@ -596,22 +596,9 @@ a {
 }
 
 /* ------------------------------
-　　もっと見るボタン
+　　一覧遷移ボタン
 ------------------------------ */
-.read-more-pager {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-block-start: 3rem;
-}
-@media (min-width: 48rem) {
-  .read-more-pager {
-    margin-block-start: 4rem;
-  }
-}
-
-/* 一覧下のもっと見るボタン */
-.button-read-more {
+.button-view-all-articles {
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
@@ -620,29 +607,29 @@ a {
   line-height: 1;
   text-decoration: none;
 }
-.js .js-animation .button-read-more {
+.js .js-animation .button-view-all-articles {
   opacity: 0;
   will-change: transform, opacity;
 }
-.js .js-animation.is-show .button-read-more {
+.js .js-animation.is-show .button-view-all-articles {
   animation: fade-in 0.2s 1.2s 1 both;
 }
 @media (hover: hover) {
-  .button-read-more:-moz-any-link:hover .button-read-more-icon {
+  .button-view-all-articles:-moz-any-link:hover .button-view-all-articles-icon {
     background-color: var(--color-icon-bg-hover);
   }
-  .button-read-more:any-link:hover .button-read-more-icon {
+  .button-view-all-articles:any-link:hover .button-view-all-articles-icon {
     background-color: var(--color-icon-bg-hover);
   }
 }
 
-.button-read-more-text {
+.button-view-all-articles-text {
   color: var(--color-text);
   font-weight: bold;
   font-size: 1rem;
 }
 
-.button-read-more-icon {
+.button-view-all-articles-icon {
   display: grid;
   box-sizing: border-box;
   width: 1.25rem;
@@ -652,14 +639,14 @@ a {
   place-items: center;
   aspect-ratio: 1/1;
 }
-.button-read-more-icon img {
+.button-view-all-articles-icon img {
   width: 0.625rem;
   height: 0.625rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
 @media (hover: hover) {
-  .button-read-more-icon {
+  .button-view-all-articles-icon {
     transition: background-color 0.3s ease;
   }
 }
@@ -3378,6 +3365,20 @@ input::placeholder {
 @media (min-width: 48rem) {
   .media-item-read-more-icon {
     width: 1.25rem;
+  }
+}
+
+/* リスト下のもっと見るボタン
+------------------------------ */
+.media-list-pager-button-wrap {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-block-start: 3rem;
+}
+@media (min-width: 48rem) {
+  .media-list-pager-button-wrap {
+    margin-block-start: 4rem;
   }
 }
 
