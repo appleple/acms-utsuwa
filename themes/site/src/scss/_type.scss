@@ -145,6 +145,15 @@
   }
 }
 
+/* 記事検索結果の件数
+------------------------------ */
+.text-result-amount {
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+  margin-block: 0 2rem;
+}
+
 /* 記事が notFound の時のメッセージ
 ------------------------------ */
 .text-notfound-article {

@@ -4481,6 +4481,15 @@ input::placeholder {
   content: "";
 }
 
+/* サイト内検索結果の件数
+------------------------------ */
+.text-result-amount {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  margin-block: 0 2rem;
+}
+
 /* 記事が notFound の時のメッセージ
 ------------------------------ */
 .text-notfound-article {
