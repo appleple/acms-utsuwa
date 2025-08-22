@@ -329,7 +329,7 @@
   grid-column: 1;
   padding-top: 1.4px; /* 番号位置の微調整 */
   color: var(--color-text-2nd);
-  font-weight: 700;
+  font-weight: bold;
   white-space: nowrap;
   word-break: keep-all;
   content: counters(order-list, "-") ". ";
@@ -753,7 +753,7 @@
 }
 .entry-style .entry-outline-title {
   margin: 0 0 1rem;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1.25rem;
   line-height: 1.5;
 }
@@ -772,7 +772,6 @@
 .entry-style .entry-outline-list-wrap .outline-item {
   display: contents; /* li要素自体はグリッドレイアウトに影響させない */
   color: var(--color-text);
-  font-weight: 300;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -802,7 +801,7 @@
 .entry-style .entry-outline-list-wrap .outline-item a::before {
   grid-column: 1;
   color: var(--color-text-2nd);
-  font-weight: 700;
+  font-weight: bold;
   white-space: nowrap;
   word-break: keep-all;
   content: counters(outline-list, "-") ". ";
@@ -1481,226 +1480,100 @@
 /* ------------------------------
 　　ボーダー付きカード
 ------------------------------ */
-.card-bordered-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.card-bordered-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
 }
-
-.card-bordered-item {
-  display: flex;
+@media (hover: hover) {
+  .card-bordered-link .card-bordered {
+    transition: all 0.3s ease;
+  }
+  .card-bordered-link .card-bordered-img {
+    transition: 0.4s 0.2s ease-out;
+    will-change: transform;
+  }
+  .card-bordered-link:-moz-any-link:hover .card-bordered {
+    background-color: var(--color-hover-bg-2nd);
+    box-shadow: var(--box-shadow-hover);
+  }
+  .card-bordered-link:any-link:hover .card-bordered {
+    background-color: var(--color-hover-bg-2nd);
+    box-shadow: var(--box-shadow-hover);
+  }
+  .card-bordered-link:-moz-any-link:hover .card-bordered-img {
+    transform: scale(1.2);
+  }
+  .card-bordered-link:any-link:hover .card-bordered-img {
+    transform: scale(1.2);
+  }
 }
 
 .card-bordered {
-  width: 100%;
-}
-
-.card-bordered-link {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  text-decoration: none;
+  background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  color: var(--color-text);
 }
-.card-bordered-link:visited {
-  color: var(--color-text);
+.js .js-animation-row .card-bordered {
+  opacity: 0;
 }
-.card-bordered-link:hover {
-  background-color: var(--color-hover-bg-2nd);
-}
-.card-bordered-link:hover, .card-bordered-link:active, .card-bordered-link:focus {
-  color: var(--color-text);
-  text-decoration: none;
-}
-@media (hover: hover) {
-  .card-bordered-link:hover {
-    box-shadow: var(--box-shadow);
-  }
-  .card-bordered-link:hover .card-bordered-img {
-    transform: scale(1.2);
-  }
-  .card-bordered-link:hover .card-bordered-read-more::before {
-    transform: scaleX(1);
-  }
+.js .js-animation-row.is-show .card-bordered {
+  opacity: 1;
 }
 
 .card-bordered-img-wrap {
-  margin: 0;
+  width: 100%;
   overflow: hidden;
   border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+  aspect-ratio: var(--card-img-aspect-ratio, 16/9);
 }
 
 .card-bordered-img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: 0.4s 0.2s ease-out;
-  will-change: transform;
-  aspect-ratio: var(--card-img-aspect-ratio, 16/9);
 }
-.js .js-animation-row .card-bordered-img {
-  opacity: 0;
+
+.card-bordered-text-layout {
+  padding: 1rem;
 }
-.js .js-animation-row.is-show .card-bordered-img {
-  opacity: 1;
+@media (min-width: 48rem) {
+  .card-bordered-text-layout {
+    padding: 2rem;
+  }
 }
 
 .card-bordered-title,
 .entry-style .card-bordered-title {
-  margin: 0 0 1rem;
-  color: var(--color-black);
+  margin: 0;
+  color: var(--color-text);
   font-size: 1.25rem;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-base);
 }
-
-.card-bordered-read-more,
-.entry-style .card-bordered-read-more {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.card-bordered-read-more::before,
-.entry-style .card-bordered-read-more::before {
-  position: absolute;
-  right: 0;
-  bottom: -0.25rem;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-secondary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  content: "";
-}
-.js .js-animation-row .card-bordered-read-more,
-.js .js-animation-row .entry-style .card-bordered-read-more {
-  opacity: 0;
-  will-change: transform, opacity;
-}
-.js .js-animation-row.is-show .card-bordered-read-more,
-.js .js-animation-row.is-show .entry-style .card-bordered-read-more {
-  animation: fade-in 0.2s 1.2s 1 both;
-}
-
-.card-bordered-text-inline {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-}
-.card-bordered-text-inline .card-bordered-title,
-.card-bordered-text-inline .entry-style .card-bordered-title,
-.card-bordered-text-inline .card-bordered-text,
-.card-bordered-text-inline .card-bordered-read-more {
-  margin: 0;
-}
-.card-bordered-text-inline .card-bordered-read-more {
-  margin-left: auto;
-}
-
 @media (min-width: 48rem) {
-  .card-bordered-text-inline {
-    display: flex;
-    padding: 1.5rem;
-  }
   .card-bordered-title,
   .entry-style .card-bordered-title {
-    margin: 0;
     font-size: 1.5625rem;
   }
-  .card-bordered-text {
-    margin: 0 0 2rem;
-    font-size: 1rem;
-  }
-  .card-bordered-read-more,
-  .entry-style .card-bordered-read-more {
-    font-size: 1rem;
-  }
-  .card-bordered-read-more::before,
-  .entry-style .card-bordered-read-more::before {
-    bottom: -0.5rem;
-  }
-}
-@media (min-width: 64rem) {
-  .card-bordered-text-inline {
-    padding: 2rem;
-  }
-}
-.label-triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  width: 4rem;
-  height: 4rem;
-}
-.label-triangle svg .st1 {
-  fill: var(--color-icon-bg);
-}
-.label-triangle.right-top {
-  top: 0;
-  right: 0;
-  left: initial;
-  rotate: 90deg;
-}
-.label-triangle.right-bottom {
-  top: initial;
-  right: 0;
-  bottom: 0;
-  left: initial;
-  rotate: 180deg;
-}
-.label-triangle.left-bottom {
-  top: initial;
-  bottom: 0;
-  rotate: 270deg;
 }
 
 /* ------------------------------
 　　カード
 ------------------------------ */
-.card-list {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.card-item {
-  display: flex;
-}
-
-.card-item-inner {
-  display: flex;
-}
-
-.card {
-  position: relative;
-  display: flex;
-  width: 100%;
-  color: var(--color-text);
-}
-.card::before {
-  position: absolute;
-  inset: var(--card-bg-space);
-  content: "";
-}
-
+/* カード全体リンク */
 .card-link {
   position: relative;
   display: block;
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   text-decoration: none;
-}
-.card-link, .card-link:link, .card-link:visited {
-  color: inherit;
 }
 .card-link::after {
   position: absolute;
@@ -1715,29 +1588,29 @@
     transition: background-color 0.3s ease;
   }
 }
-
-.card-link-inner {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+@media (hover: hover) {
+  .card-link .card-img {
+    transition: transform 0.4s 0.2s ease-out;
+    will-change: transform;
+  }
+  .card-link .card-read-more-icon {
+    transition: background-color 0.3s ease;
+  }
 }
-
 @media (hover: hover) and (min-width: 30rem) {
   .card-link:-moz-any-link:hover {
     /*
-     * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-     * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-     * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-     */
+      * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
+      * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
+      * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
+      */
   }
   .card-link:any-link:hover {
     /*
-     * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-     * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-     * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-     */
+      * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
+      * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
+      * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
+      */
   }
   .card-link:-moz-any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
@@ -1753,20 +1626,53 @@
   .card-link:any-link:hover .card-img {
     transform: scale(1.2);
   }
-  .card-link:-moz-any-link:hover .card-read-more::before {
-    transform: scaleX(1);
+  .card-link:-moz-any-link:hover .card-read-more-icon {
+    background-color: var(--color-icon-bg-hover);
   }
-  .card-link:any-link:hover .card-read-more::before {
-    transform: scaleX(1);
+  .card-link:any-link:hover .card-read-more-icon {
+    background-color: var(--color-icon-bg-hover);
   }
 }
+
+.card-link-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* カードレイアウト */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.js .js-animation-row .card {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.js .js-animation-row.is-show .card {
+  animation: fade-in 0.2s 0.7s 1 both;
+}
+
+/* カード画像 */
 .card-img-wrap {
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: var(--border-radius-lg);
 }
-.card-img-wrap .card-category-label {
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: var(--card-img-aspect-ratio, 16/9);
+}
+
+/* 画像上に重ねて表示するラベル */
+.card-category-label {
   position: absolute;
   height: 1.25rem;
   padding: 0 0.5rem;
@@ -1775,189 +1681,24 @@
   background: var(--label-on-image-bg);
   border-radius: var(--border-radius-md);
 }
-.card-img-wrap .card-category-label.left-top {
+.card-category-label.left-top {
   top: 10px;
   left: 10px;
 }
-.card-img-wrap .card-category-label.right-top {
+.card-category-label.right-top {
   top: 10px;
   right: 10px;
 }
-.card-img-wrap .card-category-label.right-bottom {
+.card-category-label.right-bottom {
   right: 10px;
   bottom: 10px;
 }
-.card-img-wrap .card-category-label.left-bottom {
+.card-category-label.left-bottom {
   bottom: 10px;
   left: 10px;
 }
 
-.card-img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: transform 0.4s 0.2s ease-out;
-  will-change: transform;
-  aspect-ratio: var(--card-img-aspect-ratio, 16/9);
-}
-.js .js-animation-row .card-img {
-  opacity: 0;
-  will-change: opacity;
-}
-.js .js-animation-row.is-show .card-img {
-  opacity: 1;
-}
-
-.card-text-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.card-title,
-.entry-style .card-title {
-  margin: 0;
-  color: var(--color-black);
-  font-size: 1.25rem;
-  line-height: var(--line-height-base);
-}
-.js .js-animation-row .card-title,
-.js .js-animation-row .entry-style .card-title {
-  opacity: 0;
-  will-change: transform, opacity;
-}
-.js .js-animation-row.is-show .card-title,
-.js .js-animation-row.is-show .entry-style .card-title {
-  animation: fade-in 0.2s 0.7s 1 both;
-}
-
-.card-label-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-  align-items: center;
-  margin-block: 0;
-}
-
-.card-date {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin: 0;
-  color: var(--color-text-2nd);
-  font-size: 0.8rem;
-  line-height: var(--line-height-base);
-}
-
-.card-category {
-  display: inline-block;
-  margin: 0;
-  color: var(--color-text-2nd);
-  font-size: 0.8rem;
-  line-height: var(--line-height-base);
-}
-
-.card-text,
-.entry-style .card-text {
-  margin: 0;
-  color: var(--color-text-2nd);
-  font-size: 1rem;
-  line-height: var(--line-height-lg);
-}
-.card-text:not(.card-text.full,
-.entry-style .card-text.full),
-.entry-style .card-text:not(.card-text.full,
-.entry-style .card-text.full) {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-}
-.js .js-animation-row .card-text,
-.js .js-animation-row .entry-style .card-text {
-  opacity: 0;
-}
-.js .js-animation-row.is-show .card-text,
-.js .js-animation-row.is-show .entry-style .card-text {
-  animation: fade-in 0.2s 1s 1 both;
-}
-
-.card-action {
-  margin-top: auto;
-}
-
-.card-read-more,
-.entry-style .card-read-more {
-  position: relative;
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 0;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.js .js-animation-row .card-read-more,
-.js .js-animation-row .entry-style .card-read-more {
-  opacity: 0;
-  will-change: transform, opacity;
-}
-.js .js-animation-row.is-show .card-read-more,
-.js .js-animation-row.is-show .entry-style .card-read-more {
-  animation: fade-in 0.2s 1.2s 1 both;
-}
-
-.card-author {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  font-size: 0.8rem;
-}
-
-.card-author-img {
-  margin: 0 0.5rem 0 0;
-  border-radius: var(--border-radius-round);
-}
-
-@media (max-width: 47.98rem) {
-  .card-carousel {
-    margin-right: -1rem;
-    overflow-x: auto;
-  }
-  .card-carousel .card-list {
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  .card-carousel .card-item {
-    margin-bottom: 0;
-  }
-  .card-carousel .card-link {
-    width: 258px;
-  }
-}
-@media (min-width: 48rem) {
-  .card-img-wrap .card-read-more,
-  .card-img-wrap .entry-style .card-read-more {
-    font-size: 1rem;
-  }
-  .card-img-wrap .card-read-more::before,
-  .card-img-wrap .entry-style .card-read-more::before {
-    bottom: -0.5rem;
-  }
-  .card-title {
-    font-size: 1.25rem;
-  }
-  .card.is-lg .card-title {
-    font-size: 1.25rem;
-  }
-  .card-text {
-    font-size: 1rem;
-  }
-  .card-text.is-bold {
-    font-weight: bold;
-  }
-}
-/* new ラベル */
+/* 画像上に重ねて表示する new ラベル */
 .label-triangle {
   position: absolute;
   top: 0;
@@ -1988,6 +1729,169 @@
   rotate: 270deg;
 }
 
+/* テキスト類全体の縦積みレイアウト */
+.card-texts-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ラベルの横並びレイアウト */
+.card-labels-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+
+/* 日付とNewラベル配置 */
+.card-date-layout {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+/* 日付 */
+.card-date {
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+  line-height: var(--line-height-base);
+}
+
+/* 見出し */
+.card-title,
+.entry-style .card-title {
+  margin-block: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+}
+
+/* 概要文 */
+.card-description,
+.entry-style .card-description {
+  display: -webkit-box;
+  margin-block: 0;
+  overflow: hidden;
+  color: var(--color-text-2nd);
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+/* タグ横並びリスト */
+.card-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  align-items: start;
+}
+
+/* 補足ラベルリスト */
+.card-supplement-label-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  align-items: start;
+}
+
+/* 補足ラベル */
+.card-supplement-label {
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+}
+
+/* 著者 */
+.card-author {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0;
+  color: var(--color-text-2nd);
+  font-size: 0.8rem;
+  line-height: var(--line-height-base);
+}
+
+.card-author-img {
+  display: inline-block;
+  width: 2rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-round);
+}
+
+/* 詳しく見る */
+.card-read-more,
+.entry-style .card-read-more {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  height: 1.5rem;
+  margin: 0;
+  line-height: 1;
+}
+@media (min-width: 48rem) {
+  .card-read-more,
+  .entry-style .card-read-more {
+    gap: 0.5rem;
+    height: 1.75rem;
+  }
+}
+
+.card-read-more-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+@media (min-width: 48rem) {
+  .card-read-more-text {
+    font-size: 1rem;
+  }
+}
+
+.card-read-more-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1/1;
+}
+.card-read-more-icon img {
+  width: 0.625rem;
+  height: 0.625rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (min-width: 48rem) {
+  .card-read-more-icon {
+    width: 1.25rem;
+  }
+}
+
+/* 横スライダー用 */
+@media (max-width: 63.98rem) {
+  .card-carousel {
+    margin: calc(var(--card-bg-space) * -1);
+    padding: var(--card-bg-space);
+    overflow-x: auto;
+  }
+  .card-carousel .card-list {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .card-carousel .card {
+    width: 258px;
+  }
+}
 /* ------------------------------
 　　よくあるご質問
 ------------------------------ */
