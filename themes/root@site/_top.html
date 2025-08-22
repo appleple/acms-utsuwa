@@ -13,6 +13,7 @@
 @parent
 <script defer src="/js/splide.min.js"></script>
 <script defer src="/js/banner-carousel.js"></script>
+<script defer src="/js/popup-banner.js"></script>
 @endsection
 
 @section("page-title")
@@ -62,4 +63,7 @@
 <div class="section-separator"></div>
 <!-- CTA：お問い合わせ -->
 @include("/include/parts/cta.html", {"module_id":"mf_cta_contact", "cta-section-mt": "true"})
+
+<!-- 右下追従ポップアップバナー -->
+@include("/include/parts/popup-banner.html")
 @endsection

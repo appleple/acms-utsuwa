@@ -1,0 +1,38 @@
+<!-- BEGIN_MODULE Module_Field id="mf_popup_banner" -->
+<!-- BEGIN_IF [{popup_banner_display}/eq/show] -->
+<!-- BEGIN_IF [{popup_banner_img@path}/nem/_and_/{popup_banner_img_sp@path}/nem/_and_/{popup_banner_url}/nem] -->
+<div class="js-popup-banner popup-banner" data-popup-banner-name="popup-banner" data-popup-banner-minutes="10" data-popup-banner-offset="100">
+  @include("/include/edit/module-custom-left.html", {
+    "hash": "#acms_box3"
+  })
+  <button class="js-popup-banner-close popup-banner-close">
+    <div class="popup-banner-close-icon">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </div>
+  </button>
+  <a
+    href="{popup_banner_url}"
+    class="js-popup-banner-link popup-banner-link"<!-- BEGIN_IF [{popup_banner_target}/eq/blank] -->
+    rel="noopener noreferrer"
+    target="_blank"<!-- END_IF -->
+  >
+    <picture>
+      <source
+        srcset="%{HTTP_MEDIA_ARCHIVES_DIR}{popup_banner_img@path}"
+        media="(min-width: 769px)"
+      >
+      <img
+        src="%{HTTP_MEDIA_ARCHIVES_DIR}{popup_banner_img_sp@path}"
+        width="{popup_banner_img_sp@width}"
+        height="{popup_banner_img_sp@height}"
+        alt="{popup_banner_alt}"
+        class="popup-banner-img img-fluid"<!-- BEGIN style:veil -->
+        style="width: {popup_banner_width}px;"<!-- END style:veil -->
+      >
+    </picture>
+  </a>
+</div>
+<!-- END_IF -->
+<!-- END_IF -->
+<!-- END_MODULE Module_Field -->

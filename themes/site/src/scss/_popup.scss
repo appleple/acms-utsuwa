@@ -1,0 +1,102 @@
+@use "global/acms-common" as acms;
+@use "global/common" as global;
+
+/* ------------------------------
+　　ポップアップ
+------------------------------ */
+.popup-banner {
+  --popup-banner-hidden-right: -230px;
+  --popup-banner-window-space: 10px;
+
+  @include acms.media-breakpoint-up(md) {
+    --popup-banner-hidden-right: -300px;
+    --popup-banner-window-space: 24px;
+  }
+
+  position: fixed;
+  right: var(--popup-banner-hidden-right);
+  bottom: var(--popup-banner-window-space);
+  z-index: var(--zindex-fixed-contents);
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  transition: right .2s ease-in-out;
+
+  &.is-show {
+    display: flex;
+  }
+
+  &.is-animated {
+    right: var(--popup-banner-window-space);
+  }
+}
+
+.popup-banner-link {
+  z-index: 1; /* safari の img opacityによる画像はみ出し対策 */
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    .popup-banner-img {
+      transition: box-shadow 0.3s ease;
+    }
+
+    &:hover {
+      .popup-banner-img {
+        box-shadow: var(--box-shadow-hover);
+      }
+    }
+  }
+}
+
+.popup-banner-img {
+  display: block;
+  width: 100%;
+  width: 200px;
+  height: auto;
+  box-shadow: var(--box-shadow);
+}
+
+.popup-banner-close {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  padding: 0;
+  background-color: var(--color-icon-bg);
+  border-width: 0;
+  border-radius: 32px;
+  appearance: none;
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-icon-bg-hover);
+    }
+  }
+}
+
+.popup-banner-close-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+
+  span:first-child {
+    transform: rotate(-45deg);
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+}
