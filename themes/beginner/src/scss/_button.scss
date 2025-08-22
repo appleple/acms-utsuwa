@@ -28,32 +28,6 @@
     background: var(--color-primary-hover);
   }
 
-  &.is-sm {
-    display: inline-block;
-    min-width: initial;
-    margin: 0 auto;
-    padding: 0.25rem 0.5rem;
-    font-size: map.get(global.$font-scales, body-s);
-  }
-
-  &.is-lg {
-    display: inline-block;
-    min-width: 15rem;
-    margin: 0 auto;
-    padding: 0.75rem 2rem;
-
-  }
-
-  &.is-block {
-    width: 100%;
-    min-width: initial;
-  }
-
-  &.is-xl {
-    width: 100%;
-    min-width: 18rem;
-  }
-
   &.is-width-lg {
     min-width: 15rem;
     max-width: 100%;
@@ -83,19 +57,6 @@
 
     &:hover {
       background: var(--color-hover-bg);
-    }
-  }
-
-  &.is-rounded {
-    border-radius: var(--border-radius-round);
-  }
-
-  @include acms.media-breakpoint-up(md) {
-    &.is-xl {
-      width: initial;
-      min-width: 18rem;
-      padding: 1rem;
-      font-size: map.get(global.$font-scales, heading-s);
     }
   }
 
@@ -190,16 +151,6 @@
       a:any-link:hover & {
         background-color: var(--color-icon-bg-hover);
       }
-    }
-  }
-
-  /* サイズ */
-  &.is-sm {
-    width: 1rem;
-    height: 1rem;
-
-    svg {
-      padding: 4px;
     }
   }
 

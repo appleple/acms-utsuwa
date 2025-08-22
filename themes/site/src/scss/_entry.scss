@@ -182,7 +182,7 @@
 .entry-header-visual-btn-wrap {
   margin: 0;
 
-  a {
+  .button {
     width: 100%;
   }
 }
@@ -227,7 +227,7 @@
   .entry-header-visual-btn-wrap {
     margin: 0;
 
-    a {
+    .button {
       width: 15rem;
     }
   }
@@ -256,71 +256,6 @@
     margin-block-start: 4rem;
   }
 }
-
-/*
-　SNSシェアボタン
------------------------------- */
-
-.share-item {
-  margin: 0 0.5rem;
-
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 3rem;
-    height: auto;
-    padding: 0.5rem;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(0.8);
-    }
-  }
-
-  .share-list.is-sm & {
-    margin: 0 0.5rem;
-  }
-
-  .share-list.is-sm & a {
-    width: auto;
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .sns-share-wrapper {
-    flex-direction: row;
-    align-items: center;
-    margin: 0 0 3rem;
-    padding: 3rem 1.5rem;
-    border-radius: var(--border-radius-xl);
-  }
-
-  .sns-share-title {
-    margin: 0 2.5rem 0 0;
-    font-size: map.get(global.$font-scales, heading-ss);
-  }
-
-  .share-item {
-    a {
-      width: 3rem;
-    }
-
-    .share-list.is-sm & a {
-      width: auto;
-    }
-  }
-}
-
-/*
-　プロフィール
------------------------------- */
-.profile-heading {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
 
 /*
 　FAQ
@@ -381,11 +316,13 @@
 　シェア用モーダルウインドウ
 ------------------------------ */
 .entry-share-modal {
-  .share-button {
+  .button {
     display: inline-flex;
     gap: 0.375rem;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
+    padding-inline: 1rem;
   }
 
   .share-icon {

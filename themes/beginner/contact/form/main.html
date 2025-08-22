@@ -18,7 +18,7 @@
         <input type="hidden" name="error" value="reapply" />
 
         <input type="hidden" name="id" value="contactForm" />
-        <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg" />
+        <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-width-lg" />
       </div>
     </form>
   </section><!-- END_MODULE Touch_NotEdit -->
@@ -37,7 +37,7 @@
       <input type="hidden" name="step" value="confirm" />
       <input type="hidden" name="error" value="reapply" />
       <input type="hidden" name="id" value="contactForm" />
-      <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-lg is-width-lg" />
+      <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-width-lg" />
     </div>
   </form>
 </div>
@@ -65,7 +65,7 @@
       <input type="hidden" name="step" value="result" />
       <input type="hidden" name="takeover" value="{takeover}" />
       <input type="hidden" name="id" value="contactForm" />
-      <input type="submit" name="ACMS_POST_Form_Submit" value="送信する" class="button is-lg is-width-lg" />
+      <input type="submit" name="ACMS_POST_Form_Submit" value="送信する" class="button is-width-lg" />
     </form>
   </div>
 </div>
@@ -82,7 +82,7 @@
   @include("/contact/form/confirm.html")
 
   <div class="form-button-group">
-    <p class="form-message-back"><a href="%{BASE_URL}" class="button is-lg is-width-lg is-bordered">トップページに戻る</a></p>
+    <p class="form-message-back"><a href="%{BASE_URL}" class="button is-width-lg is-bordered">トップページに戻る</a></p>
   </div>
 </div>
 <!-- END step#result -->
@@ -94,7 +94,7 @@
     <div class="form-message-group">
       <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
       <div class="form-button-group">
-        <p class="form-message-back"><a href="%{BASE_URL}contact/" class="button is-lg is-width-lg is-bordered">お問い合わせフォームに戻る</a></p>
+        <p class="form-message-back"><a href="%{BASE_URL}contact/" class="button is-width-lg is-bordered">お問い合わせフォームに戻る</a></p>
       </div>
     </div>
   </section>
@@ -107,7 +107,9 @@
     <h2 class="heading-lg">連続投稿は禁止されています。</h2>
     <div class="form-message-group">
       <p class="form-message-text">入力された内容は正常に送信されました。<br>送信内容は、登録されたメールアドレス宛にお送りした確認メールからご確認ください。</p>
-      <p class="form-message-back"><a href="%{BASE_URL}" class="button is-lg is-width-lg is-bordered">トップページに戻る</a></p>
+      <p class="form-message-back">
+        <a href="%{BASE_URL}" class="button is-width-lg is-bordered">トップページに戻る</a>
+      </p>
     </div>
   </section>
 </div>
