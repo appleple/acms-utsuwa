@@ -68,7 +68,7 @@
       @include("/_member/parts/sns-message.html")
 
       <h3 class="acms-admin-admin-title2">基本情報</h3>
-      <table class="acms-admin-table-admin-edit" style="padding: 20px 0;">
+      <table class="acms-admin-table-admin-edit acms-admin-py-5">
         <tbody>
           <tr>
             <th><label for="input-text-name">名前</label></th>
@@ -150,10 +150,21 @@
         </tbody>
       </table>
 
-      @include("/_member/parts/profile/geo.html")
-      @include("/admin/user/field.html")
+      <div class="_admin-user-field">
+        @include("/_member/parts/profile/geo.html")
+        @include("/admin/user/field.html")
+      </div>
+      <style>
+        ._admin-user-field {
+          margin-top: 32px;
+        }
+        ._admin-user-field table {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      </style>
 
-      <div class="read-more-pager">
+      <div class="acms-d-flex acms-justify-content-center acms-mt-8 acms-mt-md-12">
         <button
           type="submit"
           class="button is-lg is-width-lg"

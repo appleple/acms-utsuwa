@@ -106,22 +106,9 @@
 }
 
 /* ------------------------------
-　　もっと見るボタン
+　　一覧遷移ボタン
 ------------------------------ */
-
-.read-more-pager {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-block-start: 3rem;
-
-  @include acms.media-breakpoint-up(md) {
-    margin-block-start: 4rem;
-  }
-}
-
-/* 一覧下のもっと見るボタン */
-.button-read-more {
+.button-view-all-articles {
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
@@ -141,20 +128,20 @@
 
   @media (hover: hover) {
     &:any-link:hover {
-      .button-read-more-icon {
+      .button-view-all-articles-icon {
         background-color: var(--color-icon-bg-hover);
       }
     }
   }
 }
 
-.button-read-more-text {
+.button-view-all-articles-text {
   color: var(--color-text);
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
 }
 
-.button-read-more-icon {
+.button-view-all-articles-icon {
   display: grid;
   box-sizing: border-box;
   width: 1.25rem;
