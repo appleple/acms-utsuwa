@@ -94,7 +94,7 @@
     <tr>
       <th>住所</th>
       <td>
-        <textarea style="min-height: 2lh;" name="event_address" class="acms-admin-form-width-full acms-admin-form-auto-size" placeholder="例）〒000-0000 〇〇市〇〇町〇番地 〇〇ビル〇F">{event_address}</textarea>
+        <textarea name="event_address" class="acms-admin-form-width-full acms-admin-form-auto-size" placeholder="例）〒000-0000 〇〇市〇〇町〇番地 〇〇ビル〇F" style="--acms-admin-form-control-min-height: 2lh;">{event_address}</textarea>
         <input type="hidden" name="field[]" value="event_address" />
       </td>
     </tr>
@@ -102,7 +102,7 @@
       <th>Googleマップの埋め込み</th>
       <td>
         <p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text">※<a href="https://www.google.co.jp/maps/" target="_blank" rel="noopener noreferrer">Googleマップ</a> で会場を検索し、「共有 > 地図を埋め込む」から取得したHTMLコードを貼り付けてください。</p>
-        <textarea style="min-height: 3lh;" name="event_googlemap_iframe" class="acms-admin-form-width-full acms-admin-form-auto-size acms-admin-text-break" placeholder='例）&lt;iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;'>{event_googlemap_iframe}</textarea>
+        <textarea name="event_googlemap_iframe" class="acms-admin-form-width-full acms-admin-form-auto-size acms-admin-text-break" placeholder='例）&lt;iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;' style="--acms-admin-form-control-min-height: 3lh;">{event_googlemap_iframe}</textarea>
         <input type="hidden" name="field[]" value="event_googlemap_iframe" />
       </td>
     </tr>
@@ -124,7 +124,7 @@
       <th>申し込みボタン誘導文</th>
       <td class="admin-field-lite-editor-wrap">
         <p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text">例）下記の「申し込みはこちら」ボタン、またはお電話でお申し込みください。</p>
-        <textarea style="min-height: 2lh;" name="event_entry" class="acms-admin-form-width-full acms-admin-form-auto-size js-lite-editor-field">{event_entry}</textarea>
+        <textarea name="event_entry" class="acms-admin-form-width-full js-lite-editor-field">{event_entry}</textarea>
         <input type="hidden" name="field[]" value="event_entry" />
       </td>
     </tr>
