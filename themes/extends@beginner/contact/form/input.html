@@ -17,7 +17,7 @@
         <input type="hidden" name="subject:v#required" id="subject-v-required" />
         <div role="alert" aria-live="assertive">
           <div data-validator-label="subject-v-required" class="validator-result-{subject:v#required}">
-            <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>ご用件を選択してください。</p>
+            <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">ご用件を選択してください。</span></p>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
 
         <div role="alert" aria-live="assertive">
           <div data-validator-label="inquiry-v-required" class="validator-result-{inquiry:v#required}">
-            <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>お問い合わせ内容を入力してください。</p>
+            <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お問い合わせ内容を入力してください。</span></p>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
 
         <div role="alert" aria-live="assertive">
           <div data-validator-label="name-v-required" class="validator-result-{name:v#required}">
-            <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>お名前を入力してください。</p>
+            <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お名前を入力してください。</span></p>
           </div>
         </div>
       </div>
@@ -85,11 +85,11 @@
         <p class="form-helper-text">ご記入いただいたメールアドレスに返信します</p>
 
         <div data-validator-label="email-v-required" class="validator-result-{email:v#required}">
-          <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>メールアドレスを入力してください。</p>
+          <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">メールアドレスを入力してください。</span></p>
         </div>
         <div role="alert" aria-live="assertive">
           <div data-validator-label="email-v-email" class="validator-result-{email:v#email}">
-            <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>正しいメールアドレスを入力してください。</p>
+            <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">正しいメールアドレスを入力してください。</span></p>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
       <div class="form-control">
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
         <input type="hidden" class="p-country-name" value="Japan">
-        <div class="acms-cssgrid" style="--acms-gap: var(--gutter-sm);">
+        <div class="acms-cssgrid" style="--acms-gap: var(--gutter-sm) 1.5rem;">
           <div class="acms-g-col-12 acms-g-col-md-6">
             <div>
               <label for="postal-code" class="acms-hide-visually">郵便番号</label>
@@ -118,7 +118,7 @@
             </div>
             <div role="alert" aria-live="assertive">
               <div data-validator-label="postal-code-v-required" class="validator-result-{postal-code:v#required}">
-                <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>郵便番号を入力してください。</p>
+                <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">郵便番号を入力してください。</span></p>
               </div>
             </div>
 
@@ -183,7 +183,7 @@
             <input type="hidden" name="field[]" value="address-level1">
             <div role="alert" aria-live="assertive">
               <div data-validator-label="address-level1-v-required" class="validator-result-{address-level1:v#required}">
-                <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>都道府県を選択してください。</p>
+                <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">都道府県を選択してください。</span></p>
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@
             <input id="address1" type="text" name="address1" autocomplete="address-level2 address-line1" value="{address1}" size="12" class="p-locality p-street-address p-extended-address acms-form-width-full" placeholder="例）〇〇〇市〇〇区〇丁目〇〇-〇" data-validator="address1">
             <input type="hidden" name="field[]" value="address1">
             <div data-validator-label="address1-v-required" class="validator-result-{address1:v#required}">
-              <p class="form-error-text"><span class="error-icon" aria-hidden="true">@include("/images/icon-circle-alert.svg")</span>市区町村、番地を入力してください。</p>
+              <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">市区町村、番地を入力してください。</span></p>
             </div>
           </div>
           <div class="acms-g-col-12">

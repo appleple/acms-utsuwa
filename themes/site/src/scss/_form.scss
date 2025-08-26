@@ -539,29 +539,35 @@ input::placeholder {
   .form-error-text {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.25rem;
     margin: 1rem 0 0;
     color: var(--color-error);
     font-size: map.get(global.$font-scales, body-s);
+    line-height: var(--line-height-base);
 
-    .form-helper-text+.validator-result-0 & {
+    .form-helper-text + .validator-result-0 & {
       margin-top: 0;
     }
+  }
 
-    .error-icon {
-      display: inline-block;
-      flex: 0 0 1.25rem;
-      box-sizing: border-box;
-      padding: 1.5px;
+  .form-error-text-icon {
+    display: inline-block;
+    flex: 0 0 1.25rem;
+    box-sizing: border-box;
 
-      svg {
-        width: 100%;
-        height: auto;
+    svg {
+      width: 100%;
+      height: auto;
+      color: inherit;
 
-        path {
-          stroke: var(--color-error);
-        }
+      path {
+        stroke: currentcolor;
       }
     }
+  }
+
+  .form-error-text-inner {
+    padding-top: 1px; /* 横並びアイコンとの位置揃え用 */
   }
 
   .transaction-notice-,
