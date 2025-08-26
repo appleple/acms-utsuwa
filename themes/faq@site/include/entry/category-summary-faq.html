@@ -14,9 +14,7 @@
               hx-trigger="click" hx-get="{url}/tpl/include/htmx/entry/body-faq.html" hx-target="#jsIncludeTo{eid}cat" hx-swap="innerHTML">
               <span class="faq-icon">Q</span>
               <span class="faq-title">{title}</span>
-              <span class="toggle-icon" aria-hidden="false">
-              <img src="/images/icon-chevron-down.svg" alt="">
-              </span>
+              <span class="toggle-icon" aria-hidden="true">@include("/images/icon/chevron-down.svg")</span>
             </a>
           </h3>
           <div id="answer{eid}" class="toggle-body js-toggle-body" aria-hidden="true">

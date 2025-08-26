@@ -1,16 +1,19 @@
 <!-- BEGIN_MODULE Links id="{{module_id}}" -->
 <div class="local-nav-wrap">
-	<div class="local-nav-inner">
-		<div class="local-nav">
-			@include("/admin/module/setting.html")
-			<ul class="local-nav-list">
-				<!-- BEGIN loop -->
-				<li class="local-nav-item">
-          <!-- direction: is-down, is-left -->
-					<a href="{url}" class="local-nav-link">{name}<span class="acms-ms-2 icon-button {{direction}}">@include("/images/icon-button.svg")</span></a>
-				</li><!-- END loop -->
-			</ul>
-		</div>
-	</div>
+  <div class="local-nav-inner">
+    <div class="local-nav">
+      @include("/admin/module/setting.html")
+      <ul class="local-nav-list">
+        <!-- BEGIN loop -->
+        <li class="local-nav-item">
+          <a href="{url}" class="local-nav-link">
+            <span class="local-nav-link-text">{name}</span>
+            <!-- direction: is-down, is-left -->
+            <span class="local-nav-link-icon {{direction}}" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a>
+        </li>
+        <!-- END loop -->
+      </ul>
+    </div>
+  </div>
 </div>
 <!-- END_MODULE Links -->

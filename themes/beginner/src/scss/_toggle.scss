@@ -21,29 +21,34 @@
 }
 
 .toggle-icon {
+  width: 1.75rem;
+  height: auto;
   margin-left: auto;
+  color: var(--color-text);
   line-height: 1;
   transition: .3s ease;
+  aspect-ratio: 1 / 1;
 
   .toggle-button.is-active & {
     transform: rotate(180deg);
   }
 
-  img {
-    width: 1.75rem;
-    height: 1.75rem;
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    color: inherit;
+
+    path {
+      stroke: currentcolor;
+    }
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    width: 2rem;
   }
 }
 
 .toggle-body {
   display: none;
-}
-
-@include acms.media-breakpoint-up(md) {
-  .toggle-icon {
-    img {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
 }

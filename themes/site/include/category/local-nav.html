@@ -7,8 +7,10 @@
         <!-- BEGIN category:loop --><!-- BEGIN ul#front -->
         <!-- END ul#front --><!-- BEGIN li#front -->
         <li class="local-nav-item"><!-- END li#front --><!-- BEGIN category:veil -->
-          <a href="#{ccd}" class="local-nav-link">{name}<span class="acms-ms-2 icon-button {{direction}}">@include("/themes/site/images/icon-button.svg")</span></a>
-          <!-- END category:veil --><!-- BEGIN li#rear -->
+          <a href="#{ccd}" class="local-nav-link">
+            <span class="local-nav-link-text">{name}</span>
+            <!-- direction: is-down, is-left -->
+            <span class="local-nav-link-icon {{direction}}" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a><!-- END category:veil --><!-- BEGIN li#rear -->
         </li><!-- END li#rear --><!-- BEGIN ul#rear -->
         <!-- END ul#rear --><!-- END category:loop -->
       </ul>

@@ -19,6 +19,10 @@
     background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
     content: "";
   }
+
+  @include acms.media-breakpoint-up(md) {
+    margin-bottom: 3rem;
+  }
 }
 
 .local-nav-inner {
@@ -45,20 +49,57 @@
 
 .local-nav-link {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  color: var(--color-text);
   text-decoration: none;
 
-  &:hover,
-  &:visited,
-  &:active {
-    color: var(--color-text);
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      .local-nav-link-icon {
+        background-color: var(--color-icon-bg-hover);
+      }
+    }
   }
 }
 
-@include acms.media-breakpoint-up(md) {
-  .local-nav-wrap {
-    margin-bottom: 3rem;
+.local-nav-link-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+
+  /* 方向 */
+  &.is-left {
+    rotate: 180deg;
   }
+
+  &.is-down {
+    rotate: 90deg;
+  }
+
+  svg {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: contain;
+    color: var(--color-white);
+
+    path {
+      stroke: currentcolor;
+    }
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+  }
+}
+
+.local-nav-link-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
 }

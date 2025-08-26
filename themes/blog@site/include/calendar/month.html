@@ -1,14 +1,14 @@
 <!-- BEGIN_MODULE Calendar_Month id="{{module_id}}" -->
 <section class="section-side" id="calendar">
+  @include("/include/edit/module-custom-left.html")
+
   <header class="section-side-header">
     <h2 class="section-side-title">{year}年{month}月</h2>
-    <div class="calendar-next-prev-button">
-      <a href="{url}" hx-target="#calendar" hx-get="{prevUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span class="icon-button is-left">@include("/images/icon-button.svg")</span></a>
-      <a href="{url}" hx-target="#calendar" hx-get="{nextUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span class="icon-button">@include("/images/icon-button.svg")</span></a>
+    <div class="calendar-next-prev-button-layout">
+      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{prevUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span></a>
+      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{nextUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a>
     </div>
   </header>
-
-  @include("/admin/module/setting.html")
 
   <table class="calendar">
     <thead>
@@ -38,7 +38,7 @@
   </table>
   <a href="%{BASE_URL}calendar.html" class="section-side-link">
     <span class="section-side-link-text">年間カレンダーで見る</span>
-    <span class="section-side-link-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+    <span class="section-side-link-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span>
   </a>
 </section>
 <!-- END_MODULE Calendar_Month -->

@@ -77,7 +77,7 @@
   }
 }
 
-/* 　年間カレンダーレイアウト
+/* 年間カレンダーレイアウト
 ------------------------------ */
 .calendar-group {
   display: grid;
@@ -120,7 +120,7 @@
   }
 }
 
-/* 　イベントカレンダー
+/* イベントカレンダー
 ------------------------------ */
 
 .event-calendar-table {
@@ -198,7 +198,7 @@
 }
 
 
-/* 　カレンダー ヘッダー
+/* カレンダー ヘッダー
 ------------------------------ */
 .calendar-header {
   margin: 0 0 0.5rem;
@@ -224,14 +224,20 @@
   }
 }
 
-/* 　カレンダー ページネーション
+/* カレンダー ページネーション
 ------------------------------ */
+.calendar-pagination {
+  @include acms.media-breakpoint-up(md) {
+    display: inline-flex;
+    padding: 0 4.5rem;
+  }
+}
+
 .calendar-pagination-wrap {
   position: relative;
   padding: 1rem 1rem 2rem;
   text-align: center;
 }
-
 
 .calendar-pagination-title {
   position: relative;
@@ -241,6 +247,14 @@
 
   &.is-return {
     transform: translateY(100%);
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-m);
+
+    &.is-return {
+      transform: translateY(0);
+    }
   }
 }
 
@@ -267,35 +281,98 @@
 
 .calendar-pagination-link {
   display: flex;
+  gap: 0.25rem;
   align-items: center;
-  padding: 0.5rem 0;
-  color: var(--color-text);
-  font-weight: bold;
+  padding-block: 0.5rem;
+  line-height: 1;
   text-decoration: none;
-}
 
-@include acms.media-breakpoint-up(md) {
-  .calendar-pagination {
-    display: inline-flex;
-    padding: 0 4.5rem;
-  }
-
-  .calendar-pagination-title {
-    font-size: map.get(global.$font-scales, heading-m);
-
-    &.is-return {
-      transform: translateY(0);
+  @media (hover: hover) {
+    &:any-link:hover {
+      .calendar-pagination-link-icon {
+        background-color: var(--color-icon-bg-hover);
+      }
     }
   }
+
+  @include acms.media-breakpoint-up(sm) {
+    gap: 0.5rem;
+  }
 }
 
-/* サイドカラムのカレンダー月送りボタン */
-.calendar-next-prev-button {
+.calendar-pagination-link-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+}
+
+.calendar-pagination-link-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+
+  svg {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: contain;
+    color: var(--color-white);
+
+    path {
+      stroke: currentcolor;
+    }
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* サイドカラムのカレンダー月送りボタン
+------------------------------ */
+.calendar-next-prev-button-layout {
   display: flex;
   gap: 1rem;
 }
 
-/* サイドカラムの「年間カレンダーで見る」リンク */
+.calendar-next-prev-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-white);
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+
+  svg {
+    width: 0.657rem;
+    height: 0.657rem;
+    object-fit: contain;
+    color: inherit;
+
+    path {
+      stroke: currentcolor;
+    }
+  }
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-icon-bg-hover);
+    }
+  }
+}
+
+/* サイドカラムの「年間カレンダーで見る」リンク
+------------------------------ */
 .section-side-link {
   display: flex;
   gap: 0.25rem;
@@ -332,10 +409,15 @@
   place-items: center;
   aspect-ratio: 1 / 1;
 
-  img {
+  svg {
     width: 0.625rem;
     height: 0.625rem;
     object-fit: contain;
+    color: var(--color-white);
+
+    path {
+      stroke: currentcolor;
+    }
   }
 
   @media (hover: hover) {

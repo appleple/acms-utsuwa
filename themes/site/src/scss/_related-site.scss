@@ -25,10 +25,11 @@
     svg {
       width: 1rem;
       height: 1rem;
+      color: var(--color-gray80);
 
       path {
         fill: transparent;
-        stroke: var(--color-gray80);
+        stroke: currentcolor;
       }
 
       .splide__arrow--prev & {

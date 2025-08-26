@@ -61,7 +61,7 @@
         <p class="acms-mt-6 acms-mt-md-8 acms-mb-0 acms-text-right">
           <a href="{indexUrl}" class="button-view-all-articles">
             <span class="button-view-all-articles-text"><!-- BEGIN_IF [{indexCategoryName}/nem] -->{indexCategoryName}<!-- ELSE -->{indexBlogName}<!-- END_IF -->の一覧を見る</span>
-            <span class="button-view-all-articles-icon"><img src="/images/icon-read-more.svg" alt="" width="10" height="11" loading="lazy" decoding="async"></span>
+            <span class="button-view-all-articles-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span>
           </a>
         </p>
       </div>

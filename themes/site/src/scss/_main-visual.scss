@@ -103,29 +103,34 @@
     align-items: center;
     text-decoration: none;
 
+    &,
     &:link,
-    &:visited,
-    &:active,
-    &:focus {
+    &:visited {
       color: var(--color-white);
     }
 
-    &:hover {
-      opacity: 0.6;
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      object-fit: contain;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
     }
 
-    &::after {
-      display: inline-block;
-      width: 0.5rem;
-      height: 1rem;
-      margin: 0.25rem 0 0;
-      background-image: url(#{global.$root-theme-img + 'icon-button.svg' });
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transform: rotate(90deg);
-      content: "";
+    @media (hover: hover) {
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
+  }
+
+  .main-visual-scroll-link-icon {
+    line-height: 1;
   }
 }
 
@@ -259,35 +264,49 @@
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+  }
 
-    .main-visual-ex-button {
-      display: flex;
-      align-items: center;
-      height: 2rem;
-      color: var(--color-white);
-      font-weight: bold;
-      text-decoration: none;
+  .main-visual-ex-button {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
 
-      .main-visual-ex-button-icon-wrap {
-        width: 2rem;
-        height: 2rem;
-        margin-left: 1rem;
-      }
-
-      svg {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        padding: 6px;
-        background-color: transparent;
-        border: 1px solid var(--color-white);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-
-        path {
-          stroke: var(--color-white);
+    @media (hover: hover) {
+      &:hover {
+        .main-visual-ex-button-icon {
+          background-color: var(--color-primary);
+          border-color: var(--color-primary);
         }
       }
+    }
+  }
+
+  .main-visual-ex-button-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    color: var(--color-white);
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+
+    svg {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 6px;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
+    }
+
+    @media (hover: hover) {
+      transition: all 0.3s ease;
     }
   }
 
@@ -357,29 +376,34 @@
     align-items: center;
     text-decoration: none;
 
+    &,
     &:link,
-    &:visited,
-    &:active,
-    &:focus {
+    &:visited {
       color: var(--color-white);
     }
 
-    &:hover {
-      opacity: 0.6;
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      object-fit: contain;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
     }
 
-    &::after {
-      display: inline-block;
-      width: 0.5rem;
-      height: 1rem;
-      margin: 0.25rem 0 0;
-      background-image: url(#{global.$root-theme-img + 'icon-button.svg' });
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transform: rotate(90deg);
-      content: "";
+    @media (hover: hover) {
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
+  }
+
+  .main-visual-scroll-link-icon {
+    line-height: 1;
   }
 }
 
@@ -420,23 +444,6 @@
     .main-visual-links {
       gap: var(--col-gutter);
 
-      .main-visual-ex-button {
-        height: 3rem;
-        font-weight: bold;
-
-        .main-visual-ex-button-icon-wrap {
-          width: 3rem;
-          height: 3rem;
-        }
-
-        &:hover {
-          svg {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-          }
-        }
-      }
-
       .main-visual-box.is-left & {
         justify-content: flex-start;
       }
@@ -446,6 +453,15 @@
       }
     }
 
+    .main-visual-ex-button {
+      height: 3rem;
+      font-weight: bold;
+    }
+
+    .main-visual-ex-button-icon {
+      width: 3rem;
+      height: 3rem;
+    }
 
     .splide__controls {
       left: 4rem;
@@ -550,35 +566,49 @@
     display: grid;
     gap: 1rem;
     margin-top: 1.5rem;
+  }
 
-    .main-visual-ex-button {
-      display: flex;
-      align-items: center;
-      height: 2rem;
-      color: var(--color-white);
-      font-weight: bold;
-      text-decoration: none;
+  .main-visual-ex-button {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
 
-      .main-visual-ex-button-icon-wrap {
-        width: 2rem;
-        height: 2rem;
-        margin-left: 1rem;
-      }
-
-      svg {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        padding: 6px;
-        background-color: transparent;
-        border: 1px solid var(--color-white);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-
-        path {
-          stroke: var(--color-white);
+    @media (hover: hover) {
+      &:hover {
+        .main-visual-ex-button-icon {
+          background-color: var(--color-primary);
+          border-color: var(--color-primary);
         }
       }
+    }
+  }
+
+  .main-visual-ex-button-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    color: var(--color-white);
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+
+    svg {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 6px;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
+    }
+
+    @media (hover: hover) {
+      transition: all 0.3s ease;
     }
   }
 }
@@ -624,36 +654,16 @@
       gap: 1rem;
       justify-content: flex-start;
       max-width: 434px;
+    }
 
-      .main-visual-ex-button {
-        height: 3rem;
-        color: var(--color-primary);
+    .main-visual-ex-button {
+      height: 3rem;
+      color: var(--color-primary);
+    }
 
-        .main-visual-ex-button-icon-wrap {
-          width: 3rem;
-          height: 3rem;
-        }
-
-        svg {
-          background-color: var(--color-white);
-          border: 1px solid var(--color-primary);
-
-          path {
-            stroke: var(--color-primary);
-          }
-        }
-
-        &:hover {
-          svg {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-
-            path {
-              stroke: var(--color-white);
-            }
-          }
-        }
-      }
+    .main-visual-ex-button-icon {
+      width: 3rem;
+      height: 3rem;
     }
 
     .splide__controls {

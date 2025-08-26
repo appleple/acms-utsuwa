@@ -103,29 +103,34 @@
     align-items: center;
     text-decoration: none;
 
+    &,
     &:link,
-    &:visited,
-    &:active,
-    &:focus {
+    &:visited {
       color: var(--color-white);
     }
 
-    &:hover {
-      opacity: 0.6;
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      object-fit: contain;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
     }
 
-    &::after {
-      display: inline-block;
-      width: 0.5rem;
-      height: 1rem;
-      margin: 0.25rem 0 0;
-      background-image: url(#{global.$root-theme-img + 'icon-button.svg' });
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transform: rotate(90deg);
-      content: "";
+    @media (hover: hover) {
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
+  }
+
+  .main-visual-scroll-link-icon {
+    line-height: 1;
   }
 }
 

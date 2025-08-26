@@ -118,10 +118,15 @@
   place-items: center;
   aspect-ratio: 1 / 1;
 
-  img {
+  svg {
     width: 0.625rem;
     height: 0.625rem;
     object-fit: contain;
+    color: var(--color-white);
+
+    path {
+      stroke: currentcolor;
+    }
   }
 
   @media (hover: hover) {

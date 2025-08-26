@@ -212,7 +212,7 @@
   width: 1.5rem;
   height: 1.5rem;
   background-color: currentcolor;
-  mask-image: url("#{global.$root-theme-img}icon-chevron-right.svg");
+  mask-image: url("#{global.$root-theme-img}icon/chevron-right.svg");
   mask-size: contain;
   transform: rotate(90deg);
   transition: transform 0.3s ease;

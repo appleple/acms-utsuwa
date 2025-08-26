@@ -26,15 +26,20 @@
       <!-- BEGIN main-visual-link:veil -->
       <div class="main-visual-links">
         <!-- BEGIN main-visual-link1:veil -->
-        <a href="{main_visual_link1_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link1_text}<span class="main-visual-ex-button-icon-wrap">@include("/images/icon-chevron-right.svg")</span></a>
+        <a href="{main_visual_link1_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link1_text}<span class="main-visual-ex-button-icon" aria-hidden="true">@include("/images/icon/chevron-right.svg")</span></a>
         <!-- END main-visual-link1:veil -->
         <!-- BEGIN main-visual-link2:veil -->
-        <a href="{main_visual_link2_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link2_text}<span class="main-visual-ex-button-icon-wrap">@include("/images/icon-chevron-right.svg")</span></a>
+        <a href="{main_visual_link2_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link2_text}<span class="main-visual-ex-button-icon" aria-hidden="true">@include("/images/icon/chevron-right.svg")</span></a>
         <!-- END main-visual-link2:veil -->
       </div>
       <!-- END main-visual-link:veil -->
     </div>
-    <p class="main-visual-scroll"><a href="#message" class="scrollTo main-visual-scroll-link">SCROLL</a></p>
+    <p class="main-visual-scroll">
+      <a href="#message" class="scrollTo main-visual-scroll-link">
+        <span>SCROLL</span>
+        <span class="main-visual-scroll-link-icon" aria-hidden="true">@include("/images/icon/chevron-down.svg")</span>
+      </a>
+    </p>
     <!-- END_IF -->
     <!-- END_IF -->
     <!-- END main_visual:loop -->
@@ -59,10 +64,10 @@
               <!-- BEGIN main_visual_link:veil -->
               <div class="main-visual-links">
                 <!-- BEGIN main-visual-link1:veil -->
-                <a href="{main_visual_link1_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link1_text}<span class="main-visual-ex-button-icon-wrap">@include("/images/icon-chevron-right.svg")</span></a>
+                <a href="{main_visual_link1_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link1_text}<span class="main-visual-ex-button-icon" aria-hidden="true">@include("/images/icon/chevron-right.svg")</span></a>
                 <!-- END main-visual-link1:veil -->
                 <!-- BEGIN main-visual-link2:veil -->
-                <a href="{main_visual_link2_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link2_text}<span class="main-visual-ex-button-icon-wrap">@include("/images/icon-chevron-right.svg")</span></a>
+                <a href="{main_visual_link2_href}" class="main-visual-ex-button js-viewing-indelible">{main_visual_link2_text}<span class="main-visual-ex-button-icon" aria-hidden="true">@include("/images/icon/chevron-right.svg")</span></a>
                 <!-- END main-visual-link2:veil -->
               </div>
               <!-- END main_visual_link:veil -->
@@ -88,7 +93,12 @@
           <span class="splide__toggle__pause"></span>
         </button>
       </div>
-      <p class="main-visual-scroll"><a href="#message" class="main-visual-scroll-link">SCROLL</a></p>
+      <p class="main-visual-scroll">
+        <a href="#message" class="main-visual-scroll-link">
+          <span>SCROLL</span>
+          <span class="main-visual-scroll-link-icon" aria-hidden="true">@include("/images/icon/chevron-down.svg")</span>
+        </a>
+      </p>
     </div>
       <!-- END_IF -->
 </section>
