@@ -87,7 +87,20 @@ src フォルダの scss ファイルを結合したファイルです。
 
 ### images
 
-Site テーマで使っている画像が入ったフォルダです
+#### /images/icon
+
+CSSので色を制御する、装飾的なSVGアイコンが入っています。エラーメッセージや注意喚起など、サイトのテーマカラーに合わせて色を変えたいアイコンに使用します。
+そのため、実装時には a-blog cms の @include() でHTMLにSVGをインライン呼び出しまたは、CSSでのmask-image指定をして読み込んでいます。
+
+##### 実装例
+
+- インラインSVG：a-blog cms の @include() を使ってHTMLに直接埋め込んでいます。SVGアイコンの path 色を currentColor とすることで、CSS の colorプロパティでカラー制御しています。
+
+- CSS mask-image：CSS の mask-image プロパティを使用してSVGを読み込み、background-color を指定することで色を制御しています。
+
+#### /images/icon-color
+
+CSSで色を変更せず、そのままの色で使用するSVGアイコンが入っています。
 
 ### include
 
