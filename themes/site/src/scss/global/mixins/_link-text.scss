@@ -16,7 +16,7 @@
       vertical-align: baseline;
       background-color: $color;
       content: '';
-      mask-image: url("#{var.$root-theme-img}icon-target_blank.svg");
+      mask-image: url("#{var.$root-theme-img}icon/target_blank.svg");
       mask-size: contain;
     }
   }

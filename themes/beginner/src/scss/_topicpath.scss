@@ -31,9 +31,12 @@
 }
 
 .topicpath-item {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  height: 1.25rem;
   color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
+  line-height: 1;
 }
 
 .topicpath-item:not(:last-child) {
@@ -42,7 +45,7 @@
     width: 0.75rem;
     height: 0.75rem;
     margin: 0 0.5rem;
-    background: url("#{global.$root-theme-img}icon-topicpath.svg") center center no-repeat;
+    background: url("#{global.$root-theme-img}icon-color/topicpath-gray.svg") center center no-repeat;
     background-size: contain;
     content: '';
   }

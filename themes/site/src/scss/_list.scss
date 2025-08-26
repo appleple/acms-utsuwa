@@ -15,6 +15,7 @@
 
 .list-group-item {
   display: flex;
+  gap: 6px;
   align-items: center;
   padding: 0.75rem 0.5rem;
   color: currentcolor;
@@ -28,14 +29,8 @@
   }
 
   &.level-2 {
-    svg {
-      width: 12px;
-      height: auto;
-      margin-right: 0.75rem;
-
-      path {
-        fill: var(--color-gray30);
-      }
+    .list-group-item-icon {
+      display: inline-block;
     }
   }
 
@@ -50,5 +45,26 @@
 
   .badge {
     margin-left: auto;
+  }
+}
+
+.list-group-item-icon {
+  display: none;
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-gray30);
+  place-items: center;
+
+  svg {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    color: inherit;
+    aspect-ratio: 1 / 1;
+
+    path {
+      fill: currentcolor;
+    }
   }
 }
