@@ -12,7 +12,9 @@
     --popup-banner-hidden-right: -300px;
     --popup-banner-window-space: 24px;
   }
+}
 
+.popup-banner {
   position: fixed;
   right: var(--popup-banner-hidden-right);
   bottom: var(--popup-banner-window-space);

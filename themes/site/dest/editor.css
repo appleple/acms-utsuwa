@@ -1845,7 +1845,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
-  align-items: start;
+  align-items: flex-start;
 }
 
 /* 補足ラベルリスト */
@@ -1853,7 +1853,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0 1rem;
-  align-items: start;
+  align-items: flex-start;
 }
 
 /* 補足ラベル */
