@@ -531,15 +531,26 @@ a {
   min-width: 15rem;
   max-width: 100%;
 }
-.button.is-bordered {
+.button.is-white {
+  background: var(--color-white);
+}
+.button.is-white:-moz-any-link {
   color: var(--color-text);
+}
+.button.is-white, .button.is-white:any-link {
+  color: var(--color-text);
+}
+.button.is-white:hover {
+  background: var(--color-hover-bg);
+}
+.button.is-bordered {
   background: transparent;
   border: var(--border-width-sm) solid var(--color-gray30);
 }
 .button.is-bordered:-moz-any-link {
   color: var(--color-text);
 }
-.button.is-bordered:any-link {
+.button.is-bordered, .button.is-bordered:any-link {
   color: var(--color-text);
 }
 .button.is-bordered:hover {

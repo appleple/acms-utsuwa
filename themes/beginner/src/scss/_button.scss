@@ -34,10 +34,10 @@
   }
 
   &.is-bordered {
-    color: var(--color-text);
     background: transparent;
     border: var(--border-width-sm) solid var(--color-gray30);
 
+    &,
     &:any-link {
       color: var(--color-text);
     }
