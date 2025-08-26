@@ -13,7 +13,12 @@
     <div class="header-item-nav">
       <div class="header-nav-wrap">
         <div class="header-sub-navi">
-          <div><button type="button" class="header-search-open-button global-nav-search-open-btn button is-inverse">@include("/themes/site/images/icon-search.svg")記事検索</button></div>
+          <div>
+            <button type="button" class="header-search-open-button global-nav-search-open-btn button is-inverse">
+              <span class="header-search-open-button-icon" aria-hidden="true">@include("/images/icon/search.svg")</span>
+              <span>記事検索</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -23,7 +28,10 @@
 
   <div id="header-search" class="header-search" aria-hidden="true" hidden>
     @include("/include/parts/search-general.html", {"search-id":"header-lg"})
-    <button type="button" class="header-search-close-btn">@include("/themes/site/images/icon-close.svg")閉じる</button>
+    <button type="button" class="header-search-close-btn">
+      <span class="header-search-close-btn-icon" aria-hidden="true">@include("/themes/site/images/icon/close.svg")</span>
+      <span>閉じる</span>
+    </button>
   </div>
 
   <div class="global-nav-mobile-menu">

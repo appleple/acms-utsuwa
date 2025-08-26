@@ -133,9 +133,9 @@ $(() => {
   const openBtns = document.querySelectorAll('.header-search-open-button');
   const closeBtn = document.querySelector('.header-search-close-btn');
   const searchArea = document.getElementById('header-search');
-  const searchInput = document.getElementById('search-header-lg');
+  const searchInput = document.getElementById('form-search-header-lg');
 
-  function openSearch(clickedBtn) {
+  function openSearch() {
     openBtns.forEach(btn => btn.setAttribute('aria-expanded', 'true'));
     searchArea.setAttribute('aria-hidden', 'false');
     searchArea.removeAttribute('hidden');

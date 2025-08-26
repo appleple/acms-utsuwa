@@ -358,7 +358,7 @@ input::placeholder {
 
       &:checked + .ico-checkbox {
         background-color: var(--color-primary);
-        background-image: url('#{global.$root-theme-img}icon-check.svg');
+        background-image: url('#{global.$root-theme-img}icon-color/check-white.svg');
         border-color: var(--color-primary);
       }
 

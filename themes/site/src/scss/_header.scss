@@ -128,7 +128,7 @@
 /* グローバルナビレイアウトパターン：縦積みロゴ左端
 /* ロゴは左端に配置し、グローバルメニューはロゴの下に配置
 /* 検索窓はロゴに対して左側に配置し、端に寄せる
-/* 
+/*
 /* 対応テンプレート：/include/header/header-nav-bottom.html
 ------------------------------ */
 .nav-bottom {
@@ -248,6 +248,52 @@
     background: transparent;
   }
 
+  .header-search-open-button-icon {
+    display: inline-grid;
+    place-items: center;
+    color: inherit;
+
+    svg {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
+    }
+  }
+
+  .global-nav-search-open-btn {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-m);
+    line-height: var(--line-height-base);
+    text-align: center;
+    background: var(--color-white);
+    border: 0;
+    border-radius: var(--border-radius-md);
+    transition: background-color 0.2s;
+
+    @media (hover: hover) {
+      &:hover {
+        background: var(--color-hover-bg);
+      }
+    }
+
+    .header-search-open-button-icon {
+      width: 1.5rem;
+    }
+  }
+
   .global-nav-mobile-search-btn {
     position: fixed;
     top: 0;
@@ -255,12 +301,13 @@
     z-index: var(--zindex-mobile-nav);
     width: var(--header-height-fixed);
     height: var(--header-height-fixed);
-    background-color: #FFF;
+    padding: 0;
+    color: var(--color-text);
+    background-color: var(--color-white);
     border: none;
 
-    svg {
+    .header-search-open-button-icon {
       width: 1.75rem;
-      height: 1.75rem;
     }
   }
 }
@@ -334,6 +381,10 @@
   padding: 0.5rem 0;
   background: var(--color-gray0);
   border: none;
+}
+
+.header-search-close-btn-icon {
+  color: var(--color-white);
 
   svg {
     box-sizing: border-box;
@@ -341,11 +392,12 @@
     height: 1.25rem;
     margin-right: 0.5rem;
     padding: 5px;
+    color: inherit;
     background: var(--color-icon-bg);
     border-radius: 50%;
 
     path {
-      stroke: var(--color-white);
+      stroke: currentcolor;
     }
   }
 }
