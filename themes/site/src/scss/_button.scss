@@ -66,6 +66,24 @@
   }
 }
 
+.button-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+
+  svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    color: inherit;
+
+    path {
+      stroke: currentcolor;
+    }
+  }
+}
+
 /* ------------------------------
 　　一覧遷移ボタン
 ------------------------------ */

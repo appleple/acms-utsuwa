@@ -3,8 +3,8 @@
 
 <div class="entry-share-modal">
   <button type="button" commandfor="share-dialog-article" command="show-modal" class="button is-width-lg is-bordered">
-    @include("/images/icon-arrow-up-to-line.svg")
-    この記事をシェアする
+    <span class="button-icon" aria-hidden="true">@include("/images/icon/arrow-up-to-line.svg")</span>
+    <span>この記事をシェアする</span>
   </button>
 
   <dialog
@@ -20,19 +20,19 @@
       <li>
         <a href="https://twitter.com/intent/tweet?text=%{ENTRY_TITLE}%0a%{PERMALINK}" class="sns-link" target="_blank" rel="noopener noreferrer">
           <span class="acms-hide-visually">この記事をXでシェアする</span>
-          <img src="/images/icon-color-x.svg" width="40" height="40" alt="">
+          <img src="/images/sns-logo/x-color.svg" width="40" height="40" alt="">
         </a>
       </li>
       <li>
         <a href="http://www.facebook.com/share.php?u=%{PERMALINK}" class="sns-link" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes, noopener, noreferrer'); return false;" target="_blank" rel="noopener noreferrer">
           <span class="acms-hide-visually">この記事をFacebookでシェアする</span>
-          <img src="/images/icon-color-facebook.svg" width="40" height="40" alt="">
+          <img src="/images/sns-logo/facebook-color.svg" width="40" height="40" alt="">
         </a>
       </li>
       <li>
         <a href="https://social-plugins.line.me/lineit/share?url=%{PERMALINK}" class="sns-link line" target="_blank" rel="noopener noreferrer">
           <span class="acms-hide-visually">この記事をLINEでシェアする</span>
-          <img src="/images/icon-color-line.svg" width="40" height="40" alt="">
+          <img src="/images/sns-logo/line-color.svg" width="40" height="40" alt="">
         </a>
       </li>
     </ul>

@@ -352,13 +352,13 @@
       margin: 0;
       opacity: 0;
 
-      &:checked+.ico-checkbox {
+      &:checked + .ico-checkbox {
         background-color: var(--color-primary);
         background-image: url('#{global.$root-theme-img}icon-check.svg');
         border-color: var(--color-primary);
       }
 
-      &:focus+.ico-checkbox {
+      &:focus + .ico-checkbox {
         border-color: var(--color-primary);
         box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
       }
