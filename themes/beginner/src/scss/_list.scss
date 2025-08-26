@@ -23,15 +23,9 @@
   text-decoration: none;
   transition: background-color 0.2s ease;
 
-  +.list-group {
+  + .list-group {
     margin: 0;
     border: 0;
-  }
-
-  &.level-2 {
-    .list-group-item-icon {
-      display: inline-block;
-    }
   }
 
   &:hover {
@@ -48,23 +42,15 @@
   }
 }
 
-.list-group-item-icon {
-  display: none;
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--color-gray30);
-  place-items: center;
-
-  svg {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    color: inherit;
-    aspect-ratio: 1 / 1;
-
-    path {
-      fill: currentcolor;
-    }
+.list-group .list-group .list-group-item {
+  &::before {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-image: url("#{global.$root-theme-img}icon-color/list-before-gray.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.375rem;
+    content: "";
   }
 }

@@ -192,7 +192,10 @@
     display: inline-block;
     width: 0.75rem;
     height: 0.75rem;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgNi42MDI3OEw0IDEwLjEwMjhMNCAzLjEwMjc4TDEwIDYuNjAyNzhaIiBmaWxsPSIjQ0FDQUNBIi8+PC9zdmc+");
+    background-image: url("#{global.$root-theme-img}icon-color/list-before-gray.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.375rem;
     content: "";
   }
 }
