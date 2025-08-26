@@ -6252,6 +6252,51 @@ input::placeholder {
   font-size: 1rem;
 }
 
+/* 「🔍記事検索」ボタン
+------------------------------ */
+.global-nav-search-open-btn {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  text-align: center;
+  background: var(--color-white);
+  border: 0;
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s;
+}
+@media (hover: hover) {
+  .global-nav-search-open-btn:hover {
+    background: var(--color-hover-bg);
+  }
+}
+.global-nav-search-open-btn .header-search-open-button-icon {
+  width: 1.5rem;
+}
+
+.header-search-open-button-icon {
+  display: inline-grid;
+  place-items: center;
+  color: inherit;
+}
+.header-search-open-button-icon svg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: inherit;
+}
+.header-search-open-button-icon svg path {
+  stroke: currentcolor;
+}
+
 /* グローバルナビレイアウトパターン：縦積みロゴ左端
 /* ロゴは左端に配置し、グローバルメニューはロゴの下に配置
 /* 検索窓はロゴに対して左側に配置し、端に寄せる
@@ -6347,47 +6392,6 @@ input::placeholder {
 }
 .logo-center [aria-expanded=true] .global-nav-mobile-icon-toggle-menu {
   background: transparent;
-}
-.logo-center .header-search-open-button-icon {
-  display: inline-grid;
-  place-items: center;
-  color: inherit;
-}
-.logo-center .header-search-open-button-icon svg {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1/1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  color: inherit;
-}
-.logo-center .header-search-open-button-icon svg path {
-  stroke: currentcolor;
-}
-.logo-center .global-nav-search-open-btn {
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 0.5rem;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: var(--line-height-base);
-  text-align: center;
-  background: var(--color-white);
-  border: 0;
-  border-radius: var(--border-radius-md);
-  transition: background-color 0.2s;
-}
-@media (hover: hover) {
-  .logo-center .global-nav-search-open-btn:hover {
-    background: var(--color-hover-bg);
-  }
-}
-.logo-center .global-nav-search-open-btn .header-search-open-button-icon {
-  width: 1.5rem;
 }
 .logo-center .global-nav-mobile-search-btn {
   position: fixed;
