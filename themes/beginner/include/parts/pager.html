@@ -2,9 +2,11 @@
 <nav class="pager" aria-label="ページ送り">
   <ul class="pager-list">
     <!-- BEGIN backLink -->
-    <li>
+    <li class="back-link">
       <a href="{url}" aria-label="前へ" class="pager-link">
-        @include("/images/icon/chevron-left.svg")
+        <span aria-hidden="true">
+          @include("/images/icon/chevron-left.svg")
+        </span>
       </a>
     </li>
     <!-- END backLink -->
@@ -46,9 +48,11 @@
     <!-- END lastPage:veil -->
 
     <!-- BEGIN forwardLink -->
-    <li>
+    <li class="forward-link">
       <a href="{url}" aria-label="次へ" class="pager-link">
-        @include("/images/icon/chevron-right.svg")
+        <span aria-hidden="true">
+          @include("/images/icon/chevron-right.svg")
+        </span>
       </a>
     </li>
     <!-- END forwardLink -->
@@ -64,7 +68,7 @@
       <!-- BEGIN prevLink -->
       <a href="{url}">
         <span class="serial-nav-arrow">
-          <span class="serial-nav-arrow-icon">
+          <span class="serial-nav-arrow-icon" aria-hidden="true">
             @include("/images/icon/chevron-left.svg")
           </span>
           <span class="serial-nav-arrow-text">前の記事</span>
@@ -85,7 +89,7 @@
       <a href="{url}">
         <span class="serial-nav-arrow">
           <span class="serial-nav-arrow-text">次の記事</span>
-          <span class="serial-nav-arrow-icon">
+          <span class="serial-nav-arrow-icon" aria-hidden="true">
             @include("/images/icon/chevron-right.svg")
           </span>
         </span>
@@ -105,7 +109,7 @@
     <li class="pager-simple-item-prev">
       <a href="{url}">
         <span class="pager-simple-arrow">
-          <span class="pager-simple-arrow-icon">
+          <span class="pager-simple-arrow-icon" aria-hidden="true">
             @include("/images/icon/chevron-left.svg")
           </span>
           <span class="pager-simple-arrow-text">前ページ</span>
@@ -119,7 +123,7 @@
       <a href="{url}" class="pager-simple-link">
         <span class="pager-simple-arrow">
           <span class="pager-simple-arrow-text">次ページ</span>
-          <span class="pager-simple-arrow-icon">
+          <span class="pager-simple-arrow-icon" aria-hidden="true">
             @include("/images/icon/chevron-right.svg")
           </span>
         </span>

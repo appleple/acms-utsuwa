@@ -27,6 +27,17 @@
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-lg);
 
+    &.cur span,
+    &.forward-link span,
+    &.back-link span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+    }
+
     &.cur {
       /* 現在いる位置 */
       box-sizing: border-box;
@@ -36,15 +47,6 @@
       background-color: var(--color-primary);
       border: var(--pager-button-border-width) var(--pager-button-border-style) var(--color-primary);
       border-radius: var(--pager-button-border-radius);
-
-      span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-      }
     }
 
     &.ellipsis {
@@ -55,8 +57,17 @@
       color: var(--color-gray70);
     }
 
+    &.forward-link,
+    &.back-link {
+      line-height: 1;
+    }
+
     svg {
       color: inherit;
+
+      path {
+        stroke: currentcolor;
+      }
     }
   }
 }
@@ -131,7 +142,7 @@
     color: var(--color-white);
 
     path {
-      stroke: currentColor;
+      stroke: currentcolor;
     }
   }
 

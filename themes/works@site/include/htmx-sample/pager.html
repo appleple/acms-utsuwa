@@ -2,7 +2,7 @@
 <nav class="pager" aria-label="ページ送り">
   <ul class="pager-list">
     <!-- BEGIN backLink -->
-    <li>
+    <li class="back-link">
       <a
         href="{url}"
         hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
@@ -12,7 +12,9 @@
         aria-label="前へ"
         class="pager-link"
       >
-        @include("/images/icon/chevron-left.svg")
+        <span aria-hidden="true">
+          @include("/images/icon/chevron-left.svg")
+        </span>
       </a>
     </li>
     <!-- END backLink -->
@@ -73,7 +75,7 @@
     <!-- END lastPage:veil -->
 
     <!-- BEGIN forwardLink -->
-    <li>
+    <li class="forward-link">
       <a
         href="{url}"
         hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
@@ -83,7 +85,9 @@
         aria-label="次へ"
         class="pager-link"
       >
-        @include("/images/icon/chevron-right.svg")
+        <span aria-hidden="true">
+          @include("/images/icon/chevron-right.svg")
+        </span>
       </a>
     </li>
     <!-- END forwardLink -->
