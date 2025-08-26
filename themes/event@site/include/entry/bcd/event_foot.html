@@ -21,8 +21,12 @@
     <!-- BEGIN event_location:veil -->
     <div class="detail-panel-group">
       <dt>会場</dt>
-      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}[nl2br]<!-- END event_address:veil -->
-      <!-- BEGIN event_googlemap:veil --><br><a href="{event_googlemap}" class="event-googlemap-link">Googleマップで見る@include("/images/icon-map-pin.svg")</a><!-- END event_googlemap:veil --></dd>
+      <dd>{event_location}<!-- BEGIN event_address:veil --><br>{event_address}[nl2br]<!-- END event_address:veil --><!-- BEGIN event_googlemap:veil --><br>
+        <a href="{event_googlemap}" class="event-googlemap-link">
+          <span>Googleマップで見る</span>
+          <span class="event-googlemap-link-icon" aria-hidden="true">@include("/images/icon/map-pin.svg")</span>
+        </a><!-- END event_googlemap:veil -->
+      </dd>
     </div>
     <!-- END event_location:veil -->
     <!-- BEGIN event_entry:veil -->
