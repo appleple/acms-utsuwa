@@ -1,60 +1,131 @@
 <!-- BEGIN pager:veil -->
-<!-- ページ送り　開始▼▼ -->
-<nav class="acms-pager-container" aria-label="ページ送り">
-  <ul class="pager">
+<nav class="pager" aria-label="ページ送り">
+  <ul class="pager-list">
     <!-- BEGIN backLink -->
-    <li><a href="{url}" aria-label="前へ" class="pager-link">@include("/images/icon-chevron-left.svg")</a></li><!-- END backLink -->
+    <li>
+      <a href="{url}" aria-label="前へ" class="pager-link">
+        @include("/images/icon/chevron-left.svg")
+      </a>
+    </li>
+    <!-- END backLink -->
+
     <!-- BEGIN firstPage:veil -->
-    <li {pageCurAttr}[raw]><span><a href="{firstPageUrl}" class="pager-link">{firstPage}</a></span></li>
+    <li {pageCurAttr}[raw]>
+      <a href="{firstPageUrl}" class="pager-link">
+        <span>{firstPage}</span>
+      </a>
+    </li>
     <!-- END firstPage:veil -->
+
     <!-- BEGIN omitBeforePage -->
-    <li>...</li><!-- END omitBeforePage -->
+    <li class="ellipsis">
+      <span>...</span>
+    </li>
+    <!-- END omitBeforePage -->
+
     <!-- BEGIN page:loop -->
-    <li {pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}" class="pager-link"><!-- END link#front -->{page}
-          <!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li>
+    <li {pageCurAttr}[raw]><!-- BEGIN link#front -->
+      <a href="{url}" class="pager-link"><!-- END link#front -->
+        <span>{page}</span><!-- BEGIN link#rear -->
+      </a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue -->
+    </li>
     <!-- END page:loop -->
+
     <!-- BEGIN omitAfterPage -->
-    <li>...</li><!-- END omitAfterPage -->
+    <li class="ellipsis">
+      <span>...</span>
+    </li>
+    <!-- END omitAfterPage -->
+
     <!-- BEGIN lastPage:veil -->
-    <li {pageCurAttr}[raw]><span><a href="{lastPageUrl}" class="pager-link">{lastPage}</a></span></li>
+    <li {pageCurAttr}[raw]>
+      <a href="{lastPageUrl}" class="pager-link">
+        <span>{lastPage}</span>
+      </a>
+    </li>
     <!-- END lastPage:veil -->
+
     <!-- BEGIN forwardLink -->
-    <li><a href="{url}" aria-label="次へ" class="pager-link">@include("/images/icon-chevron-right.svg")</a></li>
+    <li>
+      <a href="{url}" aria-label="次へ" class="pager-link">
+        @include("/images/icon/chevron-right.svg")
+      </a>
+    </li>
     <!-- END forwardLink -->
   </ul>
 </nav>
-<!-- ページ送り　終了▲▲ -->
 <!-- END pager:veil -->
 
 <!-- BEGIN serialNavi:veil -->
 <nav aria-label="ページ送り" class="serial-nav">
   <ul class="serial-nav-list">
     <!-- BEGIN prevLink:veil -->
-    <li class="serial-nav-item serial-nav-item-prev"><!-- BEGIN prevLink -->
-      <a href="{url}"><span class="serial-nav-arrow"><span class="acms-me-2 icon-button is-left">@include("/images/arrow-border-white.svg")</span> 前の記事</span><span class="serial-nav-title">{name}</span></a>
+    <li class="serial-nav-item-prev">
+      <!-- BEGIN prevLink -->
+      <a href="{url}">
+        <span class="serial-nav-arrow">
+          <span class="serial-nav-arrow-icon">
+            @include("/images/icon/chevron-left.svg")
+          </span>
+          <span class="serial-nav-arrow-text">前の記事</span>
+        </span>
+        <span class="serial-nav-item-title">{name}</span>
+      </a>
       <!-- END prevLink -->
-      <!-- END prevLink:veil -->
     </li>
-    <li class="serial-nav-item serial-nav-item-index"><a href="{upperUrl}">一覧へ戻る</a></li>
+    <!-- END prevLink:veil -->
+
+    <li class="serial-nav-item-index">
+      <a href="{upperUrl}">一覧へ戻る</a>
+    </li>
+
     <!-- BEGIN nextLink:veil -->
-    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextLink --><a href="{url}"><span class="serial-nav-arrow">次の記事 <span class="acms-ms-2 icon-button">@include("/images/arrow-border-white.svg")</span></span><span class="serial-nav-title">{name}</span></a>
+    <li class="serial-nav-item-next">
+      <!-- BEGIN nextLink -->
+      <a href="{url}">
+        <span class="serial-nav-arrow">
+          <span class="serial-nav-arrow-text">次の記事</span>
+          <span class="serial-nav-arrow-icon">
+            @include("/images/icon/chevron-right.svg")
+          </span>
+        </span>
+        <span class="serial-nav-item-title">{name}</span>
+      </a>
       <!-- END nextLink -->
-      <!-- END nextLink:veil -->
     </li>
+    <!-- END nextLink:veil -->
   </ul>
 </nav>
 <!-- END serialNavi:veil -->
 
 <!-- BEGIN simplePager:veil -->
-<nav aria-label="ページ送り">
-  <ul class="serial-nav">
-    <li class="serial-nav-item serial-nav-item-prev"><!-- BEGIN prevPage -->
-      <a href="{url}"><span class="serial-nav-arrow"></span> @include("/images/arrow-border-white.svg")前の記事</span></a>
-      <!-- END prevPage -->
+<nav class="pager-simple" aria-label="ページ送り">
+  <ul class="pager-simple-list">
+    <!-- BEGIN prevPage -->
+    <li class="pager-simple-item-prev">
+      <a href="{url}">
+        <span class="pager-simple-arrow">
+          <span class="pager-simple-arrow-icon">
+            @include("/images/icon/chevron-left.svg")
+          </span>
+          <span class="pager-simple-arrow-text">前ページ</span>
+        </span>
+      </a>
     </li>
-    <li class="serial-nav-item serial-nav-item-next"><!-- BEGIN nextPage --><a href="{url}"><span class="serial-nav-arrow">次の記事  @include("/images/arrow-border-white.svg")</span></a>
-      <!-- END nextPage -->
+    <!-- END prevPage -->
+
+    <!-- BEGIN nextPage -->
+    <li class="pager-simple-item-next">
+      <a href="{url}" class="pager-simple-link">
+        <span class="pager-simple-arrow">
+          <span class="pager-simple-arrow-text">次ページ</span>
+          <span class="pager-simple-arrow-icon">
+            @include("/images/icon/chevron-right.svg")
+          </span>
+        </span>
+      </a>
     </li>
+    <!-- END nextPage -->
   </ul>
 </nav>
 <!-- END simplePager:veil -->

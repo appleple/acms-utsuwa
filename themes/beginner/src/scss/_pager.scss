@@ -6,35 +6,57 @@
 　　ページャー
 ------------------------------ */
 .pager {
+  --pager-button-size: 2.5rem;
+  --pager-button-border-width: var(--border-width-sm);
+  --pager-button-border-style: solid;
+  --pager-button-border-radius: var(--border-radius-md);
+}
+
+.pager-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-block: 3rem 0;
   padding-left: 0;
-  font-size: map.get(global.$font-scales, heading-ss);
   list-style: none;
+  margin-block: 3rem 0;
 
   li {
     display: inline-block;
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: map.get(global.$font-scales, body-lg);
 
     &.cur {
       /* 現在いる位置 */
       box-sizing: border-box;
-      width: 3rem;
-      height: 3rem;
-      color: var(--color-primary);
-      background: var(--color-white);
-      border: var(--border-width-md) solid var(--color-primary);
-      border-radius: var(--border-radius-lg);
+      width: var(--pager-button-size);
+      height: var(--pager-button-size);
+      color: var(--color-white);
+      background-color: var(--color-primary);
+      border: var(--pager-button-border-width) var(--pager-button-border-style) var(--color-primary);
+      border-radius: var(--pager-button-border-radius);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
     }
 
-    span:not([class]) {
-      display: flex;
-      align-items: center;
+    &.ellipsis {
+      display: inline-flex;
+      padding-block: 0.25rem;
+      align-items: flex-end;
       justify-content: center;
-      width: 100%;
-      height: 100%;
+      color: var(--color-gray70);
+    }
+
+    svg {
+      color: inherit;
     }
   }
 }
@@ -44,44 +66,152 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: 3rem;
-  height: 3rem;
+  width: var(--pager-button-size);
+  height: var(--pager-button-size);
   padding: 0.25rem;
-  color: var(--color-white);
-  font-weight: bold;
   text-decoration: none;
-  background: var(--color-primary);
-  border: 2px solid transparent;
-  border-radius: var(--border-radius-lg);
+  background-color: var(--color-white);
+  border: var(--pager-button-border-width) var(--pager-button-border-style) var(--color-gray30);
+  border-radius: var(--pager-button-border-radius);
 
-  svg {
-    path {
-      stroke: var(--color-white);
+  &,
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+
+  @media (hover: hover) {
+    &:any-link,
+    &:any-link svg {
+      transition: all 0.3s ease;
+    }
+
+    &:any-link:hover {
+      color: var(--color-white);
+      background-color: var(--color-primary-hover);
+      border-color: var(--color-primary-hover);
     }
   }
+}
 
-  &:any-link {
+/* シンプルページャー と 前後リンク の、
+/* 丸矢印アイコン付きページ案内テキスト
+----------------------------- */
+.pager-simple-arrow,
+.serial-nav-arrow {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-block: 0.5rem;
+}
+
+.pager-simple-arrow-text,
+.serial-nav-arrow-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
+}
+
+.pager-simple-arrow-icon,
+.serial-nav-arrow-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+
+  svg {
+    width: 0.625rem;
+    height: 0.625rem;
+    object-fit: contain;
     color: var(--color-white);
   }
 
-  &:hover {
-    color: var(--color-white);
+  @media (hover: hover) {
+    a:any-link & {
+      transition: background-color 0.3s ease;
+    }
+
+    a:any-link:hover & {
+      background-color: var(--color-icon-bg-hover);
+    }
+  }
+}
+
+/* シンプルページャー
+----------------------------- */
+.pager-simple {
+  margin-block: 3rem 0;
+}
+
+.pager-simple-list {
+  display: grid;
+  grid-template:
+    "prev" auto
+    "next" auto
+   / auto;
+  gap: 1rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include acms.media-breakpoint-up(md) {
+    grid-template:
+      "prev ... next" auto
+     / minmax(0, 400px) auto minmax(0, 400px);
+  }
+}
+
+.pager-simple-item-prev,
+.pager-simple-item-next {
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0.75rem 1rem 1rem;
     text-decoration: none;
-    background: var(--color-primary-hover);
+    border: var(--border-width-sm) solid var(--color-gray30);
+    border-radius: var(--border-radius-lg);
+
+    &,
+    &:link,
+    &:visited {
+      color: inherit;
+    }
+
+    @media (hover: hover) {
+      transition: background-color 0.3s ease;
+
+      &:any-link:hover {
+        background-color: var(--color-hover-bg-2nd);
+      }
+    }
   }
+}
 
-  .svg-arrow-line {
-    fill: var(--color-white);
+.pager-simple-item-prev {
+  grid-area: prev;
+
+  a {
+    align-items: flex-start;
   }
 }
 
-.pager-link-forward {
-  float: right;
+.pager-simple-item-next {
+  grid-area: next;
+
+  a {
+    align-items: flex-end;
+  }
 }
 
-.pager-link-prev {
-  float: left;
-}
+
 
 /* 前後リンク
 ----------------------------- */
@@ -100,21 +230,26 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @include acms.media-breakpoint-up(md) {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem 2rem;
+  }
 }
 
 .serial-nav-item-prev,
 .serial-nav-item-next {
   min-width: 0;
-  line-height: var(--line-height-base);
 
-   a {
+  a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     box-sizing: border-box;
     height: 100%;
     padding: 0.75rem 1rem 1rem;
-    color: var(--color-text);
     text-decoration: none;
     border: var(--border-width-sm) solid var(--color-gray30);
     border-radius: var(--border-radius-lg);
@@ -129,15 +264,13 @@
       transition: background-color 0.3s ease;
 
       &:any-link:hover {
-        background: var(--color-hover-bg-2nd);
+        background-color: var(--color-hover-bg-2nd);
       }
     }
   }
 }
 
 .serial-nav-item-prev {
-  text-align: left;
-
   a {
     align-items: flex-start;
   }
@@ -149,6 +282,22 @@
   a {
     align-items: flex-end;
   }
+
+  @include acms.media-breakpoint-up(md) {
+    grid-column-start: 3;
+  }
+}
+
+/* 前の記事・次の記事 の エントリータイトル */
+.serial-nav-item-title {
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* 一覧へ戻る */
@@ -158,7 +307,7 @@
   flex: 0 0 auto;
   font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
 
   a {
     position: relative;
@@ -176,7 +325,7 @@
       position: absolute;
       z-index: 1;
       background-color: transparent;
-      border-radius: var(--border-radius-lg);
+      border-radius: var(--border-radius-md);
       content: "";
       inset: 0 -0.5rem;
 
@@ -193,44 +342,8 @@
       }
     }
   }
-}
 
-/* 矢印と「前の記事」「次の記事」テキスト */
-.serial-nav-arrow {
-  display: inline-flex;
-  align-items: center;
-  margin: 0.5rem 0;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
-}
-
-/* 前の記事・次の記事 の エントリータイトル */
-.serial-nav-title {
-  display: inline-block;
-  width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-@include acms.media-breakpoint-up(md) {
-  .serial-nav {
-    margin-block-start: 4rem;
-  }
-
-  .serial-nav-list {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1rem 2rem;
-  }
-
-  .serial-nav-item-index {
+  @include acms.media-breakpoint-up(md) {
     grid-column-start: 2;
-  }
-
-  .serial-nav-item-next {
-    grid-column-start: 3;
   }
 }
