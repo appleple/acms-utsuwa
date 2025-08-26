@@ -52,8 +52,8 @@
       box-sizing: border-box;
       width: 0.875rem;
       height: 0.875rem;
-      background-color: var(--color-primary);
-      border: 1px solid var(--color-white);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
       border-radius: 50%;
       content: "";
 
@@ -64,7 +64,7 @@
 
     @media (hover: hover) {
       &:hover::after {
-        background-color: var(--color-primary-hover);
+        background-color: var(--color-gray10);
       }
     }
 
@@ -73,13 +73,13 @@
       transform: none;
 
       &::after {
-        background-color: var(--color-white);
-        border-color: var(--color-primary);
+        background-color: var(--color-primary);
+        border-color: var(--color-white);
       }
 
       @media (hover: hover) {
         &:hover::after {
-          background-color: var(--color-gray10);
+          background-color: var(--color-primary-hover);
         }
       }
     }
