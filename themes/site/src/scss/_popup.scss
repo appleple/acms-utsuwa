@@ -6,15 +6,8 @@
 ------------------------------ */
 .popup-banner {
   --popup-banner-hidden-right: -230px;
-  --popup-banner-window-space: 10px;
+  --popup-banner-window-space: 16px;
 
-  @include acms.media-breakpoint-up(md) {
-    --popup-banner-hidden-right: -300px;
-    --popup-banner-window-space: 24px;
-  }
-}
-
-.popup-banner {
   position: fixed;
   right: var(--popup-banner-hidden-right);
   bottom: var(--popup-banner-window-space);
@@ -57,13 +50,15 @@
   width: 100%;
   width: 200px;
   height: auto;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 }
 
 .popup-banner-close {
   width: 32px;
   height: 32px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   padding: 0;
   background-color: var(--color-icon-bg);
   border-width: 0;
