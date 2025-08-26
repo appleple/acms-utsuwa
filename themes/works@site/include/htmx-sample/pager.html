@@ -1,37 +1,92 @@
 <!-- BEGIN pager:veil -->
-<!-- ページ送り　開始▼▼ -->
-<nav class="acms-pager-container" aria-label="ページ送り">
-  <ul class="pager">
+<nav class="pager" aria-label="ページ送り">
+  <ul class="pager-list">
     <!-- BEGIN backLink -->
-    <li><a href="{url}"
-        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works" hx-push-url="{url}" hx-swap="outerHTML" hx-target="#summary_works"
-        aria-label="前へ" class="pager-link">@include("/images/icon-chevron-left.svg")</a></li><!-- END backLink -->
+    <li>
+      <a
+        href="{url}"
+        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
+        hx-push-url="{url}"
+        hx-swap="outerHTML"
+        hx-target="#summary_works"
+        aria-label="前へ"
+        class="pager-link"
+      >
+        @include("/images/icon/chevron-left.svg")
+      </a>
+    </li>
+    <!-- END backLink -->
+
     <!-- BEGIN firstPage:veil -->
-    <li {pageCurAttr}[raw]><span><a href="{firstPageUrl}"
-        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works" hx-push-url="{url}" hx-swap="outerHTML" hx-target="#summary_works"
-        class="pager-link">{firstPage}</a></span></li>
+    <li {pageCurAttr}[raw]>
+      <a
+        href="{firstPageUrl}"
+        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
+        hx-push-url="{url}"
+        hx-swap="outerHTML"
+        hx-target="#summary_works"
+        class="pager-link">
+        <span>{firstPage}</span>
+      </a>
+    </li>
     <!-- END firstPage:veil -->
+
     <!-- BEGIN omitBeforePage -->
-    <li>...</li><!-- END omitBeforePage -->
+    <li class="ellipsis">
+      <span>...</span>
+    </li>
+    <!-- END omitBeforePage -->
+
     <!-- BEGIN page:loop -->
-    <li {pageCurAttr}[raw]><span><!-- BEGIN link#front --><a href="{url}"
-        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works" hx-push-url="{url}" hx-swap="outerHTML" hx-target="#summary_works"
-        class="pager-link"><!-- END link#front -->{page}
-          <!-- BEGIN link#rear --></a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue --></span></li>
+    <li {pageCurAttr}[raw]><!-- BEGIN link#front -->
+      <a
+        href="{url}"
+        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
+        hx-push-url="{url}"
+        hx-swap="outerHTML"
+        hx-target="#summary_works"
+        class="pager-link"><!-- END link#front -->
+        <span>{page}</span><!-- BEGIN link#rear -->
+      </a><!-- END link#rear --><!-- BEGIN glue --><!-- END glue -->
+    </li>
     <!-- END page:loop -->
+
     <!-- BEGIN omitAfterPage -->
-    <li>...</li><!-- END omitAfterPage -->
+    <li class="ellipsis">
+      <span>...</span>
+    </li>
+    <!-- END omitAfterPage -->
+
     <!-- BEGIN lastPage:veil -->
-    <li {pageCurAttr}[raw]><span><a href="{lastPageUrl}"
-        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works" hx-push-url="{url}" hx-swap="outerHTML" hx-target="#summary_works"
-        class="pager-link">{lastPage}</a></span></li>
+    <li {pageCurAttr}[raw]>
+      <a
+        href="{lastPageUrl}"
+        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
+        hx-push-url="{url}"
+        hx-swap="outerHTML"
+        hx-target="#summary_works"
+        class="pager-link"
+      >
+        <span>{lastPage}</span>
+      </a>
+    </li>
     <!-- END lastPage:veil -->
+
     <!-- BEGIN forwardLink -->
-    <li><a href="{url}"
-        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works" hx-push-url="{url}" hx-swap="outerHTML" hx-target="#summary_works"
-        aria-label="次へ" class="pager-link">@include("/images/icon-chevron-right.svg")</a></li>
+    <li>
+      <a
+        href="{url}"
+        hx-get="{url}/tpl/include/htmx-sample/summary-works.html#summary_works"
+        hx-push-url="{url}"
+        hx-swap="outerHTML"
+        hx-target="#summary_works"
+        aria-label="次へ"
+        class="pager-link"
+      >
+        @include("/images/icon/chevron-right.svg")
+      </a>
+    </li>
     <!-- END forwardLink -->
   </ul>
 </nav>
-<!-- ページ送り　終了▲▲ -->
 <!-- END pager:veil -->
