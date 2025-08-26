@@ -190,8 +190,10 @@
     top: calc(50% - 0.5rem);
     left: 0;
     display: inline-block;
+    box-sizing: border-box;
     width: 0.75rem;
     height: 0.75rem;
+    margin-block-start: 1px; /* アイコンとテキストの垂直方向位置調整 */
     background-image: url("#{global.$root-theme-img}icon-color/list-before-gray.svg");
     background-repeat: no-repeat;
     background-position: center;
