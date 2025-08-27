@@ -3,32 +3,6 @@
 @use "global/common" as global;
 
 /* ------------------------------
-　　メインビジュアル内リンクボタン
------------------------------- */
-.main-visual-links {
-  display: grid;
-  gap: 1rem;
-  word-break: keep-all;
-
-  .button {
-    white-space: nowrap;
-    word-break: keep-all;
-  }
-
-  @include acms.media-breakpoint-up(md) {
-    display: flex;
-    gap: calc(var(--col-gutter) / 2);
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
-
-    .button {
-      flex: 1;
-    }
-  }
-}
-
-/* ------------------------------
 　　メインビジュアル（デフォルト）
 ------------------------------ */
 .main-visual {
@@ -154,12 +128,36 @@
     will-change: transform, opacity;
   }
 
+  .main-visual-links {
+    display: grid;
+    gap: 1rem;
+
+    .button {
+      min-width: 200px;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    @include acms.media-breakpoint-up(md) {
+      display: flex;
+      gap: calc(var(--col-gutter) / 2);
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+
+      .button {
+        flex: 1;
+      }
+    }
+  }
+
   .main-visual-scroll {
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
     width: 100%;
-    padding: 2rem;
+    padding-inline: 1rem;
+    margin-block: 0 2rem;
     font-weight: bold;
     text-align: center;
     animation: fade-in 0.3s 2.8s 1 both;
@@ -326,6 +324,23 @@
     }
   }
 
+  .main-visual-links {
+    display: flex;
+    gap: 1rem;
+
+    .button {
+      min-width: auto;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    @include acms.media-breakpoint-up(sm) {
+      .button {
+        min-width: 200px;
+      }
+    }
+  }
+
   .splide__controls {
     position: absolute;
     z-index: 10;
@@ -391,6 +406,23 @@
 
   .splide__toggle {
     background-color: transparent;
+
+    &,
+    .splide__toggle__play,
+    .splide__toggle__pause {
+      transition: background-color 0.3s ease;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-white);
+
+        .splide__toggle__play,
+        .splide__toggle__pause {
+          background-color: var(--color-gray100);
+        }
+      }
+    }
   }
 
   .main-visual-scroll {
@@ -472,6 +504,7 @@
   box-sizing: content-box; /* スライダーページネーション用のpaddingを含めない */
   height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
   min-height: 20rem;
+  overflow: hidden;
 
   @include acms.media-breakpoint-up(md) {
     height: var(--mv-height-pc, 48rem);
@@ -495,11 +528,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
 
-      @include acms.media-breakpoint-up(md) {
+    @include acms.media-breakpoint-up(md) {
+      img {
         display: block;
         width: 70% !important;
         margin-left: auto;
+      }
+    }
+
+    @include acms.media-breakpoint-up(xl) {
+      img {
+        width: calc(100% - 27rem) !important;
       }
     }
   }
@@ -574,6 +615,22 @@
     @include acms.media-breakpoint-up(sm) {
       font-size: map.get(global.$font-scales, body-l);
       padding-inline: 1rem;
+    }
+  }
+
+  .main-visual-links {
+    display: flex;
+    gap: 1rem;
+
+    .button {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    @include acms.media-breakpoint-up(sm) {
+      .button {
+        min-width: 200px;
+      }
     }
   }
 

@@ -1,4 +1,13 @@
 <!-- BEGIN_MODULE Module_Field id="mf_main_visual" -->
+<!-- BEGIN style:veil -->
+<style>
+  .main-visual {<!-- BEGIN main_visual_height_pc:veil -->
+    --mv-height-pc: {main_visual_height_pc}px;<!-- END main_visual_height_pc:veil --><!-- BEGIN main_visual_height_sp:veil -->
+    --mv-height-sp: {main_visual_height_sp}px;<!-- END main_visual_height_sp:veil -->
+  }
+</style>
+<!-- END style:veil -->
+
 <section class="main-visual">
   @include("/include/edit/module-custom.html", {"label":"メインビジュアルを編集する" ,"hash":"#acms_box3"})
 
@@ -93,24 +102,10 @@
         <span class="splide__toggle__pause"></span>
       </button>
     </div>
-    <p class="main-visual-scroll">
-      <a href="#message" class="scrollTo main-visual-scroll-link">
-        <span>SCROLL</span>
-        <span class="main-visual-scroll-link-icon" aria-hidden="true">@include("/images/icon/chevron-down.svg")</span>
-      </a>
-    </p>
   </div>
 
   <!-- END_IF -->
 </section>
-
-<!-- BEGIN style:veil -->
-<style>
-  .main-visual {
-    <!-- BEGIN main_visual_height_pc:veil -->--mv-height-pc: {main_visual_height_pc}px;<!-- END main_visual_height_pc:veil --><!-- BEGIN main_visual_height_sp:veil -->--mv-height-sp: {main_visual_height_sp}px;<!-- END main_visual_height_sp:veil -->
-  }
-</style>
-<!-- END style:veil -->
 <!-- END_MODULE Module_Field -->
 
 <script>

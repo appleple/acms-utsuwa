@@ -1,7 +1,18 @@
 <!-- BEGIN_MODULE Module_Field id="{{module_id}}" -->
- <section class="main-visual-extend02">
+<!-- BEGIN style:veil -->
+<style>
+  .main-visual-extend02 {<!-- BEGIN main_visual_height_pc:veil -->
+    --mv-height-pc: {main_visual_height_pc}px;<!-- END main_visual_height_pc:veil --><!-- BEGIN main_visual_height_sp:veil -->
+    --mv-height-sp: {main_visual_height_sp}px;<!-- END main_visual_height_sp:veil -->
+  }
+</style>
+<!-- END style:veil -->
+
+<section class="main-visual-extend02">
   @include("/include/edit/module-custom.html", {"label":"メインビジュアルを編集する" ,"hash":"#acms_box3"})
+
   <!-- BEGIN_IF [<!-- BEGIN main_visual:loop -->{main_visual_display}<!-- END main_visual:loop -->/eq/1] -->
+
   <!-- 背景画像が1枚のみ設定されている場合 -->
   <!-- BEGIN main_visual:loop -->
   <!-- BEGIN_IF [{main_visual_display}/eq/1] -->
@@ -45,7 +56,9 @@
   <!-- END_IF -->
   <!-- END_IF -->
   <!-- END main_visual:loop -->
+
   <!-- ELSE -->
+
   <!-- 背景画像が複数枚設定されている場合 -->
   <div id="main-visual-slider" class="splide main-visual-slider" role="group">
     <div class="splide__track">
@@ -97,23 +110,10 @@
         <span class="splide__toggle__pause"></span>
       </button>
     </div>
-    <p class="main-visual-scroll">
-      <a href="#message" class="main-visual-scroll-link">
-        <span>SCROLL</span>
-        <span class="main-visual-scroll-link-icon" aria-hidden="true">@include("/images/icon/chevron-down.svg")</span>
-      </a>
-    </p>
   </div>
+
   <!-- END_IF -->
 </section>
-
-<!-- BEGIN style:veil -->
-<style>
-  .main-visual {
-    <!-- BEGIN main_visual_height_pc:veil -->--mv-height-pc: {main_visual_height_pc}px;<!-- END main_visual_height_pc:veil --><!-- BEGIN main_visual_height_sp:veil -->--mv-height-sp: {main_visual_height_sp}px;<!-- END main_visual_height_sp:veil -->
-  }
-</style>
-<!-- END style:veil -->
 <!-- END_MODULE Module_Field -->
 
 <script>
