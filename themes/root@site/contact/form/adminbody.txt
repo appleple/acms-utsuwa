@@ -9,7 +9,7 @@
 
 ■お問い合わせ情報
 
-ご用件　　　　： {description}
+ご用件　　　　： <!-- BEGIN subject:loop -->{subject}　<!-- END subject:loop -->
 お問い合わせ内容：
 {inquiry}
 
