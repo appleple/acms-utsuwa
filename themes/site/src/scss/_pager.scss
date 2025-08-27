@@ -25,7 +25,7 @@
     display: inline-block;
     color: var(--color-text);
     font-weight: bold;
-    font-size: map.get(global.$font-scales, body-lg);
+    font-size: map.get(global.$font-scales, body-l);
 
     &.cur span,
     &.forward-link span,

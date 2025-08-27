@@ -5,6 +5,32 @@
 /* ------------------------------
 　　メインビジュアル
 ------------------------------ */
+
+/* メインビジュアル内リンクボタン */
+.main-visual-links {
+  display: grid;
+  gap: 1rem;
+  word-break: keep-all;
+
+  .button {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    display: flex;
+    gap: calc(var(--col-gutter) / 2);
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+
+    .button {
+      flex: 1;
+    }
+  }
+}
+
+/* メインビジュアル */
 .main-visual {
   position: relative;
   box-sizing: content-box; /* スライダーページネーション用のpaddingを含めない */
@@ -14,6 +40,10 @@
   &:has(.splide__controls) {
     /* スライダーページネーションの高さを確保 */
     padding-bottom: 5.125rem;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    height: var(--mv-height-pc, 48rem);
   }
 
   .main-visual-filter {
@@ -47,7 +77,7 @@
     top: 50%;
     left: 50%;
     display: grid;
-    gap: var(--col-gutter);
+    gap: 1.5rem;
     box-sizing: border-box;
     width: calc(100vw - 2rem);
     max-width: 480px;
@@ -56,33 +86,72 @@
     background: rgb(255 255 255 / 90%);
     transform: translate(-50%, -50%);
     place-content: center;
+
+    @include acms.media-breakpoint-up(md) {
+      gap: 2rem;
+      box-sizing: border-box;
+      width: auto;
+      max-width: 40rem;
+      padding-block: 4.5rem;
+      padding-inline: 5rem;
+      overflow: hidden;
+
+      &.is-left {
+        left: 0;
+        text-align: left;
+        transform: translate(0, -50%);
+
+        .main-visual-links {
+          justify-content: flex-start;
+        }
+      }
+
+      &.is-center {
+        text-align: center;
+      }
+
+      &.is-right {
+        right: 0;
+        left: auto;
+        text-align: right;
+        transform: translate(0, -50%);
+
+        .main-visual-links {
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    @include acms.media-breakpoint-up(lg) {
+      padding-block: 5rem;
+      padding-inline: 6.5rem;
+    }
   }
 
   .main-visual-catch {
     margin: 0;
     font-size: map.get(global.$font-scales, heading-l);
-    line-height: var(--line-height-sm);
+    line-height: var(--line-height-base);
     animation: fade-in 0.3s 0.8s 1 both;
     will-change: transform, opacity;
+
+    @include acms.media-breakpoint-between(md, lg) {
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    @include acms.media-breakpoint-up(md) {
+      font-size: map.get(global.$font-scales, heading-3xl);
+    }
   }
 
   .main-visual-catch-sub {
     margin: 0;
     font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-lg);
+    line-height: var(--line-height-base);
     animation: fade-in 0.3s 1.3s 1 both;
     will-change: transform, opacity;
-  }
-
-  .main-visual-links {
-    display: grid;
-    gap: 1rem;
-    word-break: keep-all;
-
-    .button.is-bordered:not(:hover) {
-      background: var(--color-white);
-    }
   }
 
   .main-visual-scroll {
@@ -131,60 +200,5 @@
 
   .main-visual-scroll-link-icon {
     line-height: 1;
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .main-visual {
-    height: var(--mv-height-pc, 48rem);
-
-    .main-visual-box {
-      box-sizing: border-box;
-      width: auto;
-      max-width: 40rem;
-      padding: 5rem 6.5rem;
-
-      &.is-left {
-        left: 0;
-        text-align: left;
-        transform: translate(0, -50%);
-      }
-
-      &.is-center {
-        text-align: center;
-      }
-
-      &.is-right {
-        right: 0;
-        left: auto;
-        text-align: right;
-        transform: translate(0, -50%);
-      }
-    }
-
-    .main-visual-catch {
-      font-size: map.get(global.$font-scales, display-m);
-    }
-
-    .main-visual-links {
-      display: flex;
-      gap: calc(var(--col-gutter) / 2);
-      justify-content: space-between;
-      width: 100%;
-      margin: 0 auto;
-
-      .button {
-        flex: 1;
-      }
-
-      .main-visual-box.is-left & {
-        justify-content: flex-start;
-      }
-
-      .main-visual-box.is-right & {
-        justify-content: flex-end;
-      }
-    }
-
   }
 }

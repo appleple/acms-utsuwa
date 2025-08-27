@@ -120,7 +120,7 @@
   }
 
   .section-horizontal-heading {
-    font-size: map.get(global.$font-scales, display-s);
+    font-size: map.get(global.$font-scales, heading-2xl);
   }
 
   .section-horizontal-lead {
@@ -222,7 +222,7 @@
   }
 
   .section-vertical-heading {
-    font-size: map.get(global.$font-scales, display-s);
+    font-size: map.get(global.$font-scales, heading-2xl);
   }
 
   .section-vertical-text {

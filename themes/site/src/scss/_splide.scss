@@ -98,6 +98,7 @@
 
   .splide__toggle {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: 2.125rem;
@@ -120,7 +121,7 @@
     }
 
     .splide__toggle__play {
-      background: url("#{global.$root-theme-img}icon-color/icon-triangle-black.svg") no-repeat center center;
+      background: url("#{global.$root-theme-img}icon-color/play-triangle-white.svg") no-repeat center center;
       background-size: 1rem;
     }
 

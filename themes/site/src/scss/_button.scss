@@ -33,7 +33,7 @@
     max-width: 100%;
   }
 
-  &.is-white {
+  &.is-bg-white {
     background: var(--color-white);
 
     &,
@@ -46,8 +46,8 @@
     }
   }
 
-  &.is-bordered {
-    background: transparent;
+  &.is-bg-white-bordered {
+    background: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
 
     &,
