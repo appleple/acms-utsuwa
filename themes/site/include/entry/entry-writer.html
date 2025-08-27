@@ -14,16 +14,16 @@
           <!-- END profile-position:veil -->
           {fieldUserName}
         </p><!-- END position_title:veil -->
-        <p class="profile-text acms-hide acms-block-lg acms-block-xl">{profile}[raw|nl2br]</p>
+        <p class="profile-text acms-d-none acms-d-md-block">{profile}[raw|nl2br]</p>
         <!-- END profile:veil -->
         <ul class="profile-sns">
-          <!-- BEGIN_IF [{user_account_facebook}/nem/] -->
+          <!-- BEGIN_IF [{user_account_facebook}/nem] -->
           <li class="profile-sns-item"><a href="https://www.facebook.com/{user_account_facebook}" target="_blank" class="profile-sns-item-facebook"><img src="/images/sns-logo/facebook-color.svg" alt="{fieldUserName}のFacebookアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
-          <!-- BEGIN_IF [{user_account_x}/nem/] -->
+          <!-- BEGIN_IF [{user_account_x}/nem] -->
           <li class="profile-sns-item"><a href="https://x.com/{user_account_x}" target="_blank" class="profile-sns-item-twitter"><img src="/images/sns-logo/x-color.svg" alt="{fieldUserName}のXアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
-          <!-- BEGIN_IF [{user_account_instagram}/nem/] -->
+          <!-- BEGIN_IF [{user_account_instagram}/nem] -->
           <li class="profile-sns-item"><a href="https://www.instagram.com/{user_account_instagram}" target="_blank" class="profile-sns-item-instagram"><img src="/images/sns-logo/instagram-color.png" alt="{fieldUserName}のInstagramアカウント" role="img" class="acms-img-responsive"></a></li>
           <!-- END_IF -->
         </ul>
@@ -31,7 +31,7 @@
     </div>
     <div class="profile-footer">
       <!-- BEGIN profile:veil -->
-      <p class="profile-text acms-hide-lg acms-hide-xl">{profile}[raw|nl2br]</p><!-- END profile:veil -->
+      <p class="profile-text acms-d-md-none">{profile}[raw|nl2br]</p><!-- END profile:veil -->
       <!-- GET_Rendered id="user_entrylist" -->
     </div>
   </div>

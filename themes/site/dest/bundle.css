@@ -4235,16 +4235,17 @@ input::placeholder {
 }
 
 .profile-sns {
+  --sns-icon-size: 30px;
   display: flex;
   gap: 1rem;
+  height: var(--sns-icon-size); /* SNS情報がない時も表示崩れ防止のため高さを保つ */
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 .profile-sns a {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: var(--sns-icon-size);
 }
 .profile-sns a img {
   width: 100%;
