@@ -2959,16 +2959,14 @@ input::placeholder {
   display: grid;
   gap: 1.5rem;
   box-sizing: border-box;
-  padding-inline: var(--main-visual-extend01-side-padding);
-  max-width: 480px;
+  width: 100%;
   color: var(--color-white);
+  padding-inline: var(--main-visual-extend01-side-padding);
 }
 @media (min-width: 48rem) {
   .main-visual-extend01 .main-visual-box {
     bottom: 8rem; /* スライダーページネーションがない時のコンテンツボックス位置 */
     box-sizing: border-box;
-    width: auto;
-    max-width: 100%;
   }
 }
 .main-visual-extend01 .main-visual-box-inner {
@@ -3014,15 +3012,17 @@ input::placeholder {
 }
 .main-visual-extend01 .main-visual-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .main-visual-extend01 .main-visual-links .button {
-  min-width: auto;
+  flex: 1;
   white-space: nowrap;
   word-break: keep-all;
 }
 @media (min-width: 30rem) {
   .main-visual-extend01 .main-visual-links .button {
+    flex: none;
     min-width: 200px;
   }
 }
@@ -3220,10 +3220,10 @@ input::placeholder {
   display: grid;
   gap: 2rem;
   box-sizing: border-box;
-  padding-inline: var(--main-visual-extend02-side-padding);
-  max-width: 480px;
+  width: 100%;
   color: var(--color-primary);
   transform: translateY(-50%);
+  padding-inline: var(--main-visual-extend02-side-padding);
 }
 @media (min-width: 48rem) {
   .main-visual-extend02 .main-visual-box {
@@ -3231,8 +3231,6 @@ input::placeholder {
     bottom: 8rem; /* スライダーページネーションがない時のコンテンツボックス位置 */
     gap: 4rem;
     box-sizing: border-box;
-    width: auto;
-    max-width: 100%;
     transform: none;
   }
 }
@@ -3291,14 +3289,17 @@ input::placeholder {
 }
 .main-visual-extend02 .main-visual-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .main-visual-extend02 .main-visual-links .button {
+  flex: 1;
   white-space: nowrap;
   word-break: keep-all;
 }
 @media (min-width: 30rem) {
   .main-visual-extend02 .main-visual-links .button {
+    flex: none;
     min-width: 200px;
   }
 }

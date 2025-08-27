@@ -272,15 +272,13 @@
     display: grid;
     gap: 1.5rem;
     box-sizing: border-box;
-    padding-inline: var(--main-visual-extend01-side-padding);
-    max-width: 480px;
+    width: 100%;
     color: var(--color-white);
+    padding-inline: var(--main-visual-extend01-side-padding);
 
     @include acms.media-breakpoint-up(md) {
       bottom: 8rem; /* スライダーページネーションがない時のコンテンツボックス位置 */
       box-sizing: border-box;
-      width: auto;
-      max-width: 100%;
     }
   }
 
@@ -326,16 +324,18 @@
 
   .main-visual-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 
     .button {
-      min-width: auto;
+      flex: 1;
       white-space: nowrap;
       word-break: keep-all;
     }
 
     @include acms.media-breakpoint-up(sm) {
       .button {
+        flex: none;
         min-width: 200px;
       }
     }
@@ -552,18 +552,16 @@
     display: grid;
     gap: 2rem;
     box-sizing: border-box;
-    padding-inline: var(--main-visual-extend02-side-padding);
-    max-width: 480px;
+    width: 100%;
     color: var(--color-primary);
     transform: translateY(-50%);
+    padding-inline: var(--main-visual-extend02-side-padding);
 
     @include acms.media-breakpoint-up(md) {
       top: auto;
       bottom: 8rem; /* スライダーページネーションがない時のコンテンツボックス位置 */
       gap: 4rem;
       box-sizing: border-box;
-      width: auto;
-      max-width: 100%;
       transform: none;
     }
   }
@@ -620,15 +618,18 @@
 
   .main-visual-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 
     .button {
+      flex: 1;
       white-space: nowrap;
       word-break: keep-all;
     }
 
     @include acms.media-breakpoint-up(sm) {
       .button {
+        flex: none;
         min-width: 200px;
       }
     }
