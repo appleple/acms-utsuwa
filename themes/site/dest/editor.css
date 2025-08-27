@@ -502,37 +502,19 @@
 :where(.media-image-block) .media-width-25 {
   max-width: 25%;
 }
-:where(.media-image-block) .media-width-25 img {
-  max-width: 100%;
-}
 :where(.media-image-block) .media-width-33 {
   max-width: 33%;
-}
-:where(.media-image-block) .media-width-33 img {
-  max-width: 100%;
 }
 :where(.media-image-block) .media-width-50 {
   max-width: 50%;
 }
-:where(.media-image-block) .media-width-50 img {
-  max-width: 100%;
-}
 :where(.media-image-block) .media-width-66 {
   max-width: 66%;
-}
-:where(.media-image-block) .media-width-66 img {
-  max-width: 100%;
 }
 :where(.media-image-block) .media-width-75 {
   max-width: 75%;
 }
-:where(.media-image-block) .media-width-75 img {
-  max-width: 100%;
-}
 :where(.media-image-block) .media-width-100 {
-  max-width: 100%;
-}
-:where(.media-image-block) .media-width-100 img {
   max-width: 100%;
 }
 
