@@ -2,6 +2,7 @@
 <div class="acms-cssgrid acms-g-cols-1 acms-mb-8 acms-gap-3 acms-gap-sm-4">
   <!-- BEGIN entry_main_image:veil -->
   <div>
+    <a href="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}" data-rel="SmartPhoto" data-group="%{EID}">
     <img
       src="%{HTTP_MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(1000)]"
       width="1000"
@@ -9,7 +10,7 @@
       alt="{entry_main_image@alt}"
       class="acms-img-responsive"
       fetchpriority="high"
-    />
+    /></a>
   </div>
   <!-- END entry_main_image:veil -->
 
@@ -17,6 +18,7 @@
   <div class="acms-cssgrid acms-g-cols-3 acms-gap-3 acms-gap-sm-4">
     <!-- BEGIN_IF [{sub_image1@path}/nem] -->
     <div>
+      <a href="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image1@path}" data-rel="SmartPhoto" data-group="%{EID}">
       <img
         src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image1@path}[resizeImg(400)]"
         width="400"
@@ -25,11 +27,12 @@
         class="acms-img-responsive"
         loading="lazy"
         decoding="async"
-      />
+      /></a>
     </div>
     <!-- END_IF -->
     <!-- BEGIN_IF [{sub_image2@path}/nem] -->
     <div>
+      <a href="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image2@path}" data-rel="SmartPhoto" data-group="%{EID}">
       <img
         src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image2@path}[resizeImg(400)]"
         width="400"
@@ -38,11 +41,12 @@
         class="acms-img-responsive"
         loading="lazy"
         decoding="async"
-      />
+      /></a>
     </div>
     <!-- END_IF -->
     <!-- BEGIN_IF [{sub_image3@path}/nem] -->
     <div>
+      <a href="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image3@path}" data-rel="SmartPhoto" data-group="%{EID}">
       <img
         src="%{HTTP_MEDIA_ARCHIVES_DIR}{sub_image3@path}[resizeImg(400)]"
         width="400"
@@ -51,7 +55,7 @@
         class="acms-img-responsive"
         loading="lazy"
         decoding="async"
-      />
+      /></a>
     </div>
     <!-- END_IF -->
   </div>
