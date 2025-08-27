@@ -9,6 +9,7 @@
     margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
     background: var(--color-gray10);
+    border-radius: var(--border-radius-lg);
 
     > *:not(.not-editor-style):first-child,
     > *:first-child.column-block-editor > *:first-child {

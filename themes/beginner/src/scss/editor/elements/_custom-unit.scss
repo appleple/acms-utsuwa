@@ -14,7 +14,9 @@
     display: flex;
     flex-direction: column;
     margin: 0 0 var(--entry-el-margin-md);
+    overflow: hidden;
     background: var(--color-gray10);
+    border-radius: var(--border-radius-lg);
   }
 
   .message-wrap {

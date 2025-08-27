@@ -18,10 +18,12 @@
 
   .gu-bg-gray {
     background: var(--color-gray10);
+    border-radius: var(--border-radius-lg);
   }
 
   .gu-bg-primary {
     background: var(--color-primary-light);
+    border-radius: var(--border-radius-lg);
   }
 
   .gu-bg-gray,
@@ -49,6 +51,7 @@
       inset: 0;
       z-index: -1;
       border: var(--border-width-sm) solid var(--color-gray30);
+      border-radius: var(--border-radius-lg);
       content: "";
     }
   }

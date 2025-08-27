@@ -5493,14 +5493,6 @@ input::placeholder {
   }
 }
 /*
-　メイン画像
------------------------------- */
-.works-main-image,
-.event-main-image {
-  margin-bottom: var(--entry-el-margin-md);
-}
-
-/*
 　詳細パネル
 ------------------------------ */
 .detail-panel-group {
@@ -6798,6 +6790,13 @@ input::placeholder {
   }
 }
 
+/* 事例紹介詳細
+----------------------------- */
+.works-main-image {
+  margin-bottom: var(--entry-el-margin-md);
+  border-radius: var(--border-radius-lg);
+}
+
 /* ------------------------------
 　　イベント
 ------------------------------ */
@@ -6826,6 +6825,11 @@ input::placeholder {
 
 /* イベント詳細
 ------------------------------ */
+.event-main-image {
+  margin-bottom: var(--entry-el-margin-md);
+  border-radius: var(--border-radius-lg);
+}
+
 /* 開催日時・都道府県ラベル・Newラベル全体のレイアウト設定 */
 .event-entry-header-info {
   display: flex;

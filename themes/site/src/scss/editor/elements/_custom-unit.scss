@@ -15,6 +15,7 @@
     padding-inline: 1rem;
     background-color: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
+    border-radius: var(--border-radius-lg);
 
     @include acms.media-breakpoint-up(sm) {
       padding: 2rem;
@@ -111,7 +112,9 @@
     display: flex;
     flex-direction: column;
     margin: 0 0 var(--entry-el-margin-md);
+    overflow: hidden;
     background: var(--color-gray10);
+    border-radius: var(--border-radius-lg);
   }
 
   .message-wrap {

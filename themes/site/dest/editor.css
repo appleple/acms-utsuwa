@@ -369,6 +369,7 @@
 }
 .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered {
   border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
 }
 .entry-style dl:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).box-bordered dt {
   padding-top: var(--entry-el-padding-sm);
@@ -550,9 +551,11 @@
 }
 .entry-style .gu-bg-gray {
   background: var(--color-gray10);
+  border-radius: var(--border-radius-lg);
 }
 .entry-style .gu-bg-primary {
   background: var(--color-primary-light);
+  border-radius: var(--border-radius-lg);
 }
 .entry-style .gu-bg-gray,
 .entry-style .gu-bg-primary,
@@ -584,6 +587,7 @@
   inset: 0;
   z-index: -1;
   border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
   content: "";
 }
 .entry-style .gu-narrow {
@@ -767,6 +771,7 @@
   padding-inline: 1rem;
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
 }
 @media (min-width: 30rem) {
   .entry-style .entry-outline {
@@ -850,7 +855,9 @@
   display: flex;
   flex-direction: column;
   margin: 0 0 var(--entry-el-margin-md);
+  overflow: hidden;
   background: var(--color-gray10);
+  border-radius: var(--border-radius-lg);
 }
 .entry-style .message-wrap {
   display: flex;
@@ -1387,6 +1394,7 @@
   display: inline-block;
   max-width: 100%;
   height: auto;
+  border-radius: var(--border-radius-lg);
 }
 
 :where(.media-image-block),
@@ -1432,6 +1440,7 @@
 :where(.column-map .js-s2d-ready),
 :where(.column-street-view .js-street-view) {
   aspect-ratio: 16/9; /* デフォルトのアスペクト比 */
+  border-radius: var(--border-radius-lg);
 }
 
 /* ------------------------------

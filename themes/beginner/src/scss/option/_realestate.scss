@@ -148,3 +148,9 @@
     height: 320px;
   }
 }
+
+.realestate-images {
+  img {
+    border-radius: var(--border-radius-lg);
+  }
+}

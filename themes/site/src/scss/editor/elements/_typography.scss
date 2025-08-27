@@ -245,6 +245,7 @@
 
   &.box-bordered {
     border: var(--border-width-sm) solid var(--color-gray30);
+    border-radius: var(--border-radius-lg);
 
     dt {
       padding-top: var(--entry-el-padding-sm);

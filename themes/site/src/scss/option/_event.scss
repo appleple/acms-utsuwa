@@ -33,6 +33,10 @@
 
 /* イベント詳細
 ------------------------------ */
+.event-main-image {
+  margin-bottom: var(--entry-el-margin-md);
+  border-radius: var(--border-radius-lg);
+}
 
 /* 開催日時・都道府県ラベル・Newラベル全体のレイアウト設定 */
 .event-entry-header-info {
