@@ -3175,7 +3175,7 @@ input::placeholder {
   position: relative;
   box-sizing: content-box; /* スライダーページネーション用のpaddingを含めない */
   height: var(--mv-height-sp, calc(100svh - var(--header-height-fixed)));
-  min-height: 20rem;
+  min-height: 36rem;
   overflow: hidden;
 }
 @media (min-width: 48rem) {
