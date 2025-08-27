@@ -35,6 +35,7 @@
 @include acms.media-breakpoint-down(lg) {
   .header {
     position: fixed;
+    z-index: 2; /* #header-search の下に潜らないよう対策 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -350,7 +351,7 @@
   right: 0;
   left: 0;
   padding: 3rem 0 2rem;
-  background: var(--color-globalnav-bg);
+  background-color: var(--color-globalnav-dropdown-bg);
   opacity: 0;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-duration: 0.3s;
@@ -370,6 +371,12 @@
     padding: 0 1rem;
   }
 
+  .form-search-label {
+    margin-right: 0;
+    margin-bottom: 8px;
+    line-height: var(--line-height-base);
+  }
+
   .form-search-button {
     min-width: initial;
   }
@@ -377,26 +384,41 @@
 
 .header-search-close-btn {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  min-height: 2.5rem;
+  min-height: 1.5rem;
   margin: 1.5rem auto 0;
-  padding: 0.5rem 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
   background: var(--color-gray0);
   border: none;
+
+  @media (hover: hover) {
+    &:hover {
+      .header-search-close-btn-icon {
+        background-color: var(--color-icon-bg-hover);
+      }
+    }
+  }
 }
 
 .header-search-close-btn-icon {
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
   color: var(--color-white);
+  background: var(--color-icon-bg);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 
   svg {
     box-sizing: border-box;
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.5rem;
-    padding: 5px;
+    width: 0.625rem;
+    height: 0.625rem;
     color: inherit;
-    background: var(--color-icon-bg);
-    border-radius: 50%;
 
     path {
       stroke: currentcolor;
