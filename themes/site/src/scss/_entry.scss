@@ -163,7 +163,7 @@
 .entry-header-visual-box {
   position: relative;
   box-sizing: border-box;
-  padding: 2rem 1rem;
+  padding-block: 2rem;
   color: var(--color-white);
   background: rgb(0 0 0 / 70%);
 }
@@ -187,6 +187,13 @@
   }
 }
 
+@include acms.media-breakpoint-up(sm) {
+  .entry-header-visual-box-inner {
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+
 @include acms.media-breakpoint-up(md) {
   .entry-header-visual {
     overflow: hidden;
@@ -206,6 +213,10 @@
     max-width: 35rem;
     margin: 0 calc(var(--unit-gutter-var) / 2);
     padding: 2.5rem 2.5rem 2rem;
+  }
+
+  .entry-header-visual-box-inner {
+    width: auto;
   }
 
   .entry-header-visual-img {
