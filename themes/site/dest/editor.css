@@ -1422,6 +1422,12 @@
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 }
 
+:where(.column-map div:has(> .js-open-street-map)),
+:where(.column-map div:has(> .js-s2d-ready)),
+:where(.column-street-view div:has(> .js-street-view)) {
+  max-width: 100%;
+}
+
 :where(.column-map .js-open-street-map),
 :where(.column-map .js-s2d-ready),
 :where(.column-street-view .js-street-view) {
