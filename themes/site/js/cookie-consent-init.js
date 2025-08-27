@@ -41,18 +41,18 @@ CookieConsent.run({
       ja: {
         consentModal: {
           title: 'このウェブサイトはクッキーを使用しています',
-          description: '利用状況の分析とサービス向上のためクッキーを使用しています。お客様の個人情報は、<a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> に基づいて適切に取り扱われます。クッキーの利用にご同意いただける場合は「すべて同意する」を選択してください。<br>クッキーの設定は、いつでも <button data-cc="show-preferencesModal" class="cc__link">設定を管理</button> から変更できます。',
+          description: '利用状況の分析とサービス向上のためクッキーを使用しています。お客様の個人情報は、<a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> に基づいて適切に取り扱われます。クッキーの利用にご同意いただける場合は「OK」を選択してください。<br>クッキーの設定は、いつでも <button data-cc="show-preferencesModal" class="cc__link">設定を管理</button> から変更できます。',
           revisionMessage: "<br> 規約を変更いたしました。お手数ですが、再度ご確認いただきクッキーの取得と利用に同意をお願いいたします。",
-          acceptAllBtn: 'すべて同意する',
-          acceptNecessaryBtn: 'すべて却下する',
+          acceptAllBtn: 'OK', // すべてのクッキーに同意
+          acceptNecessaryBtn: '',// 必要なクッキーのみ同意
           footer: `
             <a href="%{HOME_URL}privacy.html">プライバシーポリシー</a>
           `
         },
         preferencesModal: {
           title: 'クッキーの設定',
-          acceptAllBtn: 'すべて同意する',
-          acceptNecessaryBtn: 'すべて却下する',
+          acceptAllBtn: '', // すべてのクッキーに同意
+          acceptNecessaryBtn: '', // 必要なクッキーのみ同意
           savePreferencesBtn: '設定を保存',
           closeIconLabel: '閉じる',
           sections: [
