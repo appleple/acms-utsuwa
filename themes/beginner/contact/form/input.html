@@ -8,18 +8,20 @@
       </div>
       <div class="form-control form-item-list">
 
-        <label class="form-checkbox" for="input-subject-物件についてのお問い合わせ"><input type="checkbox" name="subject[]" value="物件についてのお問い合わせ" id="input-subject-物件についてのお問い合わせ" {subject:checked#物件についてのお問い合わせ} /><i class="ico-checkbox" data-validator="subject"></i>物件についてのお問い合わせ</label>
-        <label class="form-checkbox" for="input-subject-売却相談"><input type="checkbox" name="subject[]" value="売却相談" id="input-subject-売却相談" {subject:checked#売却相談} /><i class="ico-checkbox" data-validator="subject"></i>売却相談</label>
-        <label class="form-checkbox" for="input-subject-賃貸のご相談"><input type="checkbox" name="subject[]" value="賃貸のご相談" id="input-subject-賃貸のご相談" {subject:checked#賃貸のご相談} /><i class="ico-checkbox" data-validator="subject"></i>賃貸のご相談</label>
-        <label class="form-checkbox" for="input-subject-採用に関するお問い合わせ"><input type="checkbox" name="subject[]" value="採用に関するお問い合わせ" id="input-subject-採用に関するお問い合わせ" {subject:checked#採用に関するお問い合わせ} /><i class="ico-checkbox" data-validator="subject"></i>採用に関するお問い合わせ</label>
-        <label class="form-checkbox" for="input-subject-その他"><input type="checkbox" name="subject[]" value="その他" id="input-subject-その他" {subject:checked#その他} /><i class="ico-checkbox" data-validator="subject"></i>その他</label>
+        <label class="form-radio" for="input-subject-物件についてのお問い合わせ"><input type="radio" name="subject[]" value="物件についてのお問い合わせ" id="input-subject-物件についてのお問い合わせ" {subject:checked#物件についてのお問い合わせ} /><i class="ico-radio" data-validator="subject"></i>物件についてのお問い合わせ</label>
+        <label class="form-radio" for="input-subject-売却相談"><input type="radio" name="subject[]" value="売却相談" id="input-subject-売却相談" {subject:checked#売却相談} /><i class="ico-radio" data-validator="subject"></i>売却相談</label>
+        <label class="form-radio" for="input-subject-賃貸のご相談"><input type="radio" name="subject[]" value="賃貸のご相談" id="input-subject-賃貸のご相談" {subject:checked#賃貸のご相談} /><i class="ico-radio" data-validator="subject"></i>賃貸のご相談</label>
+        <label class="form-radio" for="input-subject-採用に関するお問い合わせ"><input type="radio" name="subject[]" value="採用に関するお問い合わせ" id="input-subject-採用に関するお問い合わせ" {subject:checked#採用に関するお問い合わせ} /><i class="ico-radio" data-validator="subject"></i>採用に関するお問い合わせ</label>
+        <label class="form-radio" for="input-subject-その他"><input type="radio" name="subject[]" value="その他" id="input-subject-その他" {subject:checked#その他} /><i class="ico-radio" data-validator="subject"></i>その他</label>
         <input type="hidden" name="field[]" value="subject" />
         <input type="hidden" name="subject:v#required" id="subject-v-required" />
+        <!-- BEGIN subject:validator#required -->
         <div role="alert" aria-live="assertive">
-          <div data-validator-label="subject-v-required" class="validator-result-{subject:v#required}">
+          <div data-validator-label="subject-v-required" class="validator-result-0">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">ご用件を選択してください。</span></p>
           </div>
         </div>
+        <!-- END subject:validator#required -->
       </div>
     </li>
     <li class="form-group">
@@ -31,12 +33,13 @@
         <input type="hidden" name="field[]" value="inquiry">
         <input type="hidden" name="inquiry:v#required" id="inquiry-v-required">
         <input type="hidden" name="inquiry:c" value="KV">
-
+        <!-- BEGIN inquiry:validator#required -->
         <div role="alert" aria-live="assertive">
-          <div data-validator-label="inquiry-v-required" class="validator-result-{inquiry:v#required}">
+          <div data-validator-label="inquiry-v-required" class="validator-result-0">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お問い合わせ内容を入力してください。</span></p>
           </div>
         </div>
+        <!-- END inquiry:validator#required -->
       </div>
     </li>
   </ul>
@@ -63,12 +66,13 @@
         <input type="hidden" name="field[]" value="name">
         <input type="hidden" name="name:v#required" id="name-v-required">
         <input type="hidden" name="name:c" value="KV">
-
+        <!-- BEGIN name:validator#required -->
         <div role="alert" aria-live="assertive">
-          <div data-validator-label="name-v-required" class="validator-result-{name:v#required}">
+          <div data-validator-label="name-v-required" class="validator-result-0">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お名前を入力してください。</span></p>
           </div>
         </div>
+        <!-- END name:validator#required -->
       </div>
     </li>
     <li class="form-group">
@@ -83,15 +87,18 @@
         <input type="hidden" name="email:c" value="a">
 
         <p class="form-helper-text">ご記入いただいたメールアドレスに返信します</p>
-
-        <div data-validator-label="email-v-required" class="validator-result-{email:v#required}">
+        <!-- BEGIN email:validator#required -->
+        <div data-validator-label="email-v-required" class="validator-result-0">
           <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">メールアドレスを入力してください。</span></p>
         </div>
+        <!-- END email:validator#required -->
+        <!-- BEGIN email:validator#email -->
         <div role="alert" aria-live="assertive">
-          <div data-validator-label="email-v-email" class="validator-result-{email:v#email}">
+          <div data-validator-label="email-v-email" class="validator-result-0">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">正しいメールアドレスを入力してください。</span></p>
           </div>
         </div>
+        <!-- END email:validator#email -->
       </div>
     </li>
     <li class="form-group">
@@ -116,12 +123,13 @@
               <input type="hidden" name="field[]" value="postal-code">
               <input type="hidden" name="postal-code:c" value="a">
             </div>
+            <!-- BEGIN postal-code:validator#required -->
             <div role="alert" aria-live="assertive">
-              <div data-validator-label="postal-code-v-required" class="validator-result-{postal-code:v#required}">
+              <div data-validator-label="postal-code-v-required" class="validator-result-0">
                 <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">郵便番号を入力してください。</span></p>
               </div>
             </div>
-
+            <!-- END postal-code:validator#required -->
           </div>
           <div class="acms-g-col-12 acms-g-col-md-6">
             <label for="address-level1" class="acms-hide-visually">都道府県</label>
@@ -181,19 +189,23 @@
               <option value="沖縄県" {address-level1:selected#沖縄県}>沖縄県</option>
             </select>
             <input type="hidden" name="field[]" value="address-level1">
+            <!-- BEGIN address-level1:validator#required -->
             <div role="alert" aria-live="assertive">
-              <div data-validator-label="address-level1-v-required" class="validator-result-{address-level1:v#required}">
+              <div data-validator-label="address-level1-v-required" class="validator-result-0">
                 <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">都道府県を選択してください。</span></p>
               </div>
             </div>
+            <!-- END address-level1:validator#required -->
           </div>
           <div class="acms-g-col-12">
             <label for="address1" class="acms-hide-visually">市区町村、番地</label>
             <input id="address1" type="text" name="address1" autocomplete="address-level2 address-line1" value="{address1}" size="12" class="p-locality p-street-address p-extended-address acms-form-width-full" placeholder="例）〇〇〇市〇〇区〇丁目〇〇-〇" data-validator="address1">
             <input type="hidden" name="field[]" value="address1">
-            <div data-validator-label="address1-v-required" class="validator-result-{address1:v#required}">
+            <!-- BEGIN address1:validator#required -->
+            <div data-validator-label="address1-v-required" class="validator-result-0">
               <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">市区町村、番地を入力してください。</span></p>
             </div>
+            <!-- END address1:validator#required -->
           </div>
           <div class="acms-g-col-12">
             <label for="address2" class="acms-hide-visually">建物名</label>

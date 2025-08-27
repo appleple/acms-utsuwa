@@ -3,15 +3,12 @@
 <!-- BEGIN step -->
 <!-- フォームステップ：初期 -->
 <div class="form-initial-step-layout">
-  @include("/include/entry/body-content-only.html", {"module_id": "body_no_date"})
-
-  <!-- BEGIN_MODULE Touch_NotEdit -->
   <section>
     <h2 class="heading-lg">フォームからのお問い合わせ</h2>
     <!-- フォームステップ -->
     @include("/contact/form/step.html")
 
-    <form action="?step=reapply" method="post" class="js-unload_alert js-validator h-adr acms-form" enctype="multipart/form-data">
+    <form action="?step=reapply" method="post" class="js-unload_alert h-adr acms-form" enctype="multipart/form-data">
       @include("/contact/form/input.html")
       <div class="form-button-group">
         <input type="hidden" name="step" value="confirm" />
@@ -21,7 +18,7 @@
         <input type="submit" name="ACMS_POST_Form_Confirm" value="内容の確認へ" id="btnConfirm" class="button is-width-lg" />
       </div>
     </form>
-  </section><!-- END_MODULE Touch_NotEdit -->
+  </section>
 </div>
 <!-- END step -->
 
@@ -31,7 +28,7 @@
   <!-- フォームステップ -->
   @include("/contact/form/step.html")
   <p class="form-message">内容をご確認ください</p>
-  <form action="?step=reapply" method="post" class="js-unload_alert js-validator h-adr acms-form" enctype="multipart/form-data">
+  <form action="?step=reapply" method="post" class="js-unload_alert h-adr acms-form" enctype="multipart/form-data">
     @include("/contact/form/input.html")
     <div class="form-button-group">
       <input type="hidden" name="step" value="confirm" />
@@ -42,7 +39,6 @@
   </form>
 </div>
 <!-- END step#reapply -->
-
 
 <!-- BEGIN step#confirm -->
 <!-- フォームステップ：確認画面 -->
@@ -76,9 +72,9 @@
 <div>
   <!-- フォームステップ -->
   @include("/contact/form/step.html")
-
-  @include("/include/entry/body-content-only.html", {"module_id": "body_no_date"})
-
+  <p class="form-message">お問い合わせいただきありがとうございます。<br>
+    このあと担当者よりお返事いたしますので、今しばらくお待ちください。<br>
+    以下の内容で送信いたしました。</p>
   @include("/contact/form/confirm.html")
 
   <div class="form-button-group">
