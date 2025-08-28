@@ -6889,34 +6889,3 @@ input::placeholder {
 .event-googlemap-link-icon svg path {
   fill: currentcolor;
 }
-
-/* ------------------------------
-　　事業紹介
------------------------------- */
-/* 事業一覧
------------------------------- */
-/* 事業一覧用見出し */
-.service-card-title,
-.entry-style .service-card-title {
-  margin: 0;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 1.25rem;
-  line-height: var(--line-height-base);
-}
-@media (min-width: 48rem) {
-  .service-card-title,
-  .entry-style .service-card-title {
-    font-size: 1.5625rem;
-  }
-}
-
-/* 事例一覧用サービス名ラベル */
-.service-card-work-name,
-.entry-style .service-card-work-name {
-  margin: 0;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: var(--line-height-lg);
-}

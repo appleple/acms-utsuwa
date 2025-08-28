@@ -1572,11 +1572,14 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 }
-.js .js-animation-row .card-bordered {
+
+:not(.is-admin-page) { /* 編集画面ではアニメーションしない */ }
+:not(.is-admin-page) .js .js-animation-row .card-bordered {
   opacity: 0;
+  will-change: transform, opacity;
 }
-.js .js-animation-row.is-show .card-bordered {
-  opacity: 1;
+:not(.is-admin-page) .js .js-animation-row.is-show .card-bordered {
+  animation: fade-in 0.2s 0.7s 1 both;
 }
 
 .card-bordered-img-wrap {
@@ -1699,11 +1702,13 @@
   gap: 1rem;
   width: 100%;
 }
-.js .js-animation-row .card {
+
+:not(.is-admin-page) { /* 編集画面ではアニメーションしない */ }
+:not(.is-admin-page) .js .js-animation-row .card {
   opacity: 0;
   will-change: transform, opacity;
 }
-.js .js-animation-row.is-show .card {
+:not(.is-admin-page) .js .js-animation-row.is-show .card {
   animation: fade-in 0.2s 0.7s 1 both;
 }
 
@@ -2086,4 +2091,35 @@
 .faq-section-list {
   display: grid;
   gap: 3rem;
+}
+
+/* ------------------------------
+　　事業紹介
+------------------------------ */
+/* 事業一覧
+------------------------------ */
+/* 事業一覧用見出し */
+.service-card-title,
+.entry-style .service-card-title {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+}
+@media (min-width: 48rem) {
+  .service-card-title,
+  .entry-style .service-card-title {
+    font-size: 1.5625rem;
+  }
+}
+
+/* 事例一覧用サービス名ラベル */
+.service-card-work-name,
+.entry-style .service-card-work-name {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
 }
