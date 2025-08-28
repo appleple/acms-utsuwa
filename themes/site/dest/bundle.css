@@ -3815,22 +3815,18 @@ input::placeholder {
   color: inherit;
 }
 @media (hover: hover) {
-  .pager-link:-moz-any-link, .pager-link:-moz-any-link svg {
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+  .pager-link:-moz-any-link {
+    -moz-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
   }
-  .pager-link:any-link, .pager-link:any-link svg {
-    transition: all 0.3s ease;
+  .pager-link:any-link {
+    transition: background-color 0.3s ease;
   }
   .pager-link:-moz-any-link:hover {
-    color: var(--color-white);
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+    background-color: var(--color-hover-bg);
   }
   .pager-link:any-link:hover {
-    color: var(--color-white);
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+    background-color: var(--color-hover-bg);
   }
 }
 

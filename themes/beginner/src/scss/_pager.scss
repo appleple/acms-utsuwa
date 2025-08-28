@@ -92,15 +92,12 @@
   }
 
   @media (hover: hover) {
-    &:any-link,
-    &:any-link svg {
-      transition: all 0.3s ease;
+    &:any-link {
+      transition: background-color 0.3s ease;
     }
 
     &:any-link:hover {
-      color: var(--color-white);
-      background-color: var(--color-primary-hover);
-      border-color: var(--color-primary-hover);
+      background-color: var(--color-hover-bg);
     }
   }
 }
