@@ -8,16 +8,31 @@
 
 @include acms.editor-style(("table")) {
   margin: 0 0 var(--entry-el-margin-md);
+  overflow: hidden;
   background-color: var(--color-white);
-  border: 0; /* リセット用 */
-  border-collapse: collapse;
+  border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
+  border-collapse: separate; /* テーブルに角丸をつけるため separate にしています */
+  border-spacing: 0;
 
   th,
   td {
     padding: var(--entry-el-padding-xs);
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
-    border: var(--border-width-sm) solid var(--color-gray30);
+    border: 0; /* リセット */
+    border-bottom: var(--border-width-sm) solid var(--color-gray30);
+    border-left: var(--border-width-sm) solid var(--color-gray30);
+  }
+
+  th:first-child,
+  td:first-child {
+    border-left: 0;
+  }
+
+  tr:last-child th,
+  tr:last-child td {
+    border-bottom: 0;
   }
 
   th {
@@ -66,4 +81,10 @@
     white-space: nowrap;
     word-break: keep-all; // 横スクロールするテーブルの時は常時テキスト折り返しなし
   }
+}
+
+/* ブロックエディター編集画面用打ち消し */
+.acms-admin-block-editor-content .entry-style table {
+  overflow: visible; /* ブロックエディター編集画面では装飾操作用UIの表示を妨げないように「overflow: hidden;」はしないでください */
+  border-radius: 0;
 }
