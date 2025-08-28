@@ -72,13 +72,15 @@
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+}
 
-  .js .js-animation-row & {
+:not(.is-admin-page) { /* 編集画面ではアニメーションしない */
+  .js .js-animation-row .card {
     opacity: 0;
     will-change: transform, opacity;
   }
 
-  .js .js-animation-row.is-show & {
+  .js .js-animation-row.is-show .card {
     animation: fade-in 0.2s 0.7s 1 both;
   }
 }

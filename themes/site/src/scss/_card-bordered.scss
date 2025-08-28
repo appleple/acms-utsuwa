@@ -42,13 +42,16 @@
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
+}
 
-  .js .js-animation-row & {
+:not(.is-admin-page) { /* 編集画面ではアニメーションしない */
+  .js .js-animation-row .card-bordered {
     opacity: 0;
+    will-change: transform, opacity;
   }
 
-  .js .js-animation-row.is-show & {
-    opacity: 1;
+  .js .js-animation-row.is-show .card-bordered {
+    animation: fade-in 0.2s 0.7s 1 both;
   }
 }
 
