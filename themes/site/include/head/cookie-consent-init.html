@@ -9,42 +9,117 @@
   #cc-main {
     --cc-font-family: inherit;
     --cc-modal-border-radius: .5rem;
-    --cc-btn-border-radius: .4rem;
     --cc-modal-transition-duration: .25s;
     --cc-modal-margin: 1rem;
     --cc-z-index: 2147483647;
-    --cc-btn-primary-bg: var(--color-primary);
-    --cc-btn-primary-border-color: var(--color-primary);
-    --cc-btn-primary-hover-bg: var(--color-primary-hover);
-    --cc-btn-primary-hover-border-color: var(--color-primary-hover);
+
+    /* ボタン共通 */
     --cc-btn-border-radius: var(--border-radius-md);
 
-    --cc-footer-bg: var(--cc-btn-secondary-bg);
-    --cc-footer-color: var(--color-text);
+    /* クッキーポップアップ内：「許可する」ボタン */
+    --cc-btn-primary-bg: var(--color-primary);
+    --cc-btn-primary-border-color: var(--color-primary);
+    --cc-btn-primary-color: var(--color-white);
+    --cc-btn-primary-hover-bg: var(--color-primary-hover);
+    --cc-btn-primary-hover-border-color: var(--color-primary-hover);
+    --cc-btn-primary-hover-color: var(--color-white);
+
+    /* クッキー設定モーダル内：アコーディオン見出し */
+    --cc-cookie-category-block-bg: transparent;
+    --cc-cookie-category-block-border: var(--color-gray30);
+    --cc-cookie-category-block-hover-bg: var(--color-hover-bg-2nd);
+    --cc-cookie-category-block-hover-border: var(--color-gray30);
+
+    /* クッキー設定モーダル内：トグル */
+    --cc-toggle-readonly-bg: var(--color-gray30);
+    --cc-toggle-off-bg: var(--color-gray70);
+    --cc-toggle-on-bg: var(--color-gray100);
+
+    /* クッキー設定モーダル内：「設定を保存する」ボタン */
+    --cc-btn-secondary-bg: var(--color-primary);
+    --cc-btn-secondary-border-color: var(--color-primary);
+    --cc-btn-secondary-color: var(--color-white);
+    --cc-btn-secondary-hover-bg: var(--color-primary-hover);
+    --cc-btn-secondary-hover-border-color: var(--color-primary-hover);
+    --cc-btn-secondary-hover-color: var(--color-white);
   }
 
-  /* クッキーモーダルの幅調整 */
-  #cc-main .cm {
-    max-width: 25rem; /* 見出しが1行に収まる幅 */
-  }
-
-  /* 却下ボタン */
-  #cc-main .cm--inline .cm__btn + .cm__btn {
-    background: var(--cc-btn-secondary-bg);
-    border-color: var(--cc-btn-secondary-border-color);
-    color: var(--cc-btn-secondary-color);
-
+  /* リンクテキスト */
+  #cc-main .cc__link {
+    background: transparent;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 3px;
     &:hover {
-      background: var(--cc-btn-secondary-hover-bg);
-      border-color: var(--cc-btn-secondary-hover-border-color);
-      color: var(--cc-btn-secondary-hover-color);
+      text-decoration: none;
     }
   }
 
-  /* 詳細設定モーダル */
-  #cc-main .pm__section:not(:first-child):hover {
-    background: transparent;
-    border-color: var(--cc-separator-border-color);
+  /* クッキーポップアップ */
+  #cc-main .cm {
+    max-width: 23rem; /* 見出しが1行に収まる幅 */
+  }
+
+  /* クッキーポップアップ内：見出し */
+  #cc-main .cm__title {
+    line-height: var(--line-height-base);
+  }
+
+  /* クッキーポップアップ内：案内文 */
+  #cc-main .cm__desc {
+    line-height: var(--line-height-lg);
+  }
+
+  /* クッキー設定モーダル */
+  #cc-main .pm--box {
+    max-width: 32rem;
+    height: auto;
+    max-height: 100%;
+  }
+
+  /* クッキー設定モーダル：閉じるボタン */
+  #cc-main .pm__close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-icon-bg);
+    svg {
+      stroke: var(--color-white);
+    }
+    &:hover {
+      background-color: var(--color-icon-bg-hover);
+      svg {
+        stroke: var(--color-white);
+      }
+    }
+  }
+
+  /* クッキー設定モーダル内：案内文 */
+  #cc-main .pm__section-title,
+  #cc-main .pm__section-desc {
+    line-height: var(--line-height-lg);
+    font-size: 1rem;
+  }
+
+  /* クッキー設定モーダル内：アコーディオンアイテム間余白 */
+  #cc-main .pm__section--toggle {
+    margin-bottom: 1rem;
+  }
+
+  /* クッキー設定モーダル内：アコーディオン矢印 */
+  #cc-main .pm__section--expandable .pm__section-arrow {
+    background-color: var(--color-gray80);
+  }
+
+  /* クッキー設定モーダル内：設定を保存するボタン
+     モーダル内のフッターにボタンを2つ以上設置した場合はこちらのスタイルは削除ください */
+  #cc-main .pm__btn-group {
+    width: 100%;
+    & + .pm__btn-group {
+      margin-left: 0;
+    }
+  }
+  #cc-main .pm__btn-group:not(:has(*)) {
+    display: none;
   }
 </style>
 <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>

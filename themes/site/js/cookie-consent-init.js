@@ -40,39 +40,33 @@ CookieConsent.run({
     translations: {
       ja: {
         consentModal: {
-          title: 'このウェブサイトはクッキーを使用しています',
-          description: '利用状況の分析とサービス向上のためクッキーを使用しています。お客様の個人情報は、<a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> に基づいて適切に取り扱われます。クッキーの利用にご同意いただける場合は「OK」を選択してください。<br>クッキーの設定は、いつでも <button data-cc="show-preferencesModal" class="cc__link">設定を管理</button> から変更できます。',
-          revisionMessage: "<br> 規約を変更いたしました。お手数ですが、再度ご確認いただきクッキーの取得と利用に同意をお願いいたします。",
-          acceptAllBtn: 'OK', // すべてのクッキーに同意
-          acceptNecessaryBtn: '',// 動作に必要なクッキーのみ同意
-          footer: `
-            <a href="%{HOME_URL}privacy.html">プライバシーポリシー</a>
-          `
+          title: 'このウェブサイトは Cookie（クッキー）を使用しています',
+          description: '利用状況の分析とサービス向上のためCookie を使用しています。お客様の個人情報は、<a class="cc__link" href="/privacy.html">プライバシーポリシー</a> に基づいて適切に取り扱われます。<br>なお、詳細設定が必要な場合は、 <button data-cc="show-preferencesModal" class="cc__link">Cookie の設定</button> から変更できます。',
+          revisionMessage: "<br>規約を変更いたしました。お手数ですが、再度ご確認いただき Cookie の取得と利用の許可をお願いいたします。",
+          acceptAllBtn: '許可する', // すべてのクッキーに同意
+          acceptNecessaryBtn: '', // 動作に必要なクッキーのみ同意
+          footer: '',
         },
         preferencesModal: {
-          title: 'クッキーの設定',
+          title: 'Cookie の設定',
           acceptAllBtn: '', // すべてのクッキーに同意
           acceptNecessaryBtn: '', // 動作に必要なクッキーのみ同意
-          savePreferencesBtn: '設定を保存',
+          savePreferencesBtn: '設定を保存する',
           closeIconLabel: '閉じる',
           sections: [
             {
-              title: 'クッキーの使用について',
-              description: 'このウェブサイトでは、お客様の利便性向上とサービス改善、利用状況の分析のためクッキーを使用しています。お客様はクッキーのカテゴリごとに同意または却下を選択できます。クッキーや個人情報の取り扱いについては <a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> をご確認ください。'
+              title: 'Cookie の使用について',
+              description: 'このウェブサイトでは、利用状況の分析とサービス向上のため Cookie を使用しています。お客様は Cookie のカテゴリーごとに許可または拒否を選択できます。<br>Cookie や個人情報の取り扱いについては <a class="cc__link" href="/privacy.html">プライバシーポリシー</a> をご確認ください。'
             },
             {
-              title: '動作のために必要なクッキー',
-              description: 'このWebサイトが適切に動作するために必要なCookieです。ウェブサイトの動作に不可欠なため、拒否できません。',
+              title: '【必須】動作のために必要な Cookie',
+              description: 'このWebサイトが適切に動作するために必要な Cookie です。ウェブサイトの動作に不可欠なため、拒否できません。',
               linkedCategory: 'necessary'
             },
             {
-              title: 'パフォーマンスと分析のクッキー',
+              title: 'パフォーマンスと分析の Cookie',
               description: '当ウェブサイトの利用状況を収集しています。収集したデータはサイトやサービス改善のためにのみ使用します。',
               linkedCategory: 'analytics'
-            },
-            {
-              title: '個人情報お取り扱いについて',
-              description: '個人情報お取り扱いについての詳細は <a class="cc__link" href="%{HOME_URL}privacy.html">プライバシーポリシー</a> をご覧ください。',
             }
           ]
         }
