@@ -68,7 +68,7 @@
 .acms-admin-block-editor-file-link .caption,
 .media-file-block[data-display-type="button"] .caption,
 [class*="column-file"] .caption,
-[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon) .caption {
+[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon):not(:has(.column-pdf-image)) .caption {
   margin: 0; /* リセット */
   color: currentcolor;
   font-size: map.get(global.$font-scales, body-m);
@@ -82,7 +82,7 @@
 [class*="column-media"]:has(.column-pdf-image) {
   a {
     display: inline-grid;
-    gap: 0.25rem;
+    gap: 0.5rem;
     justify-content: center;
 
     /* リンクスタイルリセット */
