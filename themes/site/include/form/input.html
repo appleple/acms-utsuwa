@@ -3,7 +3,7 @@
 	<ul class="form-group-list">
 		<li class="form-group">
 			<div class="form-label"><label for="namae">お名前</label><span class="label-required">必須</span></div>
-			<div class="form-control form-item-list">
+			<div class="form-control">
 				<input id="namae" name="namae" type="text" value="\{namae\}" class="acms-form-width-full<!-- BEGIN\ namae:validator --> invalid<!-- END\ namae:validator -->">
 				<input type="hidden" name="field[]" value="namae">
 				<input type="hidden" name="namae:v#required">
@@ -14,7 +14,7 @@
 		</li>
 		<li class="form-group">
 			<div class="form-label"><label for="email">メールアドレス</label><span class="label-required">必須</span></div>
-			<div class="form-control form-item-list">
+			<div class="form-control">
 				<input id="email" name="email" type="email" value="\{email\}" class="acms-form-width-full<!-- BEGIN\ email:validator --> invalid<!-- END\ email:validator -->">
 				<input type="hidden" name="field[]" value="email">
 				<input type="hidden" name="email:v#required">
@@ -29,7 +29,7 @@
 		<!-- BEGIN text -->
 		<li class="form-group">
 			<div class="form-label"><label for="form-unit-{utid}">{label}</label><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --></div>
-			<div class="form-control form-item-list">
+			<div class="form-control">
 				<input type="text" id="form-unit-{utid}" name="form-unit-{utid}" value="\{form-unit-{utid}\}" size="20" class="acms-form-width-full">
 				<input type="hidden" name="field[]" value="form-unit-{utid}">
 				<!-- BEGIN validator:loop -->
@@ -43,7 +43,7 @@
 		<!-- BEGIN textarea -->
 		<li class="form-group">
 			<div class="form-label"><label for="form-unit-{utid}">{label}</label><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --></div>
-			<div class="form-control form-item-list">
+			<div class="form-control">
 				<textarea name="form-unit-{utid}" id="form-unit-{utid}" rows="5" class="acms-form-width-full<!-- BEGIN validatorMessage:loop --><!-- BEGIN\ form-unit-{vutid}:validator#{valid} --> invalid<!-- END\ form-unit-{vutid}:validator#{valid} --><!-- END validator:loop -->">\{form-unit-{utid}\}</textarea>
 				<input type="hidden" name="field[]" value="form-unit-{utid}">
 				<!-- BEGIN validator:loop -->
@@ -78,7 +78,7 @@
 		<!-- BEGIN select -->
 		<li class="form-group">
 			<div class="form-label"><label for="form-unit-{utid}">{label}<!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --></label></div>
-			<div class="form-control form-item-list">
+			<div class="form-control">
 				<select id="form-unit-{utid}" name="form-unit-{utid}">
 					<!-- BEGIN select#val:loop -->
 					<option value="{value}" \{form-unit-{utid}:selected#{value}\}<!-- BEGIN_IF [\{form-unit-{utid}\}/em/_and_/{i}/eq/1] --> selected=""selected<!-- END_IF -->>{value}</option><!-- END select#val:loop -->

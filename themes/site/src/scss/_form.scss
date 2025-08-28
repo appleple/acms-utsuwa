@@ -151,7 +151,7 @@
   &.form-item-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
 }
 
@@ -169,8 +169,15 @@
 }
 
 @include acms.media-breakpoint-up(md) {
+  .form-control {
+    &.form-item-list {
+      gap: 1rem;
+    }
+  }
+
   .form-button-group {
     flex-direction: row;
+    gap: 1rem;
   }
 
   .form-button:not(:last-child) {
@@ -232,10 +239,6 @@
 
 /* フォーム要素
 ------------------------------ */
-input::placeholder {
-  color: red;
-}
-
 .form-group {
   display: block;
   border: 0;
@@ -289,7 +292,6 @@ input::placeholder {
       background-color: var(--color-white);
     }
 
-
     &:focus {
       background-color: var(--color-white);
       border-color: var(--color-focus);
@@ -340,6 +342,7 @@ input::placeholder {
   .form-checkbox {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 
     label {
       position: relative;
@@ -459,6 +462,10 @@ input::placeholder {
 }
 
 .form-radio {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
   label {
     position: relative;
     display: inline-flex;
@@ -481,7 +488,7 @@ input::placeholder {
       border-color: var(--color-primary);
     }
 
-    &:focus+.ico-radio {
+    &:focus + .ico-radio {
       border-color: var(--color-primary);
       box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
     }
@@ -492,7 +499,6 @@ input::placeholder {
     box-sizing: border-box;
     width: 24px;
     height: 24px;
-    margin-right: 8px;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;

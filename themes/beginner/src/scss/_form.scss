@@ -115,7 +115,6 @@
   &.is-confirm {
     padding-bottom: var(--gutter-lg);
   }
-
 }
 
 .form-group-inner {
@@ -151,7 +150,7 @@
   &.form-item-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
   }
 }
 
@@ -169,6 +168,12 @@
 }
 
 @include acms.media-breakpoint-up(md) {
+  .form-control {
+    &.form-item-list {
+      gap: 1rem;
+    }
+  }
+
   .form-button-group {
     flex-direction: row;
     gap: 1rem;
@@ -336,6 +341,7 @@
   .form-checkbox {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 
     label {
       position: relative;
@@ -455,6 +461,10 @@
 }
 
 .form-radio {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
   label {
     position: relative;
     display: inline-flex;
@@ -477,7 +487,7 @@
       border-color: var(--color-primary);
     }
 
-    &:focus+.ico-radio {
+    &:focus + .ico-radio {
       border-color: var(--color-primary);
       box-shadow: var(--box-shadow-focus), 0 1px 1px rgb(0 0 0 / 10%) inset;
     }
@@ -488,7 +498,6 @@
     box-sizing: border-box;
     width: 24px;
     height: 24px;
-    margin-right: 8px;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
