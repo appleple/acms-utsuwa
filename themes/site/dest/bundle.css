@@ -2085,7 +2085,7 @@ a {
 .form-control.form-item-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .form-button-group .button {
@@ -2100,8 +2100,12 @@ a {
 }
 
 @media (min-width: 48rem) {
+  .form-control.form-item-list {
+    gap: 1rem;
+  }
   .form-button-group {
     flex-direction: row;
+    gap: 1rem;
   }
   .form-button:not(:last-child) {
     margin: 0 1.25rem 0 0;
@@ -2154,13 +2158,6 @@ a {
 }
 /* フォーム要素
 ------------------------------ */
-input::-moz-placeholder {
-  color: red;
-}
-input::placeholder {
-  color: red;
-}
-
 .form-group {
   display: block;
   border: 0;
@@ -2319,6 +2316,7 @@ input::placeholder {
 .form-group .form-checkbox {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 .form-group .form-checkbox label {
   position: relative;
@@ -2419,6 +2417,11 @@ input::placeholder {
     width: fit-content;
   }
 }
+.form-radio {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
 .form-radio label {
   position: relative;
   display: inline-flex;
@@ -2448,7 +2451,6 @@ input::placeholder {
   box-sizing: border-box;
   width: 24px;
   height: 24px;
-  margin-right: 8px;
   background-color: var(--color-white);
   background-repeat: no-repeat;
   background-position: center;
