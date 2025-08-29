@@ -1,9 +1,11 @@
+import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js';
+
 // CookieConsentの初期化
 // カスタマイズする場合は https://cookieconsent.orestbida.com/ を参照してください。
 CookieConsent.run({
   disablePageInteraction: false,
   cookie: {
-    name: 'cc_site_theme_cookie',
+    name: 'cc_cookie_site_theme',
   },
   guiOptions: {
     consentModal: {

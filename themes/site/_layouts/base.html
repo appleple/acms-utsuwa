@@ -12,37 +12,17 @@
     @section('head-service')
     <!-- BEGIN_MODULE Touch_Unlogin --><!-- BEGIN_MODULE Touch_NotPreview -->
 
-    <!-- Cookie利用同意ポップアップ初期化 -->
+    <!-- Cookie利用同意ポップアップを使用する場合 -->
     @include("/include/head/cookie-consent-init.html")
 
+    <!-- Cookie利用同意ポップアップを使用しない場合 -->
     <!-- BEGIN_MODULE Blog_Field id="root" -->
-    <!-- BEGIN_IF [{gtm_enable}/eq/true] -->
-    <!-- BEGIN_IF [{cookie_consent}/eq/true] -->
-    @verbatim
-    <!-- GTM用：Cookie利用によるデータ収集をデフォルト無効化 -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied'
-      });
-    </script>
-    @endverbatim
-    <!-- END_IF -->
-    {google_tag_manager}[raw|allow_dangerous_tag]
-    <!-- ELSE -->
-    {google_analytics}[raw|allow_dangerous_tag]
-    <!-- END_IF -->
-
-    <!-- BEGIN_IF [{cookie_consent}/eq/true/_and_/{gtm_enable}/eq/true] -->
-    @verbatim
-    <!-- GTM用：Cookie利用同意後のデータ収集有効化 -->
-    <script type="text/plain" data-category="analytics">
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
-    </script>
-    @endverbatim
+    <!-- BEGIN_IF [{cookie_consent}/neq/true] -->
+      <!-- BEGIN_IF [{gtm_enable}/eq/true] -->
+      {google_tag_manager}[raw|allow_dangerous_tag]
+      <!-- ELSE -->
+      {google_analytics}[raw|allow_dangerous_tag]
+      <!-- END_IF -->
     <!-- END_IF -->
     <!-- END_MODULE Blog_Field -->
 

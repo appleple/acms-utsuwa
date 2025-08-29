@@ -1,7 +1,8 @@
-<!-- カスタマイズする場合は https://cookieconsent.orestbida.com/ を参照してください。 -->
-
 <!-- BEGIN_MODULE Blog_Field id="root" -->
 <!-- BEGIN_IF [{cookie_consent}/eq/true] -->
+
+<!-- Cookie利用同意ポップアップ機能をカスタマイズする場合は
+https://cookieconsent.orestbida.com/ を参照してください。 -->
 
 @verbatim
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
@@ -134,9 +135,41 @@
     display: none;
   }
 </style>
-<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
-<script defer src="/js/cookie-consent-init.js"></script>
+<script type="module" src="/js/cookie-consent-init.js"></script>
 @endverbatim
+
+<!-- BEGIN_IF [{gtm_enable}/eq/true] -->
+@verbatim
+<!-- GTM用：Cookie利用によるデータ収集をデフォルト無効化 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+  });
+</script>
+@endverbatim
+
+{google_tag_manager}[raw|allow_dangerous_tag]
+
+@verbatim
+<!-- GTM用：Cookie利用許可後のデータ収集有効化 -->
+<script type="text/plain" data-category="analytics">
+  gtag('consent', 'update', {
+    'analytics_storage': 'granted'
+  });
+</script>
+<!-- GTM用：Cookie利用許可取り消し後のデータ収集無効化 -->
+<script type="text/plain" data-category="!analytics">
+  gtag('consent', 'update', {
+      'analytics_storage': 'denied'
+  });
+</script>
+@endverbatim
+
+<!-- ELSE -->
+{google_analytics}[raw|allow_dangerous_tag]
+<!-- END_IF -->
 
 <!-- END_IF -->
 <!-- END_MODULE Blog_Field -->
