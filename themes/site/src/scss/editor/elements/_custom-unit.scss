@@ -314,10 +314,10 @@
 
       &::before {
         display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        margin: 0 0.5rem 0 0;
-        vertical-align: middle;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0 0.375rem 0 0;
+        vertical-align: top;
         background: url(#{global.$root-theme-img}icon-color/circle-check-blue.svg);
         background-size: contain;
         content: "";

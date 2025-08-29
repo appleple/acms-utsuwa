@@ -33,12 +33,12 @@
         <h3 class="pricing-title">{pricing_title}</h3><!-- END pricing_title:veil --><!-- BEGIN pricing_desc:veil -->
         <p class="pricing-desc">{pricing_desc}[nl2br]</p><!-- END pricing_desc:veil -->
       </div>
-      <div class="pricing-body"><!-- BEGIN_IF [{pricing_price}/nem] -->
+      <div class="pricing-body"><!-- BEGIN pricing_price:veil -->
         <p class="pricing-price">{pricing_price}<span class="pricing-unit">{pricing_price_unit}</span></p>
-        <!-- END_IF --><!-- BEGIN pricing_check_list:veil -->
+        <!-- END pricing_price:veil --><!-- BEGIN pricing_check_list:veil -->
         <ul class="pricing-check-group">
           {pricing_check_list}[list]
-        </ul><!-- WND pricing_check_list:veil -->
+        </ul><!-- END pricing_check_list:veil -->
       </div>
       <div class="pricing-footer"><!-- BEGIN pricing_btn_url:veil -->
         <a href="{pricing_btn_url}" class="button pricing-button">詳しく見る</a><!-- END pricing_btn_url:veil -->
