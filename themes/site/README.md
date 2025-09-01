@@ -210,16 +210,8 @@ https://developer.a-blogcms.jp/document/reference/builtinjs/viewer/modal-video.h
 各エントリー別に応募フォームを設置できるよう、動的フォームが使用できるようになっています。<br>
 動的フォームのテンプレートは、site/include/form 内をご参照ください。
 
-動的フォームでは完了ページを表示するために URL コンテキストに tpl を使用しています。
-tpl を有効化するには、private/config.system.yaml に下記を記述してください。
-
-```
-allow_tpl_path: [recruit/thanks.html]
-```
-
-なお、ログインしている状態だと上記 allow_tpl_path を記載していなくとも完了ページまで移動することができるため、動的フォームを利用する場合はログアウトしての動作確認を行なってください。
-
-※ a-blog cms Ver. 2.11.25 より、tpl はログアウト時にはデフォルトでは無効化される仕様となりました（[Ver. 2.11.25 からのテンプレートの仕様変更について](https://developer.a-blogcms.jp/blog/news/template-21125.html)）。
+動的フォーム<br>
+https://developer.a-blogcms.jp/document/form/dynamic_form.html
 
 ## エントリーの固定表示
 
@@ -230,3 +222,131 @@ allow_tpl_path: [recruit/thanks.html]
 - お問い合わせ（contact：ルートブログのカテゴリー）
 
 エントリー編集ページ > 詳細設定 にある「ファイル名」の入力欄を空にすることで、エントリーを固定表示しています。
+
+## 右下追従ポップアップバナー（mf_popup_banner）
+
+サイトトップページのみに設置することができるポップアップバナーです。<br>
+利用者がバナーをクリックまたはバツボタンで削除した場合、ローカルストレージにその情報を保存し、一定期間ポップアップバナーを出さないようにする実装をしています。
+
+- site/include/parts/popup-banner.html
+- site/js/popup-banner.js
+
+## 外部サービスとの連携
+
+### Googleアナリティクス （ルートブログで設定）
+
+GTM経由ではなく、Googleアナリティクス単体での埋め込みをするための入力欄を用意しています。
+
+- site/admin/blog/field-analytics.html
+
+テーマデフォルトでは、タッチモジュールによりプレビューとログアウト時には読み込まないようにしています。
+
+[タッチモジュール](https://developer.a-blogcms.jp/document/reference/touch.html)
+- Touch_NotPreview
+- Touch_Unlogin
+
+### GTM （ルートブログで設定）
+
+Google Tag Manager を埋め込むための入力欄を用意しています。
+
+- site/admin/blog/field-gtm.html
+
+GTMを使用する場合は「有効化設定（gtm_enable）」にチェックを入れて運用ください（true）。GTMと「cookie-consent」使用時の実装方法が異なるのと、タグ2重設定防止のため切り替え用チェックボックスを用意しました。<br>
+テーマデフォルトでは、Googleアナリティクスと同じく、タッチモジュールによりプレビューとログアウト時には読み込まないようにしています。
+
+### cookie-consent ボップアップ （ルートブログで設定）
+
+クッキーの同意ポップアップには [CookieConsent](https://playground.cookieconsent.orestbida.com/) を使用しています。ポップアップ機能を利用する際は、ルートブログのカスタム設定にある「EU向けCookie利用の同意ポップアップ設定」の「同意ポップアップ表示」にチェックを入れます（cookie_consent: true）。<br>
+Google Analytics のタグを埋め込む場合は、script要素に指定の属性を追加する必要があります。設定欄の注意事項を確認してから設定ください。
+
+- site/admin/blog/field-cookie-consent.html
+
+テーマデフォルトでは、Googleアナリティクスと同じく、タッチモジュールによりプレビューとログアウト時には読み込まないようにしています。
+
+#### cookie-consent ボップアップ実装箇所
+
+- ポップアップ内容や動作定義：site/js/cookie-consent-init.js
+- スタイル調整など：site/include/head/cookie-consent-init.html
+- テンプレートインクルード：site/_layouts/base.html
+
+ポップアップ内容の変更、多言語対応、訪問者による設定変更用ボタンの設置、規約変更時の再表示設定、などのカスタマイズも可能です。カスタマイズ方法は [CookieConsent 公式サイト](https://playground.cookieconsent.orestbida.com/) をご参照ください。
+
+### Search Console （ルートブログで設定）
+
+[Google Search Console](https://search.google.com/search-console/)の、`<meta>` タグ追加によるサイト所有権を設定できる入力欄を用意しています。Google アナリティクスや、GTMを設定しない場合にご利用ください。<br>
+入力内容などの詳細は <a href='https://support.google.com/webmasters/answer/35179'>サイトの所有権を確認する - Search Console ヘルプ</a> の「HTMLタグ」項目をご覧ください。
+
+- site/admin/blog/field-search-console.html
+
+metaタグへの埋め込み内容は `google_site_verification` でソースコードを検索してご確認ください。
+
+## おまけ
+
+### サイトトップのレイアウト機能
+
+本テーマでは、サイトトップページをレイアウト機能で実装できるようになるテンプレートを用意しています。
+
+レイアウト機能とは、ブラウザ上からモジュールの配置ができるようになる機能です。たとえば、新しくエントリーヘッドラインやエントリーサマリーのモジュールを追加したくなった場合、普段であればHTMLを修正しなければいけませんが、ブラウザ上からドラッグアンドドロップの操作でモジュールの設置ができます。
+
+https://developer.a-blogcms.jp/document/layout/
+
+### レイアウト機能の有効化
+
+ルートブログ > 管理画面 > テーマ（テーマセット管理） > Site ルートテーマ にて、「テンプレート設定 > テンプレート選択ファイル（template.yaml）の値を優先する」のチェックを外し、「テンプレートファイル > トップページ」に layout.html と入力された状態で保存します。
+
+すると、サイトトップページで site/layout.html が読み込まれレイアウト機能を使用することができます。
+
+テーマインストール時であれば、ある程度初期のレイアウトデータが入っています。
+
+※上記機能を使用しない場合はテンプレートを削除することを推奨します。
+
+### 関連バナーのカルーセル版
+
+[splide](https://splidejs.com/) を使用したカルーセル版のバナー一覧用テンプレートを用意しています。 root@site/_top.html にて下記テンプレートのインクルードをコメントアウトしていますのでご利用される場合はコメントアウトを外して表示させてください。
+
+- site/include/parts/banner-slide.html（banner_slide_top）
+
+※上記テンプレートを使用しない場合は削除することを推奨します。
+
+### パターン別メインビジュアル
+
+デフォルトのメインビジュアル（site/include/header/main-visual.html）の他に、2パターンの雰囲気の異なるテンプレートを用意しています。root@site/_top.html にて下記テンプレートのインクルードをコメントアウトしていますのでご利用される場合はコメントアウトを外して表示させてください。
+
+- site/include/header/main-visual-ex01.html（mf_main_visual）
+- site/include/header/main-visual-ex02.html（mf_main_visual）
+
+パターン別メインビジュアルでは通常機能とは違い画像の「配置」などの機能を制限しています。上記テンプレート内に注意事項が記載してありますので一読してからご利用ください。
+
+※上記テンプレートを使用しない場合は削除することを推奨します。
+
+### パターン別サイトロゴ+ナビゲーション
+
+デフォルトのサイトロゴ+ナビゲーションテンプレート（site//include/header/header.html）の他に、2パターンのレイアウトが異なるテンプレートを用意しています。site/_layouts/base.html にて下記テンプレートのインクルードをコメントアウトしていますのでご利用される場合はコメントアウトを外して表示させてください。
+
+- ロゴとナビゲーション縦積み ロゴ左寄せ (site/include/header/header-nav-bottom.html)
+- ロゴとナビゲーション縦積み ロゴ中央寄せ（site/include/header/header-logo-center.html）
+
+※上記テンプレートを使用しない場合は削除することを推奨します。
+
+### 事例紹介のhtmx版テンプレート
+
+本テーマではところどころに [htmx](https://developer.a-blogcms.jp/document/reference/builtinjs/htmx/) を利用しており、ページ内の一部分読み込みをしてよりシームレスな大変ができるような実装をしております。<br>
+使用箇所は `hx-` などでソースコード検索ください。
+
+事例紹介については、おまけテンプレートして条件検索や次ページへの遷移を htmx 化したテンプレートを用意しています。https://ドメイン名/works/htmx-sample.html にアクセスして操作感を体験ください。
+
+サンプルテンプレートは works@site/htmx-sample.html にてご確認いただけます。<br>
+※上記テンプレートを使用しない場合は削除することを推奨します。
+
+### 読者ユーザーでのプロフィール更新用テンプレート
+
+基本的には**会員機能を利用する場合は Member テーマの利用をおすすめ**していますが、Site テーマでも会員サイト化しやすいように、読者ユーザーのプロフィール更新用テンプレートを用意しています。
+
+- site/_member/update-email.html
+- site/_member/update-password.html
+- site/_member/update-profile.html
+- site/_member/update-tfa.html
+
+テンプレートをご利用する場合は、@extends 先を確認し、サイトアップデート時にご利用テンプレートの調整が必要かのご確認をお願いいたします。
+
+※読者機能を使用しない場合は削除することを推奨します。
