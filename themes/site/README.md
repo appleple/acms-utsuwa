@@ -22,7 +22,8 @@
 
 ## デザインファイル
 
-デザインファイルは、[a-blog cms developer サイト > ドキュメント > テーマ](https://developer.a-blogcms.jp/document/themes/) にアクセスし、Site テーマの「Figma ファイル」リンクを参照して下さい。
+デザインファイルは、[a-blog cms developer サイト > ドキュメント > テーマ](https://developer.a-blogcms.jp/document/themes/) にアクセスし、Site テーマの「Figma ファイル」リンクを参照して下さい。<br>
+※ Site テーマと Beginner テーマのデザインは共通のものを使用しています。
 
 ## テーマ内テンプレートについて
 
@@ -127,7 +128,7 @@ Site テーマ内で読み込んでいる JavaScript ファイルが入ってい
 各コンテンツ専用のカスタムフィールドを用意しています。<br>
 中には下記のようにコンテンツ間で共通のカスタムフィールドを使用している箇所もあります。
 
-- ブログ・カテゴリー・エントリーのSEO設定とOGP設定<br>※メインイメージがOGPとして表示されるコンテンツもあります）
+- ブログ・カテゴリー・エントリーのSEO設定とOGP設定<br>※メインイメージがOGPとして表示されるコンテンツもあります
 - 下層ブログとルートブログカテゴリーのページヘッダー設定
 - サイトトップページなどで使用するモジュールの見出し設定
 
@@ -181,6 +182,10 @@ Site テーマではモジュールユニットを使用することができま
 #### メインビジュアル
 
 メインビジュアルなど、Site テーマ内で使用しているスライダーは splide という スクリプトを使用しています。使用方法に着いては [splide の公式サイト](https://splidejs.com/) をご覧ください。
+
+- site/include/header/main-visual.html
+- site/src/scss/_splide.scss
+- site/src/scss/_main-visual.scss
 
 #### Movie セクション
 
@@ -305,6 +310,10 @@ https://developer.a-blogcms.jp/document/layout/
 [splide](https://splidejs.com/) を使用したカルーセル版のバナー一覧用テンプレートを用意しています。 root@site/_top.html にて下記テンプレートのインクルードをコメントアウトしていますのでご利用される場合はコメントアウトを外して表示させてください。
 
 - site/include/parts/banner-slide.html（banner_slide_top）
+
+splide.js の設定は下記JSファイルで行っています。
+
+- site/js/banner-carousel.js
 
 ※上記テンプレートを使用しない場合は削除することを推奨します。
 
