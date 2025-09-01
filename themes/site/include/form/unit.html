@@ -57,7 +57,7 @@
         <input type="submit" name="ACMS_POST_Form_Chain" value="修正する" id="btnToInput" class="button is-bg-white-bordered">
       </form>
 
-      <form action="/bid/%{BID}/eid/%{EID}/tpl/recruit/thanks.html#form" method="post" class="form-button form-button-send">
+      <form action="?step=result#form" method="post" class="form-button form-button-send">
         <input type="hidden" name="To[]" value="{email}">
         <input type="hidden" name="AdminReply-To[]" value="{email}">
         <input type="hidden" name="AdminFrom[]" value="{email}">
@@ -79,7 +79,7 @@
     </div>
     @include("/include/form/confirm.html")
     <div class="form-message-group">
-      <p class="form-message-back"><a href="%{BASE_URL}" class="button is-width-lg">トップページに戻る</a></p>
+      <p class="form-message-back"><a href="%{CATEGORY_URL}" class="button is-width-lg">採用情報トップへ戻る</a></p>
     </div>
   </div>
   <!-- END step#result -->
@@ -89,7 +89,7 @@
     <h2 id="form" class="heading-lg">不正なアクセスです。</h2>
     <div class="form-message-group">
       <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
-      <p class="form-message-back"><a href="%{PERMALINK}" class="button is-width-lg">フォームに戻る</a></p>
+      <p class="form-message-back"><a href="%{ENTRY_URL}#form" class="button is-width-lg">フォームに戻る</a></p>
     </div>
   </div>
   <!-- END step#forbidden -->
