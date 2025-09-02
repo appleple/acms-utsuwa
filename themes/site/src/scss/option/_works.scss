@@ -21,6 +21,10 @@
   gap: 1.5rem;
 }
 
+.search-panel-item-wrap {
+  display: contents;
+}
+
 .search-panel-item {
   display: flex;
   flex-direction: column;

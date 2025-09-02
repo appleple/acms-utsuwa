@@ -57,15 +57,18 @@
 		<!-- BEGIN radio -->
 		<li class="form-group">
 			<div class="form-label"><label>{label}</label><!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --></div>
-			<div class="form-control form-item-list">
-				<!-- BEGIN radio#val:loop -->
-				<div class="form-radio">
-					<label for="form-unit-{utid}-{value}[base64]">
-						<input type="radio" id="form-unit-{utid}-{value}[base64]" name="form-unit-{utid}" value="{value}" \{form-unit-{utid}:checked#{value}\}>
-						<i class="ico-radio"></i>
-						{value}
-					</label>
-				</div><!-- END radio#val:loop -->
+			<div class="form-control">
+        <div class="form-item-vertical-list">
+          <!-- BEGIN radio#val:loop -->
+          <div class="form-radio">
+            <label for="form-unit-{utid}-{value}[base64]">
+              <input type="radio" id="form-unit-{utid}-{value}[base64]" name="form-unit-{utid}" value="{value}" \{form-unit-{utid}:checked#{value}\}>
+              <i class="ico-radio"></i>
+              {value}
+            </label>
+          </div>
+          <!-- END radio#val:loop -->
+        </div>
 				<input type="hidden" name="field[]" value="form-unit-{utid}">
 				<!-- BEGIN validator:loop -->
 				<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
@@ -95,15 +98,18 @@
 		<!-- BEGIN checkbox -->
 		<li class="form-group">
 			<div class="form-label">{label}<!-- BEGIN_IF [<!-- BEGIN required -->1<!-- END required -->/eq/1] --><span class="label-required">必須</span><!-- ELSE --><span class="label-optional">任意</span><!-- END_IF --></div>
-			<div class="form-control form-item-list">
-				<!-- BEGIN checkbox#val:loop -->
-				<div class="form-checkbox">
-					<label for="form-unit-{utid}-{value}[base64]">
-						<input type="checkbox" id="form-unit-{utid}-{value}[base64]" name="form-unit-{utid}[]" value="{value}" \{form-unit-{utid}:checked#{value}\}>
-						<i class="ico-checkbox"></i>
-						{value}
-					</label>
-				</div><!-- END checkbox#val:loop -->
+			<div class="form-control">
+        <div class="form-item-vertical-list">
+          <!-- BEGIN checkbox#val:loop -->
+          <div class="form-checkbox">
+            <label for="form-unit-{utid}-{value}[base64]">
+              <input type="checkbox" id="form-unit-{utid}-{value}[base64]" name="form-unit-{utid}[]" value="{value}" \{form-unit-{utid}:checked#{value}\}>
+              <i class="ico-checkbox"></i>
+              {value}
+            </label>
+          </div>
+          <!-- END checkbox#val:loop -->
+        </div>
 				<input type="hidden" name="field[]" value="form-unit-{utid}">
 				<!-- BEGIN validator:loop -->
 				<input type="hidden" name="form-unit-{vutid}:v#{valid}" value="{val}"><!-- END validator:loop --><!-- BEGIN converter:loop -->
@@ -117,9 +123,13 @@
 		<!-- END_MODULE Form2_Unit -->
 		<li class="form-group">
 			<legend class="form-label">プライバシーポリシー<span class="label-required">必須</span></legend>
-			<label class="form-checkbox form-checkbox-only" for="input-privacy-on" data-validator="privacy">
-				<input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on} /><i class="ico-checkbox<!-- BEGIN privacy:validator --> invalid<!-- END privacy:validator -->" class=""></i><span class="form-checkbox-only-label"><a href="%{BASE_URL}privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span>
-			</label>
+      <div class="form-checkbox-only">
+        <label for="input-privacy-on" data-validator="privacy">
+				  <input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on} />
+          <i class="ico-checkbox<!-- BEGIN privacy:validator --> invalid<!-- END privacy:validator -->"></i>
+          <span><a class="form-checkbox-only-link" href="%{BASE_URL}privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span>
+			  </label>
+      </div>
 			<input type="hidden" name="field[]" value="privacy" />
 			<input type="hidden" name="privacy:v#required">
 			<p class="form-helper-text">プライバシーポリシーをよくお読みいただき、同意いただける場合はチェックをお願いします。</p>

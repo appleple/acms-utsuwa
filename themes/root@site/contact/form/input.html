@@ -6,10 +6,18 @@
       <div class="form-label">
         ご用件<span class="label-required">必須</span>
       </div>
-      <div class="form-control form-item-list">
-        <label class="form-checkbox" for="input-subject-Webサイト制作のご相談"><input type="checkbox" name="subject[]" value="Webサイト制作のご相談" id="input-subject-Webサイト制作のご相談" {subject:checked#Webサイト制作のご相談} /><i class="ico-checkbox" data-validator="subject"></i>Webサイト制作のご相談</label>
-        <label class="form-checkbox" for="input-subject-CMS実装/システム構築ご相談"><input type="checkbox" name="subject[]" value="CMS実装/システム構築ご相談" id="input-subject-CMS実装/システム構築ご相談" {subject:checked#CMS実装/システム構築ご相談} /><i class="ico-checkbox" data-validator="subject"></i>CMS実装/システム構築ご相談</label>
-        <label class="form-checkbox" for="input-subject-その他"><input type="checkbox" name="subject[]" value="その他" id="input-subject-その他" {subject:checked#その他} /><i class="ico-checkbox" data-validator="subject"></i>その他</label>
+      <div class="form-control">
+        <div class="form-item-vertical-list">
+          <div class="form-checkbox">
+            <label class="form-checkbox" for="input-subject-Webサイト制作のご相談"><input type="checkbox" name="subject[]" value="Webサイト制作のご相談" id="input-subject-Webサイト制作のご相談" {subject:checked#Webサイト制作のご相談} /><i class="ico-checkbox" data-validator="subject"></i>Webサイト制作のご相談</label>
+          </div>
+          <div class="form-checkbox">
+            <label class="form-checkbox" for="input-subject-CMS実装/システム構築ご相談"><input type="checkbox" name="subject[]" value="CMS実装/システム構築ご相談" id="input-subject-CMS実装/システム構築ご相談" {subject:checked#CMS実装/システム構築ご相談} /><i class="ico-checkbox" data-validator="subject"></i>CMS実装/システム構築ご相談</label>
+          </div>
+          <div class="form-checkbox">
+            <label class="form-checkbox" for="input-subject-その他"><input type="checkbox" name="subject[]" value="その他" id="input-subject-その他" {subject:checked#その他} /><i class="ico-checkbox" data-validator="subject"></i>その他</label>
+          </div>
+        </div>
         <input type="hidden" name="field[]" value="subject" />
         <input type="hidden" name="subject:v#required" id="subject-v-required" />
         <div role="alert" aria-live="assertive">
