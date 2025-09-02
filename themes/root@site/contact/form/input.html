@@ -239,7 +239,9 @@
     <!-- END entry:loop -->
     <!-- END_MODULE Entry_Body -->
 
-    <label class="form-checkbox" for="input-privacy-on"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on} /><i class="ico-checkbox" data-validator="privacy"></i><span class="">プライバシーポリシーに同意する</span></label>
+    <div class="form-checkbox">
+      <label for="input-privacy-on"><input type="checkbox" name="privacy[]" value="on" id="input-privacy-on" {privacy:checked#on} /><i class="ico-checkbox" data-validator="privacy"></i><span class="">プライバシーポリシーに同意する</span></label>
+    </div>
     <input type="hidden" name="field[]" value="privacy" />
     <input type="hidden" name="privacy:v#required" id="privacy-v-required" />
     <p class="form-helper-text">プライバシーポリシーをよくお読みいただき、同意いただける場合はチェックをお願いします。</p>
