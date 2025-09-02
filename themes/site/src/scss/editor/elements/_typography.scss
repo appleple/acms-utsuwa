@@ -135,7 +135,7 @@
   margin-block: 0 var(--entry-el-margin-md);
   padding-left: calc(1lh + 0.375rem);
 
-  li {
+  & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
     position: relative;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
@@ -181,7 +181,7 @@
   gap: var(--order-list-space-y) 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
   counter-reset: order-list;
 
-  li {
+  & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
     display: grid;
     grid-auto-flow: column;
     grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
