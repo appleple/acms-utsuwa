@@ -22,8 +22,7 @@
 
 ## デザインファイル
 
-デザインファイルは、[a-blog cms developer サイト > ドキュメント > テーマ](https://developer.a-blogcms.jp/document/themes/) にアクセスし、Site テーマの「Figma ファイル」リンクを参照して下さい。<br>
-※ Site テーマと Beginner テーマのデザインは共通のものを使用しています。
+デザインファイルは、[a-blog cms developer サイト > ドキュメント > テーマ](https://developer.a-blogcms.jp/document/themes/) にアクセスし、Site テーマの「Figma ファイル」リンクを参照して下さい。
 
 ## テーマ内テンプレートについて
 
