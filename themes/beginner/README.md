@@ -20,11 +20,6 @@
 
 これで、サイトにアクセスすると Beginner テーマがインストールされます。
 
-## デザインファイル
-
-デザインファイルは、[a-blog cms developer サイト > ドキュメント > テーマ](https://developer.a-blogcms.jp/document/themes/) にアクセスし、Beginner テーマの「Figma ファイル」リンクを参照して下さい。<br>
-※ Site テーマと Beginner テーマのデザインは共通のものを使用しています。
-
 ## テーマ内テンプレートについて
 
 a-blog cms で更新ができるページを作るための HTML ファイルを、テンプレートファイルといいます。<br>
