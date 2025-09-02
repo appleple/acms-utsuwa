@@ -2046,6 +2046,7 @@
 .faq-question .faq-title {
   flex: 1;
   margin: 0;
+  color: var(--color-text);
   font-weight: bold;
   line-height: var(--line-height-base);
   text-align: left;
@@ -2066,6 +2067,10 @@
 
 .faq-body {
   min-width: 0; /* .faq-body 内要素はみ出し防止 */
+}
+
+.acms-admin-modal-dialog .faq .toggle-body {
+  display: none; /* モジュールユニットで表示する時は常に非表示 */
 }
 
 .faq-answer {
