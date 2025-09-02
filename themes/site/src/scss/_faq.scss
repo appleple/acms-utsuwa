@@ -30,6 +30,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  box-sizing: border-box;
   width: 100%; /* エントリー編集画面でのリセット用 */
   background: transparent; /* エントリー編集画面でのリセット用 */
   border: 0; /* エントリー編集画面でのリセット用 */
@@ -118,7 +119,8 @@
   min-width: 0; /* .faq-body 内要素はみ出し防止 */
 }
 
-.acms-admin-modal-dialog .faq .toggle-body {
+.acms-admin-unit-content .faq .toggle-body,
+.acms-admin-modal-content .faq .toggle-body {
   display: none; /* モジュールユニットで表示する時は常に非表示 */
 }
 
