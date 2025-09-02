@@ -1,3 +1,7 @@
 card.html: カード型記事一覧（メイン画像 + エントリータイトル）
 summary-service.html: 事業紹介記事用一覧
 summary-faq.html: よくある質問一覧（回答アコーディオン）
+summary_blog_top.html: 【レイアウト機能用】サイトトップ配置用ブログ記事一覧 ※制作者向けメモ
+summary_news_top.html: 【レイアウト機能用】サイトトップ配置用お知らせ記事一覧 ※制作者向けメモ
+summary_recruit_top.html: 【レイアウト機能用】サイトトップ配置用採用情報記事一覧 ※制作者向けメモ
+summary_service_top.html: 【レイアウト機能用】サイトトップ配置用事業紹介記事一覧 ※制作者向けメモ
