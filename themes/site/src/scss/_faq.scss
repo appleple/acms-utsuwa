@@ -8,6 +8,7 @@
 .faq {
   --hover-speed: 0.3s;
 
+  min-width: 0; /* .faq-body 内要素はみ出し防止 */
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 
@@ -95,6 +96,10 @@
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
   }
+}
+
+.faq-body {
+  min-width: 0; /* .faq-body 内要素はみ出し防止 */
 }
 
 .faq-answer {

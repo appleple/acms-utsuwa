@@ -1978,6 +1978,7 @@
 ------------------------------ */
 .faq {
   --hover-speed: 0.3s;
+  min-width: 0; /* .faq-body 内要素はみ出し防止 */
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
 }
@@ -2061,6 +2062,10 @@
   .faq-question {
     font-size: 1.25rem;
   }
+}
+
+.faq-body {
+  min-width: 0; /* .faq-body 内要素はみ出し防止 */
 }
 
 .faq-answer {
