@@ -728,7 +728,7 @@
 }
 
 .entry-style .link-button-block-link {
-  border: none; /* リセット */
+  text-decoration: none; /* リセット */
 }
 
 .entry-style .link-button-block-link[target=_blank] {
