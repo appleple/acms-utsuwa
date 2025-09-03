@@ -1,6 +1,7 @@
 <!-- BEGIN_MODULE Entry_Calendar id="{{module_id}}" -->
-<div class="event-calendar">
+<div class="calendar-event">
   @include("/admin/module/setting.html")
+
   <!-- BEGIN date -->
   <div class="calendar-pagination-wrap">
     <div class="calendar-pagination">
@@ -13,24 +14,30 @@
     </div>
   </div>
   <!-- END date -->
-  <table class="event-calendar-table">
+
+  <table class="calendar-event-table">
     <!-- BEGIN week:loop -->
+
     <!-- BEGIN foreSpacer -->
     <tr>
-      <th><span class="event-calendar-day">{prevDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
+      <th><span class="calendar-event-day">{prevDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
       <td><!-- BEGIN foreEntry:loop -->
         <div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END foreEntry:loop -->
       </td>
-    </tr><!-- END foreSpacer -->
+    </tr>
+    <!-- END foreSpacer -->
+
     <!-- BEGIN day:loop -->
     <tr>
-      <th class="{today}"><span class="event-calendar-day">{day}</span><span class="badge -day is-week-{w}">{week}</span></th>
+      <th class="{today}"><span class="calendar-event-day">{day}</span><span class="badge -day is-week-{w}">{week}</span></th>
       <td><!-- BEGIN entry:loop -->
-        <div class="event-calendar-item"><!-- BEGIN url#front --><a href="{url}" class="event-calendar-item-link"><!-- END url#front -->
-            <div class="calendar-item-text-wrap">
-              <h3 class="calendar-item-title">{title}</h3>
+        <div class="calendar-event-item"><!-- BEGIN url#front -->
+          <a href="{url}" class="calendar-event-item-link"><!-- END url#front -->
+
+            <div class="calendar-item-texts-layout">
+              <h3 class="calendar-event-item-title">{title}</h3>
               <!-- BEGIN event_label_box:veil -->
-              <p class="calendar-item-text">
+              <p class="calendar-event-item-text">
                 <!-- BEGIN event_time:veil -->
                 <span class="acms-d-inline-block">{event_time}</span>
                 <!-- END event_time:veil -->
@@ -40,26 +47,31 @@
               </p>
               <!-- END event_label_box:veil -->
             </div>
+
             <!-- BEGIN main-image@path:veil -->
-            <div class="calendar-item-img-wrap">
+            <div class="calendar-event-item-img-wrap">
               <img src="%{MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(320,180)]" alt="" width="320" height="180" class="acms-img-responsive calendar-item-img">
             </div>
             <!-- END main-image@path:veil -->
 
             <!-- BEGIN url#rear -->
-          </a><!-- END url#rear --></div><!-- END entry:loop -->
+          </a><!-- END url#rear -->
+        </div><!-- END entry:loop -->
       </td>
     </tr><!-- END day:loop -->
+
     <!-- BEGIN rearSpacer -->
     <tr>
-      <th><span class="event-calendar-day">{nextDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
+      <th><span class="calendar-event-day">{nextDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
       <td><!-- BEGIN rearEntry:loop -->
         <div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END rearEntry:loop -->
       </td>
     </tr>
     <!-- END rearSpacer -->
+
     <!-- END week:loop -->
   </table>
+
   <!-- BEGIN date -->
   <div class="calendar-pagination-wrap">
     <div class="calendar-pagination">
@@ -72,6 +84,5 @@
     </div>
   </div>
   <!-- END date -->
-
 </div>
 <!-- END_MODULE Entry_Calendar -->

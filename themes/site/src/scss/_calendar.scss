@@ -5,10 +5,8 @@
 /* ------------------------------
 　　カレンダー
 ------------------------------ */
-.calendar,
-.event-calendar {
+.calendar {
   width: 100%;
-
 
   .is-week-0 {
     color: var(--color-text-sunday);
@@ -122,8 +120,19 @@
 
 /* イベントカレンダー
 ------------------------------ */
+.calendar-event {
+  width: 100%;
 
-.event-calendar-table {
+  .is-week-0 {
+    color: var(--color-text-sunday);
+  }
+
+  .is-week-6 {
+    color: var(--color-text-saturday);
+  }
+}
+
+.calendar-event-table {
   width: 100%;
   padding-bottom: var(--entry-el-margin-md);
 
@@ -136,16 +145,16 @@
 
   th {
     width: 5rem;
-    padding-top: 1rem;
     vertical-align: top;
   }
 
   td {
     flex: 1;
+    vertical-align: top;
   }
 }
 
-.event-calendar-item {
+.calendar-event-item {
   padding: 1rem;
 
   &:last-of-type {
@@ -153,7 +162,7 @@
   }
 }
 
-.event-calendar-day {
+.calendar-event-day {
   display: inline-block;
   width: 2rem;
   margin-right: 1rem;
@@ -164,33 +173,30 @@
   vertical-align: bottom;
 }
 
-.event-calendar-table {
-  .event-calendar-item-link {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    color: var(--color-text);
-    text-decoration: none;
-  }
+.calendar-event-item-link {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  color: var(--color-text);
+  text-decoration: none;
+}
 
-  .calendar-item-img-wrap {
-    width: 10rem;
-    overflow: hidden;
-    border-radius: var(--border-radius-lg);
-    aspect-ratio: 16 / 9;
+.calendar-event-item-img-wrap {
+  width: 10rem;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  aspect-ratio: 16 / 9;
 
-    img {
-      object-fit: cover;
-    }
-
+  img {
+    object-fit: cover;
   }
 }
 
-.calendar-item-title {
+.calendar-event-item-title {
   margin: 0;
 }
 
-.calendar-item-text {
+.calendar-event-item-text {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
