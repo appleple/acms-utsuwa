@@ -57,9 +57,6 @@
   --color-text-primary: var(--color-primary);
   --color-text-secondary: var(--color-secondary);
 
-  --color-text-sunday: #b91414;
-  --color-text-saturday: #0151ae;
-
   --color-globalnav-bg: rgba(0, 0, 0, 0.4);
 
   --color-image-overlay-bg: rgba(0, 0, 0, 0.4);

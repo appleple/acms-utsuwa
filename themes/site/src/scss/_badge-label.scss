@@ -32,20 +32,6 @@
   border-radius: var(--border-radius-round);
 }
 
-.badge-day {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 2rem;
-  height: 2rem;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-s);
-  text-align: center;
-  background: var(--color-gray10);
-  border-radius: var(--border-radius-round);
-}
-
 /* ------------------------------
 　　ラベル
 ------------------------------ */

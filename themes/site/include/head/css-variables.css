@@ -57,8 +57,8 @@
   --color-text-primary: var(--color-primary);
   --color-text-secondary: var(--color-secondary);
 
-  --color-text-sunday: #b91414;
-  --color-text-saturday: #0151ae;
+  --color-text-sunday: #A82626;
+  --color-text-saturday: #0151AE;
 
   --color-globalnav-bg: rgba(0, 0, 0, 0.4);
   --color-globalnav-dropdown-bg: var(--color-gray30);

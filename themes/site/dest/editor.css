@@ -1749,28 +1749,25 @@
 }
 
 /* 画像上に重ねて表示するラベル */
-.card-category-label {
+.card-img-label-position {
   position: absolute;
-  height: 1.25rem;
-  padding: 0 0.5rem;
-  color: var(--label-on-image-text);
-  font-size: 0.8rem;
-  background: var(--label-on-image-bg);
-  border-radius: var(--border-radius-md);
+  display: inline-block;
+  line-height: 1;
+  margin-block: 0;
 }
-.card-category-label.left-top {
+.card-img-label-position.left-top {
   top: 10px;
   left: 10px;
 }
-.card-category-label.right-top {
+.card-img-label-position.right-top {
   top: 10px;
   right: 10px;
 }
-.card-category-label.right-bottom {
+.card-img-label-position.right-bottom {
   right: 10px;
   bottom: 10px;
 }
-.card-category-label.left-bottom {
+.card-img-label-position.left-bottom {
   bottom: 10px;
   left: 10px;
 }
@@ -1778,6 +1775,7 @@
 /* 画像上に重ねて表示する new ラベル */
 .label-triangle {
   position: absolute;
+  margin-block: 0;
   top: 0;
   left: 0;
   display: inline-block;

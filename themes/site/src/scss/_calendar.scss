@@ -121,88 +121,173 @@
 /* イベントカレンダー
 ------------------------------ */
 .calendar-event {
-  width: 100%;
+  --calendar-event-item-cell-spacing-y: 0.5rem;
+  --calendar-event-item-link-spacing-y: 0.5rem;
+  --calendar-event-item-link-spacing-x: 0.5rem;
 
-  .is-week-0 {
-    color: var(--color-text-sunday);
-  }
-
-  .is-week-6 {
-    color: var(--color-text-saturday);
+  @include acms.media-breakpoint-up(sm) {
+    --calendar-event-item-link-spacing-y: 1rem;
+    --calendar-event-item-link-spacing-x: 1rem;
   }
 }
 
 .calendar-event-table {
+  display: table;
   width: 100%;
-  padding-bottom: var(--entry-el-margin-md);
-
-  tr {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0 0.5rem 1rem;
-    border-bottom: 1px solid #ddd;
-  }
+  margin-bottom: 2rem;
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+  border-collapse: collapse;
 
   th {
-    width: 5rem;
+    white-space: nowrap;
+    text-align: right;
     vertical-align: top;
+    border-bottom: var(--border-width-sm) solid var(--color-gray30);
+    padding-inline-end: 0.5rem;
+    padding-block: calc(var(--calendar-event-item-cell-spacing-y) + var(--calendar-event-item-link-spacing-y));
+
+    @include acms.media-breakpoint-up(sm) {
+      padding-inline: 1rem;
+    }
   }
 
   td {
-    flex: 1;
+    width: 100%;
     vertical-align: top;
+    padding-block: var(--calendar-event-item-cell-spacing-y);
+    border-bottom: var(--border-width-sm) solid var(--color-gray30);
+  }
+}
+
+.calendar-event-day-layout {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include acms.media-breakpoint-up(md) {
+    gap: 1rem;
+  }
+}
+
+
+.calendar-event-day {
+  display: block;
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-ss);
+  line-height: var(--line-height-base);
+  text-align: right;
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-s);
+  }
+}
+
+.badge-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: 1;
+  text-align: center;
+  background-color: var(--color-gray10);
+  border-radius: var(--border-radius-round);
+
+  &.is-week-0 {
+    color: var(--color-text-sunday);
+  }
+
+  &.is-week-6 {
+    color: var(--color-text-saturday);
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    width: 2rem;
+    height: 2rem;
+    font-size: map.get(global.$font-scales, body-m);
+  }
+}
+
+.calendar-event-item-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: var( --border-radius-lg);
+
+  @media (hover: hover) {
+    transition: background-color 0.3s ease;
+
+    &:any-link:hover {
+      background-color: var(--color-hover-bg-2nd);
+    }
   }
 }
 
 .calendar-event-item {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 1rem;
+  align-items: flex-start;
+  padding-block: var(--calendar-event-item-link-spacing-y);
+  padding-inline: var(--calendar-event-item-link-spacing-x);
 
-  &:last-of-type {
-    padding-bottom: 2rem;
+  @include acms.media-breakpoint-up(md) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
-.calendar-event-day {
-  display: inline-block;
-  width: 2rem;
-  margin-right: 1rem;
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, heading-s);
-  line-height: 2rem;
-  text-align: right;
-  vertical-align: bottom;
+.calendar-item-texts-layout {
+  display: grid;
+  gap: 0.5rem;
 }
 
-.calendar-event-item-link {
+.calendar-item-labels-layout {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: space-between;
-  color: var(--color-text);
-  text-decoration: none;
+  align-items: center;
 }
 
-.calendar-event-item-img-wrap {
-  width: 10rem;
-  overflow: hidden;
-  border-radius: var(--border-radius-lg);
-  aspect-ratio: 16 / 9;
+.calendar-item-time {
+  color: var(--color-text);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
+  margin-block: 0;
 
-  img {
-    object-fit: cover;
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, body-m);
   }
 }
 
 .calendar-event-item-title {
-  margin: 0;
+  margin-block: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: map.get(global.$font-scales, heading-3s);
+  line-height: var(--line-height-base);
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-ss);
+  }
 }
 
-.calendar-event-item-text {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0;
-}
+.calendar-event-item-img {
+  display: block;
+  width: 11.25rem;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  aspect-ratio: 16 / 9;
 
+  @include acms.media-breakpoint-up(sm) {
+    width: 10rem;
+  }
+}
 
 /* カレンダー ヘッダー
 ------------------------------ */

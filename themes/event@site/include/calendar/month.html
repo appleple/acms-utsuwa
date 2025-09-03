@@ -20,51 +20,98 @@
 
     <!-- BEGIN foreSpacer -->
     <tr>
-      <th><span class="calendar-event-day">{prevDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
-      <td><!-- BEGIN foreEntry:loop -->
-        <div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END foreEntry:loop -->
+      <th>
+        <span class="calendar-event-day-layout">
+          <span class="calendar-event-day"><span class="acms-hide-visually">{prevDate}[date('n')]月</span>{prevDay}<span class="acms-hide-visually">日</span></span>
+          <span class="badge-day is-week-{w}">{week}</span>
+        </span>
+      </th>
+      <td>
+        <!-- BEGIN foreEntry:loop -->
+        <div><a href="{url}">{title}</a></div>
+        <!-- END foreEntry:loop -->
       </td>
     </tr>
     <!-- END foreSpacer -->
 
     <!-- BEGIN day:loop -->
     <tr>
-      <th class="{today}"><span class="calendar-event-day">{day}</span><span class="badge -day is-week-{w}">{week}</span></th>
-      <td><!-- BEGIN entry:loop -->
-        <div class="calendar-event-item"><!-- BEGIN url#front -->
-          <a href="{url}" class="calendar-event-item-link"><!-- END url#front -->
-
-            <div class="calendar-item-texts-layout">
-              <h3 class="calendar-event-item-title">{title}</h3>
-              <!-- BEGIN event_label_box:veil -->
-              <p class="calendar-event-item-text">
-                <!-- BEGIN event_time:veil -->
-                <span class="acms-d-inline-block">{event_time}</span>
-                <!-- END event_time:veil -->
-                <!-- BEGIN event_pref:veil -->
-                <span class="acms-d-inline-block">{event_pref}</span>
-                <!-- END event_pref:veil -->
-              </p>
-              <!-- END event_label_box:veil -->
+      <th class="{today}">
+        <span class="calendar-event-day-layout">
+          <span class="calendar-event-day">{day}<span class="acms-hide-visually">日</span></span>
+          <span class="badge-day is-week-{w}">{week}</span>
+        </span>
+      </th>
+      <td>
+        <div class="calendar-event-entry-list">
+          <!-- BEGIN entry:loop -->
+          <a href="{url}" class="calendar-event-item-link">
+            <div class="calendar-event-item">
+              <div class="calendar-item-texts-layout">
+                <!-- BEGIN event_labels:veil -->
+                <div class="calendar-item-labels-layout">
+                  <!-- BEGIN event_time:veil -->
+                  <dl class="acms-lh-1 acms-my-0">
+                    <dt class="acms-hide-visually">開催時間</dt>
+                    <dd class="acms-ms-0"><span class="calendar-item-time">{event_time}</span></dd>
+                  </dl>
+                  <!-- BEGIN event_status:veil -->
+                  <p class="label is-dark">
+                    <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
+                    <!-- ELSE_IF [{event_status}/eq/open] -->募集中
+                    <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
+                    <!-- ELSE_IF [{event_status}/eq/closed] -->終了
+                    <!-- END_IF -->
+                  </p>
+                  <!-- END event_status:veil -->
+                  <!-- BEGIN event_pref:veil -->
+                  <p class="label">{event_pref}</p>
+                  <!-- END event_pref:veil -->
+                  <!-- BEGIN categoryField:veil -->
+                  <!-- BEGIN categoryField -->
+                  <dl class="acms-lh-1 acms-my-0">
+                    <dt class="acms-hide-visually">カテゴリー</dt>
+                    <dd class="acms-ms-0">
+                      <span class="label">{fieldCategoryName}</span>
+                    </dd>
+                  </dl>
+                  <!-- END categoryField -->
+                  <!-- END categoryField:veil -->
+                </div>
+                <!-- END event_labels:veil -->
+                <h3 class="calendar-event-item-title">{title}</h3>
+              </div>
+              <!-- BEGIN entry_main_image:veil -->
+              <img
+                src="%{MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(360)]"
+                alt=""
+                width="360"
+                height="{entry_main_image@path}[getHeightFromRatio(360)]"
+                class="calendar-event-item-img"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- END entry_main_image:veil -->
             </div>
-
-            <!-- BEGIN main-image@path:veil -->
-            <div class="calendar-event-item-img-wrap">
-              <img src="%{MEDIA_ARCHIVES_DIR}{main-image@path}[resizeImg(320,180)]" alt="" width="320" height="180" class="acms-img-responsive calendar-item-img">
-            </div>
-            <!-- END main-image@path:veil -->
-
-            <!-- BEGIN url#rear -->
-          </a><!-- END url#rear -->
-        </div><!-- END entry:loop -->
+          </a>
+          <!-- END entry:loop -->
+        </div>
       </td>
-    </tr><!-- END day:loop -->
+    </tr>
+    <!-- END day:loop -->
 
     <!-- BEGIN rearSpacer -->
     <tr>
-      <th><span class="calendar-event-day">{nextDay}</span><span class="badge -day is-week-{w}">{week}</span></th>
-      <td><!-- BEGIN rearEntry:loop -->
-        <div><!-- BEGIN url#front --><a href="{url}"><!-- END url#front -->{title}<!-- BEGIN url#rear --></a><!-- END url#rear --></div><!-- END rearEntry:loop -->
+      <th>
+        <span class="calendar-event-day-layout">
+          <span class="calendar-event-day"><span class="acms-hide-visually">{nextDate}[date('n')]月</span>{nextDay}<span class="acms-hide-visually">日</span></span>
+          <span class="badge-day is-week-{w}">{week}</span>
+        </span>
+      </th>
+      <td>
+        <!-- BEGIN rearEntry:loop -->
+        <div><a href="{url}">{title}</a></div>
+        <!-- END rearEntry:loop -->
       </td>
     </tr>
     <!-- END rearSpacer -->
