@@ -1,3 +1,55 @@
+<!-- BEGIN_SetTemplate id="calendar_event_entry" -->
+<a href="{url}" class="calendar-event-item-link">
+  <div class="calendar-event-item">
+    <div class="calendar-item-texts-layout">
+      <!-- BEGIN event_labels:veil -->
+      <div class="calendar-item-labels-layout">
+        <!-- BEGIN event_time:veil -->
+        <dl class="acms-lh-1 acms-my-0">
+          <dt class="acms-hide-visually">開催時間</dt>
+          <dd class="acms-ms-0"><span class="calendar-item-time">{event_time}</span></dd>
+        </dl>
+        <!-- BEGIN event_status:veil -->
+        <p class="label is-dark">
+          <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
+          <!-- ELSE_IF [{event_status}/eq/open] -->募集中
+          <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
+          <!-- ELSE_IF [{event_status}/eq/closed] -->終了
+          <!-- END_IF -->
+        </p>
+        <!-- END event_status:veil -->
+        <!-- BEGIN event_pref:veil -->
+        <p class="label">{event_pref}</p>
+        <!-- END event_pref:veil -->
+        <!-- BEGIN categoryField:veil -->
+        <!-- BEGIN categoryField -->
+        <dl class="acms-lh-1 acms-my-0">
+          <dt class="acms-hide-visually">カテゴリー</dt>
+          <dd class="acms-ms-0">
+            <span class="label">{fieldCategoryName}</span>
+          </dd>
+        </dl>
+        <!-- END categoryField -->
+        <!-- END categoryField:veil -->
+      </div>
+      <!-- END event_labels:veil -->
+      <h3 class="calendar-event-item-title">{title}</h3>
+    </div>
+    <!-- BEGIN entry_main_image:veil -->
+    <img
+      src="%{MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(360)]"
+      alt=""
+      width="360"
+      height="{entry_main_image@path}[getHeightFromRatio(360)]"
+      class="calendar-event-item-img"
+      loading="lazy"
+      decoding="async"
+    >
+    <!-- END entry_main_image:veil -->
+  </div>
+</a>
+<!-- END_SetTemplate -->
+
 <!-- BEGIN_MODULE Entry_Calendar id="{{module_id}}" -->
 <div class="calendar-event">
   @include("/admin/module/setting.html")
@@ -19,7 +71,7 @@
     <!-- BEGIN week:loop -->
 
     <!-- BEGIN foreSpacer -->
-    <tr>
+    <tr class="calendar-event-fore-spacer">
       <th>
         <span class="calendar-event-day-layout">
           <span class="calendar-event-day"><span class="acms-hide-visually">{prevDate}[date('n')]月</span>{prevDay}<span class="acms-hide-visually">日</span></span>
@@ -27,9 +79,11 @@
         </span>
       </th>
       <td>
-        <!-- BEGIN foreEntry:loop -->
-        <div><a href="{url}">{title}</a></div>
-        <!-- END foreEntry:loop -->
+        <div class="calendar-event-entry-list">
+          <!-- BEGIN foreEntry:loop -->
+          <!-- GET_Template id="calendar_event_entry" -->
+          <!-- END foreEntry:loop -->
+        </div>
       </td>
     </tr>
     <!-- END foreSpacer -->
@@ -45,55 +99,7 @@
       <td>
         <div class="calendar-event-entry-list">
           <!-- BEGIN entry:loop -->
-          <a href="{url}" class="calendar-event-item-link">
-            <div class="calendar-event-item">
-              <div class="calendar-item-texts-layout">
-                <!-- BEGIN event_labels:veil -->
-                <div class="calendar-item-labels-layout">
-                  <!-- BEGIN event_time:veil -->
-                  <dl class="acms-lh-1 acms-my-0">
-                    <dt class="acms-hide-visually">開催時間</dt>
-                    <dd class="acms-ms-0"><span class="calendar-item-time">{event_time}</span></dd>
-                  </dl>
-                  <!-- BEGIN event_status:veil -->
-                  <p class="label is-dark">
-                    <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
-                    <!-- ELSE_IF [{event_status}/eq/open] -->募集中
-                    <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
-                    <!-- ELSE_IF [{event_status}/eq/closed] -->終了
-                    <!-- END_IF -->
-                  </p>
-                  <!-- END event_status:veil -->
-                  <!-- BEGIN event_pref:veil -->
-                  <p class="label">{event_pref}</p>
-                  <!-- END event_pref:veil -->
-                  <!-- BEGIN categoryField:veil -->
-                  <!-- BEGIN categoryField -->
-                  <dl class="acms-lh-1 acms-my-0">
-                    <dt class="acms-hide-visually">カテゴリー</dt>
-                    <dd class="acms-ms-0">
-                      <span class="label">{fieldCategoryName}</span>
-                    </dd>
-                  </dl>
-                  <!-- END categoryField -->
-                  <!-- END categoryField:veil -->
-                </div>
-                <!-- END event_labels:veil -->
-                <h3 class="calendar-event-item-title">{title}</h3>
-              </div>
-              <!-- BEGIN entry_main_image:veil -->
-              <img
-                src="%{MEDIA_ARCHIVES_DIR}{entry_main_image@path}[resizeImg(360)]"
-                alt=""
-                width="360"
-                height="{entry_main_image@path}[getHeightFromRatio(360)]"
-                class="calendar-event-item-img"
-                loading="lazy"
-                decoding="async"
-              >
-              <!-- END entry_main_image:veil -->
-            </div>
-          </a>
+          <!-- GET_Template id="calendar_event_entry" -->
           <!-- END entry:loop -->
         </div>
       </td>
@@ -101,7 +107,7 @@
     <!-- END day:loop -->
 
     <!-- BEGIN rearSpacer -->
-    <tr>
+    <tr class="calendar-event-rear-spacer">
       <th>
         <span class="calendar-event-day-layout">
           <span class="calendar-event-day"><span class="acms-hide-visually">{nextDate}[date('n')]月</span>{nextDay}<span class="acms-hide-visually">日</span></span>
@@ -109,9 +115,11 @@
         </span>
       </th>
       <td>
-        <!-- BEGIN rearEntry:loop -->
-        <div><a href="{url}">{title}</a></div>
-        <!-- END rearEntry:loop -->
+        <div class="calendar-event-entry-list">
+          <!-- BEGIN rearEntry:loop -->
+          <!-- GET_Template id="calendar_event_entry" -->
+          <!-- END rearEntry:loop -->
+        </div>
       </td>
     </tr>
     <!-- END rearSpacer -->

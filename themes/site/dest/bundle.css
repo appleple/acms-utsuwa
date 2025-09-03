@@ -814,6 +814,11 @@ a {
   border-bottom: var(--border-width-sm) solid var(--color-gray30);
 }
 
+.calendar-event-fore-spacer,
+.calendar-event-rear-spacer {
+  background-color: var(--color-gray10);
+}
+
 .calendar-event-day-layout {
   display: flex;
   gap: 0.5rem;
