@@ -17,22 +17,19 @@
   text-align: center;
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
+}
 
-  &.-pill {
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius-round);
-  }
-
-  &.-day {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    min-width: initial;
-    height: 2rem;
-    padding: 0;
-    border-radius: var(--border-radius-round);
-  }
+.badge-pill {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 2.5rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--color-text-2nd);
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
+  text-align: center;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-round);
 }
 
 /* ------------------------------
@@ -53,22 +50,8 @@
     padding: 0.25rem 0.5rem;
   }
 
-  &.is-bg-white {
-    background: var(--color-white);
-  }
-
-  &.is-gray {
-    color: var(--color-white);
-    background: var(--color-gray60);
-  }
-
   &.is-dark {
     color: var(--color-white);
     background: var(--color-gray80);
-  }
-
-  &.is-required {
-    color: var(--color-danger);
-    background: var(--color-danger-light);
   }
 }

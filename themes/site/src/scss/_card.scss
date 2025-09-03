@@ -102,14 +102,11 @@
 }
 
 /* 画像上に重ねて表示するラベル */
-.card-category-label {
+.card-img-label-position {
   position: absolute;
-  height: 1.25rem;
-  padding: 0 0.5rem;
-  color: var(--label-on-image-text);
-  font-size: map.get(global.$font-scales, body-s);
-  background: var(--label-on-image-bg);
-  border-radius: var(--border-radius-md);
+  display: inline-block;
+  line-height: 1;
+  margin-block: 0;
 
   &.left-top {
     top: 10px;
@@ -135,6 +132,7 @@
 /* 画像上に重ねて表示する new ラベル */
 .label-triangle {
   position: absolute;
+  margin-block: 0;
   top: 0;
   left: 0;
   display: inline-block;

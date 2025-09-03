@@ -38,13 +38,15 @@
               >
               <!-- END_IF -->
               <!-- BEGIN category:veil -->
-              <span class="card-category-label left-top">
-                <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
-                <!-- ELSE_IF [{event_status}/eq/open] -->募集中
-                <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
-                <!-- ELSE_IF [{event_status}/eq/closed] -->終了
-                <!-- END_IF -->
-              </span>
+              <p class="card-img-label-position left-top">
+                <span class="label is-dark">
+                  <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
+                  <!-- ELSE_IF [{event_status}/eq/open] -->募集中
+                  <!-- ELSE_IF [{event_status}/eq/full] -->満員御礼
+                  <!-- ELSE_IF [{event_status}/eq/closed] -->終了
+                  <!-- END_IF -->
+                </span>
+              </p>
               <!-- END category:veil -->
             </div>
             <div class="card-texts-layout">

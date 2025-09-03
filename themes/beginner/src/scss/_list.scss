@@ -21,7 +21,7 @@
   color: currentcolor;
   font-weight: normal;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s ease;
 
   + .list-group {
     margin: 0;
@@ -29,16 +29,16 @@
   }
 
   &:hover {
-    background: var(--color-hover-bg-2nd);
+    background-color: var(--color-hover-bg-2nd);
 
-    .badge {
-      background: var(--color-white);
-
+    .badge-pill {
+      background-color: var(--color-white);
     }
   }
 
-  .badge {
+  .badge-pill {
     margin-left: auto;
+    transition: background-color 0.3s ease;
   }
 }
 
