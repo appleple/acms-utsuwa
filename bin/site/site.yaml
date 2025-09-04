@@ -217,9 +217,9 @@ config:
     - { config_key: entry_lock_enable, config_value: 'on', config_sort: 8, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: entry_lock_alert_only, config_value: 'off', config_sort: 9, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: entry_lock_expire, config_value: '48', config_sort: 10, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
-    - { config_key: preview_default_device, config_value: 'iPhone 6/7/8', config_sort: 11, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
+    - { config_key: preview_default_device, config_value: 'iPhone 16', config_sort: 11, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: preview_has_history_device, config_value: '', config_sort: 12, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
-    - { config_key: approval_preview_default_device, config_value: 'iPhone 6/7/8', config_sort: 13, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
+    - { config_key: approval_preview_default_device, config_value: 'iPhone 16', config_sort: 13, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: approval_preview_has_history_device, config_value: '', config_sort: 14, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: timemachine_preview_default_device, config_value: PC, config_sort: 15, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
     - { config_key: timemachine_preview_has_history_device, config_value: '', config_sort: 16, config_rule_id: null, config_module_id: null, config_set_id: 7, config_blog_id: 1 }
@@ -270,9 +270,9 @@ config:
     - { config_key: entry_lock_enable, config_value: 'on', config_sort: 15, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: entry_lock_alert_only, config_value: 'off', config_sort: 16, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: entry_lock_expire, config_value: '48', config_sort: 17, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
-    - { config_key: preview_default_device, config_value: 'iPhone 6/7/8', config_sort: 18, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
+    - { config_key: preview_default_device, config_value: 'iPhone 16', config_sort: 18, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: preview_has_history_device, config_value: '', config_sort: 19, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
-    - { config_key: approval_preview_default_device, config_value: 'iPhone 6/7/8', config_sort: 20, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
+    - { config_key: approval_preview_default_device, config_value: 'iPhone 16', config_sort: 20, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: approval_preview_has_history_device, config_value: '', config_sort: 21, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: timemachine_preview_default_device, config_value: PC, config_sort: 22, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
     - { config_key: timemachine_preview_has_history_device, config_value: '', config_sort: 23, config_rule_id: null, config_module_id: null, config_set_id: 1, config_blog_id: 1 }
