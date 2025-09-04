@@ -165,6 +165,7 @@
 .calendar-pagination-title {
   position: relative;
   z-index: 1;
+  display: inline-block;
   margin: 0;
   font-size: map.get(global.$font-scales, heading-m);
 
@@ -176,6 +177,7 @@
 .calendar-pagination-return {
   position: relative;
   z-index: 1;
+  display: inline-block;
   margin: 0;
   transform: translateY(100%);
 

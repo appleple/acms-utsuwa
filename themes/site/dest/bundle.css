@@ -830,6 +830,7 @@ a {
 }
 
 .calendar-pagination-title {
+  display: inline-block;
   position: relative;
   z-index: 1;
   margin: 0;
@@ -842,6 +843,7 @@ a {
 }
 
 .calendar-pagination-return {
+  display: inline-block;
   position: relative;
   z-index: 1;
   margin: 0;
