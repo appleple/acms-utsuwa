@@ -671,6 +671,8 @@ a {
 /* ------------------------------
 　　カレンダー
 ------------------------------ */
+/* 曜日・日付 テーブル
+------------------------------ */
 .calendar {
   width: 100%;
 }
@@ -681,107 +683,351 @@ a {
   color: var(--color-text-saturday);
 }
 
+/* 曜日セル */
 .calendar-label {
-  padding: 0.5rem 0;
+  box-sizing: border-box;
+  height: 2rem;
+  padding: 0 0 0.5rem;
   color: var(--color-text-2nd);
   font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
 }
-
-.calendar-day {
-  padding: 0.5rem 0;
-  color: var(--color-text-2nd);
-}
-
-.calendar-day-has {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -0.5rem auto;
-  padding: 0.5rem 0;
-  color: currentcolor;
-  font-weight: bold;
-  text-decoration: none;
-  background: var(--color-gray10);
-  border-radius: 0.25rem;
-  transition: background-color 0.2s;
-}
-.calendar-day-has:hover {
-  background: var(--color-hover-bg-2nd);
-}
-
 @media (min-width: 48rem) {
   .calendar-label {
     width: 3.5rem;
     padding: 0 0 0.75rem;
   }
+}
+
+/* 日付セル */
+.calendar-day {
+  height: 2.5rem;
+  padding: 0;
+  color: var(--color-text);
+  text-align: center;
+  vertical-align: middle;
+}
+.calendar-day a {
+  position: relative;
+  display: inline-block;
+  color: currentcolor;
+  font-weight: bold;
+  text-decoration: none;
+}
+.calendar-day a::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-gray10);
+  border-radius: var(--border-radius-md);
+  transform: translate(-50%, -50%);
+  content: "";
+}
+@media (hover: hover) {
+  .calendar-day a::after {
+    transition: all 0.3s ease;
+  }
+}
+.calendar-day a:hover::after {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--border-radius-lg);
+}
+@media (min-width: 48rem) {
   .calendar-day {
     width: 3.5rem;
     height: 3.5rem;
     padding: 0;
+    /* サイドカラム用 */
   }
   .section-side .calendar-day {
     width: 2.5rem;
     height: 2.5rem;
   }
-  .calendar-day-has {
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
+  .calendar-day a {
+    /* サイドカラム用 */
   }
-  .section-side .calendar-day-has {
+  .section-side .calendar-day a {
     width: 1.75rem;
     height: 1.75rem;
   }
 }
+
 /* 年間カレンダーレイアウト
 ------------------------------ */
 .calendar-group {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  gap: var(--col-gutter);
-  margin: 0;
-  padding: 0 1rem 2rem;
-  list-style: none;
+  gap: 2rem;
 }
-
-.calendar-group-item {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 0 1rem;
-  text-align: center;
-}
-
-.calendar-group-item-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0 0 0.5rem;
-}
-
 @media (min-width: 48rem) {
   .calendar-group {
-    grid-template-columns: 1fr 1fr;
-  }
-  .calendar-group-item {
-    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 64rem) {
   .calendar-group {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.calendar-group-item {
+  text-align: center;
+}
+
+/* 年間カレンダーの月ヘッダー */
+.calendar-header {
+  margin: 0 0 0.75rem;
+}
+
+.calendar-header-title {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.calendar-header-title a {
+  color: inherit;
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .calendar-header-title a:-moz-any-link:hover {
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 3px;
+  }
+  .calendar-header-title a:any-link:hover {
+    -webkit-text-decoration: underline dotted 1px;
+            text-decoration: underline dotted 1px;
+    text-underline-offset: 3px;
+  }
+}
+
+/* 年間カレンダーとイベントカレンダーのページネーション
+------------------------------ */
+.calendar-heading {
+  margin-bottom: 2rem;
+}
+
+.calendar-footing {
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 48rem) {
+  .calendar-footing {
+    padding-bottom: 0;
+  }
+}
+
+.calendar-pagination {
+  position: relative;
+  text-align: center;
+}
+
+.calendar-pagination-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 1.953125rem;
+}
+@media (min-width: 48rem) {
+  .calendar-pagination-title {
+    font-size: 1.953125rem;
+  }
+}
+
+.calendar-pagination-return {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  transform: translateY(100%);
+}
+@media (min-width: 48rem) {
+  .calendar-pagination-return {
+    transform: translateY(0);
+  }
+}
+
+.calendar-pagination-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-pagination-item-previous,
+.calendar-pagination-item-next {
+  position: absolute;
+  top: 0.5rem;
+}
+
+.calendar-pagination-item-previous {
+  left: 0;
+}
+
+.calendar-pagination-item-next {
+  right: 0;
+}
+
+.calendar-pagination-link {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  padding-block: 0.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .calendar-pagination-link:-moz-any-link:hover .calendar-pagination-link-icon {
+    background-color: var(--color-icon-bg-hover);
+  }
+  .calendar-pagination-link:any-link:hover .calendar-pagination-link-icon {
+    background-color: var(--color-icon-bg-hover);
+  }
+}
+@media (min-width: 30rem) {
+  .calendar-pagination-link {
+    gap: 0.5rem;
+  }
+}
+
+.calendar-pagination-link-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+
+.calendar-pagination-link-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1/1;
+}
+.calendar-pagination-link-icon svg {
+  width: 0.625rem;
+  height: 0.625rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: var(--color-white);
+}
+.calendar-pagination-link-icon svg path {
+  stroke: currentcolor;
+}
+@media (hover: hover) {
+  .calendar-pagination-link-icon {
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* サイドカラムカレンダー
+------------------------------ */
+/* サイドカラムのカレンダー月送りボタン */
+.calendar-next-prev-button-layout {
+  display: flex;
+  gap: 1rem;
+}
+
+.calendar-next-prev-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-white);
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+}
+.calendar-next-prev-button svg {
+  width: 0.657rem;
+  height: 0.657rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: inherit;
+}
+.calendar-next-prev-button svg path {
+  stroke: currentcolor;
+}
+@media (hover: hover) {
+  .calendar-next-prev-button {
+    transition: background-color 0.3s ease;
+  }
+  .calendar-next-prev-button:hover {
+    background-color: var(--color-icon-bg-hover);
+  }
+}
+
+/* サイドカラムの「年間カレンダーで見る」リンク */
+.section-side-link {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding-block: 0.25rem;
+  margin: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .section-side-link:-moz-any-link:hover .section-side-link-icon {
+    background-color: var(--color-icon-bg-hover);
+  }
+  .section-side-link:any-link:hover .section-side-link-icon {
+    background-color: var(--color-icon-bg-hover);
+  }
+}
+
+.section-side-link-text {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: var(--line-height-base);
+}
+
+.section-side-link-icon {
+  display: grid;
+  box-sizing: border-box;
+  width: 1rem;
+  height: auto;
+  background-color: var(--color-icon-bg);
+  border-radius: 50%;
+  place-items: center;
+  aspect-ratio: 1/1;
+}
+.section-side-link-icon svg {
+  width: 0.625rem;
+  height: 0.625rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  color: var(--color-white);
+}
+.section-side-link-icon svg path {
+  stroke: currentcolor;
+}
+@media (hover: hover) {
+  .section-side-link-icon {
+    transition: background-color 0.3s ease;
+  }
+}
+
 /* イベントカレンダー
 ------------------------------ */
-.calendar-event {
+.calendar-event-table {
   --calendar-event-item-cell-spacing-y: 0.5rem;
   --calendar-event-item-link-spacing-y: 0.5rem;
   --calendar-event-item-link-spacing-x: 0.5rem;
 }
 @media (min-width: 30rem) {
-  .calendar-event {
+  .calendar-event-table {
     --calendar-event-item-link-spacing-y: 1rem;
     --calendar-event-item-link-spacing-x: 1rem;
   }
@@ -954,235 +1200,6 @@ a {
 @media (min-width: 30rem) {
   .calendar-event-item-img {
     width: 10rem;
-  }
-}
-
-/* カレンダー ヘッダー
------------------------------- */
-.calendar-header {
-  margin: 0 0 0.5rem;
-}
-
-.calendar-header-title {
-  margin: 0;
-  padding: 0.5rem;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 1.25rem;
-}
-.calendar-header-title a {
-  color: inherit;
-  text-decoration: none;
-}
-@media (hover: hover) {
-  .calendar-header-title a:-moz-any-link:hover {
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
-  .calendar-header-title a:any-link:hover {
-    -webkit-text-decoration: underline dotted 1px;
-            text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
-}
-
-/* カレンダー ページネーション
------------------------------- */
-@media (min-width: 48rem) {
-  .calendar-pagination {
-    display: inline-flex;
-    padding: 0 4.5rem;
-  }
-}
-
-.calendar-pagination-wrap {
-  position: relative;
-  padding: 1rem 1rem 2rem;
-  text-align: center;
-}
-
-.calendar-pagination-title {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: 1.953125rem;
-}
-.calendar-pagination-title.is-return {
-  transform: translateY(100%);
-}
-@media (min-width: 48rem) {
-  .calendar-pagination-title {
-    font-size: 1.953125rem;
-  }
-  .calendar-pagination-title.is-return {
-    transform: translateY(0);
-  }
-}
-
-.calendar-pagination-group {
-  position: static;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.calendar-pagination-item-previous,
-.calendar-pagination-item-next {
-  position: absolute;
-  top: 1.5rem;
-}
-
-.calendar-pagination-item-previous {
-  left: 1rem;
-}
-
-.calendar-pagination-item-next {
-  right: 1rem;
-}
-
-.calendar-pagination-link {
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  padding-block: 0.5rem;
-  line-height: 1;
-  text-decoration: none;
-}
-@media (hover: hover) {
-  .calendar-pagination-link:-moz-any-link:hover .calendar-pagination-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
-  .calendar-pagination-link:any-link:hover .calendar-pagination-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
-}
-@media (min-width: 30rem) {
-  .calendar-pagination-link {
-    gap: 0.5rem;
-  }
-}
-
-.calendar-pagination-link-text {
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 1rem;
-  line-height: var(--line-height-base);
-}
-
-.calendar-pagination-link-icon {
-  display: grid;
-  box-sizing: border-box;
-  width: 1.25rem;
-  height: auto;
-  background-color: var(--color-icon-bg);
-  border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1/1;
-}
-.calendar-pagination-link-icon svg {
-  width: 0.625rem;
-  height: 0.625rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-  color: var(--color-white);
-}
-.calendar-pagination-link-icon svg path {
-  stroke: currentcolor;
-}
-@media (hover: hover) {
-  .calendar-pagination-link-icon {
-    transition: background-color 0.3s ease;
-  }
-}
-
-/* サイドカラムのカレンダー月送りボタン
------------------------------- */
-.calendar-next-prev-button-layout {
-  display: flex;
-  gap: 1rem;
-}
-
-.calendar-next-prev-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--color-white);
-  background-color: var(--color-icon-bg);
-  border-radius: 50%;
-}
-.calendar-next-prev-button svg {
-  width: 0.657rem;
-  height: 0.657rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-  color: inherit;
-}
-.calendar-next-prev-button svg path {
-  stroke: currentcolor;
-}
-@media (hover: hover) {
-  .calendar-next-prev-button {
-    transition: background-color 0.3s ease;
-  }
-  .calendar-next-prev-button:hover {
-    background-color: var(--color-icon-bg-hover);
-  }
-}
-
-/* サイドカラムの「年間カレンダーで見る」リンク
------------------------------- */
-.section-side-link {
-  display: flex;
-  gap: 0.25rem;
-  align-items: center;
-  justify-content: flex-end;
-  padding-block: 0.25rem;
-  margin: 0;
-  line-height: 1;
-  text-decoration: none;
-}
-@media (hover: hover) {
-  .section-side-link:-moz-any-link:hover .section-side-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
-  .section-side-link:any-link:hover .section-side-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
-}
-
-.section-side-link-text {
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: 0.8rem;
-  line-height: var(--line-height-base);
-}
-
-.section-side-link-icon {
-  display: grid;
-  box-sizing: border-box;
-  width: 1rem;
-  height: auto;
-  background-color: var(--color-icon-bg);
-  border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1/1;
-}
-.section-side-link-icon svg {
-  width: 0.625rem;
-  height: 0.625rem;
-  -o-object-fit: contain;
-     object-fit: contain;
-  color: var(--color-white);
-}
-.section-side-link-icon svg path {
-  stroke: currentcolor;
-}
-@media (hover: hover) {
-  .section-side-link-icon {
-    transition: background-color 0.3s ease;
   }
 }
 

@@ -1,7 +1,8 @@
 <!-- BEGIN_MODULE Calendar_Year id="calendar_year" -->
 <div>
   @include("/admin/module/setting.html")
-  <div class="calendar-pagination-wrap">
+
+  <div class="calendar-heading">
     <div class="calendar-pagination">
       <h2 class="calendar-pagination-title">{year}年</h2>
       <!-- BEGIN calendar-pagination-group:veil -->
@@ -13,42 +14,42 @@
       </ul><!-- END header-pagination-group:veil -->
     </div>
   </div>
+
   <div class="calendar-group">
     <!-- BEGIN unit:loop --><!-- BEGIN month:loop -->
     <section class="calendar-group-item">
-      <div class="calendar-group-item-inner">
-        <header class="calendar-header">
-          <h2 class="calendar-header-title"><a href="{monthUrl}">{monthDate}[date('n月')]</a></h2>
-        </header>
-        <table class="calendar">
-          <thead>
-            <tr><!-- BEGIN weekLabel:loop -->
-              <th class="calendar-label is-week-{w}">{label}</th><!-- END weekLabel:loop -->
-            </tr>
-          </thead>
-          <tbody><!-- BEGIN week:loop -->
-            <tr>
-              <!-- BEGIN day:loop -->
-              <!-- BEGIN spacer -->
-              <td class="calendar-day">&nbsp;</td>
-              <!-- END spacer -->
-              <!-- BEGIN none -->
-              <td class="calendar-day is-week-{w}">{day}</td>
-              <!-- END none -->
-              <!-- BEGIN link -->
-              <td class="calendar-day is-week-{w}"><a href="{url}" class="calendar-day-has">{day}</a></td>
-              <!-- END link -->
-              <!-- END day:loop -->
-            </tr><!-- END week:loop -->
-          </tbody>
-        </table>
-      </div>
+      <header class="calendar-header">
+        <h2 class="calendar-header-title"><a href="{monthUrl}">{monthDate}[date('n月')]</a></h2>
+      </header>
+      <table class="calendar">
+        <thead>
+          <tr><!-- BEGIN weekLabel:loop -->
+            <th class="calendar-label is-week-{w}">{label}</th><!-- END weekLabel:loop -->
+          </tr>
+        </thead>
+        <tbody><!-- BEGIN week:loop -->
+          <tr>
+            <!-- BEGIN day:loop -->
+            <!-- BEGIN spacer -->
+            <td class="calendar-day">&nbsp;</td>
+            <!-- END spacer -->
+            <!-- BEGIN none -->
+            <td class="calendar-day is-week-{w}">{day}</td>
+            <!-- END none -->
+            <!-- BEGIN link -->
+            <td class="calendar-day is-week-{w}"><a href="{url}">{day}</a></td>
+            <!-- END link -->
+            <!-- END day:loop -->
+          </tr><!-- END week:loop -->
+        </tbody>
+      </table>
     </section><!-- END month:loop -->
     <!-- END unit:loop -->
   </div>
-  <div class="calendar-pagination-wrap">
+
+  <div class="calendar-footing">
     <div class="calendar-pagination">
-      <p class="calendar-pagination-title is-return"><a href="%{BASE_URL}" class="button is-width-lg is-bg-white-bordered">%{BLOG_NAME}トップへ戻る</a></p>
+      <p class="calendar-pagination-return"><a href="%{BASE_URL}" class="button is-width-lg is-bg-white-bordered">%{BLOG_NAME}トップへ戻る</a></p>
       <!-- BEGIN calendar-pagination-group:veil -->
       <ul class="calendar-pagination-group">
         <!-- BEGIN prevLink -->
@@ -58,6 +59,5 @@
       </ul><!-- END header-pagination-group:veil -->
     </div>
   </div>
-
 </div>
 <!-- END_MODULE Calendar_Year -->
