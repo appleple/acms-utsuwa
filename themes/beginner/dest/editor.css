@@ -27,8 +27,7 @@
   /* コンテンツの初めの要素には上余白をつけない */
 }
 .entry-style > *:first-child, .entry-style > *:first-child.column-block-editor > *:first-child, .entry-style > *:first-child.js-edit_inplace > *:first-child, .entry-style > *:first-child.js-edit_inplace-hovering + .js-edit_inplace > *:first-child {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 
 /* stylelint-disable max-line-length */
@@ -141,15 +140,12 @@
 }
 
 .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
-  -webkit-padding-after: var(--entry-el-padding-xs);
-          padding-block-end: var(--entry-el-padding-xs);
-  -webkit-border-after: var(--border-width-md) solid var(--color-gray100);
-          border-block-end: var(--border-width-md) solid var(--color-gray100);
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
 }
 .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
   position: relative;
-  -webkit-padding-after: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
-          padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 }
 .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
   position: absolute;
@@ -163,15 +159,12 @@
 }
 
 .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
-  -webkit-padding-after: var(--entry-el-padding-xs);
-          padding-block-end: var(--entry-el-padding-xs);
-  -webkit-border-after: var(--border-width-md) solid var(--color-gray100);
-          border-block-end: var(--border-width-md) solid var(--color-gray100);
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
 }
 .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
   position: relative;
-  -webkit-padding-after: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
-          padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 }
 .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
   position: absolute;
@@ -185,15 +178,12 @@
 }
 
 .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
-  -webkit-padding-after: var(--entry-el-padding-xs);
-          padding-block-end: var(--entry-el-padding-xs);
-  -webkit-border-after: var(--border-width-md) solid var(--color-gray100);
-          border-block-end: var(--border-width-md) solid var(--color-gray100);
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
 }
 .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary {
   position: relative;
-  -webkit-padding-after: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
-          padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 }
 .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
   position: absolute;
@@ -287,8 +277,7 @@
   --order-list-space-y: 0.5rem; /* アイテム間の縦余白 */
   display: grid;
   margin-block: 0 var(--entry-el-margin-md);
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
   grid-template-columns: minmax(1lh, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */ /* ulの1階層目テキストはじまりと揃えるために minmax(1lh, auto) で最小値を設定 */
   gap: var(--order-list-space-y) 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
   counter-reset: order-list;
@@ -467,12 +456,10 @@
 /* 上書きのため詳細度高め（0,0,2,0）
 ----------------------------- */
 :where(.entry-style) [data-type=column] > *:first-child {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 :where(.entry-style) [data-type=column] > *:last-child {
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-block-end: 0;
 }
 
 /* メディアサイズ
@@ -565,8 +552,7 @@
   margin-block: 0;
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) * + * {
-  -webkit-margin-before: 1rem;
-          margin-block-start: 1rem;
+  margin-block-start: 1rem;
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
   color: currentcolor;

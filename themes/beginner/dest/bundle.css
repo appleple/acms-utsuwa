@@ -886,8 +886,7 @@ a {
 　　CTA（コール・トゥ・アクション）
 ------------------------------ */
 .cta-section-mt {
-  -webkit-margin-before: var(--section-space-y);
-          margin-block-start: var(--section-space-y);
+  margin-block-start: var(--section-space-y);
 }
 
 /* 背景画像付きのCTA
@@ -951,8 +950,7 @@ a {
   background-color: var(--color-white);
   transform: translateX(-50%);
   content: "";
-  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-          clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
 
 .cta-visual-title {
@@ -2679,13 +2677,11 @@ a {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 @media (min-width: 48rem) {
   .media-list-pager-button-wrap {
-    -webkit-margin-before: 4rem;
-            margin-block-start: 4rem;
+    margin-block-start: 4rem;
   }
 }
 
@@ -2976,6 +2972,8 @@ a {
 }
 
 .pager-simple-item-prev {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: prev;
 }
 .pager-simple-item-prev .pager-simple-link {
@@ -2983,7 +2981,20 @@ a {
 }
 
 .pager-simple-item-next {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: next;
+}
+
+@media (min-width: 48rem){
+  .pager-simple-item-prev {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .pager-simple-item-next {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
 }
 .pager-simple-item-next .pager-simple-link {
   align-items: flex-end;
@@ -2992,13 +3003,11 @@ a {
 /* 前後リンク
 ----------------------------- */
 .serial-nav {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 @media (min-width: 48rem) {
   .serial-nav {
-    -webkit-margin-before: 4rem;
-            margin-block-start: 4rem;
+    margin-block-start: 4rem;
   }
 }
 
@@ -3216,8 +3225,7 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   margin-block: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 
@@ -3298,8 +3306,7 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   margin-block: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 
@@ -3339,8 +3346,7 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   margin-block: 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 
@@ -3377,10 +3383,8 @@ a {
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
   margin-block: 0;
-  -webkit-margin-end: 1rem;
-          margin-inline-end: 1rem;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  margin-inline-end: 1rem;
+  padding-inline-start: 0;
   list-style-type: none;
 }
 .tag-list-relational li {
@@ -3746,8 +3750,7 @@ a {
   gap: 0.5rem 1rem;
   list-style: none;
   margin-block: 0.5rem 0;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 .entry-tag-item {
@@ -3782,13 +3785,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--col-gutter);
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 @media (min-width: 48rem) {
   .entry-footer {
-    -webkit-margin-before: 4rem;
-            margin-block-start: 4rem;
+    margin-block-start: 4rem;
   }
 }
 
@@ -3885,8 +3886,7 @@ a {
 　エントリー下部の追加コンテンツ
 ------------------------------ */
 .entry-aside-section {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 .entry-aside-section:empty {
   display: none;
@@ -3894,8 +3894,7 @@ a {
 
 @media (min-width: 48rem) {
   .entry-aside-section {
-    -webkit-margin-before: 4rem;
-            margin-block-start: 4rem;
+    margin-block-start: 4rem;
   }
 }
 /* ------------------------------
@@ -4153,13 +4152,11 @@ a {
 
 /* 一覧下のコンテンツ */
 .section-panel {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  margin-block-start: 3rem;
 }
 @media (min-width: 48rem) {
   .section-panel {
-    -webkit-margin-before: 4rem;
-            margin-block-start: 4rem;
+    margin-block-start: 4rem;
   }
 }
 
@@ -4291,8 +4288,7 @@ a {
 　　フッター
 ------------------------------ */
 .footer {
-  -webkit-margin-before: var(--footer-margin-top);
-          margin-block-start: var(--footer-margin-top);
+  margin-block-start: var(--footer-margin-top);
   border-top: var(--border-width-sm) solid var(--color-gray20);
 }
 .footer .form-search-button {
@@ -4301,8 +4297,7 @@ a {
 
 /* 背景色付きCTAがフッター上にある時は上余白を詰める */
 .cta-visual-section + .footer {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 
 /* フッターメインコンテンツレイアウト
