@@ -830,9 +830,9 @@ a {
 }
 
 .calendar-pagination-title {
-  display: inline-block;
   position: relative;
   z-index: 1;
+  display: inline-block;
   margin: 0;
   font-size: 1.953125rem;
 }
@@ -843,9 +843,9 @@ a {
 }
 
 .calendar-pagination-return {
-  display: inline-block;
   position: relative;
   z-index: 1;
+  display: inline-block;
   margin: 0;
   transform: translateY(100%);
 }
