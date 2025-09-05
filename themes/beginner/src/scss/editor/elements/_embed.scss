@@ -19,8 +19,12 @@
     border: var(--border-width-sm) solid var(--color-gray30);
     border-radius: var(--border-radius-lg);
 
-    &:hover {
-      background: var(--color-hover-bg);
+    @media (hover: hover) {
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--color-hover-bg);
+      }
     }
   }
 
