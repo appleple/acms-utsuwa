@@ -3909,7 +3909,6 @@ a {
   font-weight: bold;
   font-size: 1.25rem;
   line-height: var(--line-height-sm);
-  text-align: center;
 }
 
 .not-found-paragraph {
@@ -3926,9 +3925,10 @@ a {
 }
 
 .not-found-search .form-search {
-  display: flex;
-  justify-content: center;
   margin: 1rem auto 3rem;
+}
+.not-found-search .form-search-label {
+  line-height: 3;
 }
 .not-found-search .form-search-action {
   max-width: 29rem;
@@ -3946,6 +3946,12 @@ a {
   .not-found-title {
     margin: 0 0 2rem;
     font-size: 2rem;
+    text-align: center;
+  }
+  .not-found-search .form-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 /* ------------------------------
