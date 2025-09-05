@@ -110,17 +110,6 @@ $(() => {
     $(this).next().fadeToggle();
     $(this).find('.icon-expand').toggleClass('is-close');
   });
-
-  // アコーディオン
-  $('.js-toggle-button').on('click', (e) => {
-    const $self = $(e.currentTarget);
-    const $parent = $self.closest('.js-toggle');
-    const $body = $parent.find('.js-toggle-body');
-    const ariaExpanded = $self.attr('aria-expanded') === 'true' ? 'false' : 'true';
-    const ariaHidden = $body.attr('aria-hidden') === 'true' ? 'false' : 'true';
-    $self.toggleClass('is-active').attr('aria-expanded', ariaExpanded);
-    $body.slideToggle().attr('aria-hidden', ariaHidden);
-  });
 });
 
 
