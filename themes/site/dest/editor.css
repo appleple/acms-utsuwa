@@ -1475,8 +1475,13 @@
   border: var(--border-width-sm) solid var(--color-gray30);
   border-radius: var(--border-radius-lg);
 }
-[class*=column-embed-] a.acms-embed-link:hover {
-  background: var(--color-hover-bg);
+@media (hover: hover) {
+  [class*=column-embed-] a.acms-embed-link {
+    transition: background-color 0.3s ease;
+  }
+  [class*=column-embed-] a.acms-embed-link:hover {
+    background-color: var(--color-hover-bg);
+  }
 }
 [class*=column-embed-] .acms-embed-link-image-container img {
   display: block;
