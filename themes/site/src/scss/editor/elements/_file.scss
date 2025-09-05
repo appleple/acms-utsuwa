@@ -105,7 +105,7 @@
 }
 
 .column-pdf-image {
-  width: 100%;
+  max-width: 100%;
   border: var(--border-width-sm) solid var(--color-gray40);
   transition: opacity 0.2s ease;
 }
