@@ -256,11 +256,11 @@
   .pricing-label {
     display: inline-block;
     margin: 0;
-    padding: 0.25rem 2rem;
+    padding: 0.25rem 1.5rem;
     color: var(--color-white);
     font-weight: bold;
-    font-size: calc(map.get(global.$font-scales, heading-s) * 0.7);
-    line-height: var(--line-height-sm);
+    font-size: 1rem;
+    line-height: var(--line-height-base);
     background: var(--color-primary);
     border-radius: var(--border-radius-round);
     box-shadow: var(--box-shadow);
@@ -356,6 +356,11 @@
       &:hover .pricing-inner {
         box-shadow: var(--box-shadow-hover);
       }
+    }
+
+    .pricing-label {
+      padding: 0.5rem 1.5rem;
+      font-size: 1.25rem;
     }
 
     .pricing-title {
