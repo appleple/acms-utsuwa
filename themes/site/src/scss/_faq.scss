@@ -119,8 +119,8 @@
   min-width: 0; /* .faq-body 内要素はみ出し防止 */
 }
 
-.acms-admin-unit-content .faq .toggle-body,
-.acms-admin-modal-content .faq .toggle-body {
+.acms-admin-unit-content .faq .toggle-body-contents,
+.acms-admin-modal-content .faq .toggle-body-contents {
   display: none; /* モジュールユニットで表示する時は常に非表示 */
 }
 
