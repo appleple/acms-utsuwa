@@ -13,10 +13,10 @@
 .blog-card-title,
 .#{acms.$entry-class} .blog-card-title {
   margin: 0;
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-3s);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
@@ -28,13 +28,13 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-lg);
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   line-clamp: 4;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-2nd);
+  -webkit-box-orient: vertical;
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, body-m);

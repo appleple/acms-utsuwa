@@ -30,9 +30,9 @@
 }
 
 .footer-item {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 
   &.-navigation {
     gap: 1.5rem;
@@ -90,15 +90,15 @@
 
 .footer-address-name {
   margin: 0 0 0.5rem;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-m);
+  color: var(--color-text-2nd);
 
 }
 
 .footer-address-item {
   margin: 0 0 0.5rem;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text-2nd);
 
   a {
     color: inherit;
@@ -145,8 +145,8 @@
 /* コピーライト */
 .footer-copyright-text {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
 }
 
 /* SNS */
@@ -158,8 +158,8 @@
 .footer-sns-group {
   display: flex;
   gap: 1.5rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 

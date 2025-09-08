@@ -23,8 +23,8 @@
 
 .header-title {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
+  font-weight: bold;
   line-height: 1;
 }
 
@@ -129,16 +129,16 @@
 /* 「🔍記事検索」ボタン
 ------------------------------ */
 .global-nav-search-open-btn {
+  box-sizing: border-box;
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   padding: 0.5rem;
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
   text-align: center;
   background: var(--color-white);
   border: 0;
@@ -165,8 +165,8 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    object-fit: contain;
     color: inherit;
+    object-fit: contain;
 
     path {
       stroke: currentcolor;
@@ -190,11 +190,11 @@
   }
 
   .header-item-wrap {
+    box-sizing: border-box;
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
     max-width: var(--container);
     margin-right: auto;
     margin-left: auto;
@@ -239,8 +239,8 @@
 @include acms.media-breakpoint-up(lg) {
   .nav-bottom {
     .header-item-wrap {
-      margin-right: auto;
       padding: 1rem var(--gutter-lg) 0;
+      margin-right: auto;
     }
   }
 }
@@ -268,14 +268,14 @@
   }
 
   .header-item-wrap {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     max-width: var(--container);
+    padding: 0;
     margin-right: auto;
     margin-left: auto;
-    padding: 0;
   }
 
   .global-nav-mobile-menu-btn {
@@ -323,9 +323,9 @@
 
     .header-item-wrap {
       display: grid;
-      grid-gap: 0 var(--col-gutter);
       grid-template:
         ".. title search" 1fr / 1fr 240px 1fr;
+      grid-gap: 0 var(--col-gutter);
       align-items: center;
       padding: 1.5rem var(--gutter-lg) 0;
       text-align: initial;
@@ -367,8 +367,8 @@
 
   .form-search {
     max-width: 44rem;
-    margin: 0 auto;
     padding: 0 1rem;
+    margin: 0 auto;
   }
 
   .form-search-label {
@@ -388,10 +388,10 @@
   align-items: center;
   min-height: 1.5rem;
   margin: 1.5rem auto 0;
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
   background: var(--color-gray0);
   border: none;
 

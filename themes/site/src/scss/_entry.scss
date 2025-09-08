@@ -27,23 +27,23 @@
 }
 
 .entry-header-date {
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }
 
 .entry-header-category-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-block: 0;
   align-items: center;
+  margin-block: 0;
 }
 
 .entry-header-category-label {
   padding: 0.25rem 0.5rem;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
   line-height: var(--line-height-base);
   text-decoration: none;
   border: 1px solid var(--color-gray30);
@@ -64,8 +64,8 @@
 
 .entry-header-title {
   position: relative;
-  margin: 0 0 1.5rem;
   padding: 0 0 1rem;
+  margin: 0 0 1.5rem;
   font-size: map.get(global.$font-scales, heading-ss);
   border-bottom: var(--border-width-lg) solid var(--color-gray10);
 
@@ -74,8 +74,8 @@
     bottom: calc(var(--border-width-lg) * -1);
     width: 3.5rem;
     height: var(--border-width-lg);
-    background: var(--color-primary);
     content: "";
+    background: var(--color-primary);
   }
 }
 
@@ -100,8 +100,8 @@
   }
 
   .entry-header-title {
-    margin: 0 0 1.5rem;
     padding: 0 0 1.5rem;
+    margin: 0 0 1.5rem;
     font-size: map.get(global.$font-scales, heading-m);
 
   }
@@ -112,14 +112,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  list-style: none;
-  margin-block: 0.5rem 0;
   padding-inline-start: 0;
+  margin-block: 0.5rem 0;
+  list-style: none;
 }
 
 .entry-tag-item {
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text);
 
   a {
     &:any-link {
@@ -211,8 +211,8 @@
   .entry-header-visual-box {
     width: 50%;
     max-width: 35rem;
-    margin: 0 calc(var(--unit-gutter-var) / 2);
     padding: 2.5rem 2.5rem 2rem;
+    margin: 0 calc(var(--unit-gutter-var) / 2);
   }
 
   .entry-header-visual-box-inner {
@@ -222,8 +222,8 @@
   .entry-header-visual-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     vertical-align: bottom;
+    object-fit: cover;
   }
 
   .entry-header-visual-title {
@@ -290,8 +290,8 @@
   flex: 0 0 auto;
   min-width: 1.5rem;
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
+  font-weight: bold;
   line-height: 1;
   text-align: center;
   text-box-trim: trim-both;
@@ -332,8 +332,8 @@
     gap: 0.375rem;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     padding-inline: 1rem;
+    cursor: pointer;
   }
 
   .share-icon {
@@ -355,12 +355,12 @@
     box-sizing: border-box;
     width: 91.667%;
     max-width: 32rem;
-    margin: auto;
     padding: 2rem;
+    margin: auto;
     background-color: #fff;
-    background-blend-mode: multiply;
     border: 0;
     border-radius: var(--border-radius-lg);
+    background-blend-mode: multiply;
     backdrop-filter: blur(8px);
 
     &::backdrop {
@@ -371,8 +371,8 @@
 
   .dialog-title {
     margin: 0;
-    color: var(--color-text);
     font-weight: bold;
+    color: var(--color-text);
     text-align: center;
   }
 
@@ -381,8 +381,8 @@
     gap: 2.5rem;
     align-items: center;
     justify-content: center;
-    margin: 1.5rem 0;
     padding: 0;
+    margin: 1.5rem 0;
     list-style-type: none;
   }
 
@@ -446,10 +446,10 @@
     padding: 0.25rem;
     color: #fff;
     text-align: center;
+    cursor: pointer;
     background-color: #6b7280;
     border: none;
     border-radius: var(--border-radius-round);
-    cursor: pointer;
   }
 
   .close-icon {
@@ -493,10 +493,10 @@
 
 .bubble-text {
   position: relative;
+  clear: both;
   grid-row-start: 2;
   grid-column: span 2 / span 2;
   grid-column-start: 1;
-  clear: both;
   padding: 2rem 1rem;
   background-color: var(--color-gray10);
   border-radius: var(--border-radius-lg);
@@ -507,8 +507,8 @@
     left: calc(3rem - 6px);
     width: 12px;
     height: 10px;
-    background-color: var(--color-gray10);
     content: "";
+    background-color: var(--color-gray10);
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 }
@@ -551,8 +551,8 @@
       left: -10px;
       width: 10px;
       height: 12px;
-      background-color: var(--color-gray10);
       content: "";
+      background-color: var(--color-gray10);
       clip-path: polygon(0 50%, 100% 0, 100% 100%);
     }
 

@@ -50,20 +50,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    box-sizing: border-box;
     display: grid;
     gap: 1.5rem;
-    box-sizing: border-box;
+    place-content: center;
     width: calc(100vw - 2rem);
     max-width: 480px;
     padding: 2rem;
     color: var(--color-primary);
     background: rgb(255 255 255 / 90%);
     transform: translate(-50%, -50%);
-    place-content: center;
 
     @include acms.media-breakpoint-up(md) {
-      gap: 2rem;
       box-sizing: border-box;
+      gap: 2rem;
       width: auto;
       max-width: 40rem;
       padding-block: 4.5rem;
@@ -110,8 +110,8 @@
     will-change: transform, opacity;
 
     @include acms.media-breakpoint-between(md, lg) {
-      white-space: nowrap;
       word-break: keep-all;
+      white-space: nowrap;
     }
 
     @include acms.media-breakpoint-up(md) {
@@ -121,8 +121,8 @@
 
   .main-visual-catch-sub {
     margin: 0;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
+    font-weight: bold;
     line-height: var(--line-height-base);
     animation: fade-in 0.3s 1.3s 1 both;
     will-change: transform, opacity;
@@ -134,8 +134,8 @@
 
     .button {
       min-width: 200px;
-      white-space: nowrap;
       word-break: keep-all;
+      white-space: nowrap;
     }
 
     @include acms.media-breakpoint-up(md) {
@@ -179,8 +179,8 @@
     svg {
       width: 1.25rem;
       height: 1.25rem;
-      object-fit: contain;
       color: inherit;
+      object-fit: contain;
 
       path {
         stroke: currentcolor;

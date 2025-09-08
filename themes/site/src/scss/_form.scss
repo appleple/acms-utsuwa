@@ -21,8 +21,8 @@
 ------------------------------ */
 .form-step {
   display: flex;
-  margin: 0 0 3rem;
   padding: 0;
+  margin: 0 0 3rem;
 
   /* カウンターの設定 */
   counter-reset: mailStep;
@@ -32,8 +32,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
+  color: var(--color-text);
   list-style: none;
 
   &::before {
@@ -43,14 +43,14 @@
     width: 2rem;
     height: 2rem;
     margin: 0 0 0.5rem;
-    color: var(--color-text);
     line-height: var(--line-height-lg);
-    background: var(--color-gray10);
-    border-radius: 50%;
+    color: var(--color-text);
     content: counter(mailStep);
 
     /* カウンターの設定 */
     counter-increment: mailStep;
+    background: var(--color-gray10);
+    border-radius: 50%;
   }
 
   &.is-current {
@@ -108,8 +108,8 @@
   flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   &.is-confirm {
@@ -122,8 +122,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .form-group {
@@ -134,8 +134,8 @@
 }
 
 .form-label {
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
   margin: 0 0 1rem;
   font-weight: bold;
@@ -143,8 +143,8 @@
 }
 
 .form-control {
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
 }
 
@@ -200,21 +200,21 @@
 /* ラベル
 ------------------------------ */
 .label-required {
-  margin: 0 0 0 1rem;
   padding: 0.25rem 0.5rem;
-  color: var(--color-danger);
+  margin: 0 0 0 1rem;
   font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
+  color: var(--color-danger);
   background: var(--color-danger-light);
   border-radius: var(--border-radius-sm);
 }
 
 .label-optional {
-  margin: 0 0 0 0.25rem;
   padding: 0.25rem 0.5rem;
-  color: var(--color-text);
+  margin: 0 0 0 0.25rem;
   font-size: map.get(global.$font-scales, body-s);
   vertical-align: middle;
+  color: var(--color-text);
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 
@@ -402,12 +402,13 @@
   }
 
   .ico-checkbox {
+    box-sizing: border-box;
     display: inline-block;
     flex-shrink: 0;
-    box-sizing: border-box;
     width: var(--form-checkbox-icon-size);
     height: var(--form-checkbox-icon-size);
     vertical-align: middle;
+    pointer-events: none;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
@@ -415,7 +416,6 @@
     border: 1px solid var(--color-gray30);
     border-radius: var(--border-radius-md);
     transition: background-color 0.2s, border-color 0.2s;
-    pointer-events: none;
 
     &.invalid {
       border-color: var(--color-danger);
@@ -440,10 +440,10 @@
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
+    cursor: pointer;
     background-color: var(--color-gray10);
     border: 1px solid rgb(0 0 0 / 10%);
     border-radius: 3px;
-    cursor: pointer;
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
@@ -479,12 +479,13 @@
   }
 
   .ico-checkbox {
+    box-sizing: border-box;
     display: inline-block;
     flex-shrink: 0;
-    box-sizing: border-box;
     width: var(--form-checkbox-icon-size);
     height: var(--form-checkbox-icon-size);
     vertical-align: middle;
+    pointer-events: none;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
@@ -492,7 +493,6 @@
     border: 1px solid var(--color-gray30);
     border-radius: var(--border-radius-md);
     transition: background-color 0.2s, border-color 0.2s;
-    pointer-events: none;
 
     &.invalid {
       border-color: var(--color-danger);
@@ -554,11 +554,12 @@
   }
 
   .ico-radio {
+    box-sizing: border-box;
     display: inline-block;
     flex-shrink: 0;
-    box-sizing: border-box;
     width: var(--form-radio-icon-size);
     height: var(--form-radio-icon-size);
+    pointer-events: none;
     background-color: var(--color-white);
     background-repeat: no-repeat;
     background-position: center;
@@ -566,7 +567,6 @@
     border: 1px solid var(--color-gray30);
     border-radius: var(--border-radius-round);
     transition: background-color 0.2s, border-color 0.2s;
-    pointer-events: none;
   }
 }
 
@@ -575,8 +575,8 @@
 ------------------------------ */
 .form-helper-text {
   margin: 1rem 0 0;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text-2nd);
 
   .acms-entry & {
     margin: 1rem 0;
@@ -592,8 +592,8 @@
   }
 
   .valid-mark.valid {
-    display: inline;
     float: right;
+    display: inline;
     color: #5cb85c;
   }
 
@@ -607,9 +607,9 @@
     flex-wrap: wrap;
     gap: 0.25rem;
     margin: 1rem 0 0;
-    color: var(--color-error);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-base);
+    color: var(--color-error);
 
     .form-helper-text + .validator-result-0 & {
       margin-top: 0;
@@ -617,9 +617,9 @@
   }
 
   .form-error-text-icon {
+    box-sizing: border-box;
     display: inline-block;
     flex: 0 0 1.25rem;
-    box-sizing: border-box;
 
     svg {
       width: 100%;
@@ -660,11 +660,11 @@
 .form-privacy-body {
   box-sizing: border-box;
   height: 20rem;
-  margin: 0 0 1rem;
   padding: .75rem 1rem;
+  margin: 0 0 1rem;
   overflow-y: auto;
-  color: var(--color-gray80);
   line-height: var(--line-height-base);
+  color: var(--color-gray80);
   background: var(--color-gray10);
   border-radius: var(--border-radius-lg);
 
@@ -677,8 +677,8 @@
 ------------------------------ */
 
 .entry-form-wrapper {
-  margin-block-start: 3rem;
   padding: 2rem 1rem;
+  margin-block-start: 3rem;
   border: 1px solid var(--color-gray10);
   border-radius: var(--border-radius-xl);
   box-shadow: var(--box-shadow);
@@ -686,8 +686,8 @@
 
 @include acms.media-breakpoint-up(md) {
   .entry-form-wrapper {
-    margin-block-start: 4rem;
     padding: 4rem 5rem;
+    margin-block-start: 4rem;
     border-radius: var(--border-radius-xxl);
   }
 }

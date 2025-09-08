@@ -9,9 +9,9 @@
   [class*="gu-"] {
     @include acms.media-breakpoint-up(md) {
       .pricing-group {
+        padding: 4rem 0 2rem;
         margin-right: 0;
         margin-left: 0;
-        padding: 4rem 0 2rem;
       }
     }
   }
@@ -29,8 +29,8 @@
   .gu-bg-gray,
   .gu-bg-primary,
   .gu-border {
-    margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
+    margin: 0 0 var(--entry-el-margin-md) 0;
 
     > *:not(.not-editor-style):first-child,
     > *:first-child.column-block-editor > *:first-child {
@@ -50,9 +50,9 @@
       position: absolute;
       inset: 0;
       z-index: -1;
+      content: "";
       border: var(--border-width-sm) solid var(--color-gray30);
       border-radius: var(--border-radius-lg);
-      content: "";
     }
   }
 

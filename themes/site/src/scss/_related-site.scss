@@ -10,8 +10,8 @@
 
   .splide__track {
     position: relative; /* スライダー送り矢印の位置基準 */
-    margin: calc(0.5rem * -1) !important; /* box-shadow分の余白を確保 */
     padding: 0.5rem !important; /* box-shadow分の余白を確保 */
+    margin: calc(0.5rem * -1) !important; /* box-shadow分の余白を確保 */
   }
 
   .splide__arrow {

@@ -14,8 +14,8 @@
       height: 0.875em;
       margin-left: 4px;
       vertical-align: baseline;
-      background-color: $color;
       content: '';
+      background-color: $color;
       mask-image: url("#{var.$root-theme-img}icon/target_blank.svg");
       mask-size: contain;
     }

@@ -14,23 +14,23 @@
 
   .form-search-label {
     margin-right: 1rem;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, body-s);
+    font-weight: bold;
     line-height: 3rem;
     white-space: nowrap;
   }
 
   input.form-search-input {
-    flex: 1 1 auto;
     box-sizing: border-box;
+    flex: 1 1 auto;
     height: 3rem;
     padding: 0.75rem 1rem;
     font-size: map.get(global.$font-scales, body-m);
+    appearance: none;
     background: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
     border-radius: var(--border-radius-md);
     transition: background-color 0.25s ease;
-    appearance: none;
 
     &:hover {
       background: var(--color-white);
@@ -38,9 +38,9 @@
     }
 
     &:focus {
+      outline: none;
       background: var(--color-white);
       border-color: acms.$acms-form-focus-border-color;
-      outline: none;
       box-shadow: var(--box-shadow-focus), acms.$acms-form-box-shadow;
     }
   }

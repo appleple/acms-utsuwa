@@ -37,11 +37,11 @@
 
   &::after {
     position: absolute;
+    inset: -0.5rem;
     z-index: 1;
+    content: "";
     background-color: transparent;
     border-radius: var(--border-radius-lg);
-    content: "";
-    inset: -0.5rem;
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
@@ -68,16 +68,16 @@
 
 .summary-side {
   display: grid;
-  grid-column-gap: 0.5rem;
   grid-template-rows: 1fr;
   grid-template-columns: 6rem 1fr;
+  grid-column-gap: 0.5rem;
 }
 
 .summary-side-img-wrap {
   grid-area: 1 / 1 / 2 / 2;
   width: 6rem;
-  overflow: hidden;
   aspect-ratio: var(--summary-side-img-aspect-ratio, 1 / 1);
+  overflow: hidden;
   border-radius: var(--border-radius-md);
 }
 
@@ -94,14 +94,14 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  color: var(--color-text);
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-base);
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
+  font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  -webkit-box-orient: vertical;
 }
 
 .summary-side-labels-layout {
@@ -122,7 +122,7 @@
 .summary-side-date {
   display: inline-block;
   margin: 0;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }

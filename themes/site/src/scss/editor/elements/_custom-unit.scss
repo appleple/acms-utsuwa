@@ -10,9 +10,9 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   .entry-outline {
-    margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
     padding-block: 1.5rem;
     padding-inline: 1rem;
+    margin-block: var(--entry-el-margin-md) var(--entry-el-margin-lg);
     background-color: var(--color-white);
     border: var(--border-width-sm) solid var(--color-gray30);
     border-radius: var(--border-radius-lg);
@@ -25,8 +25,8 @@
   /* 「目次」見出し */
   .entry-outline-title {
     margin: 0 0 1rem;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, heading-ss);
+    font-weight: bold;
     line-height: 1.5;
   }
 
@@ -35,9 +35,9 @@
     display: grid;
     grid-template-columns: minmax(1.5rem, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */
     gap: 0.75rem 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
-    counter-reset: outline-list;
-    margin-block: 0;
     padding-inline-start: 0;
+    margin-block: 0;
+    counter-reset: outline-list;
   }
 
   /* 下階層リストレイアウト */
@@ -49,17 +49,17 @@
   /* アイテム */
   .entry-outline-list-wrap .outline-item {
     display: contents; /* li要素自体はグリッドレイアウトに影響させない */
-    color: var(--color-text);
     font-size: map.get(global.$font-scales, body-m);
     line-height: 1.5;
+    color: var(--color-text);
 
     span,
     strong,
     em {
       display: contents;
-      font-weight: inherit;
       font-size: inherit;
       font-style: inherit;
+      font-weight: inherit;
       background: none;
     }
 
@@ -71,9 +71,9 @@
   /* アイテムリンク */
   .entry-outline-list-wrap .outline-item a {
     display: grid;
-    grid-auto-flow: column;
-    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
     grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
+    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
+    grid-auto-flow: column;
     text-decoration: none;
 
     &,
@@ -85,10 +85,10 @@
     /* 番号を生成 */
     &::before {
       grid-column: 1;
-      color: var(--color-text-2nd);
       font-weight: bold;
-      white-space: nowrap;
+      color: var(--color-text-2nd);
       word-break: keep-all;
+      white-space: nowrap;
       content: counters(outline-list, "-") ". ";
       counter-increment: outline-list;
     }
@@ -137,8 +137,8 @@
   .message-lead {
     position: relative;
     margin: 0;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, heading-s);
+    font-weight: bold;
   }
 
   .message-content {
@@ -154,8 +154,8 @@
       height: 1px;
       margin: 0 1rem 0 0;
       vertical-align: middle;
-      background: var(--color-gray30);
       content: "";
+      background: var(--color-gray30);
     }
   }
 }
@@ -207,9 +207,9 @@
     flex-wrap: wrap;
     gap: var(--col-gutter);
     justify-content: center;
-    margin: 1.5rem 0;
     padding: 4rem 0 2rem;
     padding: 0;
+    margin: 1.5rem 0;
 
     &:has(.is-recommend) {
       padding-top: 16px;
@@ -226,10 +226,10 @@
   }
 
   .pricing-inner {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-sizing: border-box;
     width: 100%;
     padding: 2.5rem 2rem 1.5rem;
     background: #fff;
@@ -239,8 +239,8 @@
   }
 
   .pricing-header {
-    margin: 0 0 1rem;
     padding: 0 0 1rem;
+    margin: 0 0 1rem;
     text-align: center;
     border-bottom: var(--border-width-sm) solid var(--color-gray30);
   }
@@ -255,12 +255,12 @@
 
   .pricing-label {
     display: inline-block;
-    margin: 0;
     padding: 0.25rem 1.5rem;
-    color: var(--color-white);
-    font-weight: bold;
+    margin: 0;
     font-size: 1rem;
+    font-weight: bold;
     line-height: var(--line-height-base);
+    color: var(--color-white);
     background: var(--color-primary);
     border-radius: var(--border-radius-round);
     box-shadow: var(--box-shadow);
@@ -271,30 +271,30 @@
       left: 50%;
       width: 12px;
       height: 10px;
-      background-color: var(--color-primary);
-      transform: translateX(-50%);
       content: "";
+      background-color: var(--color-primary);
       clip-path: polygon(50% 100%, 0 0, 100% 0);
+      transform: translateX(-50%);
     }
   }
 
   .pricing-title {
     margin: 0 0 0.5rem;
-    color: var(--color-primary);
     font-size: map.get(global.$font-scales, heading-ss);
+    color: var(--color-primary);
   }
 
   .pricing-desc {
     margin: 0;
-    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-base);
+    color: var(--color-text-2nd);
   }
 
   .pricing-price {
     margin: 0 0 0.5rem;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, heading-l);
+    font-weight: bold;
     line-height: var(--line-height-ss);
     text-align: center;
   }
@@ -304,8 +304,8 @@
   }
 
   .pricing-check-group {
-    margin: 0 0 1rem;
     padding: 0;
+    margin: 0 0 1rem;
     font-size: map.get(global.$font-scales, body-s);
     list-style: none;
 
@@ -318,9 +318,9 @@
         height: 1.25rem;
         margin: 0 0.375rem 0 0;
         vertical-align: top;
+        content: "";
         background: url(#{global.$root-theme-img}icon-color/circle-check-blue.svg);
         background-size: contain;
-        content: "";
       }
     }
   }
@@ -332,9 +332,9 @@
 
   .pricing-text-info {
     margin: 0;
-    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-base);
+    color: var(--color-text-2nd);
     text-align: center;
   }
 }
@@ -344,13 +344,13 @@
     .pricing-group {
       flex-flow: row wrap;
       gap: var(--col-gutter);
-      margin: 0;
       padding: 6rem 0 4rem;
+      margin: 0;
     }
 
     .pricing-item {
-      flex: 1 1 calc(100% / 3 - 2rem);
       box-sizing: border-box;
+      flex: 1 1 calc(100% / 3 - 2rem);
       margin: 0 0 var(--entry-el-margin-md) 0;
 
       &:hover .pricing-inner {

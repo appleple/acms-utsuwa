@@ -35,35 +35,35 @@
   }
 
   .acms-embed-link-content {
-    margin: 0; /* リセット */
     padding: 1rem;
+    margin: 0; /* リセット */
   }
 
   .acms-embed-link-site-name {
     margin: 0;
-    color: var(--color-text);
     font-size: map.get(global.$font-scales, body-s);
+    color: var(--color-text);
   }
 
   .acms-embed-link-title {
     margin: 0 0 0.5rem;
     overflow: hidden;
-    font-weight: bold;
+    text-overflow: ellipsis;
     font-size: map.get(global.$font-scales, body-m);
+    font-weight: bold;
     line-height: var(--line-height-sm);
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
   .acms-embed-link-description {
     display: -webkit-box;
     margin: 0;
     overflow: hidden;
-    font-size: map.get(global.$font-scales, body-s);
     text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     line-clamp: 2;
+    font-size: map.get(global.$font-scales, body-s);
+    -webkit-box-orient: vertical;
   }
 
   @include acms.media-breakpoint-up(md) {
@@ -72,8 +72,8 @@
     }
 
     .acms-embed-link-image-container {
-      flex: 1 0 auto;
       box-sizing: border-box;
+      flex: 1 0 auto;
       width: math.div(100%, 3);
       padding: 0;
     }
@@ -85,10 +85,10 @@
     }
 
     .acms-embed-link-content {
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      box-sizing: border-box;
       width: math.div(2, 3);
       padding: 1rem;
       overflow: hidden;
@@ -97,10 +97,10 @@
     .acms-embed-link-title {
       margin: 0;
       overflow: hidden;
-      font-weight: bold;
-      font-size: map.get(global.$font-scales, heading-ss);
-      white-space: nowrap;
       text-overflow: ellipsis;
+      font-size: map.get(global.$font-scales, heading-ss);
+      font-weight: bold;
+      white-space: nowrap;
     }
   }
 }

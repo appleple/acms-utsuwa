@@ -27,10 +27,10 @@
 
 .faq-question-button {
   position: relative;
+  box-sizing: border-box;
   display: flex;
   gap: 1rem;
   align-items: center;
-  box-sizing: border-box;
   width: 100%; /* エントリー編集画面でのリセット用 */
   background: transparent; /* エントリー編集画面でのリセット用 */
   border: 0; /* エントリー編集画面でのリセット用 */
@@ -50,8 +50,8 @@
   flex: 0 0 auto;
   min-width: 1.5rem;
   margin-block: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
+  font-weight: bold;
   line-height: 1;
   text-align: center;
   text-box-trim: trim-both;
@@ -96,9 +96,9 @@
   .faq-title {
     flex: 1;
     margin: 0;
-    color: var(--color-text);
     font-weight: bold;
     line-height: var(--line-height-base);
+    color: var(--color-text);
     text-align: left;
   }
 
@@ -129,8 +129,8 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  margin: 0 1rem;
   padding: 2rem 0;
+  margin: 0 1rem;
   border-top: 1px solid var(--color-gray30);
 
   .faq-icon {
@@ -164,15 +164,15 @@
 .faq-list {
   display: grid;
   gap: 2rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   .entry-style & {
     /* モジュールユニット時のユニットスタイルによるスタイル上書き防止 */
     gap: 2rem;
-    margin: 0;
     padding: 0;
+    margin: 0;
   }
 }
 

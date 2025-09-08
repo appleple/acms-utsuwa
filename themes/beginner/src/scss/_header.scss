@@ -19,16 +19,16 @@
 .header-item-wrap {
   box-sizing: border-box;
   max-width: var(--container);
-  margin-right: auto;
-  margin-left: auto;
   padding-right: var(--header-height-fixed);
   padding-left: var(--gutter-sm);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .header-title {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
+  font-weight: bold;
   line-height: 1;
 }
 
@@ -71,9 +71,9 @@
 
   .header-item-wrap {
     display: grid;
-    grid-gap: 0 var(--col-gutter);
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 240px 1fr;
+    grid-gap: 0 var(--col-gutter);
     align-items: center;
     padding: 1.5rem var(--gutter-lg) 0;
     text-align: center;

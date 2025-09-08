@@ -46,8 +46,8 @@
 
 .page-title {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-s);
+  font-weight: bold;
   line-height: var(--line-height-sm);
   word-break: break-all;
 }
@@ -73,10 +73,10 @@
 
 .page-title-en {
   margin: 0;
-  color: var(--color-text-2nd);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
   line-height: var(--line-height-sm);
+  color: var(--color-text-2nd);
   text-transform: capitalize;
 }
 
@@ -102,9 +102,9 @@
 
 .page-sub-title {
   margin: 0 0 2rem;
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-m);
   line-height: var(--line-height-base);
+  color: var(--color-text);
 
   a {
     color: currentcolor;

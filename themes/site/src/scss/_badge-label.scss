@@ -8,25 +8,25 @@
 ------------------------------ */
 
 .badge {
-  display: inline-block;
   box-sizing: border-box;
+  display: inline-block;
   min-width: 2.5rem;
   padding: 0.25rem 0.5rem;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text-2nd);
   text-align: center;
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 }
 
 .badge-pill {
-  display: inline-block;
   box-sizing: border-box;
+  display: inline-block;
   min-width: 2.5rem;
   padding: 0.25rem 0.5rem;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
   text-align: center;
   background: var(--color-gray10);
   border-radius: var(--border-radius-round);
@@ -38,11 +38,11 @@
 
 .label {
   display: inline-block;
-  margin-block: 0;
   padding: 0 0.5rem;
-  color: var(--color-text);
+  margin-block: 0;
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text);
   background: var(--color-gray10);
   border-radius: var(--border-radius-md);
 

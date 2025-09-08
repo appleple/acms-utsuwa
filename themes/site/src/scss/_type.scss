@@ -29,8 +29,8 @@
       display: block;
       width: 3.5rem;
       height: var(--border-width-lg);
-      background: var(--color-primary);
       content: "";
+      background: var(--color-primary);
     }
   }
 
@@ -90,10 +90,10 @@
 /* 本文
 ------------------------------ */
 .paragraph {
-  color: var(--color-text);
+  margin-block: 0 var(--entry-el-margin-md);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
-  margin-block: 0 var(--entry-el-margin-md);
+  color: var(--color-text);
 
   a {
     text-decoration: none;
@@ -122,8 +122,8 @@
 /* リスト
 ------------------------------ */
 .list-unordered {
-  margin: 0 0 var(--entry-el-margin-md) 0;
   padding: 0 0 0 2rem;
+  margin: 0 0 var(--entry-el-margin-md) 0;
 
   li {
     position: relative;
@@ -138,9 +138,9 @@
       left: -1.5rem;
       width: 0.5rem;
       height: 0.5rem;
+      content: "";
       background: var(--color-secondary);
       border-radius: 50%;
-      content: "";
     }
   }
 }
@@ -148,10 +148,10 @@
 /* 記事検索結果の件数
 ------------------------------ */
 .text-result-amount {
-  font-weight: bold;
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-base);
   margin-block: 0 2rem;
+  font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
+  line-height: var(--line-height-base);
 }
 
 /* 記事が notFound の時のメッセージ
@@ -159,7 +159,7 @@
 .text-notfound-article {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
 }

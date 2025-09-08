@@ -6,8 +6,8 @@
 ------------------------------ */
 .#{acms.$entry-class} {
   .gu-bg-gray {
-    margin: 0 0 var(--entry-el-margin-md) 0;
     padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
+    margin: 0 0 var(--entry-el-margin-md) 0;
     background: var(--color-gray10);
     border-radius: var(--border-radius-lg);
 

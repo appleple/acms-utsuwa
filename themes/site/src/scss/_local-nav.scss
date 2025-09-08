@@ -16,8 +16,8 @@
     bottom: 0;
     display: block;
     width: 1rem;
-    background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
     content: "";
+    background: linear-gradient(90deg, rgb(255 255 255 / 0%), var(--color-white));
   }
 
   @include acms.media-breakpoint-up(md) {
@@ -38,8 +38,8 @@
 
 .local-nav-list {
   display: flex;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -63,14 +63,14 @@
 }
 
 .local-nav-link-icon {
-  display: grid;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
   width: 1.25rem;
   height: auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-icon-bg);
   border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1 / 1;
 
   /* 方向 */
   &.is-left {
@@ -84,8 +84,8 @@
   svg {
     width: 0.625rem;
     height: 0.625rem;
-    object-fit: contain;
     color: var(--color-white);
+    object-fit: contain;
 
     path {
       stroke: currentcolor;
@@ -98,8 +98,8 @@
 }
 
 .local-nav-link-text {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
 }

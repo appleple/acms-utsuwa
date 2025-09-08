@@ -58,12 +58,12 @@
 .popup-banner-close {
   width: 32px;
   height: 32px;
-  margin-bottom: 12px;
   padding: 0;
+  margin-bottom: 12px;
+  appearance: none;
   background-color: var(--color-icon-bg);
   border-width: 0;
   border-radius: 32px;
-  appearance: none;
 
   @media (hover: hover) {
     transition: background-color 0.3s ease;

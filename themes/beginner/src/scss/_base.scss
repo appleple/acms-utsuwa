@@ -13,9 +13,9 @@
 　　ベース
 ------------------------------ */
 html {
-  color: var(--color-text);
   font-family: var(--font-base);
   line-height: var(--line-height-lg);
+  color: var(--color-text);
   background: var(--color-white);
   scroll-behavior: smooth;
 
@@ -45,10 +45,10 @@ a {
 .container-md,
 .container-sm {
   box-sizing: border-box;
-  margin-right: auto;
-  margin-left: auto;
   padding-right: var(--container-space-x);
   padding-left: var(--container-space-x);
+  margin-right: auto;
+  margin-left: auto;
 
   @if global.$enable-iphonex == true {
     padding-right: calc(env(safe-area-inset-right) + var(--container-space-x));

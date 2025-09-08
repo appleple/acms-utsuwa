@@ -9,13 +9,13 @@
 
 @include acms.editor-style("blockquote") {
   padding: var(--entry-el-padding-sm);
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
-  border: var(--border-width-md) solid var(--color-gray30);
   margin-block: 0 var(--entry-el-margin-md);
 
   /* リセット用 */
   margin-inline: 0;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-lg);
+  border: var(--border-width-md) solid var(--color-gray30);
 
   /* ブロックエディタ調整：リセット用 */
   & > * {
@@ -54,8 +54,8 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    margin-bottom: var(--entry-el-margin-lg);
     padding: var(--entry-el-padding-md);
+    margin-bottom: var(--entry-el-margin-lg);
   }
 }
 
