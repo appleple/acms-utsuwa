@@ -4308,8 +4308,8 @@ a {
 
 .popup-banner-img {
   display: block;
-  max-width: 100%;
   width: 200px;
+  max-width: 100%;
   height: auto;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
