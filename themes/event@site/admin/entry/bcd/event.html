@@ -1,7 +1,7 @@
 <table class="acms-admin-table-admin-edit">
   <tbody>
     <tr>
-      <th>メインイメージ</th>
+      <th>メイン画像</th>
       <td class="js-media-field">
         <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" data-thumbnail-type="{entry_main_image@type}" data-width="200px" data-height="200px"></div>
         <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -43,3 +43,17 @@
     </tr>
   </tbody>
 </table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const element = document.getElementById('seo-entry_main_image');
+    if (element) {
+      element.remove();
+    }
+
+    const titleElement = document.getElementById('seo-entry-accordion-title');
+    if (titleElement) {
+      titleElement.innerText = 'SEO設定';
+    }
+  });
+</script>
