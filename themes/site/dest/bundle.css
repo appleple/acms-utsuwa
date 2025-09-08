@@ -4281,6 +4281,7 @@ a {
   display: none;
   flex-direction: column;
   align-items: flex-end;
+  max-width: calc(100% - var(--container-space-x) - var(--popup-banner-window-space));
   transition: right 0.2s ease-in-out;
 }
 .popup-banner.is-show {
@@ -4307,7 +4308,7 @@ a {
 
 .popup-banner-img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   width: 200px;
   height: auto;
   background-color: var(--color-white);
