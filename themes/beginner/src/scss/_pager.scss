@@ -18,22 +18,22 @@
   gap: 0.5rem;
   justify-content: center;
   padding-left: 0;
-  list-style: none;
   margin-block: 3rem 0;
+  list-style: none;
 
   li {
     display: inline-block;
-    color: var(--color-text);
-    font-weight: bold;
     font-size: map.get(global.$font-scales, body-l);
+    font-weight: bold;
+    color: var(--color-text);
 
     &.cur span,
     &.forward-link span,
     &.back-link span {
+      box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
       width: 100%;
       height: 100%;
     }
@@ -51,9 +51,9 @@
 
     &.ellipsis {
       display: inline-flex;
-      padding-block: 0.25rem;
       align-items: flex-end;
       justify-content: center;
+      padding-block: 0.25rem;
       color: var(--color-gray70);
     }
 
@@ -73,10 +73,10 @@
 }
 
 .pager-link {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   width: var(--pager-button-size);
   height: var(--pager-button-size);
   padding: 0.25rem;
@@ -115,28 +115,28 @@
 
 .pager-simple-arrow-text,
 .serial-nav-arrow-text {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
 }
 
 .pager-simple-arrow-icon,
 .serial-nav-arrow-icon {
-  display: grid;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
   width: 1.25rem;
   height: auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-icon-bg);
   border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1 / 1;
 
   svg {
     width: 0.625rem;
     height: 0.625rem;
-    object-fit: contain;
     color: var(--color-white);
+    object-fit: contain;
 
     path {
       stroke: currentcolor;
@@ -167,8 +167,8 @@
     "next" auto
    / auto;
   gap: 1rem 2rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   @include acms.media-breakpoint-up(md) {
@@ -179,10 +179,10 @@
 }
 
 .pager-simple-link {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-sizing: border-box;
   height: 100%;
   padding: 1rem;
   text-decoration: none;
@@ -236,8 +236,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   @include acms.media-breakpoint-up(md) {
@@ -253,10 +253,10 @@
   min-width: 0;
 
   a {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    box-sizing: border-box;
     height: 100%;
     padding: 0.75rem 1rem 1rem;
     text-decoration: none;
@@ -303,26 +303,26 @@
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  color: var(--color-text);
-  line-height: var(--line-height-base);
-  white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  white-space: nowrap;
 }
 
 /* 一覧へ戻る */
 .serial-nav-item-index {
   display: grid;
-  place-items: center;
   flex: 0 0 auto;
-  font-weight: bold;
+  place-items: center;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
 
   a {
     position: relative;
     display: inline-block;
-    text-decoration: none;
     padding-block: 0.5rem;
+    text-decoration: none;
 
     &,
     &:link,
@@ -332,11 +332,11 @@
 
     &::after {
       position: absolute;
+      inset: 0 -0.5rem;
       z-index: 1;
+      content: "";
       background-color: transparent;
       border-radius: var(--border-radius-md);
-      content: "";
-      inset: 0 -0.5rem;
 
       @media (hover: hover) {
         transition: background-color 0.3s ease;

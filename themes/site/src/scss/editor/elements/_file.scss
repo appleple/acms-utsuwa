@@ -12,8 +12,8 @@
 .media-file-block,
 [class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]),
 [class*="column-file"] {
-  font-size: 0; /* Descender space 対策 */
   margin-block: 0 var(--entry-el-margin-md);
+  font-size: 0; /* Descender space 対策 */
 }
 
 /* ボタン型
@@ -25,10 +25,10 @@
 [class*="column-media"] a[href*="media-download"],
 [class*="column-media"] a[href*="storage"],
 [class*="column-file"] a {
+  box-sizing: border-box;
   display: inline-flex;
   gap: 1rem;
   align-items: center;
-  box-sizing: border-box;
   padding: 1rem 1.5rem;
   color: var(--color-text);
   text-decoration: none; /* リセット用 */
@@ -70,9 +70,9 @@
 [class*="column-file"] .caption,
 [class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon):not(:has(.column-pdf-image)) .caption {
   margin: 0; /* リセット */
-  color: currentcolor;
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
+  color: currentcolor;
 }
 
 /* PDFプレビュー
@@ -105,7 +105,7 @@
 }
 
 .column-pdf-image {
-  width: 100%;
+  max-width: 100%;
   border: var(--border-width-sm) solid var(--color-gray40);
   transition: opacity 0.2s ease;
 }
@@ -123,9 +123,9 @@
 
   .caption {
     margin: 0; /* リセット */
-    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
     line-height: var(--line-height-sm);
+    color: var(--color-text-2nd);
     border-bottom: var(--border-width-sm) dotted transparent;
   }
 
@@ -138,8 +138,8 @@
     svg {
       width: 100%;
       height: 100%;
-      object-fit: contain;
       color: inherit;
+      object-fit: contain;
 
       path {
         stroke: currentcolor;
@@ -156,9 +156,9 @@
 .media-file-block[data-display-type="icon"] .caption {
   display: block;
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
+  color: var(--color-text);
 }
 
 .acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)),

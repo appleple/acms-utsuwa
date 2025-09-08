@@ -27,23 +27,23 @@
 }
 
 .entry-header-date {
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }
 
 .entry-header-category-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-block: 0;
   align-items: center;
+  margin-block: 0;
 }
 
 .entry-header-category-label {
   padding: 0.25rem 0.5rem;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
   line-height: var(--line-height-base);
   text-decoration: none;
   border: 1px solid var(--color-gray30);
@@ -64,8 +64,8 @@
 
 .entry-header-title {
   position: relative;
-  margin: 0 0 1.5rem;
   padding: 0 0 1rem;
+  margin: 0 0 1.5rem;
   font-size: map.get(global.$font-scales, heading-ss);
   border-bottom: var(--border-width-lg) solid var(--color-gray10);
 
@@ -74,8 +74,8 @@
     bottom: calc(var(--border-width-lg) * -1);
     width: 3.5rem;
     height: var(--border-width-lg);
-    background: var(--color-primary);
     content: "";
+    background: var(--color-primary);
   }
 }
 
@@ -100,8 +100,8 @@
   }
 
   .entry-header-title {
-    margin: 0 0 1.5rem;
     padding: 0 0 1.5rem;
+    margin: 0 0 1.5rem;
     font-size: map.get(global.$font-scales, heading-m);
 
   }
@@ -113,14 +113,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  list-style: none;
-  margin-block: 0.5rem 0;
   padding-inline-start: 0;
+  margin-block: 0.5rem 0;
+  list-style: none;
 }
 
 .entry-tag-item {
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text);
 
   a {
     &:any-link {
@@ -171,8 +171,8 @@
   flex-flow: column wrap;
   gap: 1rem;
   justify-content: space-between;
-  margin: 0 0 2rem;
   padding: 2rem 1rem;
+  margin: 0 0 2rem;
   border: 1px solid var(--color-gray30);
   border-radius: var(--border-radius-md);
 

@@ -1,6 +1,6 @@
 <div class="acms-admin-cssgrid">
   <div class="acms-admin-g-col-12 acms-admin-mb-2">
-    <h3 class="acms-admin-mb-2">メインイメージ <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="横幅 900px 以上の画像を設定してください。<br>一覧表示の際にも利用されます。"></i></h3>
+    <h3 class="acms-admin-mb-2">メイン画像 <i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="横幅 900px 以上の画像を設定してください。<br>一覧表示の際にも利用されます。"></i></h3>
     <div class="js-media-field">
       <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" data-thumbnail-type="{main-img@type}" style="max-width:820px"></div>
       <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const element = document.getElementById('seo-entry_main_image');
   if (element) {
     element.remove();
+  }
+
+  const titleElement = document.getElementById('seo-entry-accordion-title');
+  if (titleElement) {
+    titleElement.innerText = 'SEO設定';
   }
 });
 </script>

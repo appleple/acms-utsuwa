@@ -15,18 +15,18 @@
 /* リンク */
 .acms-admin-block-editor-link-button-link,
 .link-button-block-link {
-  display: inline-flex;
   box-sizing: border-box;
+  display: inline-flex;
+  place-items: center;
   min-height: 3rem;
-  margin-right: 0; /* リセット */
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  font-weight: bold;
+  margin-right: 0; /* リセット */
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: 1.3;
   text-decoration: none; /* リセット */
   background-color: var(--color-primary);
   border-radius: var(--border-radius-md);
-  place-items: center;
 
   &,
   &:link,

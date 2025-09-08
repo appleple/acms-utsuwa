@@ -6,8 +6,8 @@
 　　タグ
 ------------------------------ */
 .tag-sm-label {
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
+  color: var(--color-text-2nd);
 }
 
 /* Tag_Cloud
@@ -16,17 +16,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  margin-block: 0;
   padding-inline-start: 0;
+  margin-block: 0;
   list-style-type: none;
 }
 
 .tag-item {
   display: grid;
   place-items: center;
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-s);
   line-height: 1.5;
+  color: var(--color-text);
 }
 
 .tag-item-level9,
@@ -65,11 +65,11 @@
 
   &::after {
     position: absolute;
+    inset: -0.25rem -0.5rem;
     z-index: 1;
+    content: "";
     background-color: transparent;
     border-radius: var(--border-radius-lg);
-    content: "";
-    inset: -0.25rem -0.5rem;
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
@@ -94,8 +94,8 @@
 /* 選択されているタグ */
 .tag-filter-heading {
   margin-block: 0 0.5rem;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-m);
+  font-weight: bold;
   line-height: 1.5;
 }
 
@@ -103,14 +103,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  margin-block: 0;
   padding-inline-start: 0;
+  margin-block: 0;
   list-style-type: none;
 }
 
 .tag-filter-selected-item {
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: 1.5;
 
   a {
@@ -134,25 +134,25 @@
 
 /* さらにタグで絞り込む */
 .tag-filter-heading-more {
-  font-weight: normal;
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: 1.7;
   margin-block: 1rem 0.5rem;
+  font-size: map.get(global.$font-scales, body-m);
+  font-weight: normal;
+  line-height: 1.7;
 }
 
 .tag-filter-choice-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  margin-block: 0;
   padding-inline-start: 0;
+  margin-block: 0;
   list-style-type: none;
 }
 
 .tag-filter-choice-item {
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   line-height: 1.7;
+  color: var(--color-text);
 
   a {
     &:any-link {
@@ -180,15 +180,15 @@
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
+  padding-inline-start: 0;
   margin-block: 0;
   margin-inline-end: 1rem;
-  padding-inline-start: 0;
   list-style-type: none;
 
   li {
-    color: var(--color-text);
     font-size: inherit;
     line-height: 1.7;
+    color: var(--color-text);
   }
 
   a {

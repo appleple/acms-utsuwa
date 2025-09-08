@@ -13,18 +13,18 @@
 /* 記事全体リンク */
 .media-item-link {
   position: relative;
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
   text-decoration: none;
 
   &::after {
     position: absolute;
+    inset: calc(var(--card-bg-space) * -1);
     z-index: 1;
+    content: "";
     background-color: transparent;
     border-radius: var(--border-radius-lg);
-    content: "";
-    inset: calc(var(--card-bg-space) * -1);
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
@@ -90,9 +90,9 @@
 .media-item-img-warp {
   position: relative;
   flex-shrink: 0;
+  aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
   overflow: hidden;
   border-radius: var(--border-radius-lg);
-  aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
 
   @include acms.media-breakpoint-up(sm) {
     width: 180px;
@@ -135,18 +135,18 @@
 
 /* 日付 */
 .media-item-date {
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }
 
 /* 見出し */
 .media-item-title {
   width: 100%;
-  color: var(--color-text);
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: var(--line-height-base);
+  color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
@@ -159,12 +159,12 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-m);
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  font-size: map.get(global.$font-scales, body-m);
+  color: var(--color-text-2nd);
+  -webkit-box-orient: vertical;
 }
 
 /* タグ横並びリスト */
@@ -191,9 +191,9 @@
 }
 
 .media-item-read-more-text {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
+  color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, body-m);
@@ -201,20 +201,20 @@
 }
 
 .media-item-read-more-icon {
-  display: grid;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
   width: 1rem;
   height: auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-icon-bg);
   border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1 / 1;
 
   svg {
     width: 0.625rem;
     height: 0.625rem;
-    object-fit: contain;
     color: var(--color-white);
+    object-fit: contain;
 
     path {
       stroke: currentcolor;

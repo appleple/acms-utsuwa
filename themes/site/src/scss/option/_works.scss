@@ -9,8 +9,8 @@
 /* 検索ボックス
 ----------------------------- */
 .search-panel {
-  margin-bottom: 2rem;
   padding: 2rem 1rem;
+  margin-bottom: 2rem;
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
 }
@@ -55,8 +55,8 @@
 
 @include acms.media-breakpoint-up(md) {
   .search-panel {
-    margin-bottom: 3rem;
     padding: 3rem;
+    margin-bottom: 3rem;
     border-radius: var(--border-radius-xxl);
 
     .form-checkbox {
@@ -98,8 +98,8 @@
 
 .search-amount {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-base);
 }
 
@@ -107,8 +107,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin: 0;
   padding: 1rem;
+  margin: 0;
   background: var(--color-gray10);
   border-radius: var(--border-radius-lg);
 

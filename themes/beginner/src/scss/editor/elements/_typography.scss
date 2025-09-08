@@ -46,10 +46,10 @@
   ("code"),
   $exclude-classes: ("not-editor-style", "code-highlight")
 ) {
-  margin-inline: 0.25rem;
   padding: 0.0.25rem;
-  color: var(--color-primary);
+  margin-inline: 0.25rem;
   font-size: 87.5%;
+  color: var(--color-primary);
   background-color: var(--color-white);
   border: var(--border-width-sm) solid currentcolor;
   border-radius: var(--border-radius-sm);
@@ -78,8 +78,8 @@
       display: block;
       width: 2em;
       height: var(--border-width-lg);
-      background: var(--color-primary);
       content: "";
+      background: var(--color-primary);
     }
   }
 }
@@ -114,8 +114,8 @@
 /* 本文
 ----------------------------- */
 @include acms.editor-style("p") {
-  font-size: map.get(global.$font-scales, body-m);
   margin-block: 0 var(--entry-el-margin-md);
+  font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
 }
 
@@ -126,8 +126,8 @@
 
   display: grid;
   gap: var(--list-space-y);
-  margin-block: 0 var(--entry-el-margin-md);
   padding-left: calc(1lh + 0.375rem);
+  margin-block: 0 var(--entry-el-margin-md);
 
   & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
     position: relative;
@@ -144,9 +144,9 @@
       left: calc((0.5lh + 0.1875rem) * -1);
       width: 0.375rem;
       height: 0.375rem;
+      content: "";
       background: var(--color-secondary);
       border-radius: 50%;
-      content: "";
     }
 
     &:last-child {
@@ -169,18 +169,18 @@
   --order-list-space-y: 0.5rem; /* アイテム間の縦余白 */
 
   display: grid;
-  margin-block: 0 var(--entry-el-margin-md);
-  padding-inline-start: 0;
   grid-template-columns: minmax(1lh, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */ /* ulの1階層目テキストはじまりと揃えるために minmax(1lh, auto) で最小値を設定 */
   gap: var(--order-list-space-y) 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
+  padding-inline-start: 0;
+  margin-block: 0 var(--entry-el-margin-md);
   counter-reset: order-list;
 
   & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
-    display: grid;
-    grid-auto-flow: column;
-    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
-    grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
     clear: both;
+    display: grid;
+    grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
+    grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
+    grid-auto-flow: column;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
 
@@ -191,10 +191,10 @@
     &::before {
       grid-column: 1;
       padding-top: 1.4px; /* 番号位置の微調整 */
-      color: var(--color-text-2nd);
       font-weight: bold;
-      white-space: nowrap;
+      color: var(--color-text-2nd);
       word-break: keep-all;
+      white-space: nowrap;
       content: counters(order-list, "-") ". ";
       counter-increment: order-list;
     }
@@ -206,8 +206,8 @@
 
     ol {
       grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
-      margin-top: var(--order-list-space-y);
       padding-left: 1rem;
+      margin-top: var(--order-list-space-y);
     }
   }
 }
@@ -221,8 +221,8 @@
 
   dt {
     margin-bottom: 0.5rem;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, body-m);
+    font-weight: bold;
     line-height: var(--line-height-base);
   }
 
@@ -242,8 +242,8 @@
     border-radius: var(--border-radius-lg);
 
     dt {
-      padding-top: var(--entry-el-padding-sm);
       padding-inline: var(--entry-el-padding-sm);
+      padding-top: var(--entry-el-padding-sm);
       border-top: var(--border-width-sm) solid var(--color-gray30);
 
       &:first-child {
@@ -252,20 +252,20 @@
     }
 
     dd {
-      margin-bottom: 0;
-      padding-bottom: var(--entry-el-padding-sm);
       padding-inline: var(--entry-el-padding-sm);
+      padding-bottom: var(--entry-el-padding-sm);
+      margin-bottom: 0;
     }
 
     @include acms.media-breakpoint-up(md) {
       dt {
-        padding-top: var(--entry-el-padding-md);
         padding-inline: var(--entry-el-padding-md);
+        padding-top: var(--entry-el-padding-md);
       }
 
       dd {
-        padding-bottom: var(--entry-el-padding-md);
         padding-inline: var(--entry-el-padding-md);
+        padding-bottom: var(--entry-el-padding-md);
       }
     }
   }
@@ -279,21 +279,22 @@
 ) {
   max-width: 100%;
   padding: var(--entry-el-padding-sm);
+  margin-block: 0 var(--entry-el-margin-md);
   overflow: auto;
-  color: var(--color-text); /* 閲覧側画面の文字色はライブラリに依存 */
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
+  color: var(--color-text); /* 閲覧側画面の文字色はライブラリに依存 */
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-primary);
   border-radius: var(--border-radius-lg);
-  margin-block: 0 var(--entry-el-margin-md);
 
   code {
+    padding: 0;
+
     /* リセット用 */
     margin: 0;
-    padding: 0;
-    color: inherit;
     font-size: inherit;
+    color: inherit;
     background-color: inherit;
     border: none;
     box-shadow: none;

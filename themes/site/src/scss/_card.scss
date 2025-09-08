@@ -9,19 +9,19 @@
 /* カード全体リンク */
 .card-link {
   position: relative;
-  display: block;
   box-sizing: border-box;
+  display: block;
   width: 100%;
   height: 100%;
   text-decoration: none;
 
   &::after {
     position: absolute;
+    inset: calc(var(--card-bg-space) * -1);
     z-index: 1;
+    content: "";
     background-color: transparent;
     border-radius: var(--border-radius-lg);
-    content: "";
-    inset: calc(var(--card-bg-space) * -1);
 
     @media (hover: hover) {
       transition: background-color 0.3s ease;
@@ -97,16 +97,16 @@
   display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
   aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
+  object-fit: cover;
 }
 
 /* 画像上に重ねて表示するラベル */
 .card-img-label-position {
   position: absolute;
   display: inline-block;
-  line-height: 1;
   margin-block: 0;
+  line-height: 1;
 
   &.left-top {
     top: 10px;
@@ -132,12 +132,12 @@
 /* 画像上に重ねて表示する new ラベル */
 .label-triangle {
   position: absolute;
-  margin-block: 0;
   top: 0;
   left: 0;
   display: inline-block;
   width: 4rem;
   height: 4rem;
+  margin-block: 0;
 
   svg {
     .st1 {
@@ -192,19 +192,19 @@
 
 /* 日付 */
 .card-date {
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }
 
 /* 見出し */
 .card-title,
 .#{acms.$entry-class} .card-title {
   margin-block: 0;
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, heading-ss);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
 }
 
 /* 概要文 */
@@ -213,13 +213,13 @@
   display: -webkit-box;
   margin-block: 0;
   overflow: hidden;
-  color: var(--color-text-2nd);
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   line-clamp: 4;
+  font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-2nd);
+  -webkit-box-orient: vertical;
 }
 
 /* タグ横並びリスト */
@@ -240,9 +240,9 @@
 
 /* 補足ラベル */
 .card-supplement-label {
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
+  color: var(--color-text);
 }
 
 /* 著者 */
@@ -251,9 +251,9 @@
   gap: 0.5rem;
   align-items: center;
   margin: 0;
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
 }
 
 .card-author-img {
@@ -281,9 +281,9 @@
 }
 
 .card-read-more-text {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
+  color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, body-m);
@@ -291,20 +291,20 @@
 }
 
 .card-read-more-icon {
-  display: grid;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
   width: 1rem;
   height: auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-icon-bg);
   border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1 / 1;
 
   svg {
     width: 0.625rem;
     height: 0.625rem;
-    object-fit: contain;
     color: var(--color-white);
+    object-fit: contain;
 
     path {
       stroke: currentcolor;
@@ -319,8 +319,8 @@
 /* 横スライダー用 */
 @include acms.media-breakpoint-down(lg) {
   .card-carousel {
-    margin: calc(var(--card-bg-space) * -1);
     padding: var(--card-bg-space);
+    margin: calc(var(--card-bg-space) * -1);
     overflow-x: auto;
 
     .card-list {

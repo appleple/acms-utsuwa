@@ -72,9 +72,9 @@
 [class*="column-eximage"] .caption {
   display: block;
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
-  color: var(--color-text-2nd);
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-sm);
+  color: var(--color-text-2nd);
 }
 
 [class*="column-image"] .caption,

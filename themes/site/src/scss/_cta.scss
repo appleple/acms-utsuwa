@@ -22,8 +22,8 @@
 
 .cta-general-title {
   margin: 0 0 1.5rem;
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-s);
+  color: var(--color-text);
 }
 
 .cta-general-button-wrap {
@@ -100,13 +100,13 @@
 
   &::before {
     position: absolute;
-    z-index: -1;
     inset: 0;
+    z-index: -1;
     display: block;
     width: 100%;
     height: 100%;
-    background-color: var(--color-image-overlay-bg);
     content: "";
+    background-color: var(--color-image-overlay-bg);
   }
 
   p:last-child {
@@ -117,12 +117,12 @@
 .cta-visual-comment {
   position: relative;
   display: inline-block;
-  margin: 0 0 1rem;
   padding: 0.25rem 1.5rem;
-  color: var(--color-text-2nd);
-  font-weight: bold;
+  margin: 0 0 1rem;
   font-size: calc(map.get(global.$font-scales, heading-ss) * 0.7);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text-2nd);
   background: var(--color-white);
   border-radius: var(--border-radius-round);
 
@@ -132,10 +132,10 @@
     left: 50%;
     width: 12px;
     height: 10px;
-    background-color: var(--color-white);
-    transform: translateX(-50%);
     content: "";
+    background-color: var(--color-white);
     clip-path: polygon(50% 100%, 0 0, 100% 0);
+    transform: translateX(-50%);
   }
 }
 
@@ -188,8 +188,8 @@
   }
 
   .cta-visual-comment {
-    margin: 0 0 2rem;
     padding: 0.5rem 1.5rem;
+    margin: 0 0 2rem;
     font-size: calc(map.get(global.$font-scales, heading-m) * 0.7);
   }
 }

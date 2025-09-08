@@ -42,10 +42,10 @@
 
 .global-nav-mobile-menu-text {
   margin: 0.5rem 0 0;
-  color: var(--color-white);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
   line-height: var(--line-height-ss);
+  color: var(--color-white);
 }
 
 /* トグルメニューアイコン */
@@ -66,10 +66,10 @@
     display: block;
     width: 100%;
     height: 2px;
+    content: "";
     background-color: var(--color-white);
     border-radius: 1px;
     transition: 0.3s all;
-    content: "";
   }
 
   &::before {
@@ -101,8 +101,8 @@
   bottom: 0;
   left: 0;
   z-index: var(--zindex-mobile-nav);
-  display: none;
   box-sizing: border-box;
+  display: none;
   width: 100%;
   margin-top: var(--header-height);
   overflow-y: scroll;
@@ -129,18 +129,18 @@
 /* モバイルメニュー内メインナビゲーション
 ------------------------------ */
 .global-nav-mobile-inner {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
-  margin: 1rem;
   padding: 1rem;
+  margin: 1rem;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
 
   @include acms.media-breakpoint-up(md) {
     max-width: 44rem;
-    margin: 2rem auto;
     padding: 2rem;
+    margin: 2rem auto;
   }
 }
 
@@ -156,8 +156,8 @@
 /* ナビリスト */
 .global-nav-mobile-group {
   width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   .global-nav-mobile-navbar > & {
@@ -183,9 +183,9 @@
 
 /* ナビリストアイテム */
 .global-nav-mobile-item {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
+  color: var(--color-text);
 
   /* 第一階層のアイテムでボタン型以外にラインをつける */
   &.level-1:not(:has(> .global-nav-mobile-link.is-cta)) {
@@ -194,8 +194,8 @@
 
   /* 下階層アイテム */
   .global-nav-mobile-item {
-    color: var(--color-text-2nd);
     font-size: map.get(global.$font-scales, body-s);
+    color: var(--color-text-2nd);
   }
 }
 
@@ -232,8 +232,8 @@
 
   /* ボタン */
   &.is-cta {
-    margin: 1.5rem 0 0;
     padding: var(--btn-padding-y) var(--btn-padding-x);
+    margin: 1.5rem 0 0;
     color: var(--color-text-inverse);
     text-align: center;
     background: var(--color-primary);
@@ -256,11 +256,11 @@
       display: inline-block;
       width: 0.75rem;
       height: 0.75rem;
+      content: "";
       background-image: url("#{global.$root-theme-img}icon-color/list-before-gray.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 0.375rem;
-      content: "";
     }
   }
 }
@@ -276,8 +276,8 @@
 ------------------------------ */
 .global-nav-mobile-side-group {
   width: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-weight: bold;
   list-style: none;
 }

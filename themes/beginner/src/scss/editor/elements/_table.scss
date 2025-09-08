@@ -9,11 +9,11 @@
 @include acms.editor-style(("table")) {
   margin: 0 0 var(--entry-el-margin-md);
   overflow: hidden;
+  border-spacing: 0;
+  border-collapse: separate; /* テーブルに角丸をつけるため separate にしています */
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
   border-radius: var(--border-radius-lg);
-  border-collapse: separate; /* テーブルに角丸をつけるため separate にしています */
-  border-spacing: 0;
 
   th,
   td {
@@ -36,8 +36,8 @@
   }
 
   th {
-    text-align: left;
     vertical-align: top;
+    text-align: left;
     background-color: var(--color-gray10);
   }
 
@@ -78,8 +78,8 @@
 .js-table-unit-scroll-hint {
   th,
   td {
-    white-space: nowrap;
     word-break: keep-all; // 横スクロールするテーブルの時は常時テキスト折り返しなし
+    white-space: nowrap;
   }
 }
 

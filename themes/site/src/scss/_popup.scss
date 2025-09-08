@@ -15,6 +15,7 @@
   display: none;
   flex-direction: column;
   align-items: flex-end;
+  max-width: calc(100% - var(--container-space-x) - var(--popup-banner-window-space));
   transition: right .2s ease-in-out;
 
   &.is-show {
@@ -47,8 +48,8 @@
 
 .popup-banner-img {
   display: block;
-  width: 100%;
   width: 200px;
+  max-width: 100%;
   height: auto;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
@@ -58,12 +59,12 @@
 .popup-banner-close {
   width: 32px;
   height: 32px;
-  margin-bottom: 12px;
   padding: 0;
+  margin-bottom: 12px;
+  appearance: none;
   background-color: var(--color-icon-bg);
   border-width: 0;
   border-radius: 32px;
-  appearance: none;
 
   @media (hover: hover) {
     transition: background-color 0.3s ease;

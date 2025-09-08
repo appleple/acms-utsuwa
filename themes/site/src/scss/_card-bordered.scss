@@ -57,9 +57,9 @@
 
 .card-bordered-img-wrap {
   width: 100%;
+  aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
   overflow: hidden;
   border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-  aspect-ratio: var(--card-img-aspect-ratio, 16 / 9);
 }
 
 .card-bordered-img {
@@ -79,9 +79,9 @@
 .card-bordered-title,
 .#{acms.$entry-class} .card-bordered-title {
   margin: 0;
-  color: var(--color-text);
   font-size: map.get(global.$font-scales, heading-ss);
   line-height: var(--line-height-base);
+  color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);

@@ -84,9 +84,9 @@ $_video-play-btn-arrow-width-lg: 1.5rem;
     display: block;
     margin-top: calc($_video-play-btn-arrow-height / -2);
     margin-left: calc($_video-play-btn-arrow-height / -4);
+    content: "";
     border: calc($_video-play-btn-arrow-height / 2) solid transparent;
     border-left: $_video-play-btn-arrow-width solid $_video-play-btn-arrow-color;
-    content: "";
   }
 
 

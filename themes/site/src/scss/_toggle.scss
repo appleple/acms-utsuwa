@@ -9,8 +9,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0;
-  color: var(--color-text);
   font-family: inherit;
+  color: var(--color-text);
   text-align: left;
   text-decoration: none;;
   background: none;
@@ -25,11 +25,11 @@
 .toggle-icon {
   width: 1.75rem;
   height: auto;
-  margin-left: auto;
-  color: var(--color-text);
-  line-height: 1;
-  transition: .3s ease;
   aspect-ratio: 1 / 1;
+  margin-left: auto;
+  line-height: 1;
+  color: var(--color-text);
+  transition: .3s ease;
 
   .toggle-button.is-active & {
     transform: rotate(180deg);
@@ -38,8 +38,8 @@
   svg {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     color: inherit;
+    object-fit: contain;
 
     path {
       stroke: currentcolor;
@@ -51,6 +51,6 @@
   }
 }
 
-.toggle-body {
+.toggle-body-contents {
   display: none;
 }

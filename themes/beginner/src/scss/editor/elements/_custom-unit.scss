@@ -39,8 +39,8 @@
   .message-lead {
     position: relative;
     margin: 0;
-    font-weight: bold;
     font-size: map.get(global.$font-scales, heading-s);
+    font-weight: bold;
   }
 
   .message-content {
@@ -56,8 +56,8 @@
       height: 1px;
       margin: 0 1rem 0 0;
       vertical-align: middle;
-      background: var(--color-gray30);
       content: "";
+      background: var(--color-gray30);
     }
   }
 }

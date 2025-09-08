@@ -11,10 +11,9 @@
 
 .not-found-title {
   margin: 0 0 1rem;
-  font-weight: bold;
   font-size: 1.25rem;
+  font-weight: bold;
   line-height: var(--line-height-sm);
-  text-align: center;
 }
 
 .not-found-paragraph {
@@ -34,10 +33,11 @@
 
 .not-found-search {
   .form-search {
-    display: flex;
-    justify-content: center;
     margin: 1rem auto 3rem;
+  }
 
+  .form-search-label {
+    line-height: 3;
   }
 
   .form-search-action {
@@ -58,7 +58,14 @@
   .not-found-title {
     margin: 0 0 2rem;
     font-size: 2rem;
-
+    text-align: center;
   }
 
+  .not-found-search {
+    .form-search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

@@ -44,8 +44,8 @@
 
 .profile-name {
   margin: 0;
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
   line-height: var(--line-height-sm);
 }
 
@@ -65,8 +65,8 @@
   display: flex;
   gap: 1rem;
   height: var(--sns-icon-size); /* SNS情報がない時も表示崩れ防止のため高さを保つ */
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style-type: none;
 
   a {
@@ -104,27 +104,27 @@
 }
 
 .profile-author-link-text {
-  color: var(--color-text);
-  font-weight: bold;
   font-size: map.get(global.$font-scales, body-s);
+  font-weight: bold;
   line-height: var(--line-height-base);
+  color: var(--color-text);
 }
 
 .profile-author-link-icon {
-  display: grid;
   box-sizing: border-box;
+  display: grid;
+  place-items: center;
   width: 1rem;
   height: auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-icon-bg);
   border-radius: 50%;
-  place-items: center;
-  aspect-ratio: 1 / 1;
 
   svg {
     width: 0.625rem;
     height: 0.625rem;
-    object-fit: contain;
     color: var(--color-white);
+    object-fit: contain;
 
     path {
       stroke: currentcolor;

@@ -16,37 +16,37 @@
 
 @keyframes fade-in {
   0% {
-    transform: translateY(10px);
     opacity: 0;
+    transform: translateY(10px);
   }
 
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fade-in-drop {
   0% {
-    transform: translateY(-10px);
     opacity: 0;
+    transform: translateY(-10px);
   }
 
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes fade-in-card {
   0% {
-    transform: translateY(50px);
     opacity: 0;
+    transform: translateY(50px);
   }
 
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
