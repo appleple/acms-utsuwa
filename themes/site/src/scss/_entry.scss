@@ -311,6 +311,10 @@
   color: var(--color-gray90);
 }
 
+.entry-faq-body-contents {
+  min-width: 0; /* ユニット要素がコンテナーからはみ出ないよう対策（entry-faq-body の Flexアイテムであるため対策が必要） */
+}
+
 /*
 　採用情報
 ------------------------------ */
