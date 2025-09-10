@@ -1,0 +1,133 @@
+import fs from 'fs';
+import path from 'path';
+import { systemCmd } from './lib/index.js';
+
+/**
+ * ルートのpackage.jsonからバージョンを読み取る
+ * @returns {string} バージョン番号
+ */
+function getRootVersion() {
+  const rootPackagePath = path.join(process.cwd(), 'package.json');
+
+  try {
+    const packageContent = fs.readFileSync(rootPackagePath, 'utf8');
+    const packageJson = JSON.parse(packageContent);
+    return packageJson.version;
+  } catch (error) {
+    console.error('Error reading root package.json:', error.message);
+    process.exit(1);
+  }
+}
+
+/**
+ * themes/ディレクトリ内の全テーマを検出する
+ * @returns {string[]} テーマディレクトリ名の配列
+ */
+function detectThemes() {
+  const themesPath = path.join(process.cwd(), 'themes');
+
+  try {
+    const items = fs.readdirSync(themesPath, { withFileTypes: true });
+    const themes = [];
+
+    for (const item of items) {
+      if (item.isDirectory()) {
+        const themePath = path.join(themesPath, item.name);
+        const packageJsonPath = path.join(themePath, 'package.json');
+
+        // package.jsonが存在するディレクトリのみをテーマとして認識
+        if (fs.existsSync(packageJsonPath)) {
+          themes.push(item.name);
+        }
+      }
+    }
+
+    return themes;
+  } catch (error) {
+    console.error('Error detecting themes:', error.message);
+    process.exit(1);
+  }
+}
+
+/**
+ * 指定されたテーマのバージョンを同期する
+ * @param {string} themeName テーマ名
+ * @param {string} version 同期するバージョン
+ * @returns {Promise<boolean>} 成功した場合true
+ */
+async function syncThemeVersion(themeName, version) {
+  try {
+    console.log(`Syncing theme: ${themeName} to version ${version}`);
+
+    const command = `npm --prefix themes/${themeName} version ${version} --no-git-tag-version`;
+    await systemCmd(command);
+
+    console.log(`✅ ${themeName} synced to ${version}`);
+    return true;
+  } catch (error) {
+    // バージョンが既に同じ場合は成功として扱う
+    if (error.message.includes('Version not changed')) {
+      console.log(`✅ ${themeName} already at version ${version}`);
+      return true;
+    }
+
+    console.error(`❌ Failed to sync ${themeName}:`, error.message);
+    return false;
+  }
+}
+
+/**
+ * 全テーマのバージョンを同期する
+ * @param {string} version 同期するバージョン
+ * @returns {Promise<boolean>} 全て成功した場合true
+ */
+async function syncAllThemes(version) {
+  const themes = detectThemes();
+
+  if (themes.length === 0) {
+    console.log('No themes found in themes/ directory');
+    return true;
+  }
+
+  console.log(`Found ${themes.length} themes: ${themes.join(', ')}`);
+
+  let allSuccess = true;
+
+  for (const theme of themes) {
+    const success = await syncThemeVersion(theme, version);
+    if (!success) {
+      allSuccess = false;
+    }
+  }
+
+  return allSuccess;
+}
+
+/**
+ * メイン処理
+ */
+async function main() {
+  try {
+    console.log('🚀 Starting version synchronization...');
+
+    // ルートのバージョンを取得
+    const version = getRootVersion();
+    console.log(`📦 Root version: ${version}`);
+
+    // 全テーマのバージョンを同期
+    const success = await syncAllThemes(version);
+
+    if (success) {
+      console.log(`✅ all themes synced to ${version}`);
+    } else {
+      console.error('❌ Some themes failed to sync');
+      process.exit(1);
+    }
+  } catch (error) {
+    console.error('❌ Version synchronization failed:', error.message);
+    process.exit(1);
+  }
+}
+
+// スクリプトを実行
+main();
