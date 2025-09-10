@@ -1,11 +1,12 @@
 <div class="form-input-wrap">
   <h3 class="heading-md">お問い合わせ情報</h3>
-  <ul class="form-group-list">
 
+  <ul class="form-group-list">
     <li class="form-group">
       <div class="form-label">
         ご用件<span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <div class="form-item-vertical-list">
           <div class="form-checkbox">
@@ -27,16 +28,17 @@
         </div>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">
         <label for="inquiry">お問い合わせ内容</label><span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <textarea id="inquiry" name="inquiry" rows="5" class="acms-form-width-full" placeholder="お問い合わせ内容を入力してください。" data-validator="inquiry">{inquiry}</textarea>
         <input type="hidden" name="field[]" value="inquiry">
         <input type="hidden" name="inquiry:v#required" id="inquiry-v-required">
         <input type="hidden" name="inquiry:c" value="KV">
-
         <div role="alert" aria-live="assertive">
           <div data-validator-label="inquiry-v-required" class="validator-result-{inquiry:v#required}">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お問い合わせ内容を入力してください。</span></p>
@@ -46,14 +48,14 @@
     </li>
   </ul>
 </div>
+
 <div class="form-input-wrap">
-
   <h3 class="heading-md">お客様情報</h3>
+
   <ul class="form-group-list">
-
-
     <li class="form-group">
       <div class="form-label"><label for="organization">所属</label><span class="label-optional">任意</span></div>
+
       <div class="form-control">
         <input id="organization" type="text" name="organization" autocomplete="organization" value="{organization}" class="acms-form-width-full" placeholder="例）株式会社〇〇〇">
         <input type="hidden" name="field[]" value="organization">
@@ -61,14 +63,15 @@
         <p class="form-helper-text">個人の方は「なし」、学生の方は学校名を記入してください</p>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label"><label for="name">お名前</label><span class="label-required">必須</span></div>
+
       <div class="form-control">
         <input id="name" type="text" name="name" autocomplete="name" class="acms-form-width-full" value="{name}" placeholder="例）山田 太郎" data-validator="name">
         <input type="hidden" name="field[]" value="name">
         <input type="hidden" name="name:v#required" id="name-v-required">
         <input type="hidden" name="name:c" value="KV">
-
         <div role="alert" aria-live="assertive">
           <div data-validator-label="name-v-required" class="validator-result-{name:v#required}">
             <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">お名前を入力してください。</span></p>
@@ -76,19 +79,19 @@
         </div>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">
         <label for="email">メールアドレス</label><span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <input id="email" type="email" name="email" autocomplete="email" value="{email}" class="acms-form-width-full" placeholder="例）info@example.com" data-validator="email">
         <input type="hidden" name="field[]" value="email">
         <input type="hidden" name="email:v#required" id="email-v-required">
         <input type="hidden" name="email:v#email" id="email-v-email">
         <input type="hidden" name="email:c" value="a">
-
         <p class="form-helper-text">ご記入いただいたメールアドレスに返信します</p>
-
         <div data-validator-label="email-v-required" class="validator-result-{email:v#required}">
           <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">メールアドレスを入力してください。</span></p>
         </div>
@@ -99,8 +102,10 @@
         </div>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label"><label for="tel">お電話番号</label><span class="label-optional">任意</span></div>
+
       <div class="form-control">
         <input id="tel" type="tel" name="tel" autocomplete="tel" value="{tel}" size="12" class="acms-form-width-medium" placeholder="例）0123456789">
         <input type="hidden" name="field[]" value="tel">
@@ -108,8 +113,10 @@
         <p class="form-helper-text">「-（ハイフン）」なしで記入してください</p>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">ご住所<span class="label-required">必須</span></div>
+
       <div class="form-control">
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
         <input type="hidden" class="p-country-name" value="Japan">
@@ -126,7 +133,6 @@
                 <p class="form-error-text"><span class="form-error-text-icon" aria-hidden="true">@include("/images/icon/circle-alert.svg")</span><span class="form-error-text-inner">郵便番号を入力してください。</span></p>
               </div>
             </div>
-
           </div>
           <div class="acms-g-col-12 acms-g-col-md-6">
             <label for="address-level1" class="acms-hide-visually">都道府県</label>
@@ -217,12 +223,14 @@
     </li>
   </ul>
 </div>
-<div class="form-input-wrap">
 
+<div class="form-input-wrap">
   <h3 class="heading-md">個人情報のお取り扱いについて</h3>
+
   <div class="form-label">
     <label for="privacy">プライバシーポリシー</label><span class="label-required">必須</span>
   </div>
+
   <fieldset class="form-group">
     <!-- プライバシーポリシーの読み込み -->
     <!-- BEGIN_MODULE Entry_Body id="body_privacy" -->
@@ -232,9 +240,10 @@
       <!-- BEGIN unit:veil -->
       @include("/include/unit.html")
       <!-- END unit:veil -->
-
       <!-- 編集ボックス -->
-      @include("/admin/entry/action.html")
+      <div class="acms-admin-btn-action-group">
+      <a href="{permalink}" class="acms-btn">編集</a>
+      </div>
     </div>
     <!-- END entry:loop -->
     <!-- END_MODULE Entry_Body -->

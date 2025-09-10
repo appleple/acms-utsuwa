@@ -27,7 +27,7 @@ node_modules
 .stylelintcache
 
 # Etc
-dist
+dest
 build
 
 # development
