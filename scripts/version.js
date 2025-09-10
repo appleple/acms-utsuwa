@@ -66,7 +66,7 @@ function updateReadmeVersion(themeName, version) {
     }
 
     const readmeContent = fs.readFileSync(readmePath, 'utf8');
-    const versionRegex = /Ver\.(\d+\.\d+\.\d+)/;
+    const versionRegex = /Ver\.([\d\.].+)/;
     const currentVersionMatch = readmeContent.match(versionRegex);
 
     if (!currentVersionMatch) {
