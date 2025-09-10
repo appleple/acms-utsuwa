@@ -1,6 +1,6 @@
 {
   "name": "beginner",
-  "version": "3.0.0",
+  "version": "3.0.1-alpha.0",
   "description": "a-blog cms の基本機能を学ぶのに最適で、HTML・CSS を学習したばかりの方でもカスタマイズしやすいテーマです。",
   "keywords": [
     "CMS",
@@ -21,7 +21,6 @@
     "dev": "webpack --watch --mode development --config webpack.dev.js",
     "start": "webpack-cli serve --mode development --config webpack.dev.js",
     "analyze": "webpack --mode production --config webpack.analyze.js",
-
     "check-update": "npx -p npm-check-updates -c \"ncu -u\""
   },
   "author": "appleple",

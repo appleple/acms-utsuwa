@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // package.json のバージョンを読み込み
-const pkgJsonPath = join(__dirname, 'package.json');
+const pkgJsonPath = join(__dirname, '../package.json');
 const { version } = JSON.parse(await readFile(pkgJsonPath, 'utf8'));
 
 async function main() {
