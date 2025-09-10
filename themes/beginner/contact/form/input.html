@@ -1,11 +1,12 @@
 <div class="form-input-wrap">
   <h3 class="heading-md">お問い合わせ情報</h3>
-  <ul class="form-group-list">
 
+  <ul class="form-group-list">
     <li class="form-group">
       <div class="form-label">
         ご用件<span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <div class="form-item-vertical-list">
           <div class="form-radio">
@@ -35,10 +36,12 @@
         <!-- END subject:validator#required -->
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">
         <label for="inquiry">お問い合わせ内容</label><span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <textarea id="inquiry" name="inquiry" rows="5" class="acms-form-width-full" placeholder="お問い合わせ内容を入力してください。" data-validator="inquiry">{inquiry}</textarea>
         <input type="hidden" name="field[]" value="inquiry">
@@ -55,14 +58,14 @@
     </li>
   </ul>
 </div>
+
 <div class="form-input-wrap">
-
   <h3 class="heading-md">お客様情報</h3>
+
   <ul class="form-group-list">
-
-
     <li class="form-group">
       <div class="form-label"><label for="organization">所属</label><span class="label-optional">任意</span></div>
+
       <div class="form-control">
         <input id="organization" type="text" name="organization" autocomplete="organization" value="{organization}" class="acms-form-width-full" placeholder="例）株式会社〇〇〇">
         <input type="hidden" name="field[]" value="organization">
@@ -70,8 +73,10 @@
         <p class="form-helper-text">個人の方は「なし」、学生の方は学校名を記入してください</p>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label"><label for="name">お名前</label><span class="label-required">必須</span></div>
+
       <div class="form-control">
         <input id="name" type="text" name="name" autocomplete="name" class="acms-form-width-full" value="{name}" placeholder="例）山田 太郎" data-validator="name">
         <input type="hidden" name="field[]" value="name">
@@ -86,17 +91,18 @@
         <!-- END name:validator#required -->
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">
         <label for="email">メールアドレス</label><span class="label-required">必須</span>
       </div>
+
       <div class="form-control">
         <input id="email" type="email" name="email" autocomplete="email" value="{email}" class="acms-form-width-full" placeholder="例）info@example.com" data-validator="email">
         <input type="hidden" name="field[]" value="email">
         <input type="hidden" name="email:v#required" id="email-v-required">
         <input type="hidden" name="email:v#email" id="email-v-email">
         <input type="hidden" name="email:c" value="a">
-
         <p class="form-helper-text">ご記入いただいたメールアドレスに返信します</p>
         <!-- BEGIN email:validator#required -->
         <div data-validator-label="email-v-required" class="validator-result-0">
@@ -112,8 +118,10 @@
         <!-- END email:validator#email -->
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label"><label for="tel">お電話番号</label><span class="label-optional">任意</span></div>
+
       <div class="form-control">
         <input id="tel" type="tel" name="tel" autocomplete="tel" value="{tel}" size="12" class="acms-form-width-medium" placeholder="例）0123456789">
         <input type="hidden" name="field[]" value="tel">
@@ -121,8 +129,10 @@
         <p class="form-helper-text">「-（ハイフン）」なしで記入してください</p>
       </div>
     </li>
+
     <li class="form-group">
       <div class="form-label">ご住所<span class="label-required">必須</span></div>
+
       <div class="form-control">
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
         <input type="hidden" class="p-country-name" value="Japan">
