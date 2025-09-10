@@ -50,6 +50,47 @@ function detectThemes() {
 }
 
 /**
+ * README.mdのバージョン番号を更新する
+ * @param {string} themeName テーマ名
+ * @param {string} version 更新するバージョン
+ * @returns {boolean} 成功した場合true
+ */
+function updateReadmeVersion(themeName, version) {
+  try {
+    const readmePath = path.join(process.cwd(), 'themes', themeName, 'README.md');
+
+    // README.mdが存在しない場合はスキップ
+    if (!fs.existsSync(readmePath)) {
+      console.log(`📝 ${themeName}: README.md not found, skipping`);
+      return true;
+    }
+
+    const readmeContent = fs.readFileSync(readmePath, 'utf8');
+    const versionRegex = /Ver\.(\d+\.\d+\.\d+)/;
+    const currentVersionMatch = readmeContent.match(versionRegex);
+
+    if (!currentVersionMatch) {
+      console.log(`📝 ${themeName}: Version pattern not found in README.md, skipping`);
+      return true;
+    }
+
+    const currentVersion = currentVersionMatch[1];
+    if (currentVersion !== version) {
+      const updatedContent = readmeContent.replace(versionRegex, `Ver.${version}`);
+      fs.writeFileSync(readmePath, updatedContent, 'utf8');
+      console.log(`📝 ${themeName}: README.md version updated from ${currentVersion} to ${version}`);
+    } else {
+      console.log(`📝 ${themeName}: README.md already at version ${version}`);
+    }
+
+    return true;
+  } catch (error) {
+    console.error(`❌ Failed to update README.md for ${themeName}:`, error.message);
+    return false;
+  }
+}
+
+/**
  * 指定されたテーマのバージョンを同期する
  * @param {string} themeName テーマ名
  * @param {string} version 同期するバージョン
@@ -59,16 +100,28 @@ async function syncThemeVersion(themeName, version) {
   try {
     console.log(`Syncing theme: ${themeName} to version ${version}`);
 
+    // package.jsonのバージョンを更新
     const command = `npm --prefix themes/${themeName} version ${version} --no-git-tag-version`;
     await systemCmd(command);
 
-    console.log(`✅ ${themeName} synced to ${version}`);
-    return true;
+    // README.mdのバージョンを更新
+    const readmeSuccess = updateReadmeVersion(themeName, version);
+
+    if (readmeSuccess) {
+      console.log(`✅ ${themeName} synced to ${version}`);
+      return true;
+    } else {
+      console.error(`❌ Failed to update README.md for ${themeName}`);
+      return false;
+    }
   } catch (error) {
     // バージョンが既に同じ場合は成功として扱う
     if (error.message.includes('Version not changed')) {
-      console.log(`✅ ${themeName} already at version ${version}`);
-      return true;
+      console.log(`✅ ${themeName} package.json already at version ${version}`);
+
+      // package.jsonは既に同じバージョンでも、README.mdは更新する
+      const readmeSuccess = updateReadmeVersion(themeName, version);
+      return readmeSuccess;
     }
 
     console.error(`❌ Failed to sync ${themeName}:`, error.message);

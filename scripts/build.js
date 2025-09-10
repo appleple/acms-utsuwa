@@ -10,8 +10,10 @@ const ignores = [
   'themes/site/.stylelintcache',
   'themes/site/.node-version',
   'themes/site/.stylelintrc',
+  'themes/site/.eslintrc',
   'themes/site/package.json',
   'themes/site/package-lock.json',
+  'themes/site/babel.config.js',
   'themes/site/webpack.common.js',
   'themes/site/webpack.dev.js',
   'themes/site/webpack.prod.js',
@@ -28,6 +30,8 @@ const ignores = [
   'themes/beginner/webpack.dev.js',
   'themes/beginner/webpack.prod.js',
   'themes/beginner/webpack.analyze.js',
+
+  'themes/system',
 ];
 
 async function main() {
