@@ -26,7 +26,7 @@ https://github.com/appleple/acms-utsuwa/releases/latest
 ### プルリクエスト
 
 1. 作業を開始する前に、新しいブランチを作成してください
-2. ブランチ名は、`feature/機能名` や `fix/バグ名` などの命名規則に従ってください
+2. ブランチ名は、`feature/v3/機能名` や `fix/v3/バグ名` などの命名規則に従ってください
 3. プルリクエストは develop/v3 ブランチに対して作成してください
 4. コードの変更は最小限に保ち、1つのプルリクエストにつき1つの機能やバグ修正を含めるようにしてください
 5. 以下の点に注意してコードを作成してください：
@@ -46,7 +46,7 @@ https://github.com/appleple/acms-utsuwa/releases/latest
    ```
 3. テーマのディレクトリに移動します：
    ```bash
-   cd themes/site
+   cd themes/site # または cd themes/beginner
    ```
 4. 開発サーバーを起動します：
    ```bash
