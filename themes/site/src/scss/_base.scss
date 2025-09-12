@@ -105,6 +105,11 @@ a {
   gap: 3.5rem 3rem;
   justify-content: space-between;
 
+  @include acms.media-breakpoint-between(md, lg) {
+    max-width: 704px;
+    margin: 0 auto;
+  }
+
   @include acms.media-breakpoint-up(lg) {
     flex-direction: row;
   }

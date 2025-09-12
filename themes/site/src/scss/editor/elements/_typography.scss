@@ -248,7 +248,7 @@
     border-radius: var(--border-radius-lg);
 
     dt {
-      padding-inline: var(--entry-el-padding-sm);
+      padding-inline: var(--entry-el-padding-xs);
       padding-top: var(--entry-el-padding-sm);
       border-top: var(--border-width-sm) solid var(--color-gray30);
 
@@ -258,7 +258,7 @@
     }
 
     dd {
-      padding-inline: var(--entry-el-padding-sm);
+      padding-inline: var(--entry-el-padding-xs);
       padding-bottom: var(--entry-el-padding-sm);
       margin-bottom: 0;
     }

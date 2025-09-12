@@ -57,9 +57,9 @@
   --color-text-primary: var(--color-primary);
   --color-text-secondary: var(--color-secondary);
 
-  --color-globalnav-bg: rgba(0, 0, 0, 0.4);
+  --color-globalnav-bg: rgba(0, 0, 0, 0.55);
 
-  --color-image-overlay-bg: rgba(0, 0, 0, 0.4);
+  --color-image-overlay-bg: rgba(0, 0, 0, 0.55);
 
   --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0px 0px 8px rgba(0, 0, 0, 0.2);
@@ -96,7 +96,7 @@
   --width-side-container: 19rem;
 
   /* ページタイトル */
-  --page-title-filter: rgba(0, 0, 0, 0.4);
+  --page-title-filter: rgba(0, 0, 0, 0.55);
   --page-title-space-bottom: 3rem;
   @media (min-width: 48rem) { /* _acms-common.scss : $breakpoint-md-min */
     --page-title-space-bottom: 5rem;
