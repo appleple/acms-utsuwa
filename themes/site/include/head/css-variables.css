@@ -102,7 +102,7 @@
   --width-side-container: 19rem;
 
   /* ページタイトル */
-  --page-title-filter: rgba(0, 0, 0, 0.4);
+  --page-title-filter: rgba(0, 0, 0, 0.55);
   --page-title-space-bottom: 3rem;
   @media (min-width: 48rem) { /* _acms-common.scss : $breakpoint-md-min */
     --page-title-space-bottom: 5rem;
