@@ -2747,7 +2747,7 @@ a {
   line-height: var(--line-height-sm);
   color: var(--color-text-2nd);
 }
-.page-title-en:first-letter {
+.page-title-en::first-letter {
   text-transform: uppercase;
 }
 
