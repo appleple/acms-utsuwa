@@ -60,12 +60,12 @@
   --color-text-sunday: #A82626;
   --color-text-saturday: #0151AE;
 
-  --color-globalnav-bg: rgba(0, 0, 0, 0.4);
+  --color-globalnav-bg: rgba(0, 0, 0, 0.55);
   --color-globalnav-dropdown-bg: var(--color-gray30);
 
-  --color-footer-sticky: rgba(0, 0, 0, 0.4);
+  --color-footer-sticky: rgba(0, 0, 0, 0.55);
 
-  --color-image-overlay-bg: rgba(0, 0, 0, 0.4);
+  --color-image-overlay-bg: rgba(0, 0, 0, 0.55);
 
   --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   --box-shadow-hover: 0px 0px 8px rgba(0, 0, 0, 0.2);
