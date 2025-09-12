@@ -9,9 +9,7 @@
   [class*="gu-"] {
     @include acms.media-breakpoint-up(md) {
       .pricing-group {
-        padding: 4rem 0 2rem;
-        margin-right: 0;
-        margin-left: 0;
+        margin-bottom: 0;
       }
     }
   }
@@ -29,7 +27,7 @@
   .gu-bg-gray,
   .gu-bg-primary,
   .gu-border {
-    padding: var(--entry-el-padding-md) var(--entry-el-padding-xs);
+    padding: var(--entry-el-padding-md);
     margin: 0 0 var(--entry-el-margin-md) 0;
 
     > *:not(.not-editor-style):first-child,

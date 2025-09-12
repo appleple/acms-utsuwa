@@ -64,7 +64,10 @@
   font-weight: bold;
   line-height: var(--line-height-sm);
   color: var(--color-text-2nd);
-  text-transform: capitalize;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 

@@ -234,8 +234,4 @@
   gap: 0.5rem;
   justify-content: center;
   margin-block-start: 3rem;
-
-  @include acms.media-breakpoint-up(md) {
-    margin-block-start: 4rem;
-  }
 }
