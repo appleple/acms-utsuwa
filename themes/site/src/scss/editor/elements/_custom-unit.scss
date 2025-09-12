@@ -208,7 +208,7 @@
     gap: var(--col-gutter);
     justify-content: center;
     padding: 0;
-    margin: 1.5rem 0 var(--entry-el-margin-md);
+    margin: 0 0 var(--entry-el-margin-md);
 
     &:has(.is-recommend) {
       padding-top: 16px;
