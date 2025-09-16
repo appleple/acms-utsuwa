@@ -1,4 +1,4 @@
-# テーマ「Beginner」 Ver.3.0.2-alpha.0
+# テーマ「Beginner」 3.0.2
 
 ## 最新版のソースコード
 
