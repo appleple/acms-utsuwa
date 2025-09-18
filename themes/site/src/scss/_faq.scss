@@ -180,4 +180,8 @@
 .faq-section-list {
   display: grid;
   gap: 3rem;
+
+  @include acms.media-breakpoint-up(md) {
+    gap: 4rem;
+  }
 }
