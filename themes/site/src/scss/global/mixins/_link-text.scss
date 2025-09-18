@@ -17,6 +17,7 @@
       content: '';
       background-color: $color;
       mask-image: url("#{var.$root-theme-img}icon/target_blank.svg");
+      mask-repeat: no-repeat;
       mask-size: contain;
     }
   }
