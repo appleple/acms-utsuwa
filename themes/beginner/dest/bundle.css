@@ -2773,7 +2773,7 @@ a {
 ------------------------------ */
 .page-sub-title {
   margin: 0 0 2rem;
-  font-size: 1.25rem;
+  font-size: 1.5625rem;
   line-height: var(--line-height-base);
   color: var(--color-text);
 }
