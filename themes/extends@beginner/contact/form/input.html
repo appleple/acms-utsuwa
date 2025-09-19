@@ -57,7 +57,6 @@
   <h3 class="heading-md">お客様情報</h3>
   <ul class="form-group-list">
 
-
     <li class="form-group">
       <div class="form-label"><label for="organization">所属</label><span class="label-optional">任意</span></div>
       <div class="form-control">
@@ -108,7 +107,11 @@
     <li class="form-group">
       <div class="form-label"><label for="tel">お電話番号</label><span class="label-optional">任意</span></div>
       <div class="form-control">
-        <input id="tel" type="tel" name="tel" autocomplete="tel" value="{tel}" size="12" class="acms-form-width-medium" placeholder="例）0123456789">
+        <div class="acms-cssgrid" style="--acms-gap: var(--gutter-sm) 1.5rem;">
+          <div class="acms-g-col-12 acms-g-col-md-4">
+            <input id="tel" type="tel" name="tel" autocomplete="tel" value="{tel}" size="12" class="acms-form-width-medium" placeholder="例）0123456789">
+          </div>
+        </div>
         <input type="hidden" name="field[]" value="tel">
         <input type="hidden" name="tel:c" value="n">
         <p class="form-helper-text">「-（ハイフン）」なしで記入してください</p>
@@ -120,7 +123,7 @@
         <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
         <input type="hidden" class="p-country-name" value="Japan">
         <div class="acms-cssgrid" style="--acms-gap: var(--gutter-sm) 1.5rem;">
-          <div class="acms-g-col-12 acms-g-col-md-6">
+          <div class="acms-g-col-12 acms-g-col-md-4">
             <div>
               <label for="postal-code" class="acms-hide-visually">郵便番号</label>
               <input type="text" inputmode="numeric" name="postal-code" autocomplete="postal-code" value="{postal-code}" id="postal-code" class="js-insert-hyphen p-postal-code acms-form-width-full" size="9" maxlength="8" placeholder="例）0123456" data-validator="postal-code">

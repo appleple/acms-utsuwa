@@ -2175,6 +2175,7 @@ a {
   list-style: none;
 }
 .form-group-list.is-confirm {
+  padding-top: 0.5rem;
   padding-bottom: var(--gutter-lg);
 }
 
@@ -2211,41 +2212,33 @@ a {
 .form-item-vertical-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-@media (min-width: 48rem) {
-  .form-item-vertical-list {
-    gap: 1rem;
-  }
-}
-
-.form-button-group .button {
-  margin: 0;
+  gap: 1rem;
 }
 
 .form-button-group {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
+}
+.form-button-group .button {
+  margin: 0;
 }
 
 @media (min-width: 48rem) {
   .form-button-group {
     flex-direction: row;
-    gap: 1rem;
-  }
-  .form-button:not(:last-child) {
-    margin: 0 1.25rem 0 0;
   }
 }
 @media (max-width: 47.98rem) {
   .form-button {
     width: 100%;
-    margin: 0 0 1rem;
   }
   .form-button .button {
-    width: 100%;
+    display: block;
+    width: 15rem;
+    margin: 0 auto;
   }
   .form-button-return {
     order: 1;
@@ -2265,8 +2258,9 @@ a {
 
 .label-optional {
   padding: 0.25rem 0.5rem;
-  margin: 0 0 0 0.25rem;
+  margin: 0 0 0 1rem;
   font-size: 0.8rem;
+  font-weight: normal;
   vertical-align: middle;
   color: var(--color-text);
   background: var(--color-gray10);
@@ -2276,14 +2270,6 @@ a {
   margin: 0 0.25rem 0 0;
 }
 
-@media (min-width: 48rem) {
-  .label-optional {
-    margin: 0 0 0 1rem;
-  }
-  .label-optional:first-child {
-    margin: 0 0.5rem 0 0;
-  }
-}
 /* フォーム要素
 ------------------------------ */
 .form-group {
@@ -2714,7 +2700,6 @@ a {
 ------------------------------ */
 .form-message {
   margin: 0 0 3rem;
-  font-weight: bold;
 }
 
 .form-message-back {
