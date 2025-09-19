@@ -36,6 +36,23 @@
   }
 }
 
+/* リンクスタイル（編集画面のみ） */
+.acms-admin-block-editor-link-button-link {
+  &[data-target="_blank"]::after {
+    display: inline-block;
+    flex: none;
+    width: 0.875em;
+    height: 0.875em;
+    margin-left: 4px;
+    vertical-align: baseline;
+    content: '';
+    background-color: currentcolor;
+    mask-image: url("#{global.$root-theme-img}icon/target_blank.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+}
+
 /* リンクスタイル（閲覧画面のみ） */
 .link-button-block-link {
   text-decoration: none;
