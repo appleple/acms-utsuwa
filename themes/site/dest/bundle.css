@@ -2257,7 +2257,7 @@ a {
   padding: 0.25rem 0.5rem;
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
-  vertical-align: middle;
+  font-weight: normal;
   color: var(--color-danger);
   background: var(--color-danger-light);
   border-radius: var(--border-radius-sm);
@@ -2439,7 +2439,8 @@ a {
   font-size: 1rem;
   line-height: var(--line-height-base);
   vertical-align: top;
-  border-radius: var(--border-radius-sm);
+  background: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K) no-repeat right 1rem center/1.5rem auto;
+  border-radius: var(--border-radius-md);
 }
 
 @media (min-width: 48rem) {
