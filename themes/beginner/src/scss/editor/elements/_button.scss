@@ -17,6 +17,7 @@
 .link-button-block-link {
   box-sizing: border-box;
   display: inline-flex;
+  gap: 4px;
   place-items: center;
   min-height: 3rem;
   padding: var(--btn-padding-y) var(--btn-padding-x);

@@ -62,6 +62,7 @@
 }
 .entry-style a:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=media-image-block], [class~=media-image-block] *, [class~=column-image], [class~=column-image] *, [class~=column-media], [class~=column-media] *, [class~=column-eximage], [class~=column-eximage] *))[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;
@@ -95,6 +96,7 @@
 }
 .entryFormLiteEditor a[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;
@@ -636,6 +638,7 @@
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;
@@ -695,6 +698,7 @@
 .link-button-block-link {
   box-sizing: border-box;
   display: inline-flex;
+  gap: 4px;
   place-items: center;
   min-height: 3rem;
   padding: var(--btn-padding-y) var(--btn-padding-x);
@@ -1493,6 +1497,7 @@
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;

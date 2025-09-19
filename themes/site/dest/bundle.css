@@ -5662,6 +5662,7 @@ a {
 }
 .detail-panel a[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;
