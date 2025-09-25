@@ -684,7 +684,8 @@
   }
 }
 
-.entry-style .link-button-block-link {
+.entry-style .link-button-block-link,
+.entry-style .link-button-block-link * {
   text-decoration: none; /* リセット */
 }
 
