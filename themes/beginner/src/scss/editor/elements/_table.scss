@@ -21,8 +21,17 @@
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
     border: 0; /* リセット */
-    border-bottom: var(--border-width-sm) solid var(--color-gray30);
+    border-top: var(--border-width-sm) solid var(--color-gray30);
     border-left: var(--border-width-sm) solid var(--color-gray30);
+
+    & > * {
+      margin-block: 0; /* リセット */
+    }
+
+    /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
+    & > *:not(.ProseMirror-widget) + * {
+      margin-block-start: 1rem;
+    }
   }
 
   th:first-child,
@@ -30,9 +39,9 @@
     border-left: 0;
   }
 
-  tr:last-child th,
-  tr:last-child td {
-    border-bottom: 0;
+  tr:first-child th,
+  tr:first-child td {
+    border-top: 0;
   }
 
   th {
@@ -43,10 +52,6 @@
 
   td {
     background-color: var(--color-white); /* リセット用 */
-  }
-
-  p {
-    margin-block: 0;
   }
 
   a {

@@ -2,7 +2,7 @@
 <div class="section-panel" id="realestate-search">
   <h2 class="heading-md">条件から検索する</h2>
   <div class="search-panel">
-    <form action="/" method="post" class="acms-form" role="search" aria-label="検索フォーム">
+    <form action="" method="post" class="acms-form" role="search" aria-label="検索フォーム">
       <div class="search-panel-group form-input-wrap">
         <div class="search-panel-item">
           <label for="search-panel-kubun" class="search-panel-label">区分</label>
@@ -12,7 +12,7 @@
               <!-- BEGIN_MODULE Category_List id="category_realestate" -->
               <!-- BEGIN category:loop -->
               <!-- BEGIN category:veil -->
-              <option value="{cid}" <!-- BEGIN_IF [%{CID}/eq/{cid}] --> selected="selected"<!-- END_IF --></option>{name}</option>
+              <option value="{cid}" <!-- BEGIN_IF [%{CID}/eq/{cid}] --> selected="selected"<!-- END_IF -->>{name}</option>
               <!-- END category:veil -->
               <!-- END category:loop -->
               <!-- END_MODULE Category_List -->
@@ -49,7 +49,6 @@
             <option value="60000" {price[0]:selected#60000}>60,000円以上</option>
             <option value="80000" {price[0]:selected#80000}>80,000円以上</option>
           </select>
-
           〜
           <select name="price[]" id="price2">
             <option value="">上限無し</option>
@@ -58,8 +57,8 @@
             <option value="30000" {price[1]:selected#30000}>30,000円以下</option>
           </select>
           <input type="hidden" name="field[]" value="price" />
-      		<input type="hidden" name="price@operator[0]" value="gte" />
-					<input type="hidden" name="price@operator[1]" value="lte" />
+          <input type="hidden" name="price@operator[0]" value="gte" />
+          <input type="hidden" name="price@operator[1]" value="lte" />
 
           </div>
         </div>

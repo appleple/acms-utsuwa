@@ -106,7 +106,7 @@ a {
   justify-content: space-between;
 
   @include acms.media-breakpoint-between(md, lg) {
-    max-width: 704px;
+    max-width: 44rem;
     margin: 0 auto;
   }
 

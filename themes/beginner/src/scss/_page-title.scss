@@ -86,18 +86,22 @@
   }
 }
 
+
 /* ------------------------------
 　　ページサブタイトル
 ------------------------------ */
-
 .page-sub-title {
   margin: 0 0 2rem;
-  font-size: map.get(global.$font-scales, heading-m);
+  font-size: map.get(global.$font-scales, heading-s);
   line-height: var(--line-height-base);
   color: var(--color-text);
 
   a {
     color: currentcolor;
     text-decoration: none;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-m);
   }
 }

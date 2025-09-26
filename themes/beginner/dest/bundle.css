@@ -110,6 +110,12 @@ a {
   gap: 3rem 3.5rem;
   justify-content: space-between;
 }
+@media (min-width: 48rem) and (max-width: 63.98rem) {
+  .content-wrapper.two-columns {
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+}
 @media (min-width: 64rem) {
   .content-wrapper.two-columns {
     flex-direction: row;
@@ -1637,6 +1643,7 @@ a {
   list-style: none;
 }
 .form-group-list.is-confirm {
+  padding-top: 0.5rem;
   padding-bottom: var(--gutter-lg);
 }
 
@@ -1673,41 +1680,33 @@ a {
 .form-item-vertical-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-@media (min-width: 48rem) {
-  .form-item-vertical-list {
-    gap: 1rem;
-  }
-}
-
-.form-button-group .button {
-  margin: 0;
+  gap: 1rem;
 }
 
 .form-button-group {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
+}
+.form-button-group .button {
+  margin: 0;
 }
 
 @media (min-width: 48rem) {
   .form-button-group {
     flex-direction: row;
-    gap: 1rem;
-  }
-  .form-button:not(:last-child) {
-    margin: 0 1.25rem 0 0;
   }
 }
 @media (max-width: 47.98rem) {
   .form-button {
     width: 100%;
-    margin: 0 0 1rem;
   }
   .form-button .button {
-    width: 100%;
+    display: block;
+    width: 15rem;
+    margin: 0 auto;
   }
   .form-button-return {
     order: 1;
@@ -1719,6 +1718,7 @@ a {
   padding: 0.25rem 0.5rem;
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
+  font-weight: normal;
   vertical-align: middle;
   color: var(--color-danger);
   background: var(--color-danger-light);
@@ -1727,25 +1727,15 @@ a {
 
 .label-optional {
   padding: 0.25rem 0.5rem;
-  margin: 0 0 0 0.25rem;
+  margin: 0 0 0 1rem;
   font-size: 0.8rem;
+  font-weight: normal;
   vertical-align: middle;
   color: var(--color-text);
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 }
-.label-optional:first-child {
-  margin: 0 0.25rem 0 0;
-}
 
-@media (min-width: 48rem) {
-  .label-optional {
-    margin: 0 0 0 1rem;
-  }
-  .label-optional:first-child {
-    margin: 0 0.5rem 0 0;
-  }
-}
 /* フォーム要素
 ------------------------------ */
 .form-group {
@@ -2094,7 +2084,6 @@ a {
 ------------------------------ */
 .form-message {
   margin: 0 0 3rem;
-  font-weight: bold;
 }
 
 .form-message-back {
@@ -2767,13 +2756,18 @@ a {
 ------------------------------ */
 .page-sub-title {
   margin: 0 0 2rem;
-  font-size: 1.953125rem;
+  font-size: 1.5625rem;
   line-height: var(--line-height-base);
   color: var(--color-text);
 }
 .page-sub-title a {
   color: currentcolor;
   text-decoration: none;
+}
+@media (min-width: 48rem) {
+  .page-sub-title {
+    font-size: 1.953125rem;
+  }
 }
 
 /* ------------------------------
@@ -3768,6 +3762,7 @@ a {
 }
 .detail-panel a[target=_blank]::after {
   display: inline-block;
+  flex: none;
   width: 0.875em;
   height: 0.875em;
   margin-left: 4px;
@@ -3776,6 +3771,8 @@ a {
   background-color: currentcolor;
   -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
           mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   -webkit-mask-size: contain;
           mask-size: contain;
 }
