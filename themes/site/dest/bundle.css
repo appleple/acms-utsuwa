@@ -2425,7 +2425,10 @@ a {
   font-size: 1rem;
   line-height: var(--line-height-base);
   vertical-align: top;
-  background: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K) no-repeat right 1rem center/1.5rem auto;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K);
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem auto;
   border-radius: var(--border-radius-md);
 }
 
@@ -6672,6 +6675,9 @@ a {
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
 }
+.search-panel .form-input-wrap {
+  padding-bottom: 1.5rem;
+}
 
 .search-panel-group {
   display: flex;
@@ -6711,14 +6717,22 @@ a {
   text-align: center;
 }
 
+@media (min-width: 30rem) {
+  .search-panel .form-checkbox {
+    width: calc(50% - 2rem);
+  }
+  .search-panel .search-panel-input {
+    flex: 1;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+}
 @media (min-width: 48rem) {
   .search-panel {
     padding: 3rem;
     margin-bottom: 3rem;
     border-radius: var(--border-radius-xxl);
-  }
-  .search-panel .form-checkbox {
-    width: calc(33.3333333333% - 2rem);
   }
   .search-panel .search-panel-group {
     display: flex;
@@ -6729,11 +6743,10 @@ a {
     gap: var(--col-gutter);
     align-items: center;
   }
-  .search-panel .search-panel-input {
-    flex: 1;
-    flex-direction: row;
-    gap: 1rem;
-    align-items: center;
+}
+@media (min-width: 64rem) {
+  .search-panel .form-checkbox {
+    width: calc(33.3333333333% - 2rem);
   }
 }
 /* 検索結果
@@ -6781,6 +6794,7 @@ a {
 ----------------------------- */
 .works-main-image {
   margin-bottom: var(--entry-el-margin-md);
+  overflow: hidden;
   border-radius: var(--border-radius-lg);
 }
 
