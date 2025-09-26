@@ -2984,12 +2984,6 @@ a {
   animation: fade-in 0.3s 0.8s 1 both;
   will-change: transform, opacity;
 }
-@media (min-width: 48rem) and (max-width: 63.98rem) {
-  .main-visual .main-visual-catch {
-    word-break: keep-all;
-    white-space: nowrap;
-  }
-}
 @media (min-width: 48rem) {
   .main-visual .main-visual-catch {
     font-size: 3.8146972656rem;
@@ -3008,9 +3002,10 @@ a {
   gap: 1rem;
 }
 .main-visual .main-visual-links .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 200px;
-  word-break: keep-all;
-  white-space: nowrap;
 }
 @media (min-width: 48rem) {
   .main-visual .main-visual-links {
@@ -3152,9 +3147,11 @@ a {
   gap: 1rem;
 }
 .main-visual-extend01 .main-visual-links .button {
+  display: inline-flex;
   flex: 1;
-  word-break: keep-all;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
 }
 @media (min-width: 30rem) {
   .main-visual-extend01 .main-visual-links .button {
@@ -3380,9 +3377,11 @@ a {
   gap: 1rem;
 }
 .main-visual-extend02 .main-visual-links .button {
+  display: inline-flex;
   flex: 1;
-  word-break: keep-all;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
 }
 @media (min-width: 30rem) {
   .main-visual-extend02 .main-visual-links .button {
@@ -5377,7 +5376,7 @@ a {
   display: grid;
   grid-template-columns: 6rem 1fr;
   gap: 1rem;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .bubble-heading-wrap {

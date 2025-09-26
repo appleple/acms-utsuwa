@@ -109,11 +109,6 @@
     animation: fade-in 0.3s 0.8s 1 both;
     will-change: transform, opacity;
 
-    @include acms.media-breakpoint-between(md, lg) {
-      word-break: keep-all;
-      white-space: nowrap;
-    }
-
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-3xl);
     }
@@ -133,9 +128,10 @@
     gap: 1rem;
 
     .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-width: 200px;
-      word-break: keep-all;
-      white-space: nowrap;
     }
 
     @include acms.media-breakpoint-up(md) {
