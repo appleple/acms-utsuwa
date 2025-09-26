@@ -56,6 +56,7 @@
 .footer-company-title {
   margin: 0 0 1rem;
   font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-base);
 }
 
 .footer-company-logo {
@@ -250,10 +251,6 @@
 }
 
 .footer-sns-item {
-  img {
-    width: 24px;
-  }
-
   &:first-child {
     margin-left: 0;
   }

@@ -58,6 +58,7 @@
     max-width: 480px;
     padding: 2rem;
     color: var(--color-primary);
+    text-align: center;
     background: rgb(255 255 255 / 90%);
     transform: translate(-50%, -50%);
 
@@ -69,6 +70,7 @@
       padding-block: 4.5rem;
       padding-inline: 5rem;
       overflow: hidden;
+      text-align: unset;
 
       &.is-left {
         left: 0;
@@ -156,12 +158,11 @@
     bottom: 0;
     box-sizing: border-box;
     width: 100%;
-    padding-inline: 1rem;
-    margin-block: 0 2rem;
+    padding: 2rem 1rem;
+    margin: 0;
     font-weight: bold;
     text-align: center;
-    animation: fade-in 0.3s 2.8s 1 both;
-    will-change: transform, opacity;
+    background: linear-gradient(rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 50%) 100%);
   }
 
   .main-visual-scroll-link {
@@ -169,6 +170,8 @@
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    animation: fade-in 0.3s 2.8s 1 both;
+    will-change: transform, opacity;
 
     &,
     &:link,

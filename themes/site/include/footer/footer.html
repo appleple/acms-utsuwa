@@ -12,9 +12,8 @@
               <!-- ELSE -->{site_name}<!-- END_IF -->
             </h2>
             <address class="footer-address"><!-- BEGIN company_name:veil -->
-              <h3 class="footer-address-name">{company_name}</h3><!-- END company_name:veil --><!-- BEGIN zip:veil -->
-              <p class="footer-address-item">〒{zip}</p><!-- END zip:veil --><!-- BEGIN address:veil -->
-              <p class="footer-address-item">{address}</p><!-- END address:veil --><!-- BEGIN tel:veil -->
+              <h3 class="footer-address-name">{company_name}</h3><!-- END company_name:veil --><!-- BEGIN address:veil -->
+              <p class="footer-address-item"><!-- BEGIN zip:veil --><span class="acms-d-block">〒{zip}</span><!-- END zip:veil -->{address}</p><!-- END address:veil --><!-- BEGIN tel:veil -->
               <p class="footer-address-item">TEL : <a href="tel:{tel}">{tel}</a>{tel_time}</p><!-- END tel:veil -->
             </address>
           </div><!-- END_MODULE Blog_Field -->

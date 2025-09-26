@@ -2935,6 +2935,7 @@ a {
   max-width: 480px;
   padding: 2rem;
   color: var(--color-primary);
+  text-align: center;
   background: rgba(255, 255, 255, 0.9);
   transform: translate(-50%, -50%);
 }
@@ -2947,6 +2948,7 @@ a {
     padding-block: 4.5rem;
     padding-inline: 5rem;
     overflow: hidden;
+    text-align: unset;
   }
   .main-visual .main-visual-box.is-left {
     left: 0;
@@ -3027,18 +3029,19 @@ a {
   bottom: 0;
   box-sizing: border-box;
   width: 100%;
-  padding-inline: 1rem;
-  margin-block: 0 2rem;
+  padding: 2rem 1rem;
+  margin: 0;
   font-weight: bold;
   text-align: center;
-  animation: fade-in 0.3s 2.8s 1 both;
-  will-change: transform, opacity;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 .main-visual .main-visual-scroll-link {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  animation: fade-in 0.3s 2.8s 1 both;
+  will-change: transform, opacity;
 }
 .main-visual .main-visual-scroll-link, .main-visual .main-visual-scroll-link:link, .main-visual .main-visual-scroll-link:visited {
   color: var(--color-white);
@@ -5924,7 +5927,7 @@ a {
 .section-vertical-header::after {
   position: absolute;
   right: 0;
-  bottom: -1.5rem;
+  bottom: -2rem;
   left: 0;
   width: 1px;
   height: 1.5rem;
@@ -5967,9 +5970,6 @@ a {
   .section-vertical-heading {
     font-size: 2.44140625rem;
   }
-  .section-vertical-text {
-    font-size: 1rem;
-  }
 }
 @media (min-width: 64rem) {
   .section-vertical-header {
@@ -5981,9 +5981,6 @@ a {
   }
   .section-vertical-heading {
     font-size: 3.0517578125rem;
-  }
-  .section-vertical-text {
-    font-size: 1rem;
   }
 }
 /* 背景あり */
@@ -6209,6 +6206,7 @@ a {
 .footer-company-title {
   margin: 0 0 1rem;
   font-size: 1.5625rem;
+  line-height: var(--line-height-base);
 }
 
 .footer-company-logo {
@@ -6401,9 +6399,6 @@ a {
   list-style: none;
 }
 
-.footer-sns-item img {
-  width: 24px;
-}
 .footer-sns-item:first-child {
   margin-left: 0;
 }
