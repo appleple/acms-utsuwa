@@ -5183,12 +5183,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--col-gutter);
-  margin-block-start: 3rem;
-}
-@media (min-width: 48rem) {
-  .entry-footer {
-    margin-block-start: 4rem;
-  }
+  margin-block-start: 4rem;
 }
 
 /*
