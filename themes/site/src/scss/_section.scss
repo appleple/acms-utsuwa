@@ -252,6 +252,7 @@
 
 /* 視覚的なセパレーター */
 .section-separator {
+  width: calc(100% - calc(env(safe-area-inset-right) + var(--container-space-x)) * 2);
   max-width: calc(var(--container) - var(--gutter-md) * 3);
   margin: 0 auto;
   border: 0;

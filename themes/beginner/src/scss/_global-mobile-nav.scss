@@ -214,8 +214,8 @@
   background-color: currentcolor;
   mask-image: url("#{global.$root-theme-img}icon/chevron-right.svg");
   mask-size: contain;
-  transform: rotate(90deg);
   transition: transform 0.3s ease;
+  transform: rotate(90deg);
 
   &.is-close {
     transform: rotate(-90deg);

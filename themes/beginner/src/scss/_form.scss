@@ -196,8 +196,8 @@
   margin: 0 0 0 1rem;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: normal;
-  vertical-align: middle;
   color: var(--color-danger);
+  vertical-align: middle;
   background: var(--color-danger-light);
   border-radius: var(--border-radius-sm);
 }
@@ -207,8 +207,8 @@
   margin: 0 0 0 1rem;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: normal;
-  vertical-align: middle;
   color: var(--color-text);
+  vertical-align: middle;
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 }
@@ -480,8 +480,8 @@
   }
 
   .valid-mark.valid {
-    float: right;
     display: inline;
+    float: right;
     color: #5cb85c;
   }
 

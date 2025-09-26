@@ -58,6 +58,7 @@
     max-width: 480px;
     padding: 2rem;
     color: var(--color-primary);
+    text-align: center;
     background: rgb(255 255 255 / 90%);
     transform: translate(-50%, -50%);
 
@@ -69,6 +70,7 @@
       padding-block: 4.5rem;
       padding-inline: 5rem;
       overflow: hidden;
+      text-align: unset;
 
       &.is-left {
         left: 0;
