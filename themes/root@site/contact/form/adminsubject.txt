@@ -1,1 +1,1 @@
-【%{BLOG_NAME}】<!-- BEGIN subject:loop -->{subject}　<!-- END subject:loop --> お問い合わせ No.%{Y}%{n}%{j}%{H}%{i}%{s}
+【%{ROOT_BLOG_NAME}】<!-- BEGIN subject:loop --><!-- BEGIN subject:glue -->・<!-- END subject:glue -->{subject}<!-- END subject:loop --> お問い合わせ No.%{Y}%{n}%{j}%{H}%{i}%{s}

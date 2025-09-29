@@ -13,22 +13,23 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
-通番 : {serialNumber}
+受付日時： %{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+通番： {serialNumber}
 
 ■お問い合わせ情報
 
-ご用件　　　　： <!-- BEGIN subject:loop -->{subject}　<!-- END subject:loop -->
+ご用件： <!-- BEGIN subject:loop --><!-- BEGIN subject:glue -->・<!-- END subject:glue -->{subject}<!-- END subject:loop -->
+
 お問い合わせ内容：
-{inquiry}[raw]
+{inquiry}[html_entity_decode]
 
 ■お客様情報
 
-所属　　　　： {organization}
-お名前　　　　： {name}
+所属： {organization}
+お名前： {name}
 メールアドレス： {email}
-お電話番号　　： {tel}
-ご住所　　　　： 〒{postal-code}　{address-level1}　{address1}　{address2}
+お電話番号： {tel}
+ご住所： 〒{postal-code} {address-level1}{address1} {address2}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -36,7 +37,7 @@
 本メールをご返送いただきますようお願い申し上げます。
 
 --------------------------------------------------------------------------------------------------
-%{BLOG_NAME}
+%{ROOT_BLOG_NAME}
 
 〒000-0000
 ○○県○○○市○○区 ××の××の××

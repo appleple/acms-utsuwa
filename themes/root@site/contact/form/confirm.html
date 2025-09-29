@@ -2,7 +2,7 @@
 <ul class="form-group-list is-confirm">
   <li class="form-group">
     <div class="form-label">ご用件</div>
-    <div class="form-control"><!-- BEGIN subject:loop -->{subject}　<!-- END subject:loop --></div>
+    <div class="form-control"><!-- BEGIN subject:loop --><!-- BEGIN subject:glue -->・<!-- END subject:glue -->{subject}<!-- END subject:loop --></div>
   </li>
   <li class="form-group">
     <div class="form-label">お問い合わせ内容</div>
@@ -33,7 +33,8 @@
   <!-- END tel:veil -->
   <li class="form-group">
     <div class="form-label">ご住所</div>
-    <div class="form-control">〒{postal-code}<br />
-      {address-level1}{address1}{address2}</div>
+    <div class="form-control">〒{postal-code}<br>
+      {address-level1}{address1} {address2}
+    </div>
   </li>
 </ul>
