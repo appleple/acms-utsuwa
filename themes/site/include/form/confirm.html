@@ -1,39 +1,47 @@
 <div class="form-input-wrap">
-  <!-- BEGIN_MODULE Form2_Unit -->
   <ul class="form-group-list">
     <li class="form-group">
       <div class="form-label">ご希望の職種</div>
-      <div class="form-control">\{entry_title\}</div>
+      <div class="form-control">{entry_title}</div>
+    </li>
+    <li class="form-group">
+      <div class="form-label">お名前</div>
+      <div class="form-control">{name}</div>
     </li>
     <li class="form-group">
       <div class="form-label">メールアドレス</div>
-      <div class="form-control">\{email\}</div>
+      <div class="form-control">{email}</div>
     </li>
 
+    <!-- BEGIN_MODULE Form2_Unit -->
     <!-- BEGIN column:loop -->
     <!-- BEGIN text -->
     <li class="form-group">
       <div class="form-label">{label}</div>
       <div class="form-control">\{form-unit-{utid}\}</div>
-    </li><!-- END text -->
+    </li>
+    <!-- END text -->
 
     <!-- BEGIN textarea -->
     <li class="form-group">
       <div class="form-label">{label}</div>
-      <div class="form-control">\{form-unit-{utid}\}[escape|nl2br]</div>
-    </li><!-- END textarea -->
+      <div class="form-control">\{form-unit-{utid}\}[nl2br]</div>
+    </li>
+    <!-- END textarea -->
 
     <!-- BEGIN radio -->
     <li class="form-group">
       <div class="form-label">{label}</div>
       <div class="form-control">\{form-unit-{utid}\}</div>
-    </li><!-- END radio -->
+    </li>
+    <!-- END radio -->
 
     <!-- BEGIN select -->
     <li class="form-group">
       <div class="form-label">{label}</div>
       <div class="form-control">\{form-unit-{utid}\}</div>
-    </li><!-- END select -->
+    </li>
+    <!-- END select -->
 
     <!-- BEGIN checkbox -->
     <li class="form-group">
@@ -43,9 +51,9 @@
           <li>\{form-unit-{utid}\}</li><!-- END\ form-unit-{utid}:loop -->
         </ul><!-- END\ form-unit-{utid}:veil -->
       </div>
-    </li><!-- END checkbox -->
-
+    </li>
+    <!-- END checkbox -->
     <!-- END column:loop -->
+    <!-- END_MODULE Form2_Unit -->
   </ul>
-  <!-- END_MODULE Form2_Unit -->
 </div>
