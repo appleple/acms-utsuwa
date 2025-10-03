@@ -1891,6 +1891,10 @@ a {
   font-size: 1rem;
   line-height: var(--line-height-base);
   vertical-align: top;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K);
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem auto;
   border-radius: var(--border-radius-sm);
 }
 
@@ -4444,6 +4448,9 @@ a {
 .search-panel .form-checkbox {
   width: 50%;
 }
+.search-panel .form-input-wrap {
+  padding-bottom: 1.5rem;
+}
 
 .search-panel-group {
   display: flex;
@@ -4559,6 +4566,8 @@ a {
   position: relative;
   z-index: 0;
   margin: 0 0 var(--entry-el-margin-md);
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
 }
 .realestate-map-entry .js-open-street-map {
   height: 320px;
