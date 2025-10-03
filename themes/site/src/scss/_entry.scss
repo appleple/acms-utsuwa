@@ -161,9 +161,14 @@
 }
 
 .entry-header-visual-box {
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.entry-header-visual-box-inner {
   position: relative;
   box-sizing: border-box;
-  padding-block: 2rem;
+  padding: 2rem 1rem;
   color: var(--color-white);
   background: rgb(0 0 0 / 70%);
 }
@@ -188,9 +193,9 @@
 }
 
 @include acms.media-breakpoint-up(sm) {
-  .entry-header-visual-box-inner {
-    width: 400px;
-    margin: 0 auto;
+  .entry-header-visual-box-inner > * {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 
@@ -208,15 +213,14 @@
     padding: 2rem 0;
   }
 
-  .entry-header-visual-box {
+  .entry-header-visual-box-inner {
     width: 50%;
     max-width: 35rem;
     padding: 2.5rem 2.5rem 2rem;
-    margin: 0 calc(var(--unit-gutter-var) / 2);
   }
 
-  .entry-header-visual-box-inner {
-    width: auto;
+  .entry-header-visual-box-inner > * {
+    max-width: none;
   }
 
   .entry-header-visual-img {

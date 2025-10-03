@@ -2096,7 +2096,7 @@ a {
 .form-step {
   display: flex;
   padding: 0;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
   /* カウンターの設定 */
   counter-reset: mailStep;
 }
@@ -2705,7 +2705,12 @@ a {
   margin: 0 0 3rem;
 }
 
+.form-message-group {
+  margin: 2rem 0;
+}
+
 .form-message-back {
+  margin: 0;
   text-align: center;
 }
 
@@ -5099,9 +5104,14 @@ a {
 }
 
 .entry-header-visual-box {
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.entry-header-visual-box-inner {
   position: relative;
   box-sizing: border-box;
-  padding-block: 2rem;
+  padding: 2rem 1rem;
   color: var(--color-white);
   background: rgba(0, 0, 0, 0.7);
 }
@@ -5125,9 +5135,9 @@ a {
 }
 
 @media (min-width: 30rem) {
-  .entry-header-visual-box-inner {
-    width: 400px;
-    margin: 0 auto;
+  .entry-header-visual-box-inner > * {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 @media (min-width: 48rem) {
@@ -5141,14 +5151,13 @@ a {
   .entry-header-visual {
     padding: 2rem 0;
   }
-  .entry-header-visual-box {
+  .entry-header-visual-box-inner {
     width: 50%;
     max-width: 35rem;
     padding: 2.5rem 2.5rem 2rem;
-    margin: 0 calc(var(--unit-gutter-var) / 2);
   }
-  .entry-header-visual-box-inner {
-    width: auto;
+  .entry-header-visual-box-inner > * {
+    max-width: none;
   }
   .entry-header-visual-img {
     width: 100%;
@@ -5859,6 +5868,7 @@ a {
 
 /* 視覚的なセパレーター */
 .section-separator {
+  width: calc(100% - (env(safe-area-inset-right) + var(--container-space-x)) * 2);
   max-width: calc(var(--container) - var(--gutter-md) * 3);
   margin: 0 auto;
   border: 0;

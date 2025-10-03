@@ -74,13 +74,13 @@
   <!-- フォームステップ：完了画面 -->
   <div class="container-md">
     <h2 id="form" class="heading-lg">{{form_heading}}</h2>
+    <!-- フォームステップ -->
+    @include("/include/form/step.html")
     <div class="form-message-group">
       <p class="form-message">{{form_message_result}}</p>
     </div>
     @include("/include/form/confirm.html")
-    <div class="form-message-group">
-      <p class="form-message-back"><a href="%{CATEGORY_URL}" class="button is-width-lg">採用情報トップへ戻る</a></p>
-    </div>
+    <p class="form-message-back"><a href="%{CATEGORY_URL}" class="button is-width-lg is-bg-white-bordered">採用情報トップへ戻る</a></p>
   </div>
   <!-- END step#result -->
 
@@ -89,7 +89,7 @@
     <h2 id="form" class="heading-lg">不正なアクセスです。</h2>
     <div class="form-message-group">
       <p class="form-message-text">お手数ですが、はじめからやり直して下さい。</p>
-      <p class="form-message-back"><a href="%{ENTRY_URL}#form" class="button is-width-lg">フォームに戻る</a></p>
+      <p class="form-message-back"><a href="%{ENTRY_URL}#form" class="button is-width-lg is-bg-white-bordered">フォームに戻る</a></p>
     </div>
   </div>
   <!-- END step#forbidden -->
