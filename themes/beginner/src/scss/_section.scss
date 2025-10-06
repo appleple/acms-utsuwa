@@ -153,7 +153,7 @@
   &::after {
     position: absolute;
     right: 0;
-    bottom: -1.5rem;
+    bottom: -2rem;
     left: 0;
     width: 1px;
     height: 1.5rem;
@@ -205,10 +205,6 @@
   .section-vertical-heading {
     font-size: map.get(global.$font-scales, heading-l);
   }
-
-  .section-vertical-text {
-    font-size: map.get(global.$font-scales, body-m);
-  }
 }
 
 @include acms.media-breakpoint-up(lg) {
@@ -224,15 +220,11 @@
   .section-vertical-heading {
     font-size: map.get(global.$font-scales, heading-2xl);
   }
-
-  .section-vertical-text {
-    font-size: map.get(global.$font-scales, body-m);
-  }
-
 }
 
 /* 視覚的なセパレーター */
 .section-separator {
+  width: calc(100% - calc(env(safe-area-inset-right) + var(--container-space-x)) * 2);
   max-width: calc(var(--container) - var(--gutter-md) * 3);
   margin: 0 auto;
   border: 0;

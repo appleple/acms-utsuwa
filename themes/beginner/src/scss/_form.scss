@@ -312,6 +312,10 @@
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
     vertical-align: top;
+    background-image: url(#{global.$root-theme-img}icon/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem auto;
     border-radius: var(--border-radius-sm);
   }
 }

@@ -22,7 +22,7 @@
 .form-step {
   display: flex;
   padding: 0;
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 
   /* カウンターの設定 */
   counter-reset: mailStep;
@@ -315,7 +315,10 @@
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
     vertical-align: top;
-    background: url(#{global.$root-theme-img}icon/chevron-down.svg) no-repeat right 1rem center / 1.5rem auto;
+    background-image: url(#{global.$root-theme-img}icon/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem auto;
     border-radius: var(--border-radius-md);
   }
 }
@@ -636,7 +639,12 @@
   margin: 0 0 3rem;
 }
 
+.form-message-group {
+  margin: 2rem 0;
+}
+
 .form-message-back {
+  margin: 0;
   text-align: center;
 }
 

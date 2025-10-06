@@ -13,6 +13,10 @@
   margin-bottom: 2rem;
   background: var(--color-gray10);
   border-radius: var(--border-radius-xl);
+
+  .form-input-wrap {
+    padding-bottom: 1.5rem;
+  }
 }
 
 .search-panel-group {
@@ -53,15 +57,26 @@
   text-align: center;
 }
 
+@include acms.media-breakpoint-up(sm) {
+  .search-panel {
+    .form-checkbox {
+      width: calc(100% / 2 - 2rem);
+    }
+
+    .search-panel-input {
+      flex: 1;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}
+
 @include acms.media-breakpoint-up(md) {
   .search-panel {
     padding: 3rem;
     margin-bottom: 3rem;
     border-radius: var(--border-radius-xxl);
-
-    .form-checkbox {
-      width: calc(100% / 3 - 2rem);
-    }
 
     .search-panel-group {
       display: flex;
@@ -73,13 +88,12 @@
       gap: var(--col-gutter);
       align-items: center;
     }
+  }
+}
 
-    .search-panel-input {
-      flex: 1;
-      flex-direction: row;
-      gap: 1rem;
-      align-items: center;
-    }
+@include acms.media-breakpoint-up(lg) {
+  .search-panel .form-checkbox {
+    width: calc(100% / 3 - 2rem);
   }
 }
 
@@ -130,5 +144,6 @@
 ----------------------------- */
 .works-main-image {
   margin-bottom: var(--entry-el-margin-md);
+  overflow: hidden;
   border-radius: var(--border-radius-lg);
 }

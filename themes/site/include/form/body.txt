@@ -13,26 +13,27 @@
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-受付日時：%{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
+受付日時： %{Y}年%{n}月%{j}日 %{H}:%{i}:%{s}
 
 ■お送りいただいた内容
-ご希望の職種：{entry_title}
 
-メールアドレス  : {email}<!-- BEGIN_MODULE Form2_Unit -->
-<!-- BEGIN column:loop --><!-- BEGIN text -->
-{label}  : \{form-unit-{utid}\}<!-- END text --><!-- BEGIN textarea -->
-{label}  : \{form-unit-{utid}\}<!-- END textarea --><!-- BEGIN radio -->
-{label}  : \{form-unit-{utid}\}<!-- END radio --><!-- BEGIN select -->
-{label}  : \{form-unit-{utid}\}<!-- END select --><!-- BEGIN checkbox -->
-{label}  : <!-- BEGIN\ form-unit-{utid}:loop --><!-- BEGIN\ form-unit-{utid}:glue --> / <!-- END\ form-unit-{utid}:glue -->\{form-unit-{utid}\} <!-- END\ form-unit-{utid}:loop --><!-- END checkbox -->
-<!-- END column:loop --><!-- END_MODULE Form2_Unit -->
+ご希望の職種： {entry_title}
+
+お名前： {name}
+メールアドレス： {email}<!-- BEGIN_MODULE Form2_Unit --><!-- BEGIN column:loop --><!-- BEGIN text -->
+{label}： \{form-unit-{utid}\}<!-- END text --><!-- BEGIN textarea -->
+{label}： \{form-unit-{utid}\}[html_entity_decode]<!-- END textarea --><!-- BEGIN radio -->
+{label}： \{form-unit-{utid}\}<!-- END radio --><!-- BEGIN select -->
+{label}： \{form-unit-{utid}\}<!-- END select --><!-- BEGIN checkbox -->
+{label}： <!-- BEGIN\ form-unit-{utid}:loop --><!-- BEGIN\ form-unit-{utid}:glue --> / <!-- END\ form-unit-{utid}:glue -->\{form-unit-{utid}\}<!-- END\ form-unit-{utid}:loop --><!-- END checkbox --><!-- END column:loop --><!-- END_MODULE Form2_Unit -->
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 本メールについて心あたりがない場合は、大変お手数ですが
 本メールをご返送いただきますようお願い申し上げます。
 
 --------------------------------------------------------------------------------------------------
-%{BLOG_NAME}
+%{ROOT_BLOG_NAME}
 
 〒000-0000
 ○○県○○○市○○区 ××の××の××
