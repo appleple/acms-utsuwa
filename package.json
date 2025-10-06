@@ -1,6 +1,6 @@
 {
   "name": "acms-utsuwa",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "private": true,
   "description": "写真やコンテンツを入力すればそのまま企業サイトとして成り立つ構成を備えた、実用的でモダンな a-blog cms の公式テーマです。",
   "type": "module",
