@@ -3,7 +3,7 @@
 @section(media-unit)
 <!-- media -->
 <div role="figure" class="column-media column-media-{align} align-{align}" aria-labelledby="media-caption-{utid}">
-  <div class="{display_size_class}" {display_size}[raw] <!-- BEGIN_IF [{display_size_class}{display_size}/em] --> style="width: {rootWidth}px;"<!-- END_IF -->>
+  <div class="{display_size_class}" {display_size}[raw] <!-- BEGIN_IF [{display_size_class}{display_size}/em/_and_/{type}/re/^(image|svg)$] --> style="width: {rootWidth}px; min-width: 0;"<!-- END_IF -->>
   <!-- BEGIN type#image -->
   <!-- BEGIN link#front -->
   <a href="{url}" {viewer}[raw] data-group="{link_eid}">
