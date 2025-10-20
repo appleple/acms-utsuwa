@@ -10,8 +10,7 @@
 ------------------------------ */
 :where(.#{acms.$entry-class}) .node-fileBlock,
 .media-file-block,
-[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]),
-[class*="column-file"] {
+[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]) {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: 0; /* Descender space 対策 */
 }
@@ -23,8 +22,7 @@
 .acms-admin-block-editor-file-link,
 .media-file-block[data-display-type="button"] a,
 [class*="column-media"] a[href*="media-download"],
-[class*="column-media"] a[href*="storage"],
-[class*="column-file"] a {
+[class*="column-media"] a[href*="storage"] {
   box-sizing: border-box;
   display: inline-flex;
   gap: 1rem;
@@ -40,9 +38,7 @@
 /* リンク動作スタイル（閲覧画面のみ） */
 .media-file-block[data-display-type="button"] a,
 [class*="column-media"] a[href*="media-download"],
-[class*="column-media"] a[href*="storage"],
-[class*="column-file"] a,
-.entry-style [class*="column-file"] a { /* hover動作上書きのため詳細度高めて指定 */
+[class*="column-media"] a[href*="storage"] { /* hover動作上書きのため詳細度高めて指定 */
   @media (hover: hover) {
     transition: background-color 0.2s ease;
 
@@ -56,8 +52,7 @@
 /* ファイルアイコン */
 .acms-admin-block-editor-file-link img,
 .media-file-block[data-display-type="button"] img,
-[class*="column-media"] .columnIcon,
-[class*="column-file"] .columnIcon {
+[class*="column-media"] .columnIcon {
   display: inline-block;
   width: 2rem;
   max-width: 100%;
@@ -67,7 +62,6 @@
 /* キャプションタイポグラフィ設定 */
 .acms-admin-block-editor-file-link .caption,
 .media-file-block[data-display-type="button"] .caption,
-[class*="column-file"] .caption,
 [class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon):not(:has(.column-pdf-image)) .caption {
   margin: 0; /* リセット */
   font-size: map.get(global.$font-scales, body-m);
