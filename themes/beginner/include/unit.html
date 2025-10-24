@@ -1,31 +1,9 @@
 @extends("/_layouts/unit.html")
 
-@section(file-unit)
-<!-- ファイル -->
-<div class="column-file column-file-{align} align-{align}">
-  <a href="%{HTTP_ROOT}{path}">
-    <img
-      <!-- BEGIN_IF [{anker}/nem] -->
-      id="{anker}"
-      <!-- END_IF -->
-      class="columnIcon
-      unit-id-{utid}"
-      src="%{HTTP_ROOT}{icon}"
-      alt="ファイルを開く"
-      width="{x}"
-      height="{y}"
-      loading="lazy"
-      decoding="async"
-    >
-    <!-- BEGIN_IF [{caption}[delnl]/nem] --><p class="caption">{caption}[raw|nl2br]</p><!-- END_IF -->
-  </a>
-</div>
-@endsection
-
 @section(media-unit)
 <!-- media -->
-<div class="column-media column-media-{align} align-{align}">
-  <div class="{display_size_class}" {display_size}[raw]>
+<div role="figure" class="column-media column-media-{align} align-{align}" aria-labelledby="media-caption-{utid}">
+  <div class="{display_size_class}" {display_size}[raw] <!-- BEGIN_IF [{display_size_class}{display_size}/em/_and_/{type}/re/^(image|svg)$] --> style="width: {rootWidth}px; min-width: 0;"<!-- END_IF -->>
   <!-- BEGIN type#image -->
   <!-- BEGIN link#front -->
   <a href="{url}" {viewer}[raw] data-group="{link_eid}">
@@ -46,7 +24,7 @@
   </a>
   <!-- END link#rear -->
   <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-  <p class="caption">{caption}[raw|nl2br]</p>
+  <p id="media-caption-{image_utid}" class="caption">{caption}[raw|nl2br]</p>
   <!-- END_IF -->
 
   <!-- END type#image -->
@@ -70,7 +48,7 @@
   </a>
   <!-- END link#rear -->
   <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-  <p class="caption">{caption}[raw|nl2br]</p>
+  <p id="media-caption-{svg_utid}" class="caption">{caption}[raw|nl2br]</p>
   <!-- END_IF -->
 
   <!-- END type#svg -->
@@ -98,7 +76,7 @@
         decoding="async"
       >
       <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-      <p class="caption">{caption}[raw|nl2br]</p>
+      <p id="media-caption-{file_utid}" class="caption">{caption}[raw|nl2br]</p>
       <!-- END_IF -->
       <span class="column-pdf-image-download-icon" role="img" aria-label="ダウンロード">@include("/images/icon/arrow-down-to-line.svg")</span>
     </div>
@@ -115,7 +93,7 @@
       decoding="async"
     >
     <!-- BEGIN_IF [{caption}[delnl]/nem] -->
-    <p class="caption">{caption}[raw|nl2br]</p>
+    <p id="media-caption-{file_utid}" class="caption">{caption}[raw|nl2br]</p>
     <!-- END_IF -->
   </a>
   <!-- END_IF -->
