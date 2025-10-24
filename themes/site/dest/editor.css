@@ -1289,10 +1289,10 @@
 }
 .column-pdf-image-caption-box .column-pdf-image-download-icon {
   display: inline-block;
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
   color: var(--color-text);
-  flex-shrink: 0;
 }
 .column-pdf-image-caption-box .column-pdf-image-download-icon svg {
   width: 100%;
