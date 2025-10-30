@@ -1,5 +1,25 @@
 <!-- BEGIN_MODULE Form -->
 
+<!-- BEGIN error -->
+<!-- BEGIN_MODULE Touch_SessionWithContribution -->
+<section class="acms-admin-alert acms-admin-alert-danger acms-mb-8">
+  <h2 class="acms-mt-0 acms-mb-4">設定に不備があります</h2>
+  <p>テンプレートに記述しているバリデーターまたはコンバーターと、フォームIDの入力チェックまたは変換の項目が一致していない可能性があります。テンプレートとフォームIDの設定をご確認ください。</p>
+  <dl>
+    <div>
+      <dt class="acms-d-inline">フォームID：</dt>
+      <dd class="acms-d-inline acms-m-0">{formID}</dd>
+    </div>
+    <div>
+      <dt class="acms-d-inline">エラーが発生している項目：</dt>
+      <dd class="acms-d-inline acms-m-0">{errorKey}</dd>
+    </div>
+  </dl>
+  <p>※このエラーメッセージは投稿者以上の権限を持つユーザーのみに表示されています</p>
+</section>
+<!-- END_MODULE Touch_SessionWithContribution -->
+<!-- END error -->
+
 <!-- BEGIN step -->
 <!-- フォームステップ：初期 -->
 <div class="form-initial-step-layout">
@@ -112,9 +132,5 @@
   </section>
 </div>
 <!-- END step#repeated -->
-
-<!-- BEGIN error -->
-<!-- フォームID : {formID} / エラー項目 : {errorKey} -->
-<!-- END error -->
 
 <!-- END_MODULE Form -->
