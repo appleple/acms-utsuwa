@@ -1,5 +1,19 @@
 <!-- BEGIN_MODULE Form -->
 
+<!-- BEGIN error -->
+<!-- BEGIN_MODULE Touch_SessionWithContribution -->
+<section class="acms-admin-alert acms-admin-alert-danger acms-mb-8">
+  <h2 class="acms-mt-0 acms-mb-3">管理者向け: バリデーションエラー通知</h2>
+  <p class="acms-mt-0 acms-mb-3">※このメッセージは投稿者以上の権限を持つユーザーにのみ表示されています</p>
+  <p class="acms-mt-0 acms-mb-3">フォームID「{formID}」の項目「{errorKey}」で入力ルール違反（バリデーションエラー）が検出されました。以下を確認してください。</p>
+  <ul class="acms-m-0">
+    <li>入力ミス：必須項目の未入力、形式間違い、各入力欄にエラーメッセージが出ていないかをご確認ください。</li>
+    <li>設定の不一致：正しい入力をしていてもエラーが続く場合、テンプレートの入力欄とフォームID管理の「入力チェック（バリデーター）」設定が一致していない可能性があります。</li>
+  </ul>
+</section>
+<!-- END_MODULE Touch_SessionWithContribution -->
+<!-- END error -->
+
 <!-- BEGIN step -->
 <!-- フォームステップ：初期 -->
 <div class="form-initial-step-layout">
@@ -110,9 +124,5 @@
   </section>
 </div>
 <!-- END step#repeated -->
-
-<!-- BEGIN error -->
-<!-- フォームID : {formID} / エラー項目 : {errorKey} -->
-<!-- END error -->
 
 <!-- END_MODULE Form -->
