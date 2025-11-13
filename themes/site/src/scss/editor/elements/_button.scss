@@ -7,14 +7,12 @@
 ------------------------------ */
 
 /* 上下余白 */
-:where(.#{acms.$entry-class}) .node-linkButton,
-.link-button-block {
+:where(.#{acms.$entry-class}) [data-type="linkButton"] {
   margin-block: 0 var(--entry-el-margin-md);
 }
 
 /* リンク */
-.acms-admin-block-editor-link-button-link,
-.link-button-block-link {
+:where(.#{acms.$entry-class}) [data-type="linkButton"] a {
   box-sizing: border-box;
   display: inline-flex;
   gap: 4px;
@@ -34,11 +32,8 @@
   &:visited {
     color: var(--color-white);
   }
-}
 
-/* リンクスタイル（編集画面のみ） */
-.acms-admin-block-editor-link-button-link {
-  &[data-target="_blank"]::after {
+  &[target="_blank"]::after {
     display: inline-block;
     flex: none;
     width: 0.875em;
@@ -51,13 +46,9 @@
     mask-repeat: no-repeat;
     mask-size: contain;
   }
-}
 
-/* リンクスタイル（閲覧画面のみ） */
-.link-button-block-link {
-  text-decoration: none;
 
-  @media (hover: hover) {
+  @media (any-hover: hover) {
     transition: background-color 0.2s ease;
 
     &:where(:any-link):hover {
@@ -65,13 +56,4 @@
       opacity: 1;
     }
   }
-}
-
-.entry-style .link-button-block-link,
-.entry-style .link-button-block-link * {
-  text-decoration: none; /* リセット */
-}
-
-.entry-style .link-button-block-link[target="_blank"] {
-  margin-right: 0; /* リセット */
 }
