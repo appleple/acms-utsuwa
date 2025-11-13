@@ -11,7 +11,6 @@
   box-sizing: border-box;
   display: grid;
   grid-auto-flow: column;
-  margin-block: 0 var(--entry-el-margin-md);
 
   // 2カラム
   &.layout-two-column {
@@ -34,52 +33,3 @@
   gap: var(--unit-gutter-var);
 }
 
-/* カラム上下余白
-/* 編集画面でのブロックエディターでのカラム上下余白親要素でとるため、
-/* 子要素の最初と最後の上下マージンをリセット
-/* 上書きのため詳細度高め（0,0,2,0）
------------------------------ */
-:where(.#{acms.$entry-class}) {
-  [data-type="column"] > * {
-    &:first-child {
-      margin-block-start: 0;
-    }
-
-    &:last-child {
-      margin-block-end: 0;
-    }
-  }
-}
-
-/* メディアサイズ
------------------------------ */
-:where(.media-image-block) {
-  figure {
-    /* リセット用 */
-    margin: 0;
-  }
-
-  .media-width-25 {
-    max-width: 25%;
-  }
-
-  .media-width-33 {
-    max-width: 33%;
-  }
-
-  .media-width-50 {
-    max-width: 50%;
-  }
-
-  .media-width-66 {
-    max-width: 66%;
-  }
-
-  .media-width-75 {
-    max-width: 75%;
-  }
-
-  .media-width-100 {
-    max-width: 100%;
-  }
-}

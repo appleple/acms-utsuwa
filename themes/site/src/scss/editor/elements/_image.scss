@@ -6,35 +6,15 @@
  メディア画像・画像・画像URL
 ------------------------------ */
 
-/* 管理画面側：ブロックエディターfigure要素リセット用 */
-.acms-admin-block-editor-image {
-  margin: 0;
-}
-
-/* 上下余白 */
-:where(.media-image-block),
-:where(.#{acms.$entry-class}) .node-imageBlock,
-[class*="column-image"],
-[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])),
-[class*="column-eximage"] {
-  margin-block: 0 var(--entry-el-margin-md);
-}
-
-/* 画像ユニット：style属性でwidth指定された場合の横はみ出し防止 */
-[class*="column-image"] {
-  &[style*="width"] {
-    max-width: 100%;
-  }
-}
 
 /* 共通設定
 ------------------------------ */
-:where(.media-image-block),
-:where(.acms-admin-block-editor-image),
-[class*="column-image"],
-[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])),
-[class*="column-eximage"] {
+:where(.#{acms.$entry-class}) figure,
+:where(.#{acms.$entry-class}) [role='figure']:not(:has(a[href*="media-download"], a[href*="storage"]))  {
+  margin-block: 0 var(--entry-el-margin-md);
+  margin-inline: 0;
   line-height: 0; /* Descender space 対策 */
+  text-align: center;
 
   a {
     display: inline-block;
@@ -58,27 +38,13 @@
   }
 }
 
-:where(.media-image-block),
-:where(.acms-admin-block-editor-image) {
-  text-align: center;
-}
-
 /* キャプション
 ------------------------------ */
-:where(.media-image-block) figcaption,
-:where(.acms-admin-block-editor-image) figcaption,
-[class*="column-image"] .caption,
-[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])) .caption,
-[class*="column-eximage"] .caption {
+:where(.#{acms.$entry-class}) figcaption,
+:where(.#{acms.$entry-class}) [role='figure']:not(:has(a[href*="media-download"], a[href*="storage"])) .caption {
   display: block;
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   font-size: map.get(global.$font-scales, body-s);
   line-height: var(--line-height-sm);
   color: var(--color-text-2nd);
-}
-
-[class*="column-image"] .caption,
-[class*="column-media"]:not(:has(a[href*="media-download"], a[href*="storage"])) .caption,
-[class*="column-eximage"] .caption {
-  text-align: center;
 }

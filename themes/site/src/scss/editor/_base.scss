@@ -29,3 +29,22 @@
     margin-block-start: 0;
   }
 }
+
+:where(.#{acms.$entry-class}) {
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  audit,
+  canvas,
+  embed,
+  iframe,
+  object,
+  svg,
+  video {
+    display: block;
+    vertical-align: middle;
+  }
+}

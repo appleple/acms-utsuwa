@@ -8,9 +8,9 @@
  - ファイル
  ※ media-downloadは動的、storageは静的書き出しに対応
 ------------------------------ */
-:where(.#{acms.$entry-class}) .node-fileBlock,
-.media-file-block,
-[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]) {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"],
+[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]),
+[class*="column-file"] {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: 0; /* Descender space 対策 */
 }
@@ -19,10 +19,10 @@
 ------------------------------ */
 
 /* リンク */
-.acms-admin-block-editor-file-link,
-.media-file-block[data-display-type="button"] a,
-[class*="column-media"] a[href*="media-download"],
-[class*="column-media"] a[href*="storage"] {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"][data-display-type='button'] a,
+:where(.#{acms.$entry-class}) [class*="column-media"] a[href*="media-download"],
+:where(.#{acms.$entry-class}) [class*="column-media"] a[href*="storage"],
+:where(.#{acms.$entry-class}) [class*="column-file"] a {
   box-sizing: border-box;
   display: inline-flex;
   gap: 1rem;
@@ -33,13 +33,8 @@
   background-color: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray40);
   border-radius: var(--border-radius-md);
-}
 
-/* リンク動作スタイル（閲覧画面のみ） */
-.media-file-block[data-display-type="button"] a,
-[class*="column-media"] a[href*="media-download"],
-[class*="column-media"] a[href*="storage"] { /* hover動作上書きのため詳細度高めて指定 */
-  @media (hover: hover) {
+  @media (any-hover: hover) {
     transition: background-color 0.2s ease;
 
     &:where(:any-link):hover {
@@ -50,9 +45,9 @@
 }
 
 /* ファイルアイコン */
-.acms-admin-block-editor-file-link img,
-.media-file-block[data-display-type="button"] img,
-[class*="column-media"] .columnIcon {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"][data-display-type='button'] img,
+:where(.#{acms.$entry-class}) [class*="column-media"] .columnIcon,
+:where(.#{acms.$entry-class}) [class*="column-file"] .columnIcon {
   display: inline-block;
   width: 2rem;
   max-width: 100%;
@@ -60,9 +55,9 @@
 }
 
 /* キャプションタイポグラフィ設定 */
-.acms-admin-block-editor-file-link .caption,
-.media-file-block[data-display-type="button"] .caption,
-[class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon):not(:has(.column-pdf-image)) .caption {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"] .caption,
+:where(.#{acms.$entry-class}) [class*="column-file"] .caption,
+:where(.#{acms.$entry-class}) [class*="column-media"]:has(a[href*="media-download"], a[href*="storage"]):has(.columnIcon):not(:has(.column-pdf-image)) .caption {
   margin: 0; /* リセット */
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-base);
@@ -73,7 +68,7 @@
 ------------------------------ */
 
 /* リンク */
-[class*="column-media"]:has(.column-pdf-image) {
+:where(.#{acms.$entry-class}) [class*="column-media"]:has(.column-pdf-image) {
   a {
     display: inline-grid;
     gap: 0.5rem;
@@ -83,7 +78,7 @@
     padding: 0;
     border: 0;
 
-    @media (hover: hover) {
+    @media (any-hover: hover) {
       &:hover {
         background-color: transparent; /* リセット */
         .column-pdf-image {
@@ -98,13 +93,13 @@
   }
 }
 
-.column-pdf-image {
+:where(.#{acms.$entry-class}) .column-pdf-image {
   max-width: 100%;
   border: var(--border-width-sm) solid var(--color-gray40);
   transition: opacity 0.2s ease;
 }
 
-.column-pdf-image-caption-box {
+:where(.#{acms.$entry-class}) .column-pdf-image-caption-box {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -147,8 +142,7 @@
 ------------------------------ */
 
 /* キャプション */
-.acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)) .caption,
-.media-file-block[data-display-type="icon"] .caption {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"][data-display-type='icon'] .caption {
   display: block;
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   font-size: map.get(global.$font-scales, body-m);
@@ -156,8 +150,7 @@
   color: var(--color-text);
 }
 
-.acms-admin-block-editor-file:not(:has(.acms-admin-block-editor-file-link)),
-.media-file-block[data-display-type="icon"] {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"][data-display-type='icon'] {
   text-align: center;
 
   img {
@@ -168,12 +161,12 @@
 }
 
 /* リンク動作スタイル（閲覧画面のみ） */
-.media-file-block[data-display-type="icon"] a {
+:where(.#{acms.$entry-class}) [data-type="fileBlock"][data-display-type='icon'] a {
   /* リンクスタイルリセット */
   padding: 0;
   border: 0;
 
-  @media (hover: hover) {
+  @media (any-hover: hover) {
     transition: opacity 0.2s ease;
 
     &:hover {
