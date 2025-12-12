@@ -5,7 +5,7 @@
 /* ------------------------------
 　　関連サイト
 ------------------------------ */
-.news-banner-carousel {
+.banner-slide {
   padding-inline: 1rem; /* スライダー送り矢印ボタンが画面端から見切れないよう余白を確保 */
 
   .splide__track {
@@ -76,7 +76,7 @@
 }
 
 @include acms.media-breakpoint-up(sm) {
-  .news-banner-carousel {
+  .banner-slide {
     padding-inline: 0;
 
     .splide__arrow--prev {
@@ -90,7 +90,7 @@
 }
 
 @include acms.media-breakpoint-up(lg) {
-  .news-banner-carousel {
+  .banner-slide {
     .splide__arrow {
       width: 3rem;
       height: 3rem;

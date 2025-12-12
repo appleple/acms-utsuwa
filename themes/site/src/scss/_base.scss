@@ -135,8 +135,8 @@ a {
   width: 100%;
   padding: 1rem 0;
   opacity: 0;
-  transform: translateY(40px);
   transition: opacity 0.3s, transform 0.2s;
+  transform: translateY(40px);
 
   &.is-centered {
     text-align: center;

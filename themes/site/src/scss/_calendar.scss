@@ -26,9 +26,9 @@
   height: 1.5rem + 0.5rem;
   padding: 0 0 0.5rem;
   font-weight: normal;
-  vertical-align: middle;
   color: var(--color-text-2nd);
   text-align: center;
+  vertical-align: middle;
 
   @include acms.media-breakpoint-up(md) {
     width: 3.5rem;
@@ -40,9 +40,9 @@
 .calendar-day {
   height: 2.5rem;
   padding: 0;
-  vertical-align: middle;
   color: var(--color-text);
   text-align: center;
+  vertical-align: middle;
 
   a {
     position: relative;
@@ -376,9 +376,9 @@
   th {
     padding-block: calc(var(--calendar-event-item-cell-spacing-y) + var(--calendar-event-item-link-spacing-y));
     padding-inline-end: 0.5rem;
-    vertical-align: top;
     text-align: right;
     white-space: nowrap;
+    vertical-align: top;
     border-bottom: var(--border-width-sm) solid var(--color-gray30);
 
     @include acms.media-breakpoint-up(sm) {

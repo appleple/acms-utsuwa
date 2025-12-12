@@ -213,12 +213,12 @@
   display: -webkit-box;
   margin-block: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
   color: var(--color-text-2nd);
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 

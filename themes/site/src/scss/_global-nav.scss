@@ -71,8 +71,8 @@
     height: 2px;
     content: "";
     background: var(--color-primary);
-    transform: scaleX(0);
     transition: transform 0.2s;
+    transform: scaleX(0);
   }
 
   &:hover {

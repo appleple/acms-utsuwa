@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../global/acms-common" as acms;
+@use "../global/common" as global;
+
+/* ------------------------------
+　　事例紹介
+------------------------------ */
+
+/* 事例紹介詳細
+----------------------------- */
+.works-main-image {
+  margin-bottom: var(--entry-el-margin-md);
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+}

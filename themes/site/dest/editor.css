@@ -101,6 +101,40 @@
   }
 }
 
+.acms-admin-block-editor-body a {
+  color: currentcolor;
+  -webkit-text-decoration: underline dotted 2px;
+          text-decoration: underline dotted 2px;
+  text-underline-offset: 3px;
+}
+.acms-admin-block-editor-body a[target=_blank] {
+  margin-right: 4px;
+}
+.acms-admin-block-editor-body a[target=_blank]::after {
+  display: inline-block;
+  flex: none;
+  width: 0.875em;
+  height: 0.875em;
+  margin-left: 4px;
+  vertical-align: baseline;
+  content: "";
+  background-color: currentcolor;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+          mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+@media (hover: hover) {
+  .acms-admin-block-editor-body a:-moz-any-link:hover {
+    text-decoration: none;
+  }
+  .acms-admin-block-editor-body a:any-link:hover {
+    text-decoration: none;
+  }
+}
+
 .entryFormLiteEditor a {
   color: currentcolor;
   -webkit-text-decoration: underline dotted 2px;
@@ -141,15 +175,28 @@
   font-style: italic;
 }
 
+.acms-admin-block-editor-body em {
+  font-style: italic;
+}
+
 /* strong
 ----------------------------- */
 .entry-style strong:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   font-weight: bold;
 }
 
+.acms-admin-block-editor-body strong {
+  font-weight: bold;
+}
+
 /* mark
 ----------------------------- */
 .entry-style mark:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  color: inherit;
+  background-color: var(--color-highlight);
+}
+
+.acms-admin-block-editor-body mark {
   color: inherit;
   background-color: var(--color-highlight);
 }
@@ -166,9 +213,23 @@
   border-radius: var(--border-radius-sm);
 }
 
+.acms-admin-block-editor-body code {
+  padding: 0 0.25rem;
+  margin-inline: 0.25rem;
+  font-size: 87.5%;
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid currentcolor;
+  border-radius: var(--border-radius-sm);
+}
+
 /* 見出し
 ----------------------------- */
 .entry-style h1:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
+.acms-admin-block-editor-body h1 {
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
@@ -176,7 +237,15 @@
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
+.acms-admin-block-editor-body h2 {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
 .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
+.acms-admin-block-editor-body h3 {
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
@@ -184,11 +253,23 @@
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
+.acms-admin-block-editor-body h4 {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
 .entry-style h5:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
+.acms-admin-block-editor-body h5 {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
 .entry-style h6:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
+}
+
+.acms-admin-block-editor-body h6 {
   margin-block: calc(var(--entry-el-margin-md) + var(--unit-heading-margin-top-add)) var(--entry-el-margin-sm);
 }
 
@@ -201,6 +282,25 @@
   padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 }
 .entry-style h2:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  content: "";
+  background: var(--color-primary);
+}
+
+.acms-admin-block-editor-body h2.heading-line {
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h2.heading-primary {
+  position: relative;
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+}
+.acms-admin-block-editor-body h2.heading-primary::before {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -230,6 +330,25 @@
   background: var(--color-primary);
 }
 
+.acms-admin-block-editor-body h3.heading-line {
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h3.heading-primary {
+  position: relative;
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+}
+.acms-admin-block-editor-body h3.heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  content: "";
+  background: var(--color-primary);
+}
+
 .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-line {
   padding-block-end: var(--entry-el-padding-xs);
   border-block-end: var(--border-width-md) solid var(--color-gray100);
@@ -239,6 +358,25 @@
   padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
 }
 .entry-style h4:not(:where([class~=not-editor-style], [class~=not-editor-style] *)).heading-primary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 2em;
+  height: var(--border-width-lg);
+  content: "";
+  background: var(--color-primary);
+}
+
+.acms-admin-block-editor-body h4.heading-line {
+  padding-block-end: var(--entry-el-padding-xs);
+  border-block-end: var(--border-width-md) solid var(--color-gray100);
+}
+.acms-admin-block-editor-body h4.heading-primary {
+  position: relative;
+  padding-block-end: calc(var(--entry-el-padding-xs) + var(--border-width-lg));
+}
+.acms-admin-block-editor-body h4.heading-primary::before {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -259,12 +397,32 @@
   }
 }
 
+.acms-admin-block-editor-body h2 {
+  font-size: 1.5625rem;
+  line-height: var(--line-height-base);
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body h2 {
+    font-size: 1.953125rem;
+  }
+}
+
 .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   font-size: 1.25rem;
   line-height: var(--line-height-base);
 }
 @media (min-width: 48rem) {
   .entry-style h3:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    font-size: 1.5625rem;
+  }
+}
+
+.acms-admin-block-editor-body h3 {
+  font-size: 1.25rem;
+  line-height: var(--line-height-base);
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body h3 {
     font-size: 1.5625rem;
   }
 }
@@ -279,9 +437,25 @@
   }
 }
 
+.acms-admin-block-editor-body h4 {
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body h4 {
+    font-size: 1.25rem;
+  }
+}
+
 /* 本文
 ----------------------------- */
 .entry-style p:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  margin-block: 0 var(--entry-el-margin-md);
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+}
+
+.acms-admin-block-editor-body p {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: 1rem;
   line-height: var(--line-height-lg);
@@ -325,6 +499,42 @@
   margin-top: var(--list-space-y);
 }
 
+.acms-admin-block-editor-body ul {
+  --list-space-y: 0.5rem; /* アイテム間の縦余白 */
+  display: grid;
+  gap: var(--list-space-y);
+  padding-left: calc(1lh + 0.375rem);
+  margin-block: 0 var(--entry-el-margin-md);
+}
+.acms-admin-block-editor-body ul > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
+  position: relative;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body ul > li::marker {
+  content: none;
+}
+.acms-admin-block-editor-body ul > li::before {
+  position: absolute;
+  top: calc(0.5lh - 0.1875rem);
+  left: calc((0.5lh + 0.1875rem) * -1);
+  width: 0.375rem;
+  height: 0.375rem;
+  content: "";
+  background: var(--color-secondary);
+  border-radius: 50%;
+}
+.acms-admin-block-editor-body ul > li:last-child {
+  margin-bottom: 0;
+}
+.acms-admin-block-editor-body ul > li > * {
+  /* ブロックエディタ：リセット用 */
+  margin-block: 0;
+}
+.acms-admin-block-editor-body ul > li ul {
+  margin-top: var(--list-space-y);
+}
+
 /* 番号付きリスト */
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   --order-list-space-y: 0.5rem; /* アイテム間の縦余白 */
@@ -336,11 +546,11 @@
   counter-reset: order-list;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
-  clear: both;
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   grid-auto-flow: column;
+  clear: both;
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
@@ -362,6 +572,47 @@
   margin-block: 0;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li ol {
+  grid-column: 1/-1; /* 列をまたいで全幅を確保 */
+  padding-left: 1rem;
+  margin-top: var(--order-list-space-y);
+}
+
+.acms-admin-block-editor-body ol {
+  --order-list-space-y: 0.5rem; /* アイテム間の縦余白 */
+  display: grid;
+  grid-template-columns: minmax(1lh, auto) 1fr; /* 列を「番号用」と「テキスト用」に分ける */ /* ulの1階層目テキストはじまりと揃えるために minmax(1lh, auto) で最小値を設定 */
+  gap: var(--order-list-space-y) 0.375rem; /* アイテム間余白, 番号とテキスト間余白 */
+  padding-inline-start: 0;
+  margin-block: 0 var(--entry-el-margin-md);
+  counter-reset: order-list;
+}
+.acms-admin-block-editor-body ol > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
+  display: grid;
+  grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
+  grid-column: 1/-1; /* 列をまたいで全幅を確保 */
+  grid-auto-flow: column;
+  clear: both;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body ol > li::marker {
+  content: none;
+}
+.acms-admin-block-editor-body ol > li::before {
+  grid-column: 1;
+  padding-top: 1.4px; /* 番号位置の微調整 */
+  font-weight: bold;
+  color: var(--color-text-2nd);
+  word-break: keep-all;
+  white-space: nowrap;
+  content: counters(order-list, "-") ". ";
+  counter-increment: order-list;
+}
+.acms-admin-block-editor-body ol > li > * {
+  /* ブロックエディタ：リセット用 */
+  margin-block: 0;
+}
+.acms-admin-block-editor-body ol > li ol {
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   padding-left: 1rem;
   margin-top: var(--order-list-space-y);
@@ -417,6 +668,55 @@
   }
 }
 
+.acms-admin-block-editor-body dl {
+  display: block; /* リセット用 */
+  padding-block: 0; /* リセット用 */
+  margin-block: 0 var(--entry-el-margin-md);
+  border: 0; /* リセット用 */
+}
+.acms-admin-block-editor-body dl dt {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body dl dd {
+  margin-bottom: 1rem;
+  margin-left: 0; /* リセット用 */
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+}
+.acms-admin-block-editor-body dl dd + dt {
+  margin-top: 0; /* リセット用 */
+}
+.acms-admin-block-editor-body dl.box-bordered {
+  border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
+}
+.acms-admin-block-editor-body dl.box-bordered dt {
+  padding-inline: var(--entry-el-padding-xs);
+  padding-top: var(--entry-el-padding-sm);
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+}
+.acms-admin-block-editor-body dl.box-bordered dt:first-child {
+  border: 0;
+}
+.acms-admin-block-editor-body dl.box-bordered dd {
+  padding-inline: var(--entry-el-padding-xs);
+  padding-bottom: var(--entry-el-padding-sm);
+  margin-bottom: 0;
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body dl.box-bordered dt {
+    padding-inline: var(--entry-el-padding-md);
+    padding-top: var(--entry-el-padding-md);
+  }
+  .acms-admin-block-editor-body dl.box-bordered dd {
+    padding-inline: var(--entry-el-padding-md);
+    padding-bottom: var(--entry-el-padding-md);
+  }
+}
+
 /* ソースコード
 ----------------------------- */
 .entry-style pre:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=code-highlight], [class~=code-highlight] *)) {
@@ -447,6 +747,34 @@
   }
 }
 
+.acms-admin-block-editor-body pre {
+  max-width: 100%;
+  padding: var(--entry-el-padding-sm);
+  margin-block: 0 var(--entry-el-margin-md);
+  overflow: auto;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  color: var(--color-text); /* 閲覧側画面の文字色はライブラリに依存 */
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid var(--color-primary);
+  border-radius: var(--border-radius-lg);
+}
+.acms-admin-block-editor-body pre code {
+  padding: 0;
+  /* リセット用 */
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body pre {
+    padding: var(--entry-el-padding-md);
+  }
+}
+
 /* 水平罫線
 ----------------------------- */
 .entry-style hr:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
@@ -456,6 +784,17 @@
 }
 @media (min-width: 48rem) {
   .entry-style hr:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    margin-bottom: var(--entry-el-margin-lg);
+  }
+}
+
+.acms-admin-block-editor-body hr {
+  margin-bottom: var(--entry-el-margin-md);
+  border: 0 solid var(--color-gray70);
+  border-top-width: var(--border-width-sm);
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body hr {
     margin-bottom: var(--entry-el-margin-lg);
   }
 }
@@ -657,6 +996,81 @@
 }
 @media (min-width: 48rem) {
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+    padding: var(--entry-el-padding-md);
+    margin-bottom: var(--entry-el-margin-lg);
+  }
+}
+
+.acms-admin-block-editor-body blockquote {
+  padding: var(--entry-el-padding-sm);
+  margin-block: 0 var(--entry-el-margin-md);
+  /* リセット用 */
+  margin-inline: 0;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  border: var(--border-width-md) solid var(--color-gray30);
+  /* ブロックエディタ調整：リセット用 */
+  /* ブロックエディタ調整 */
+}
+.acms-admin-block-editor-body blockquote > * {
+  margin-block: 0;
+}
+.acms-admin-block-editor-body blockquote * + * {
+  margin-block-start: 1rem;
+}
+.acms-admin-block-editor-body blockquote a {
+  color: currentcolor;
+  -webkit-text-decoration: underline dotted 2px;
+          text-decoration: underline dotted 2px;
+  text-underline-offset: 3px;
+  /* 中に画像が入っているリンクの時 */
+}
+.acms-admin-block-editor-body blockquote a[target=_blank] {
+  margin-right: 4px;
+}
+.acms-admin-block-editor-body blockquote a[target=_blank]::after {
+  display: inline-block;
+  flex: none;
+  width: 0.875em;
+  height: 0.875em;
+  margin-left: 4px;
+  vertical-align: baseline;
+  content: "";
+  background-color: currentcolor;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+          mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+@media (hover: hover) {
+  .acms-admin-block-editor-body blockquote a:-moz-any-link:hover {
+    text-decoration: none;
+  }
+  .acms-admin-block-editor-body blockquote a:any-link:hover {
+    text-decoration: none;
+  }
+}
+.acms-admin-block-editor-body blockquote a:has(img) {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+@media (hover: hover) {
+  .acms-admin-block-editor-body blockquote a:has(img):hover {
+    opacity: 0.7;
+  }
+}
+.acms-admin-block-editor-body blockquote img {
+  width: 100%;
+}
+.acms-admin-block-editor-body blockquote strong {
+  /* リセット用 */
+  background: transparent;
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body blockquote {
     padding: var(--entry-el-padding-md);
     margin-bottom: var(--entry-el-margin-lg);
   }
@@ -954,9 +1368,9 @@
   left: 50%;
   width: 12px;
   height: 10px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
   content: "";
   background-color: var(--color-primary);
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
   transform: translateX(-50%);
 }
 .entry-style .pricing-title {
@@ -1073,20 +1487,20 @@
 [class*=column-embed-] .acms-embed-link-title {
   margin: 0 0 0.5rem;
   overflow: hidden;
-  text-overflow: ellipsis;
   font-size: 1rem;
   font-weight: bold;
   line-height: var(--line-height-sm);
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 [class*=column-embed-] .acms-embed-link-description {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
+  font-size: 0.8rem;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  font-size: 0.8rem;
   -webkit-box-orient: vertical;
 }
 @media (min-width: 48rem) {
@@ -1117,9 +1531,9 @@
   [class*=column-embed-] .acms-embed-link-title {
     margin: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 1.25rem;
     font-weight: bold;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
@@ -1404,8 +1818,8 @@
   border-top: 0;
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th {
-  vertical-align: top;
   text-align: left;
+  vertical-align: top;
   background-color: var(--color-gray10);
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
@@ -1452,11 +1866,104 @@
   }
 }
 
+.acms-admin-block-editor-body table {
+  margin: 0 0 var(--entry-el-margin-md);
+  overflow: hidden;
+  border-spacing: 0;
+  border-collapse: separate; /* テーブルに角丸をつけるため separate にしています */
+  background-color: var(--color-white);
+  border: var(--border-width-sm) solid var(--color-gray30);
+  border-radius: var(--border-radius-lg);
+}
+.acms-admin-block-editor-body table th,
+.acms-admin-block-editor-body table td {
+  padding: var(--entry-el-padding-xs);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  border: 0; /* リセット */
+  border-top: var(--border-width-sm) solid var(--color-gray30);
+  border-left: var(--border-width-sm) solid var(--color-gray30);
+  /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
+}
+.acms-admin-block-editor-body table th > *,
+.acms-admin-block-editor-body table td > * {
+  margin-block: 0; /* リセット */
+}
+.acms-admin-block-editor-body table th > *:not(.ProseMirror-widget) + *,
+.acms-admin-block-editor-body table td > *:not(.ProseMirror-widget) + * {
+  margin-block-start: 1rem;
+}
+.acms-admin-block-editor-body table th:first-child,
+.acms-admin-block-editor-body table td:first-child {
+  border-left: 0;
+}
+.acms-admin-block-editor-body table tr:first-child th,
+.acms-admin-block-editor-body table tr:first-child td {
+  border-top: 0;
+}
+.acms-admin-block-editor-body table th {
+  text-align: left;
+  vertical-align: top;
+  background-color: var(--color-gray10);
+}
+.acms-admin-block-editor-body table td {
+  background-color: var(--color-white); /* リセット用 */
+}
+.acms-admin-block-editor-body table a {
+  color: currentcolor;
+  -webkit-text-decoration: underline dotted 2px;
+          text-decoration: underline dotted 2px;
+  text-underline-offset: 3px;
+}
+.acms-admin-block-editor-body table a[target=_blank] {
+  margin-right: 4px;
+}
+.acms-admin-block-editor-body table a[target=_blank]::after {
+  display: inline-block;
+  flex: none;
+  width: 0.875em;
+  height: 0.875em;
+  margin-left: 4px;
+  vertical-align: baseline;
+  content: "";
+  background-color: currentcolor;
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+          mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiB2aWV3Qm94PSIwIDAgMTIgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjI1IDYuMjkxNjdWMTEuMjVIMC43NVYwLjc1SDUuNzA4MzMiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0xMS4yNTA3IDAuNzVMNS43MDg5OCA2LjI5MTY3IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNMTEuMjQ5MyA0LjgzMzMzVjAuNzVINy4xNjYwMiIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMS41Ii8+PC9zdmc+Cg==);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+@media (hover: hover) {
+  .acms-admin-block-editor-body table a:-moz-any-link:hover {
+    text-decoration: none;
+  }
+  .acms-admin-block-editor-body table a:any-link:hover {
+    text-decoration: none;
+  }
+}
+@media (min-width: 48rem) {
+  .acms-admin-block-editor-body table th,
+  .acms-admin-block-editor-body table td {
+    padding: var(--entry-el-padding-sm);
+    font-size: 1rem;
+  }
+}
+
 .entry-style div:has(> table):not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
   margin-bottom: var(--entry-el-margin-md);
   overflow-x: auto;
 }
 .entry-style div:has(> table):not(:where([class~=not-editor-style], [class~=not-editor-style] *)) table {
+  width: 100%;
+  margin: 0;
+}
+
+.acms-admin-block-editor-body div:has(> table) {
+  margin-bottom: var(--entry-el-margin-md);
+  overflow-x: auto;
+}
+.acms-admin-block-editor-body div:has(> table) table {
   width: 100%;
   margin: 0;
 }
@@ -1792,12 +2299,12 @@
   display: -webkit-box;
   margin-block: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
   font-size: 1rem;
   line-height: var(--line-height-lg);
   color: var(--color-text-2nd);
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
