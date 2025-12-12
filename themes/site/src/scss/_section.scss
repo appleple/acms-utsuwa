@@ -164,9 +164,9 @@
 
   .js .js-animation & {
     &::after {
-      transition: 0.2s ease-out 0.5s;
       transform: scaleY(0);
       transform-origin: top;
+      transition: 0.2s ease-out 0.5s;
       will-change: transform, opacity;
     }
   }
@@ -240,8 +240,8 @@
   }
 
   .js &.js-animation::before {
-    transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
     transform: translateX(100%);
+    transition: 0.8s 0.2s cubic-bezier(0.1, 0.7, 0.51, 0.88);
     will-change: transform;
   }
 

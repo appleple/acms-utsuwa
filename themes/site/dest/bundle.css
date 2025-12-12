@@ -695,9 +695,9 @@ a {
   height: 2rem;
   padding: 0 0 0.5rem;
   font-weight: normal;
+  vertical-align: middle;
   color: var(--color-text-2nd);
   text-align: center;
-  vertical-align: middle;
 }
 @media (min-width: 48rem) {
   .calendar-label {
@@ -710,14 +710,17 @@ a {
 .calendar-day {
   height: 2.5rem;
   padding: 0;
+  vertical-align: middle;
   color: var(--color-text);
   text-align: center;
-  vertical-align: middle;
 }
 .calendar-day a {
   position: relative;
   display: inline-block;
+  width: 2rem;
+  height: 2rem;
   font-weight: bold;
+  line-height: 2rem;
   color: currentcolor;
   text-decoration: none;
 }
@@ -1051,9 +1054,9 @@ a {
 .calendar-event-table th {
   padding-block: calc(var(--calendar-event-item-cell-spacing-y) + var(--calendar-event-item-link-spacing-y));
   padding-inline-end: 0.5rem;
+  vertical-align: top;
   text-align: right;
   white-space: nowrap;
-  vertical-align: top;
   border-bottom: var(--border-width-sm) solid var(--color-gray30);
 }
 @media (min-width: 30rem) {
@@ -3977,8 +3980,6 @@ a {
 }
 
 .pager-simple-item-prev {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: prev;
 }
 .pager-simple-item-prev .pager-simple-link {
@@ -3986,20 +3987,7 @@ a {
 }
 
 .pager-simple-item-next {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
   grid-area: next;
-}
-
-@media (min-width: 48rem){
-  .pager-simple-item-prev {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-  }
-  .pager-simple-item-next {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
 }
 .pager-simple-item-next .pager-simple-link {
   align-items: flex-end;
@@ -6628,17 +6616,6 @@ a {
   }
   .logo-center .header-nav-wrap {
     grid-area: search;
-  }
-}
-
-@media (min-width: 64rem){
-  .logo-center .header-title {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-  }
-  .logo-center .header-nav-wrap {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
   }
 }
 /* 検索フォーム（ヘッダー）
