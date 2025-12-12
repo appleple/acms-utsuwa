@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const carousel = document.querySelector('#news-banner-carousel');
+  const carousel = document.querySelector('#banner-slide-top');
   if (!carousel) return;
 
   new Splide(carousel, {
