@@ -132,9 +132,9 @@
     left: 50%;
     width: 12px;
     height: 10px;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
     content: "";
     background-color: var(--color-white);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
     transform: translateX(-50%);
   }
 }
