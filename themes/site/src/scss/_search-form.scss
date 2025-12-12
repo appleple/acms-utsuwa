@@ -38,9 +38,9 @@
     }
 
     &:focus {
-      outline: none;
       background: var(--color-white);
       border-color: acms.$acms-form-focus-border-color;
+      outline: none;
       box-shadow: var(--box-shadow-focus), acms.$acms-form-box-shadow;
     }
   }
@@ -89,4 +89,140 @@
   gap: 0.5rem;
   justify-content: center;
   padding: 1rem 1rem 2rem;
+}
+
+
+/* 検索ボックス
+----------------------------- */
+.search-panel {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-xl);
+
+  .form-input-wrap {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.search-panel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.search-panel-item-wrap {
+  display: contents;
+}
+
+.search-panel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-panel-label {
+  display: inline-block;
+  min-width: 8rem;
+  font-weight: bold;
+}
+
+.search-panel-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-panel-keyword {
+  width: 100%;
+}
+
+.search-panel-footer {
+  text-align: center;
+}
+
+@include acms.media-breakpoint-up(sm) {
+  .search-panel {
+    .form-checkbox {
+      width: calc(100% / 2 - 2rem);
+    }
+
+    .search-panel-input {
+      flex: 1;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}
+
+@include acms.media-breakpoint-up(md) {
+  .search-panel {
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: var(--border-radius-xxl);
+
+    .search-panel-group {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .search-panel-item {
+      flex-direction: row;
+      gap: var(--col-gutter);
+      align-items: center;
+    }
+  }
+}
+
+@include acms.media-breakpoint-up(lg) {
+  .search-panel .form-checkbox {
+    width: calc(100% / 3 - 2rem);
+  }
+}
+
+
+/* 検索結果
+----------------------------- */
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 2rem;
+
+  &:not(:has(*)) {
+    display: none;
+  }
+}
+
+.search-amount {
+  margin: 0;
+  font-size: map.get(global.$font-scales, body-m);
+  font-weight: bold;
+  line-height: var(--line-height-base);
+}
+
+.search-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: 0;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-lg);
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    flex-direction: row;
+    gap: var(--col-gutter);
+  }
 }

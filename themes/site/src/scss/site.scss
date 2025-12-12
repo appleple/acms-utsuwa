@@ -42,7 +42,6 @@
 
 // コンテンツ
 @use "entry";
-@use "not-found";
 @use "section";
 @use "section-side";
 
@@ -50,8 +49,8 @@
 @use "footer";
 @use "header";
 
-// 追加コンテンツ
-@use "blog";
-@use "recruit";
-@use "option/works";
-@use "option/event";
+// ページ固有
+@use "page/not-found";
+@use "page/blog";
+@use "page/event";
+@use "page/works";
