@@ -783,11 +783,11 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
   font-size: 1rem;
   line-height: var(--line-height-lg);
   color: var(--color-text-2nd);
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -953,9 +953,9 @@ a {
   left: 50%;
   width: 12px;
   height: 10px;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
   content: "";
   background-color: var(--color-white);
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
   transform: translateX(-50%);
 }
 
@@ -1102,8 +1102,8 @@ a {
   height: 2px;
   content: "";
   background: var(--color-primary);
-  transform: scaleX(0);
   transition: transform 0.2s;
+  transform: scaleX(0);
 }
 .global-nav-link:hover {
   text-decoration: none;
@@ -1405,8 +1405,8 @@ a {
           mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwIDE4TDE2IDEyTDEwIDYiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPgo=);
   -webkit-mask-size: contain;
           mask-size: contain;
-  transform: rotate(90deg);
   transition: transform 0.3s ease;
+  transform: rotate(90deg);
 }
 :where(.global-nav-mobile-item.level-1:has(.global-nav-mobile-group)) > .global-nav-mobile-link .icon-expand.is-close {
   transform: rotate(-90deg);
@@ -1719,8 +1719,8 @@ a {
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
   font-weight: normal;
-  vertical-align: middle;
   color: var(--color-danger);
+  vertical-align: middle;
   background: var(--color-danger-light);
   border-radius: var(--border-radius-sm);
 }
@@ -1730,8 +1730,8 @@ a {
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
   font-weight: normal;
-  vertical-align: middle;
   color: var(--color-text);
+  vertical-align: middle;
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 }
@@ -2040,8 +2040,8 @@ a {
   display: none;
 }
 .form-group .valid-mark.valid {
-  float: right;
   display: inline;
+  float: right;
   color: #5cb85c;
 }
 .form-group .invalid {
@@ -2551,11 +2551,11 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
+  font-size: 1rem;
+  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  font-size: 1rem;
-  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 
@@ -2928,6 +2928,8 @@ a {
 }
 
 .pager-simple-item-prev {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: prev;
 }
 .pager-simple-item-prev .pager-simple-link {
@@ -2935,7 +2937,20 @@ a {
 }
 
 .pager-simple-item-next {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: next;
+}
+
+@media (min-width: 48rem){
+  .pager-simple-item-prev {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .pager-simple-item-next {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
 }
 .pager-simple-item-next .pager-simple-link {
   align-items: flex-end;
@@ -3027,9 +3042,9 @@ a {
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
   line-height: var(--line-height-base);
   color: var(--color-text);
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -3109,9 +3124,9 @@ a {
   border-color: var(--color-gray50);
 }
 .form-search input.form-search-input:focus {
-  outline: none;
   background: var(--color-white);
   border-color: #137af3;
+  outline: none;
   box-shadow: var(--box-shadow-focus), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 .form-search .form-search-side-button {
@@ -3149,6 +3164,129 @@ a {
   gap: 0.5rem;
   justify-content: center;
   padding: 1rem 1rem 2rem;
+}
+
+/* 検索ボックス
+----------------------------- */
+.search-panel {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-xl);
+}
+.search-panel .form-checkbox {
+  width: 50%;
+}
+.search-panel .form-input-wrap {
+  padding-bottom: 1.5rem;
+}
+
+.search-panel-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.search-panel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-panel-label {
+  display: inline-block;
+  min-width: 8rem;
+  font-weight: bold;
+}
+
+.search-panel-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 0;
+  align-items: center;
+}
+.search-panel-input.price {
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-panel-keyword {
+  width: 100%;
+}
+
+.search-panel-footer {
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .search-panel {
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border-radius: var(--border-radius-xxl);
+  }
+  .search-panel .form-checkbox {
+    width: calc(33.3333333333% - 2rem);
+  }
+  .search-panel .search-panel-group {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .search-panel .search-panel-item {
+    flex-direction: row;
+    gap: var(--col-gutter);
+    align-items: center;
+  }
+  .search-panel .search-panel-input {
+    flex: 1;
+    gap: 1rem;
+  }
+  .search-panel .search-panel-input.price {
+    flex-direction: row;
+  }
+  .search-panel .search-panel-input.price select {
+    flex: 1;
+  }
+}
+/* 検索結果
+----------------------------- */
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 2rem;
+}
+.search-results:not(:has(*)) {
+  display: none;
+}
+
+.search-amount {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: var(--line-height-base);
+}
+
+.search-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin: 0;
+  background: var(--color-gray10);
+  border-radius: var(--border-radius-lg);
+}
+.search-conditions dt {
+  font-weight: bold;
+}
+.search-conditions dd {
+  margin: 0;
+}
+@media (min-width: 48rem) {
+  .search-conditions {
+    flex-direction: row;
+    gap: var(--col-gutter);
+  }
 }
 
 /* ------------------------------
@@ -3788,63 +3926,6 @@ a {
   }
 }
 /* ------------------------------
-　　404ページ
------------------------------- */
-.not-found-content {
-  margin: 0 0 4rem;
-}
-
-.not-found-title {
-  margin: 0 0 1rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  line-height: var(--line-height-sm);
-}
-
-.not-found-paragraph {
-  margin: 0 0 2rem;
-}
-.not-found-paragraph a {
-  padding-block: 2px;
-  color: var(--color-link);
-  text-decoration: none;
-  border-bottom: 1px dotted currentcolor;
-}
-.not-found-paragraph a:hover {
-  border-color: transparent;
-}
-
-.not-found-search .form-search {
-  margin: 1rem auto 3rem;
-}
-.not-found-search .form-search-label {
-  line-height: 3;
-}
-.not-found-search .form-search-action {
-  max-width: 29rem;
-}
-
-.not-found-button {
-  margin: 1rem 0 2rem;
-  text-align: center;
-}
-
-@media (min-width: 48rem) {
-  .not-found-content {
-    margin: 0 0 7.5rem;
-  }
-  .not-found-title {
-    margin: 0 0 2rem;
-    font-size: 2rem;
-    text-align: center;
-  }
-  .not-found-search .form-search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-/* ------------------------------
 　　セクション
 ------------------------------ */
 .section-pt {
@@ -3985,9 +4066,9 @@ a {
   background: var(--color-gray30);
 }
 .js .js-animation .section-vertical-header::after {
+  transition: 0.2s ease-out 0.5s;
   transform: scaleY(0);
   transform-origin: top;
-  transition: 0.2s ease-out 0.5s;
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .section-vertical-header::after {
@@ -4146,13 +4227,13 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
   font-size: 1rem;
   font-weight: bold;
   line-height: var(--line-height-base);
   color: var(--color-text);
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -4420,131 +4501,65 @@ a {
   }
 }
 /* ------------------------------
-　　物件情報
+　　404ページ
 ------------------------------ */
-/* 検索ボックス
------------------------------ */
-.search-panel {
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-  background: var(--color-gray10);
-  border-radius: var(--border-radius-xl);
-}
-.search-panel .form-checkbox {
-  width: 50%;
-}
-.search-panel .form-input-wrap {
-  padding-bottom: 1.5rem;
+.not-found-content {
+  margin: 0 0 4rem;
 }
 
-.search-panel-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.search-panel-item {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.search-panel-label {
-  display: inline-block;
-  min-width: 8rem;
+.not-found-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
+  line-height: var(--line-height-sm);
 }
 
-.search-panel-input {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 0;
-  align-items: center;
+.not-found-paragraph {
+  margin: 0 0 2rem;
 }
-.search-panel-input.price {
-  flex-direction: column;
-  width: 100%;
+.not-found-paragraph a {
+  padding-block: 2px;
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px dotted currentcolor;
 }
-
-.search-panel-keyword {
-  width: 100%;
+.not-found-paragraph a:hover {
+  border-color: transparent;
 }
 
-.search-panel-footer {
+.not-found-search .form-search {
+  margin: 1rem auto 3rem;
+}
+.not-found-search .form-search-label {
+  line-height: 3;
+}
+.not-found-search .form-search-action {
+  max-width: 29rem;
+}
+
+.not-found-button {
+  margin: 1rem 0 2rem;
   text-align: center;
 }
 
 @media (min-width: 48rem) {
-  .search-panel {
-    padding: 3rem;
-    margin-bottom: 3rem;
-    border-radius: var(--border-radius-xxl);
+  .not-found-content {
+    margin: 0 0 7.5rem;
   }
-  .search-panel .form-checkbox {
-    width: calc(33.3333333333% - 2rem);
+  .not-found-title {
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    text-align: center;
   }
-  .search-panel .search-panel-group {
+  .not-found-search .form-search {
     display: flex;
-    flex-flow: row wrap;
-  }
-  .search-panel .search-panel-item {
-    flex-direction: row;
-    gap: var(--col-gutter);
     align-items: center;
-  }
-  .search-panel .search-panel-input {
-    flex: 1;
-    gap: 1rem;
-  }
-  .search-panel .search-panel-input.price {
-    flex-direction: row;
-  }
-  .search-panel .search-panel-input.price select {
-    flex: 1;
+    justify-content: center;
   }
 }
-/* 検索結果
------------------------------ */
-.search-results {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 0 0 2rem;
-}
-.search-results:not(:has(*)) {
-  display: none;
-}
-
-.search-amount {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: var(--line-height-base);
-}
-
-.search-conditions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin: 0;
-  background: var(--color-gray10);
-  border-radius: var(--border-radius-lg);
-}
-.search-conditions dt {
-  font-weight: bold;
-}
-.search-conditions dd {
-  margin: 0;
-}
-@media (min-width: 48rem) {
-  .search-conditions {
-    flex-direction: row;
-    gap: var(--col-gutter);
-  }
-}
-
+/* ------------------------------
+　　物件情報
+------------------------------ */
 /* 物件詳細
 ----------------------------- */
 .realestate-map-entry {
