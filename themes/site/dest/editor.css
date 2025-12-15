@@ -336,11 +336,11 @@
   counter-reset: order-list;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
+  clear: both;
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   grid-auto-flow: column;
-  clear: both;
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
@@ -954,9 +954,9 @@
   left: 50%;
   width: 12px;
   height: 10px;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
   content: "";
   background-color: var(--color-primary);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
   transform: translateX(-50%);
 }
 .entry-style .pricing-title {
@@ -1073,20 +1073,20 @@
 [class*=column-embed-] .acms-embed-link-title {
   margin: 0 0 0.5rem;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1rem;
   font-weight: bold;
   line-height: var(--line-height-sm);
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 [class*=column-embed-] .acms-embed-link-description {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  font-size: 0.8rem;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  font-size: 0.8rem;
   -webkit-box-orient: vertical;
 }
 @media (min-width: 48rem) {
@@ -1117,9 +1117,9 @@
   [class*=column-embed-] .acms-embed-link-title {
     margin: 0;
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1.25rem;
     font-weight: bold;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
@@ -1404,8 +1404,8 @@
   border-top: 0;
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th {
-  text-align: left;
   vertical-align: top;
+  text-align: left;
   background-color: var(--color-gray10);
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
@@ -1792,12 +1792,12 @@
   display: -webkit-box;
   margin-block: 0;
   overflow: hidden;
-  font-size: 1rem;
-  line-height: var(--line-height-lg);
-  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 4;
   line-clamp: 4;
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 
