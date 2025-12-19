@@ -130,6 +130,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
+  line-height: var(--line-height-lg);
   color: var(--color-text);
 
   a {
@@ -171,10 +172,7 @@
   display: inline-block;
   margin: 0;
   font-size: map.get(global.$font-scales, heading-m);
-
-  @include acms.media-breakpoint-up(md) {
-    font-size: map.get(global.$font-scales, heading-m);
-  }
+  line-height: var(--line-height-sm);
 }
 
 .calendar-pagination-return {
@@ -415,14 +413,10 @@
 
 .calendar-event-day {
   display: block;
-  font-size: map.get(global.$font-scales, heading-ss);
+  font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
   text-align: right;
-
-  @include acms.media-breakpoint-up(md) {
-    font-size: map.get(global.$font-scales, heading-s);
-  }
 }
 
 .badge-day {
@@ -432,7 +426,7 @@
   width: 1.75rem;
   height: 1.75rem;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: 1;
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
   text-align: center;
   background-color: var(--color-gray10);
