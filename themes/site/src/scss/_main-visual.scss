@@ -107,12 +107,13 @@
   .main-visual-catch {
     margin: 0;
     font-size: map.get(global.$font-scales, heading-l);
-    line-height: var(--line-height-base);
+    line-height: var(--line-height-xs);
     animation: fade-in 0.3s 0.8s 1 both;
     will-change: transform, opacity;
 
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-3xl);
+      line-height: var(--line-height-2xs);
     }
   }
 
@@ -245,16 +246,18 @@
     margin: 0;
     font-size: map.get(global.$font-scales, heading-s);
     font-weight: bold;
-    line-height: var(--line-height-base);
+    line-height: var(--line-height-md);
     animation: fade-in 0.3s 1.3s 1 both;
     will-change: transform, opacity;
 
     @include acms.media-breakpoint-up(sm) {
       font-size: map.get(global.$font-scales, heading-2xl);
+      line-height: var(--line-height-2xs);
     }
 
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-3xl);
+      line-height: var(--line-height-xs);
     }
   }
 
@@ -268,6 +271,7 @@
 
     @include acms.media-breakpoint-up(sm) {
       font-size: map.get(global.$font-scales, body-l);
+      line-height: var(--line-height-lg);
     }
   }
 
@@ -468,7 +472,7 @@
     padding-inline: 0.5rem;
     margin: 0;
     font-size: map.get(global.$font-scales, heading-m);
-    line-height: var(--line-height-base);
+    line-height: var(--line-height-sm);
     color: var(--color-white);
     background: var(--color-primary);
     animation: fade-in 0.3s 0.8s 1 both;
@@ -478,10 +482,12 @@
     @include acms.media-breakpoint-up(sm) {
       padding-inline: 1rem;
       font-size: map.get(global.$font-scales, heading-2xl);
+      line-height: var(--line-height-2xs);
     }
 
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-3xl);
+      line-height: var(--line-height-xs);
     }
   }
 
@@ -500,7 +506,6 @@
     margin: 0;
     font-size: map.get(global.$font-scales, body-m);
     font-weight: bold;
-    line-height: 1.8;
     color: var(--color-white);
     background: var(--color-gray100);
     animation: fade-in 0.3s 1.3s 1 both;
@@ -510,6 +515,7 @@
     @include acms.media-breakpoint-up(sm) {
       padding-inline: 1rem;
       font-size: map.get(global.$font-scales, body-l);
+      line-height: var(--line-height-lg);
     }
   }
 

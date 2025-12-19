@@ -14,7 +14,7 @@
   /* リセット用 */
   margin-inline: 0;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
   border: var(--border-width-md) solid var(--color-gray30);
 
   /* ブロックエディタ調整：リセット用 */

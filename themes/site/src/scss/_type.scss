@@ -11,7 +11,7 @@
 .heading-lg {
   margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-md);
 
   &.heading-line {
     padding-bottom: 1rem;
@@ -36,6 +36,7 @@
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 
   a {
@@ -47,7 +48,7 @@
 .heading-md {
   margin-block: 0 var(--entry-el-margin-sm);
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-lg);
 
   &.heading-line {
     padding-bottom: 1rem;
@@ -56,34 +57,29 @@
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
+    line-height: var(--line-height-md);
   }
 }
 
 .heading-sm {
   margin-block: 0 var(--entry-el-margin-sm);
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, heading-ss);
+  line-height: var(--line-height-lg);
 
   &.heading-line {
     padding-bottom: 1rem;
     border-bottom: var(--border-width-md) solid var(--color-gray100);
-  }
-
-  @include acms.media-breakpoint-up(md) {
-    font-size: map.get(global.$font-scales, heading-ss);
   }
 }
 
 .heading-ss {
   margin-block: 0 var(--entry-el-margin-sm);
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, heading-3s);
+  line-height: var(--line-height-base);
 
   &.heading-line {
     padding-bottom: 1rem;
     border-bottom: var(--border-width-md) solid var(--color-gray100);
-  }
-
-  @include acms.media-breakpoint-up(md) {
-    font-size: map.get(global.$font-scales, body-m);
   }
 }
 

@@ -20,6 +20,7 @@
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
   }
 }
 
@@ -32,7 +33,7 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
   color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 

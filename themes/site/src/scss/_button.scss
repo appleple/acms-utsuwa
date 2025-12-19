@@ -12,7 +12,7 @@
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
   line-height: var(--line-height-base);
-  color: var(--color-white);;
+  color: var(--color-white);
   text-align: center;
   background: var(--color-primary);
   border: 0;
@@ -118,6 +118,7 @@
 .button-view-all-articles-text {
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
+  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 

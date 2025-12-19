@@ -53,7 +53,7 @@
 .profile-text {
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
 }
 
 .profile-footer {
@@ -149,10 +149,6 @@
   }
 
   .profile-name {
-    font-size: map.get(global.$font-scales, body-m);
-  }
-
-  .profile-text {
     font-size: map.get(global.$font-scales, body-m);
   }
 

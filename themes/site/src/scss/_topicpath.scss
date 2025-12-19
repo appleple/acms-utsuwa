@@ -35,7 +35,7 @@
   align-items: center;
   height: 1.25rem;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1;
+  line-height: var(--line-height-none);
   color: var(--color-text);
 }
 

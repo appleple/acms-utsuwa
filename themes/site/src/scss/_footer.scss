@@ -56,7 +56,7 @@
 .footer-company-title {
   margin: 0 0 1rem;
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-none);
 }
 
 .footer-company-logo {
@@ -92,6 +92,7 @@
 .footer-address-name {
   margin: 0 0 0.5rem;
   font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 
 }
@@ -135,6 +136,7 @@
   flex: 1 0 calc(50% - 1rem);
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
 
   @include acms.media-breakpoint-up(lg) {
     flex: 1 0 calc(25% - 2rem);
@@ -167,7 +169,7 @@
   text-decoration: none;
 
   @media (hover: hover) {
-     &:any-link:hover {
+    &:any-link:hover {
       text-decoration: underline dotted 1px;
       text-underline-offset: 3px;
     }
@@ -234,6 +236,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
+  line-height: var(--line-height-base);
 }
 
 /* SNS */

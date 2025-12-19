@@ -34,7 +34,7 @@
 .section-horizontal-heading {
   margin: 0;
   font-size: map.get(global.$font-scales, heading-l);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-xs);
   color: var(--color-text);
 }
 
@@ -59,14 +59,13 @@
   margin: 0 0 1em;
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
   color: var(--color-text-2nd);
 }
 
 .section-horizontal-text {
   p {
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.7;
     color: var(--color-text-2nd);
   }
 
@@ -92,17 +91,6 @@
   margin: 2.5rem 0 0;
 }
 
-@include acms.media-breakpoint-up(md) {
-  .section-horizontal-heading {
-    font-size: map.get(global.$font-scales, headling-l);
-  }
-
-  .section-horizontal-lead {
-    font-size: map.get(global.$font-scales, heading-s);
-    color: var(--color-text-2nd);
-  }
-}
-
 @include acms.media-breakpoint-up(lg) {
   .section-horizontal {
     display: flex;
@@ -121,17 +109,16 @@
 
   .section-horizontal-heading {
     font-size: map.get(global.$font-scales, heading-2xl);
+    line-height: var(--line-height-2xs);
   }
 
   .section-horizontal-lead {
     font-size: map.get(global.$font-scales, heading-m);
-    color: var(--color-text-2nd);
+    line-height: var(--line-height-sm);
   }
 
   .section-horizontal-text p {
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.7;
-    color: var(--color-text-2nd);
   }
 
   .section-horizontal-main {
@@ -181,7 +168,7 @@
 .section-vertical-heading {
   margin: 0;
   font-size: map.get(global.$font-scales, heading-l);
-  line-height: var(--line-height-base);
+    line-height: var(--line-height-xs);
   color: var(--color-text);
 }
 
@@ -189,6 +176,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 
   .js-animation & {
@@ -198,12 +186,6 @@
 
   .js-animation.is-show & {
     animation: fade-in 0.2s 0.5s 1 both;
-  }
-}
-
-@include acms.media-breakpoint-up(md) {
-  .section-vertical-heading {
-    font-size: map.get(global.$font-scales, heading-l);
   }
 }
 
@@ -219,6 +201,7 @@
 
   .section-vertical-heading {
     font-size: map.get(global.$font-scales, heading-2xl);
+    line-height: var(--line-height-2xs);
   }
 }
 
