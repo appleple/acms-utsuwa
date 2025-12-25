@@ -146,13 +146,13 @@
   width: 100%;
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-lg);
   color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
+    line-height: var(--line-height-md);
   }
-
 }
 
 /* 概要文 */
@@ -160,11 +160,11 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
+  font-size: map.get(global.$font-scales, body-m);
+  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
-  font-size: map.get(global.$font-scales, body-m);
-  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 

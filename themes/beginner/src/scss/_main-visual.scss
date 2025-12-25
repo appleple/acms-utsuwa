@@ -107,12 +107,13 @@
   .main-visual-catch {
     margin: 0;
     font-size: map.get(global.$font-scales, heading-l);
-    line-height: var(--line-height-base);
+    line-height: var(--line-height-xs);
     animation: fade-in 0.3s 0.8s 1 both;
     will-change: transform, opacity;
 
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-3xl);
+      line-height: var(--line-height-2xs);
     }
   }
 
