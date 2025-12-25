@@ -86,28 +86,31 @@
 
 @include acms.editor-style("h2") {
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 }
 
 @include acms.editor-style("h3") {
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-lg);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
+    line-height: var(--line-height-md);
   }
 }
 
 @include acms.editor-style("h4") {
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, heading-3s);
   line-height: var(--line-height-base);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
   }
 }
 
@@ -116,7 +119,6 @@
 @include acms.editor-style("p") {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
 }
 
 /* リスト
@@ -176,11 +178,11 @@
   counter-reset: order-list;
 
   & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
-    clear: both;
     display: grid;
     grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
     grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
     grid-auto-flow: column;
+    clear: both;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
 

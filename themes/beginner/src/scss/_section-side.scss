@@ -21,6 +21,7 @@
 .section-side-title {
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
 }
 
 /* サイドセクションのエントリー一覧
@@ -94,13 +95,13 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
   line-height: var(--line-height-base);
   color: var(--color-text);
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 

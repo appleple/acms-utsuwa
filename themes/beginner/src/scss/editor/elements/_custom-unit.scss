@@ -39,8 +39,9 @@
   .message-lead {
     position: relative;
     margin: 0;
-    font-size: map.get(global.$font-scales, heading-s);
+    font-size: map.get(global.$font-scales, heading-ss);
     font-weight: bold;
+    line-height: var(--line-height-lg);
   }
 
   .message-content {
@@ -85,14 +86,13 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-
       }
-
     }
 
     .message-lead {
       height: auto;
       font-size: map.get(global.$font-scales, heading-s);
+      line-height: var(--line-height-md);
     }
 
     .message-content {

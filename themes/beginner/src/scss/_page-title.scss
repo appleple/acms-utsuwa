@@ -48,7 +48,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-md);
   word-break: break-all;
 }
 
@@ -62,7 +62,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 
   &::first-letter {
@@ -79,10 +79,12 @@
 
   .page-title {
     font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 
   .page-title-en {
     font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
   }
 }
 
@@ -93,7 +95,7 @@
 .page-sub-title {
   margin: 0 0 2rem;
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
   color: var(--color-text);
 
   a {
@@ -103,5 +105,6 @@
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 }

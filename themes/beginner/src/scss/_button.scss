@@ -12,7 +12,7 @@
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
   line-height: var(--line-height-base);
-  color: var(--color-white);;
+  color: var(--color-white);
   text-align: center;
   background: var(--color-primary);
   border: 0;
@@ -62,7 +62,7 @@
   align-items: center;
   height: 1.75rem;
   margin: 0;
-  line-height: 1;
+  line-height: var(--line-height-none);
   text-decoration: none;
 
   .js .js-animation & {
@@ -86,6 +86,7 @@
 .button-view-all-articles-text {
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
+  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 

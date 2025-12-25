@@ -56,6 +56,7 @@
 .footer-company-title {
   margin: 0 0 1rem;
   font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-none);
 }
 
 .footer-company-logo {
@@ -91,8 +92,8 @@
 .footer-address-name {
   margin: 0 0 0.5rem;
   font-size: map.get(global.$font-scales, body-m);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
-
 }
 
 .footer-address-item {
@@ -147,6 +148,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
+  line-height: var(--line-height-base);
 }
 
 /* SNS */

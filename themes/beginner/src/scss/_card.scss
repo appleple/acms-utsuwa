@@ -106,7 +106,7 @@
   position: absolute;
   display: inline-block;
   margin-block: 0;
-  line-height: 1;
+  line-height: var(--line-height-none);
 
   &.left-top {
     top: 10px;
@@ -213,11 +213,11 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
   font-size: map.get(global.$font-scales, body-m);
   line-height: var(--line-height-lg);
   color: var(--color-text-2nd);
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 

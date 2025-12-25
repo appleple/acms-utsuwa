@@ -22,7 +22,7 @@
   margin-right: 0; /* リセット */
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
-  line-height: 1.3;
+  line-height: var(--line-height-base);
   text-decoration: none; /* リセット */
   background-color: var(--color-primary);
   border-radius: var(--border-radius-md);

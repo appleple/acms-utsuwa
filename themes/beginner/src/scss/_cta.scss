@@ -57,22 +57,21 @@
   display: inline-block;
   padding: 0.25rem 1.5rem;
   margin: 0 0 1rem;
-  font-size: calc(map.get(global.$font-scales, heading-ss) * 0.7);
+  font-size: map.get(global.$font-scales, heading-3s);
   font-weight: bold;
-  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
   background: var(--color-white);
   border-radius: var(--border-radius-round);
 
   &::before {
     position: absolute;
-    bottom: -10px;
+    bottom: -9px;
     left: 50%;
     width: 12px;
     height: 10px;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
     content: "";
     background-color: var(--color-white);
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
     transform: translateX(-50%);
   }
 }
@@ -81,7 +80,7 @@
   position: relative;
   margin: 0 0 1rem;
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
 }
 
 .cta-visual-text {
@@ -118,16 +117,14 @@
   }
 
   .cta-visual-title {
-    font-size: map.get(global.$font-scales, heading-l);
-  }
-
-  .cta-visual-text {
-    font-size: map.get(global.$font-scales, body-m);
+    font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 
   .cta-visual-comment {
     padding: 0.5rem 1.5rem;
     margin: 0 0 2rem;
-    font-size: calc(map.get(global.$font-scales, heading-m) * 0.7);
+    font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
   }
 }

@@ -46,12 +46,11 @@
   }
 
   .acms-embed-link-title {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.25rem;
     overflow: hidden;
-    text-overflow: ellipsis;
     font-size: map.get(global.$font-scales, body-m);
     font-weight: bold;
-    line-height: var(--line-height-sm);
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 
@@ -59,10 +58,11 @@
     display: -webkit-box;
     margin: 0;
     overflow: hidden;
+    font-size: map.get(global.$font-scales, body-s);
+    color: var(--color-text-2nd);
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    font-size: map.get(global.$font-scales, body-s);
     -webkit-box-orient: vertical;
   }
 
@@ -97,9 +97,9 @@
     .acms-embed-link-title {
       margin: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: map.get(global.$font-scales, heading-ss);
+      font-size: map.get(global.$font-scales, heading-3s);
       font-weight: bold;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
   }
