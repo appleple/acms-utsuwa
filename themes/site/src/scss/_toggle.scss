@@ -24,10 +24,9 @@
 
 .toggle-icon {
   width: 1.75rem;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 1.75rem;
   margin-left: auto;
-  line-height: 1;
+  line-height: var(--line-height-none);
   color: var(--color-text);
   transition: .3s ease;
 
@@ -48,6 +47,7 @@
 
   @include acms.media-breakpoint-up(md) {
     width: 2rem;
+    height: 2rem;
   }
 }
 

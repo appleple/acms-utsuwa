@@ -92,9 +92,9 @@
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
-  height: 1.75rem;
+  height: 1.5rem;
   margin: 0;
-  line-height: 1;
+  line-height: var(--line-height-base);
   text-decoration: none;
 
   .js .js-animation & {
@@ -116,9 +116,7 @@
 }
 
 .button-view-all-articles-text {
-  font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
-  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 

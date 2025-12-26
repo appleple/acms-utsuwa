@@ -212,7 +212,7 @@
   gap: 0.25rem;
   align-items: center;
   padding-block: 0.5rem;
-  line-height: 1;
+  line-height: var(--line-height-base);
   text-decoration: none;
 
   @media (hover: hover) {
@@ -229,9 +229,7 @@
 }
 
 .calendar-pagination-link-text {
-  font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
-  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 
@@ -309,7 +307,8 @@
   justify-content: flex-end;
   padding-block: 0.25rem;
   margin: 0;
-  line-height: 1;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   text-decoration: none;
 
   @media (hover: hover) {
@@ -322,9 +321,7 @@
 }
 
 .section-side-link-text {
-  font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 

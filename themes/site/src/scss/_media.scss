@@ -184,17 +184,16 @@
   align-items: center;
   height: 1.5rem;
   margin: 0;
-  line-height: 1;
 
   @include acms.media-breakpoint-up(md) {
     gap: 0.5rem;
-    height: 1.75rem;
   }
 }
 
 .media-item-read-more-text {
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
+  line-height: var(--line-zheight-base);
   color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {

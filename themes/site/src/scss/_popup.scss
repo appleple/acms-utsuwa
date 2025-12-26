@@ -30,7 +30,7 @@
 .popup-banner-link {
   z-index: 1; /* safari の img opacityによる画像はみ出し対策 */
   display: inline-block;
-  line-height: 1;
+  line-height: var(--line-height-none);
   cursor: pointer;
 
   @media (hover: hover) {
