@@ -193,7 +193,7 @@
 .media-item-read-more-text {
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-zheight-base);
+  line-height: var(--line-height-base);
   color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
