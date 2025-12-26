@@ -106,7 +106,7 @@
   position: absolute;
   display: inline-block;
   margin-block: 0;
-  line-height: 1;
+  line-height: var(--line-height-none);
 
   &.left-top {
     top: 10px;
@@ -203,7 +203,7 @@
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
   color: var(--color-text);
 }
 
@@ -217,7 +217,7 @@
   -webkit-line-clamp: 4;
   line-clamp: 4;
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
   color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
@@ -228,6 +228,9 @@
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: var(--line-height-none);
 }
 
 /* 補足ラベルリスト */
@@ -241,7 +244,7 @@
 /* 補足ラベル */
 .card-supplement-label {
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
   color: var(--color-text);
 }
 
@@ -283,6 +286,7 @@
 .card-read-more-text {
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
+  line-height: var(--line-height-base);
   color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {

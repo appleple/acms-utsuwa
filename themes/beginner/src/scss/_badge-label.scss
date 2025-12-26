@@ -13,6 +13,7 @@
   min-width: 2.5rem;
   padding: 0.25rem 0.5rem;
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
   text-align: center;
   background: var(--color-gray10);

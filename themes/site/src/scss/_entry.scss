@@ -12,7 +12,7 @@
 ------------------------------ */
 .entry-header {
   margin: 0 0 var(--entry-el-margin-md);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
 
   // エントリータイトル非表示時に要素ごと非表示
   &:not(:has(*)) {
@@ -28,7 +28,6 @@
 
 .entry-header-date {
   font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 }
 
@@ -44,7 +43,6 @@
   padding: 0.25rem 0.5rem;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-height-base);
   text-decoration: none;
   border: 1px solid var(--color-gray30);
   border-radius: var(--border-radius-md);
@@ -66,7 +64,8 @@
   position: relative;
   padding: 0 0 1rem;
   margin: 0 0 1.5rem;
-  font-size: map.get(global.$font-scales, heading-ss);
+  font-size: map.get(global.$font-scales, heading-s);
+  line-height: var(--line-height-md);
   border-bottom: var(--border-width-lg) solid var(--color-gray10);
 
   &::before {
@@ -103,7 +102,7 @@
     padding: 0 0 1.5rem;
     margin: 0 0 1.5rem;
     font-size: map.get(global.$font-scales, heading-m);
-
+    line-height: var(--line-height-sm);
   }
 }
 
@@ -292,7 +291,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: 1;
+  line-height: var(--line-height-none);
   text-align: center;
   text-box-trim: trim-both;
   text-box-edge: text;
@@ -598,6 +597,7 @@
   gap: 1rem;
   justify-content: space-between;
   margin: 0 0 2rem;
+  line-height: var(--line-height-base);
   border-radius: var(--border-radius-md);
 
   a {
@@ -630,12 +630,14 @@
     .is-works &,
     .is-event & {
       flex-direction: row;
-      gap: 1rem 2rem;
+      gap: 1rem 1.5rem;
       width: 100%;
     }
   }
 
   .detail-panel {
+    gap: 1.5rem;
+
     dt {
       width: 8rem;
     }

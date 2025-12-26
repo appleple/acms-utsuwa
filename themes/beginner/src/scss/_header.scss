@@ -29,7 +29,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: 1;
+  line-height: var(--line-height-none);
 }
 
 .header-logo {

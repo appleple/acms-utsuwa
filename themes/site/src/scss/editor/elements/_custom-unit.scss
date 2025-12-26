@@ -27,7 +27,7 @@
     margin: 0 0 1rem;
     font-size: map.get(global.$font-scales, heading-ss);
     font-weight: bold;
-    line-height: 1.5;
+    line-height: var(--line-height-lg);
   }
 
   /* リスト */
@@ -50,7 +50,7 @@
   .entry-outline-list-wrap .outline-item {
     display: contents; /* li要素自体はグリッドレイアウトに影響させない */
     font-size: map.get(global.$font-scales, body-m);
-    line-height: 1.5;
+    line-height: var(--line-height-base);
     color: var(--color-text);
 
     span,
@@ -137,8 +137,9 @@
   .message-lead {
     position: relative;
     margin: 0;
-    font-size: map.get(global.$font-scales, heading-s);
+    font-size: map.get(global.$font-scales, heading-ss);
     font-weight: bold;
+    line-height: var(--line-height-lg);
   }
 
   .message-content {
@@ -183,14 +184,12 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
-
       }
-
     }
 
     .message-lead {
-      height: auto;
       font-size: map.get(global.$font-scales, heading-s);
+      line-height: var(--line-height-md);
     }
 
     .message-content {
@@ -278,6 +277,7 @@
   .pricing-title {
     margin: 0 0 0.5rem;
     font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
     color: var(--color-primary);
   }
 
@@ -292,7 +292,7 @@
     margin: 0 0 0.5rem;
     font-size: map.get(global.$font-scales, heading-l);
     font-weight: bold;
-    line-height: var(--line-height-ss);
+    line-height: var(--line-height-xs);
     text-align: center;
   }
 
@@ -305,6 +305,7 @@
     padding: 0;
     margin: 0 0 1rem;
     font-size: map.get(global.$font-scales, body-s);
+    line-height: var(--line-height-base);
     list-style: none;
 
     li {
@@ -357,10 +358,6 @@
     .pricing-label {
       padding: 0.5rem 1.5rem;
       font-size: 1.25rem;
-    }
-
-    .pricing-title {
-      font-size: map.get(global.$font-scales, heading-ss);
     }
   }
 }

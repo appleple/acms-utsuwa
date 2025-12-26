@@ -21,6 +21,7 @@
 .section-side-title {
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-ss);
+  line-height: var(--line-height-lg);
 }
 
 /* サイドセクションのエントリー一覧

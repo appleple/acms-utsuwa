@@ -45,6 +45,6 @@
   display: block;
   margin: 4px 0 0; /* 余白リセットのため全方向指定 */
   font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 }

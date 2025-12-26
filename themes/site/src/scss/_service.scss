@@ -15,11 +15,12 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-lg);
   color: var(--color-text);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
+    line-height: var(--line-height-md);
   }
 }
 
@@ -29,6 +30,6 @@
   margin: 0;
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-base);
   color: var(--color-text);
 }

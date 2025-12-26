@@ -99,7 +99,7 @@
               <!-- END labels:veil -->
               <h3 class="card-title" id="card-entry{eid}">{title}</h3>
               <!-- BEGIN_IF [{station}{price}/nem] -->
-              <dl class="card-supplement-label-list acms-lh-1 acms-my-0">
+              <dl class="card-supplement-label-list acms-my-0">
                 <!-- BEGIN_IF [{station}/nem] -->
                 <dt class="acms-hide-visually">アクセス</dt>
                 <dd class="acms-ms-0"><span class="card-supplement-label">{station}<!-- BEGIN_IF [{station}/nem/_and_/{toho}/nem] -->より徒歩{toho}分<!-- END_IF --></span></dd>
@@ -107,7 +107,7 @@
               </dl>
               <!-- END_IF -->
               <!-- BEGIN tag_list:veil -->
-              <dl class="card-tag-list acms-lh-1 acms-my-0">
+              <dl class="card-tag-list">
                 <dt class="acms-hide-visually">タグ</dt>
                 <!-- BEGIN tag:loop -->
                 <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>

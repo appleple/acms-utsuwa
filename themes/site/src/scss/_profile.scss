@@ -53,7 +53,7 @@
 .profile-text {
   margin: 0;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-xl);
 }
 
 .profile-footer {
@@ -92,7 +92,8 @@
   justify-content: flex-end;
   padding-block: 0.25rem;
   margin: 0;
-  line-height: 1;
+  font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   text-decoration: none;
 
   @media (hover: hover) {
@@ -105,9 +106,7 @@
 }
 
 .profile-author-link-text {
-  font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 
@@ -149,10 +148,6 @@
   }
 
   .profile-name {
-    font-size: map.get(global.$font-scales, body-m);
-  }
-
-  .profile-text {
     font-size: map.get(global.$font-scales, body-m);
   }
 

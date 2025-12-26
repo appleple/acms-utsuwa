@@ -57,11 +57,6 @@
       color: var(--color-gray70);
     }
 
-    &.forward-link,
-    &.back-link {
-      line-height: 1;
-    }
-
     svg {
       color: inherit;
 
@@ -303,9 +298,9 @@
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
   line-height: var(--line-height-base);
   color: var(--color-text);
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 

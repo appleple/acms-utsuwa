@@ -7,6 +7,7 @@
 ------------------------------ */
 .tag-sm-label {
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 }
 
@@ -25,7 +26,7 @@
   display: grid;
   place-items: center;
   font-size: map.get(global.$font-scales, body-s);
-  line-height: 1.5;
+  line-height: var(--line-height-base);
   color: var(--color-text);
 }
 
@@ -94,9 +95,14 @@
 /* 選択されているタグ */
 .tag-filter-heading {
   margin-block: 0 0.5rem;
-  font-size: map.get(global.$font-scales, heading-m);
+  font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: 1.5;
+  line-height: var(--line-height-md);
+
+  @include acms.media-breakpoint-up(md) {
+    font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
+  }
 }
 
 .tag-filter-selected-list {
@@ -111,7 +117,7 @@
 .tag-filter-selected-item {
   font-size: map.get(global.$font-scales, body-m);
   font-weight: bold;
-  line-height: 1.5;
+  line-height: var(--line-height-base);
 
   a {
     text-decoration: none;
@@ -137,7 +143,6 @@
   margin-block: 1rem 0.5rem;
   font-size: map.get(global.$font-scales, body-m);
   font-weight: normal;
-  line-height: 1.7;
 }
 
 .tag-filter-choice-list {
@@ -151,7 +156,6 @@
 
 .tag-filter-choice-item {
   font-size: map.get(global.$font-scales, body-m);
-  line-height: 1.7;
   color: var(--color-text);
 
   a {
@@ -187,7 +191,6 @@
 
   li {
     font-size: inherit;
-    line-height: 1.7;
     color: var(--color-text);
   }
 

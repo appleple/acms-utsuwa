@@ -92,28 +92,31 @@
 
 @include acms.editor-style("h2") {
   font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-md);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
   }
 }
 
 @include acms.editor-style("h3") {
   font-size: map.get(global.$font-scales, heading-ss);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-lg);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
+    line-height: var(--line-height-md);
   }
 }
 
 @include acms.editor-style("h4") {
-  font-size: map.get(global.$font-scales, body-m);
+  font-size: map.get(global.$font-scales, heading-3s);
   line-height: var(--line-height-base);
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-ss);
+    line-height: var(--line-height-lg);
   }
 }
 
@@ -122,7 +125,6 @@
 @include acms.editor-style("p") {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
 }
 
 /* リスト

@@ -45,7 +45,7 @@
   margin: 0.5rem 0 0;
   font-size: map.get(global.$font-scales, body-s);
   font-weight: bold;
-  line-height: var(--line-height-ss);
+  line-height: var(--line-height-none);
   color: var(--color-white);
 }
 
@@ -107,6 +107,7 @@
   width: 100%;
   margin-top: var(--header-height);
   overflow-y: scroll;
+  line-height: var(--line-height-base);
   background: var(--color-globalnav-bg);
   opacity: 0;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -214,8 +215,8 @@
   background-color: currentcolor;
   mask-image: url("#{global.$root-theme-img}icon/chevron-right.svg");
   mask-size: contain;
-  transform: rotate(90deg);
   transition: transform 0.3s ease;
+  transform: rotate(90deg);
 
   &.is-close {
     transform: rotate(-90deg);
