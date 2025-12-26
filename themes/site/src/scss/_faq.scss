@@ -52,7 +52,7 @@
   margin-block: 0;
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
-  line-height: 1;
+  line-height: var(--line-height-none);
   text-align: center;
   text-box-trim: trim-both;
   text-box-edge: text;
@@ -66,7 +66,7 @@
     /* モジュールユニット時のユニットスタイルによるスタイル上書き防止 */
     margin-block: 0;
     font-size: map.get(global.$font-scales, heading-s);
-    line-height: 1;
+    line-height: var(--line-height-none);
 
     @include acms.media-breakpoint-up(md) {
       font-size: map.get(global.$font-scales, heading-m);
