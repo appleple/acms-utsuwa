@@ -203,7 +203,7 @@
   margin: 0;
   font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-lg);
   color: var(--color-text);
 }
 
@@ -213,8 +213,6 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
   color: var(--color-text-2nd);
   -webkit-line-clamp: 4;
   line-clamp: 4;
@@ -240,7 +238,6 @@
 /* 補足ラベル */
 .card-supplement-label {
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
   color: var(--color-text);
 }
 

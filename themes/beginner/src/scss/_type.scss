@@ -83,7 +83,6 @@
 .paragraph {
   margin-block: 0 var(--entry-el-margin-md);
   font-size: map.get(global.$font-scales, body-m);
-  line-height: var(--line-height-lg);
   color: var(--color-text);
 
   a {

@@ -11,9 +11,9 @@
 
 .not-found-title {
   margin: 0 0 1rem;
-  font-size: 1.25rem;
+  font-size: map.get(global.$font-scales, heading-ss);
   font-weight: bold;
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-lg);
 }
 
 .not-found-paragraph {
@@ -57,7 +57,8 @@
 
   .not-found-title {
     margin: 0 0 2rem;
-    font-size: 2rem;
+    font-size: map.get(global.$font-scales, heading-m);
+    line-height: var(--line-height-sm);
     text-align: center;
   }
 
