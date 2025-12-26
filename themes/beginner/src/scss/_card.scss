@@ -225,6 +225,9 @@
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: var(--line-height-none);
 }
 
 /* 補足ラベルリスト */
