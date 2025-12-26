@@ -33,7 +33,7 @@
   flex-direction: column;
   align-items: center;
   font-size: map.get(global.$font-scales, body-m);
-    line-height: var(--line-height-baseline);
+  line-height: var(--line-height-base);
   color: var(--color-text);
   list-style: none;
 
