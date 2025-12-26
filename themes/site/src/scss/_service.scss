@@ -20,7 +20,7 @@
 
   @include acms.media-breakpoint-up(md) {
     font-size: map.get(global.$font-scales, heading-s);
-  line-height: var(--line-height-md);
+    line-height: var(--line-height-md);
   }
 }
 

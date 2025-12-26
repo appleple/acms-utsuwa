@@ -168,7 +168,7 @@
 .section-vertical-heading {
   margin: 0;
   font-size: map.get(global.$font-scales, heading-l);
-    line-height: var(--line-height-xs);
+  line-height: var(--line-height-xs);
   color: var(--color-text);
 }
 
