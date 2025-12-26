@@ -7,6 +7,7 @@
 ------------------------------ */
 .tag-sm-label {
   font-size: map.get(global.$font-scales, body-s);
+  line-height: var(--line-height-base);
   color: var(--color-text-2nd);
 }
 
