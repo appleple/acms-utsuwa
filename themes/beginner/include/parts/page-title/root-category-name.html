@@ -5,12 +5,11 @@
     <div class="acms-container">
       @include("/include/edit/category-custom.html")
       <div class="page-title-text-wrap">
-        <!-- BEGIN_MODULE Touch_Entry -->
+        <!-- BEGIN_IF [%{ECD}/nem] -->
         <p class="page-title">%{ROOT_CATEGORY_NAME}</p>
-        <!-- END_MODULE Touch_Entry -->
-        <!-- BEGIN_MODULE Touch_NotEntry -->
+        <!-- ELSE -->
         <h1 class="page-title">%{ROOT_CATEGORY_NAME}</h1>
-        <!-- END_MODULE Touch_NotEntry -->
+        <!-- END_IF -->
         <!-- BEGIN title_description:veil --><p class="page-title-en">{title_description}[nl2br]</p><!-- END title_description:veil -->
       </div>
     </div>
