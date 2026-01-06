@@ -16,43 +16,42 @@
     <!-- END notFound -->
 
     <!-- BEGIN entry_list:veil -->
-    <div class="section-main">
-      <ul class="acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2; list-style-type: '';">
-        <!-- BEGIN entry:loop -->
-        <li class="js-animation-row">
-          <a href="{url}" class="card-bordered-link">
-            <div class="card-bordered">
-              <div class="card-bordered-img-wrap">
-                <!-- BEGIN_IF [{path}/nem] -->
-                <img
-                  src="%{ROOT_DIR}{path}[resizeImg(800)]"
-                  width="800"
-                  height="{path}[imageRatioSizeH(800)]"
-                  alt="{path@alt}"
-                  class="card-bordered-img"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <!-- ELSE -->
-                <img
-                  src="/images/noimage.png"
-                  alt=""
-                  width="1200"
-                  height="675"
-                  class="card-bordered-img"
-                  loading="lazy"
-                  decoding="async"
-                ><!-- END_IF -->
-              </div>
-              <div class="card-bordered-text-layout">
-                <h3 class="card-bordered-title">{title}</h3>
-              </div>
+    <ul class="acms-my-0 acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2<!-- END_IF -->" style="--card-img-aspect-ratio: 5 / 2; list-style-type: '';">
+      <!-- BEGIN entry:loop -->
+      <li class="js-animation-row">
+        <a href="{url}" class="card-bordered-link">
+          <div class="card-bordered">
+            <div class="card-bordered-img-wrap">
+              <!-- BEGIN_IF [{path}/nem] -->
+              <img
+                src="%{ROOT_DIR}{path}[resizeImg(800)]"
+                width="800"
+                height="{path}[imageRatioSizeH(800)]"
+                alt="{path@alt}"
+                class="card-bordered-img"
+                loading="lazy"
+                decoding="async"
+              >
+              <!-- ELSE -->
+              <img
+                src="/images/noimage.png"
+                alt=""
+                width="1200"
+                height="675"
+                class="card-bordered-img"
+                loading="lazy"
+                decoding="async"
+              ><!-- END_IF -->
             </div>
-          </a>
-        </li>
-        <!-- END entry:loop -->
-      </ul>
-    </div>
+            <div class="card-bordered-text-layout">
+              <h3 class="card-bordered-title">{title}</h3>
+            </div>
+          </div>
+        </a>
+      </li>
+      <!-- END entry:loop -->
+    </ul>
     <!-- END entry_list:veil -->
   </div>
-</section><!-- END_MODULE Entry_Summary -->
+</section>
+<!-- END_MODULE Entry_Summary -->

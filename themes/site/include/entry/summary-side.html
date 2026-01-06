@@ -11,9 +11,9 @@
   <!-- END notFound -->
 
   <!-- BEGIN entry_list:veil -->
-  <div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem; --summary-side-img-aspect-ratio: 1 / 1;">
+  <ul class="acms-my-0 acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-md-2 acms-g-cols-lg-1<!-- END_IF -->" style="--acms-gap: 1rem; --summary-side-img-aspect-ratio: 1 / 1; list-style-type: '';">
     <!-- BEGIN entry:loop -->
-    <article aria-labelledby="summary-side-entry{eid}">
+    <li>
       <a href="{url}" class="summary-side-link">
         <div class="summary-side-link-inner">
           <div class="summary-side">
@@ -42,38 +42,35 @@
             </div>
             <div>
               <!-- BEGIN labels:veil -->
-              <dl class="summary-side-labels-layout acms-lh-1 acms-mt-0">
+              <div class="summary-side-labels-layout acms-lh-1">
                 <!-- BEGIN_IF [{date#}/nem] -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">投稿日</dt>
-                  <dd class="summary-side-date-layout acms-ms-0">
+                <p class="acms-inline-block acms-my-0">
+                  <span class="acms-hide-visually">投稿日</span>
+                  <span class="summary-side-date-layout">
                     <time class="summary-side-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                     <!-- BEGIN new -->
                     <span class="label">New</span>
                     <!-- END new -->
-                  </dd>
-                </div>
+                  </span>
+                </p>
                 <!-- END_IF -->
                 <!-- BEGIN categoryField:veil -->
                 <!-- BEGIN categoryField -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">カテゴリー</dt>
-                  <dd class="acms-ms-0">
-                    <span class="label">{fieldCategoryName}</span>
-                  </dd>
-                </div>
+                <p class="label">
+                  <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+                </p>
                 <!-- END categoryField -->
                 <!-- END categoryField:veil -->
-              </dl>
+              </div>
               <!-- END labels:veil -->
-              <h3 class="summary-side-title" id="summary-side-entry{eid}">{title}</h3>
+              <h3 class="summary-side-title">{title}</h3>
             </div>
           </div>
         </div>
       </a>
-    </article>
+    </li>
     <!-- END entry:loop -->
-  </div>
+  </ul>
   <!-- END entry_list:veil -->
 </section>
 <!-- END_MODULE Entry_Summary -->

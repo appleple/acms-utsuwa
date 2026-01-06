@@ -1,3 +1,4 @@
+レイアウト
 <!-- BEGIN_MODULE Media_Banner --><!-- BEGIN moduleField -->
 <section class="section-pt<!-- BEGIN_IF [{section_class}/eq/is-bg] --> section-pb section-bg-color<!-- ELSE --> section-mb<!-- END_IF --> js-animation not-editor-style">
   <div class="acms-container">
@@ -11,27 +12,25 @@
     </header>
     <!-- END moduleField -->
 
-    <div>
-      <ul class="banner-list acms-m-0 acms-p-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-3<!-- END_IF -->" style="--acms-gap: var(--col-gutter);">
-        <!-- BEGIN banner:loop -->
-        <li class="banner-item">
-          <!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src -->
-          <!-- BEGIN banner#img -->
-          <a href="{url}" target="{target}" class="banner-link">
-            <img
-              src="%{MEDIA_ARCHIVES_DIR}{img}"
-              width="{x}"
-              height="{y}"
-              alt="{alt}"
-              class="acms-img-responsive banner-img"
-              loading="lazy"
-              decoding="async"
-            >
-          </a>
-          <!-- END banner#img -->
-        </li>
-        <!-- END banner:loop -->
-      </ul>
-    </div>
+    <ul class="banner-list acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-3<!-- END_IF -->" style="--acms-gap: var(--col-gutter);">
+      <!-- BEGIN banner:loop -->
+      <li class="banner-item">
+        <!-- BEGIN banner#src -->{src}[raw]<!-- END banner#src -->
+        <!-- BEGIN banner#img -->
+        <a href="{url}" target="{target}" class="banner-link">
+          <img
+            src="%{MEDIA_ARCHIVES_DIR}{img}"
+            width="{x}"
+            height="{y}"
+            alt="{alt}"
+            class="acms-img-responsive banner-img"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+        <!-- END banner#img -->
+      </li>
+      <!-- END banner:loop -->
+    </ul>
   </div>
 </section><!-- END_MODULE Media_Banner -->

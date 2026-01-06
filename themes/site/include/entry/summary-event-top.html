@@ -64,15 +64,15 @@
                     <!-- BEGIN event_labels:veil -->
                     <div class="event-card-labels-layout">
                       <!-- BEGIN_IF [{date#}/nem] -->
-                      <dl class="acms-lh-1 acms-my-0">
-                        <dt class="acms-hide-visually">開催日時</dt>
-                        <dd class="card-date-layout acms-ms-0">
+                      <p class="acms-lh-1 acms-my-0">
+                        <span class="acms-hide-visually">開催日時</span>
+                        <span class="card-date-layout">
                           <time class="event-card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                           <!-- BEGIN event_time:veil -->
                           <span class="event-card-time">{event_time}</span>
                           <!-- END event_time:veil -->
-                        </dd>
-                      </dl>
+                        </span>
+                      </p>
                       <!-- END_IF -->
                       <!-- BEGIN labels:veil -->
                       <div class="card-labels-layout">
@@ -84,12 +84,9 @@
                         <!-- END event_pref:veil -->
                         <!-- BEGIN categoryField:veil -->
                         <!-- BEGIN categoryField -->
-                        <dl class="acms-lh-1 acms-my-0">
-                          <dt class="acms-hide-visually">カテゴリー</dt>
-                          <dd class="acms-ms-0">
-                            <span class="label">{fieldCategoryName}</span>
-                          </dd>
-                        </dl>
+                        <p class="label">
+                          <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+                        </p>
                         <!-- END categoryField -->
                         <!-- END categoryField:veil -->
                       </div>

@@ -1,7 +1,7 @@
 <h3 class="acms-admin-admin-title2">CTAの設定</h3>
 <table class="adminTable acms-admin-table-admin-edit">
   <tr>
-    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="カテゴリーの背景画像を設定します。"></i></th>
+    <th>背景画像<i class="acms-admin-icon-tooltip js-acms-tooltip" data-acms-tooltip="セクションの背景画像を設定します。"></i></th>
     <td class="js-media-field">
       <div class="js-droparea" data-thumbnail="{cta_bg_image@thumbnail}" data-type="image" style="width:200px"></div>
       <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>
@@ -37,14 +37,14 @@
     </td>
   </tr>
   <tr>
-    <th><label for="input-textarea_cta_lead">リード文</label><i data-acms-tooltip="リード文を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th><label for="input-textarea_cta_lead">リード文</label>&ensp;<span class="acms-admin-label acms-admin-label-danger">必須</span></th>
     <td>
       <textarea name="cta_lead" rows="2" id="input-textarea_cta_lead" class="acms-admin-form-width-3quarters">{cta_lead}</textarea>
       <input type="hidden" name="field[]" value="cta_lead" />
     </td>
   </tr>
   <tr>
-    <th><label for="input-textarea_cta_desc">概要文</label><i data-acms-tooltip="概要文を設定します。" class="acms-admin-icon-tooltip js-acms-tooltip-hover"></i></th>
+    <th><label for="input-textarea_cta_desc">概要文</label></th>
     <td>
       <textarea name="cta_desc" rows="3" id="input-textarea_cta_desc" class="acms-admin-form-width-3quarters">{cta_desc}</textarea>
       <input type="hidden" name="field[]" value="cta_desc" />

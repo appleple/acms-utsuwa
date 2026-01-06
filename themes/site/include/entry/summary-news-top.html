@@ -20,35 +20,32 @@
 
       <!-- BEGIN entry_list:veil -->
       <div class="section-horizontal-main">
-        <ul class="headline-list js-animation-row" style="list-style-type: '';">
+        <ul class="headline-list js-animation-row">
           <!-- BEGIN entry:loop -->
           <li class="headline-list-item">
             <a href="{url}" class="headline-link">
               <div class="headline">
                 <div class="headline-texts-layout">
-                  <dl class="headline-labels-layout acms-lh-1 acms-my-0">
+                  <div class="headline-labels-layout acms-lh-1">
                     <!-- BEGIN_IF [{date#}/nem] -->
-                    <div class="acms-inline-block">
-                      <dt class="acms-hide-visually">投稿日</dt>
-                      <dd class="headline-date-layout acms-ms-0">
+                    <p class="acms-inline-block acms-my-0">
+                      <span class="acms-hide-visually">投稿日</span>
+                      <span class="headline-date-layout">
                         <time class="headline-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                         <!-- BEGIN new -->
                         <span class="label">New</span>
                         <!-- END new -->
-                      </dd>
-                    </div>
+                      </span>
+                    </p>
                     <!-- END_IF -->
                     <!-- BEGIN categoryField:veil -->
                     <!-- BEGIN categoryField -->
-                    <div class="acms-inline-block">
-                      <dt class="acms-hide-visually">カテゴリー</dt>
-                      <dd class="acms-ms-0">
-                        <span class="label">{fieldCategoryName}</span>
-                      </dd>
-                    </div>
+                    <p class="label">
+                      <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+                    </p>
                     <!-- END categoryField -->
                     <!-- END categoryField:veil -->
-                  </dl>
+                  </div>
                   <h3 class="headline-title">{title}</h3>
                 </div>
               </div>
