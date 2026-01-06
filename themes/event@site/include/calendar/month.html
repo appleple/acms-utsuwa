@@ -5,10 +5,9 @@
       <!-- BEGIN event_labels:veil -->
       <div class="calendar-item-labels-layout">
         <!-- BEGIN event_time:veil -->
-        <dl class="acms-lh-1 acms-my-0">
-          <dt class="acms-hide-visually">開催時間</dt>
-          <dd class="acms-ms-0"><span class="calendar-item-time">{event_time}</span></dd>
-        </dl>
+        <p class="calendar-item-time">
+          <span class="acms-hide-visually">開催時間</span>{event_time}
+        </p>
         <!-- BEGIN event_status:veil -->
         <p class="label is-dark">
           <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
@@ -23,12 +22,9 @@
         <!-- END event_pref:veil -->
         <!-- BEGIN categoryField:veil -->
         <!-- BEGIN categoryField -->
-        <dl class="acms-lh-1 acms-my-0">
-          <dt class="acms-hide-visually">カテゴリー</dt>
-          <dd class="acms-ms-0">
-            <span class="label">{fieldCategoryName}</span>
-          </dd>
-        </dl>
+        <p class="label">
+          <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+        </p>
         <!-- END categoryField -->
         <!-- END categoryField:veil -->
       </div>

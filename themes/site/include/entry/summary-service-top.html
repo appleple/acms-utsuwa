@@ -16,53 +16,51 @@
     <!-- END notFound -->
 
     <!-- BEGIN entry_list:veil -->
-    <div class="section-vertical-main">
-      <ul class="acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9; list-style-type: '';">
-        <!-- BEGIN entry:loop -->
-        <li class="js-animation-row">
-          <a href="{url}" class="card-link">
-            <div class="card-link-inner">
-              <div class="card">
-                <div class="card-img-wrap">
-                  <!-- BEGIN_IF [{path}/nem] -->
-                  <img
-                    src="%{ROOT_DIR}{path}[resizeImg(800)]"
-                    width="800"
-                    height="{path}[imageRatioSizeH(800)]"
-                    alt="{alt}"
-                    class="card-img"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <!-- ELSE -->
-                  <img
-                    src="/images/noimage.png"
-                    alt=""
-                    width="1200"
-                    height="675"
-                    class="card-img"
-                    loading="lazy"
-                    decoding="async"
-                  >
-                  <!-- END_IF -->
-                </div>
-                <div class="card-texts-layout">
-                  <h3 class="service-card-title">{title}</h3>
-                  <!-- BEGIN page_description:veil -->
-                  <p class="card-description">{page_description}</p>
-                  <!-- END page_description:veil -->
-                  <p class="card-read-more">
-                    <span class="card-read-more-text">詳しく見る</span>
-                    <span class="card-read-more-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span>
-                  </p>
-                </div>
+    <ul class="acms-my-0 acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9; list-style-type: '';">
+      <!-- BEGIN entry:loop -->
+      <li class="js-animation-row">
+        <a href="{url}" class="card-link">
+          <div class="card-link-inner">
+            <div class="card">
+              <div class="card-img-wrap">
+                <!-- BEGIN_IF [{path}/nem] -->
+                <img
+                  src="%{ROOT_DIR}{path}[resizeImg(800)]"
+                  width="800"
+                  height="{path}[imageRatioSizeH(800)]"
+                  alt="{alt}"
+                  class="card-img"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <!-- ELSE -->
+                <img
+                  src="/images/noimage.png"
+                  alt=""
+                  width="1200"
+                  height="675"
+                  class="card-img"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <!-- END_IF -->
+              </div>
+              <div class="card-texts-layout">
+                <h3 class="service-card-title">{title}</h3>
+                <!-- BEGIN page_description:veil -->
+                <p class="card-description">{page_description}</p>
+                <!-- END page_description:veil -->
+                <p class="card-read-more">
+                  <span class="card-read-more-text">詳しく見る</span>
+                  <span class="card-read-more-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span>
+                </p>
               </div>
             </div>
-          </a>
-        </li>
-        <!-- END entry:loop -->
-      </ul>
-    </div>
+          </div>
+        </a>
+      </li>
+      <!-- END entry:loop -->
+    </ul>
     <!-- END entry_list:veil -->
   </div>
 </section>

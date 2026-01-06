@@ -5,20 +5,20 @@
   <h2 class="heading-md">おすすめ記事</h2>
 
   <!-- BEGIN notFound -->
-  <div class="paragraph">この記事のハッシュタグに関連する記事が見つかりませんでした。</div>
+  <p class="paragraph">この記事のハッシュタグに関連する記事が見つかりませんでした。</p>
   <!-- END notFound -->
 
   <!-- BEGIN_IF [<!-- BEGIN notFound -->notFound<!-- END notFound -->/em] -->
-  <div class="paragraph">
+  <p class="paragraph">
     <span class="acms-me-4">この記事のハッシュタグ</span>
-    <ul class="tag-list-relational"><!-- GET_Rendered id="tag" --></ul>
+    <span class="tag-list-relational"><!-- GET_Rendered id="tag" --></span>
     から関連する記事を表示しています。
-  </div>
+  </p>
 
   <!-- BEGIN entry_list:veil -->
-  <div class="acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->">
+  <ul class="acms-my-0 acms-ps-0 acms-cssgrid<!-- BEGIN_IF [{parent.loop.class}/nem] --> {parent.loop.class}<!-- ELSE --> acms-g-cols-1 acms-g-cols-sm-2 acms-g-cols-md-3<!-- END_IF -->" style="--card-img-aspect-ratio: 16 / 9; list-style-type: '';">
     <!-- BEGIN entry:loop -->
-    <article aria-labelledby="card-entry{eid}-relational">
+    <li>
       <a href="{url}" class="card-link">
         <div class="card-link-inner">
           <div class="card">
@@ -47,58 +47,43 @@
             </div>
             <div class="card-texts-layout">
               <!-- BEGIN labels:veil -->
-              <dl class="card-labels-layout acms-lh-1 acms-my-0">
+              <div class="card-labels-layout acms-lh-1">
                 <!-- BEGIN categoryField:veil -->
                 <!-- BEGIN categoryField -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">カテゴリー</dt>
-                  <dd class="acms-ms-0">
-                    <span class="label">{fieldCategoryName}</span>
-                  </dd>
-                </div>
+                <p class="label">
+                  <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+                </p>
                 <!-- END categoryField -->
                 <!-- END categoryField:veil -->
                 <!-- BEGIN work_industry:veil -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">業種</dt>
-                  <dd class="acms-ms-0">
-                    <span class="label">
-                      <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
-                      <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
-                      <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
-                      <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
-                      <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
-                      <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
-                      <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
-                      <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
-                      <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF -->
-                    </span>
-                  </dd>
-                </div>
+                <p class="label">
+                  <span class="acms-hide-visually">業種</span>
+                  <!-- BEGIN_IF [{work_industry}/eq/industry1] -->製造業
+                  <!-- ELSE_IF [{work_industry}/eq/industry2] -->建設・建築
+                  <!-- ELSE_IF [{work_industry}/eq/industry3] -->卸売・小売
+                  <!-- ELSE_IF [{work_industry}/eq/industry4] -->医療・福祉
+                  <!-- ELSE_IF [{work_industry}/eq/industry5] -->人材紹介・派遣
+                  <!-- ELSE_IF [{work_industry}/eq/industry6] -->不動産
+                  <!-- ELSE_IF [{work_industry}/eq/industry7] -->自治体・官公庁
+                  <!-- ELSE_IF [{work_industry}/eq/industry8] -->IT・システム開発
+                  <!-- ELSE_IF [{work_industry}/eq/industry9] -->その他<!-- END_IF -->
+                </p>
                 <!-- END work_industry:veil -->
-              </dl>
+              </div>
               <!-- END labels:veil -->
               <!-- BEGIN_IF [{work_copy}/nem] -->
-              <h3 id="card-entry{eid}-relational" class="card-title">{work_copy}</h3>
+              <h3 class="card-title">{work_copy}</h3>
               <p class="service-card-work-name">{title}</p>
               <!-- ELSE -->
-              <h3 id="card-entry{eid}-relational" class="card-title">{title}</h3>
+              <h3 class="card-title">{title}</h3>
               <!-- END_IF -->
-              <!-- BEGIN tag_list:veil -->
-              <dl class="card-tag-list">
-                <dt class="acms-hide-visually">タグ</dt>
-                <!-- BEGIN tag:loop -->
-                <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
-                <!-- END tag:loop -->
-              </dl>
-              <!-- END tag_list:veil -->
             </div>
           </div>
         </div>
       </a>
-    </article>
+    </li>
     <!-- END entry:loop -->
-  </div>
+  </ul>
   <!-- END entry_list:veil -->
   <!-- END_IF -->
 </section>
