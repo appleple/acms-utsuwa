@@ -78,7 +78,10 @@
       <!-- BEGIN_IF [{caption}[delnl]/nem] -->
       <p id="media-caption-{file_utid}" class="caption">{caption}[raw|nl2br]</p>
       <!-- END_IF -->
-      <span class="column-pdf-image-download-icon" role="img" aria-label="ダウンロード">@include("/images/icon/arrow-down-to-line.svg")</span>
+      <span class="column-pdf-image-download-icon">
+        <span class="acms-hide-visually">ダウンロード</span>
+        @include("/images/icon/arrow-down-to-line.svg")
+      </span>
     </div>
   </a>
   <!-- ELSE -->

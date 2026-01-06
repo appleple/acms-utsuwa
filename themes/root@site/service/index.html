@@ -5,11 +5,13 @@
 @endsection
 
 @section("main")
-<div class="acms-container">
+<section class="acms-container">
   <!-- タグ検索非対応 -->
 
   <!-- BEGIN_IF [%{PCID}/nem] -->
   <h2 class="page-sub-title">%{CATEGORY_NAME}</h2>
+  <!-- ELSE -->
+  <h2 class="acms-hide-visually">事業一覧</h2>
   <!-- END_IF -->
 
   <!-- 日付検索非対応 -->
@@ -18,7 +20,7 @@
 
   <!-- エントリーサマリー：サムネイル表示 -->
   @include("/include/entry/summary-service.html", {"module_id":"summary_no_date"})
-</div>
+</section>
 @endsection
 
 @section("footer-cta")
