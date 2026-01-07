@@ -5,8 +5,8 @@
   <header class="section-side-header">
     <h2 class="section-side-title">{year}年{month}月</h2>
     <div class="calendar-next-prev-button-layout">
-      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{prevUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span></a>
-      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{nextUrl}tpl/include/calendar/month.html" hx-swap="outerHTML"><span aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a>
+      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{prevUrl}tpl/include/calendar/month.html" hx-swap="outerHTML" aria-label="前月へ"><span aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span></a>
+      <a class="calendar-next-prev-button" href="{url}" hx-target="#calendar" hx-get="{nextUrl}tpl/include/calendar/month.html" hx-swap="outerHTML" aria-label="翌月へ"><span aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a>
     </div>
   </header>
 

@@ -5,10 +5,9 @@
       <!-- BEGIN event_labels:veil -->
       <div class="calendar-item-labels-layout">
         <!-- BEGIN event_time:veil -->
-        <dl class="acms-lh-1 acms-my-0">
-          <dt class="acms-hide-visually">開催時間</dt>
-          <dd class="acms-ms-0"><span class="calendar-item-time">{event_time}</span></dd>
-        </dl>
+        <p class="calendar-item-time">
+          <span class="acms-hide-visually">開催時間</span>{event_time}
+        </p>
         <!-- BEGIN event_status:veil -->
         <p class="label is-dark">
           <!-- BEGIN_IF [{event_status}/eq/pre]-->募集前
@@ -23,12 +22,9 @@
         <!-- END event_pref:veil -->
         <!-- BEGIN categoryField:veil -->
         <!-- BEGIN categoryField -->
-        <dl class="acms-lh-1 acms-my-0">
-          <dt class="acms-hide-visually">カテゴリー</dt>
-          <dd class="acms-ms-0">
-            <span class="label">{fieldCategoryName}</span>
-          </dd>
-        </dl>
+        <p class="label">
+          <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+        </p>
         <!-- END categoryField -->
         <!-- END categoryField:veil -->
       </div>
@@ -60,8 +56,8 @@
       <h2 class="calendar-pagination-title">{year}年{month}[date('n')]月</h2>
       <!-- BEGIN calendar-pagination-group:veil -->
       <ul class="calendar-pagination-group">
-        <li class="calendar-pagination-item-previous"><a href="%{BASE_URL}calendar.html/{prevDate}" class="calendar-pagination-link" aria-label="{prevDate}月へ"><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span><span class="calendar-pagination-link-text">{prevDate}[date('n月')]</span></a></li>
-        <li class="calendar-pagination-item-next"><a href="%{BASE_URL}calendar.html/{nextDate}" class="calendar-pagination-link" aria-label="{nextDate}月へ"><span class="calendar-pagination-link-text">{nextDate}[date('n月')]</span><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a></li>
+        <li class="calendar-pagination-item-previous"><a href="%{BASE_URL}calendar.html/{prevDate}" class="calendar-pagination-link"><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span><span class="calendar-pagination-link-text">{prevDate}[date('n月')]</span></a></li>
+        <li class="calendar-pagination-item-next"><a href="%{BASE_URL}calendar.html/{nextDate}" class="calendar-pagination-link"><span class="calendar-pagination-link-text">{nextDate}[date('n月')]</span><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a></li>
       </ul><!-- END header-pagination-group:veil -->
     </div>
   </div>
@@ -133,8 +129,8 @@
       <p class="calendar-pagination-return"><a href="%{BASE_URL}" class="button is-width-lg is-bg-white-bordered">%{BLOG_NAME}トップへ戻る</a></p>
       <!-- BEGIN calendar-pagination-group:veil -->
       <ul class="calendar-pagination-group">
-        <li class="calendar-pagination-item-previous"><a href="%{BASE_URL}calendar.html/{prevDate}" class="calendar-pagination-link" aria-label="{prevDate}月へ"><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span><span class="calendar-pagination-link-text">{prevDate}[date('n月')]</span></a></li>
-        <li class="calendar-pagination-item-next"><a href="%{BASE_URL}calendar.html/{nextDate}" class="calendar-pagination-link" aria-label="{nextDate}月へ"><span class="calendar-pagination-link-text">{nextDate}[date('n月')]</span><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a></li>
+        <li class="calendar-pagination-item-previous"><a href="%{BASE_URL}calendar.html/{prevDate}" class="calendar-pagination-link"><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-left-bold.svg")</span><span class="calendar-pagination-link-text">{prevDate}[date('n月')]</span></a></li>
+        <li class="calendar-pagination-item-next"><a href="%{BASE_URL}calendar.html/{nextDate}" class="calendar-pagination-link"><span class="calendar-pagination-link-text">{nextDate}[date('n月')]</span><span class="calendar-pagination-link-icon" aria-hidden="true">@include("/images/icon/chevron-right-bold.svg")</span></a></li>
       </ul><!-- END header-pagination-group:veil -->
     </div>
   </div>

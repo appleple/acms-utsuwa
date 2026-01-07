@@ -40,41 +40,37 @@
             </div>
             <div class="card-texts-layout">
               <!-- BEGIN labels:veil -->
-              <dl class="card-labels-layout acms-lh-1 acms-my-0">
+              <div class="card-labels-layout acms-lh-1">
                 <!-- BEGIN_IF [{date#}/nem] -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">投稿日</dt>
-                  <dd class="card-date-layout acms-ms-0">
+                <p class="acms-inline-block acms-my-0">
+                  <span class="acms-hide-visually">投稿日</span>
+                  <span class="card-date-layout">
                     <time class="card-date" datetime="{date#Y}-{date#m}-{date#d}">{date#Y}年{date#n}月{date#j}日（{date#week}）</time>
                     <!-- BEGIN new -->
                     <span class="label">New</span>
                     <!-- END new -->
-                  </dd>
-                </div>
+                  </span>
+                </p>
                 <!-- END_IF -->
                 <!-- BEGIN categoryField:veil -->
                 <!-- BEGIN categoryField -->
-                <div class="acms-inline-block">
-                  <dt class="acms-hide-visually">カテゴリー</dt>
-                  <dd class="acms-ms-0">
-                    <span class="label">{fieldCategoryName}</span>
-                  </dd>
-                </div>
+                <p class="label">
+                  <span class="acms-hide-visually">カテゴリー</span>{fieldCategoryName}
+                </p>
                 <!-- END categoryField -->
                 <!-- END categoryField:veil -->
-              </dl>
+              </div>
               <!-- END labels:veil -->
               <h3 id="card-entry{eid}" class="blog-card-title">{title}</h3>
               <!-- BEGIN summary:veil -->
               <p class="blog-card-description">{summary}</p>
               <!-- END summary:veil -->
               <!-- BEGIN tag_list:veil -->
-              <dl class="card-tag-list">
-                <dt class="acms-hide-visually">タグ</dt>
+              <ul class="card-tag-list">
                 <!-- BEGIN tag:loop -->
-                <dd class="acms-ms-0"><span class="tag-sm-label">#{name}</span></dd>
+                <li class="acms-ms-0"><span class="tag-sm-label">#{name}</span></li>
                 <!-- END tag:loop -->
-              </dl>
+              </ul>
               <!-- END tag_list:veil -->
               <!-- BEGIN userField:veil -->
               <!-- BEGIN userField -->
