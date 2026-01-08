@@ -34060,9 +34060,9 @@ module:
       module_bid_axis: self,
       module_uid: null,
       module_uid_scope: local,
-      module_cid: '%{RCID}',
+      module_cid: null,
       module_cid_scope: local,
-      module_cid_axis: descendant,
+      module_cid_axis: descendant-or-self,
       module_eid: null,
       module_eid_scope: local,
       module_keyword: null,
@@ -34083,7 +34083,7 @@ module:
       module_layout_use: 0,
       module_api_use: 'off',
       module_created_datetime: null,
-      module_updated_datetime: '2025-08-19 12:16:18',
+      module_updated_datetime: '2026-01-08 10:00:00',
       module_blog_id: 1,
     }
   - {
