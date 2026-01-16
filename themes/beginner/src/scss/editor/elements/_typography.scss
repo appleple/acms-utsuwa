@@ -178,11 +178,11 @@
   counter-reset: order-list;
 
   & > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
+    clear: both;
     display: grid;
     grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
     grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
     grid-auto-flow: column;
-    clear: both;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
 

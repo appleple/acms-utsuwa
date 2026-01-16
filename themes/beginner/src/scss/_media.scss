@@ -160,11 +160,11 @@
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  font-size: map.get(global.$font-scales, body-m);
-  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  font-size: map.get(global.$font-scales, body-m);
+  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 
@@ -174,9 +174,9 @@
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: '';
 }
