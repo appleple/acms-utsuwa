@@ -151,9 +151,9 @@
 
   .js .js-animation & {
     &::after {
-      transition: 0.2s ease-out 0.5s;
       transform: scaleY(0);
       transform-origin: top;
+      transition: 0.2s ease-out 0.5s;
       will-change: transform, opacity;
     }
   }

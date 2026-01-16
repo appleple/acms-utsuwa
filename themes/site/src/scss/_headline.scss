@@ -9,9 +9,9 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
+  list-style-type: '';
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  list-style-type: '';
 
   .js &.js-animation-row {
     opacity: 0;
