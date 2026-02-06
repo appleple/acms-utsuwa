@@ -58,6 +58,18 @@ $(() => {
     observerRow.observe(box);
   });
 
+  // PC時のナビゲーション
+  // サブメニュー表示時にCSSでオーバーレイを表示
+  const $navLinks = document.querySelectorAll('.global-nav-item:has(ul)');
+  $navLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      document.body.classList.add('submenu-open');
+    });
+    link.addEventListener('mouseleave', () => {
+      document.body.classList.remove('submenu-open');
+    });
+  });
+
   // モバイル時のナビゲーション
   const $mobileNavTrigger = $('.js-mobile-nav-btn');
   const $mobileNavContents = $('.js-mobile-nav');
@@ -193,6 +205,27 @@ $(() => {
       !Array.from(openBtns).some(btn => btn.contains(e.target))
     ) {
       closeSearch();
+    }
+  });
+
+  /* フォーカストラップ */
+  searchArea.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') {
+      const focusableElements = searchArea.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
     }
   });
 });
