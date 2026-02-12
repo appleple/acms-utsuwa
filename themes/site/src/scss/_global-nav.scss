@@ -240,7 +240,8 @@
   }
 
   .logo-center {
-    .global-nav-item:hover {
+    .global-nav-item:hover,
+    .global-nav-item:focus-within {
       &:has(ul) {
         position: static;
 
