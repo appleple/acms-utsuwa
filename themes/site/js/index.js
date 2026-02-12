@@ -58,6 +58,22 @@ $(() => {
     observerRow.observe(box);
   });
 
+  // PC時のナビゲーション
+  // サブメニュー表示時にCSSでオーバーレイを表示
+  const $logoCenterHeader = document.querySelector('.logo-center');
+  if ($logoCenterHeader) {
+    const $navLinks = document.querySelectorAll('.global-nav-item:has(ul)');
+    const toggleSubmenuClass = () => {
+      document.body.classList.toggle('submenu-open');
+    }
+    $navLinks.forEach(link => {
+      link.addEventListener('mouseenter', toggleSubmenuClass);
+      link.addEventListener('mouseleave', toggleSubmenuClass);
+      link.addEventListener('focusin', toggleSubmenuClass);
+      link.addEventListener('focusout', toggleSubmenuClass);
+    });
+  }
+
   // モバイル時のナビゲーション
   const $mobileNavTrigger = $('.js-mobile-nav-btn');
   const $mobileNavContents = $('.js-mobile-nav');
@@ -155,8 +171,8 @@ $(() => {
     document.body.classList.remove('search-open');
   }
 
-  /* 開閉ボタン */
   if (searchArea && searchInput) {
+    /* 開閉ボタン */
     openBtns.forEach(btn => {
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -168,6 +184,34 @@ $(() => {
         }
       });
     });
+
+    /* ESCキーで閉じる */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && searchArea.getAttribute('aria-hidden') === 'false') {
+        closeSearch();
+      }
+    });
+
+    /* フォーカストラップ */
+    searchArea.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab') {
+        const focusableElements = searchArea.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
   }
 
   /* 閉じるボタン */
@@ -177,13 +221,6 @@ $(() => {
       closeSearch();
     });
   }
-
-  /* ESCキーで閉じる */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && searchArea.getAttribute('aria-hidden') === 'false') {
-      closeSearch();
-    }
-  });
 
   /* 検索エリア外クリックで閉じる */
   document.addEventListener('click', function (e) {

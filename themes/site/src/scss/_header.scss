@@ -77,7 +77,25 @@
     height: 2.5rem;
     padding: 0.5rem 1rem;
   }
+}
 
+.header-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: calc(var(--zindex-header) - 1);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: rgb(0 0 0 / 80%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.submenu-open .header-overlay,
+.search-open .header-overlay {
+  pointer-events: auto;
+  opacity: 1;
 }
 
 

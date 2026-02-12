@@ -1810,9 +1810,9 @@
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: none;
 }
