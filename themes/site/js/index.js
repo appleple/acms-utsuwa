@@ -60,15 +60,18 @@ $(() => {
 
   // PC時のナビゲーション
   // サブメニュー表示時にCSSでオーバーレイを表示
-  const $navLinks = document.querySelectorAll('.global-nav-item:has(ul)');
-  $navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      document.body.classList.add('submenu-open');
+  const $logoCenterHeader = document.querySelector('.logo-center');
+  if ($logoCenterHeader) {
+    const $navLinks = document.querySelectorAll('.global-nav-item:has(ul)');
+    $navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        document.body.classList.add('submenu-open');
+      });
+      link.addEventListener('mouseleave', () => {
+        document.body.classList.remove('submenu-open');
+      });
     });
-    link.addEventListener('mouseleave', () => {
-      document.body.classList.remove('submenu-open');
-    });
-  });
+  }
 
   // モバイル時のナビゲーション
   const $mobileNavTrigger = $('.js-mobile-nav-btn');
