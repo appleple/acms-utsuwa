@@ -15,12 +15,12 @@
  ベーススタイル
 ------------------------------ */
 .entry-style .acms-cssgrid {
-  --acms-gap: var(--unit-gap-x);
+  --acms-gap: 0 var(--unit-gap-x);
 }
 .entry-style .acms-stack,
 .entry-style .acms-vstack,
 .entry-style .acms-hstack {
-  --acms-stack-spacing: var(--unit-gap-x);
+  --acms-stack-spacing: 0 var(--unit-gap-x);
 }
 
 .entry-style {
@@ -93,9 +93,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style a:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=media-image-block], [class~=media-image-block] *, [class~=column-image], [class~=column-image] *, [class~=column-media], [class~=column-media] *, [class~=column-eximage], [class~=column-eximage] *)):-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style a:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=media-image-block], [class~=media-image-block] *, [class~=column-image], [class~=column-image] *, [class~=column-media], [class~=column-media] *, [class~=column-eximage], [class~=column-eximage] *)):any-link:hover {
     text-decoration: none;
   }
@@ -304,11 +301,11 @@
   counter-reset: order-list;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li { /* ul 内に ol, ol 内に ul が入っていた時の対策として子セレクタで指定 */
+  clear: both;
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   grid-auto-flow: column;
-  clear: both;
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
@@ -564,9 +561,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
@@ -641,10 +635,6 @@
 @media (any-hover: hover) {
   :where(.entry-style) [data-type=linkButton] a {
     transition: background-color 0.2s ease;
-  }
-  :where(.entry-style) [data-type=linkButton] a:where(:-moz-any-link):hover {
-    background: var(--color-primary-hover);
-    opacity: 1;
   }
   :where(.entry-style) [data-type=linkButton] a:where(:any-link):hover {
     background: var(--color-primary-hover);
@@ -721,10 +711,8 @@
   .entry-style .message-image img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: cover;
+    object-position: center;
   }
   .entry-style .message-lead {
     height: auto;
@@ -775,20 +763,20 @@
 [class*=column-embed-] .acms-embed-link-title {
   margin: 0 0 0.25rem;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 1rem;
   font-weight: bold;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 [class*=column-embed-] .acms-embed-link-description {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  font-size: 0.8rem;
-  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  font-size: 0.8rem;
+  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 @media (min-width: 48rem) {
@@ -804,8 +792,7 @@
   [class*=column-embed-] .acms-embed-link-image-container img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   [class*=column-embed-] .acms-embed-link-content {
     box-sizing: border-box;
@@ -819,9 +806,9 @@
   [class*=column-embed-] .acms-embed-link-title {
     margin: 0;
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1rem;
     font-weight: bold;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
@@ -863,10 +850,6 @@
   :where(.entry-style) [class*=column-media] a[href*=storage],
   :where(.entry-style) [class*=column-file] a {
     transition: background-color 0.2s ease;
-  }
-  :where(.entry-style) [data-type=fileBlock][data-display-type=button] a:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-media] a[href*=media-download]:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-media] a[href*=storage]:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-file] a:where(:-moz-any-link):hover {
-    background-color: var(--color-gray20);
-    border-color: var(--color-gray40); /* hover動作上書きのため */
   }
   :where(.entry-style) [data-type=fileBlock][data-display-type=button] a:where(:any-link):hover,
   :where(.entry-style) [class*=column-media] a[href*=media-download]:where(:any-link):hover,
@@ -954,8 +937,7 @@
   width: 100%;
   height: 100%;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 :where(.entry-style) .column-pdf-image-caption-box .column-pdf-image-download-icon svg path {
   stroke: currentcolor;
@@ -1106,8 +1088,8 @@
   border-top: 0;
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th {
-  text-align: left;
   vertical-align: top;
+  text-align: left;
   background-color: var(--color-gray10);
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
@@ -1139,9 +1121,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
