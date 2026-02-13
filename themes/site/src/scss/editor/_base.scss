@@ -7,14 +7,14 @@
 .#{acms.$entry-class} {
   // グリッドのカラム間余白を設定
   .acms-cssgrid {
-    --acms-gap: var(--unit-gap-x);
+    --acms-gap: 0 var(--unit-gap-x);
   }
 
   // スタックの余白を設定
   .acms-stack,
   .acms-vstack,
   .acms-hstack {
-    --acms-stack-spacing: var(--unit-gap-x);
+    --acms-stack-spacing: 0 var(--unit-gap-x);
   }
 }
 
