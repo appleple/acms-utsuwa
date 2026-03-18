@@ -93,9 +93,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style a:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=media-image-block], [class~=media-image-block] *, [class~=column-image], [class~=column-image] *, [class~=column-media], [class~=column-media] *, [class~=column-eximage], [class~=column-eximage] *)):-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style a:not(:where([class~=not-editor-style], [class~=not-editor-style] *, [class~=media-image-block], [class~=media-image-block] *, [class~=column-image], [class~=column-image] *, [class~=column-media], [class~=column-media] *, [class~=column-eximage], [class~=column-eximage] *)):any-link:hover {
     text-decoration: none;
   }
@@ -127,9 +124,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entryFormLiteEditor a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entryFormLiteEditor a:any-link:hover {
     text-decoration: none;
   }
@@ -342,7 +336,6 @@
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
-  grid-auto-flow: column;
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
@@ -351,7 +344,6 @@
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li::before {
   grid-column: 1;
-  padding-top: 1.4px; /* 番号位置の微調整 */
   font-weight: bold;
   color: var(--color-text-2nd);
   word-break: keep-all;
@@ -361,6 +353,7 @@
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li > * {
   /* ブロックエディタ：リセット用 */
+  grid-column: 2; /* li 内に複数の要素がある場合もテキスト列に配置 */
   margin-block: 0;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li ol {
@@ -633,9 +626,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
@@ -710,10 +700,6 @@
 @media (any-hover: hover) {
   :where(.entry-style) [data-type=linkButton] a {
     transition: background-color 0.2s ease;
-  }
-  :where(.entry-style) [data-type=linkButton] a:where(:-moz-any-link):hover {
-    background: var(--color-primary-hover);
-    opacity: 1;
   }
   :where(.entry-style) [data-type=linkButton] a:where(:any-link):hover {
     background: var(--color-primary-hover);
@@ -806,10 +792,6 @@
   .entry-style .entry-outline-list-wrap .outline-item a {
     transition: color 0.25s ease;
   }
-  .entry-style .entry-outline-list-wrap .outline-item a:-moz-any-link:hover {
-    color: var(--color-primary);
-    cursor: pointer;
-  }
   .entry-style .entry-outline-list-wrap .outline-item a:any-link:hover {
     color: var(--color-primary);
     cursor: pointer;
@@ -882,10 +864,8 @@
   .entry-style .message-image img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: cover;
+    object-position: center;
   }
   .entry-style .message-lead {
     font-size: 1.5625rem;
@@ -1104,8 +1084,7 @@
   [class*=column-embed-] .acms-embed-link-image-container img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   [class*=column-embed-] .acms-embed-link-content {
     box-sizing: border-box;
@@ -1163,10 +1142,6 @@
   :where(.entry-style) [class*=column-media] a[href*=storage],
   :where(.entry-style) [class*=column-file] a {
     transition: background-color 0.2s ease;
-  }
-  :where(.entry-style) [data-type=fileBlock][data-display-type=button] a:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-media] a[href*=media-download]:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-media] a[href*=storage]:where(:-moz-any-link):hover, :where(.entry-style) [class*=column-file] a:where(:-moz-any-link):hover {
-    background-color: var(--color-gray20);
-    border-color: var(--color-gray40); /* hover動作上書きのため */
   }
   :where(.entry-style) [data-type=fileBlock][data-display-type=button] a:where(:any-link):hover,
   :where(.entry-style) [class*=column-media] a[href*=media-download]:where(:any-link):hover,
@@ -1254,8 +1229,7 @@
   width: 100%;
   height: 100%;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 :where(.entry-style) .column-pdf-image-caption-box .column-pdf-image-download-icon svg path {
   stroke: currentcolor;
@@ -1439,9 +1413,6 @@
           mask-size: contain;
 }
 @media (hover: hover) {
-  .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
@@ -1510,16 +1481,9 @@
     transition: 0.4s 0.2s ease-out;
     will-change: transform;
   }
-  .card-bordered-link:-moz-any-link:hover .card-bordered {
-    background-color: var(--color-hover-bg-2nd);
-    box-shadow: var(--box-shadow-hover);
-  }
   .card-bordered-link:any-link:hover .card-bordered {
     background-color: var(--color-hover-bg-2nd);
     box-shadow: var(--box-shadow-hover);
-  }
-  .card-bordered-link:-moz-any-link:hover .card-bordered-img {
-    transform: scale(1.2);
   }
   .card-bordered-link:any-link:hover .card-bordered-img {
     transform: scale(1.2);
@@ -1555,8 +1519,7 @@
 .card-bordered-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-bordered-text-layout {
@@ -1618,13 +1581,6 @@
   }
 }
 @media (hover: hover) and (min-width: 30rem) {
-  .card-link:-moz-any-link:hover {
-    /*
-      * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-      * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-      * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-      */
-  }
   .card-link:any-link:hover {
     /*
       * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
@@ -1632,22 +1588,13 @@
       * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
       */
   }
-  .card-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .card-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
   }
 }
 @media (hover: hover) {
-  .card-link:-moz-any-link:hover .card-img {
-    transform: scale(1.2);
-  }
   .card-link:any-link:hover .card-img {
     transform: scale(1.2);
-  }
-  .card-link:-moz-any-link:hover .card-read-more-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   .card-link:any-link:hover .card-read-more-icon {
     background-color: var(--color-icon-bg-hover);
@@ -1689,8 +1636,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: var(--card-img-aspect-ratio, 16/9);
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* 画像上に重ねて表示するラベル */
@@ -1810,9 +1756,9 @@
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: none;
 }
@@ -1895,8 +1841,7 @@
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .card-read-more-icon svg path {
   stroke: currentcolor;
@@ -2165,8 +2110,7 @@
   width: 100%;
   height: 100%;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .toggle-icon svg path {
   stroke: currentcolor;
