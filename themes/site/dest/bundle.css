@@ -50,10 +50,6 @@ a {
   border: none;
 }
 
-::-moz-placeholder {
-  color: var(--color-gray70) !important;
-}
-
 ::placeholder {
   color: var(--color-gray70) !important;
 }
@@ -286,8 +282,7 @@ a {
 .main-visual-slider .splide__slide img,
 .banner-slide .splide__slide picture,
 .banner-slide .splide__slide img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-visual-slider .splide__toggle,
 .banner-slide .splide__toggle {
@@ -483,9 +478,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .banner-link:-moz-any-link:hover .banner-img {
-    box-shadow: var(--box-shadow-hover);
-  }
   .banner-link:any-link:hover .banner-img {
     box-shadow: var(--box-shadow-hover);
   }
@@ -521,10 +513,6 @@ a {
   border-radius: var(--border-radius-md);
   transition: background-color 0.2s;
 }
-.button:-moz-any-link {
-  color: var(--color-white);
-  text-decoration: none;
-}
 .button:any-link {
   color: var(--color-white);
   text-decoration: none;
@@ -539,9 +527,6 @@ a {
 .button.is-bg-white {
   background: var(--color-white);
 }
-.button.is-bg-white:-moz-any-link {
-  color: var(--color-text);
-}
 .button.is-bg-white, .button.is-bg-white:any-link {
   color: var(--color-text);
 }
@@ -551,9 +536,6 @@ a {
 .button.is-bg-white-bordered {
   background: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
-}
-.button.is-bg-white-bordered:-moz-any-link {
-  color: var(--color-text);
 }
 .button.is-bg-white-bordered, .button.is-bg-white-bordered:any-link {
   color: var(--color-text);
@@ -577,8 +559,7 @@ a {
   height: auto;
   aspect-ratio: 1/1;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .button-icon svg path {
   stroke: currentcolor;
@@ -604,9 +585,6 @@ a {
   animation: fade-in 0.2s 1.2s 1 both;
 }
 @media (hover: hover) {
-  .button-view-all-articles:-moz-any-link:hover .button-view-all-articles-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
   .button-view-all-articles:any-link:hover .button-view-all-articles-icon {
     background-color: var(--color-icon-bg-hover);
   }
@@ -631,8 +609,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .button-view-all-articles-icon svg path {
   stroke: currentcolor;
@@ -807,10 +784,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .calendar-header-title a:-moz-any-link:hover {
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
   .calendar-header-title a:any-link:hover {
     -webkit-text-decoration: underline dotted 1px;
             text-decoration: underline dotted 1px;
@@ -890,9 +863,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .calendar-pagination-link:-moz-any-link:hover .calendar-pagination-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
   .calendar-pagination-link:any-link:hover .calendar-pagination-link-icon {
     background-color: var(--color-icon-bg-hover);
   }
@@ -922,8 +892,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .calendar-pagination-link-icon svg path {
   stroke: currentcolor;
@@ -957,8 +926,7 @@ a {
   width: 0.657rem;
   height: 0.657rem;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .calendar-next-prev-button svg path {
   stroke: currentcolor;
@@ -985,9 +953,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .section-side-link:-moz-any-link:hover .section-side-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
   .section-side-link:any-link:hover .section-side-link-icon {
     background-color: var(--color-icon-bg-hover);
   }
@@ -1012,8 +977,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .section-side-link-icon svg path {
   stroke: currentcolor;
@@ -1128,9 +1092,6 @@ a {
   .calendar-event-item-link {
     transition: background-color 0.3s ease;
   }
-  .calendar-event-item-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .calendar-event-item-link:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
   }
@@ -1193,8 +1154,7 @@ a {
   width: 11.25rem;
   height: auto;
   aspect-ratio: 16/9;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: var(--border-radius-lg);
 }
 @media (min-width: 30rem) {
@@ -1373,9 +1333,6 @@ a {
   border-bottom: var(--border-width-sm) dotted var(--color-white);
 }
 @media (hover: hover) {
-  .cta-visual a[href^="tel:"]:-moz-any-link:hover {
-    border-color: transparent;
-  }
   .cta-visual a[href^="tel:"]:any-link:hover {
     border-color: transparent;
   }
@@ -1983,9 +1940,9 @@ a {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  list-style-type: "";
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  list-style-type: "";
 }
 .js .headline-list.js-animation-row {
   opacity: 0;
@@ -2007,9 +1964,6 @@ a {
 @media (hover: hover) {
   .headline-link {
     transition: background-color 0.3s ease;
-  }
-  .headline-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
   }
   .headline-link:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
@@ -2450,7 +2404,6 @@ a {
     padding: 0.75rem;
   }
   .form-group select {
-    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -2869,8 +2822,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .local-nav-link-icon svg path {
   stroke: currentcolor;
@@ -2926,8 +2878,7 @@ a {
 .main-visual .main-visual-bg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-visual .main-visual-box {
   position: absolute;
@@ -3086,8 +3037,7 @@ a {
 .main-visual-extend01 .main-visual-bg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-visual-extend01 .main-visual-box {
   position: absolute;
@@ -3292,8 +3242,7 @@ a {
 .main-visual-extend02 .main-visual-bg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (min-width: 48rem) {
   .main-visual-extend02 .main-visual-bg img {
@@ -3463,13 +3412,6 @@ a {
   }
 }
 @media (hover: hover) and (min-width: 30rem) {
-  .media-item-link:-moz-any-link:hover {
-    /*
-    * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-    * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-    * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-    */
-  }
   .media-item-link:any-link:hover {
     /*
     * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
@@ -3477,22 +3419,13 @@ a {
     * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
     */
   }
-  .media-item-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .media-item-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
   }
 }
 @media (hover: hover) {
-  .media-item-link:-moz-any-link:hover .media-item-img {
-    transform: scale(1.2);
-  }
   .media-item-link:any-link:hover .media-item-img {
     transform: scale(1.2);
-  }
-  .media-item-link:-moz-any-link:hover .media-item-read-more-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   .media-item-link:any-link:hover .media-item-read-more-icon {
     background-color: var(--color-icon-bg-hover);
@@ -3546,8 +3479,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* テキスト類全体の縦積みレイアウト */
@@ -3615,9 +3547,9 @@ a {
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: "";
 }
@@ -3662,8 +3594,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .media-item-read-more-icon svg path {
   stroke: currentcolor;
@@ -3730,7 +3661,6 @@ a {
 }
 
 .page-title-text-wrap {
-  width: -moz-fit-content;
   width: fit-content;
 }
 .page-title-text-wrap.left {
@@ -3864,15 +3794,8 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .pager-link:-moz-any-link {
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-  }
   .pager-link:any-link {
     transition: background-color 0.3s ease;
-  }
-  .pager-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg);
   }
   .pager-link:any-link:hover {
     background-color: var(--color-hover-bg);
@@ -3914,24 +3837,16 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .pager-simple-arrow-icon svg path,
 .serial-nav-arrow-icon svg path {
   stroke: currentcolor;
 }
 @media (hover: hover) {
-  a:-moz-any-link .pager-simple-arrow-icon, a:-moz-any-link .serial-nav-arrow-icon {
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-  }
   a:any-link .pager-simple-arrow-icon,
   a:any-link .serial-nav-arrow-icon {
     transition: background-color 0.3s ease;
-  }
-  a:-moz-any-link:hover .pager-simple-arrow-icon, a:-moz-any-link:hover .serial-nav-arrow-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   a:any-link:hover .pager-simple-arrow-icon,
   a:any-link:hover .serial-nav-arrow-icon {
@@ -3976,9 +3891,6 @@ a {
 @media (hover: hover) {
   .pager-simple-link {
     transition: background-color 0.3s ease;
-  }
-  .pager-simple-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
   }
   .pager-simple-link:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
@@ -4068,9 +3980,6 @@ a {
   .serial-nav-item-prev a,
   .serial-nav-item-next a {
     transition: background-color 0.3s ease;
-  }
-  .serial-nav-item-prev a:-moz-any-link:hover, .serial-nav-item-next a:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
   }
   .serial-nav-item-prev a:any-link:hover,
   .serial-nav-item-next a:any-link:hover {
@@ -4201,9 +4110,7 @@ a {
   height: 32px;
   padding: 0;
   margin-bottom: 12px;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: var(--color-icon-bg);
   border-width: 0;
   border-radius: 32px;
@@ -4330,9 +4237,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .profile-author-link:-moz-any-link:hover .profile-author-link-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
   .profile-author-link:any-link:hover .profile-author-link-icon {
     background-color: var(--color-icon-bg-hover);
   }
@@ -4357,8 +4261,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .profile-author-link-icon svg path {
   stroke: currentcolor;
@@ -4409,9 +4312,7 @@ a {
   height: 3rem;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
   border-radius: var(--border-radius-md);
@@ -4709,9 +4610,6 @@ a {
   .tag-filter-selected-item a {
     transition: opacity 0.3s ease;
   }
-  .tag-filter-selected-item a:-moz-any-link:hover {
-    opacity: 0.6;
-  }
   .tag-filter-selected-item a:any-link:hover {
     opacity: 0.6;
   }
@@ -4737,10 +4635,6 @@ a {
   font-size: 1rem;
   color: var(--color-text);
 }
-.tag-filter-choice-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
-}
 .tag-filter-choice-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
           text-decoration: underline dotted 1px;
@@ -4750,9 +4644,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .tag-filter-choice-item a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .tag-filter-choice-item a:any-link:hover {
     text-decoration: none;
   }
@@ -4821,10 +4712,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .topicpath-link:-moz-any-link:hover {
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
   .topicpath-link:any-link:hover {
     -webkit-text-decoration: underline dotted 1px;
             text-decoration: underline dotted 1px;
@@ -4922,9 +4809,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .paragraph a:-moz-any-link:hover {
-    border-bottom-color: transparent;
-  }
   .paragraph a:any-link:hover {
     border-bottom-color: transparent;
   }
@@ -5134,9 +5018,6 @@ a {
   color: var(--color-text);
 }
 @media (hover: hover) {
-  .entry-header-category-label:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .entry-header-category-label:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
   }
@@ -5197,10 +5078,6 @@ a {
   font-size: 0.8rem;
   color: var(--color-text);
 }
-.entry-tag-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
-}
 .entry-tag-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
           text-decoration: underline dotted 1px;
@@ -5210,9 +5087,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .entry-tag-item a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-tag-item a:any-link:hover {
     text-decoration: none;
   }
@@ -5296,8 +5170,7 @@ a {
     width: 100%;
     height: 100%;
     vertical-align: bottom;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .entry-header-visual-title {
     font-size: 1.5625rem;
@@ -5531,8 +5404,7 @@ a {
 .bubble-image-wrap img {
   width: 6rem;
   height: 6rem;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: var(--border-radius-round);
 }
 
@@ -5654,9 +5526,6 @@ a {
           mask-size: contain;
 }
 @media (hover: hover) {
-  .detail-panel a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .detail-panel a:any-link:hover {
     text-decoration: none;
   }
@@ -5800,9 +5669,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .section-horizontal-text a:-moz-any-link:hover {
-    border-bottom-color: transparent;
-  }
   .section-horizontal-text a:any-link:hover {
     border-bottom-color: transparent;
   }
@@ -6000,14 +5866,8 @@ a {
 }
 
 @media (hover: hover) {
-  .summary-side-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .summary-side-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
-  }
-  .summary-side-link:-moz-any-link:hover .summary-side-img {
-    transform: scale(1.2);
   }
   .summary-side-link:any-link:hover .summary-side-img {
     transform: scale(1.2);
@@ -6032,8 +5892,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.4s 0.2s ease-out;
   will-change: transform;
 }
@@ -6169,10 +6028,6 @@ a {
 .footer-address-item a {
   color: inherit;
 }
-.footer-address-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
-}
 .footer-address-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
           text-decoration: underline dotted 1px;
@@ -6237,10 +6092,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .footer-nav-link:-moz-any-link:hover {
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
   .footer-nav-link:any-link:hover {
     -webkit-text-decoration: underline dotted 1px;
             text-decoration: underline dotted 1px;
@@ -6479,8 +6330,7 @@ a {
   height: auto;
   aspect-ratio: 1/1;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .header-search-open-button-icon svg path {
   stroke: currentcolor;
@@ -6893,8 +6743,7 @@ a {
   width: 100%;
   height: 100%;
   color: inherit;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .event-googlemap-link-icon svg path {
   fill: currentcolor;

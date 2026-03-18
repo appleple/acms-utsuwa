@@ -44,10 +44,6 @@ a {
   border: none;
 }
 
-::-moz-placeholder {
-  color: var(--color-gray70) !important;
-}
-
 ::placeholder {
   color: var(--color-gray70) !important;
 }
@@ -226,8 +222,7 @@ a {
 }
 .main-visual-slider .splide__slide picture,
 .main-visual-slider .splide__slide img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-visual-slider .splide__toggle {
   display: flex;
@@ -410,9 +405,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .banner-link:-moz-any-link:hover .banner-img {
-    box-shadow: var(--box-shadow-hover);
-  }
   .banner-link:any-link:hover .banner-img {
     box-shadow: var(--box-shadow-hover);
   }
@@ -448,10 +440,6 @@ a {
   border-radius: var(--border-radius-md);
   transition: background-color 0.2s;
 }
-.button:-moz-any-link {
-  color: var(--color-white);
-  text-decoration: none;
-}
 .button:any-link {
   color: var(--color-white);
   text-decoration: none;
@@ -466,9 +454,6 @@ a {
 .button.is-bg-white-bordered {
   background: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
-}
-.button.is-bg-white-bordered:-moz-any-link {
-  color: var(--color-text);
 }
 .button.is-bg-white-bordered, .button.is-bg-white-bordered:any-link {
   color: var(--color-text);
@@ -501,9 +486,6 @@ a {
   animation: fade-in 0.2s 1.2s 1 both;
 }
 @media (hover: hover) {
-  .button-view-all-articles:-moz-any-link:hover .button-view-all-articles-icon {
-    background-color: var(--color-icon-bg-hover);
-  }
   .button-view-all-articles:any-link:hover .button-view-all-articles-icon {
     background-color: var(--color-icon-bg-hover);
   }
@@ -530,8 +512,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .button-view-all-articles-icon svg path {
   stroke: currentcolor;
@@ -608,13 +589,6 @@ a {
   }
 }
 @media (hover: hover) and (min-width: 30rem) {
-  .card-link:-moz-any-link:hover {
-    /*
-      * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-      * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-      * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-      */
-  }
   .card-link:any-link:hover {
     /*
       * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
@@ -622,22 +596,13 @@ a {
       * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
       */
   }
-  .card-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .card-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
   }
 }
 @media (hover: hover) {
-  .card-link:-moz-any-link:hover .card-img {
-    transform: scale(1.2);
-  }
   .card-link:any-link:hover .card-img {
     transform: scale(1.2);
-  }
-  .card-link:-moz-any-link:hover .card-read-more-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   .card-link:any-link:hover .card-read-more-icon {
     background-color: var(--color-icon-bg-hover);
@@ -679,8 +644,7 @@ a {
   width: 100%;
   height: auto;
   aspect-ratio: var(--card-img-aspect-ratio, 16/9);
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* 画像上に重ねて表示するラベル */
@@ -785,9 +749,9 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  color: var(--color-text-2nd);
   -webkit-line-clamp: 4;
   line-clamp: 4;
+  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 
@@ -797,9 +761,9 @@ a {
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: none;
 }
@@ -880,8 +844,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .card-read-more-icon svg path {
   stroke: currentcolor;
@@ -918,9 +881,6 @@ a {
   border-bottom: var(--border-width-sm) dotted var(--color-white);
 }
 @media (hover: hover) {
-  .cta-visual a[href^="tel:"]:-moz-any-link:hover {
-    border-color: transparent;
-  }
   .cta-visual a[href^="tel:"]:any-link:hover {
     border-color: transparent;
   }
@@ -956,9 +916,9 @@ a {
   left: 50%;
   width: 12px;
   height: 10px;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
   content: "";
   background-color: var(--color-white);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
   transform: translateX(-50%);
 }
 
@@ -1104,8 +1064,8 @@ a {
   height: 2px;
   content: "";
   background: var(--color-primary);
-  transition: transform 0.2s;
   transform: scaleX(0);
+  transition: transform 0.2s;
 }
 .global-nav-link:hover {
   text-decoration: none;
@@ -1408,8 +1368,8 @@ a {
           mask-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwIDE4TDE2IDEyTDEwIDYiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPgo=);
   -webkit-mask-size: contain;
           mask-size: contain;
-  transition: transform 0.3s ease;
   transform: rotate(90deg);
+  transition: transform 0.3s ease;
 }
 :where(.global-nav-mobile-item.level-1:has(.global-nav-mobile-group)) > .global-nav-mobile-link .icon-expand.is-close {
   transform: rotate(-90deg);
@@ -1461,9 +1421,9 @@ a {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  list-style-type: "";
   border-radius: var(--border-radius-lg);
   box-shadow: var(--box-shadow);
-  list-style-type: "";
 }
 .js .headline-list.js-animation-row {
   opacity: 0;
@@ -1485,9 +1445,6 @@ a {
 @media (hover: hover) {
   .headline-link {
     transition: background-color 0.3s ease;
-  }
-  .headline-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
   }
   .headline-link:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
@@ -1727,8 +1684,8 @@ a {
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
   font-weight: normal;
-  color: var(--color-danger);
   vertical-align: middle;
+  color: var(--color-danger);
   background: var(--color-danger-light);
   border-radius: var(--border-radius-sm);
 }
@@ -1738,8 +1695,8 @@ a {
   margin: 0 0 0 1rem;
   font-size: 0.8rem;
   font-weight: normal;
-  color: var(--color-text);
   vertical-align: middle;
+  color: var(--color-text);
   background: var(--color-gray10);
   border-radius: var(--border-radius-sm);
 }
@@ -1926,7 +1883,6 @@ a {
     padding: 0.75rem;
   }
   .form-group select {
-    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -2048,8 +2004,8 @@ a {
   display: none;
 }
 .form-group .valid-mark.valid {
-  display: inline;
   float: right;
+  display: inline;
   color: #5cb85c;
 }
 .form-group .invalid {
@@ -2227,8 +2183,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .local-nav-link-icon svg path {
   stroke: currentcolor;
@@ -2284,8 +2239,7 @@ a {
 .main-visual .main-visual-bg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-visual .main-visual-box {
   position: absolute;
@@ -2423,13 +2377,6 @@ a {
   }
 }
 @media (hover: hover) and (min-width: 30rem) {
-  .media-item-link:-moz-any-link:hover {
-    /*
-    * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
-    * この背景色は、シャドウのようにコンテンツからはみ出して表示されます。
-    * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
-    */
-  }
   .media-item-link:any-link:hover {
     /*
     * sm幅以上でのみ、リンクホバー時に背景色が表示されるように設定しています。
@@ -2437,22 +2384,13 @@ a {
     * sm幅未満では画面端に角丸背景色が接することで、視覚的バランスを損なうため適用していません。
     */
   }
-  .media-item-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .media-item-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
   }
 }
 @media (hover: hover) {
-  .media-item-link:-moz-any-link:hover .media-item-img {
-    transform: scale(1.2);
-  }
   .media-item-link:any-link:hover .media-item-img {
     transform: scale(1.2);
-  }
-  .media-item-link:-moz-any-link:hover .media-item-read-more-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   .media-item-link:any-link:hover .media-item-read-more-icon {
     background-color: var(--color-icon-bg-hover);
@@ -2506,8 +2444,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* テキスト類全体の縦積みレイアウト */
@@ -2561,11 +2498,11 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
-  font-size: 1rem;
-  color: var(--color-text-2nd);
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  font-size: 1rem;
+  color: var(--color-text-2nd);
   -webkit-box-orient: vertical;
 }
 
@@ -2575,9 +2512,9 @@ a {
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
   align-items: flex-start;
+  padding-inline-start: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-inline-start: 0;
   line-height: var(--line-height-none);
   list-style-type: "";
 }
@@ -2622,8 +2559,7 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .media-item-read-more-icon svg path {
   stroke: currentcolor;
@@ -2696,7 +2632,6 @@ a {
 }
 
 .page-title-text-wrap {
-  width: -moz-fit-content;
   width: fit-content;
   margin-right: auto;
   text-align: left;
@@ -2820,15 +2755,8 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .pager-link:-moz-any-link {
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-  }
   .pager-link:any-link {
     transition: background-color 0.3s ease;
-  }
-  .pager-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg);
   }
   .pager-link:any-link:hover {
     background-color: var(--color-hover-bg);
@@ -2870,24 +2798,16 @@ a {
   width: 0.625rem;
   height: 0.625rem;
   color: var(--color-white);
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .pager-simple-arrow-icon svg path,
 .serial-nav-arrow-icon svg path {
   stroke: currentcolor;
 }
 @media (hover: hover) {
-  a:-moz-any-link .pager-simple-arrow-icon, a:-moz-any-link .serial-nav-arrow-icon {
-    -moz-transition: background-color 0.3s ease;
-    transition: background-color 0.3s ease;
-  }
   a:any-link .pager-simple-arrow-icon,
   a:any-link .serial-nav-arrow-icon {
     transition: background-color 0.3s ease;
-  }
-  a:-moz-any-link:hover .pager-simple-arrow-icon, a:-moz-any-link:hover .serial-nav-arrow-icon {
-    background-color: var(--color-icon-bg-hover);
   }
   a:any-link:hover .pager-simple-arrow-icon,
   a:any-link:hover .serial-nav-arrow-icon {
@@ -2932,9 +2852,6 @@ a {
 @media (hover: hover) {
   .pager-simple-link {
     transition: background-color 0.3s ease;
-  }
-  .pager-simple-link:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
   }
   .pager-simple-link:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
@@ -3025,9 +2942,6 @@ a {
   .serial-nav-item-next a {
     transition: background-color 0.3s ease;
   }
-  .serial-nav-item-prev a:-moz-any-link:hover, .serial-nav-item-next a:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .serial-nav-item-prev a:any-link:hover,
   .serial-nav-item-next a:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
@@ -3056,9 +2970,9 @@ a {
   width: 100%;
   min-width: 0;
   overflow: hidden;
+  text-overflow: ellipsis;
   line-height: var(--line-height-base);
   color: var(--color-text);
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -3125,9 +3039,7 @@ a {
   height: 3rem;
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background: var(--color-white);
   border: var(--border-width-sm) solid var(--color-gray30);
   border-radius: var(--border-radius-md);
@@ -3138,9 +3050,9 @@ a {
   border-color: var(--color-gray50);
 }
 .form-search input.form-search-input:focus {
+  outline: none;
   background: var(--color-white);
   border-color: #137af3;
-  outline: none;
   box-shadow: var(--box-shadow-focus), 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
 }
 .form-search .form-search-side-button {
@@ -3426,9 +3338,6 @@ a {
   .tag-filter-selected-item a {
     transition: opacity 0.3s ease;
   }
-  .tag-filter-selected-item a:-moz-any-link:hover {
-    opacity: 0.6;
-  }
   .tag-filter-selected-item a:any-link:hover {
     opacity: 0.6;
   }
@@ -3454,10 +3363,6 @@ a {
   font-size: 1rem;
   color: var(--color-text);
 }
-.tag-filter-choice-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
-}
 .tag-filter-choice-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
           text-decoration: underline dotted 1px;
@@ -3467,9 +3372,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .tag-filter-choice-item a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .tag-filter-choice-item a:any-link:hover {
     text-decoration: none;
   }
@@ -3538,10 +3440,6 @@ a {
   text-decoration: none;
 }
 @media (hover: hover) {
-  .topicpath-link:-moz-any-link:hover {
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 3px;
-  }
   .topicpath-link:any-link:hover {
     -webkit-text-decoration: underline dotted 1px;
             text-decoration: underline dotted 1px;
@@ -3635,9 +3533,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .paragraph a:-moz-any-link:hover {
-    border-bottom-color: transparent;
-  }
   .paragraph a:any-link:hover {
     border-bottom-color: transparent;
   }
@@ -3712,9 +3607,6 @@ a {
   color: var(--color-text);
 }
 @media (hover: hover) {
-  .entry-header-category-label:-moz-any-link:hover {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .entry-header-category-label:any-link:hover {
     background-color: var(--color-hover-bg-2nd);
   }
@@ -3775,10 +3667,6 @@ a {
   font-size: 0.8rem;
   color: var(--color-text);
 }
-.entry-tag-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
-}
 .entry-tag-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
           text-decoration: underline dotted 1px;
@@ -3788,9 +3676,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .entry-tag-item a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .entry-tag-item a:any-link:hover {
     text-decoration: none;
   }
@@ -3858,9 +3743,6 @@ a {
           mask-size: contain;
 }
 @media (hover: hover) {
-  .detail-panel a:-moz-any-link:hover {
-    text-decoration: none;
-  }
   .detail-panel a:any-link:hover {
     text-decoration: none;
   }
@@ -3986,9 +3868,6 @@ a {
   color: inherit;
 }
 @media (hover: hover) {
-  .section-horizontal-text a:-moz-any-link:hover {
-    border-bottom-color: transparent;
-  }
   .section-horizontal-text a:any-link:hover {
     border-bottom-color: transparent;
   }
@@ -4048,9 +3927,9 @@ a {
   background: var(--color-gray30);
 }
 .js .js-animation .section-vertical-header::after {
-  transition: 0.2s ease-out 0.5s;
   transform: scaleY(0);
   transform-origin: top;
+  transition: 0.2s ease-out 0.5s;
   will-change: transform, opacity;
 }
 .js .js-animation.is-show .section-vertical-header::after {
@@ -4161,14 +4040,8 @@ a {
 }
 
 @media (hover: hover) {
-  .summary-side-link:-moz-any-link:hover::after {
-    background-color: var(--color-hover-bg-2nd);
-  }
   .summary-side-link:any-link:hover::after {
     background-color: var(--color-hover-bg-2nd);
-  }
-  .summary-side-link:-moz-any-link:hover .summary-side-img {
-    transform: scale(1.2);
   }
   .summary-side-link:any-link:hover .summary-side-img {
     transform: scale(1.2);
@@ -4193,8 +4066,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.4s 0.2s ease-out;
   will-change: transform;
 }
@@ -4203,13 +4075,13 @@ a {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   font-size: 1rem;
   font-weight: bold;
   line-height: var(--line-height-base);
   color: var(--color-text);
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -4329,10 +4201,6 @@ a {
 }
 .footer-address-item a {
   color: inherit;
-}
-.footer-address-item a:-moz-any-link {
-  text-decoration: underline dotted 1px;
-  text-underline-offset: 3px;
 }
 .footer-address-item a:any-link {
   -webkit-text-decoration: underline dotted 1px;
