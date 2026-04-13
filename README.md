@@ -1,4 +1,4 @@
-# テーマ「UTSUWA」Ver.2.1.15
+# テーマ「UTSUWA」Ver.2.1.16
 
 ## GitHub
 
