@@ -5,7 +5,8 @@
   <img src="%{ARCHIVES_DIR}{icon}" width="20" height="20" alt="" class="acms-admin-user acms-admin-margin-right-mini" />{name}
   <a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- BEGIN approval -->
   <div class="acms-admin-label-approval-group"><a href="{url}"><!--T-->承認通知<!--/T--></a>&nbsp;<span class="acms-admin-badge acms-admin-badge-approval">{badge}</span></div><!-- END approval -->
-    <!-- BEGIN_MODULE Touch_Debug -->
+  <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
+  <!-- BEGIN_MODULE Touch_Debug -->
   &nbsp;<a href="/bid/%{SBID}/admin/checklist/" class="acms-admin-label acms-admin-label-danger"><!--T-->デバッグモード<!--/T--></a><!-- BEGIN_MODULE Touch_Benchmark -->
   &nbsp;<a href="/bid/%{SBID}/admin/checklist/" class="acms-admin-label acms-admin-label-warning"><!--T-->ベンチマークモード<!--/T--></a><!-- END_MODULE Touch_Benchmark -->
   <!-- END_MODULE Touch_Debug -->
@@ -21,6 +22,7 @@
   <!-- BEGIN status#EXPIRED -->
   / <strong><!--T-->ライセンスの有効期限切れのため、ライセンスが無効になっています。<!--/T--></strong>
   <!-- END status#EXPIRED -->
+  <!-- END_MODULE Touch_SessionWithAdministration -->
 </div>
 @endsection
 
@@ -45,6 +47,7 @@
 @endsection
 
 @section("extra")
+<!-- BEGIN_MODULE Touch_SessionWithAdministration -->
 <!-- BEGIN_MODULE Touch_Debug -->
 <!--T-->テンプレート<!--/T-->：%{ROOT_TPL}
 <!-- BEGIN_IF [%{CONFIG_SET_NAME}/nem] -->
@@ -60,4 +63,5 @@
 &nbsp;&nbsp;<!--T-->ルール<!--/T-->：%{RULE_NAME}（RID:%{RID}）
 <!-- END_IF -->
 <!-- END_MODULE Touch_Debug -->
+<!-- END_MODULE Touch_SessionWithAdministration -->
 @endsection
