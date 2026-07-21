@@ -15,12 +15,12 @@
  ベーススタイル
 ------------------------------ */
 .entry-style .acms-cssgrid {
-  --acms-gap: var(--unit-gap-x);
+  --acms-gap: 0 var(--unit-gap-x);
 }
 .entry-style .acms-stack,
 .entry-style .acms-vstack,
 .entry-style .acms-hstack {
-  --acms-stack-spacing: var(--unit-gap-x);
+  --acms-stack-spacing: 0 var(--unit-gap-x);
 }
 
 .entry-style {
