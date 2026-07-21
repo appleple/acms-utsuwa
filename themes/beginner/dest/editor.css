@@ -305,7 +305,6 @@
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
-  grid-auto-flow: column;
   font-size: 1rem;
   line-height: var(--line-height-base);
 }
@@ -314,7 +313,6 @@
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li::before {
   grid-column: 1;
-  padding-top: 1.4px; /* 番号位置の微調整 */
   font-weight: bold;
   color: var(--color-text-2nd);
   word-break: keep-all;
@@ -324,6 +322,7 @@
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li > * {
   /* ブロックエディタ：リセット用 */
+  grid-column: 2; /* li 内に複数の要素がある場合もテキスト列に配置 */
   margin-bottom: 0;
 }
 .entry-style ol:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > li ol {
