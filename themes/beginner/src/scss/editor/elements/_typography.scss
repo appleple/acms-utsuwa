@@ -182,7 +182,6 @@
     display: grid;
     grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
     grid-column: 1 / -1; /* 列をまたいで全幅を確保 */
-    grid-auto-flow: column;
     font-size: map.get(global.$font-scales, body-m);
     line-height: var(--line-height-base);
 
@@ -192,7 +191,6 @@
 
     &::before {
       grid-column: 1;
-      padding-top: 1.4px; /* 番号位置の微調整 */
       font-weight: bold;
       color: var(--color-text-2nd);
       word-break: keep-all;
@@ -203,6 +201,7 @@
 
     & > * {
       /* ブロックエディタ：リセット用 */
+      grid-column: 2; /* li 内に複数の要素がある場合もテキスト列に配置 */
       margin-bottom: 0;
     }
 

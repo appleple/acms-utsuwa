@@ -1,14 +1,13 @@
 {
   "name": "site",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "アクセシビリティに配慮した実用的なテーマです。豊富なテンプレートを備えており、企業サイトとしてそのままご利用いただけます。",
   "keywords": [
     "CMS",
     "a-blog cms"
   ],
   "browserslist": [
-    "defaults",
-    "safari >= 15.4"
+    "baseline widely available"
   ],
   "config": {
     "local": "localhost",
@@ -36,6 +35,7 @@
     "@babel/preset-env": "^7.28.0",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^10.0.0",
+    "browserslist": "^4.28.1",
     "core-js": "^3.44.0",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.1",
