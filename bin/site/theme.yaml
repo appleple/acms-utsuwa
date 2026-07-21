@@ -1,0 +1,16 @@
+# インストーラーのテーマ選択肢としてこの bin を宣言する（InstallThemeCollector が走査）。
+# key は install の select_theme 値（＝この bin ディレクトリ名）。
+# 子ブログ（news@site 等）は Installer が setup/bin/ の FS 走査で自動検出するため、入れ子表記は不要。
+key: site
+label: Site
+image: site.png
+order: 10
+description: アクセシビリティに配慮した実用的なテーマです。豊富なテンプレートを備えており、企業サイトとしてそのままご利用いただけます。
+comparison:
+  カスタマイズ難易度: ★★★
+  デモデータ数: 多数
+  テンプレートの継承: ○
+  モジュールID利用: ○
+  会員機能: ×
+  コンテンツの表示切替: ○
+  レイアウト機能: ○

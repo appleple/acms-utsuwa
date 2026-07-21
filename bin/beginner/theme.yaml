@@ -1,0 +1,15 @@
+# インストーラーのテーマ選択肢としてこの bin を宣言する（InstallThemeCollector が走査）。
+# key は install の select_theme 値（＝この bin ディレクトリ名）。
+key: beginner
+label: Beginner
+image: beginner.png
+description: Siteテーマを初心者向けにアレンジしたテーマです。a-blog cms の基本機能を学ぶのに最適で、HTML・CSS を学習したばかりの方でもカスタマイズしやすくなっています。
+order: 30
+comparison:
+  カスタマイズ難易度: ★
+  デモデータ数: 多数
+  テンプレートの継承: ×
+  モジュールID利用: ○
+  会員機能: ×
+  コンテンツの表示切替: ×
+  レイアウト機能: ×
