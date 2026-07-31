@@ -7516,24 +7516,6 @@ config:
       config_blog_id: 1,
     }
   - {
-      config_key: ping_weblog_updates_endpoint,
-      config_value: 'http://rpc.pingomatic.com',
-      config_sort: 5,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 1,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: ping_weblog_updates_extended_endpoint,
-      config_value: '',
-      config_sort: 6,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 1,
-      config_blog_id: 1,
-    }
-  - {
       config_key: tpl_entry_edit,
       config_value: _entry.html,
       config_sort: 8,
