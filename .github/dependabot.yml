@@ -5,6 +5,11 @@
 # target-branch は develop/v3 を明示する。このリポジトリのデフォルトブランチは release/v3
 # （push すると release.yml が発火してリリースを作成する）で、指定しないと Dependabot は
 # release/v3 に向けてPRを作ってしまう。
+#
+# 注意: target-branch はワイルドカード非対応（Dependabotの仕様上、実ブランチ名を1つ明示する必要
+# がある）。v4 系列を始める際は、この4箇所の target-branch を develop/v4 に書き換えること
+# （test.yml の push トリガー・Rulesetの対象ブランチ条件は develop/** / release/** で汎用化済み
+# のため、そちらは変更不要）。
 version: 2
 updates:
   - package-ecosystem: "npm"

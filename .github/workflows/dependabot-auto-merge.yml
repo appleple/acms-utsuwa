@@ -3,9 +3,9 @@ name: Dependabot auto-merge
 # Auto-merge Dependabot PRs for patch and minor updates once the required checks pass.
 # Major updates are left for manual review.
 #
-# Requires (in repo Settings): "Allow auto-merge" enabled, and a branch protection rule on the
-# develop/v3 branch with the Test workflow as a required status check — otherwise --auto has no
-# check to wait for and would merge without CI.
+# Requires (in repo Settings): "Allow auto-merge" enabled, and a ruleset covering the Dependabot
+# target branch (develop/v3, see .github/dependabot.yml) with the Test workflow as a required
+# status check — otherwise --auto has no check to wait for and would merge without CI.
 on: pull_request
 
 permissions:
