@@ -585,10 +585,12 @@
   line-height: var(--line-height-xl);
   border: var(--border-width-md) solid var(--color-gray30);
   /* ブロックエディタ調整：リセット用 */
-  /* ブロックエディタ調整 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > * {
   margin-block: 0;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  /* ブロックエディタ調整 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) * + * {
   margin-block-start: 1rem;
@@ -598,7 +600,6 @@
   -webkit-text-decoration: underline dotted 2px;
           text-decoration: underline dotted 2px;
   text-underline-offset: 3px;
-  /* 中に画像が入っているリンクの時 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[target=_blank] {
   margin-right: 4px;
@@ -620,6 +621,9 @@
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  /* 中に画像が入っているリンクの時 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:has(img) {
   display: inline-block;
@@ -700,13 +704,6 @@
 ------------------------------ */
 /* 目次ユニット
 ------------------------------ */
-.entry-style {
-  /* 「目次」見出し */
-  /* リスト */
-  /* 下階層リストレイアウト */
-  /* アイテム */
-  /* アイテムリンク */
-}
 .entry-style .entry-outline {
   padding-block: 1.5rem;
   padding-inline: 1rem;
@@ -720,11 +717,17 @@
     padding: 2rem;
   }
 }
+.entry-style {
+  /* 「目次」見出し */
+}
 .entry-style .entry-outline-title {
   margin: 0 0 1rem;
   font-size: 1.25rem;
   font-weight: bold;
   line-height: var(--line-height-lg);
+}
+.entry-style {
+  /* リスト */
 }
 .entry-style .entry-outline-list-wrap .outline-list {
   display: grid;
@@ -734,9 +737,15 @@
   margin-block: 0;
   counter-reset: outline-list;
 }
+.entry-style {
+  /* 下階層リストレイアウト */
+}
 .entry-style .entry-outline-list-wrap .outline-item .outline-list {
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   padding-left: 1rem;
+}
+.entry-style {
+  /* アイテム */
 }
 .entry-style .entry-outline-list-wrap .outline-item {
   display: contents; /* li要素自体はグリッドレイアウトに影響させない */
@@ -756,16 +765,21 @@
 .entry-style .entry-outline-list-wrap .outline-item::marker {
   content: none;
 }
+.entry-style {
+  /* アイテムリンク */
+}
 .entry-style .entry-outline-list-wrap .outline-item a {
   display: grid;
   grid-template-columns: subgrid; /* アイテム番号の幅を揃えるための設定 */
   grid-column: 1/-1; /* 列をまたいで全幅を確保 */
   grid-auto-flow: column;
   text-decoration: none;
-  /* 番号を生成 */
 }
 .entry-style .entry-outline-list-wrap .outline-item a, .entry-style .entry-outline-list-wrap .outline-item a:link, .entry-style .entry-outline-list-wrap .outline-item a:visited {
   color: inherit;
+}
+.entry-style .entry-outline-list-wrap .outline-item a {
+  /* 番号を生成 */
 }
 .entry-style .entry-outline-list-wrap .outline-item a::before {
   grid-column: 1;
@@ -1349,11 +1363,14 @@
   border: 0; /* リセット */
   border-top: var(--border-width-sm) solid var(--color-gray30);
   border-left: var(--border-width-sm) solid var(--color-gray30);
-  /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th > *,
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td > * {
   margin-block: 0; /* リセット */
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th,
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
+  /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th > *:not(.ProseMirror-widget) + *,
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td > *:not(.ProseMirror-widget) + * {

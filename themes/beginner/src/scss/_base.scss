@@ -13,11 +13,11 @@
 　　ベース
 ------------------------------ */
 html {
+  scroll-behavior: smooth;
   font-family: var(--font-base);
   line-height: var(--line-height-xl);
   color: var(--color-text);
   background: var(--color-white);
-  scroll-behavior: smooth;
 
   @include acms.media-breakpoint-up(md) {
     scroll-padding-top: var(--header-height-fixed);
@@ -25,9 +25,9 @@ html {
 }
 
 body {
+  line-break: strict;
   word-break: normal;
   overflow-wrap: anywhere;
-  line-break: strict;
 }
 
 /* リンクの設定 */
