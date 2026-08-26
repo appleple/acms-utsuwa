@@ -522,10 +522,12 @@
   line-height: var(--line-height-xl);
   border: var(--border-width-md) solid var(--color-gray30);
   /* ブロックエディタ調整：リセット用 */
-  /* ブロックエディタ調整 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) > * {
   margin-block: 0;
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) {
+  /* ブロックエディタ調整 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) * + * {
   margin-block-start: 1rem;
@@ -535,7 +537,6 @@
   -webkit-text-decoration: underline dotted 2px;
           text-decoration: underline dotted 2px;
   text-underline-offset: 3px;
-  /* 中に画像が入っているリンクの時 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a[target=_blank] {
   margin-right: 4px;
@@ -557,6 +558,9 @@
   .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:any-link:hover {
     text-decoration: none;
   }
+}
+.entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a {
+  /* 中に画像が入っているリンクの時 */
 }
 .entry-style blockquote:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) a:has(img) {
   display: inline-block;
@@ -1059,11 +1063,14 @@
   border: 0; /* リセット */
   border-top: var(--border-width-sm) solid var(--color-gray30);
   border-left: var(--border-width-sm) solid var(--color-gray30);
-  /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th > *,
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td > * {
   margin-block: 0; /* リセット */
+}
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th,
+.entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td {
+  /* 要素間余白を確保(管理画面での行列操作用UIを考慮しつつ) */
 }
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) th > *:not(.ProseMirror-widget) + *,
 .entry-style table:not(:where([class~=not-editor-style], [class~=not-editor-style] *)) td > *:not(.ProseMirror-widget) + * {

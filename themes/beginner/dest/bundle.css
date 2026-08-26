@@ -21,11 +21,11 @@
 　　ベース
 ------------------------------ */
 html {
+  scroll-behavior: smooth;
   font-family: var(--font-base);
   line-height: var(--line-height-xl);
   color: var(--color-text);
   background: var(--color-white);
-  scroll-behavior: smooth;
 }
 @media (min-width: 48rem) {
   html {
@@ -34,9 +34,9 @@ html {
 }
 
 body {
+  line-break: strict;
   word-break: normal;
   overflow-wrap: anywhere;
-  line-break: strict;
 }
 
 /* リンクの設定 */
@@ -1312,15 +1312,19 @@ a {
   padding: 0;
   margin: 0;
   list-style: none;
-  /* 下層リスト */
-  /* 下層リスト最後のリスト下に余白をつける */
 }
 .global-nav-mobile-navbar > .global-nav-mobile-group {
   border-top: var(--border-width-sm) solid var(--color-gray30);
 }
+.global-nav-mobile-group {
+  /* 下層リスト */
+}
 .global-nav-mobile-item .global-nav-mobile-group {
   display: none;
   padding: 0 0 0 1rem;
+}
+.global-nav-mobile-group {
+  /* 下層リスト最後のリスト下に余白をつける */
 }
 .global-nav-mobile-item.level-1 > .global-nav-mobile-group:last-child {
   padding-bottom: 1rem;
@@ -1337,10 +1341,12 @@ a {
   font-weight: bold;
   color: var(--color-text);
   /* 第一階層のアイテムでボタン型以外にラインをつける */
-  /* 下階層アイテム */
 }
 .global-nav-mobile-item.level-1:not(:has(> .global-nav-mobile-link.is-cta)) {
   border-bottom: var(--border-width-sm) solid var(--color-gray30);
+}
+.global-nav-mobile-item {
+  /* 下階層アイテム */
 }
 .global-nav-mobile-item .global-nav-mobile-item {
   font-size: 0.8rem;
@@ -1377,7 +1383,6 @@ a {
   color: inherit;
   text-decoration: none;
   /* ボタン */
-  /* 下階層アイテムリンク */
 }
 .global-nav-mobile-link.is-cta {
   padding: var(--btn-padding-y) var(--btn-padding-x);
@@ -1390,6 +1395,9 @@ a {
 .global-nav-mobile-link.is-cta .icon-expand {
   right: 1rem;
   background-color: var(--color-white);
+}
+.global-nav-mobile-link {
+  /* 下階層アイテムリンク */
 }
 .global-nav-mobile-item .global-nav-mobile-item .global-nav-mobile-link {
   padding: 0.75rem 0 0.75rem 1rem;
