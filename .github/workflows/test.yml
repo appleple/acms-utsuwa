@@ -1,0 +1,32 @@
+name: Test
+
+# ルート（release パッケージング。themes/site・themes/beginner の install/build を含む）を検証する。
+# Dependabot の patch/minor 自動マージ（dependabot-auto-merge.yml）が待つ必須チェック。
+
+on:
+  pull_request:
+  push:
+    branches:
+      - develop/v3
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build themes (site, beginner)
+        run: npm run build:themes
+
+      - name: Build release package
+        run: npm run package
