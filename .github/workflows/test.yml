@@ -1,0 +1,40 @@
+name: Test
+
+# ルート（release パッケージング）と themes/site・themes/beginner（webpack build）を検証する。
+# Dependabot の patch/minor 自動マージ（dependabot-auto-merge.yml）が待つ必須チェック。
+#
+# site・beginner の SCSS は共通変数・mixin（_acms-common.scss）を @ablogcms/acms.css
+# （node_modules 経由。pkg: スキーム + sass.NodePackageImporter で解決。webpack.common.js 参照）
+# から読み込む。以前は ablogcms/themes/system への相対パスで参照していたため、302xリポジトリ内の
+# ローカル symlink 無しではビルドが成立しなかった問題を修正済み（#61）。
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'develop/**'
+      - 'release/**'
+      - 'feature/**'
+      - 'fix/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: Install dependencies (root, site, beginner)
+        run: npm ci
+
+      - name: Build themes (site, beginner)
+        run: npm run build:themes
+
+      - name: Build release package
+        run: npm run package
