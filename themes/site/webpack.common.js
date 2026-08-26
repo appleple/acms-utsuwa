@@ -1,4 +1,3 @@
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -70,9 +69,10 @@ module.exports = {
               sourceMap: true,
               sassOptions: {
                 style: 'expanded',
-                // @ablogcms/acms.css からの共通変数・mixin読み込み（_acms-common.scss）を
-                // node_modules 経由で解決する。
-                loadPaths: [path.resolve(__dirname, 'node_modules')],
+                // @ablogcms/acms.css からの共通変数・mixin読み込み（_acms-common.scss の
+                // pkg:@ablogcms/acms.css/scss/... インポート）を package.json#exports 経由で
+                // 解決する。
+                importers: [new sass.NodePackageImporter()],
               },
             },
           },
