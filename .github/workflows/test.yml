@@ -13,6 +13,9 @@ on:
   push:
     branches:
       - develop/v3
+      - release/v3
+      - 'feature/**'
+      - 'fix/**'
 
 jobs:
   test:
