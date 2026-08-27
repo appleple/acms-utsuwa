@@ -30,19 +30,19 @@
   "devDependencies": {
     "@babel/cli": "^7.28.0",
     "@babel/core": "^7.28.0",
-    "@babel/eslint-parser": "^7.28.0",
-    "@babel/eslint-plugin": "^7.27.1",
     "@babel/preset-env": "^7.28.0",
     "@ablogcms/acms.css": "^3.2.29",
+    "@eslint/js": "^10.0.1",
     "autoprefixer": "^10.5.4",
     "babel-loader": "^10.1.1",
     "browserslist": "^4.28.1",
     "core-js": "^3.50.0",
     "css-loader": "^7.1.4",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
+    "eslint": "^10.9.1",
     "eslint-import-resolver-webpack": "^0.13.11",
-    "eslint-webpack-plugin": "^5.0.2",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-webpack-plugin": "^6.0.0",
+    "globals": "^17.11.0",
     "mini-css-extract-plugin": "^2.10.2",
     "postcss": "^8.5.26",
     "postcss-loader": "^8.2.1",
@@ -61,6 +61,9 @@
     "webpack-remove-empty-scripts": "^1.1.1"
   },
   "overrides": {
-    "stylelint-order": "^8.0.0"
+    "stylelint-order": "^8.0.0",
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    }
   }
 }

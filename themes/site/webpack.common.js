@@ -99,7 +99,7 @@ module.exports = {
       emitWarning: true,
       failOnError: true,
       fix: true,
-      configType: 'eslintrc',
+      configType: 'flat',
     }),
     // StyleLint
     new StylelintPlugin({
