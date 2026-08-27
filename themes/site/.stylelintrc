@@ -15,8 +15,9 @@
     "keyframes-name-pattern": null,
     "scss/at-mixin-pattern": null,
     "scss/dollar-variable-pattern": null,
-    "scss/double-slash-comment-whitespace-inside",
+    "scss/double-slash-comment-whitespace-inside": null,
     "scss/percent-placeholder-pattern": null,
+    "nesting-selector-no-missing-scoping-root": null,
     "order/order": [
       "custom-properties",
       "declarations"

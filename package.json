@@ -1,6 +1,6 @@
 {
   "name": "acms-utsuwa",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "private": true,
   "description": "写真やコンテンツを入力すればそのまま企業サイトとして成り立つ構成を備えた、実用的でモダンな a-blog cms の公式テーマです。",
   "type": "module",
@@ -13,6 +13,7 @@
     "build:themes": "npm run build:site && npm run build:beginner",
     "build:site": "npm --prefix themes/site run build",
     "build:beginner": "npm --prefix themes/beginner run build",
+    "prepackage": "npm run build:themes",
     "package": "rm -rf build && npm run build",
     "version:sync": "node scripts/version.js",
     "release:commit": "node scripts/commit.js",
@@ -37,7 +38,7 @@
   "homepage": "https://github.com/appleple/acms-utsuwa#readme",
   "license": "MIT",
   "devDependencies": {
-    "archiver": "^7.0.1",
+    "archiver": "^8.0.0",
     "fs-extra": "^11.4.0"
   }
 }

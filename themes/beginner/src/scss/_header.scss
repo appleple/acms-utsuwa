@@ -73,7 +73,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 240px 1fr;
-    grid-gap: 0 var(--col-gutter);
+    gap: 0 var(--col-gutter);
     align-items: center;
     padding: 1.5rem var(--gutter-lg) 0;
     text-align: center;
