@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import archiver from 'archiver';
+import { ZipArchive } from 'archiver';
 
 const execAsync = promisify(exec);
 
@@ -49,7 +49,7 @@ export const systemDirList = async (directory) => {
  */
 export const zipPromise = (src, dist) => {
   return new Promise((resolve, reject) => {
-    const archive = archiver.create('zip', {});
+    const archive = new ZipArchive({});
     const output = fs.createWriteStream(dist);
 
     output.on('close', () => {
