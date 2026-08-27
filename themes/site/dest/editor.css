@@ -554,22 +554,16 @@
 ------------------------------ */
 .align-left {
   display: flex;
-}
-.align-left {
   justify-content: flex-start;
 }
 
 .align-right {
   display: flex;
-}
-.align-right {
   justify-content: flex-end;
 }
 
 .align-center {
   display: flex;
-}
-.align-center {
   justify-content: center;
 }
 
