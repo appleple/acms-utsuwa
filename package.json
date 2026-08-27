@@ -13,6 +13,7 @@
     "build:themes": "npm run build:site && npm run build:beginner",
     "build:site": "npm --prefix themes/site run build",
     "build:beginner": "npm --prefix themes/beginner run build",
+    "prepackage": "npm run build:themes",
     "package": "rm -rf build && npm run build",
     "version:sync": "node scripts/version.js",
     "release:commit": "node scripts/commit.js",
