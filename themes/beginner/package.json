@@ -25,7 +25,7 @@
   "author": "appleple",
   "license": "MIT",
   "devDependencies": {
-    "@ablogcms/acms.css": "^3.2.29",
+    "@ablogcms/acms.css": "^3.2.32",
     "autoprefixer": "^10.5.4",
     "browserslist": "^4.28.1",
     "css-loader": "^7.1.4",

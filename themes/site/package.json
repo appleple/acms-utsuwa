@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
-    "@ablogcms/acms.css": "^3.2.29",
+    "@ablogcms/acms.css": "^3.2.32",
     "@eslint/js": "^10.0.1",
     "autoprefixer": "^10.5.4",
     "babel-loader": "^10.1.1",
