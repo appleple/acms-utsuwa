@@ -83,7 +83,7 @@ module.exports = {
   plugins: [
     // StyleLint
     new StylelintPlugin({
-      configFile: '.stylelintrc',
+      configFile: 'stylelint.config.mjs',
       context: './src/scss',
       emitError: true,
       emitWarning: true,
