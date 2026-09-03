@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "アクセシビリティに配慮した実用的なテーマです。豊富なテンプレートを備えており、企業サイトとしてそのままご利用いただけます。",
   "keywords": [
     "CMS",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
-    "@ablogcms/acms.css": "^3.2.29",
+    "@ablogcms/acms.css": "^3.2.32",
     "@eslint/js": "^10.0.1",
     "autoprefixer": "^10.5.4",
     "babel-loader": "^10.1.1",
@@ -52,10 +52,10 @@
     "stylelint-config-recess-order": "^7.8.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-webpack-plugin": "^5.1.0",
-    "webpack": "^5.109.2",
+    "webpack": "^5.110.1",
     "webpack-bundle-analyzer": "^5.3.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2",
+    "webpack-cli": "^7.2.2",
+    "webpack-dev-server": "^6.0.0",
     "webpack-fix-style-only-entries": "^0.6.1",
     "webpack-merge": "^6.0.1",
     "webpack-remove-empty-scripts": "^1.1.1"

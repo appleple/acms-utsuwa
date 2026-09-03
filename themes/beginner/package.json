@@ -1,6 +1,6 @@
 {
   "name": "beginner",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "a-blog cms の基本機能を学ぶのに最適で、HTML・CSS を学習したばかりの方でもカスタマイズしやすいテーマです。",
   "keywords": [
     "CMS",
@@ -25,7 +25,7 @@
   "author": "appleple",
   "license": "MIT",
   "devDependencies": {
-    "@ablogcms/acms.css": "^3.2.29",
+    "@ablogcms/acms.css": "^3.2.32",
     "autoprefixer": "^10.5.4",
     "browserslist": "^4.28.1",
     "css-loader": "^7.1.4",
@@ -38,10 +38,10 @@
     "stylelint-config-recess-order": "^7.8.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-webpack-plugin": "^5.1.0",
-    "webpack": "^5.109.2",
-    "webpack-bundle-analyzer": "^5.3.1",
+    "webpack": "^5.110.1",
+    "webpack-bundle-analyzer": "^5.3.2",
     "webpack-cli": "^7.2.2",
-    "webpack-dev-server": "^5.2.2",
+    "webpack-dev-server": "^6.0.0",
     "webpack-fix-style-only-entries": "^0.6.1",
     "webpack-merge": "^6.0.1",
     "webpack-remove-empty-scripts": "^1.1.1"
