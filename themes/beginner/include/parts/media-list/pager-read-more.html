@@ -1,13 +1,15 @@
 <!-- BEGIN pager:veil -->
 <!-- BEGIN forwardLink -->
-<form post="" method="POST" hx-trigger="submit" hx-target="this" hx-swap="outerHTML">
-  <input type="hidden" name="bid" value="%{BID}">
-  <input type="hidden" name="cid" value="%{CID}">
-  <input type="hidden" name="tpl" value="/include/parts/media-list/additional-contents.html">
-  <input type="hidden" name="page" value="{forwardPage}">
+<div id="search-results">
   <div class="media-list-pager-button-wrap">
-    <button type="submit" name="ACMS_POST_2GET_Ajax" class="button is-width-lg">もっと見る</button>
+    <a href="{url}"
+      class="button is-width-lg"
+      hx-get="{url}tpl/include/parts/media-list/additional-contents.html"
+      hx-target="#search-results"
+      hx-swap="outerHTML">
+      もっと見る
+    </a>
   </div>
-</form>
+</div>
 <!-- END forwardLink -->
 <!-- END pager:veil -->
