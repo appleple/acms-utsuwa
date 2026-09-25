@@ -18,6 +18,15 @@
   }
 }
 
+/* 本文の基本の文字スタイル
+ 公開側では html に指定している値（_base.scss）を、編集画面とブロックエディターのプレビュー（隔離 iframe）でも本文に当てる。
+ プレビューは親の CSS を継承せず、editor.css だけが注入されるため */
+:where(.#{acms.$entry-class}) {
+  font-family: var(--font-base);
+  line-height: var(--line-height-xl);
+  color: var(--color-text);
+}
+
 // ユニット全体のレイアウト
 .#{acms.$entry-class} {
   /* コンテンツの初めの要素には上余白をつけない */

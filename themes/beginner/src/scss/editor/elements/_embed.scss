@@ -151,8 +151,8 @@
 }
 
 /* カードは figure の中に置かれるため、本文の figure の中央揃えと行の高さ（画像の下の隙間対策の line-height: 0）を
- 受け継がないようにする */
+ 受け継がないようにする。行の高さは、figure の外に置かれる旧ユニットと同じく本文の値（_base.scss の html）にそろえる */
 :where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) .embed-block-card {
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-xl);
   text-align: left;
 }

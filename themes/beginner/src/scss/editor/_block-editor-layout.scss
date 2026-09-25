@@ -73,3 +73,10 @@
   max-width: 100%;
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 }
+
+/* ブロックエディターのプレビュー（隔離 iframe）では、HTML ブロックの中身が独自要素 acms-isolated-preview-root の直下に置かれる。
+ 公開側と同じく本文幅いっぱいに広げる（余白はプレビュー枠の中に空きができるため付けない） */
+:where(acms-isolated-preview-root) > :where(iframe, video, object, embed) {
+  width: 100%;
+  max-width: 100%;
+}
