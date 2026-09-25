@@ -4,13 +4,18 @@
 @use "../../global/common" as global;
 
 /* ------------------------------
- 埋め込みユニット
+ 埋め込みユニット・埋め込みブロック
+ ブロックのカードは旧ユニットと同じ acms-embed-link-* クラスも持つため、ルートとカード本体だけ並べて宣言を共有する。
+ ブロックはカード全体ではなくタイトルだけが a なので、タイトルのリンク領域をカード全体へ広げて旧ユニットと同じ操作感にする
 ------------------------------ */
 
-[class*="column-embed-"] {
+[class*="column-embed-"],
+.embed-block {
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 
-  a.acms-embed-link {
+  a.acms-embed-link,
+  .embed-block-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -28,7 +33,8 @@
     }
   }
 
-  .acms-embed-link-image-container img {
+  .acms-embed-link-image-container img,
+  .embed-block-card > img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -67,11 +73,13 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    a.acms-embed-link {
+    a.acms-embed-link,
+    .embed-block-card {
       flex-direction: row;
     }
 
-    .acms-embed-link-image-container {
+    .acms-embed-link-image-container,
+    .embed-block-card > img {
       box-sizing: border-box;
       flex: 1 0 auto;
       width: math.div(100%, 3);
@@ -81,6 +89,11 @@
     .acms-embed-link-image-container img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+    }
+
+    /* 画像を包む要素が無いので、画像自身が旧ユニットの入れ物の幅を持ち、カードの高さまで伸びて切り抜かれる */
+    .embed-block-card > img {
       object-fit: cover;
     }
 
@@ -103,4 +116,27 @@
       white-space: nowrap;
     }
   }
+
+  /* 本文リンクの色・下線を打ち消す。
+     Why not ::after でリンク領域を広げないか: 別タブで開くリンクは ::after にアイコンを持つため */
+  a.embed-block-card-title {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+    }
+  }
+
+  .acms-embed-link-site-name {
+    display: block;
+  }
+}
+
+/* 埋め込みブロックの配置用の外側 div が余白を持つため、figure の UA 既定の余白は打ち消す */
+.embed-block > figure {
+  margin: 0;
 }
