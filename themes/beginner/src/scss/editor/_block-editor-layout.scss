@@ -42,8 +42,11 @@
 
   /* 中の最後の子の下余白を打ち消すため、グループ自身が他のブロックと同じ余白を持つ */
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+}
 
-  /* 先頭・末尾の子ブロックの余白を打ち消し、グループの枠と中身が二重に空かないようにする */
+/* 先頭・末尾の子ブロックの余白を打ち消し、グループの枠と中身が二重に空かないようにする。
+ Why not グループも :where で包まないか: 本文の段落等（.entry-style p = 詳細度 0,1,1）の余白に負けて打ち消せないため */
+:where(.#{acms.$entry-class}) [data-type="group"] {
   > :first-child {
     margin-top: 0;
   }
@@ -65,6 +68,8 @@
 :where(.#{acms.$entry-class})
   :where(.column-block-editor, [data-type="group"], [data-type="column"])
   > :where(iframe, video, object, embed) {
+  /* Google マップ等の埋め込みコードは width="600" のような固定幅を持つことが多いため、本文幅いっぱいに広げる（高さは属性の値のまま） */
+  width: 100%;
   max-width: 100%;
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 }
