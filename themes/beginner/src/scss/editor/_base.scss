@@ -18,6 +18,13 @@
   }
 }
 
+/* 本文の基本の文字スタイル（編集画面・ブロックエディターのプレビューでも公開側と同じ文字にする） */
+:where(.#{acms.$entry-class}) {
+  font-family: var(--font-base);
+  line-height: var(--line-height-xl);
+  color: var(--color-text);
+}
+
 // ユニット全体のレイアウト
 .#{acms.$entry-class} {
   /* コンテンツの初めの要素には上余白をつけない */

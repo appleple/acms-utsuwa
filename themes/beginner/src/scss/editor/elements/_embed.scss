@@ -4,13 +4,16 @@
 @use "../../global/common" as global;
 
 /* ------------------------------
- 埋め込みユニット
+ 埋め込みユニット・埋め込みブロック
 ------------------------------ */
 
-[class*="column-embed-"] {
+:where(.#{acms.$entry-class}) [class*="column-embed-"],
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) {
   margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
 
-  a.acms-embed-link {
+  a.acms-embed-link,
+  .embed-block-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -28,24 +31,29 @@
     }
   }
 
-  .acms-embed-link-image-container img {
+  .acms-embed-link-image-container img,
+  .embed-block-card > img {
     display: block;
     max-width: 100%;
     height: auto;
   }
 
-  .acms-embed-link-content {
+  .acms-embed-link-content,
+  .embed-block-card-content {
     padding: 1rem;
     margin: 0; /* リセット */
   }
 
-  .acms-embed-link-site-name {
+  .acms-embed-link-site-name,
+  .embed-block-card-provider {
     margin: 0;
     font-size: map.get(global.$font-scales, body-s);
     color: var(--color-text);
   }
 
-  .acms-embed-link-title {
+  .acms-embed-link-title,
+  .embed-block-card-title {
+    display: block;
     margin: 0 0 0.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -54,7 +62,8 @@
     white-space: nowrap;
   }
 
-  .acms-embed-link-description {
+  .acms-embed-link-description,
+  .embed-block-card-description {
     display: -webkit-box;
     margin: 0;
     overflow: hidden;
@@ -67,11 +76,13 @@
   }
 
   @include acms.media-breakpoint-up(md) {
-    a.acms-embed-link {
+    a.acms-embed-link,
+    .embed-block-card {
       flex-direction: row;
     }
 
-    .acms-embed-link-image-container {
+    .acms-embed-link-image-container,
+    .embed-block-card > img {
       box-sizing: border-box;
       flex: 1 0 auto;
       width: math.div(100%, 3);
@@ -84,17 +95,24 @@
       object-fit: cover;
     }
 
-    .acms-embed-link-content {
+    /* 画像をカードの高さに合わせて切り抜く */
+    .embed-block-card > img {
+      object-fit: cover;
+    }
+
+    .acms-embed-link-content,
+    .embed-block-card-content {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      width: math.div(2, 3);
+      width: math.div(200%, 3);
       padding: 1rem;
       overflow: hidden;
     }
 
-    .acms-embed-link-title {
+    .acms-embed-link-title,
+    .embed-block-card-title {
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -103,4 +121,62 @@
       white-space: nowrap;
     }
   }
+
+  /* タイトルのリンクをカード全体に広げる */
+  a.embed-block-card-title {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+    }
+  }
+
+  /* キーボード操作時のフォーカスの枠をカード全体に出す */
+  a.embed-block-card-title:focus-visible {
+    outline: none;
+  }
+
+  .embed-block-card:has(a.embed-block-card-title:focus-visible) {
+    outline: auto 1px;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 1px;
+  }
+
+  .acms-embed-link-site-name,
+  .embed-block-card-provider {
+    display: block;
+  }
+}
+
+/* 埋め込みブロックの figure の余白を打ち消す */
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) > figure {
+  margin: 0;
+}
+
+/* 中央・右揃えでは、figure（表示サイズまで広がる）より狭い埋め込み（X のウィジェット等）も同じ向きに寄せる。
+   Why not 子要素に margin-inline: auto: Instagram 等は margin をインラインで指定しており上書きできない */
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="center"], [data-type="embedBlock"][data-align="right"]) [data-embed-content] {
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="center"]) [data-embed-content] {
+  align-items: center;
+}
+
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="right"]) [data-embed-content] {
+  align-items: flex-end;
+}
+
+/* 埋め込みブロックのカードに、本文の figure の中央揃え・行の高さを受け継がせない */
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) .embed-block-card {
+  line-height: var(--line-height-xl);
+  text-align: left;
 }

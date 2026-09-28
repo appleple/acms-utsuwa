@@ -6,12 +6,12 @@
 <link rel="stylesheet" href="/css/acms-layout.min.css">
 <!-- END_MODULE Touch_Edit -->
 
-<!-- テーマ用のCSSカスタムプロパティを読み込み -->
-<link rel="stylesheet" href="/include/head/css-variables.css" />
+<!-- テーマ用のCSSカスタムプロパティを読み込み（editor.css が参照するため data-block-editor-stylesheet も付与） -->
+<link rel="stylesheet" href="/include/head/css-variables.css" data-block-editor-stylesheet />
 <!-- 編集画面とエディタ内要素のスタイル（編集・閲覧画面両方に適用）を読み込み -->
-<link rel="stylesheet" href="/dest/editor.css">
+<link rel="stylesheet" href="/dest/editor.css" data-block-editor-stylesheet>
 <!-- 編集画面用カスタムCSSを読み込み -->
-<link rel="stylesheet" href="/include/edit/custom.css">
+<link rel="stylesheet" href="/include/edit/custom.css" data-block-editor-stylesheet>
 @endsection
 
 @section("admin-js")
