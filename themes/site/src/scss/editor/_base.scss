@@ -18,9 +18,7 @@
   }
 }
 
-/* 本文の基本の文字スタイル
- 公開側では html に指定している値（_base.scss）を、編集画面とブロックエディターのプレビュー（隔離 iframe）でも本文に当てる。
- プレビューは親の CSS を継承せず、editor.css だけが注入されるため */
+/* 本文の基本の文字スタイル（編集画面・ブロックエディターのプレビューでも公開側と同じ文字にする） */
 :where(.#{acms.$entry-class}) {
   font-family: var(--font-base);
   line-height: var(--line-height-xl);
@@ -46,7 +44,7 @@
     height: auto;
   }
 
-  audit,
+  audio,
   canvas,
   embed,
   iframe,

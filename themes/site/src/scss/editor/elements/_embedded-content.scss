@@ -1,0 +1,15 @@
+@use "../../global/acms-common" as acms;
+
+/* ------------------------------
+ 本文の埋め込みコンテンツ（iframe・video・object・embed）
+ 本文より広いときは幅を縮める
+------------------------------ */
+:where(.#{acms.$entry-class}, acms-isolated-preview-root) :where(iframe, video, object, embed) {
+  box-sizing: border-box; /* 枠線を含めて本文幅に収める */
+  max-width: 100%;
+}
+
+/* 前後の余白（外枠が余白を持つ埋め込みブロック・配置（align-*）の中と、プレビューの中は除く） */
+:where(.#{acms.$entry-class}) :where(iframe, video, object, embed):not(:where([data-type="embedBlock"], [class^="align-"], [class*=" align-"], acms-isolated-preview-root) *) {
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+}

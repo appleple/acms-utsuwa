@@ -5,10 +5,6 @@
 
 /* ------------------------------
  埋め込みユニット・埋め込みブロック
- 旧ユニット（acms-embed-link-*）とブロック（embed-block-card-*）のセレクタを並べて宣言を共有する。
- どちらも本文の範囲（エントリークラス）に限定し、ブロックはグループ・カラムと同じくデータタイプで指定する。
- ブロックは管理画面のカードが embed-block-card-* しか持たないため、公開側と共通のこちらのクラスで指定する。
- ブロックはカード全体ではなくタイトルだけが a なので、タイトルのリンク領域をカード全体へ広げて旧ユニットと同じ操作感にする
 ------------------------------ */
 
 :where(.#{acms.$entry-class}) [class*="column-embed-"],
@@ -99,7 +95,7 @@
       object-fit: cover;
     }
 
-    /* 画像を包む要素が無いので、画像自身が旧ユニットの入れ物の幅を持ち、カードの高さまで伸びて切り抜かれる */
+    /* 画像をカードの高さに合わせて切り抜く */
     .embed-block-card > img {
       object-fit: cover;
     }
@@ -110,7 +106,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
-      width: math.div(2, 3);
+      width: math.div(200%, 3);
       padding: 1rem;
       overflow: hidden;
     }
@@ -126,11 +122,14 @@
     }
   }
 
-  /* 旧ユニットのタイトルは div でカードの文字色を受け継ぐが、ブロックのタイトルは a なので
-   ブラウザ既定のリンクの色・下線を打ち消す（not-editor-style で本文リンクのスタイルは当たらない） */
+  /* タイトルのリンクをカード全体に広げる */
   a.embed-block-card-title {
     color: inherit;
     text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &::after {
       position: absolute;
@@ -139,19 +138,44 @@
     }
   }
 
+  /* キーボード操作時のフォーカスの枠をカード全体に出す */
+  a.embed-block-card-title:focus-visible {
+    outline: none;
+  }
+
+  .embed-block-card:has(a.embed-block-card-title:focus-visible) {
+    outline: auto 1px;
+    outline-color: -webkit-focus-ring-color;
+    outline-offset: 1px;
+  }
+
   .acms-embed-link-site-name,
   .embed-block-card-provider {
     display: block;
   }
 }
 
-/* 埋め込みブロックの配置用の外側 div が余白を持つため、figure の UA 既定の余白は打ち消す */
+/* 埋め込みブロックの figure の余白を打ち消す */
 :where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) > figure {
   margin: 0;
 }
 
-/* カードは figure の中に置かれるため、本文の figure の中央揃えと行の高さ（画像の下の隙間対策の line-height: 0）を
- 受け継がないようにする。行の高さは、figure の外に置かれる旧ユニットと同じく本文の値（_base.scss の html）にそろえる */
+/* 中央・右揃えでは、figure（表示サイズまで広がる）より狭い埋め込み（X のウィジェット等）も同じ向きに寄せる。
+   Why not 子要素に margin-inline: auto: Instagram 等は margin をインラインで指定しており上書きできない */
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="center"], [data-type="embedBlock"][data-align="right"]) [data-embed-content] {
+  display: flex;
+  flex-direction: column;
+}
+
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="center"]) [data-embed-content] {
+  align-items: center;
+}
+
+:where(.#{acms.$entry-class}) :where([data-type="embedBlock"][data-align="right"]) [data-embed-content] {
+  align-items: flex-end;
+}
+
+/* 埋め込みブロックのカードに、本文の figure の中央揃え・行の高さを受け継がせない */
 :where(.#{acms.$entry-class}) :where([data-type="embedBlock"]) .embed-block-card {
   line-height: var(--line-height-xl);
   text-align: left;
