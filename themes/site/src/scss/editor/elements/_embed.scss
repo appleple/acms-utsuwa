@@ -32,7 +32,7 @@
   }
 
   .acms-embed-link-image-container img,
-  .embed-block-card-image img {
+  .embed-block-card-image-container img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -82,7 +82,7 @@
     }
 
     .acms-embed-link-image-container,
-    .embed-block-card-image {
+    .embed-block-card-image-container {
       box-sizing: border-box;
       flex: 1 0 auto;
       width: math.div(100%, 3);
@@ -91,7 +91,7 @@
 
     /* 画像をカードの高さに合わせて切り抜く */
     .acms-embed-link-image-container img,
-    .embed-block-card-image img {
+    .embed-block-card-image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
