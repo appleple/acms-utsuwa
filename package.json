@@ -39,6 +39,6 @@
   "license": "MIT",
   "devDependencies": {
     "archiver": "^8.0.0",
-    "fs-extra": "^11.4.0"
+    "fs-extra": "^11.4.1"
   }
 }
