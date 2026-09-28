@@ -33,3 +33,26 @@
   gap: var(--unit-gutter-var);
 }
 
+/* グループ
+ 背景色・内側の余白は gu-* のクラス（_group.scss）で指定する
+----------------------------- */
+:where(.#{acms.$entry-class}) :where([data-type="group"]) {
+  box-sizing: border-box;
+  margin-block: var(--unit-margin-top) var(--unit-margin-bottom);
+}
+
+/* 先頭・末尾の子ブロックの余白を打ち消す */
+:where(.#{acms.$entry-class}) [data-type="group"] {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* カラーパレットで背景色を付けたグループの内側の余白 */
+:where(.#{acms.$entry-class}) :where([data-type="group"][style*="background-color"]) {
+  padding: var(--entry-el-padding-md);
+}
