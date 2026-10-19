@@ -6,18 +6,17 @@
   <div class="acms-admin-accordion-panel">
     <table class="adminTable acms-admin-table-admin-edit">
       <tr id="seo-entry_meta_title">
-        <th><label for="input-text-entry_meta_title">タイトル</label><i data-acms-tooltip="検索結果やブラウザのタブに表示されるページのタイトル（title タグ）で、このエントリーのタイトルの代わりに使う文字を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i>
+        <th>タイトル - <small>title</small><i data-acms-tooltip="エントリーの titleタグを設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i>
           <div>
-            <span class="acms-admin-label"><span class="title_countup"></span> 文字</span>
+            <span class="acms-admin-label"><span class="keyword_countup"></span> 文字</span>
           </div>
         </th>
         <td>
-          <input type="text" name="entry_meta_title" value="{entry_meta_title}" id="input-text-entry_meta_title" class="js-countup acms-admin-form-width-medium" data-max="9999" data-label-target=".title_countup" />
+          <input type="text" name="entry_meta_title" value="{entry_meta_title}" class="js-countup acms-admin-form-width-medium" data-max="9999" data-label-target=".keyword_countup" /> | %{ROOT_BLOG_NAME}
           <input type="hidden" name="field[]" value="entry_meta_title" />
           <input type="hidden" name="entry_meta_title:search" value="0" />
         </td>
       </tr>
-      <!-- キーワード（keywords）は現在の主要な検索エンジンで使われていないため非表示にしている。使う場合は、このコメントを外し、include/head/meta.html の keywords の出力も戻す
       <tr id="seo-entry_meta_keywords">
         <th>キーワード - <small>keywords</small><i data-acms-tooltip="エントリーの METAタグ（Keywords）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
@@ -26,21 +25,20 @@
           <input type="hidden" name="entry_meta_keywords:search" value="0" />
         </td>
       </tr>
-      -->
       <tr id="seo-entry_meta_description">
-        <th><label for="input-text-entry_meta_description">概要文</label><i data-acms-tooltip="検索結果や、SNS でシェアされたときに表示される、ページの説明文（meta description・og:description）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i>
+        <th>概要文 - <small>description</small><i data-acms-tooltip="エントリーの METAタグ（Description）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i>
           <div>
             <span class="acms-admin-label"><span class="description_countup"></span> 文字</span>
           </div>
         </th>
         <td>
-          <textarea name="entry_meta_description" id="input-text-entry_meta_description" rows="5" class="js-countup acms-admin-form-width-full acms-admin-form-auto-size" style="--acms-admin-form-control-min-height: 3lh;" data-max="9999" data-label-target=".description_countup">{entry_meta_description}</textarea>
+          <textarea name="entry_meta_description" rows="5" class="js-countup acms-admin-form-width-full" data-max="9999" data-label-target=".description_countup">{entry_meta_description}</textarea>
           <input type="hidden" name="field[]" value="entry_meta_description" />
           <input type="hidden" name="entry_meta_description:search" value="0" />
         </td>
       </tr>
       <tr id="seo-entry_meta_robots">
-        <th>検索エンジン<i data-acms-tooltip="チェックすると、このエントリーのページを検索結果に表示しないよう検索エンジンに伝えます（noindex）。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i></th>
+        <th>検索エンジン - <small>noindex</small><i data-acms-tooltip="チェックするとこのエントリーをインデックスされないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
             <input type="checkbox" name="entry_meta_robots[]" value="noindex" {entry_meta_robots:checked#noindex} />
@@ -50,7 +48,7 @@
         </td>
       </tr>
       <tr id="seo-entry_meta_sitemap">
-        <th>サイトマップ<i data-acms-tooltip="チェックすると、このエントリーをサイトマップ（sitemap.xml）に載せません。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i></th>
+        <th>サイトマップ - <small>sitemap</small><i data-acms-tooltip="チェックするとこのエントリーをサイトマップに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
             <input type="checkbox" name="entry_meta_sitemap[]" value="disabled" {entry_meta_sitemap:checked#disabled} />
@@ -60,7 +58,7 @@
         </td>
       </tr>
       <tr id="seo-entry_meta_rss">
-        <th>RSS<i data-acms-tooltip="チェックすると、このエントリーを RSS（rss2.xml）に載せません。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i></th>
+        <th>RSS - <small>rss</small><i data-acms-tooltip="チェックするとこのエントリーをRSSに出力しないようにします。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip"></i></th>
         <td>
           <label class="acms-admin-form-checkbox">
             <input type="checkbox" name="entry_meta_rss[]" value="disabled" {entry_meta_rss:checked#disabled} />
@@ -70,7 +68,7 @@
         </td>
       </tr>
       <tr id="seo-entry_main_image">
-        <th>メイン画像<i data-acms-tooltip="一覧表示に使う画像や、SNS でシェアされたときに表示される画像（OGP画像）を設定します。" class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip-hover"></i></th>
+        <th>メイン画像 - <small>main_image</small><i class="acms-admin-icon-tooltip acms-admin-inline-space-left js-acms-tooltip" data-acms-tooltip="一覧表示で利用する画像や、SNS等で利用するOGP画像を設定します。"></i></th>
         <td class="js-media-field seo-entry_main_image-droparea">
           <div class="js-droparea" data-thumbnail="{entry_main_image@thumbnail}" data-type="image" style="width:200px"></div>
           <p class="js-text acms-admin-text-danger" style="display:none">許可されていないファイルのため挿入できません。</p>

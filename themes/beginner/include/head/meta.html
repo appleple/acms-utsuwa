@@ -24,10 +24,8 @@
 <!-- END_IF -->
 <meta property="og:image:width" content="{image@x}" />
 <meta property="og:image:height" content="{image@y}" /><!-- END_IF --><!-- BEGIN_IF [{description}[delnl]/nem/] -->
-<meta name="description" content="{description}[trim(200, '...')|delnl|escape]"><!-- END_IF -->
-<!-- keywords の meta タグは現在の主要な検索エンジンで使われていないため出力しない。出力する場合は、このコメントを外し、値が空のときは出さないよう BEGIN_IF で囲む
-<meta name="keywords" content="{keywords}">
--->
+<meta name="description" content="{description}[trim(200, '...')|delnl|escape]"><!-- END_IF --><!-- BEGIN_IF [keywords/nem/] -->
+<meta name="keywords" content="{keywords}"><!-- END_IF -->
 
 <meta name="twitter:title" content="{title}">
 <!-- BEGIN_MODULE Touch_Entry -->
@@ -37,16 +35,16 @@
 <meta name="twitter:card" content="summary">
 <!-- END_MODULE Touch_NotEntry -->
 
-<meta name="twitter:domain" content="%{DOMAIN}"><!-- BEGIN_IF [{image}/nem/] -->
+<meta name="twitter:domain" content="%{DOMAIN}">
 <!-- BEGIN_IF [{image@type}/eq/media] -->
 <meta name="twitter:image" content="%{HTTP_MEDIA_ARCHIVES_DIR}{image}">
 <!-- ELSE -->
 <meta name="twitter:image" content="%{HTTP_ARCHIVES_DIR}{image}">
-<!-- END_IF --><!-- END_IF -->
+<!-- END_IF -->
 <!-- END_MODULE Ogp -->
 
 <!-- BEGIN_MODULE Blog_Field -->
-<!-- BEGIN google_site_verification:veil -->
-<meta name="google-site-verification" content="{google_site_verification}">
-<!-- END google_site_verification:veil -->
+<!-- BEGIN google-site-verification:veil -->
+<meta name="google-site-verification" content="{google-site-verification}">
+<!-- END google-site-verification:veil -->
 <!-- END_MODULE Blog_Field -->
