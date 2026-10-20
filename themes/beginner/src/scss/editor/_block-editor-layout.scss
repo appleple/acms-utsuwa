@@ -23,6 +23,49 @@
   }
 }
 
+/* レイアウトのプリセット（ブロックメニューの class で付与）
+ -responsive は 768px 未満で1列に並べる。
+ 既存の layout-two-column / layout-three-column には手を入れず、class を付けたカラムだけを切り替える
+ （class なしで保存済みのカラムの表示を変えないため） */
+:where(.#{acms.$entry-class}) :where([data-type="columns"]) {
+  &.columns2-responsive,
+  &.columns3-responsive,
+  &.columns2-left-wide-responsive,
+  &.columns2-right-wide-responsive {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-flow: row;
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    &.columns2-responsive,
+    &.columns3-responsive,
+    &.columns2-left-wide-responsive,
+    &.columns2-right-wide-responsive {
+      grid-auto-flow: column;
+    }
+
+    // 2カラム
+    &.columns2-responsive {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    // 3カラム
+    &.columns3-responsive {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    // 2カラム（左が広い 2:1）
+    &.columns2-left-wide-responsive {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    // 2カラム（右が広い 1:2）
+    &.columns2-right-wide-responsive {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+  }
+}
+
 /* 管理画面側 */
 :where(.acms-admin-block-editor) :where([data-type="columns"]) {
   gap: 1rem !important; // 管理画面では余白が広くなりすぎないよう固定値を指定

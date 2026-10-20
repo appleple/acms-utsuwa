@@ -59,4 +59,45 @@
     margin-right: auto;
     margin-left: auto;
   }
+
+  /* 段組（グループユニットの class で付与）
+   -responsive は 768px 未満で列数を減らす（4列は2列、それ以外は1列）。
+   列の間の余白は既存の段組（acms-cssgrid）と同じく横方向だけに付け、縦方向はユニット自身の余白に任せる */
+  .gu-columns2,
+  .gu-columns2-responsive,
+  .gu-columns3-responsive,
+  .gu-columns4-responsive,
+  .gu-columns2-left-wide-responsive,
+  .gu-columns2-right-wide-responsive {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0 var(--unit-gap-x);
+  }
+
+  .gu-columns2,
+  .gu-columns4-responsive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include acms.media-breakpoint-up(md) {
+    .gu-columns2-responsive {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gu-columns3-responsive {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gu-columns4-responsive {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .gu-columns2-left-wide-responsive {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    .gu-columns2-right-wide-responsive {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+  }
 }
