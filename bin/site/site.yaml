@@ -10053,24 +10053,6 @@ config:
       config_blog_id: 1,
     }
   - {
-      config_key: block_editor_block_menu_type,
-      config_value: columns3,
-      config_sort: 380,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: block_editor_block_menu_type,
-      config_value: group,
-      config_sort: 381,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
       config_key: entry_tag-relational_entry_field,
       config_value: 'on',
       config_sort: 19,
@@ -16128,24 +16110,6 @@ config:
       config_blog_id: 1,
     }
   - {
-      config_key: block_editor_block_menu_label,
-      config_value: '',
-      config_sort: 401,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: block_editor_block_menu_label,
-      config_value: '',
-      config_sort: 402,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
       config_key: media_banner_attr1,
       config_value: '',
       config_sort: 37,
@@ -19872,24 +19836,6 @@ config:
       config_blog_id: 1,
     }
   - {
-      config_key: block_editor_block_menu_class,
-      config_value: '',
-      config_sort: 422,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: block_editor_block_menu_class,
-      config_value: '',
-      config_sort: 423,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
       config_key: media_banner_type,
       config_value: image,
       config_sort: 55,
@@ -20775,24 +20721,6 @@ config:
       config_key: column_def_add_custom_unit_space_field_1,
       config_value: '',
       config_sort: 73,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: block_editor_block_menu_group,
-      config_value: '',
-      config_sort: 443,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: block_editor_block_menu_group,
-      config_value: '',
-      config_sort: 444,
       config_rule_id: null,
       config_module_id: null,
       config_set_id: 3,
@@ -24534,117 +24462,9 @@ config:
       config_blog_id: 1,
     }
   - {
-      config_key: group_unit_class_value,
-      config_value: 'acms-cssgrid acms-g-cols-2',
-      config_sort: 101,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_value,
-      config_value: 'acms-cssgrid acms-g-cols-1 acms-g-cols-sm-2',
-      config_sort: 102,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_value,
-      config_value: 'acms-cssgrid acms-g-cols-1 acms-g-cols-sm-3',
-      config_sort: 103,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_value,
-      config_value: gu-bg-gray,
-      config_sort: 104,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_value,
-      config_value: gu-border,
-      config_sort: 105,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_value,
-      config_value: gu-narrow,
-      config_sort: 106,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
       config_key: group_unit_class_label,
       config_value: 横並び,
       config_sort: 107,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: 段組：2列,
-      config_sort: 108,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: '段組：2列 | SP以下 1列',
-      config_sort: 109,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: '段組：3列 | SP以下 1列',
-      config_sort: 110,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: 背景色：グレイ,
-      config_sort: 111,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: 枠付き,
-      config_sort: 112,
-      config_rule_id: null,
-      config_module_id: null,
-      config_set_id: 3,
-      config_blog_id: 1,
-    }
-  - {
-      config_key: group_unit_class_label,
-      config_value: 幅狭,
-      config_sort: 113,
       config_rule_id: null,
       config_module_id: null,
       config_set_id: 3,
@@ -28455,6 +28275,429 @@ config:
       config_rule_id: null,
       config_module_id: null,
       config_set_id: null,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns2',
+      config_sort: 451,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns2-responsive',
+      config_sort: 452,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns3-responsive',
+      config_sort: 453,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns4-responsive',
+      config_sort: 454,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns2-left-wide-responsive',
+      config_sort: 455,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-columns2-right-wide-responsive',
+      config_sort: 456,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-bg-gray',
+      config_sort: 457,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-border',
+      config_sort: 458,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_value,
+      config_value: 'gu-narrow',
+      config_sort: 459,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：2列',
+      config_sort: 460,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：2列 | SP以下 1列',
+      config_sort: 461,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：3列 | SP以下 1列',
+      config_sort: 462,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：4列 | SP以下 2列',
+      config_sort: 463,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：2:1 | SP以下 1列',
+      config_sort: 464,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '段組：1:2 | SP以下 1列',
+      config_sort: 465,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '背景色：グレイ',
+      config_sort: 466,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '枠付き',
+      config_sort: 467,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: group_unit_class_label,
+      config_value: '幅狭',
+      config_sort: 468,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_description,
+      config_value: '背景をグレーにし、内側に余白を付けます',
+      config_sort: 469,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_description,
+      config_value: '',
+      config_sort: 470,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_description,
+      config_value: '',
+      config_sort: 471,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_quick_action,
+      config_value: 'on',
+      config_sort: 472,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_quick_action,
+      config_value: '',
+      config_sort: 473,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_quick_action,
+      config_value: '',
+      config_sort: 474,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_icon,
+      config_value: '',
+      config_sort: 475,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_icon,
+      config_value: '',
+      config_sort: 476,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_group_class_icon,
+      config_value: '',
+      config_sort: 477,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_type,
+      config_value: 'columns2',
+      config_sort: 478,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_type,
+      config_value: 'columns2',
+      config_sort: 479,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_type,
+      config_value: 'columns2',
+      config_sort: 480,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_type,
+      config_value: 'columns3',
+      config_sort: 481,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_type,
+      config_value: 'group',
+      config_sort: 482,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_label,
+      config_value: '2カラムに分割（スマホ時1列）',
+      config_sort: 483,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_label,
+      config_value: '2カラムに分割（左が広い 2:1・スマホ時1列）',
+      config_sort: 484,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_label,
+      config_value: '2カラムに分割（右が広い 1:2・スマホ時1列）',
+      config_sort: 485,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_label,
+      config_value: '3カラムに分割（スマホ時1列）',
+      config_sort: 486,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_label,
+      config_value: '',
+      config_sort: 487,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_class,
+      config_value: 'columns2-responsive',
+      config_sort: 488,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_class,
+      config_value: 'columns2-left-wide-responsive',
+      config_sort: 489,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_class,
+      config_value: 'columns2-right-wide-responsive',
+      config_sort: 490,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_class,
+      config_value: 'columns3-responsive',
+      config_sort: 491,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_class,
+      config_value: '',
+      config_sort: 492,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_group,
+      config_value: '',
+      config_sort: 493,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_group,
+      config_value: '',
+      config_sort: 494,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_group,
+      config_value: '',
+      config_sort: 495,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_group,
+      config_value: '',
+      config_sort: 496,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
+      config_blog_id: 1,
+    }
+  - {
+      config_key: block_editor_block_menu_group,
+      config_value: '',
+      config_sort: 497,
+      config_rule_id: null,
+      config_module_id: null,
+      config_set_id: 3,
       config_blog_id: 1,
     }
 comment:
