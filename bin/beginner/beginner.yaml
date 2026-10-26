@@ -531,7 +531,7 @@ column:
       column_field_6: '',
       column_field_7: '',
       column_field_8: '',
-      column_group_class: 'acms-cssgrid acms-g-cols-1 acms-g-cols-sm-2',
+      column_group_class: gu-columns2-responsive,
       column_group_tag: div,
       column_entry_id: 1,
       column_blog_id: 1,
