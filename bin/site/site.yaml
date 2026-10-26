@@ -15805,7 +15805,7 @@ config:
     }
   - {
       config_key: block_editor_block_menu_label,
-      config_value: '',
+      config_value: '2カラム',
       config_sort: 400,
       config_rule_id: null,
       config_module_id: null,
@@ -28360,7 +28360,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：2列',
+      config_value: '2カラム',
       config_sort: 460,
       config_rule_id: null,
       config_module_id: null,
@@ -28369,7 +28369,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：2列 | SP以下 1列',
+      config_value: '2カラム：スマホ時1列',
       config_sort: 461,
       config_rule_id: null,
       config_module_id: null,
@@ -28378,7 +28378,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：3列 | SP以下 1列',
+      config_value: '3カラム：スマホ時1列',
       config_sort: 462,
       config_rule_id: null,
       config_module_id: null,
@@ -28387,7 +28387,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：4列 | SP以下 2列',
+      config_value: '4カラム：スマホ時2列',
       config_sort: 463,
       config_rule_id: null,
       config_module_id: null,
@@ -28396,7 +28396,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：2:1 | SP以下 1列',
+      config_value: '2カラム：左が広い（2:1）',
       config_sort: 464,
       config_rule_id: null,
       config_module_id: null,
@@ -28405,7 +28405,7 @@ config:
     }
   - {
       config_key: group_unit_class_label,
-      config_value: '段組：1:2 | SP以下 1列',
+      config_value: '2カラム：右が広い（1:2）',
       config_sort: 465,
       config_rule_id: null,
       config_module_id: null,
@@ -28567,7 +28567,7 @@ config:
     }
   - {
       config_key: block_editor_block_menu_label,
-      config_value: '2カラムに分割（スマホ時1列）',
+      config_value: '2カラム：スマホ時1列',
       config_sort: 483,
       config_rule_id: null,
       config_module_id: null,
@@ -28576,7 +28576,7 @@ config:
     }
   - {
       config_key: block_editor_block_menu_label,
-      config_value: '2カラムに分割（左が広い 2:1・スマホ時1列）',
+      config_value: '2カラム：左が広い（2:1）',
       config_sort: 484,
       config_rule_id: null,
       config_module_id: null,
@@ -28585,7 +28585,7 @@ config:
     }
   - {
       config_key: block_editor_block_menu_label,
-      config_value: '2カラムに分割（右が広い 1:2・スマホ時1列）',
+      config_value: '2カラム：右が広い（1:2）',
       config_sort: 485,
       config_rule_id: null,
       config_module_id: null,
@@ -28594,7 +28594,7 @@ config:
     }
   - {
       config_key: block_editor_block_menu_label,
-      config_value: '3カラムに分割（スマホ時1列）',
+      config_value: '3カラム：スマホ時1列',
       config_sort: 486,
       config_rule_id: null,
       config_module_id: null,
