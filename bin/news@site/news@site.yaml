@@ -688,7 +688,7 @@ column:
       column_field_8: '',
       column_group_class: gu-bg-gray,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -712,7 +712,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -736,7 +736,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -760,7 +760,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -784,7 +784,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -808,7 +808,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -832,13 +832,13 @@ column:
       column_field_8: '',
       column_group_class: gu-bg-gray,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
       column_id: ac4afd3b-f969-4d4d-b148-0916f8d180e5,
       column_status: open,
-      column_sort: 2,
+      column_sort: 1,
       column_align: '',
       column_type: group,
       column_parent_id: null,
@@ -856,7 +856,7 @@ column:
       column_field_8: '',
       column_group_class: gu-columns2,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -880,7 +880,7 @@ column:
       column_field_8: '',
       column_group_class: gu-border,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -904,7 +904,7 @@ column:
       column_field_8: '',
       column_group_class: gu-border,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -928,7 +928,7 @@ column:
       column_field_8: '',
       column_group_class: gu-bg-gray,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -952,13 +952,13 @@ column:
       column_field_8: '',
       column_group_class: gu-columns3-responsive,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
       column_id: 52605a8a-7d1a-4ec9-8e7f-d85bd91d705e,
       column_status: open,
-      column_sort: 4,
+      column_sort: 2,
       column_align: '',
       column_type: group,
       column_parent_id: null,
@@ -976,7 +976,7 @@ column:
       column_field_8: '',
       column_group_class: gu-columns2-responsive,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1000,7 +1000,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1024,13 +1024,13 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
       column_id: 1fa22271-dbe0-413f-a391-11d294d8ec2e,
       column_status: open,
-      column_sort: 5,
+      column_sort: 4,
       column_align: '',
       column_type: group,
       column_parent_id: null,
@@ -1048,7 +1048,7 @@ column:
       column_field_8: '',
       column_group_class: gu-columns4-responsive,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1072,7 +1072,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1096,7 +1096,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1120,7 +1120,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1144,13 +1144,13 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
       column_id: 9a272fd2-0030-4f21-a8e8-4c10c750f2b7,
       column_status: open,
-      column_sort: 6,
+      column_sort: 5,
       column_align: '',
       column_type: group,
       column_parent_id: null,
@@ -1168,7 +1168,7 @@ column:
       column_field_8: '',
       column_group_class: gu-columns2-left-wide-responsive,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1192,7 +1192,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1216,13 +1216,13 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
       column_id: e41fe7d7-80d2-4f43-9680-9f2cb3eaac97,
       column_status: open,
-      column_sort: 7,
+      column_sort: 6,
       column_align: '',
       column_type: group,
       column_parent_id: null,
@@ -1240,7 +1240,7 @@ column:
       column_field_8: '',
       column_group_class: gu-columns2-right-wide-responsive,
       column_group_tag: div,
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1264,7 +1264,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1288,7 +1288,7 @@ column:
       column_field_8: '',
       column_group_class: '',
       column_group_tag: '',
-      column_entry_id: 19,
+      column_entry_id: 21,
       column_blog_id: 2,
     }
   - {
@@ -1666,6 +1666,38 @@ entry:
       entry_last_update_user_id: 3,
       entry_hash: 9f2f16a18d95cdecc0793602811c2063,
       entry_category_id: 5,
+      entry_user_id: 1,
+      entry_form_id: 0,
+      entry_blog_id: 2,
+      entry_delete_uid: null,
+      entry_lock_datetime: '1000-01-01 00:00:00',
+      entry_lock_uid: 0,
+    }
+  - {
+      entry_id: 21,
+      entry_code: group.html,
+      entry_status: open,
+      entry_approval: none,
+      entry_form_status: '',
+      entry_sort: 11,
+      entry_user_sort: 11,
+      entry_category_sort: 11,
+      entry_title: グループユニットによるレイアウトの掲載例,
+      entry_link: '',
+      entry_datetime: '2021-08-01 15:00:28',
+      entry_start_datetime: '2025-09-01 15:00:28',
+      entry_end_datetime: '9999-12-31 23:59:59',
+      entry_posted_datetime: '2025-09-01 15:04:20',
+      entry_updated_datetime: '2025-09-02 15:54:24',
+      entry_summary_range: null,
+      entry_indexing: 'on',
+      entry_members_only: 'off',
+      entry_primary_image: null,
+      entry_current_rev_id: 1,
+      entry_reserve_rev_id: 0,
+      entry_last_update_user_id: 3,
+      entry_hash: c5bd9d3f7e07ebd289148fd712a18621,
+      entry_category_id: null,
       entry_user_id: 1,
       entry_form_id: 0,
       entry_blog_id: 2,
