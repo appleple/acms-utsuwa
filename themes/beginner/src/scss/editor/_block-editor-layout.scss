@@ -66,14 +66,16 @@
   }
 }
 
-/* 管理画面側 */
+/* 管理画面側
+ 縦の余白は中のブロック自身の余白に任せるため、カラムの間（横）だけに付ける */
 :where(.acms-admin-block-editor) :where([data-type="columns"]) {
-  gap: 1rem !important; // 管理画面では余白が広くなりすぎないよう固定値を指定
+  gap: 0 1rem !important; // 管理画面では余白が広くなりすぎないよう固定値を指定
 }
 
-/* 閲覧画面側 */
+/* 閲覧画面側
+ スマホ時に縦に並ぶカラムで余白が二重にならないよう、横だけに付ける（グループユニットの段組と同じ） */
 :where(.#{acms.$entry-class}) :where([data-type="columns"]) {
-  gap: var(--unit-gutter-var);
+  gap: 0 var(--unit-gap-x);
 }
 
 /* グループ
