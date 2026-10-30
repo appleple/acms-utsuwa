@@ -3,7 +3,7 @@
 @section("user-status")
 <div id="loginUserStatus">
   <img src="%{ARCHIVES_DIR}{icon}" width="20" height="20" alt="" class="acms-admin-user acms-admin-margin-right-mini" />{name}
-  <a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- BEGIN approval -->
+  <!-- BEGIN_MODULE Touch_SessionIsSubscription --><a href="%{BLOG_URL}%{PROFILE_UPDATE_SEGMENT}" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- END_MODULE Touch_SessionIsSubscription --><!-- BEGIN_MODULE Touch_SessionWithContribution --><a href="/%{BID_SEGMENT}/%{SBID}/%{UID_SEGMENT}/%{SUID}/%{ADMIN_SEGMENT}/user_edit/" class="acms-admin-label"><!--T-->プロフィール<!--/T--></a><!-- END_MODULE Touch_SessionWithContribution --><!-- BEGIN approval -->
   <div class="acms-admin-label-approval-group"><a href="{url}"><!--T-->承認通知<!--/T--></a>&nbsp;<span class="acms-admin-badge acms-admin-badge-approval">{badge}</span></div><!-- END approval -->
   <!-- BEGIN_MODULE Touch_SessionWithAdministration -->
   <!-- BEGIN_MODULE Touch_Debug -->
