@@ -122,10 +122,13 @@
   <tbody>
     <tr>
       <th>申し込みボタン誘導文</th>
-      <td class="admin-field-lite-editor-wrap">
+      <td>
         <p class="acms-admin-m-0 acms-admin-mb-1 admin-field-info-text">例）下記の「申し込みはこちら」ボタン、またはお電話でお申し込みください。</p>
-        <textarea name="event_entry" class="acms-admin-form-width-full js-lite-editor-field">{event_entry}</textarea>
+        <acms-block-editor root-class="acms-admin-form-box acms-admin-form-width-full">
+          <input type="hidden" name="event_entry" value="{event_entry}" />
+        </acms-block-editor>
         <input type="hidden" name="field[]" value="event_entry" />
+        <input type="hidden" name="event_entry:extension" value="block-editor" />
       </td>
     </tr>
     <tr>

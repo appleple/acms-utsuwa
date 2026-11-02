@@ -53,9 +53,9 @@
   font-size: map.get(global.$font-scales, heading-s);
   font-weight: bold;
   line-height: var(--line-height-none);
-  text-align: center;
   text-box-trim: trim-both;
   text-box-edge: text;
+  text-align: center;
 
   @include acms.media-breakpoint-up(md) {
     min-width: 2rem;
