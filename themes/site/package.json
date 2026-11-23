@@ -50,7 +50,7 @@
     "sass-loader": "^17.1.0",
     "stylelint": "^17.16.0",
     "stylelint-config-recess-order": "^7.10.1",
-    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-config-standard-scss": "^18.0.0",
     "stylelint-webpack-plugin": "^5.1.0",
     "webpack": "^5.113.0",
     "webpack-bundle-analyzer": "^5.4.3",
